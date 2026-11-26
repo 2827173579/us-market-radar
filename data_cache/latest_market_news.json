@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795718805.135,
-  "updated_at_et": "11-26 13:46 ET",
-  "updated_at_kst": "03:46 KST",
+  "updated_at_ts": 1795718845.412,
+  "updated_at_et": "11-26 13:47 ET",
+  "updated_at_kst": "03:47 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -909,42 +909,49 @@
     ],
     "NVDA": [
       {
+        "title": "Nvidia Stock Has Found Its Next Big Catalyst, Making the Stock a Once-in-a-Decade Buying Opportunity.",
+        "url": "https://www.fool.com/investing/2026/11/26/nvidia-stock-has-found-its-next-big-catalyst-making-the-stock-a-once-in-a-decade-buying-opportunity/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-26 13:17 ET",
+        "pub_ts": 1795717022.0
+      },
+      {
+        "title": "Super Micro Computer (SMCI) Faces Southeast Asia AI Server Disruption After Export Halt",
+        "url": "https://finance.yahoo.com/technology/ai/articles/super-micro-computer-smci-faces-181532913.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-26 13:15 ET",
+        "pub_ts": 1795716932.0
+      },
+      {
+        "title": "Big News For Nvidia Stock Fans",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/big-news-nvidia-stock-fans-181400521.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-26 13:14 ET",
+        "pub_ts": 1795716840.0
+      },
+      {
+        "title": "Nvidia Now Has 41% of Its Stock Portfolio in SpaceX. Here’s What That Means for Nvidia Shareholders",
+        "url": "https://www.tikr.com/blog/nvidia-now-has-41-of-its-stock-portfolio-in-spacex-heres-what-that-means-for-nvidia-shareholders?ref=yahoofinance&tlnk=yf-261126-gr78h4qh&.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-26 13:12 ET",
+        "pub_ts": 1795716730.0
+      },
+      {
         "title": "Billionaire John Overdeck’s former fund, Two Sigma Raised Its Nvidia Stake 67% to $2.39 Billion",
         "url": "https://247wallst.com/investing/2026/11/26/billionaire-john-overdecks-former-fund-two-sigma-raised-its-nvidia-stake-67-to-2-39-billion/?.tsrc=rss",
         "source": "Yahoo Finance",
         "time": "11-26 13:05 ET",
         "pub_ts": 1795716339.0
-      },
-      {
-        "title": "Should You Buy Nvidia After Its Sharp Decline? Warren Buffett’s Long-Held Investment Philosophy Provides a Clear Answer",
-        "url": "https://www.fool.com/investing/2026/11/26/should-you-buy-nvidia-warren-buffett-investment-philosophy-provides-a-clear-answer/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-26 12:35 ET",
-        "pub_ts": 1795714502.0
-      },
-      {
-        "title": "NVIDIA Stocks Fall 3.91% as S&P Puts AA Rating on Downgrade Watch",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/nvidia-stocks-fall-3-91-173102633.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-26 12:31 ET",
-        "pub_ts": 1795714262.0
-      },
-      {
-        "title": "Nvidia faces credit rating review as S&P flags governance concerns",
-        "url": "https://www.proactiveinvestors.com/companies/news/1102544/nvidia-faces-credit-rating-review-as-s-p-flags-governance-concerns-1102544.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-26 12:16 ET",
-        "pub_ts": 1795713360.0
-      },
-      {
-        "title": "Stock-Split Watch: 3 Industrial Stocks That Could Split in 2027",
-        "url": "https://www.fool.com/investing/2026/11/26/stock-split-watch-3-industrial-stocks-that-could-split-in-2027/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-26 12:05 ET",
-        "pub_ts": 1795712702.0
       }
     ],
     "AMD": [
+      {
+        "title": "AMD Stocks Slip 1.75% After Filing Registers 337 Million Shares for Resale",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/amd-stocks-slip-1-75-182928246.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-26 13:29 ET",
+        "pub_ts": 1795717768.0
+      },
       {
         "title": "Cerebras Expands AI Inference Reach: Can It Challenge NVDA & AMD?",
         "url": "https://finance.yahoo.com/technology/ai/articles/cerebras-expands-ai-inference-reach-161400247.html?.tsrc=rss",
@@ -972,13 +979,6 @@
         "source": "Yahoo Finance",
         "time": "11-26 06:13 ET",
         "pub_ts": 1795691582.0
-      },
-      {
-        "title": "Nvidia, AMD and Micron Stocks Plunge as AI Selloff Deepens",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/nvidia-amd-micron-stocks-plunge-110624788.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-26 06:06 ET",
-        "pub_ts": 1795691184.0
       }
     ],
     "ASML": [
@@ -1760,6 +1760,20 @@
     ],
     "SPCX": [
       {
+        "title": "Nvidia Now Has 41% of Its Stock Portfolio in SpaceX. Here’s What That Means for Nvidia Shareholders",
+        "url": "https://www.tikr.com/blog/nvidia-now-has-41-of-its-stock-portfolio-in-spacex-heres-what-that-means-for-nvidia-shareholders?ref=yahoofinance&tlnk=yf-261126-gr78h4qh&.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-26 13:12 ET",
+        "pub_ts": 1795716730.0
+      },
+      {
+        "title": "SpaceX Gets a Fresh Vote of Confidence From Cathie Wood",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/spacex-gets-fresh-vote-confidence-181158897.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-26 13:11 ET",
+        "pub_ts": 1795716718.0
+      },
+      {
         "title": "Tesla: A SpaceX Merger Could Turn $5,000 Into $10,000",
         "url": "https://finance.yahoo.com/markets/stocks/articles/tesla-spacex-merger-could-turn-174606474.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1779,20 +1793,6 @@
         "source": "Yahoo Finance",
         "time": "11-26 11:40 ET",
         "pub_ts": 1795711200.0
-      },
-      {
-        "title": "Musk makes $18 billion SpaceX stock pledge for every kid in America",
-        "url": "https://www.axios.com/2026/11/26/musk-spacex-shares-trump-accounts#utm_source=yahoo_finance&utm_medium=partner&utm_campaign=subs-partner-yahoo-finance-AI?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-26 10:54 ET",
-        "pub_ts": 1795708455.0
-      },
-      {
-        "title": "SpaceX Just Slid 11% in a Week. Can Elon Musk’s FCC Win for 1 Million Satellites Get SPCX Stock Back Above Its $135 IPO Price?",
-        "url": "https://247wallst.com/investing/2026/11/26/spacex-just-slid-11-in-a-week-can-elon-musks-fcc-win-for-1-million-satellites-get-spcx-stock-back-above-its-135-ipo-price/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-26 10:08 ET",
-        "pub_ts": 1795705715.0
       }
     ],
     "ASTS": [
@@ -3316,23 +3316,23 @@
     ]
   },
   "ticker_news_ts": {
-    "KORU": 1795717311.842482,
-    "SOXL": 1795717311.842482,
-    "SPY": 1795717311.842482,
-    "DIA": 1795717311.842482,
-    "SOXX": 1795717311.842482,
-    "QQQ": 1795717311.842482,
-    "SMH": 1795717311.842482,
-    "IWM": 1795717311.842482,
-    "IGV": 1795717311.842482,
-    "TLT": 1795717311.842482,
-    "GLD": 1795717311.842482,
-    "SQQQ": 1795717311.842482,
+    "KORU": 1795718845.4120793,
+    "SOXL": 1795718845.4120793,
+    "SPY": 1795718845.4120793,
+    "DIA": 1795718845.4120793,
+    "SOXX": 1795718845.4120793,
+    "QQQ": 1795718845.4120793,
+    "SMH": 1795718845.4120793,
+    "IWM": 1795718845.4120793,
+    "IGV": 1795718845.4120793,
+    "TLT": 1795718845.4120793,
+    "GLD": 1795718845.4120793,
+    "SQQQ": 1795718845.4120793,
     "TSM": 1795717607.4524271,
-    "VIXY": 1795717311.842482,
-    "SOXS": 1795717311.842482,
-    "NVDA": 1795717311.842482,
-    "AMD": 1795717311.842482,
+    "VIXY": 1795718845.4120793,
+    "SOXS": 1795718845.4120793,
+    "NVDA": 1795718845.4120793,
+    "AMD": 1795718845.4120793,
     "ASML": 1795717607.4524271,
     "QCOM": 1795717607.4524271,
     "AVGO": 1795717607.4524271,
@@ -3347,15 +3347,15 @@
     "CRWV": 1795717652.4379408,
     "NBIS": 1795717652.4379408,
     "APLD": 1795717652.4379408,
-    "VST": 1795717311.842482,
-    "BE": 1795717311.842482,
-    "CRDO": 1795717311.842482,
-    "COHR": 1795717311.842482,
+    "VST": 1795718845.4120793,
+    "BE": 1795718845.4120793,
+    "CRDO": 1795718845.4120793,
+    "COHR": 1795718845.4120793,
     "MRVL": 1795717652.4379408,
     "LITE": 1795717652.4379408,
-    "AAOI": 1795717311.842482,
-    "SPCX": 1795717311.842482,
-    "ASTS": 1795717311.842482,
+    "AAOI": 1795718845.4120793,
+    "SPCX": 1795718845.4120793,
+    "ASTS": 1795718845.4120793,
     "AXTI": 1795717652.4379408,
     "NASA": 1795717607.4524271,
     "LUNR": 1795717607.4524271,
@@ -3392,11 +3392,11 @@
     "V": 1795717652.4379408,
     "CAT": 1795717694.7342248,
     "FN": 1795717652.4379408,
-    "GLW": 1795717311.842482,
+    "GLW": 1795718845.4120793,
     "ANT": 1795717694.7342248,
     "XAUUSD": 1795717694.7342248,
     "KOSPI": 1795717607.4524271,
-    "KSTR": 1795717311.842482
+    "KSTR": 1795718845.4120793
   },
   "opex_shield": {
     "date": "2026-11-26",
