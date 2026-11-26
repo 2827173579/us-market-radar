@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795726811.855,
-  "updated_at_et": "11-26 16:00 ET",
-  "updated_at_kst": "06:00 KST",
+  "updated_at_ts": 1795727108.957,
+  "updated_at_et": "11-26 16:05 ET",
+  "updated_at_kst": "06:05 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -798,6 +798,20 @@
     ],
     "TSM": [
       {
+        "title": "Taiwan Semiconductor Stocks Slip 1.96% as Taiwan's Market Sinks 4.8% in Chip Rout",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/taiwan-semiconductor-stocks-slip-1-190319001.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-26 14:03 ET",
+        "pub_ts": 1795719799.0
+      },
+      {
+        "title": "3 Top Stocks to Buy Before 2027 as Quantum Enters AI Data Centers",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/3-top-stocks-buy-2027-190000024.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-26 14:00 ET",
+        "pub_ts": 1795719600.0
+      },
+      {
         "title": "TSMC (TSM) Upgraded to Strong Buy: Here's Why",
         "url": "https://finance.yahoo.com/markets/stocks/articles/tsmc-tsm-upgraded-strong-buy-160004326.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -817,20 +831,6 @@
         "source": "Yahoo Finance",
         "time": "11-26 06:03 ET",
         "pub_ts": 1795690998.0
-      },
-      {
-        "title": "Asian tech stocks jump as bargain buyers boost battered AI trade",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/asian-tech-stocks-jump-bargain-030316035.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 22:03 ET",
-        "pub_ts": 1795662196.0
-      },
-      {
-        "title": "Trump heads to Arizona next week for a high-stakes expansion of TSMC's computer chip factories",
-        "url": "https://finance.yahoo.com/technology/articles/trump-heads-arizona-next-week-225636899.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 17:56 ET",
-        "pub_ts": 1795647396.0
       }
     ],
     "VIXY": [
@@ -1057,6 +1057,13 @@
     ],
     "AVGO": [
       {
+        "title": "Goldman Sachs resets Broadcom's 12-month price target before earnings",
+        "url": "https://www.thestreet.com/investing/stocks/avgo-broadcom-stock-goldman-sachs-resets-avgo-stock-12-month-price-target-before-earnings?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-26 14:33 ET",
+        "pub_ts": 1795721595.0
+      },
+      {
         "title": "Broadcom Stocks Edge Lower After Rebounding From an Intraday Low of $278",
         "url": "https://finance.yahoo.com/markets/stocks/articles/broadcom-stocks-edge-lower-rebounding-183041028.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1083,13 +1090,6 @@
         "source": "Yahoo Finance",
         "time": "11-26 07:15 ET",
         "pub_ts": 1795695305.0
-      },
-      {
-        "title": "UBS’s $425 Target Says Broadcom’s Selloff Went Too Far",
-        "url": "https://www.tikr.com/blog/ubss-425-target-says-broadcoms-selloff-went-too-far?ref=yahoofinance&tlnk=yf-261126-xrf8pwvw&.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-26 06:51 ET",
-        "pub_ts": 1795693883.0
       }
     ],
     "AMAT": [
@@ -1205,6 +1205,13 @@
     ],
     "MSFT": [
       {
+        "title": "Microsoft Stocks Slip 1.25% While Nadella Backs Cheaper In-House AI Models",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/microsoft-stocks-slip-1-25-184200035.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-26 13:42 ET",
+        "pub_ts": 1795718520.0
+      },
+      {
         "title": "Can NICE (TASE:NICE) Support A Reasonable Price On Earnings?",
         "url": "https://finance.yahoo.com/markets/stocks/articles/nice-tase-nice-support-reasonable-181420159.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1219,28 +1226,28 @@
         "pub_ts": 1795703040.0
       },
       {
+        "title": "David Tepper, Cathie Wood and 4 Other Famous Investors Own Nvidia. Here’s Who Bought Recently",
+        "url": "https://www.tikr.com/blog/david-tepper-cathie-wood-and-4-other-famous-investors-own-nvidia-heres-who-bought-recently?ref=yahoofinance&tlnk=yf-261126-8957xqr5&.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-26 13:12 ET",
+        "pub_ts": 1795716770.0
+      },
+      {
         "title": "Stanley Druckenmiller, Bill Ackman and 7 Other Famous Investors Own Amazon. Here’s Who Bought and Sold Recently",
         "url": "https://www.tikr.com/blog/stanley-druckenmiller-bill-ackman-and-7-other-famous-investors-own-amazon-heres-who-bought-and-sold-recently?ref=yahoofinance&tlnk=yf-261126-2mffj2wm&.tsrc=rss",
         "source": "Yahoo Finance",
         "time": "11-26 13:11 ET",
         "pub_ts": 1795716673.0
-      },
-      {
-        "title": "What Does Pinterest (PINS) Pay Overhaul Mean For Its Takeover Talk And Ad Push?",
-        "url": "https://finance.yahoo.com/media-advertising/articles/does-pinterest-pins-pay-overhaul-171447901.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-26 12:14 ET",
-        "pub_ts": 1795713287.0
-      },
-      {
-        "title": "Europe Cloud Computing Market Surges to $ 550.42 billion at a CAGR 11.0% by 2030 | Report by MarketsandMarkets™",
-        "url": "https://finance.yahoo.com/technology/articles/europe-cloud-computing-market-surges-150000346.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-26 10:00 ET",
-        "pub_ts": 1795705200.0
       }
     ],
     "AAPL": [
+      {
+        "title": "Apple Stocks Rise as AI Selloff Spares the iPhone Maker",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/apple-stocks-rise-ai-selloff-190038273.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-26 14:00 ET",
+        "pub_ts": 1795719638.0
+      },
       {
         "title": "Apple Removes Talkie From App Store After Reports of Inappropriate AI Messages",
         "url": "https://finance.yahoo.com/technology/ai/articles/apple-removes-talkie-app-store-180937483.html?.tsrc=rss",
@@ -1263,18 +1270,11 @@
         "pub_ts": 1795705418.0
       },
       {
-        "title": "Netflix vs. Apple: Which Streaming Stock Has an Edge Right Now?",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/netflix-vs-apple-streaming-stock-142100099.html?.tsrc=rss",
+        "title": "Is Apple Stock Outperforming the Nasdaq?",
+        "url": "https://www.barchart.com/story/news/9020084/is-apple-stock-outperforming-the-nasdaq?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-26 09:21 ET",
-        "pub_ts": 1795702860.0
-      },
-      {
-        "title": "Global Wearable Healthcare Devices Market Report 2026 | Capitalize on 24.9% CAGR Through 2030 as Apple, Abbott, Medtronic and Dexcom Scale AI and Remote Monitoring",
-        "url": "https://finance.yahoo.com/healthcare/articles/global-wearable-healthcare-devices-market-141800552.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-26 09:18 ET",
-        "pub_ts": 1795702680.0
+        "time": "11-26 09:50 ET",
+        "pub_ts": 1795704607.0
       }
     ],
     "PLTR": [
@@ -1945,6 +1945,13 @@
     ],
     "TSLA": [
       {
+        "title": "Tesla Stocks Slip 1.18% as EU Delays Self-Driving Vote to December 15",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/tesla-stocks-slip-1-18-190357031.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-26 14:03 ET",
+        "pub_ts": 1795719837.0
+      },
+      {
         "title": "Tesla: A SpaceX Merger Could Turn $5,000 Into $10,000",
         "url": "https://finance.yahoo.com/markets/stocks/articles/tesla-spacex-merger-could-turn-174606474.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1971,13 +1978,6 @@
         "source": "Yahoo Finance",
         "time": "11-26 06:45 ET",
         "pub_ts": 1795693559.0
-      },
-      {
-        "title": "Invesco QQQ Trust (QQQ) Buys $187.4 Million More Apple on Tuesday",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/invesco-qqq-trust-qqq-buys-110402435.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-26 06:04 ET",
-        "pub_ts": 1795691042.0
       }
     ],
     "AXP": [
@@ -2130,6 +2130,13 @@
     ],
     "INTC": [
       {
+        "title": "Intel Stocks Slip After Erasing a 10.3% Plunge Below $50",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/intel-stocks-slip-erasing-10-184536612.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-26 13:45 ET",
+        "pub_ts": 1795718736.0
+      },
+      {
         "title": "Nvidia Now Has 41% of Its Stock Portfolio in SpaceX. Here’s What That Means for Nvidia Shareholders",
         "url": "https://www.tikr.com/blog/nvidia-now-has-41-of-its-stock-portfolio-in-spacex-heres-what-that-means-for-nvidia-shareholders?ref=yahoofinance&tlnk=yf-261126-gr78h4qh&.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2156,13 +2163,6 @@
         "source": "Yahoo Finance",
         "time": "11-25 12:42 ET",
         "pub_ts": 1795628526.0
-      },
-      {
-        "title": "Nvidia’s Biggest Advantage Could Become Its Biggest Weakness, Says Former Intel AI Chief",
-        "url": "https://www.benzinga.com/markets/prediction-markets/26/11/63635370/nvidia-ai-chip-advantage-rao?utm_source=yahooFinance&utm_campaign=partner_feed&utm_medium=referral&.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 11:32 ET",
-        "pub_ts": 1795624327.0
       }
     ],
     "VRT": [
@@ -2241,6 +2241,13 @@
     ],
     "DELL": [
       {
+        "title": "BofA resets Dell stock price target by $100 after record earnings",
+        "url": "https://www.thestreet.com/investing/stocks/dell-dell-technologies-bank-of-america-resets-dell-stock-price-target-by-100-after-record-q3-earnings?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-26 14:03 ET",
+        "pub_ts": 1795719780.0
+      },
+      {
         "title": "Dell Is No Longer the Company You Originally Bought. Is That a Reason to Buy More Stock in 2027?",
         "url": "https://247wallst.com/investing/2026/11/26/dell-is-no-longer-the-company-you-originally-bought-is-that-a-reason-to-buy-more-stock-in-2027/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2267,13 +2274,6 @@
         "source": "Yahoo Finance",
         "time": "11-26 04:51 ET",
         "pub_ts": 1795686662.0
-      },
-      {
-        "title": "DELL Stock Heads For Worst Month Since 2021: Morningstar Sees Risk Ahead For Dell Despite AI-Led Earnings Beat",
-        "url": "https://stocktwits.com/news-articles/markets/equity/dell-stock-heads-for-worst-month-since-2021-morningstar-sees-risk-ahead-for-dell-despite-ai-led-earnings-beat/cNbx0U7R9Zo?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-26 04:10 ET",
-        "pub_ts": 1795684204.0
       }
     ],
     "OKLO": [
@@ -3328,19 +3328,19 @@
     "TLT": 1795726811.8549573,
     "GLD": 1795726811.8549573,
     "SQQQ": 1795726811.8549573,
-    "TSM": 1795719138.5162156,
+    "TSM": 1795727108.9571948,
     "VIXY": 1795726811.8549573,
     "SOXS": 1795726811.8549573,
     "NVDA": 1795726811.8549573,
     "AMD": 1795726811.8549573,
-    "ASML": 1795719138.5162156,
-    "QCOM": 1795719138.5162156,
-    "AVGO": 1795719138.5162156,
-    "AMAT": 1795719138.5162156,
-    "META": 1795719138.5162156,
-    "GOOGL": 1795719138.5162156,
-    "MSFT": 1795719138.5162156,
-    "AAPL": 1795719138.5162156,
+    "ASML": 1795727108.9571948,
+    "QCOM": 1795727108.9571948,
+    "AVGO": 1795727108.9571948,
+    "AMAT": 1795727108.9571948,
+    "META": 1795727108.9571948,
+    "GOOGL": 1795727108.9571948,
+    "MSFT": 1795727108.9571948,
+    "AAPL": 1795727108.9571948,
     "PLTR": 1795719179.7222383,
     "NOW": 1795719179.7222383,
     "AMZN": 1795719179.7222383,
@@ -3357,26 +3357,26 @@
     "SPCX": 1795726811.8549573,
     "ASTS": 1795726811.8549573,
     "AXTI": 1795719179.7222383,
-    "NASA": 1795719138.5162156,
-    "LUNR": 1795719138.5162156,
-    "TSLA": 1795719138.5162156,
-    "AXP": 1795719138.5162156,
-    "RKLB": 1795719138.5162156,
-    "KO": 1795719138.5162156,
-    "FLY": 1795719138.5162156,
-    "INTC": 1795719138.5162156,
-    "VRT": 1795719138.5162156,
-    "HPE": 1795719138.5162156,
-    "DELL": 1795719138.5162156,
-    "OKLO": 1795719138.5162156,
-    "CEG": 1795719138.5162156,
-    "FPS": 1795719138.5162156,
+    "NASA": 1795727108.9571948,
+    "LUNR": 1795727108.9571948,
+    "TSLA": 1795727108.9571948,
+    "AXP": 1795727108.9571948,
+    "RKLB": 1795727108.9571948,
+    "KO": 1795727108.9571948,
+    "FLY": 1795727108.9571948,
+    "INTC": 1795727108.9571948,
+    "VRT": 1795727108.9571948,
+    "HPE": 1795727108.9571948,
+    "DELL": 1795727108.9571948,
+    "OKLO": 1795727108.9571948,
+    "CEG": 1795727108.9571948,
+    "FPS": 1795727108.9571948,
     "MU": 1795719179.7222383,
     "SKHY": 1795719179.7222383,
     "WDC": 1795719179.7222383,
     "STX": 1795719179.7222383,
     "MSTR": 1795719179.7222383,
-    "SNDK": 1795719138.5162156,
+    "SNDK": 1795727108.9571948,
     "BTC-USD": 1795719179.7222383,
     "CRWD": 1795719179.7222383,
     "ORCL": 1795719179.7222383,
@@ -3395,7 +3395,7 @@
     "GLW": 1795726811.8549573,
     "ANT": 1795719221.1796463,
     "XAUUSD": 1795719221.1796463,
-    "KOSPI": 1795719138.5162156,
+    "KOSPI": 1795727108.9571948,
     "KSTR": 1795726811.8549573
   },
   "opex_shield": {
