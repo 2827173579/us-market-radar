@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795734410.759,
-  "updated_at_et": "11-26 18:06 ET",
-  "updated_at_kst": "08:06 KST",
+  "updated_at_ts": 1795734456.104,
+  "updated_at_et": "11-26 18:07 ET",
+  "updated_at_kst": "08:07 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -910,6 +910,13 @@
     ],
     "NVDA": [
       {
+        "title": "Nvidia Is the Worst-Performing \"Magnificent Seven\" Stock This Year. Is It a Buy Before 2027?",
+        "url": "https://www.fool.com/investing/2026/11/26/nvidia-is-the-worst-performing-magnificent-seven-stock-this-year-is-it-a-buy-before-2027/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-26 17:50 ET",
+        "pub_ts": 1795733449.0
+      },
+      {
         "title": "Loonie weakens amid Thanksgiving holiday lull, Canadian labor market data",
         "url": "https://finance.yahoo.com/markets/currencies/articles/loonie-weakens-amid-thanksgiving-holiday-222803240.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -936,13 +943,6 @@
         "source": "Yahoo Finance",
         "time": "11-26 15:20 ET",
         "pub_ts": 1795724402.0
-      },
-      {
-        "title": "Nvidia hits pause on chip shipments to Southeast Asia",
-        "url": "https://finance.yahoo.com/technology/articles/nvidia-hits-pause-chip-shipments-200354308.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-26 15:03 ET",
-        "pub_ts": 1795723434.0
       }
     ],
     "AMD": [
@@ -3317,23 +3317,23 @@
     ]
   },
   "ticker_news_ts": {
-    "KORU": 1795732915.9486449,
-    "SOXL": 1795732915.9486449,
-    "SPY": 1795732915.9486449,
-    "DIA": 1795732915.9486449,
-    "SOXX": 1795732915.9486449,
-    "QQQ": 1795732915.9486449,
-    "SMH": 1795732915.9486449,
-    "IWM": 1795732915.9486449,
-    "IGV": 1795732915.9486449,
-    "TLT": 1795732915.9486449,
-    "GLD": 1795732915.9486449,
-    "SQQQ": 1795732915.9486449,
+    "KORU": 1795734456.1038454,
+    "SOXL": 1795734456.1038454,
+    "SPY": 1795734456.1038454,
+    "DIA": 1795734456.1038454,
+    "SOXX": 1795734456.1038454,
+    "QQQ": 1795734456.1038454,
+    "SMH": 1795734456.1038454,
+    "IWM": 1795734456.1038454,
+    "IGV": 1795734456.1038454,
+    "TLT": 1795734456.1038454,
+    "GLD": 1795734456.1038454,
+    "SQQQ": 1795734456.1038454,
     "TSM": 1795733235.0847952,
-    "VIXY": 1795732915.9486449,
-    "SOXS": 1795732915.9486449,
-    "NVDA": 1795732915.9486449,
-    "AMD": 1795732915.9486449,
+    "VIXY": 1795734456.1038454,
+    "SOXS": 1795734456.1038454,
+    "NVDA": 1795734456.1038454,
+    "AMD": 1795734456.1038454,
     "ASML": 1795733235.0847952,
     "QCOM": 1795733235.0847952,
     "AVGO": 1795733235.0847952,
@@ -3348,15 +3348,15 @@
     "CRWV": 1795733279.5640316,
     "NBIS": 1795733279.5640316,
     "APLD": 1795733279.5640316,
-    "VST": 1795732915.9486449,
-    "BE": 1795732915.9486449,
-    "CRDO": 1795732915.9486449,
-    "COHR": 1795732915.9486449,
+    "VST": 1795734456.1038454,
+    "BE": 1795734456.1038454,
+    "CRDO": 1795734456.1038454,
+    "COHR": 1795734456.1038454,
     "MRVL": 1795733279.5640316,
     "LITE": 1795733279.5640316,
-    "AAOI": 1795732915.9486449,
-    "SPCX": 1795732915.9486449,
-    "ASTS": 1795732915.9486449,
+    "AAOI": 1795734456.1038454,
+    "SPCX": 1795734456.1038454,
+    "ASTS": 1795734456.1038454,
     "AXTI": 1795733279.5640316,
     "NASA": 1795733235.0847952,
     "LUNR": 1795733235.0847952,
@@ -3393,11 +3393,11 @@
     "V": 1795733279.5640316,
     "CAT": 1795733368.8039465,
     "FN": 1795733279.5640316,
-    "GLW": 1795732915.9486449,
+    "GLW": 1795734456.1038454,
     "ANT": 1795733368.8039465,
     "XAUUSD": 1795733368.8039465,
     "KOSPI": 1795733235.0847952,
-    "KSTR": 1795732915.9486449
+    "KSTR": 1795734456.1038454
   },
   "opex_shield": {
     "date": "2026-11-26",
