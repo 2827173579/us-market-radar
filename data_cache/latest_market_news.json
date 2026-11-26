@@ -1,5 +1,5 @@
 {
-  "updated_at_ts": 1795663803.526,
+  "updated_at_ts": 1795663846.796,
   "updated_at_et": "11-25 22:30 ET",
   "updated_at_kst": "12:30 KST",
   "macro_calendar": [
@@ -2799,8 +2799,8 @@
         "title": "Dow Jones Futures Rise; Market Goes On Wild Ride As Nasdaq Slashes Losses",
         "url": "https://finance.yahoo.com/m/158e82fc-b889-34b6-8704-99a49e9a83ae/dow-jones-futures-rise%3B.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-25 21:17 ET",
-        "pub_ts": 1795659448.0
+        "time": "11-25 22:15 ET",
+        "pub_ts": 1795662907.0
       },
       {
         "title": "Sector Update: Healthcare Stocks Fall Late Afternoon",
@@ -3241,38 +3241,31 @@
     "ANT": [
       {
         "title": "Dow Jones Futures Rise; Market Goes On Wild Ride As Nasdaq Slashes Losses",
-        "url": "https://finance.yahoo.com/m/158e82fc-b889-34b6-8704-99a49e9a83ae/dow-jones-futures-rise%3B.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 21:17 ET",
-        "pub_ts": 1795659448.0
+        "url": "https://finance.yahoo.com/m/158e82fc-b889-34b6-8704-99a49e9a83ae/dow-jones-futures-rise%3B.html",
+        "source": "Investor's Business Daily",
+        "time": "11-25 22:15 ET",
+        "pub_ts": 1795662907.0
       },
       {
         "title": "Anthropic's $150 Wall Street target comes with a $900B catch",
-        "url": "https://www.thestreet.com/investing/anthropic-150-wall-street-target-comes-with-900b-catch?.tsrc=rss",
-        "source": "Yahoo Finance",
+        "url": "https://finance.yahoo.com/technology/ai/articles/anthropics-150-wall-street-target-021700719.html",
+        "source": "TheStreet",
         "time": "11-25 21:17 ET",
         "pub_ts": 1795659420.0
       },
       {
         "title": "Coinbase CEO on the Anthropic and SpaceX IPOs: Who Actually Made the Money?",
-        "url": "https://beincrypto.com/coinbase-ceo-anthropic-spacex-ipo-money/?.tsrc=rss",
-        "source": "Yahoo Finance",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/coinbase-ceo-anthropic-spacex-ipos-021004016.html",
+        "source": "BeInCrypto",
         "time": "11-25 21:10 ET",
         "pub_ts": 1795659004.0
       },
       {
-        "title": "SpaceX wins approval to launch one million AI data centre satellites",
-        "url": "https://www.proactiveinvestors.com/companies/news/1102478/spacex-wins-approval-to-launch-one-million-ai-data-centre-satellites-1102478.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 19:27 ET",
-        "pub_ts": 1795652820.0
-      },
-      {
-        "title": "Bill Gurley: Investors Weren’t “Scrambling to Actually Own Anthropic.” That’s a Problem for Amazon and Alphabet",
-        "url": "https://www.tikr.com/blog/bill-gurley-investors-werent-scrambling-to-actually-own-anthropic-thats-a-problem-for-amazon-and-alphabet?ref=yahoofinance&tlnk=yf-261125-5qg4553j&.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 18:43 ET",
-        "pub_ts": 1795650186.0
+        "title": "Review & Preview: A Thanksgiving Reprieve",
+        "url": "https://finance.yahoo.com/m/2ce69a58-c424-3671-adc7-fd0cf5ff19a5/review-%26-preview%3A-a.html",
+        "source": "Barrons.com",
+        "time": "11-25 19:55 ET",
+        "pub_ts": 1795654500.0
       }
     ],
     "XAUUSD": [
@@ -3323,20 +3316,20 @@
     ]
   },
   "ticker_news_ts": {
-    "KORU": 1795662320.2790177,
-    "SOXL": 1795662320.2790177,
+    "KORU": 1795663846.7960312,
+    "SOXL": 1795663846.7960312,
     "SPY": 1795663531.2037733,
-    "DIA": 1795662320.2790177,
-    "SOXX": 1795662320.2790177,
-    "QQQ": 1795662320.2790177,
+    "DIA": 1795663846.7960312,
+    "SOXX": 1795663846.7960312,
+    "QQQ": 1795663846.7960312,
     "SMH": 1795663531.2037733,
-    "IWM": 1795662320.2790177,
-    "IGV": 1795662320.2790177,
-    "TLT": 1795662320.2790177,
-    "GLD": 1795662320.2790177,
+    "IWM": 1795663846.7960312,
+    "IGV": 1795663846.7960312,
+    "TLT": 1795663846.7960312,
+    "GLD": 1795663846.7960312,
     "SQQQ": 1795662359.5235136,
     "TSM": 1795663531.2037733,
-    "VIXY": 1795662320.2790177,
+    "VIXY": 1795663846.7960312,
     "SOXS": 1795662359.5235136,
     "NVDA": 1795662359.5235136,
     "AMD": 1795662359.5235136,
@@ -3381,27 +3374,27 @@
     "MU": 1795663531.2037733,
     "SKHY": 1795663531.2037733,
     "WDC": 1795663531.2037733,
-    "STX": 1795662320.2790177,
+    "STX": 1795663846.7960312,
     "MSTR": 1795663803.5264082,
     "SNDK": 1795663803.5264082,
     "BTC-USD": 1795663531.2037733,
     "CRWD": 1795663803.5264082,
-    "ORCL": 1795662320.2790177,
-    "COIN": 1795662320.2790177,
-    "LLY": 1795662320.2790177,
-    "MRNA": 1795662320.2790177,
-    "NKE": 1795662320.2790177,
-    "MCD": 1795662320.2790177,
-    "PEP": 1795662320.2790177,
-    "XOM": 1795662320.2790177,
-    "JPM": 1795662320.2790177,
-    "WMT": 1795662320.2790177,
-    "V": 1795662320.2790177,
-    "CAT": 1795662320.2790177,
+    "ORCL": 1795663846.7960312,
+    "COIN": 1795663846.7960312,
+    "LLY": 1795663846.7960312,
+    "MRNA": 1795663846.7960312,
+    "NKE": 1795663846.7960312,
+    "MCD": 1795663846.7960312,
+    "PEP": 1795663846.7960312,
+    "XOM": 1795663846.7960312,
+    "JPM": 1795663846.7960312,
+    "WMT": 1795663846.7960312,
+    "V": 1795663846.7960312,
+    "CAT": 1795663846.7960312,
     "FN": 1795663531.2037733,
     "GLW": 1795663803.5264082,
-    "ANT": 1795662320.2790177,
-    "XAUUSD": 1795662320.2790177,
+    "ANT": 1795663846.7960312,
+    "XAUUSD": 1795663846.7960312,
     "KOSPI": 1795663531.2037733
   },
   "opex_shield": {
