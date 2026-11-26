@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795700151.075,
-  "updated_at_et": "11-26 08:35 ET",
-  "updated_at_kst": "22:35 KST",
+  "updated_at_ts": 1795700309.055,
+  "updated_at_et": "11-26 08:38 ET",
+  "updated_at_kst": "22:38 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -1761,6 +1761,20 @@
     ],
     "SPCX": [
       {
+        "title": "Jensen Huang Says Grok Bot Consumption Is “Really Skyrocketing.” That’s Good News for SpaceX",
+        "url": "https://www.tikr.com/blog/jensen-huang-says-grok-bot-consumption-is-really-skyrocketing-thats-good-news-for-spacex?ref=yahoofinance&tlnk=yf-261126-q7mrmmjx&.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-26 08:16 ET",
+        "pub_ts": 1795698985.0
+      },
+      {
+        "title": "Musk to gift SpaceX shares to every child in America",
+        "url": "https://uk.finance.yahoo.com/news/musk-gift-spacex-shares-every-131214750.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-26 08:12 ET",
+        "pub_ts": 1795698734.0
+      },
+      {
         "title": "SpaceX and Elon Musk Will Each Give a Share to Every Active Trump Account",
         "url": "https://247wallst.com/investing/2026/11/26/spacex-and-elon-musk-will-each-give-a-share-to-every-active-trump-account/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1780,20 +1794,6 @@
         "source": "Yahoo Finance",
         "time": "11-26 06:42 ET",
         "pub_ts": 1795693337.0
-      },
-      {
-        "title": "SpaceX's $18.4 Billion Share Pledge Raises Dilution Questions",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/spacexs-18-4-billion-share-112938645.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-26 06:29 ET",
-        "pub_ts": 1795692578.0
-      },
-      {
-        "title": "32 ETFs Add to SpaceX (SPCX) Holdings on Nov. 24",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/32-etfs-add-spacex-spcx-110108746.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-26 06:01 ET",
-        "pub_ts": 1795690868.0
       }
     ],
     "ASTS": [
@@ -3317,16 +3317,16 @@
     ]
   },
   "ticker_news_ts": {
-    "KORU": 1795698739.5673707,
-    "SOXL": 1795698739.5673707,
+    "KORU": 1795700309.0548406,
+    "SOXL": 1795700309.0548406,
     "SPY": 1795698925.1931996,
-    "DIA": 1795698739.5673707,
-    "SOXX": 1795698739.5673707,
-    "QQQ": 1795698739.5673707,
+    "DIA": 1795700309.0548406,
+    "SOXX": 1795700309.0548406,
+    "QQQ": 1795700309.0548406,
     "SMH": 1795698925.1931996,
-    "IWM": 1795698739.5673707,
-    "IGV": 1795698739.5673707,
-    "TLT": 1795698739.5673707,
+    "IWM": 1795700309.0548406,
+    "IGV": 1795700309.0548406,
+    "TLT": 1795700309.0548406,
     "GLD": 1795698879.2238426,
     "SQQQ": 1795698879.2238426,
     "TSM": 1795698972.324488,
@@ -3348,15 +3348,15 @@
     "CRWV": 1795698972.324488,
     "NBIS": 1795698972.324488,
     "APLD": 1795698972.324488,
-    "VST": 1795698739.5673707,
-    "BE": 1795698739.5673707,
-    "CRDO": 1795698739.5673707,
-    "COHR": 1795698739.5673707,
+    "VST": 1795700309.0548406,
+    "BE": 1795700309.0548406,
+    "CRDO": 1795700309.0548406,
+    "COHR": 1795700309.0548406,
     "MRVL": 1795698972.324488,
     "LITE": 1795698972.324488,
-    "AAOI": 1795698739.5673707,
-    "SPCX": 1795698739.5673707,
-    "ASTS": 1795698739.5673707,
+    "AAOI": 1795700309.0548406,
+    "SPCX": 1795700309.0548406,
+    "ASTS": 1795700309.0548406,
     "AXTI": 1795698972.324488,
     "NASA": 1795698879.2238426,
     "LUNR": 1795698879.2238426,
@@ -3393,7 +3393,7 @@
     "V": 1795698925.1931996,
     "CAT": 1795698925.1931996,
     "FN": 1795698972.324488,
-    "GLW": 1795698739.5673707,
+    "GLW": 1795700309.0548406,
     "ANT": 1795698925.1931996,
     "XAUUSD": 1795699022.424005,
     "KOSPI": 1795698972.324488,
