@@ -1,5 +1,5 @@
 {
-  "updated_at_ts": 1795660381.842,
+  "updated_at_ts": 1795660421.35,
   "updated_at_et": "11-25 21:33 ET",
   "updated_at_kst": "11:33 KST",
   "macro_calendar": [
@@ -632,18 +632,18 @@
         "pub_ts": 1795518582.0
       },
       {
+        "title": "Tech Stocks Stall Into Thanksgiving: Will the AI Rebound Return?",
+        "url": "https://beincrypto.com/tech-stocks-stall-thanksgiving-nvidia-rebound/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 20:19 ET",
+        "pub_ts": 1795655993.0
+      },
+      {
         "title": "The Semiconductor ETF Kept Falling After Nvidia Raised Its Forecast. Time to Buy?",
         "url": "https://www.fool.com/investing/2026/11/24/the-semiconductor-etf-kept-falling-after-nvidia-raised-its-forecast-time-to-buy/?.tsrc=rss",
         "source": "Yahoo Finance",
         "time": "11-24 23:57 ET",
         "pub_ts": 1795582622.0
-      },
-      {
-        "title": "Micron Jumped 19% Monday, Then Sank Double Digits. Here’s What That Swing Means for SMH Holders",
-        "url": "https://247wallst.com/investing/etf/2026/11/24/micron-jumped-19-monday-then-sank-double-digits-heres-what-that-swing-means-for-smh-holders/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 11:52 ET",
-        "pub_ts": 1795539162.0
       }
     ],
     "IWM": [
@@ -2646,6 +2646,13 @@
     ],
     "BTC-USD": [
       {
+        "title": "How Low Can Bitcoin, Ethereum and XRP Fall? 4 Price Levels to Watch",
+        "url": "https://beincrypto.com/critical-price-levels-for-bitcoin-ethereum-xrp/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 20:37 ET",
+        "pub_ts": 1795657054.0
+      },
+      {
         "title": "One Big Difference Between Bitcoin and Pearl: There’s ‘No True Fair Launch Anymore’",
         "url": "https://unchainedcrypto.com/one-big-difference-between-bitcoin-and-pearl-theres-no-true-fair-launch-anymore/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2672,13 +2679,6 @@
         "source": "Yahoo Finance",
         "time": "11-25 19:04 ET",
         "pub_ts": 1795651459.0
-      },
-      {
-        "title": "Bitcoin and Tokenized Gold Trading in Euros Rises When Eurozone Yields Outpace US",
-        "url": "https://beincrypto.com/bitcoin-tokenized-gold-euro-bond-yields/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 19:02 ET",
-        "pub_ts": 1795651320.0
       }
     ],
     "CRWD": [
@@ -3323,45 +3323,45 @@
   "ticker_news_ts": {
     "KORU": 1795659219.9807472,
     "SOXL": 1795659219.9807472,
-    "SPY": 1795658901.123013,
+    "SPY": 1795660421.3495572,
     "DIA": 1795659219.9807472,
     "SOXX": 1795659219.9807472,
     "QQQ": 1795659219.9807472,
-    "SMH": 1795658901.123013,
+    "SMH": 1795660421.3495572,
     "IWM": 1795659219.9807472,
     "IGV": 1795659219.9807472,
     "TLT": 1795659219.9807472,
     "GLD": 1795659219.9807472,
     "SQQQ": 1795659262.9252965,
-    "TSM": 1795658901.123013,
+    "TSM": 1795660421.3495572,
     "VIXY": 1795659219.9807472,
     "SOXS": 1795659262.9252965,
     "NVDA": 1795659262.9252965,
     "AMD": 1795659262.9252965,
-    "ASML": 1795658901.123013,
-    "QCOM": 1795658901.123013,
+    "ASML": 1795660421.3495572,
+    "QCOM": 1795660421.3495572,
     "AVGO": 1795659262.9252965,
-    "AMAT": 1795658901.123013,
-    "META": 1795658901.123013,
-    "GOOGL": 1795658901.123013,
-    "MSFT": 1795658901.123013,
-    "AAPL": 1795658901.123013,
-    "PLTR": 1795658901.123013,
-    "NOW": 1795658901.123013,
-    "AMZN": 1795658901.123013,
-    "CRWV": 1795658901.123013,
-    "NBIS": 1795658901.123013,
-    "APLD": 1795658901.123013,
+    "AMAT": 1795660421.3495572,
+    "META": 1795660421.3495572,
+    "GOOGL": 1795660421.3495572,
+    "MSFT": 1795660421.3495572,
+    "AAPL": 1795660421.3495572,
+    "PLTR": 1795660421.3495572,
+    "NOW": 1795660421.3495572,
+    "AMZN": 1795660421.3495572,
+    "CRWV": 1795660421.3495572,
+    "NBIS": 1795660421.3495572,
+    "APLD": 1795660421.3495572,
     "VST": 1795659180.4365196,
     "BE": 1795659180.4365196,
     "CRDO": 1795659180.4365196,
     "COHR": 1795659180.4365196,
-    "MRVL": 1795658901.123013,
-    "LITE": 1795658901.123013,
+    "MRVL": 1795660421.3495572,
+    "LITE": 1795660421.3495572,
     "AAOI": 1795659180.4365196,
     "SPCX": 1795659180.4365196,
     "ASTS": 1795659180.4365196,
-    "AXTI": 1795658901.123013,
+    "AXTI": 1795660421.3495572,
     "NASA": 1795659180.4365196,
     "LUNR": 1795659180.4365196,
     "TSLA": 1795659180.4365196,
@@ -3376,13 +3376,13 @@
     "OKLO": 1795659180.4365196,
     "CEG": 1795659180.4365196,
     "FPS": 1795659180.4365196,
-    "MU": 1795658901.123013,
-    "SKHY": 1795658901.123013,
-    "WDC": 1795658901.123013,
+    "MU": 1795660421.3495572,
+    "SKHY": 1795660421.3495572,
+    "WDC": 1795660421.3495572,
     "STX": 1795659219.9807472,
     "MSTR": 1795659180.4365196,
     "SNDK": 1795659180.4365196,
-    "BTC-USD": 1795658901.123013,
+    "BTC-USD": 1795660421.3495572,
     "CRWD": 1795659180.4365196,
     "ORCL": 1795659219.9807472,
     "COIN": 1795659219.9807472,
@@ -3396,11 +3396,11 @@
     "WMT": 1795659219.9807472,
     "V": 1795659219.9807472,
     "CAT": 1795659219.9807472,
-    "FN": 1795658901.123013,
+    "FN": 1795660421.3495572,
     "GLW": 1795659180.4365196,
     "ANT": 1795659219.9807472,
     "XAUUSD": 1795659219.9807472,
-    "KOSPI": 1795658901.123013
+    "KOSPI": 1795660421.3495572
   },
   "opex_shield": {
     "date": "2026-11-25",
