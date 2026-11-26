@@ -1,5 +1,5 @@
 {
-  "updated_at_ts": 1795732866.264,
+  "updated_at_ts": 1795732915.949,
   "updated_at_et": "11-26 17:41 ET",
   "updated_at_kst": "07:41 KST",
   "macro_calendar": [],
@@ -911,6 +911,13 @@
     ],
     "NVDA": [
       {
+        "title": "Loonie weakens amid Thanksgiving holiday lull, Canadian labor market data",
+        "url": "https://finance.yahoo.com/markets/currencies/articles/loonie-weakens-amid-thanksgiving-holiday-222803240.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-26 17:28 ET",
+        "pub_ts": 1795732083.0
+      },
+      {
         "title": "Jensen Huang’s Return Doesn’t Make Nvidia Stock (NVDA) a Buy",
         "url": "https://finance.yahoo.com/markets/stocks/articles/jensen-huang-return-doesn-t-212200380.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -937,13 +944,6 @@
         "source": "Yahoo Finance",
         "time": "11-26 15:03 ET",
         "pub_ts": 1795723434.0
-      },
-      {
-        "title": "Nvidia Stock Has Found Its Next Big Catalyst, Making the Stock a Once-in-a-Decade Buying Opportunity.",
-        "url": "https://www.fool.com/investing/2026/11/26/nvidia-stock-has-found-its-next-big-catalyst-making-the-stock-a-once-in-a-decade-buying-opportunity/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-26 13:17 ET",
-        "pub_ts": 1795717022.0
       }
     ],
     "AMD": [
@@ -1762,6 +1762,13 @@
     ],
     "SPCX": [
       {
+        "title": "Stanley Druckenmiller Sees 70% Chance of Data Centers in Space Within 10 Years — Duquesne Adds $30 Million to SpaceX Stake in Q3",
+        "url": "https://finance.yahoo.com/technology/ai/articles/stanley-druckenmiller-sees-70-chance-213004535.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-26 16:30 ET",
+        "pub_ts": 1795728604.0
+      },
+      {
         "title": "SpaceX Is a Great Company. Is It a Great Stock at This Price?",
         "url": "https://www.fool.com/investing/2026/11/26/spacex-is-a-great-company-is-it-a-great-stock-at-this-price/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1788,13 +1795,6 @@
         "source": "Yahoo Finance",
         "time": "11-26 13:22 ET",
         "pub_ts": 1795717354.0
-      },
-      {
-        "title": "Nvidia Now Has 41% of Its Stock Portfolio in SpaceX. Here’s What That Means for Nvidia Shareholders",
-        "url": "https://www.tikr.com/blog/nvidia-now-has-41-of-its-stock-portfolio-in-spacex-heres-what-that-means-for-nvidia-shareholders?ref=yahoofinance&tlnk=yf-261126-gr78h4qh&.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-26 13:12 ET",
-        "pub_ts": 1795716730.0
       }
     ],
     "ASTS": [
@@ -3318,23 +3318,23 @@
     ]
   },
   "ticker_news_ts": {
-    "KORU": 1795731377.4451854,
-    "SOXL": 1795731377.4451854,
-    "SPY": 1795731377.4451854,
-    "DIA": 1795731377.4451854,
-    "SOXX": 1795731377.4451854,
-    "QQQ": 1795731377.4451854,
-    "SMH": 1795731377.4451854,
-    "IWM": 1795731377.4451854,
-    "IGV": 1795731377.4451854,
-    "TLT": 1795731377.4451854,
-    "GLD": 1795731377.4451854,
-    "SQQQ": 1795731377.4451854,
+    "KORU": 1795732915.9486449,
+    "SOXL": 1795732915.9486449,
+    "SPY": 1795732915.9486449,
+    "DIA": 1795732915.9486449,
+    "SOXX": 1795732915.9486449,
+    "QQQ": 1795732915.9486449,
+    "SMH": 1795732915.9486449,
+    "IWM": 1795732915.9486449,
+    "IGV": 1795732915.9486449,
+    "TLT": 1795732915.9486449,
+    "GLD": 1795732915.9486449,
+    "SQQQ": 1795732915.9486449,
     "TSM": 1795731733.961666,
-    "VIXY": 1795731377.4451854,
-    "SOXS": 1795731377.4451854,
-    "NVDA": 1795731377.4451854,
-    "AMD": 1795731377.4451854,
+    "VIXY": 1795732915.9486449,
+    "SOXS": 1795732915.9486449,
+    "NVDA": 1795732915.9486449,
+    "AMD": 1795732915.9486449,
     "ASML": 1795731733.961666,
     "QCOM": 1795731733.961666,
     "AVGO": 1795731733.961666,
@@ -3349,15 +3349,15 @@
     "CRWV": 1795731779.3031247,
     "NBIS": 1795731779.3031247,
     "APLD": 1795731779.3031247,
-    "VST": 1795731377.4451854,
-    "BE": 1795731377.4451854,
-    "CRDO": 1795731377.4451854,
-    "COHR": 1795731377.4451854,
+    "VST": 1795732915.9486449,
+    "BE": 1795732915.9486449,
+    "CRDO": 1795732915.9486449,
+    "COHR": 1795732915.9486449,
     "MRVL": 1795731779.3031247,
     "LITE": 1795731779.3031247,
-    "AAOI": 1795731377.4451854,
-    "SPCX": 1795731377.4451854,
-    "ASTS": 1795731377.4451854,
+    "AAOI": 1795732915.9486449,
+    "SPCX": 1795732915.9486449,
+    "ASTS": 1795732915.9486449,
     "AXTI": 1795731779.3031247,
     "NASA": 1795731733.961666,
     "LUNR": 1795731733.961666,
@@ -3394,11 +3394,11 @@
     "V": 1795731779.3031247,
     "CAT": 1795731825.009037,
     "FN": 1795731779.3031247,
-    "GLW": 1795731377.4451854,
+    "GLW": 1795732915.9486449,
     "ANT": 1795731825.009037,
     "XAUUSD": 1795731825.009037,
     "KOSPI": 1795731733.961666,
-    "KSTR": 1795731377.4451854
+    "KSTR": 1795732915.9486449
   },
   "opex_shield": {
     "date": "2026-11-26",
