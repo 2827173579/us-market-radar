@@ -1,9 +1,23 @@
 {
-  "updated_at_ts": 1795685108.795,
+  "updated_at_ts": 1795685155.04,
   "updated_at_et": "11-26 04:25 ET",
   "updated_at_kst": "18:25 KST",
   "macro_calendar": [],
   "macro_flashes": [
+    {
+      "id": "20261126172547528800",
+      "title": "强劲数据未能钉死美联储1月加息，黄金11月再次跌破3500的概率为...｜市场赔率数据表",
+      "summary": "强劲经济数据未能给明年加息布局带来太多提振，市场对连续加息还存在什么疑虑？国际现货金银实现V型反弹，11月结束前再次跌破3500的概率是...",
+      "keywords": [
+        "美联储",
+        "加息"
+      ],
+      "pub_ts": 1795685147.0,
+      "time_et": "11-26 04:25 ET",
+      "time_bj": "17:25 BJ",
+      "time_kst": "18:25 KST",
+      "time_display": "04:25 ET / 17:25 BJ"
+    },
     {
       "id": "20261126170220969800",
       "title": "布伦特原油日内下跌1.00%，现报93.83美元/桶。WTI原油现跌0.9%。",
@@ -329,19 +343,6 @@
       "time_bj": "13:42 BJ",
       "time_kst": "14:42 KST",
       "time_display": "00:42 ET / 13:42 BJ"
-    },
-    {
-      "id": "20261126134044724800",
-      "title": "甲醇主力合约日内大涨6.00%，现报3245.00元/吨。SC原油主力合约日内暴涨6.0…",
-      "summary": "甲醇主力合约日内大涨6.00%，现报3245.00元/吨。SC原油主力合约日内暴涨6.00%，现报612.70元/桶。",
-      "keywords": [
-        "原油"
-      ],
-      "pub_ts": 1795671644.0,
-      "time_et": "11-26 00:40 ET",
-      "time_bj": "13:40 BJ",
-      "time_kst": "14:40 KST",
-      "time_display": "00:40 ET / 13:40 BJ"
     }
   ],
   "ticker_news": {
@@ -1642,6 +1643,13 @@
     ],
     "MRVL": [
       {
+        "title": "Lumentum Sinks 14% in a Week as AI Stocks Slide, but Its CEO Says “We Haven’t Seen Any Slowdown”",
+        "url": "https://www.tikr.com/blog/lumentum-sinks-14-in-a-week-as-ai-stocks-slide-but-its-ceo-says-we-havent-seen-any-slowdown?ref=yahoofinance&tlnk=yf-261126-mcfhw988&.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-26 03:27 ET",
+        "pub_ts": 1795681663.0
+      },
+      {
         "title": "Analysts Expect More From Marvell Than Marvell Does",
         "url": "https://www.trefis.com/stock/mrvl/articles/628747/analysts-expect-more-from-marvell-than-marvell-does/2026-11-25?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1668,16 +1676,16 @@
         "source": "Yahoo Finance",
         "time": "11-25 05:49 ET",
         "pub_ts": 1795603771.0
-      },
-      {
-        "title": "Lumentum Has Lost 42% Since October 28 Despite Its Best Quarter Ever. Marvell’s Stock Is Why",
-        "url": "https://www.tikr.com/blog/lumentum-has-lost-42-since-october-28-despite-its-best-quarter-ever-marvells-stock-is-why?ref=yahoofinance&tlnk=yf-261125-mgqw8383&.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 03:39 ET",
-        "pub_ts": 1795595940.0
       }
     ],
     "LITE": [
+      {
+        "title": "Lumentum Sinks 14% in a Week as AI Stocks Slide, but Its CEO Says “We Haven’t Seen Any Slowdown”",
+        "url": "https://www.tikr.com/blog/lumentum-sinks-14-in-a-week-as-ai-stocks-slide-but-its-ceo-says-we-havent-seen-any-slowdown?ref=yahoofinance&tlnk=yf-261126-mcfhw988&.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-26 03:27 ET",
+        "pub_ts": 1795681663.0
+      },
       {
         "title": "AAOI vs. Lumentum: Which Optical Networking Stock Has an Edge Now?",
         "url": "https://finance.yahoo.com/markets/stocks/articles/aaoi-vs-lumentum-optical-networking-163600829.html?.tsrc=rss",
@@ -1705,13 +1713,6 @@
         "source": "Yahoo Finance",
         "time": "11-25 10:28 ET",
         "pub_ts": 1795620532.0
-      },
-      {
-        "title": "Oppenheimer Cut Its Marvell Target by $100. It Still Sees 147% Upside",
-        "url": "https://www.tikr.com/blog/oppenheimer-cut-its-marvell-target-by-100-it-still-sees-147-upside?ref=yahoofinance&tlnk=yf-261125-h25pvm3g&.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 05:49 ET",
-        "pub_ts": 1795603771.0
       }
     ],
     "AAOI": [
@@ -3337,19 +3338,19 @@
     "PLTR": 1795685108.7946615,
     "NOW": 1795685108.7946615,
     "AMZN": 1795685108.7946615,
-    "CRWV": 1795683572.234353,
-    "NBIS": 1795683612.6969247,
-    "APLD": 1795683612.6969247,
+    "CRWV": 1795685155.0397205,
+    "NBIS": 1795685155.0397205,
+    "APLD": 1795685155.0397205,
     "VST": 1795683902.487134,
     "BE": 1795683902.487134,
     "CRDO": 1795683902.487134,
     "COHR": 1795683902.487134,
-    "MRVL": 1795683612.6969247,
-    "LITE": 1795683612.6969247,
+    "MRVL": 1795685155.0397205,
+    "LITE": 1795685155.0397205,
     "AAOI": 1795683902.487134,
     "SPCX": 1795683902.487134,
     "ASTS": 1795683902.487134,
-    "AXTI": 1795683612.6969247,
+    "AXTI": 1795685155.0397205,
     "NASA": 1795683953.9120905,
     "LUNR": 1795683953.9120905,
     "TSLA": 1795683953.9120905,
@@ -3364,9 +3365,9 @@
     "OKLO": 1795683997.95645,
     "CEG": 1795683997.95645,
     "FPS": 1795683997.95645,
-    "MU": 1795683612.6969247,
-    "SKHY": 1795683612.6969247,
-    "WDC": 1795683612.6969247,
+    "MU": 1795685155.0397205,
+    "SKHY": 1795685155.0397205,
+    "WDC": 1795685155.0397205,
     "STX": 1795683997.95645,
     "MSTR": 1795683997.95645,
     "SNDK": 1795683997.95645,
@@ -3384,7 +3385,7 @@
     "WMT": 1795684078.8885493,
     "V": 1795684039.5806797,
     "CAT": 1795684078.8885493,
-    "FN": 1795683612.6969247,
+    "FN": 1795685155.0397205,
     "GLW": 1795683902.487134,
     "ANT": 1795684078.8885493,
     "XAUUSD": 1795684078.8885493,
@@ -3408,7 +3409,7 @@
   "calendar_banner": {
     "level": "idle_with_flash",
     "headline": "📡 宏观消息面监控中 · 今日暂无美股五星级经济数据大考",
-    "detail": "⚡ 最新核心快讯 (04:02 ET / 17:02 BJ) [原油]：布伦特原油日内下跌1.00%，现报93.83美元/桶。WTI原油现跌0.9%。",
+    "detail": "⚡ 最新核心快讯 (04:25 ET / 17:25 BJ) [美联储] [加息]：强劲经济数据未能给明年加息布局带来太多提振，市场对连续加息还存在什么疑虑？国际现货金银实现V型反弹，11月结束前再次跌破3500的概率是...",
     "event_name": "",
     "minutes_left": 0,
     "opex_shield": {
