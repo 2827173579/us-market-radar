@@ -1,5 +1,5 @@
 {
-  "updated_at_ts": 1795685477.128,
+  "updated_at_ts": 1795685518.868,
   "updated_at_et": "11-26 04:31 ET",
   "updated_at_kst": "18:31 KST",
   "macro_calendar": [],
@@ -903,6 +903,13 @@
     ],
     "NVDA": [
       {
+        "title": "Nvidia halts chip exports to south-east Asia after US crackdown",
+        "url": "https://uk.finance.yahoo.com/news/nvidia-halts-chip-exports-south-091719498.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-26 04:17 ET",
+        "pub_ts": 1795684639.0
+      },
+      {
         "title": "Nvidia Wins Back Wall Street Backing As Jensen Huang Returns; CRWD, LI Stocks Score Upgrades While DKNG, AMBA Face Pressure",
         "url": "https://stocktwits.com/news-articles/markets/equity/nvda-jensen-huang-return-stock-upgrades-crwd-li-amba-dkng/cNbxi4aR9ZF?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -929,13 +936,6 @@
         "source": "Yahoo Finance",
         "time": "11-26 02:54 ET",
         "pub_ts": 1795679642.0
-      },
-      {
-        "title": "Nvidia Could Shift Chips To ‘Better-Funded Buyers’ As Neoclouds Face Shakeout: Analyst Sees ‘Smaller Top Tier’",
-        "url": "https://stocktwits.com/news-articles/markets/equity/nvidia-could-shift-chips-to-better-funded-buyers-as-neoclouds-face-shakeout-analyst-sees-smaller-top-tier/cNbxWjpR9ZZ?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-26 02:41 ET",
-        "pub_ts": 1795678868.0
       }
     ],
     "AMD": [
@@ -945,6 +945,13 @@
         "source": "Yahoo Finance",
         "time": "11-25 19:56 ET",
         "pub_ts": 1795654562.0
+      },
+      {
+        "title": "Even After a Cut, UBS’s $625 Target Says AMD’s Selloff Went Too Far",
+        "url": "https://www.tikr.com/blog/even-after-a-cut-ubss-625-target-says-amds-selloff-went-too-far?ref=yahoofinance&tlnk=yf-261126-8fgrcr56&.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 17:58 ET",
+        "pub_ts": 1795647497.0
       },
       {
         "title": "2 Billionaire Funds Dumped AMD Last Quarter. Is It a Sell?",
@@ -966,13 +973,6 @@
         "source": "Yahoo Finance",
         "time": "11-25 14:20 ET",
         "pub_ts": 1795634402.0
-      },
-      {
-        "title": "AMD stock could reward patient investors enormously",
-        "url": "https://www.thestreet.com/investing/stocks/amd-stock-2027-data-center-growth?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 12:47 ET",
-        "pub_ts": 1795628820.0
       }
     ],
     "ASML": [
@@ -2235,6 +2235,13 @@
     ],
     "DELL": [
       {
+        "title": "DELL Stock Heads For Worst Month Since 2021: Morningstar Sees Risk Ahead For Dell Despite AI-Led Earnings Beat",
+        "url": "https://stocktwits.com/news-articles/markets/equity/dell-stock-heads-for-worst-month-since-2021-morningstar-sees-risk-ahead-for-dell-despite-ai-led-earnings-beat/cNbx0U7R9Zo?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-26 04:10 ET",
+        "pub_ts": 1795684204.0
+      },
+      {
         "title": "ANT, NVDA Slide Tests Investor Resolve, Software Firms Post Sharp Growth",
         "url": "https://stocktwits.com/news-articles/markets/equity/ant-nvda-slide-tests-investor-resolve-software-firms-post-sharp-growth/cNbxO5FR9ZX?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2256,18 +2263,11 @@
         "pub_ts": 1795648652.0
       },
       {
-        "title": "Anthropic, Nvidia, Micron, HP Inc., Dell, Deere, and More Stocks That Explain Today’s Market",
-        "url": "https://finance.yahoo.com/m/18e72c51-c6d7-33b1-aa90-ccce17a9b32f/anthropic%2C-nvidia%2C-micron%2C-hp.html?.tsrc=rss",
+        "title": "Dell Has Slumped Since September. After a Record Quarter, Bernstein Still Sees 113% Upside",
+        "url": "https://www.tikr.com/blog/dell-has-slumped-since-september-after-a-record-quarter-bernstein-still-sees-113-upside?ref=yahoofinance&tlnk=yf-261126-6q3vcx98&.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-25 16:41 ET",
-        "pub_ts": 1795642860.0
-      },
-      {
-        "title": "Dell, HPE Post Big Sales Growth But Investors Sense AI Spending Peak",
-        "url": "https://finance.yahoo.com/m/509b8d3a-b338-3181-bdcf-b7e931f38513/dell%2C-hpe-post-big-sales.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 16:20 ET",
-        "pub_ts": 1795641634.0
+        "time": "11-25 17:45 ET",
+        "pub_ts": 1795646745.0
       }
     ],
     "OKLO": [
@@ -3320,16 +3320,16 @@
     "IWM": 1795685434.6223276,
     "IGV": 1795685434.6223276,
     "TLT": 1795685434.6223276,
-    "GLD": 1795683997.95645,
-    "SQQQ": 1795683997.95645,
+    "GLD": 1795685518.8681004,
+    "SQQQ": 1795685518.8681004,
     "TSM": 1795685108.7946615,
-    "VIXY": 1795683997.95645,
-    "SOXS": 1795683997.95645,
-    "NVDA": 1795683997.95645,
-    "AMD": 1795683997.95645,
+    "VIXY": 1795685518.8681004,
+    "SOXS": 1795685518.8681004,
+    "NVDA": 1795685518.8681004,
+    "AMD": 1795685518.8681004,
     "ASML": 1795685108.7946615,
     "QCOM": 1795685108.7946615,
-    "AVGO": 1795683997.95645,
+    "AVGO": 1795685518.8681004,
     "AMAT": 1795685108.7946615,
     "META": 1795685108.7946615,
     "GOOGL": 1795685108.7946615,
@@ -3360,19 +3360,19 @@
     "FLY": 1795685477.1279023,
     "INTC": 1795685477.1279023,
     "VRT": 1795685477.1279023,
-    "HPE": 1795683997.95645,
-    "DELL": 1795683997.95645,
-    "OKLO": 1795683997.95645,
-    "CEG": 1795683997.95645,
-    "FPS": 1795683997.95645,
+    "HPE": 1795685518.8681004,
+    "DELL": 1795685518.8681004,
+    "OKLO": 1795685518.8681004,
+    "CEG": 1795685518.8681004,
+    "FPS": 1795685518.8681004,
     "MU": 1795685155.0397205,
     "SKHY": 1795685155.0397205,
     "WDC": 1795685155.0397205,
-    "STX": 1795683997.95645,
-    "MSTR": 1795683997.95645,
-    "SNDK": 1795683997.95645,
+    "STX": 1795685518.8681004,
+    "MSTR": 1795685518.8681004,
+    "SNDK": 1795685518.8681004,
     "BTC-USD": 1795685277.0581198,
-    "CRWD": 1795683997.95645,
+    "CRWD": 1795685518.8681004,
     "ORCL": 1795684039.5806797,
     "COIN": 1795684039.5806797,
     "LLY": 1795684039.5806797,
