@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795692586.697,
-  "updated_at_et": "11-26 06:29 ET",
-  "updated_at_kst": "20:29 KST",
+  "updated_at_ts": 1795692632.129,
+  "updated_at_et": "11-26 06:30 ET",
+  "updated_at_kst": "20:30 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -501,6 +501,20 @@
     ],
     "SOXX": [
       {
+        "title": "What iShares PHLX SOX Semi (SOXX) Sold: AMD Leads on Nov. 24",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/ishares-phlx-sox-semi-soxx-110411069.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-26 06:04 ET",
+        "pub_ts": 1795691051.0
+      },
+      {
+        "title": "ETF Activity: SPY Outflow Tops $4.80 Billion on Nov. 24",
+        "url": "https://finance.yahoo.com/markets/options/articles/etf-activity-spy-outflow-tops-110014034.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-26 06:00 ET",
+        "pub_ts": 1795690814.0
+      },
+      {
         "title": "iShares PHLX SOX Semiconductor (SOXX) Buys $46.9 Million More AMD on Nov. 23",
         "url": "https://finance.yahoo.com/markets/stocks/articles/ishares-phlx-sox-semiconductor-soxx-110447635.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -520,57 +534,43 @@
         "source": "Yahoo Finance",
         "time": "11-25 06:01 ET",
         "pub_ts": 1795604502.0
-      },
-      {
-        "title": "AI Stocks Are Getting Clobbered",
-        "url": "https://finance.yahoo.com/m/4ed869bd-466e-3fa6-9f78-569d1e79ff03/ai-stocks-are-getting.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 12:38 ET",
-        "pub_ts": 1795541888.0
-      },
-      {
-        "title": "iShares PHLX SOX Semiconductor (SOXX) Adds AMD and AVGO on Nov. 20",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/ishares-phlx-sox-semiconductor-soxx-110302788.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 06:03 ET",
-        "pub_ts": 1795518182.0
       }
     ],
     "QQQ": [
       {
-        "title": "Exchange-Traded Funds Lower as US Equities Fall After Midday",
-        "url": "https://finance.yahoo.com/markets/articles/exchange-traded-funds-lower-us-181148276.html?.tsrc=rss",
+        "title": "Invesco QQQ Trust (QQQ) Buys $187.4 Million More Apple on Tuesday",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/invesco-qqq-trust-qqq-buys-110402435.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-25 13:11 ET",
-        "pub_ts": 1795630308.0
+        "time": "11-26 06:04 ET",
+        "pub_ts": 1795691042.0
       },
       {
-        "title": "Should You Buy the Invesco QQQ ETF With the Nasdaq-100 Plummeting? Here's What History Says.",
-        "url": "https://www.fool.com/investing/2026/11/25/should-you-buy-invesco-qqq-etf-nasdaq-100-plummeting-what-history-says/?.tsrc=rss",
+        "title": "ETFs Are Buying SanDisk (SNDK) on Nov. 24",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/etfs-buying-sandisk-sndk-nov-110203043.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-25 07:42 ET",
-        "pub_ts": 1795610522.0
+        "time": "11-26 06:02 ET",
+        "pub_ts": 1795690923.0
       },
       {
-        "title": "INVESCO QQQ Trust (QQQ) Sells Apple and NVIDIA on Nov. 23",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/invesco-qqq-trust-qqq-sells-110412143.html?.tsrc=rss",
+        "title": "Netflix (NFLX) Sees $21.5 Million in Net ETF Buying on Nov. 24",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/netflix-nflx-sees-21-5-110142773.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-25 06:04 ET",
-        "pub_ts": 1795604652.0
+        "time": "11-26 06:01 ET",
+        "pub_ts": 1795690902.0
       },
       {
-        "title": "Berkshire Hathaway Is Up 15% in 2026 and Easily Beating the S&P 500. Is Berkshire Stock Better Than an Index Fund Now?",
-        "url": "https://247wallst.com/investing/2026/11/25/berkshire-hathaway-is-up-15-in-2026-and-easily-beating-the-sp-500-is-berkshire-stock-better-than-an-index-fund-now/?.tsrc=rss",
+        "title": "57 ETFs Add to Palo Alto Networks (PANW) on Tuesday",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/57-etfs-add-palo-alto-110133131.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-25 13:02 ET",
-        "pub_ts": 1795629735.0
+        "time": "11-26 06:01 ET",
+        "pub_ts": 1795690893.0
       },
       {
-        "title": "1 Surprisingly Powerful ETF for Investors Who Only Have $200 to Start",
-        "url": "https://www.fool.com/investing/2026/11/25/1-surprisingly-powerful-etf-for-investors-who-only-have-200-to-start/?.tsrc=rss",
+        "title": "Microsoft (MSFT) Sees $91.7 Million in Net ETF Buying on Nov. 24",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/microsoft-msft-sees-91-7-110049983.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-25 12:27 ET",
-        "pub_ts": 1795627622.0
+        "time": "11-26 06:00 ET",
+        "pub_ts": 1795690849.0
       }
     ],
     "SMH": [
@@ -619,6 +619,13 @@
         "pub_ts": 1795683880.0
       },
       {
+        "title": "iShares Russell 2000 (IWM) Sells $3.0 Million More Glaukos on Tuesday",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/ishares-russell-2000-iwm-sells-110425571.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-26 06:04 ET",
+        "pub_ts": 1795691065.0
+      },
+      {
         "title": "The Average Stock Shrugged Off the Tech Slide. History Is Split",
         "url": "https://www.trefis.com/stock/spx/articles/628711/the-average-stock-shrugged-off-the-tech-slide-history-is-split/2026-11-25?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -638,13 +645,6 @@
         "source": "Yahoo Finance",
         "time": "11-24 14:09 ET",
         "pub_ts": 1795547398.0
-      },
-      {
-        "title": "Stock Market Today: Jensen’s Return to Nvidia Is Causing Index Indigestion",
-        "url": "https://247wallst.com/investing/2026/11/24/stock-market-today-jensens-return-to-nvidia-is-causing-index-indigestion/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 11:50 ET",
-        "pub_ts": 1795539001.0
       }
     ],
     "IGV": [
@@ -1759,6 +1759,27 @@
     ],
     "SPCX": [
       {
+        "title": "32 ETFs Add to SpaceX (SPCX) Holdings on Nov. 24",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/32-etfs-add-spacex-spcx-110108746.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-26 06:01 ET",
+        "pub_ts": 1795690868.0
+      },
+      {
+        "title": "Musk says will give two SpaceX shares to 'every child in America'",
+        "url": "https://www.euronews.com/2026/11/26/musk-says-will-give-two-spacex-shares-to-every-child-in-america?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-26 05:59 ET",
+        "pub_ts": 1795690796.0
+      },
+      {
+        "title": "Why SpaceX’s Approval for Data Centers Is Impossible for Rivals to Copy",
+        "url": "https://finance.yahoo.com/m/f2facb44-8fb6-3aed-a0b9-e6e29b08bf05/why-spacex%E2%80%99s-approval-for.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-26 05:36 ET",
+        "pub_ts": 1795689360.0
+      },
+      {
         "title": "Musk Calls FCC’s Million-Satellite Approval “a Great Asset.” SpaceX Has Until 2033 to Fly the First One",
         "url": "https://www.tikr.com/blog/musk-calls-fccs-million-satellite-approval-a-great-asset-spacex-has-until-2033-to-fly-the-first-one?ref=yahoofinance&tlnk=yf-261126-wm7jp73w&.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1771,27 +1792,6 @@
         "source": "Yahoo Finance",
         "time": "11-26 04:12 ET",
         "pub_ts": 1795684320.0
-      },
-      {
-        "title": "SpaceX Will “Pay $3.6B to Upgrade the Grid” for Its Arizona Supercomputer. That’s the New Price of AI",
-        "url": "https://www.tikr.com/blog/spacex-will-pay-3-6b-to-upgrade-the-grid-for-its-arizona-supercomputer-thats-the-new-price-of-ai?ref=yahoofinance&tlnk=yf-261126-fmqqr22c&.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-26 04:01 ET",
-        "pub_ts": 1795683696.0
-      },
-      {
-        "title": "Musk says will give two SpaceX shares to 'every child in America'",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/musk-says-two-spacex-shares-085820244.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-26 03:58 ET",
-        "pub_ts": 1795683500.0
-      },
-      {
-        "title": "SPCX Wins Million-Satellite Nod And Retail Attention — But ASTS Leads Space Stocks Into Thanksgiving",
-        "url": "https://stocktwits.com/news-articles/markets/equity/spcx-stock-million-satellite-nod-asts-leads-rklb-lunr-bksy-thanksgiving/cNbxLqbR9ZV?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-26 03:25 ET",
-        "pub_ts": 1795681559.0
       }
     ],
     "ASTS": [
@@ -3315,16 +3315,16 @@
     ]
   },
   "ticker_news_ts": {
-    "KORU": 1795691106.7094405,
-    "SOXL": 1795691106.7094405,
+    "KORU": 1795692632.128583,
+    "SOXL": 1795692632.128583,
     "SPY": 1795691296.8520343,
-    "DIA": 1795691106.7094405,
-    "SOXX": 1795691106.7094405,
-    "QQQ": 1795691106.7094405,
+    "DIA": 1795692632.128583,
+    "SOXX": 1795692632.128583,
+    "QQQ": 1795692632.128583,
     "SMH": 1795691296.8520343,
-    "IWM": 1795691106.7094405,
-    "IGV": 1795691106.7094405,
-    "TLT": 1795691106.7094405,
+    "IWM": 1795692632.128583,
+    "IGV": 1795692632.128583,
+    "TLT": 1795692632.128583,
     "GLD": 1795691244.6898546,
     "SQQQ": 1795691244.6898546,
     "TSM": 1795691345.0477648,
@@ -3346,15 +3346,15 @@
     "CRWV": 1795691345.0477648,
     "NBIS": 1795691345.0477648,
     "APLD": 1795691345.0477648,
-    "VST": 1795691106.7094405,
-    "BE": 1795691106.7094405,
-    "CRDO": 1795691106.7094405,
-    "COHR": 1795691106.7094405,
+    "VST": 1795692632.128583,
+    "BE": 1795692632.128583,
+    "CRDO": 1795692632.128583,
+    "COHR": 1795692632.128583,
     "MRVL": 1795691345.0477648,
     "LITE": 1795691345.0477648,
-    "AAOI": 1795691106.7094405,
-    "SPCX": 1795691106.7094405,
-    "ASTS": 1795691106.7094405,
+    "AAOI": 1795692632.128583,
+    "SPCX": 1795692632.128583,
+    "ASTS": 1795692632.128583,
     "AXTI": 1795691345.0477648,
     "NASA": 1795691244.6898546,
     "LUNR": 1795691244.6898546,
@@ -3391,7 +3391,7 @@
     "V": 1795691296.8520343,
     "CAT": 1795691296.8520343,
     "FN": 1795691345.0477648,
-    "GLW": 1795691106.7094405,
+    "GLW": 1795692632.128583,
     "ANT": 1795691296.8520343,
     "XAUUSD": 1795691345.0477648,
     "KOSPI": 1795691345.0477648,
