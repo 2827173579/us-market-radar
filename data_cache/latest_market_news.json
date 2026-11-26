@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795662280.277,
-  "updated_at_et": "11-25 22:04 ET",
-  "updated_at_kst": "12:04 KST",
+  "updated_at_ts": 1795662320.279,
+  "updated_at_et": "11-25 22:05 ET",
+  "updated_at_kst": "12:05 KST",
   "macro_calendar": [
     {
       "event_id": "1599680",
@@ -2721,6 +2721,13 @@
     ],
     "ORCL": [
       {
+        "title": "Is Oracle the First AI Casualty as It Sheds 70% of Its Value?",
+        "url": "https://beincrypto.com/oracle-stock-falls-70-ai-debt/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 21:15 ET",
+        "pub_ts": 1795659300.0
+      },
+      {
         "title": "Oracle Bonds Yield a Towering 9% on Debt and Data-Center Concerns. Are They a Buy?",
         "url": "https://finance.yahoo.com/m/7cf2c7c4-a034-30e7-a2f0-b3ea8684f897/oracle-bonds-yield-a-towering.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2747,16 +2754,16 @@
         "source": "Yahoo Finance",
         "time": "11-25 20:19 ET",
         "pub_ts": 1795655993.0
-      },
-      {
-        "title": "Amdocs (DOX) Stock Is Up 4.6% Today Without Company News",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/amdocs-dox-stock-4-6-181513799.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 13:15 ET",
-        "pub_ts": 1795630513.0
       }
     ],
     "COIN": [
+      {
+        "title": "Coinbase CEO on the Anthropic and SpaceX IPOs: Who Actually Made the Money?",
+        "url": "https://beincrypto.com/coinbase-ceo-anthropic-spacex-ipo-money/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 21:10 ET",
+        "pub_ts": 1795659004.0
+      },
       {
         "title": "What Sent Coinbase Stock Lower?",
         "url": "https://www.trefis.com/stock/coin/articles/629018/what-sent-coinbase-stock-lower/2026-11-25?.tsrc=rss",
@@ -2784,13 +2791,6 @@
         "source": "Yahoo Finance",
         "time": "11-25 12:49 ET",
         "pub_ts": 1795628959.0
-      },
-      {
-        "title": "Wedbush starts Robinhood, Coinbase at Outperform in fintech coverage launch",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/wedbush-starts-robinhood-coinbase-outperform-163557118.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 11:35 ET",
-        "pub_ts": 1795624557.0
       }
     ],
     "LLY": [
@@ -3239,39 +3239,39 @@
     ],
     "ANT": [
       {
-        "title": "Dow Jones Futures: Market Goes On Wild Ride. Nasdaq, Nvidia Slash Losses While Anthropic Reverses Higher.",
-        "url": "https://finance.yahoo.com/m/158e82fc-b889-34b6-8704-99a49e9a83ae/dow-jones-futures%3A-market.html",
-        "source": "Investor's Business Daily",
-        "time": "11-25 18:56 ET",
-        "pub_ts": 1795650985.0
+        "title": "Dow Jones Futures Rise; Market Goes On Wild Ride As Nasdaq Slashes Losses",
+        "url": "https://finance.yahoo.com/m/158e82fc-b889-34b6-8704-99a49e9a83ae/dow-jones-futures-rise%3B.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 21:17 ET",
+        "pub_ts": 1795659448.0
       },
       {
-        "title": "Anthropic Stock Is Down 33% From Its All-Time High. Here's What a $5,000 Investment Could Be Worth in 1 Year.",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/anthropic-stock-down-33-time-223502469.html",
-        "source": "Motley Fool",
-        "time": "11-25 17:35 ET",
-        "pub_ts": 1795646102.0
+        "title": "Anthropic's $150 Wall Street target comes with a $900B catch",
+        "url": "https://www.thestreet.com/investing/anthropic-150-wall-street-target-comes-with-900b-catch?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 21:17 ET",
+        "pub_ts": 1795659420.0
       },
       {
-        "title": "AI stock rout deepens but damage is limited by afternoon bounce",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/ai-stock-rout-deepens-damage-222733772.html",
-        "source": "Reuters",
-        "time": "11-25 17:27 ET",
-        "pub_ts": 1795645653.0
+        "title": "Coinbase CEO on the Anthropic and SpaceX IPOs: Who Actually Made the Money?",
+        "url": "https://beincrypto.com/coinbase-ceo-anthropic-spacex-ipo-money/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 21:10 ET",
+        "pub_ts": 1795659004.0
       },
       {
-        "title": "Stocks turn volatile as Jensen Huang rebound rally fades",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/stock-futures-plummet-jensen-huang-141049035.html",
-        "source": "CBS News",
-        "time": "11-25 16:51 ET",
-        "pub_ts": 1795643503.0
+        "title": "SpaceX wins approval to launch one million AI data centre satellites",
+        "url": "https://www.proactiveinvestors.com/companies/news/1102478/spacex-wins-approval-to-launch-one-million-ai-data-centre-satellites-1102478.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 19:27 ET",
+        "pub_ts": 1795652820.0
       },
       {
-        "title": "Stock Market Today: Dow Swings Into A Win; Anthropic Almost Retakes Its IPO Price",
-        "url": "https://finance.yahoo.com/m/90407e46-3b17-34e8-8c82-527bf00b63e4/stock-market-today%3A-dow.html",
-        "source": "Investor's Business Daily",
-        "time": "11-25 16:51 ET",
-        "pub_ts": 1795643474.0
+        "title": "Bill Gurley: Investors Weren’t “Scrambling to Actually Own Anthropic.” That’s a Problem for Amazon and Alphabet",
+        "url": "https://www.tikr.com/blog/bill-gurley-investors-werent-scrambling-to-actually-own-anthropic-thats-a-problem-for-amazon-and-alphabet?ref=yahoofinance&tlnk=yf-261125-5qg4553j&.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 18:43 ET",
+        "pub_ts": 1795650186.0
       }
     ],
     "XAUUSD": [
@@ -3322,20 +3322,20 @@
     ]
   },
   "ticker_news_ts": {
-    "KORU": 1795660744.7867603,
-    "SOXL": 1795660744.7867603,
+    "KORU": 1795662320.2790177,
+    "SOXL": 1795662320.2790177,
     "SPY": 1795661995.6876915,
-    "DIA": 1795660744.7867603,
-    "SOXX": 1795660744.7867603,
-    "QQQ": 1795660744.7867603,
+    "DIA": 1795662320.2790177,
+    "SOXX": 1795662320.2790177,
+    "QQQ": 1795662320.2790177,
     "SMH": 1795661995.6876915,
-    "IWM": 1795660744.7867603,
-    "IGV": 1795660744.7867603,
-    "TLT": 1795660744.7867603,
-    "GLD": 1795660744.7867603,
+    "IWM": 1795662320.2790177,
+    "IGV": 1795662320.2790177,
+    "TLT": 1795662320.2790177,
+    "GLD": 1795662320.2790177,
     "SQQQ": 1795660784.9688206,
     "TSM": 1795661995.6876915,
-    "VIXY": 1795660744.7867603,
+    "VIXY": 1795662320.2790177,
     "SOXS": 1795660784.9688206,
     "NVDA": 1795660784.9688206,
     "AMD": 1795660784.9688206,
@@ -3380,27 +3380,27 @@
     "MU": 1795661995.6876915,
     "SKHY": 1795661995.6876915,
     "WDC": 1795661995.6876915,
-    "STX": 1795660744.7867603,
+    "STX": 1795662320.2790177,
     "MSTR": 1795662280.2767165,
     "SNDK": 1795662280.2767165,
     "BTC-USD": 1795661995.6876915,
     "CRWD": 1795662280.2767165,
-    "ORCL": 1795660744.7867603,
-    "COIN": 1795660744.7867603,
-    "LLY": 1795660744.7867603,
-    "MRNA": 1795660744.7867603,
-    "NKE": 1795660744.7867603,
-    "MCD": 1795660744.7867603,
-    "PEP": 1795660744.7867603,
-    "XOM": 1795660744.7867603,
-    "JPM": 1795660744.7867603,
-    "WMT": 1795660744.7867603,
-    "V": 1795660744.7867603,
-    "CAT": 1795660744.7867603,
+    "ORCL": 1795662320.2790177,
+    "COIN": 1795662320.2790177,
+    "LLY": 1795662320.2790177,
+    "MRNA": 1795662320.2790177,
+    "NKE": 1795662320.2790177,
+    "MCD": 1795662320.2790177,
+    "PEP": 1795662320.2790177,
+    "XOM": 1795662320.2790177,
+    "JPM": 1795662320.2790177,
+    "WMT": 1795662320.2790177,
+    "V": 1795662320.2790177,
+    "CAT": 1795662320.2790177,
     "FN": 1795661995.6876915,
     "GLW": 1795662280.2767165,
-    "ANT": 1795660744.7867603,
-    "XAUUSD": 1795660744.7867603,
+    "ANT": 1795662320.2790177,
+    "XAUUSD": 1795662320.2790177,
     "KOSPI": 1795661995.6876915
   },
   "opex_shield": {
