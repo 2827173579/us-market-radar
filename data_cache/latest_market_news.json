@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795695778.492,
-  "updated_at_et": "11-26 07:22 ET",
-  "updated_at_kst": "21:22 KST",
+  "updated_at_ts": 1795695825.778,
+  "updated_at_et": "11-26 07:23 ET",
+  "updated_at_kst": "21:23 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -909,6 +909,20 @@
     ],
     "NVDA": [
       {
+        "title": "5 things I'm thankful for in AI",
+        "url": "https://finance.yahoo.com/video/5-things-im-thankful-ai-120000522.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-26 07:00 ET",
+        "pub_ts": 1795694400.0
+      },
+      {
+        "title": "Does S&P's Credit Warning Matter For Nvidia Stock?",
+        "url": "https://www.trefis.com/stock/nvda/articles/629186/does-s-p-s-credit-warning-matter-for-nvidia-stock/2026-11-26?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-26 07:03 ET",
+        "pub_ts": 1795694603.0
+      },
+      {
         "title": "Nvidia Makes A Record $115.8 Billion In Revenue. Now S&P Warns Its Credit Rating Could Be Cut In 90 Days.",
         "url": "https://www.ibtimes.com/nvidia-credit-downgrade-governance-concerns-3810220?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -928,20 +942,6 @@
         "source": "Yahoo Finance",
         "time": "11-26 06:30 ET",
         "pub_ts": 1795692636.0
-      },
-      {
-        "title": "Nvidia Wins Three Wall Street Upgrades as Jensen Huang Returns as CEO",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/nvidia-wins-three-wall-street-112625833.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-26 06:26 ET",
-        "pub_ts": 1795692385.0
-      },
-      {
-        "title": "Michael Burry flips mostly long as tech stocks slide",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/michael-burry-flips-mostly-long-112229765.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-26 06:22 ET",
-        "pub_ts": 1795692149.0
       }
     ],
     "AMD": [
@@ -1057,6 +1057,13 @@
     ],
     "AVGO": [
       {
+        "title": "UBS’s $425 Target Says Broadcom’s Selloff Went Too Far",
+        "url": "https://www.tikr.com/blog/ubss-425-target-says-broadcoms-selloff-went-too-far?ref=yahoofinance&tlnk=yf-261126-xrf8pwvw&.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-26 06:51 ET",
+        "pub_ts": 1795693883.0
+      },
+      {
         "title": "What iShares PHLX SOX Semi (SOXX) Sold: AMD Leads on Nov. 24",
         "url": "https://finance.yahoo.com/markets/stocks/articles/ishares-phlx-sox-semi-soxx-110411069.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1083,13 +1090,6 @@
         "source": "Yahoo Finance",
         "time": "11-26 03:30 ET",
         "pub_ts": 1795681834.0
-      },
-      {
-        "title": "Broadcom Stock Hasn't Traded This Low Since July 2025. I Think It's a Buy.",
-        "url": "https://www.fool.com/investing/2026/11/25/broadcom-stock-hasn-t-traded-this-low-since-july-2025-i-think-it-s-a-buy/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 20:03 ET",
-        "pub_ts": 1795654982.0
       }
     ],
     "AMAT": [
@@ -3326,16 +3326,16 @@
     "IWM": 1795695677.1957953,
     "IGV": 1795695677.1957953,
     "TLT": 1795695677.1957953,
-    "GLD": 1795694312.118782,
-    "SQQQ": 1795694312.118782,
+    "GLD": 1795695825.7776139,
+    "SQQQ": 1795695825.7776139,
     "TSM": 1795694416.242457,
-    "VIXY": 1795694312.118782,
-    "SOXS": 1795694312.118782,
-    "NVDA": 1795694312.118782,
-    "AMD": 1795694312.118782,
+    "VIXY": 1795695825.7776139,
+    "SOXS": 1795695825.7776139,
+    "NVDA": 1795695825.7776139,
+    "AMD": 1795695825.7776139,
     "ASML": 1795694416.242457,
     "QCOM": 1795694416.242457,
-    "AVGO": 1795694312.118782,
+    "AVGO": 1795695825.7776139,
     "AMAT": 1795694416.242457,
     "META": 1795694416.242457,
     "GOOGL": 1795694416.242457,
@@ -3357,19 +3357,19 @@
     "SPCX": 1795695677.1957953,
     "ASTS": 1795695677.1957953,
     "AXTI": 1795694416.242457,
-    "NASA": 1795694312.118782,
-    "LUNR": 1795694312.118782,
-    "TSLA": 1795694312.118782,
-    "AXP": 1795694312.118782,
-    "RKLB": 1795694312.118782,
-    "KO": 1795694312.118782,
-    "FLY": 1795694312.118782,
-    "INTC": 1795694312.118782,
-    "VRT": 1795694312.118782,
+    "NASA": 1795695825.7776139,
+    "LUNR": 1795695825.7776139,
+    "TSLA": 1795695825.7776139,
+    "AXP": 1795695825.7776139,
+    "RKLB": 1795695825.7776139,
+    "KO": 1795695825.7776139,
+    "FLY": 1795695825.7776139,
+    "INTC": 1795695825.7776139,
+    "VRT": 1795695825.7776139,
     "HPE": 1795694363.070951,
-    "DELL": 1795694312.118782,
+    "DELL": 1795695825.7776139,
     "OKLO": 1795694363.070951,
-    "CEG": 1795694312.118782,
+    "CEG": 1795695825.7776139,
     "FPS": 1795694363.070951,
     "MU": 1795694416.242457,
     "SKHY": 1795694416.242457,
