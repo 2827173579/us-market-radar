@@ -1,5 +1,5 @@
 {
-  "updated_at_ts": 1795727108.957,
+  "updated_at_ts": 1795727154.919,
   "updated_at_et": "11-26 16:05 ET",
   "updated_at_kst": "06:05 KST",
   "macro_calendar": [],
@@ -1427,6 +1427,13 @@
     ],
     "NBIS": [
       {
+        "title": "Nebius (NBIS) Stock Could Be Undervalued As AI Sector Optimism Returns",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/nebius-nbis-stock-could-undervalued-200849495.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-26 15:08 ET",
+        "pub_ts": 1795723729.0
+      },
+      {
         "title": "CoreWeave Has the Backlog Lead, Nebius Has the Leverage Edge: Who Wins the Next $100B?",
         "url": "https://247wallst.com/investing/2026/11/26/coreweave-has-the-backlog-lead-nebius-has-the-leverage-edge-who-wins-the-next-100b/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1453,13 +1460,6 @@
         "source": "Yahoo Finance",
         "time": "11-25 12:45 ET",
         "pub_ts": 1795628700.0
-      },
-      {
-        "title": "Freedom Capital Markets’ $314 Target Says Nebius’s Selloff Went Too Far",
-        "url": "https://www.tikr.com/blog/freedom-capital-markets-314-target-says-nebiuss-selloff-went-too-far?ref=yahoofinance&tlnk=yf-261125-28wv344f&.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 12:02 ET",
-        "pub_ts": 1795626140.0
       }
     ],
     "APLD": [
@@ -1649,6 +1649,13 @@
     ],
     "MRVL": [
       {
+        "title": "Is Marvell Technology, Inc. (MRVL) a Hidden AI Infrastructure Winner for 2027?",
+        "url": "https://finance.yahoo.com/technology/ai/articles/marvell-technology-inc-mrvl-hidden-194807832.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-26 14:48 ET",
+        "pub_ts": 1795722487.0
+      },
+      {
         "title": "Marvell Options Price In 16% Earnings-Day Stock Swing",
         "url": "https://finance.yahoo.com/markets/options/articles/marvell-options-price-16-earnings-174309753.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1675,13 +1682,6 @@
         "source": "Yahoo Finance",
         "time": "11-26 03:27 ET",
         "pub_ts": 1795681663.0
-      },
-      {
-        "title": "Analysts Expect More From Marvell Than Marvell Does",
-        "url": "https://www.trefis.com/stock/mrvl/articles/628747/analysts-expect-more-from-marvell-than-marvell-does/2026-11-25?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 17:24 ET",
-        "pub_ts": 1795645487.0
       }
     ],
     "LITE": [
@@ -2426,6 +2426,13 @@
     ],
     "SKHY": [
       {
+        "title": "SK hynix Stocks Rise 2.23% as Seoul Chip Rebound Fades From a 5.7% Gain",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/sk-hynix-stocks-rise-2-191120627.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-26 14:11 ET",
+        "pub_ts": 1795720280.0
+      },
+      {
         "title": "SK Hynix Just Revealed the Next Generation of DRAM. Can It Beat Micron in the Next Memory Supercycle?",
         "url": "https://247wallst.com/investing/2026/11/26/sk-hynix-just-revealed-the-next-generation-of-dram-can-it-beat-micron-in-the-next-memory-supercycle/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2452,13 +2459,6 @@
         "source": "Yahoo Finance",
         "time": "11-25 19:54 ET",
         "pub_ts": 1795654498.0
-      },
-      {
-        "title": "SK hynix (KOSE:A000660) AI Memory Narrative Puts Valuation Back In Focus",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/sk-hynix-kose-a000660-ai-211453290.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 16:14 ET",
-        "pub_ts": 1795641293.0
       }
     ],
     "WDC": [
@@ -2611,6 +2611,20 @@
     ],
     "BTC-USD": [
       {
+        "title": "Is Bitcoin a Good Investment for Building Wealth After a 50% Drop?",
+        "url": "https://247wallst.com/investing/cryptocurrency/2026/11/26/is-bitcoin-a-good-investment-for-building-wealth-after-a-50-drop/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-26 15:50 ET",
+        "pub_ts": 1795726217.0
+      },
+      {
+        "title": "Bitcoin’s Price Every Thanksgiving Since 2013",
+        "url": "https://247wallst.com/investing/cryptocurrency/2026/11/26/bitcoins-price-every-thanksgiving-since-2013/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-26 14:44 ET",
+        "pub_ts": 1795722296.0
+      },
+      {
         "title": "Bitcoin Holds Above $60K as Death Cross Clouds Thanksgiving Recovery",
         "url": "https://decrypt.co/384079/bitcoin-holds-above-60k-as-death-cross-clouds-thanksgiving-recovery?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2630,20 +2644,6 @@
         "source": "Yahoo Finance",
         "time": "11-26 11:37 ET",
         "pub_ts": 1795711020.0
-      },
-      {
-        "title": "Bitcoin Tops $60,000 as Risk Assets Rise in Holiday Trading",
-        "url": "https://finance.yahoo.com/markets/crypto/articles/bitcoin-tops-60-000-risk-162823539.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-26 11:28 ET",
-        "pub_ts": 1795710503.0
-      },
-      {
-        "title": "TeraWulf (WULF) CEO Sets 1 GW Muskie Leasing Terms To Avoid Dilution",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/terawulf-wulf-ceo-sets-1-161553042.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-26 11:15 ET",
-        "pub_ts": 1795709753.0
       }
     ],
     "CRWD": [
@@ -2833,6 +2833,13 @@
     ],
     "NKE": [
       {
+        "title": "Nike Stock Is Down 42% in 2026, and Lululemon Is Doing Even Worse",
+        "url": "https://247wallst.com/investing/2026/11/26/nike-stock-is-down-42-in-2026-and-lululemon-is-doing-even-worse/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-26 14:18 ET",
+        "pub_ts": 1795720694.0
+      },
+      {
         "title": "Nike Slumped to $34, Yet This Apparel Pick Surged 23% Since October",
         "url": "https://finance.yahoo.com/markets/stocks/articles/nike-slumped-34-yet-apparel-144519189.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2859,13 +2866,6 @@
         "source": "Yahoo Finance",
         "time": "11-25 10:32 ET",
         "pub_ts": 1795620743.0
-      },
-      {
-        "title": "Nike And Under Armour Stocks Are Down More Than 40%. What Will Black Friday Cost Them?",
-        "url": "https://www.trefis.com/stock/nke/articles/627535/nike-and-under-armour-stocks-are-down-more-than-40-what-will-black-friday-cost-them/2026-11-25?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 09:32 ET",
-        "pub_ts": 1795617157.0
       }
     ],
     "MCD": [
@@ -3341,22 +3341,22 @@
     "GOOGL": 1795727108.9571948,
     "MSFT": 1795727108.9571948,
     "AAPL": 1795727108.9571948,
-    "PLTR": 1795719179.7222383,
-    "NOW": 1795719179.7222383,
-    "AMZN": 1795719179.7222383,
-    "CRWV": 1795719179.7222383,
-    "NBIS": 1795719179.7222383,
-    "APLD": 1795719179.7222383,
+    "PLTR": 1795727154.9189186,
+    "NOW": 1795727154.9189186,
+    "AMZN": 1795727154.9189186,
+    "CRWV": 1795727154.9189186,
+    "NBIS": 1795727154.9189186,
+    "APLD": 1795727154.9189186,
     "VST": 1795726811.8549573,
     "BE": 1795726811.8549573,
     "CRDO": 1795726811.8549573,
     "COHR": 1795726811.8549573,
-    "MRVL": 1795719179.7222383,
-    "LITE": 1795719179.7222383,
+    "MRVL": 1795727154.9189186,
+    "LITE": 1795727154.9189186,
     "AAOI": 1795726811.8549573,
     "SPCX": 1795726811.8549573,
     "ASTS": 1795726811.8549573,
-    "AXTI": 1795719179.7222383,
+    "AXTI": 1795727154.9189186,
     "NASA": 1795727108.9571948,
     "LUNR": 1795727108.9571948,
     "TSLA": 1795727108.9571948,
@@ -3371,27 +3371,27 @@
     "OKLO": 1795727108.9571948,
     "CEG": 1795727108.9571948,
     "FPS": 1795727108.9571948,
-    "MU": 1795719179.7222383,
-    "SKHY": 1795719179.7222383,
-    "WDC": 1795719179.7222383,
-    "STX": 1795719179.7222383,
-    "MSTR": 1795719179.7222383,
+    "MU": 1795727154.9189186,
+    "SKHY": 1795727154.9189186,
+    "WDC": 1795727154.9189186,
+    "STX": 1795727154.9189186,
+    "MSTR": 1795727154.9189186,
     "SNDK": 1795727108.9571948,
-    "BTC-USD": 1795719179.7222383,
-    "CRWD": 1795719179.7222383,
-    "ORCL": 1795719179.7222383,
-    "COIN": 1795719179.7222383,
-    "LLY": 1795719179.7222383,
-    "MRNA": 1795719179.7222383,
-    "NKE": 1795719179.7222383,
-    "MCD": 1795719179.7222383,
-    "PEP": 1795719179.7222383,
+    "BTC-USD": 1795727154.9189186,
+    "CRWD": 1795727154.9189186,
+    "ORCL": 1795727154.9189186,
+    "COIN": 1795727154.9189186,
+    "LLY": 1795727154.9189186,
+    "MRNA": 1795727154.9189186,
+    "NKE": 1795727154.9189186,
+    "MCD": 1795727154.9189186,
+    "PEP": 1795727154.9189186,
     "XOM": 1795719221.1796463,
     "JPM": 1795719221.1796463,
     "WMT": 1795719221.1796463,
-    "V": 1795719179.7222383,
+    "V": 1795727154.9189186,
     "CAT": 1795719221.1796463,
-    "FN": 1795719179.7222383,
+    "FN": 1795727154.9189186,
     "GLW": 1795726811.8549573,
     "ANT": 1795719221.1796463,
     "XAUUSD": 1795719221.1796463,
