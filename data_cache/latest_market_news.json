@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795682005.363,
-  "updated_at_et": "11-26 03:33 ET",
-  "updated_at_kst": "17:33 KST",
+  "updated_at_ts": 1795682052.538,
+  "updated_at_et": "11-26 03:34 ET",
+  "updated_at_kst": "17:34 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -1383,6 +1383,13 @@
         "pub_ts": 1795640400.0
       },
       {
+        "title": "CoreWeave (CRWV) Debt Sale Wins Investment Grade Ratings",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/coreweave-crwv-debt-sale-wins-080908581.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-26 03:09 ET",
+        "pub_ts": 1795680548.0
+      },
+      {
         "title": "CoreWeave Stock Could Soar 125%, According to One Wall Street Analyst, Even After a Price Target Cut. Is It a Buy?",
         "url": "https://www.fool.com/investing/2026/11/25/coreweave-stock-could-soar-130-according-to-one-wall-street-analyst-even-after-a-price-target-cut-is-it-a-buy/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1402,13 +1409,6 @@
         "source": "Yahoo Finance",
         "time": "11-25 14:57 ET",
         "pub_ts": 1795636676.0
-      },
-      {
-        "title": "CoreWeave banks prepare $4.5 billion Meta-tied loan sale next week, Bloomberg says",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/coreweave-banks-prepare-4-5-183018691.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 13:30 ET",
-        "pub_ts": 1795631418.0
       }
     ],
     "NBIS": [
@@ -3304,33 +3304,33 @@
   "ticker_news_ts": {
     "KORU": 1795680850.7608156,
     "SOXL": 1795680850.7608156,
-    "SPY": 1795680510.267537,
+    "SPY": 1795682052.5381603,
     "DIA": 1795680850.7608156,
     "SOXX": 1795680850.7608156,
     "QQQ": 1795680850.7608156,
-    "SMH": 1795680510.267537,
+    "SMH": 1795682052.5381603,
     "IWM": 1795680850.7608156,
     "IGV": 1795680850.7608156,
     "TLT": 1795680850.7608156,
     "GLD": 1795680943.660106,
     "SQQQ": 1795680943.660106,
-    "TSM": 1795680510.267537,
+    "TSM": 1795682052.5381603,
     "VIXY": 1795680943.660106,
     "SOXS": 1795680943.660106,
     "NVDA": 1795680943.660106,
     "AMD": 1795680943.660106,
-    "ASML": 1795680510.267537,
-    "QCOM": 1795680510.267537,
+    "ASML": 1795682052.5381603,
+    "QCOM": 1795682052.5381603,
     "AVGO": 1795680943.660106,
-    "AMAT": 1795680510.267537,
-    "META": 1795680510.267537,
-    "GOOGL": 1795680510.267537,
-    "MSFT": 1795680510.267537,
-    "AAPL": 1795680510.267537,
-    "PLTR": 1795680510.267537,
-    "NOW": 1795680510.267537,
-    "AMZN": 1795680510.267537,
-    "CRWV": 1795680510.267537,
+    "AMAT": 1795682052.5381603,
+    "META": 1795682052.5381603,
+    "GOOGL": 1795682052.5381603,
+    "MSFT": 1795682052.5381603,
+    "AAPL": 1795682052.5381603,
+    "PLTR": 1795682052.5381603,
+    "NOW": 1795682052.5381603,
+    "AMZN": 1795682052.5381603,
+    "CRWV": 1795682052.5381603,
     "NBIS": 1795680510.267537,
     "APLD": 1795680510.267537,
     "VST": 1795680850.7608156,
@@ -3381,8 +3381,8 @@
     "GLW": 1795680850.7608156,
     "ANT": 1795681027.9755692,
     "XAUUSD": 1795681027.9755692,
-    "KOSPI": 1795680510.267537,
-    "KSTR": 1795680510.267537
+    "KOSPI": 1795682052.5381603,
+    "KSTR": 1795682052.5381603
   },
   "opex_shield": {
     "date": "2026-11-26",
