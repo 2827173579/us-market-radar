@@ -40,7 +40,7 @@ def compute_resilient_leaders_top5(stocks_data, macro_data=None, session_code="R
                     unified.append({**m, "ticker": tk})
 
     def _eff_pct(item):
-        if sess in ("REGULAR", "POST_MARKET", "WEEKEND"):
+        if sess in ("REGULAR", "POST_MARKET", "WEEKEND", "HOLIDAY"):
             val = item.get("pct_change")
         else:
             ext_p = item.get("ext_price") or 0
@@ -392,7 +392,7 @@ def resolve_long_tp_sl_ordering_guard(
     }
 
 
-def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_str="", has_realtime=False, target_watchlist=None, terminal_notifications=None, session_code="REGULAR", session_name="常规盘中", sync_side_effects=False, sync_dir=None, daily_sr_anchors=None, apac_doc=None):
+def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_str="", has_realtime=False, target_watchlist=None, terminal_notifications=None, session_code="REGULAR", session_name="常规盘中", sync_side_effects=False, sync_dir=None, daily_sr_anchors=None, apac_doc=None, apac_ml_doc=None):
     is_overnight = (session_code == "OVERNIGHT")
     if session_code == "OVERNIGHT":
         session_badge_html = '<span class="tool-link" style="color: #c084fc; border: 1px solid rgba(192, 132, 252, 0.45); background: rgba(192, 132, 252, 0.12); padding: 4px 7px; font-weight: 700;">🌌 美股夜盘</span>'
@@ -400,6 +400,8 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
         session_badge_html = '<span class="tool-link" style="color: #93c5fd; border: 1px solid rgba(147, 197, 253, 0.4); background: rgba(147, 197, 253, 0.1); padding: 4px 7px; font-weight: 700;">🌙 盘后交易</span>'
     elif session_code == "PRE_MARKET":
         session_badge_html = '<span class="tool-link" style="color: #fb923c; border: 1px solid rgba(251, 146, 60, 0.4); background: rgba(251, 146, 60, 0.1); padding: 4px 7px; font-weight: 700;">🌅 盘前交易</span>'
+    elif session_code == "HOLIDAY":
+        session_badge_html = '<span class="tool-link" style="color: #9ca3af; border: 1px solid rgba(156, 163, 175, 0.45); background: rgba(156, 163, 175, 0.14); padding: 4px 7px; font-weight: 700;">🏖️ 节假日休市</span>'
     elif session_code == "WEEKEND":
         session_badge_html = '<span class="tool-link" style="color: #9ca3af; border: 1px solid rgba(156, 163, 175, 0.4); background: rgba(156, 163, 175, 0.1); padding: 4px 7px;">☕ 周末休市</span>'
     else:
@@ -1242,7 +1244,7 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
     except Exception:
         intraday_path_forecasts = {}
 
-    # V5.6 亚太纯指数 (6 只) + A 股场内 ETF (10 只) 独立只读分区数据（绝不混入 stocks_data / macro_data）
+    # V5.6 亚太纯指数 (6 只) + A 股场内 ETF (10 只) 独立只读分区数据（绝不混入 stocks_data / macro_data，KOSPI 仅做前端视图交叉过滤不克隆）
     _apac_payload = apac_doc if isinstance(apac_doc, dict) and apac_doc else {}
     if not _apac_payload:
         try:
@@ -1251,8 +1253,17 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
         except Exception:
             _apac_payload = {}
     _apac_items_map = _apac_payload.get("items") if isinstance(_apac_payload.get("items"), dict) else {}
+    _apac_ml_payload = apac_ml_doc if isinstance(apac_ml_doc, dict) and apac_ml_doc else {}
+    if not _apac_ml_payload:
+        try:
+            import apac_ml_predictor as _amp_term
+            _apac_ml_payload = _amp_term.load_apac_ml_predictions() or {}
+        except Exception:
+            _apac_ml_payload = {}
     apac_json = json.dumps(_apac_items_map, ensure_ascii=False, separators=(",", ":"))
-    apac_count_str = str(len(_apac_items_map))
+    apac_ml_json = json.dumps(_apac_ml_payload, ensure_ascii=False, separators=(",", ":"))
+    _has_kospi_cross = isinstance(macro_data, dict) and ("KOSPI" in macro_data)
+    apac_count_str = str(len(_apac_items_map) + (1 if _has_kospi_cross else 0))
 
     # 将标的数据转为 JSON 供前端动态渲染
     resilient_leaders_top5 = compute_resilient_leaders_top5(
@@ -3901,7 +3912,7 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
                 </div>
                 <div class="wl-leader-bar">
                     <button type="button" id="btnResilientTop5" class="wl-leader-btn" data-filter="resilient_top5" onclick="setWatchlistFilter('resilient_top5')" title="恐慌退潮真龙头：排除反向ETF，优先站稳VWAP + 20日超额RS + 相对SPY强弱">🛡️ 抗跌领涨 Top 5</button>
-                    <button type="button" id="btnApacAshare" class="wl-apac-btn" data-filter="apac_ashare" onclick="setWatchlistFilter('apac_ashare')" title="独立分区：6只亚太纯指数(pt) + 10只A股场内ETF(¥三位小数)，原生真实K线，不污染美股主池">🇨🇳 A股/亚太 (__PY_TPL_APAC_COUNT__)</button>
+                    <button type="button" id="btnApacAshare" class="wl-apac-btn" data-filter="apac_ashare" onclick="setWatchlistFilter('apac_ashare')" title="独立分区：6只亚太纯指数(pt) + KOSPI视图交叉归队 + 10只A股场内ETF(¥三位小数)，独立AI胜率与原生K线，不污染美股主池">🇨🇳 A股/亚太 (__PY_TPL_APAC_COUNT__)</button>
                 </div>
                 <!-- 二级细分赛道下拉 + 展开按钮 -->
                 <div class="wl-secondary-bar">
@@ -4415,6 +4426,7 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
         const SESSION_CODE = "__PY_TPL_SESSION_CODE__";
         const RESILIENT_LEADERS_INIT = __PY_TPL_LEADERS_JSON__;
         const APAC_ASHARE_DATA = __PY_TPL_APAC_JSON__;
+        const APAC_ML_PREDICTIONS = __PY_TPL_APAC_ML_JSON__;
 
         let currentFilter = "all";
         let currentCenterView = "kline";
@@ -4868,7 +4880,7 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
             });
 
             const effPct = (it) => {
-                if (SESSION_CODE === "REGULAR" || SESSION_CODE === "POST_MARKET" || SESSION_CODE === "WEEKEND") {
+                if (SESSION_CODE === "REGULAR" || SESSION_CODE === "POST_MARKET" || SESSION_CODE === "WEEKEND" || SESSION_CODE === "HOLIDAY") {
                     const v = Number(it.pct_change || 0);
                     return Number.isFinite(v) ? v : 0;
                 }
@@ -5338,6 +5350,21 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
             let intraRows = isKospi
                 ? (Array.isArray(m.krx_intraday_5m) ? m.krx_intraday_5m.slice() : [])
                 : (Array.isArray(m.intraday_5m) ? m.intraday_5m.slice() : []);
+            // 剔除午休空档死直线（按交易 Bar 序号等距绘制，避免 11:30~13:00 午休横线）
+            if (!isKospi && intraRows.length > 0) {
+                const apMkt = String(m.market || (isCny ? "CN" : "")).toUpperCase();
+                intraRows = intraRows.filter(r => {
+                    const t = String((r && r[0]) || "").slice(-5);
+                    if (!t.includes(":")) return true;
+                    const parts = t.split(":");
+                    const mins = Number(parts[0]) * 60 + Number(parts[1]);
+                    if (!Number.isFinite(mins)) return true;
+                    if (apMkt === "CN" && mins > (11 * 60 + 30) && mins < (13 * 60)) return false;
+                    if (apMkt === "HK" && mins > (12 * 60) && mins < (13 * 60)) return false;
+                    if (apMkt === "JP" && mins > (11 * 60 + 30) && mins < (12 * 60 + 30)) return false;
+                    return true;
+                });
+            }
             const useIntra = (_kospiNativeMode === "5m") && intraRows.length >= 2;
             const rows = useIntra ? intraRows : dailyRows;
 
@@ -6167,11 +6194,34 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
         function getPlainStatusBadge(item, pal) {
             if (item && item.is_apac_ashare) {
                 const isIdx = (item.price_unit === "pts" || item.kind === "APAC_INDEX");
+                const apAi = (typeof APAC_ML_PREDICTIONS !== "undefined" && APAC_ML_PREDICTIONS && APAC_ML_PREDICTIONS.by_ticker)
+                    ? APAC_ML_PREDICTIONS.by_ticker[String(item.ticker || "").toUpperCase()]
+                    : null;
+                if (apAi && apAi.calibrated_win_rate_pct !== undefined) {
+                    const lWr = Number(apAi.calibrated_win_rate_pct || 50);
+                    const sWr = Number(apAi.calibrated_short_win_rate_pct || 50);
+                    const newTag = apAi.is_short_sample ? "·次新" : "";
+                    if (lWr >= sWr && lWr >= 52.0) {
+                        return { label: `🤖 多${lWr.toFixed(0)}%${newTag}`, color: pal.up, bg: pal.upBg };
+                    }
+                    if (sWr > lWr && sWr >= 52.0) {
+                        return { label: `🤖 空${sWr.toFixed(0)}%${newTag}`, color: pal.down, bg: pal.downBg };
+                    }
+                    return { label: `🤖 ${lWr.toFixed(0)}%${newTag}`, color: isIdx ? pal.accent : pal.warn, bg: isIdx ? pal.accentBg : pal.warnBg };
+                }
                 return {
                     label: item._apac_badge || (isIdx ? "🌏 指数" : "🇨🇳 ETF"),
                     color: isIdx ? pal.accent : pal.warn,
                     bg: isIdx ? pal.accentBg : pal.warnBg
                 };
+            }
+            if (item && item._kospi_apac_view) {
+                const ksAi = (AI_PREDICTIONS && AI_PREDICTIONS.by_ticker) ? AI_PREDICTIONS.by_ticker["KOSPI"] : null;
+                if (ksAi && ksAi.calibrated_win_rate_pct !== undefined) {
+                    const lWr = Number(ksAi.calibrated_win_rate_pct || 50);
+                    return { label: `🇰🇷 多${lWr.toFixed(0)}%`, color: lWr >= 52 ? pal.up : pal.accent, bg: lWr >= 52 ? pal.upBg : pal.accentBg };
+                }
+                return { label: "🇰🇷 指数", color: pal.accent, bg: pal.accentBg };
             }
             const sig = String(item.signal || "");
             const isTakeProfit = Boolean(item.is_take_profit || sig.includes("止盈") || sig.includes("超买") || sig.includes("冲顶"));
@@ -6318,18 +6368,26 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
             let items = [];
 
             if (filter === "apac_ashare") {
+                // KOSPI 纯前端视图交叉归队：直接复用 MACRO_DATA["KOSPI"]，绝不克隆重复节点
+                if (MACRO_DATA && MACRO_DATA["KOSPI"]) {
+                    const ksEntry = buildMacroListEntry("KOSPI", MACRO_DATA["KOSPI"]);
+                    ksEntry._kospi_apac_view = true;
+                    items.push(ksEntry);
+                }
                 const apacMap = (typeof APAC_ASHARE_DATA !== "undefined" && APAC_ASHARE_DATA) ? APAC_ASHARE_DATA : {};
+                const apacAiMap = (typeof APAC_ML_PREDICTIONS !== "undefined" && APAC_ML_PREDICTIONS && APAC_ML_PREDICTIONS.by_ticker) ? APAC_ML_PREDICTIONS.by_ticker : {};
                 Object.keys(apacMap).forEach(k => {
                     const a = apacMap[k];
                     if (!a || typeof a !== "object") return;
                     const p = Number(a.pct_change || 0);
                     const isIdx = (a.price_unit === "pts" || a.kind === "APAC_INDEX");
+                    const apAi = apacAiMap[String(k).toUpperCase()] || null;
                     items.push({
                         ...a,
                         ticker: k,
                         last: Number(a.last || a.price || 0),
                         pct_change: p,
-                        signal: p >= 1.2 ? "多头偏强" : (p <= -1.5 ? "回调观察" : "震荡整理"),
+                        signal: (apAi && apAi.signal_cn) ? apAi.signal_cn : (p >= 1.2 ? "多头偏强" : (p <= -1.5 ? "回调观察" : "震荡整理")),
                         _apac_badge: isIdx ? "🌏 指数" : "🇨🇳 ETF",
                         is_apac_ashare: true,
                     });
@@ -6634,7 +6692,7 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
             const curLast = data.last || 0;
             const curActive = (data.ext_price && data.ext_price > 0) ? data.ext_price : (data.active_price || curLast);
             const curMa50 = data.ma50 || 0;
-            const curEma20 = data.ema20 || curMa50;
+            const curEma20 = data.ema20 || data.ma20 || curMa50;
             const curBias = data.bias !== undefined ? data.bias : (curMa50 > 0 ? ((curActive - curMa50) / curMa50 * 100) : 0);
             const curAtr = data.atr || 0;
             const curRsi = data.rsi !== undefined ? data.rsi : 50;
@@ -6671,7 +6729,8 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
             const isIpo = Boolean(data.is_ipo_pending || sig.includes("IPO"));
 
             const aiMap = (AI_PREDICTIONS && AI_PREDICTIONS.by_ticker) ? AI_PREDICTIONS.by_ticker : {};
-            const aiItem = aiMap[ticker] || null;
+            const apacAiMapCur = (typeof APAC_ML_PREDICTIONS !== "undefined" && APAC_ML_PREDICTIONS && APAC_ML_PREDICTIONS.by_ticker) ? APAC_ML_PREDICTIONS.by_ticker : {};
+            const aiItem = isApacCur ? (apacAiMapCur[String(ticker || "").toUpperCase()] || null) : (aiMap[ticker] || null);
             const aiNowR1 = Number((aiItem && aiItem.r1) || 0);
 
             // 3. 更新专业抽屉 ①：基础技术面指标
@@ -6877,14 +6936,14 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
             const fibREl = document.getElementById("pFibReason");
             const macREl = document.getElementById("pMacroReason");
             const dirEl = document.getElementById("pActionDirective");
-            if (isPtsCur && actionDirective) {
-                actionDirective = actionDirective.replace(/\$([0-9]+(?:\.[0-9]+)?)/g, (_, d) => fmtAssetPx(Number(d), ticker));
+            if (isNonUsdCur && actionDirective) {
+                actionDirective = actionDirective.replace(/\$([0-9,]+(?:\.[0-9]+)?)/g, (_, d) => fpCur(Number(d.replace(/,/g, ""))));
             }
             if (maREl) maREl.innerText = maReason;
             if (volREl) volREl.innerText = volReason;
             if (fibREl) fibREl.innerText = fibReason;
             if (macREl) macREl.innerText = macroReason;
-            if (dirEl) dirEl.innerHTML = isPtsCur ? String(actionDirective).replace(/\$([0-9]+(?:\.[0-9]+)?)/g, (_, d) => fmtAssetPx(Number(d), ticker)) : actionDirective;
+            if (dirEl) dirEl.innerHTML = isNonUsdCur ? String(actionDirective).replace(/\$([0-9,]+(?:\.[0-9]+)?)/g, (_, d) => fpCur(Number(d.replace(/,/g, "")))) : actionDirective;
 
             // 5. 日内微结构数据 (Group ① 抽屉内实时同步)
             const intraBannerEl = document.getElementById("pIntradayBanner");
@@ -6995,8 +7054,10 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
             }
             const vwapEl = document.getElementById("pVwap");
             if (vwapEl) {
-                const vwapVal = data.vwap || curLast;
-                const vwapDiff = vwapVal > 0 ? ((curActive - vwapVal) / vwapVal * 100) : 0;
+                const vwapVal = Number(data.vwap || 0) > 0 ? Number(data.vwap) : curLast;
+                const vwapDiff = (data.vwap_diff_pct !== undefined && data.vwap_diff_pct !== null && Number.isFinite(Number(data.vwap_diff_pct)))
+                    ? Number(data.vwap_diff_pct)
+                    : (vwapVal > 0 ? ((curActive - vwapVal) / vwapVal * 100) : 0);
                 vwapEl.innerHTML = vwapVal > 0 ? `${fpCur(vwapVal)} <span style="font-size:10px; color:${vwapDiff >= 0 ? pal.up : pal.down};">(${vwapDiff >= 0 ? '+' : ''}${vwapDiff.toFixed(2)}%)</span>` : "--";
             }
             const rsi5mEl = document.getElementById("pRsi5m");
@@ -7125,10 +7186,12 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
                     const apS2 = data.s2 ? `${fpCur(data.s2)}${uTag}` : "--";
                     const apR1 = data.r1 ? `${fpCur(data.r1)}${uTag}` : "--";
                     const apR2 = data.r2 ? `${fpCur(data.r2)}${uTag}` : "--";
-                    const apMa20 = data.ma20 ? `${fpCur(data.ma20)}${uTag}` : "--";
+                    const apEma20 = (data.ema20 || data.ma20) ? `${fpCur(data.ema20 || data.ma20)}${uTag}` : "--";
                     const apMa50 = data.ma50 ? `${fpCur(data.ma50)}${uTag}` : "--";
+                    const apPoc = data.poc ? `${fpCur(data.poc)}${uTag}` : "--";
                     const apRsi = (data.rsi !== null && data.rsi !== undefined) ? Number(data.rsi).toFixed(1) : "--";
-                    vixHintEl.innerHTML = `<b>${isCnyCur ? "🇨🇳 A股场内 ETF 独立分区" : "🌏 亚太纯指数独立分区"}：</b>支撑 <b>${apS1}</b> / ${apS2} ｜ 压力 <b>${apR1}</b> / ${apR2}<br><span style="color: var(--text-secondary);">MA20 ${apMa20} · MA50 ${apMa50} · RSI ${apRsi} · 成交额 ${turnDisp}（仅独立观察，不计入美股温度计与模拟跟单）</span>`;
+                    const apUsNote = (aiItem && aiItem.us_lead_date) ? ` · T-1美股外盘 ${escapeNewsHtml(aiItem.us_lead_date)} (${Number(aiItem.us_lead_adj_pct || 0) >= 0 ? '+' : ''}${Number(aiItem.us_lead_adj_pct || 0).toFixed(1)}%)` : "";
+                    vixHintEl.innerHTML = `<b>${isCnyCur ? "🇨🇳 A股场内 ETF 独立分区" : "🌏 亚太纯指数独立分区"}：</b>支撑 <b>${apS1}</b> / ${apS2} ｜ 压力 <b>${apR1}</b> / ${apR2} ｜ 筹码POC <b>${apPoc}</b><br><span style="color: var(--text-secondary);">EMA20 ${apEma20} · MA50 ${apMa50} · RSI ${apRsi} · 成交额 ${turnDisp}${apUsNote}（独立AI引擎 · 零美股温度计与跟单污染）</span>`;
                     vixHintEl.style.display = "block";
                 } else {
                     vixHintEl.style.display = "none";
@@ -7137,7 +7200,8 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
 
             const bandEl = document.getElementById("pEntryFibBand");
             if (bandEl) {
-                bandEl.innerText = isInverseHedge ? "🛡️ 反向衰减对冲(不计黄金坑)" : ((curFibLow && curFibHigh) ? (`${fpCur(curFibLow)} ~ ${fpCur(curFibHigh)}`) : "--");
+                const pocInline = (isApacCur && data.poc && Number(data.poc) > 0) ? ` · POC ${fpCur(data.poc)}` : "";
+                bandEl.innerText = isInverseHedge ? "🛡️ 反向衰减对冲(不计黄金坑)" : ((curFibLow && curFibHigh) ? (`${fpCur(curFibLow)} ~ ${fpCur(curFibHigh)}${pocInline}`) : (pocInline ? `POC ${fpCur(data.poc)}` : "--"));
             }
 
             // 6. Layer A：小白 3 秒决策卡渲染 (结论 + 三列直白价格 + 多空温度条)
@@ -7604,7 +7668,7 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
                             return m;
                         });
                     }
-                    scScriptEl.innerText = isPtsCur ? rawScTxt.replace(/\$([0-9]+(?:\.[0-9]+)?)/g, (_, d) => fpCur(Number(d))) : rawScTxt;
+                    scScriptEl.innerText = isNonUsdCur ? rawScTxt.replace(/\$([0-9,]+(?:\.[0-9]+)?)/g, (_, d) => fpCur(Number(d.replace(/,/g, "")))) : rawScTxt;
                     const srStateSc = String(aiItem.sr_breach_state || "INTACT").toUpperCase();
                     scScriptEl.style.borderLeftColor = (srStateSc === "ALL_SUPPORT_BREACHED")
                         ? pal.down
@@ -7707,40 +7771,54 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
                 const apS1v = Number(data.s1 || 0);
                 const apS2v = Number(data.s2 || 0);
                 const apR1v = Number(data.r1 || 0);
+                const apSlv = Number(data.entry_stop_loss || 0) > 0 ? Number(data.entry_stop_loss) : (apS1v > 0 ? apS1v * 0.992 : apS2v);
                 const apPctNow = Number(data.pct_change || 0);
+                const apAiDir = aiItem ? Number(aiItem.direction_score || 0) : 0;
+                const apAiL = aiItem ? Number(aiItem.calibrated_win_rate_pct || 50) : null;
+                const apAiS = aiItem ? Number(aiItem.calibrated_short_win_rate_pct || 50) : null;
+                const apNewTag = (aiItem && aiItem.is_short_sample) ? " · 次新样本" : "";
                 if (vTitle) {
-                    vTitle.innerText = apPctNow >= 1.2
-                        ? `${isCnyCur ? "🇨🇳" : "🌏"} 亚太/A股偏强运行 · 顺势跟踪`
-                        : (apPctNow <= -1.5 ? `${isCnyCur ? "🇨🇳" : "🌏"} 短线回调承压 · 观察支撑` : `${isCnyCur ? "🇨🇳" : "🌏"} 震荡整理 · 围绕撑压观察`);
-                    vTitle.style.color = apPctNow >= 1.2 ? pal.up : (apPctNow <= -1.5 ? pal.down : pal.warn);
+                    if (aiItem && aiItem.action) {
+                        vTitle.innerText = `${isCnyCur ? "🇨🇳" : "🌏"} ${aiItem.action}`;
+                        vTitle.style.color = apAiDir >= 5.0 ? pal.up : (apAiDir <= -5.0 ? pal.down : pal.warn);
+                    } else {
+                        vTitle.innerText = apPctNow >= 1.2
+                            ? `${isCnyCur ? "🇨🇳" : "🌏"} 亚太/A股偏强运行 · 顺势跟踪`
+                            : (apPctNow <= -1.5 ? `${isCnyCur ? "🇨🇳" : "🌏"} 短线回调承压 · 观察支撑` : `${isCnyCur ? "🇨🇳" : "🌏"} 震荡整理 · 围绕撑压观察`);
+                        vTitle.style.color = apPctNow >= 1.2 ? pal.up : (apPctNow <= -1.5 ? pal.down : pal.warn);
+                    }
                 }
                 if (vSub) {
-                    vSub.innerText = `${data.sub || data.name || ticker} · 独立只读分区（${isCnyCur ? "人民币 ¥ 三位小数" : "指数点数 pt"} · 零美股期权与跟单污染）。`;
+                    const aiSubBit = (apAiL !== null && apAiS !== null)
+                        ? `独立AI 5日多 ${apAiL.toFixed(1)}% vs 空 ${apAiS.toFixed(1)}%${apNewTag} · `
+                        : "";
+                    vSub.innerText = `${aiSubBit}${data.sub || data.name || ticker}（${isCnyCur ? "人民币 ¥ 三位小数" : "指数点数 pt"} · 零美股期权与跟单污染）。`;
                 }
-                if (priceLabelEl) priceLabelEl.innerText = "🧭 下方支撑 S1";
+                if (priceLabelEl) priceLabelEl.innerText = "🧭 参考低吸 / 支撑 S1";
                 if (optEl) { optEl.innerText = apS1v > 0 ? `${fpCur(apS1v)}${apUnit}` : "--"; optEl.style.color = pal.up; }
                 if (noteEl) {
                     const dS1 = (topPxVal > 0 && apS1v > 0) ? ((apS1v - topPxVal) / topPxVal * 100) : null;
-                    noteEl.innerText = dS1 !== null ? `距现价 ${dS1 >= 0 ? "+" : ""}${dS1.toFixed(1)}%` : "60日支撑参考";
+                    noteEl.innerText = dS1 !== null ? `距现价 ${dS1 >= 0 ? "+" : ""}${dS1.toFixed(1)}%` : "结构支撑参考";
                 }
                 const tileTpLblAp = document.getElementById("pTileTpLbl");
                 const tileSlLblAp = document.getElementById("pTileStopLbl");
-                if (tileTpLblAp) tileTpLblAp.innerText = "上方压力 R1";
-                if (tileSlLblAp) tileSlLblAp.innerText = "深度支撑 S2";
-                if (tpBegEl) { tpBegEl.innerText = apR1v > 0 ? `${fpCur(apR1v)}${apUnit}` : "--"; tpBegEl.style.color = pal.down; }
+                if (tileTpLblAp) tileTpLblAp.innerText = "上方压力 / 目标 R1";
+                if (tileSlLblAp) tileSlLblAp.innerText = "防守止损线 (贴近S1)";
+                if (stopLabelEl) stopLabelEl.innerText = "🛡️ 防守止损线 (贴近S1)";
+                if (tpBegEl) { tpBegEl.innerText = apR1v > 0 ? `${fpCur(apR1v)}${apUnit}` : "--"; tpBegEl.style.color = pal.up; }
                 if (tpPctEl) {
                     const dR1 = (topPxVal > 0 && apR1v > 0) ? ((apR1v - topPxVal) / topPxVal * 100) : null;
-                    tpPctEl.innerText = dR1 !== null ? `距现价 ${dR1 >= 0 ? "+" : ""}${dR1.toFixed(1)}%` : "60日压力参考";
-                    tpPctEl.style.color = pal.down;
+                    tpPctEl.innerText = dR1 !== null ? `距现价 ${dR1 >= 0 ? "+" : ""}${dR1.toFixed(1)}%` : "结构压力参考";
+                    tpPctEl.style.color = pal.up;
                 }
-                if (stopEl) { stopEl.innerText = apS2v > 0 ? `${fpCur(apS2v)}${apUnit}` : "--"; stopEl.style.color = pal.warn; }
+                if (stopEl) { stopEl.innerText = apSlv > 0 ? `${fpCur(apSlv)}${apUnit}` : "--"; stopEl.style.color = pal.down; }
                 if (stopDistEl) {
-                    const dS2 = (topPxVal > 0 && apS2v > 0) ? ((apS2v - topPxVal) / topPxVal * 100) : null;
-                    stopDistEl.innerText = dS2 !== null ? `距现价 ${dS2 >= 0 ? "+" : ""}${dS2.toFixed(1)}%` : "二级防守参考";
-                    stopDistEl.style.color = pal.warn;
+                    const dSl = (topPxVal > 0 && apSlv > 0) ? ((apSlv - topPxVal) / topPxVal * 100) : null;
+                    stopDistEl.innerText = dSl !== null ? `距现价 ${dSl >= 0 ? "+" : ""}${dSl.toFixed(1)}% · 短线防守` : "短线防守线";
+                    stopDistEl.style.color = pal.down;
                 }
                 if (proEntryRef) proEntryRef.innerText = apS1v > 0 ? `${fpCur(apS1v)}${apUnit}` : "--";
-                if (proStopRef) proStopRef.innerText = apS2v > 0 ? `${fpCur(apS2v)}${apUnit}` : "--";
+                if (proStopRef) proStopRef.innerText = apSlv > 0 ? `${fpCur(apSlv)}${apUnit}` : "--";
             }
 
             // 8. 机构期权雷达 (Group ②)
@@ -8607,6 +8685,7 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
         "__PY_TPL_SESSION_CODE__": str(session_code or "REGULAR"),
         "__PY_TPL_LEADERS_JSON__": leaders_json,
         "__PY_TPL_APAC_JSON__": apac_json,
+        "__PY_TPL_APAC_ML_JSON__": apac_ml_json,
         "__PY_TPL_APAC_COUNT__": apac_count_str,
     }
     try:

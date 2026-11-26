@@ -672,11 +672,50 @@ def build_check_embed_dict(
         else:
             rsi_lbl = "超买防回落"
         bias20_txt = f"{bias20_v:+.2f}%" if bias20_v is not None else "--"
+        ema20_v = _opt_float(item.get("ema20")) or ma20_v
+        poc_v = _opt_float(item.get("poc"))
+        rs20_v = _opt_float(item.get("rs_20d"))
+        vwap_v = _opt_float(item.get("vwap"))
+        vwap_diff_v = _opt_float(item.get("vwap_diff_pct"))
+        sl_short_v = _opt_float(item.get("entry_stop_loss"))
+        ai_l = _opt_float(item.get("ai_long_win_rate_pct"))
+        ai_s = _opt_float(item.get("ai_short_win_rate_pct"))
+        ai_dir = _opt_float(item.get("ai_direction_score"))
+        ai_sig = str(item.get("ai_signal_cn") or "").strip()
+        ai_badge = str(item.get("ai_sample_badge") or "").strip()
+        ai_us_dt = str(item.get("ai_us_lead_date") or "").strip()
+
+        if sl_short_v is not None and sl_short_v > 0:
+            sr_lines.append(f"• 短线防守止损：**{fp(sl_short_v)}{unit_suffix}**{_rel_pct_str(sl_short_v, px_v)}" + (f" ｜ 成交密集区 POC：{fp(poc_v)}{unit_suffix}" if (poc_v and poc_v > 0) else ""))
+        elif poc_v is not None and poc_v > 0:
+            sr_lines.append(f"• 成交密集区 POC：**{fp(poc_v)}{unit_suffix}**{_rel_pct_str(poc_v, px_v)}")
+
         tech_lines = [
-            f"• **均线锚点**：MA20 {fp(ma20_v)}{unit_suffix}（偏离 {bias20_txt}）｜ MA50 {fp(ma50_v)}{unit_suffix}",
-            f"• **14日 RSI**：{_fmt_num(rsi_v, 1)}（{rsi_lbl}）",
-            "• **分区**：🇨🇳 亚太/A股只读行情（免费源）",
+            f"• **均线锚点**：EMA20 {fp(ema20_v)}{unit_suffix}（MA20 偏离 {bias20_txt}）｜ MA50 {fp(ma50_v)}{unit_suffix}",
+            f"• **14日 RSI**：{_fmt_num(rsi_v, 1)}（{rsi_lbl}）" + (f" ｜ **20日超额RS**：{rs20_v:+.1f}%" if rs20_v is not None else ""),
         ]
+        if vwap_v is not None and vwap_v > 0:
+            vd_s = f"（{vwap_diff_v:+.2f}%）" if vwap_diff_v is not None else ""
+            tech_lines.append(f"• **日内 VWAP**：{fp(vwap_v)}{unit_suffix}{vd_s}")
+        tech_lines.append("• **分区**：🇨🇳 亚太/A股只读行情（免费源 · 独立隔离）")
+
+        fields_a = [
+            {"name": "💴 实时行情" if is_cny else "📊 指数点位", "value": px_line[:1024], "inline": False},
+        ]
+        if ai_l is not None and ai_s is not None:
+            badge_s = f" · `{ai_badge}`" if ai_badge else ""
+            us_s = f" ｜ T-1外盘锚点：{ai_us_dt}" if ai_us_dt else ""
+            dir_s = f"{ai_dir:+.1f}" if ai_dir is not None else "--"
+            ai_val = (
+                f"5日多头胜率 **{ai_l:.1f}%** vs 空头 **{ai_s:.1f}%**（方向分 `{dir_s}`{badge_s}）\n"
+                f"• 独立模型结论：**{ai_sig or '中性整理'}**{us_s}"
+            )
+            fields_a.append({"name": "🤖 亚太独立 AI 胜率", "value": ai_val[:1024], "inline": False})
+        fields_a.extend([
+            {"name": "🧱 关键撑压" if is_cny else "🧱 关键点位", "value": "\n".join(sr_lines)[:1024], "inline": False},
+            {"name": "📐 技术体检", "value": "\n".join(tech_lines)[:1024], "inline": False},
+        ])
+
         apac_meta = snapshot.get("apac_ashare_meta") if isinstance(snapshot.get("apac_ashare_meta"), dict) else {}
         upd_cst_raw = str(apac_meta.get("updated_at_cst") or "").strip()
         upd_cst_clean = upd_cst_raw[:-3].strip() if upd_cst_raw.upper().endswith("CST") else upd_cst_raw
@@ -691,11 +730,7 @@ def build_check_embed_dict(
                 f"💬 一句话结论：**{verdict_a}**" + (f"\n定位：{sub_a}" if sub_a else "")
             ),
             "color": clr_a,
-            "fields": [
-                {"name": "💴 实时行情" if is_cny else "📊 指数点位", "value": px_line[:1024], "inline": False},
-                {"name": "🧱 关键撑压" if is_cny else "🧱 关键点位", "value": "\n".join(sr_lines)[:1024], "inline": False},
-                {"name": "📐 技术体检", "value": "\n".join(tech_lines)[:1024], "inline": False},
-            ],
+            "fields": fields_a,
             "timestamp": now_iso,
             "footer": {"text": apac_footer},
         }

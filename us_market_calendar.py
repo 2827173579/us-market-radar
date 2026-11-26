@@ -122,6 +122,13 @@ def get_us_market_holidays(year: int) -> frozenset:
     return frozenset(hols)
 
 
+def is_us_market_holiday(d: date) -> bool:
+    """判断指定日期是否为美股工作日全天法定休市日（如感恩节、圣诞节、独立日等）。"""
+    if d.weekday() >= 5:
+        return False
+    return d in get_us_market_holidays(d.year)
+
+
 def is_us_trading_day(d: date) -> bool:
     if d.weekday() >= 5:
         return False
@@ -187,11 +194,12 @@ def classify_us_market_session(
     post_market_code: str = "AFTER_HOURS",
 ) -> Tuple[str, str]:
     """
-    判断美东当前交易时段（精准支持半日市 13:00 ET 收盘、13:00~17:00 ET 盘后）：
+    判断美东当前交易时段（精准支持全天法定休市日 + 半日市 13:00 ET 收盘、13:00~17:00 ET 盘后）：
     - 周末休市 (WEEKEND): 周五盘后结束后 (常规 20:00 / 半日市 17:00) ~ 周日 20:00 ET
-    - 盘前交易 (PRE_MARKET): 周一至周五 04:00 ~ 09:30 ET
-    - 常规盘中 (REGULAR): 周一至周五 09:30 ~ close_min (16:00 / 半日市 13:00)
-    - 盘后交易 (post_market_code): 周一至周五 close_min ~ ah_end_min (20:00 / 半日市 17:00)
+    - 节假日休市 (HOLIDAY): 美股工作日全天法定休市日（如感恩节 2026-11-26、圣诞节等），全天不误报盘前/盘中
+    - 盘前交易 (PRE_MARKET): 正常交易日 04:00 ~ 09:30 ET
+    - 常规盘中 (REGULAR): 正常交易日 09:30 ~ close_min (16:00 / 半日市 13:00)
+    - 盘后交易 (post_market_code): 正常交易日 close_min ~ ah_end_min (20:00 / 半日市 17:00)
     - 美股夜盘 (OVERNIGHT): 其余 24/5 夜间时段
     """
     et = to_et_datetime(now_et)
@@ -205,6 +213,8 @@ def classify_us_market_session(
         return "WEEKEND", "☕ 周末休市"
     if weekday == 6 and et_min >= 20 * 60:
         return "OVERNIGHT", "🌌 美股夜盘"
+    if is_us_market_holiday(d):
+        return "HOLIDAY", "🏖️ 节假日休市"
     if REGULAR_OPEN_MIN <= et_min < close_min:
         return "REGULAR", "🟢 常规盘中"
     if PRE_MARKET_OPEN_MIN <= et_min < REGULAR_OPEN_MIN:

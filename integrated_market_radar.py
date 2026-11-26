@@ -5633,6 +5633,7 @@ def build_latest_radar_snapshot(
     daily_sr_anchors: Optional[Dict[str, Any]] = None,
     market_temperature: Optional[Dict[str, Any]] = None,
     apac_doc: Optional[Dict[str, Any]] = None,
+    apac_ml_doc: Optional[Dict[str, Any]] = None,
 ) -> Dict[str, Any]:
     """构建供 Discord 交互机器人零 API 压力只读消费的轻量全市场快照。"""
     sess = str(session_code or "REGULAR").strip().upper() or "REGULAR"
@@ -5641,6 +5642,7 @@ def build_latest_radar_snapshot(
         "PRE_MARKET": "盘前交易",
         "POST_MARKET": "盘后交易",
         "OVERNIGHT": "美股夜盘",
+        "HOLIDAY": "节假日休市",
         "WEEKEND": "周末休市",
     }
     sess_name_clean = str(session_name or "").strip() or sess_name_map.get(sess, sess)
@@ -5799,7 +5801,7 @@ def build_latest_radar_snapshot(
     for idx_ld, ld in enumerate(top5_raw or [], 1):
         tk_ld = str(ld.get("ticker") or "").upper()
         src_ld = raw_items.get(tk_ld, ({}, False))[0]
-        if sess in ("POST_MARKET", "WEEKEND"):
+        if sess in ("POST_MARKET", "WEEKEND", "HOLIDAY"):
             px_ld = _snap_opt_float(src_ld.get("last") or ld.get("rth_close") or src_ld.get("active_price"), 2)
         else:
             px_ld = _snap_opt_float(src_ld.get("active_price") or src_ld.get("last"), 2)
@@ -6199,15 +6201,35 @@ def build_latest_radar_snapshot(
         if isinstance(_apac_src.get("apac_chip_sentiment"), dict)
         else {}
     )
+    _apac_ml_src = apac_ml_doc if isinstance(apac_ml_doc, dict) and apac_ml_doc else {}
+    if not _apac_ml_src:
+        try:
+            import apac_ml_predictor as _amp_snap
+            _apac_ml_src = _amp_snap.load_apac_ml_predictions() or {}
+        except Exception:
+            _apac_ml_src = {}
+    _apac_ml_by_tk = _apac_ml_src.get("by_ticker") if isinstance(_apac_ml_src.get("by_ticker"), dict) else {}
+
     _apac_items_compact: Dict[str, Dict[str, Any]] = {}
     for _ak_sym, _ak_row in (_apac_src.get("items") or {}).items():
         if not isinstance(_ak_row, dict):
             continue
-        _apac_items_compact[str(_ak_sym).upper()] = {
+        _ak_u = str(_ak_sym).upper()
+        _compact_row = {
             k: v
             for k, v in _ak_row.items()
             if k not in ("daily_ohlc", "intraday_5m")
         }
+        _ml_r = _apac_ml_by_tk.get(_ak_u)
+        if isinstance(_ml_r, dict):
+            _compact_row["ai_long_win_rate_pct"] = _ml_r.get("calibrated_win_rate_pct")
+            _compact_row["ai_short_win_rate_pct"] = _ml_r.get("calibrated_short_win_rate_pct")
+            _compact_row["ai_direction_score"] = _ml_r.get("direction_score")
+            _compact_row["ai_signal_cn"] = _ml_r.get("signal_cn")
+            _compact_row["ai_sample_badge"] = _ml_r.get("sample_shrinkage_tag") or ""
+            _compact_row["ai_us_lead_date"] = _ml_r.get("us_lead_date") or ""
+            _compact_row["ai_rank"] = _ml_r.get("rank")
+        _apac_items_compact[_ak_u] = _compact_row
 
     return {
         "schema_version": "v4.4-bot-snapshot",
@@ -6238,6 +6260,12 @@ def build_latest_radar_snapshot(
             "fetch_mode": str(_apac_src.get("fetch_mode") or "CACHE"),
             "updated_at_cst": str(_apac_src.get("updated_at_cst") or ""),
             "count": len(_apac_items_compact),
+        },
+        "apac_ml_meta": {
+            "updated_at_cst": str(_apac_ml_src.get("updated_at_cst") or ""),
+            "as_of_date": str(_apac_ml_src.get("as_of_date") or ""),
+            "count": len(_apac_ml_by_tk),
+            "model_stats": _apac_ml_src.get("model_stats") or {},
         },
         "apac_ashare_items": _apac_items_compact,
         "resilient_leaders_top5": top5_out,
@@ -8635,9 +8663,10 @@ def run_radar_cycle(is_first_run=False, round_idx=1):
     except Exception as _ace_err:
         print(f"  [!] 🧠 V5.1 AI 解盘引擎静默降级: {_ace_err}")
 
-    # 7.07 V5.6 亚太纯指数 (6只) + A 股场内 ETF (10只) + 亚盘半导体风向聚合
+    # 7.07 V5.6 亚太纯指数 (6只) + A 股场内 ETF (10只) + 亚盘半导体风向聚合 + 物理隔离亚太 AI 胜率引擎
     # 红线：美股盘前/盘中时段自动时区休眠 (0 次外部 HTTP 请求、0ms 额外延迟)，零 Finnhub 消耗，严禁混入美股温度计与模拟跟单池
     _apac_doc = {}
+    _apac_ml_doc = {}
     try:
         import apac_ashare_feed as _aaf_run
         _apac_doc = _aaf_run.fetch_apac_ashare_snapshot(
@@ -8651,6 +8680,19 @@ def run_radar_cycle(is_first_run=False, round_idx=1):
         )
     except Exception as _apac_err:
         print(f"  [!] 🌏 V5.6 亚太/A股独立分区静默降级: {_apac_err}")
+    try:
+        import apac_ml_predictor as _amp_run
+        _apac_ml_doc = _amp_run.get_or_update_apac_ml_predictions(
+            apac_snapshot_items=(_apac_doc.get("items") if isinstance(_apac_doc, dict) else None),
+        )
+        _amp_stats = (_apac_ml_doc or {}).get("model_stats") or {}
+        print(
+            f"[+] 🤖 亚太/A股独立 AI 引擎: mode={_apac_ml_doc.get('fetch_mode')} | "
+            f"标的={len(_apac_ml_doc.get('by_ticker') or {})} | "
+            f"区间=[{_amp_stats.get('min_long_wr', '--')}%, {_amp_stats.get('max_long_wr', '--')}%]"
+        )
+    except Exception as _amp_err:
+        print(f"  [!] 🤖 亚太/A股独立 AI 引擎静默降级: {_amp_err}")
 
     generate_macro_radar_html(
         macro_data,
@@ -8849,7 +8891,7 @@ def run_radar_cycle(is_first_run=False, round_idx=1):
         _build_fn = create_futu_terminal.build_futu_terminal_html
     except Exception:
         _build_fn = build_futu_terminal_html
-    futu_html = _build_fn(stocks_sorted, macro_data, weather_info, update_time_str=now_str, has_realtime=has_realtime, target_watchlist=target_watchlist, terminal_notifications=terminal_notifications, session_code=session_code, session_name=session_name, sync_side_effects=True, daily_sr_anchors=_sr_anchors_map, apac_doc=_apac_doc)
+    futu_html = _build_fn(stocks_sorted, macro_data, weather_info, update_time_str=now_str, has_realtime=has_realtime, target_watchlist=target_watchlist, terminal_notifications=terminal_notifications, session_code=session_code, session_name=session_name, sync_side_effects=True, daily_sr_anchors=_sr_anchors_map, apac_doc=_apac_doc, apac_ml_doc=_apac_ml_doc)
     with open(FUTU_HTML_FILE, "w", encoding="utf-8") as f:
         f.write(futu_html)
     index_html_path = os.path.join(SCRATCH_DIR, "index.html")
@@ -8876,6 +8918,7 @@ def run_radar_cycle(is_first_run=False, round_idx=1):
             daily_sr_anchors=_sr_anchors_map,
             market_temperature=_market_temperature,
             apac_doc=_apac_doc,
+            apac_ml_doc=_apac_ml_doc,
         )
         _snap_written = write_latest_radar_snapshot(_snap_obj)
         print(f"[+] 📦 轻量只读快照已更新: {_snap_written} ({_snap_obj.get('ticker_count', 0)} 只标的)")

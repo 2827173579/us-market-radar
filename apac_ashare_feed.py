@@ -451,6 +451,184 @@ def _compute_volume_poc(bars: List[List[Any]], bins: int = 18) -> Optional[float
     return lo + (best_i + 0.5) * step
 
 
+def sanitize_apac_5m_bars(
+    rows: List[List[Any]],
+    market: str = "CN",
+    decimals: int = 3,
+    outlier_vol_mult: float = 8.0,
+) -> Tuple[List[List[Any]], bool]:
+    """
+    清洗亚太/A 股 5m 分时切片，一次性解决两类数据源畸变：
+    1. 午休空档剔除（杜绝 11:30~13:00 横盘死直线）：
+       - A 股 (CN): 剔除 11:30 < t < 13:00 午休占位柱及 11:30 零成交死柱；
+       - 港股 (HK): 剔除 12:00 < t < 13:00 午休占位柱；
+       - 日股 (JP): 剔除 11:30 < t < 12:30 午休占位柱；
+    2. 极端脉冲成交量清洗（如 Yahoo .SZ 源在 13:00 / 14:55 误把累计成交量灌入单根 5m 柱，达中位数 40~65 倍）：
+       - 单根成交量 > 非零中位数 * outlier_vol_mult (默认 8x) 时，用中位成交量平滑替代，
+         保护下方柱图比例与日内 VWAP 尾部不被单根异常巨量拉歪。
+    返回: (cleaned_rows, outlier_capped_flag)
+    """
+    if not rows:
+        return [], False
+    mkt = str(market or "CN").upper()
+    filtered: List[List[Any]] = []
+    for r in rows:
+        if not isinstance(r, (list, tuple)) or len(r) < 5:
+            continue
+        t_raw = str(r[0] or "").strip()
+        hhmm = t_raw[-5:] if len(t_raw) >= 5 else t_raw
+        mins: Optional[int] = None
+        if ":" in hhmm:
+            try:
+                p = hhmm.split(":")
+                mins = int(p[0]) * 60 + int(p[1])
+            except Exception:
+                mins = None
+        op = _safe_float(r[1])
+        hi = _safe_float(r[2])
+        lo = _safe_float(r[3])
+        cl = _safe_float(r[4])
+        vo = max(0.0, _safe_float(r[5], 0.0) or 0.0) if len(r) > 5 else 0.0
+        if not (op and hi and lo and cl and cl > 0):
+            continue
+
+        if mins is not None:
+            if mkt == "CN":
+                # A 股午休 11:30 ~ 13:00（严格剔除 11:31~12:59，及 11:30 零量平盘占位）
+                if 11 * 60 + 30 < mins < 13 * 60:
+                    continue
+                if mins == 11 * 60 + 30 and vo <= 0 and abs(hi - lo) <= 1e-9:
+                    continue
+                # 剔除非正盘时间
+                if mins < 9 * 60 + 25 or mins > 15 * 60 + 5:
+                    continue
+            elif mkt == "HK":
+                if 12 * 60 < mins < 13 * 60:
+                    continue
+                if mins == 12 * 60 and vo <= 0 and abs(hi - lo) <= 1e-9:
+                    continue
+            elif mkt == "JP":
+                if 11 * 60 + 30 < mins < 12 * 60 + 30:
+                    continue
+                if mins == 11 * 60 + 30 and vo <= 0 and abs(hi - lo) <= 1e-9:
+                    continue
+        elif vo <= 0 and abs(hi - lo) <= 1e-9:
+            continue
+
+        filtered.append([
+            hhmm,
+            round(op, decimals),
+            round(hi, decimals),
+            round(lo, decimals),
+            round(cl, decimals),
+            round(vo, 2),
+        ])
+
+    if not filtered:
+        return [], False
+
+    nz_vols = sorted(float(r[5]) for r in filtered if float(r[5]) > 0)
+    outlier_capped = False
+    if len(nz_vols) >= 6:
+        # 剔除最大 2 根后再求中位数，防止 13:00/14:55 累计巨量拉高中位数基线
+        core_vols = nz_vols[:-2] if len(nz_vols) >= 10 else nz_vols[:-1]
+        med_v = float(np.median(core_vols))
+        if med_v > 0:
+            cap_thresh = med_v * float(outlier_vol_mult)
+            for r in filtered:
+                if float(r[5]) > cap_thresh:
+                    r[5] = round(med_v, 2)
+                    outlier_capped = True
+
+    return filtered, outlier_capped
+
+
+def compute_apac_5m_microstructure(
+    clean_5m_rows: List[List[Any]],
+    spot_price: Optional[float] = None,
+    decimals: int = 3,
+) -> Dict[str, Any]:
+    """
+    基于清洗后的 5m 分时序列计算真实日内微观指标：
+    - vwap / vwap_diff_pct：与前端 5m 分时图逐根累积 TP*V / V 口径 100% 一致；
+    - rsi_5m：5m Wilder's RSI(14)；
+    - rvol_5m：近 3 根 5m 均量 / 全日清洗后 5m 均量；
+    - has_5m_intraday：有效 5m 柱 >= 5 根时为 True。
+    """
+    if not clean_5m_rows or len(clean_5m_rows) < 2:
+        return {
+            "vwap": None,
+            "vwap_diff_pct": None,
+            "rsi_5m": None,
+            "rvol_5m": None,
+            "has_5m_intraday": False,
+        }
+
+    cum_pv = 0.0
+    cum_v = 0.0
+    closes: List[float] = []
+    vols: List[float] = []
+    tps: List[float] = []
+    for r in clean_5m_rows:
+        hi = _safe_float(r[2])
+        lo = _safe_float(r[3])
+        cl = _safe_float(r[4])
+        vo = max(0.0, _safe_float(r[5], 0.0) or 0.0)
+        if hi and lo and cl and cl > 0:
+            tp = (hi + lo + cl) / 3.0
+            tps.append(tp)
+            closes.append(cl)
+            vols.append(vo)
+            if vo > 0:
+                cum_pv += tp * vo
+                cum_v += vo
+
+    if not closes:
+        return {
+            "vwap": None,
+            "vwap_diff_pct": None,
+            "rsi_5m": None,
+            "rvol_5m": None,
+            "has_5m_intraday": False,
+        }
+
+    if cum_v > 0:
+        vwap_val = cum_pv / cum_v
+    else:
+        vwap_val = float(np.mean(tps))
+
+    ref_px = float(spot_price) if (spot_price is not None and spot_price > 0) else closes[-1]
+    vwap_diff = ((ref_px - vwap_val) / vwap_val * 100.0) if vwap_val > 0 else 0.0
+
+    # 5m Wilder RSI(14)
+    rsi_5m: Optional[float] = None
+    if len(closes) >= 5:
+        s_cl = pd.Series(closes, dtype=float)
+        delta = s_cl.diff()
+        gain = delta.clip(lower=0.0).ewm(alpha=1.0 / 14.0, adjust=False).mean()
+        loss = (-delta.clip(upper=0.0)).ewm(alpha=1.0 / 14.0, adjust=False).mean()
+        rs = gain / loss.replace(0.0, np.nan)
+        rsi_s = (100.0 - (100.0 / (1.0 + rs))).fillna(50.0)
+        rsi_5m = round(float(rsi_s.iloc[-1]), 1)
+
+    # 5m 量比（近 3 根非零均量 / 全日非零均量）
+    nz_v = [v for v in vols if v > 0]
+    rvol_5m: Optional[float] = None
+    if len(nz_v) >= 4:
+        avg_all = float(np.mean(nz_v))
+        recent_3 = float(np.mean(nz_v[-3:]))
+        if avg_all > 0:
+            rvol_5m = round(max(0.10, min(9.90, recent_3 / avg_all)), 2)
+
+    return {
+        "vwap": round(vwap_val, decimals),
+        "vwap_diff_pct": round(vwap_diff, 2),
+        "rsi_5m": rsi_5m,
+        "rvol_5m": rvol_5m,
+        "has_5m_intraday": bool(len(closes) >= 5),
+    }
+
+
 def _compute_technicals_from_daily(
     daily_ohlc: List[List[Any]],
     spot_price: Optional[float] = None,
@@ -459,31 +637,41 @@ def _compute_technicals_from_daily(
     decimals: int = 3,
 ) -> Dict[str, Any]:
     """
-    基于前复权日 K 序列计算均线 (MA10/MA20/MA50)、MA20 偏离、RSI(14)、ATR 与
+    基于前复权日 K 序列计算均线 (MA10/MA20/EMA20/MA50)、MA20 偏离、RSI(14)、ATR、
+    日线量比、60日成交密集区 POC + 黄金坑支撑带、贴近 S1 的日内短线防守止损位与
     梯次可交易结构撑压 S1/S2/R1/R2（杜绝用 60/120/250 日山顶僵尸高点硬当 R1/R2）。
     """
     if not daily_ohlc:
         px = round(float(spot_price), decimals) if (spot_price and spot_price > 0) else 0.0
+        s1_fb = round(px * 0.97, decimals) if px > 0 else 0.0
         return {
             "last": px,
             "prev_close": round(float(spot_prev_close), decimals) if (spot_prev_close and spot_prev_close > 0) else px,
             "pct_change": round(float(spot_pct), 2) if spot_pct is not None else 0.0,
             "ma10": px,
             "ma20": px,
+            "ema20": px,
             "ma50": px,
             "bias_ma20": 0.0,
             "bias": 0.0,
             "rsi": 50.0,
             "atr": 0.0,
-            "s1": round(px * 0.97, decimals) if px > 0 else 0.0,
+            "vol_ratio": 1.0,
+            "poc": px,
+            "fib_low": round(px * 0.95, decimals) if px > 0 else 0.0,
+            "fib_high": round(px * 0.98, decimals) if px > 0 else 0.0,
+            "ret_20d": 0.0,
+            "s1": s1_fb,
             "s2": round(px * 0.94, decimals) if px > 0 else 0.0,
             "r1": round(px * 1.03, decimals) if px > 0 else 0.0,
             "r2": round(px * 1.06, decimals) if px > 0 else 0.0,
+            "entry_stop_loss": round(px * 0.962, decimals) if px > 0 else 0.0,
         }
 
     closes = pd.Series([float(r[4]) for r in daily_ohlc], dtype=float)
     highs = pd.Series([float(r[2]) for r in daily_ohlc], dtype=float)
     lows = pd.Series([float(r[3]) for r in daily_ohlc], dtype=float)
+    vols = pd.Series([max(0.0, _safe_float(r[5], 0.0) or 0.0) for r in daily_ohlc], dtype=float)
 
     last_bar_c = float(closes.iloc[-1])
     prev_bar_c = float(closes.iloc[-2]) if len(closes) >= 2 else last_bar_c
@@ -498,9 +686,29 @@ def _compute_technicals_from_daily(
 
     ma10 = float(closes.tail(10).mean())
     ma20 = float(closes.tail(20).mean())
+    ema20 = float(closes.ewm(span=20, adjust=False).mean().iloc[-1])
     ma50 = float(closes.tail(50).mean())
     bias_ma20 = ((px - ma20) / ma20 * 100.0) if ma20 > 0 else 0.0
     bias = ((px - ma50) / ma50 * 100.0) if ma50 > 0 else 0.0
+
+    # 20 日涨跌幅（供横截面 20 日超额 RS 计算）
+    if len(closes) >= 21 and float(closes.iloc[-21]) > 0:
+        ret_20d = ((px - float(closes.iloc[-21])) / float(closes.iloc[-21])) * 100.0
+    elif len(closes) >= 2 and float(closes.iloc[0]) > 0:
+        ret_20d = ((px - float(closes.iloc[0])) / float(closes.iloc[0])) * 100.0
+    else:
+        ret_20d = pct
+
+    # 日线量比（最新一日成交量 / 近 20 日均量）
+    vol_ratio = 1.0
+    if len(vols) >= 6:
+        nz_tail = vols.tail(20)
+        nz_pos = nz_tail[nz_tail > 0]
+        last_v = float(vols.iloc[-1])
+        if len(nz_pos) >= 5 and last_v > 0:
+            avg_v20 = float(nz_pos.mean())
+            if avg_v20 > 0:
+                vol_ratio = max(0.15, min(6.0, last_v / avg_v20))
 
     # 20 日布林带
     std20 = float(closes.tail(20).std(ddof=0)) if len(closes) >= 5 else 0.0
@@ -547,10 +755,20 @@ def _compute_technicals_from_daily(
 
     poc_20 = _compute_volume_poc(recent_bars[-20:])
     poc_45 = _compute_volume_poc(recent_bars[-45:])
+    poc_60 = _compute_volume_poc(recent_bars) or poc_45 or poc_20 or ma20
+
+    # 60日斐波那契 0.5~0.618 黄金坑支撑带（结合 60d QFQ 成交密集区 POC）
+    hi_60 = max(hi_arr) if hi_arr else px
+    lo_60 = min(lo_arr) if lo_arr else px
+    span_60 = max(hi_60 - lo_60, px * 0.02)
+    fib_low = lo_60 + span_60 * 0.382
+    fib_high = lo_60 + span_60 * 0.500
+    if fib_low > fib_high:
+        fib_low, fib_high = fib_high, fib_low
 
     # 所有结构候选位（阻力取高于现价、支撑取低于现价，含 MA10/MA20/MA50、布林中/上/下轨、颈线与 POC）
     all_struct_levels: List[float] = []
-    for lv in [ma10, ma20, ma50, bb_upper, bb_lower, poc_20, poc_45] + swing_highs + swing_lows:
+    for lv in [ma10, ma20, ema20, ma50, bb_upper, bb_lower, poc_20, poc_45, poc_60] + swing_highs + swing_lows:
         if lv is not None and math.isfinite(lv) and lv > 0:
             all_struct_levels.append(float(lv))
 
@@ -597,21 +815,36 @@ def _compute_technicals_from_daily(
     else:
         s2 = max(0.001, s1 - max(atr * 1.8, px * 0.035))
 
+    s1_clean = max(0.001, s1)
+    s2_clean = max(0.001, min(s1_clean * 0.995, s2))
+    # 日内短线防守止损线：锚定贴近 S1 (S1 * 0.992)，严格限制在距现价 [-8.0%, -1.5%] 合理短线防守带内，绝不拿 -17% 的 S2 充当短线止损
+    sl_anchor = s1_clean * 0.992
+    sl_floor = px * (1.0 - min(0.080, max(0.035, atr_pct * 2.4)))
+    sl_ceil = px * 0.985
+    entry_sl = max(0.001, min(sl_ceil, max(sl_floor, sl_anchor)))
+
     return {
         "last": round(px, decimals),
         "prev_close": round(prev_c, decimals),
         "pct_change": round(pct, 2),
         "ma10": round(ma10, decimals),
         "ma20": round(ma20, decimals),
+        "ema20": round(ema20, decimals),
         "ma50": round(ma50, decimals),
         "bias_ma20": round(bias_ma20, 2),
         "bias": round(bias, 2),
         "rsi": round(rsi, 1),
         "atr": round(atr, decimals),
-        "s1": round(max(0.001, s1), decimals),
-        "s2": round(max(0.001, min(s1 * 0.995, s2)), decimals),
+        "vol_ratio": round(vol_ratio, 2),
+        "poc": round(poc_60, decimals),
+        "fib_low": round(max(0.001, fib_low), decimals),
+        "fib_high": round(max(0.001, fib_high), decimals),
+        "ret_20d": round(ret_20d, 2),
+        "s1": round(s1_clean, decimals),
+        "s2": round(s2_clean, decimals),
         "r1": round(max(px * 1.005, r1), decimals),
         "r2": round(max(r1 * 1.010, r2), decimals),
+        "entry_stop_loss": round(entry_sl, decimals),
     }
 
 
@@ -1131,12 +1364,19 @@ def fetch_apac_ashare_snapshot(
                     except Exception:
                         pass
 
+                # 清洗 5m 分时切片（剔除午休死直线 + 清洗 13:00/14:55 累计巨量异常柱）并计算真实 VWAP / 5m RSI / 量比
+                clean_5m_rows, vol_outlier_capped = sanitize_apac_5m_bars(
+                    intra_5m_rows,
+                    market=str(meta.get("market") or "CN"),
+                    decimals=dec,
+                )
+
                 # 合并实时 spot 价格到最新日 K 尾部（保证现价与最后 K 线一致）
                 spot_px = _safe_float(spot.get("price"))
                 spot_prev = _safe_float(spot.get("prev_close"))
                 spot_pct = _safe_float(spot.get("pct_change"))
-                if spot_px is None and intra_5m_rows:
-                    spot_px = _safe_float(intra_5m_rows[-1][4])
+                if spot_px is None and clean_5m_rows:
+                    spot_px = _safe_float(clean_5m_rows[-1][4])
 
                 if not daily_rows and (spot_px is None or spot_px <= 0):
                     # 单票完全失败 -> 回退旧缓存
@@ -1151,6 +1391,11 @@ def fetch_apac_ashare_snapshot(
                     spot_price=spot_px,
                     spot_prev_close=spot_prev,
                     spot_pct=spot_pct,
+                    decimals=dec,
+                )
+                micro_5m = compute_apac_5m_microstructure(
+                    clean_5m_rows,
+                    spot_price=tech["last"],
                     decimals=dec,
                 )
                 row_out: Dict[str, Any] = {
@@ -1177,11 +1422,23 @@ def fetch_apac_ashare_snapshot(
                     "turnover": round(turnover, 2) if (turnover is not None and turnover > 0) else None,
                     "ma10": tech["ma10"],
                     "ma20": tech["ma20"],
+                    "ema20": tech["ema20"],
                     "ma50": tech["ma50"],
                     "bias_ma20": tech["bias_ma20"],
                     "bias": tech["bias"],
                     "rsi": tech["rsi"],
                     "atr": tech["atr"],
+                    "vol_ratio": tech["vol_ratio"],
+                    "poc": tech["poc"],
+                    "fib_low": tech["fib_low"],
+                    "fib_high": tech["fib_high"],
+                    "ret_20d": tech["ret_20d"],
+                    "vwap": micro_5m["vwap"],
+                    "vwap_diff_pct": micro_5m["vwap_diff_pct"],
+                    "rsi_5m": micro_5m["rsi_5m"],
+                    "rvol_5m": micro_5m["rvol_5m"],
+                    "has_5m_intraday": micro_5m["has_5m_intraday"],
+                    "vol_outlier_capped": vol_outlier_capped,
                     "s1": tech["s1"],
                     "s2": tech["s2"],
                     "r1": tech["r1"],
@@ -1190,8 +1447,10 @@ def fetch_apac_ashare_snapshot(
                     "anchor_s2": tech["s2"],
                     "anchor_r1": tech["r1"],
                     "anchor_r2": tech["r2"],
+                    "entry_stop_loss": tech["entry_stop_loss"],
+                    "optimal_limit": tech["s1"],
                     "daily_ohlc": daily_rows,
-                    "intraday_5m": intra_5m_rows,
+                    "intraday_5m": clean_5m_rows,
                     "source": src_used or ("tencent_spot" if spot else "unknown"),
                     "stale_fallback": False,
                 }
@@ -1201,6 +1460,26 @@ def fetch_apac_ashare_snapshot(
                     old_copy = dict(prev_items[tk])
                     old_copy["stale_fallback"] = True
                     new_items[tk] = old_copy
+
+        # 2d) 计算 20 日超额 RS：A 股 ETF 相对 000688/399006/512530 基准均值；亚太纯指数相对区域均值
+        cn_bench_vals = [
+            _safe_float(new_items[b].get("ret_20d"))
+            for b in ("000688", "399006", "512530")
+            if b in new_items and _safe_float(new_items[b].get("ret_20d")) is not None
+        ]
+        cn_bench_20d = float(np.mean(cn_bench_vals)) if cn_bench_vals else 0.0
+        idx_vals = [
+            _safe_float(v.get("ret_20d"))
+            for v in new_items.values()
+            if isinstance(v, dict) and v.get("kind") == "APAC_INDEX" and _safe_float(v.get("ret_20d")) is not None
+        ]
+        idx_bench_20d = float(np.mean(idx_vals)) if idx_vals else 0.0
+        for tk_r, item_r in new_items.items():
+            r20 = _safe_float(item_r.get("ret_20d"))
+            if r20 is None:
+                continue
+            bench_ref = cn_bench_20d if item_r.get("kind") == "ASHARE_ETF" else idx_bench_20d
+            item_r["rs_20d"] = round(r20 - bench_ref, 2)
 
     elapsed_ms = round((time.perf_counter() - t0) * 1000.0, 1)
     cst_str = (now_dt.astimezone(CST_TZ) if (now_dt and now_dt.tzinfo) else datetime.now(CST_TZ)).strftime("%Y-%m-%d %H:%M:%S CST")
