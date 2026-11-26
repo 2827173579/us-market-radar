@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795672580.52,
-  "updated_at_et": "11-26 00:56 ET",
-  "updated_at_kst": "14:56 KST",
+  "updated_at_ts": 1795672621.442,
+  "updated_at_et": "11-26 00:57 ET",
+  "updated_at_kst": "14:57 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -1158,6 +1158,13 @@
     ],
     "GOOGL": [
       {
+        "title": "2 Ways Anthropic's IPO Pays Off for Alphabet Investors",
+        "url": "https://www.fool.com/investing/2026/11/26/2-ways-anthropic-s-ipo-pays-off-for-alphabet-investors/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-26 00:20 ET",
+        "pub_ts": 1795670402.0
+      },
+      {
         "title": "SpaceX gets approval for 1 million data center satellites",
         "url": "https://finance.yahoo.com/technology/ai/articles/spacex-gets-approval-1-million-023847485.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1184,13 +1191,6 @@
         "source": "Yahoo Finance",
         "time": "11-25 19:27 ET",
         "pub_ts": 1795652820.0
-      },
-      {
-        "title": "Bill Gurley: Investors Weren’t “Scrambling to Actually Own Anthropic.” That’s a Problem for Amazon and Alphabet",
-        "url": "https://www.tikr.com/blog/bill-gurley-investors-werent-scrambling-to-actually-own-anthropic-thats-a-problem-for-amazon-and-alphabet?ref=yahoofinance&tlnk=yf-261125-5qg4553j&.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 18:43 ET",
-        "pub_ts": 1795650186.0
       }
     ],
     "MSFT": [
@@ -2601,6 +2601,20 @@
     ],
     "BTC-USD": [
       {
+        "title": "Bitcoin technical outlook: bear trend with oversold signals near $61,000",
+        "url": "https://finance.yahoo.com/markets/crypto/articles/bitcoin-technical-outlook-bear-trend-054532169.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-26 00:45 ET",
+        "pub_ts": 1795671932.0
+      },
+      {
+        "title": "LIVE – Crypto News Today: Is Bitcoin Bottoming Out? BTC Bounces Back After PCE Shock",
+        "url": "https://cryptonews.com/news/bitcoin-crypto-news-btc-bottom-pce-rebound/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 23:57 ET",
+        "pub_ts": 1795669064.0
+      },
+      {
         "title": "Bitcoin Reclaims $60,000: Michaël Van De Poppe Eyes ‘Great First Quarter Of 2027’, While Cathie Wood Trims Crypto Exposure",
         "url": "https://stocktwits.com/news-articles/markets/cryptocurrency/bitcoin-reclaims-60-000-michael-van-de-poppe-eyes-great-first-quarter-of-2027-while-cathie-wood-trims-crypto-exposure/cNbxBZpR9Za?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2620,20 +2634,6 @@
         "source": "Yahoo Finance",
         "time": "11-25 20:00 ET",
         "pub_ts": 1795654845.0
-      },
-      {
-        "title": "Why CleanSpark Stock Was a Winner on Wednesday",
-        "url": "https://www.fool.com/investing/2026/11/25/why-cleanspark-stock-was-a-winner-on-wednesday/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 19:30 ET",
-        "pub_ts": 1795653039.0
-      },
-      {
-        "title": "If you invested $1,000 in gold, Bitcoin or silver last Thanksgiving, here’s what you’d have today",
-        "url": "https://www.thestreet.com/crypto/markets/if-you-invested-1000-in-gold-bitcoin-or-silver-last-thanksgiving-heres-what-youd-have-today?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 19:15 ET",
-        "pub_ts": 1795652100.0
       }
     ],
     "CRWD": [
@@ -3278,45 +3278,45 @@
   "ticker_news_ts": {
     "KORU": 1795671445.2857296,
     "SOXL": 1795671445.2857296,
-    "SPY": 1795671088.691203,
+    "SPY": 1795672621.4423013,
     "DIA": 1795671445.2857296,
     "SOXX": 1795671445.2857296,
     "QQQ": 1795671445.2857296,
-    "SMH": 1795671088.691203,
+    "SMH": 1795672621.4423013,
     "IWM": 1795671445.2857296,
     "IGV": 1795671445.2857296,
     "TLT": 1795671445.2857296,
     "GLD": 1795671445.2857296,
     "SQQQ": 1795671484.4598403,
-    "TSM": 1795671088.691203,
+    "TSM": 1795672621.4423013,
     "VIXY": 1795671445.2857296,
     "SOXS": 1795671484.4598403,
     "NVDA": 1795671484.4598403,
     "AMD": 1795671484.4598403,
-    "ASML": 1795671088.691203,
-    "QCOM": 1795671088.691203,
+    "ASML": 1795672621.4423013,
+    "QCOM": 1795672621.4423013,
     "AVGO": 1795671484.4598403,
-    "AMAT": 1795671088.691203,
-    "META": 1795671088.691203,
-    "GOOGL": 1795671088.691203,
-    "MSFT": 1795671088.691203,
-    "AAPL": 1795671088.691203,
-    "PLTR": 1795671088.691203,
-    "NOW": 1795671088.691203,
-    "AMZN": 1795671088.691203,
-    "CRWV": 1795671088.691203,
-    "NBIS": 1795671088.691203,
-    "APLD": 1795671088.691203,
+    "AMAT": 1795672621.4423013,
+    "META": 1795672621.4423013,
+    "GOOGL": 1795672621.4423013,
+    "MSFT": 1795672621.4423013,
+    "AAPL": 1795672621.4423013,
+    "PLTR": 1795672621.4423013,
+    "NOW": 1795672621.4423013,
+    "AMZN": 1795672621.4423013,
+    "CRWV": 1795672621.4423013,
+    "NBIS": 1795672621.4423013,
+    "APLD": 1795672621.4423013,
     "VST": 1795671406.7830198,
     "BE": 1795671406.7830198,
     "CRDO": 1795671406.7830198,
     "COHR": 1795671406.7830198,
-    "MRVL": 1795671088.691203,
-    "LITE": 1795671088.691203,
+    "MRVL": 1795672621.4423013,
+    "LITE": 1795672621.4423013,
     "AAOI": 1795671406.7830198,
     "SPCX": 1795671406.7830198,
     "ASTS": 1795671406.7830198,
-    "AXTI": 1795671088.691203,
+    "AXTI": 1795672621.4423013,
     "NASA": 1795671406.7830198,
     "LUNR": 1795671406.7830198,
     "TSLA": 1795671406.7830198,
@@ -3331,13 +3331,13 @@
     "OKLO": 1795671406.7830198,
     "CEG": 1795671406.7830198,
     "FPS": 1795671406.7830198,
-    "MU": 1795671088.691203,
-    "SKHY": 1795671088.691203,
-    "WDC": 1795671088.691203,
+    "MU": 1795672621.4423013,
+    "SKHY": 1795672621.4423013,
+    "WDC": 1795672621.4423013,
     "STX": 1795671445.2857296,
     "MSTR": 1795671406.7830198,
     "SNDK": 1795671406.7830198,
-    "BTC-USD": 1795671088.691203,
+    "BTC-USD": 1795672621.4423013,
     "CRWD": 1795671406.7830198,
     "ORCL": 1795671445.2857296,
     "COIN": 1795671445.2857296,
@@ -3351,11 +3351,11 @@
     "WMT": 1795671445.2857296,
     "V": 1795671445.2857296,
     "CAT": 1795671445.2857296,
-    "FN": 1795671088.691203,
+    "FN": 1795672621.4423013,
     "GLW": 1795671406.7830198,
     "ANT": 1795671445.2857296,
     "XAUUSD": 1795671445.2857296,
-    "KOSPI": 1795671088.691203
+    "KOSPI": 1795672621.4423013
   },
   "opex_shield": {
     "date": "2026-11-26",
