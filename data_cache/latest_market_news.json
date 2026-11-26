@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795672972.85,
-  "updated_at_et": "11-26 01:02 ET",
-  "updated_at_kst": "15:02 KST",
+  "updated_at_ts": 1795673012.945,
+  "updated_at_et": "11-26 01:03 ET",
+  "updated_at_kst": "15:03 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -899,6 +899,27 @@
     ],
     "NVDA": [
       {
+        "title": "ANT, NVDA Slide Tests Investor Resolve, Software Firms Post Sharp Growth",
+        "url": "https://stocktwits.com/news-articles/markets/equity/ant-nvda-slide-tests-investor-resolve-software-firms-post-sharp-growth/cNbxO5FR9ZX?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-26 00:33 ET",
+        "pub_ts": 1795671214.0
+      },
+      {
+        "title": "SpaceX Reportedly Slashes Some Nvidia Chip Rents — AI Researcher Sees Musk’s Edge In A GPU Glut",
+        "url": "https://stocktwits.com/news-articles/markets/equity/spacex-reportedly-slashes-nvidia-chip-rents-ai-researcher-musk-edge-gpu-glut/cNbxOPgR9ZQ?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-26 00:32 ET",
+        "pub_ts": 1795671175.0
+      },
+      {
+        "title": "Asian stocks rally as Taiwan, South Korea rebound; Nvidia risks linger",
+        "url": "https://finance.yahoo.com/markets/world-indices/articles/asian-stocks-rally-taiwan-south-053137366.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-26 00:31 ET",
+        "pub_ts": 1795671097.0
+      },
+      {
         "title": "Asian shares rebound led by AI stocks after Wall Street pares sharp losses",
         "url": "https://finance.yahoo.com/markets/stocks/articles/asian-shares-rebound-led-ai-052153058.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -911,27 +932,6 @@
         "source": "Yahoo Finance",
         "time": "11-25 23:22 ET",
         "pub_ts": 1795666975.0
-      },
-      {
-        "title": "Kioxia and NVIDIA Collaborate to Expand Effective High-Bandwidth Memory Capacity with SSDs",
-        "url": "https://finance.yahoo.com/technology/ai/articles/kioxia-nvidia-collaborate-expand-effective-041900475.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 23:19 ET",
-        "pub_ts": 1795666740.0
-      },
-      {
-        "title": "‘I Don’t Think He Needs a Pardon at All’: JD Vance Defends Nvidia CEO Jensen Huang as Crypto Bettors Put Him Atop Trump’s List",
-        "url": "https://www.benzinga.com/markets/prediction-markets/26/11/63659548/jd-vance-jensen-huang-trump-pardon-nvidia?utm_source=yahooFinance&utm_campaign=partner_feed&utm_medium=referral&.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 23:14 ET",
-        "pub_ts": 1795666443.0
-      },
-      {
-        "title": "Trump admin weighed using Cold War law to reinstate Nvidia CEO Huang, WaPo reports",
-        "url": "https://finance.yahoo.com/technology/articles/trump-admin-weighed-using-cold-032247551.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 22:22 ET",
-        "pub_ts": 1795663367.0
       }
     ],
     "AMD": [
@@ -3287,15 +3287,15 @@
     "IGV": 1795672972.8504636,
     "TLT": 1795672972.8504636,
     "GLD": 1795672972.8504636,
-    "SQQQ": 1795671484.4598403,
+    "SQQQ": 1795673012.9446745,
     "TSM": 1795672621.4423013,
     "VIXY": 1795672972.8504636,
-    "SOXS": 1795671484.4598403,
-    "NVDA": 1795671484.4598403,
-    "AMD": 1795671484.4598403,
+    "SOXS": 1795673012.9446745,
+    "NVDA": 1795673012.9446745,
+    "AMD": 1795673012.9446745,
     "ASML": 1795672621.4423013,
     "QCOM": 1795672621.4423013,
-    "AVGO": 1795671484.4598403,
+    "AVGO": 1795673012.9446745,
     "AMAT": 1795672621.4423013,
     "META": 1795672621.4423013,
     "GOOGL": 1795672621.4423013,
