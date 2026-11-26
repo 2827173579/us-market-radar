@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-26 16:42:21",
+  "updated_at": "2026-11-26 17:10:22",
   "win_rate_7d_pct": 100.0,
   "win_rate_30d_pct": 57.6,
   "long_win_rate_7d_pct": 9.1,
@@ -1140,6 +1140,13 @@
       "direction": "SHORT",
       "pred_prob_pct": 55.1,
       "entry_price": 16.87
+    },
+    {
+      "ticker": "AAPL",
+      "pred_date": "2026-11-26",
+      "direction": "SHORT",
+      "pred_prob_pct": 55.4,
+      "entry_price": 355.58
     }
   ],
   "daily_breakdown_30d": [
