@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795661914.448,
-  "updated_at_et": "11-25 21:58 ET",
-  "updated_at_kst": "11:58 KST",
+  "updated_at_ts": 1795661995.688,
+  "updated_at_et": "11-25 21:59 ET",
+  "updated_at_kst": "11:59 KST",
   "macro_calendar": [
     {
       "event_id": "1599680",
@@ -43,6 +43,20 @@
     }
   ],
   "macro_flashes": [
+    {
+      "id": "20261126105817615800",
+      "title": "远期过剩预期与近端溢价交锋，原油反弹动能正在回归",
+      "summary": "中东产量恢复后投行预计2027年市场将面临供应过剩，但叙事已被充分交易，深跌需更大利空。原油虽有基本面压制，但风险溢价回归后短期需警惕反弹的可能。",
+      "keywords": [
+        "中东",
+        "原油"
+      ],
+      "pub_ts": 1795661897.0,
+      "time_et": "11-25 21:58 ET",
+      "time_bj": "10:58 BJ",
+      "time_kst": "11:58 KST",
+      "time_display": "21:58 ET / 10:58 BJ"
+    },
     {
       "id": "20261126104536775800",
       "title": "恒生科技指数涨超4%，芯片、光通信、PCB等板块涨幅居前；成分股中，智谱(02513.H…",
@@ -371,19 +385,6 @@
       "time_bj": "03:02 BJ",
       "time_kst": "04:02 KST",
       "time_display": "14:02 ET / 03:02 BJ"
-    },
-    {
-      "id": "20261126025000001800",
-      "title": "美联储将于十分钟后公布经济状况褐皮书。",
-      "summary": "美联储将于十分钟后公布经济状况褐皮书。",
-      "keywords": [
-        "美联储"
-      ],
-      "pub_ts": 1795632600.0,
-      "time_et": "11-25 13:50 ET",
-      "time_bj": "02:50 BJ",
-      "time_kst": "03:50 KST",
-      "time_display": "13:50 ET / 02:50 BJ"
     }
   ],
   "ticker_news": {
@@ -1203,6 +1204,13 @@
     ],
     "GOOGL": [
       {
+        "title": "SpaceX gets approval for 1 million data center satellites",
+        "url": "https://finance.yahoo.com/technology/ai/articles/spacex-gets-approval-1-million-023847485.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 21:38 ET",
+        "pub_ts": 1795660727.0
+      },
+      {
         "title": "Apple Stock Defies AI Selloff: Is It the Market's Safe Haven?",
         "url": "https://beincrypto.com/apple-stock-ai-selloff-safe-haven/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1229,13 +1237,6 @@
         "source": "Yahoo Finance",
         "time": "11-25 18:43 ET",
         "pub_ts": 1795650186.0
-      },
-      {
-        "title": "Trump Has A Message for Big Tech Firms Like Amazon, Google and Microsoft Building Data Centers Abroad: ‘We’re Going to Put A Tremendous Tax On Them’",
-        "url": "https://finance.yahoo.com/economy/policy/articles/trump-message-big-tech-firms-223005233.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 17:30 ET",
-        "pub_ts": 1795645805.0
       }
     ],
     "MSFT": [
@@ -1245,6 +1246,13 @@
         "source": "Yahoo Finance",
         "time": "11-25 12:00 ET",
         "pub_ts": 1795626000.0
+      },
+      {
+        "title": "Nvidia’s Market Cap Falls Below Microsoft’s: Analyst Flags Five Overhangs For NVDA Stock",
+        "url": "https://stocktwits.com/news-articles/markets/equity/nvidia-s-market-cap-falls-below-microsoft-s-analyst-flags-five-overhangs-for-nvda-stock/cNbx4KZR9Z3?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 21:39 ET",
+        "pub_ts": 1795660782.0
       },
       {
         "title": "Microsoft's Green Card Filings Reveal A Striking Pattern After Mass Layoffs. Trump's New Rule Could Freeze Sponsorships For Two Years.",
@@ -1266,13 +1274,6 @@
         "source": "Yahoo Finance",
         "time": "11-25 15:50 ET",
         "pub_ts": 1795639822.0
-      },
-      {
-        "title": "Satya Nadella Says “the Floor of Cyber Attacks Has Fallen.” Microsoft Just Declared Code Red After a 24-Hour Outage",
-        "url": "https://www.tikr.com/blog/satya-nadella-says-the-floor-of-cyber-attacks-has-fallen-microsoft-just-declared-code-red-after-a-24-hour-outage?ref=yahoofinance&tlnk=yf-261125-gxp284g5&.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 13:03 ET",
-        "pub_ts": 1795629816.0
       }
     ],
     "AAPL": [
@@ -3284,6 +3285,20 @@
     ],
     "KOSPI": [
       {
+        "title": "Bank of Korea Rate Hike Meets KOSPI Struggles: Can Chips Carry Korea?",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/bank-korea-rate-hike-meets-015500527.html",
+        "source": "BeInCrypto",
+        "time": "11-25 20:55 ET",
+        "pub_ts": 1795658100.0
+      },
+      {
+        "title": "Samsung and SK Hynix Drag KOSPI Down 6%, and Foreign Investors Are Running",
+        "url": "https://finance.yahoo.com/markets/world-indices/articles/samsung-sk-hynix-drag-kospi-005458159.html",
+        "source": "BeInCrypto",
+        "time": "11-25 19:54 ET",
+        "pub_ts": 1795654498.0
+      },
+      {
         "title": "AI Angst Undercuts Asian Stock Markets",
         "url": "https://finance.yahoo.com/markets/world-indices/articles/ai-angst-undercuts-asian-stock-104226080.html",
         "source": "MT Newswires",
@@ -3303,65 +3318,51 @@
         "source": "GuruFocus.com",
         "time": "11-23 12:08 ET",
         "pub_ts": 1795453686.0
-      },
-      {
-        "title": "AI Jitters Roil Asian Stock Markets",
-        "url": "https://finance.yahoo.com/markets/world-indices/articles/ai-jitters-roil-asian-stock-103847073.html",
-        "source": "MT Newswires",
-        "time": "11-23 05:38 ET",
-        "pub_ts": 1795430327.0
-      },
-      {
-        "title": "Asia stocks mixed as Taiwan rebounds, KOSPI slides; U.S. futures jump",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/asia-stocks-slide-ai-rout-033321972.html",
-        "source": "Investing.com",
-        "time": "11-22 22:33 ET",
-        "pub_ts": 1795404801.0
       }
     ]
   },
   "ticker_news_ts": {
     "KORU": 1795660744.7867603,
     "SOXL": 1795660744.7867603,
-    "SPY": 1795660421.3495572,
+    "SPY": 1795661995.6876915,
     "DIA": 1795660744.7867603,
     "SOXX": 1795660744.7867603,
     "QQQ": 1795660744.7867603,
-    "SMH": 1795660421.3495572,
+    "SMH": 1795661995.6876915,
     "IWM": 1795660744.7867603,
     "IGV": 1795660744.7867603,
     "TLT": 1795660744.7867603,
     "GLD": 1795660744.7867603,
     "SQQQ": 1795660784.9688206,
-    "TSM": 1795660421.3495572,
+    "TSM": 1795661995.6876915,
     "VIXY": 1795660744.7867603,
     "SOXS": 1795660784.9688206,
     "NVDA": 1795660784.9688206,
     "AMD": 1795660784.9688206,
-    "ASML": 1795660421.3495572,
-    "QCOM": 1795660421.3495572,
+    "ASML": 1795661995.6876915,
+    "QCOM": 1795661995.6876915,
     "AVGO": 1795660784.9688206,
-    "AMAT": 1795660421.3495572,
-    "META": 1795660421.3495572,
-    "GOOGL": 1795660421.3495572,
-    "MSFT": 1795660421.3495572,
-    "AAPL": 1795660421.3495572,
-    "PLTR": 1795660421.3495572,
-    "NOW": 1795660421.3495572,
-    "AMZN": 1795660421.3495572,
-    "CRWV": 1795660421.3495572,
-    "NBIS": 1795660421.3495572,
-    "APLD": 1795660421.3495572,
+    "AMAT": 1795661995.6876915,
+    "META": 1795661995.6876915,
+    "GOOGL": 1795661995.6876915,
+    "MSFT": 1795661995.6876915,
+    "AAPL": 1795661995.6876915,
+    "PLTR": 1795661995.6876915,
+    "NOW": 1795661995.6876915,
+    "AMZN": 1795661995.6876915,
+    "CRWV": 1795661995.6876915,
+    "NBIS": 1795661995.6876915,
+    "APLD": 1795661995.6876915,
     "VST": 1795660704.858148,
     "BE": 1795660704.858148,
     "CRDO": 1795660704.858148,
     "COHR": 1795660704.858148,
-    "MRVL": 1795660421.3495572,
-    "LITE": 1795660421.3495572,
+    "MRVL": 1795661995.6876915,
+    "LITE": 1795661995.6876915,
     "AAOI": 1795660704.858148,
     "SPCX": 1795660704.858148,
     "ASTS": 1795660704.858148,
-    "AXTI": 1795660421.3495572,
+    "AXTI": 1795661995.6876915,
     "NASA": 1795660704.858148,
     "LUNR": 1795660704.858148,
     "TSLA": 1795660704.858148,
@@ -3376,13 +3377,13 @@
     "OKLO": 1795660704.858148,
     "CEG": 1795660704.858148,
     "FPS": 1795660704.858148,
-    "MU": 1795660421.3495572,
-    "SKHY": 1795660421.3495572,
-    "WDC": 1795660421.3495572,
+    "MU": 1795661995.6876915,
+    "SKHY": 1795661995.6876915,
+    "WDC": 1795661995.6876915,
     "STX": 1795660744.7867603,
     "MSTR": 1795660704.858148,
     "SNDK": 1795660704.858148,
-    "BTC-USD": 1795660421.3495572,
+    "BTC-USD": 1795661995.6876915,
     "CRWD": 1795660704.858148,
     "ORCL": 1795660744.7867603,
     "COIN": 1795660744.7867603,
@@ -3396,11 +3397,11 @@
     "WMT": 1795660744.7867603,
     "V": 1795660744.7867603,
     "CAT": 1795660744.7867603,
-    "FN": 1795660421.3495572,
+    "FN": 1795661995.6876915,
     "GLW": 1795660704.858148,
     "ANT": 1795660744.7867603,
     "XAUUSD": 1795660744.7867603,
-    "KOSPI": 1795660421.3495572
+    "KOSPI": 1795661995.6876915
   },
   "opex_shield": {
     "date": "2026-11-25",
