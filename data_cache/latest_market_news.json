@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795700397.654,
-  "updated_at_et": "11-26 08:39 ET",
-  "updated_at_kst": "22:39 KST",
+  "updated_at_ts": 1795700446.097,
+  "updated_at_et": "11-26 08:40 ET",
+  "updated_at_kst": "22:40 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -2760,6 +2760,13 @@
     ],
     "LLY": [
       {
+        "title": "Dow Jones Futures Rise After Nasdaq Slashes Losses In Wild Market Ride",
+        "url": "https://finance.yahoo.com/m/158e82fc-b889-34b6-8704-99a49e9a83ae/dow-jones-futures-rise-after.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-26 08:22 ET",
+        "pub_ts": 1795699324.0
+      },
+      {
         "title": "Can Oncology Emerge as Eli Lilly's Next Major Growth Driver?",
         "url": "https://finance.yahoo.com/healthcare/articles/oncology-emerge-eli-lillys-next-115600192.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2786,13 +2793,6 @@
         "source": "Yahoo Finance",
         "time": "11-26 05:55 ET",
         "pub_ts": 1795690500.0
-      },
-      {
-        "title": "Dow Jones Futures Rise After Nasdaq Slashes Losses In Wild Market Ride",
-        "url": "https://finance.yahoo.com/m/158e82fc-b889-34b6-8704-99a49e9a83ae/dow-jones-futures-rise-after.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-26 04:55 ET",
-        "pub_ts": 1795686944.0
       }
     ],
     "MRNA": [
@@ -3204,6 +3204,20 @@
     ],
     "ANT": [
       {
+        "title": "Is Anthropic Joining the S&P 500? Here's What Investors Need to Know.",
+        "url": "https://www.fool.com/investing/2026/11/26/is-anthropic-joining-sp-500-what-investors-need-to-know/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-26 08:23 ET",
+        "pub_ts": 1795699382.0
+      },
+      {
+        "title": "Dow Jones Futures Rise After Nasdaq Slashes Losses In Wild Market Ride",
+        "url": "https://finance.yahoo.com/m/158e82fc-b889-34b6-8704-99a49e9a83ae/dow-jones-futures-rise-after.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-26 08:22 ET",
+        "pub_ts": 1795699324.0
+      },
+      {
         "title": "Will Anthropic’s Float Tripling by February Sink a Stock Already Below Its IPO Price?",
         "url": "https://www.tikr.com/blog/will-anthropics-float-tripling-by-february-sink-a-stock-already-below-its-ipo-price?ref=yahoofinance&tlnk=yf-261126-rh7435mm&.tsrc=rss",
         "source": "Yahoo Finance",
@@ -3223,20 +3237,6 @@
         "source": "Yahoo Finance",
         "time": "11-26 06:25 ET",
         "pub_ts": 1795692304.0
-      },
-      {
-        "title": "Should You Buy Anthropic Stock After Its IPO? Here’s What History Says About Record-Breaking Debuts.",
-        "url": "https://www.fool.com/investing/2026/11/26/should-you-buy-anthropic-stock-after-its-ipo-what-history-says-about-record-breaking-debuts/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-26 06:24 ET",
-        "pub_ts": 1795692242.0
-      },
-      {
-        "title": "BT launches nationwide cyber resilience drive as AI helps fuel 500% surge in malicious activity",
-        "url": "https://finance.yahoo.com/small-business/articles/bt-launches-nationwide-cyber-resilience-104600266.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-26 05:46 ET",
-        "pub_ts": 1795689960.0
       }
     ],
     "XAUUSD": [
@@ -3319,11 +3319,11 @@
   "ticker_news_ts": {
     "KORU": 1795700309.0548406,
     "SOXL": 1795700309.0548406,
-    "SPY": 1795698925.1931996,
+    "SPY": 1795700446.097066,
     "DIA": 1795700309.0548406,
     "SOXX": 1795700309.0548406,
     "QQQ": 1795700309.0548406,
-    "SMH": 1795698925.1931996,
+    "SMH": 1795700446.097066,
     "IWM": 1795700309.0548406,
     "IGV": 1795700309.0548406,
     "TLT": 1795700309.0548406,
@@ -3367,37 +3367,37 @@
     "FLY": 1795700397.6543553,
     "INTC": 1795700397.6543553,
     "VRT": 1795700397.6543553,
-    "HPE": 1795698925.1931996,
+    "HPE": 1795700446.097066,
     "DELL": 1795700397.6543553,
-    "OKLO": 1795698925.1931996,
+    "OKLO": 1795700446.097066,
     "CEG": 1795700397.6543553,
-    "FPS": 1795698925.1931996,
+    "FPS": 1795700446.097066,
     "MU": 1795699022.424005,
     "SKHY": 1795698972.324488,
     "WDC": 1795699022.424005,
-    "STX": 1795698925.1931996,
-    "MSTR": 1795698925.1931996,
-    "SNDK": 1795698925.1931996,
+    "STX": 1795700446.097066,
+    "MSTR": 1795700446.097066,
+    "SNDK": 1795700446.097066,
     "BTC-USD": 1795699022.424005,
-    "CRWD": 1795698925.1931996,
-    "ORCL": 1795698925.1931996,
-    "COIN": 1795698925.1931996,
-    "LLY": 1795698925.1931996,
-    "MRNA": 1795698925.1931996,
-    "NKE": 1795698925.1931996,
-    "MCD": 1795698925.1931996,
-    "PEP": 1795698925.1931996,
+    "CRWD": 1795700446.097066,
+    "ORCL": 1795700446.097066,
+    "COIN": 1795700446.097066,
+    "LLY": 1795700446.097066,
+    "MRNA": 1795700446.097066,
+    "NKE": 1795700446.097066,
+    "MCD": 1795700446.097066,
+    "PEP": 1795700446.097066,
     "XOM": 1795698972.324488,
-    "JPM": 1795698925.1931996,
+    "JPM": 1795700446.097066,
     "WMT": 1795699022.424005,
-    "V": 1795698925.1931996,
-    "CAT": 1795698925.1931996,
+    "V": 1795700446.097066,
+    "CAT": 1795700446.097066,
     "FN": 1795698972.324488,
     "GLW": 1795700309.0548406,
-    "ANT": 1795698925.1931996,
+    "ANT": 1795700446.097066,
     "XAUUSD": 1795699022.424005,
     "KOSPI": 1795698972.324488,
-    "KSTR": 1795698925.1931996
+    "KSTR": 1795700446.097066
   },
   "opex_shield": {
     "date": "2026-11-26",
