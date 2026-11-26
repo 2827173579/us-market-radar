@@ -7483,9 +7483,29 @@
     "JIN10_FLASH:20261126071722691800": {
       "device": "PC",
       "ts": 1795648727.4881668
+    },
+    "2026-11-26:MSFT/DELL:5M_ENTRY+STOP_LOSS": {
+      "device": "PC",
+      "ts": 1795677372.9270127
+    },
+    "2026-11-26:DEFENSIVE_FLIGHT:-0.7": {
+      "device": "PC",
+      "ts": 1795677375.5194817
+    },
+    "2026-11-26:VIX_REGIME:BACKWARDATION_BRAKE": {
+      "device": "PC",
+      "ts": 1795677376.7347548
+    },
+    "JIN10_FLASH:20261126151022413800": {
+      "device": "PC",
+      "ts": 1795677376.7764
+    },
+    "2026-11-26:VXN_TECH_DELEVERAGING": {
+      "device": "PC",
+      "ts": 1795677377.4891958
     }
   },
   "device": "PC",
-  "last_heartbeat_ts": 1795677237.1051846,
-  "updated_at": "2026-11-26T07:13:57.105221+00:00"
+  "last_heartbeat_ts": 1795677278.9766695,
+  "updated_at": "2026-11-26T07:16:17.489477+00:00"
 }

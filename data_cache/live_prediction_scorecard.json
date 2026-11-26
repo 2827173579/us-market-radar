@@ -1,17 +1,17 @@
 {
-  "updated_at": "2026-11-26 07:33:49",
+  "updated_at": "2026-11-26 16:15:50",
   "win_rate_7d_pct": 100.0,
-  "win_rate_30d_pct": 50.4,
-  "long_win_rate_7d_pct": 7.6,
+  "win_rate_30d_pct": 57.6,
+  "long_win_rate_7d_pct": 9.1,
   "short_win_rate_7d_pct": 100.0,
-  "long_win_rate_30d_pct": 31.0,
-  "short_win_rate_30d_pct": 50.4,
+  "long_win_rate_30d_pct": 29.8,
+  "short_win_rate_30d_pct": 57.6,
   "sample_count_7d": 3,
-  "sample_count_30d": 141,
+  "sample_count_30d": 118,
   "avg_return_7d_pct": 8.85,
-  "avg_return_30d_pct": 0.72,
-  "window_7d_range": "2026-11-14~2026-11-20",
-  "window_30d_range": "2026-10-22~2026-11-20",
+  "avg_return_30d_pct": 1.56,
+  "window_7d_range": "2026-11-15~2026-11-21",
+  "window_30d_range": "2026-10-23~2026-11-21",
   "is_degraded": false,
   "warning_text": "✅ 模型近期实盘命中稳健",
   "reconciled_live_count": 1,
@@ -1084,17 +1084,30 @@
       "direction": "SHORT",
       "pred_prob_pct": 55.6,
       "entry_price": 1392.22
+    },
+    {
+      "ticker": "COHR",
+      "pred_date": "2026-11-26",
+      "direction": "SHORT",
+      "pred_prob_pct": 55.5,
+      "entry_price": 196.19
+    },
+    {
+      "ticker": "ORCL",
+      "pred_date": "2026-11-26",
+      "direction": "SHORT",
+      "pred_prob_pct": 56.6,
+      "entry_price": 103.88
+    },
+    {
+      "ticker": "VST",
+      "pred_date": "2026-11-26",
+      "direction": "SHORT",
+      "pred_prob_pct": 56.9,
+      "entry_price": 121.32
     }
   ],
   "daily_breakdown_30d": [
-    {
-      "date": "2026-10-22",
-      "win_rate_pct": 13.0,
-      "long_win_rate_pct": 100.0,
-      "short_win_rate_pct": 13.0,
-      "sample_count": 23,
-      "avg_return_pct": -3.56
-    },
     {
       "date": "2026-10-23",
       "win_rate_pct": 22.7,
@@ -1326,6 +1339,14 @@
       "short_win_rate_pct": 0.0,
       "sample_count": 1,
       "avg_return_pct": -4.38
+    },
+    {
+      "date": "2026-11-21",
+      "win_rate_pct": 100.0,
+      "long_win_rate_pct": 100.0,
+      "short_win_rate_pct": 0.0,
+      "sample_count": 1,
+      "avg_return_pct": 6.25
     }
   ]
 }
