@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795728656.152,
-  "updated_at_et": "11-26 16:30 ET",
-  "updated_at_kst": "06:30 KST",
+  "updated_at_ts": 1795728704.25,
+  "updated_at_et": "11-26 16:31 ET",
+  "updated_at_kst": "06:31 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -2389,6 +2389,13 @@
     ],
     "MU": [
       {
+        "title": "Why It’s Hard to Write Off Micron (MU) Even with a Memory Peak in Sight",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/why-hard-write-off-micron-210000375.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-26 16:00 ET",
+        "pub_ts": 1795726800.0
+      },
+      {
         "title": "Micron Stock Faces Surprising New Threat From Huawei",
         "url": "https://finance.yahoo.com/markets/stocks/articles/micron-stock-faces-surprising-threat-180348513.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2415,13 +2422,6 @@
         "source": "Yahoo Finance",
         "time": "11-26 08:53 ET",
         "pub_ts": 1795701219.0
-      },
-      {
-        "title": "Is Micron Stock a Buy After HPE Said Memory Will Stay Scarce Into 2028?",
-        "url": "https://www.fool.com/investing/2026/11/26/is-micron-stock-a-buy-after-hpe-said-memory-will-stay-scarce-into-2028/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-26 08:37 ET",
-        "pub_ts": 1795700222.0
       }
     ],
     "SKHY": [
@@ -2611,6 +2611,13 @@
     ],
     "BTC-USD": [
       {
+        "title": "Bitcoin, XRP, Ethereum face brutal crash risk as key levels crack",
+        "url": "https://www.thestreet.com/crypto/markets/bitcoin-xrp-ethereum-face-brutal-crash-risk-as-key-levels-crack?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-26 16:00 ET",
+        "pub_ts": 1795726800.0
+      },
+      {
         "title": "Is Bitcoin a Good Investment for Building Wealth After a 50% Drop?",
         "url": "https://247wallst.com/investing/cryptocurrency/2026/11/26/is-bitcoin-a-good-investment-for-building-wealth-after-a-50-drop/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2637,13 +2644,6 @@
         "source": "Yahoo Finance",
         "time": "11-26 12:45 ET",
         "pub_ts": 1795715154.0
-      },
-      {
-        "title": "Galaxy Research Warns Bitcoin Could Fall to $28,200 if June Low Breaks",
-        "url": "https://www.cryptoprowl.com/releases/galaxy-research-warns-bitcoin-could-fall-to-28200-if-june-low-breaks-8091?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-26 11:37 ET",
-        "pub_ts": 1795711020.0
       }
     ],
     "CRWD": [
@@ -3341,22 +3341,22 @@
     "GOOGL": 1795728656.1522434,
     "MSFT": 1795728656.1522434,
     "AAPL": 1795728656.1522434,
-    "PLTR": 1795727154.9189186,
-    "NOW": 1795727154.9189186,
-    "AMZN": 1795727154.9189186,
-    "CRWV": 1795727154.9189186,
-    "NBIS": 1795727154.9189186,
-    "APLD": 1795727154.9189186,
+    "PLTR": 1795728704.2496486,
+    "NOW": 1795728704.2496486,
+    "AMZN": 1795728704.2496486,
+    "CRWV": 1795728704.2496486,
+    "NBIS": 1795728704.2496486,
+    "APLD": 1795728704.2496486,
     "VST": 1795728331.4324946,
     "BE": 1795728331.4324946,
     "CRDO": 1795728331.4324946,
     "COHR": 1795728331.4324946,
-    "MRVL": 1795727154.9189186,
-    "LITE": 1795727154.9189186,
+    "MRVL": 1795728704.2496486,
+    "LITE": 1795728704.2496486,
     "AAOI": 1795728331.4324946,
     "SPCX": 1795728331.4324946,
     "ASTS": 1795728331.4324946,
-    "AXTI": 1795727154.9189186,
+    "AXTI": 1795728704.2496486,
     "NASA": 1795728656.1522434,
     "LUNR": 1795728656.1522434,
     "TSLA": 1795728656.1522434,
@@ -3371,27 +3371,27 @@
     "OKLO": 1795728656.1522434,
     "CEG": 1795728656.1522434,
     "FPS": 1795728656.1522434,
-    "MU": 1795727154.9189186,
-    "SKHY": 1795727154.9189186,
-    "WDC": 1795727154.9189186,
-    "STX": 1795727154.9189186,
-    "MSTR": 1795727154.9189186,
+    "MU": 1795728704.2496486,
+    "SKHY": 1795728704.2496486,
+    "WDC": 1795728704.2496486,
+    "STX": 1795728704.2496486,
+    "MSTR": 1795728704.2496486,
     "SNDK": 1795728656.1522434,
-    "BTC-USD": 1795727154.9189186,
-    "CRWD": 1795727154.9189186,
-    "ORCL": 1795727154.9189186,
-    "COIN": 1795727154.9189186,
-    "LLY": 1795727154.9189186,
-    "MRNA": 1795727154.9189186,
-    "NKE": 1795727154.9189186,
-    "MCD": 1795727154.9189186,
-    "PEP": 1795727154.9189186,
+    "BTC-USD": 1795728704.2496486,
+    "CRWD": 1795728704.2496486,
+    "ORCL": 1795728704.2496486,
+    "COIN": 1795728704.2496486,
+    "LLY": 1795728704.2496486,
+    "MRNA": 1795728704.2496486,
+    "NKE": 1795728704.2496486,
+    "MCD": 1795728704.2496486,
+    "PEP": 1795728704.2496486,
     "XOM": 1795727199.690381,
     "JPM": 1795727199.690381,
     "WMT": 1795727199.690381,
-    "V": 1795727154.9189186,
+    "V": 1795728704.2496486,
     "CAT": 1795727199.690381,
-    "FN": 1795727154.9189186,
+    "FN": 1795728704.2496486,
     "GLW": 1795728331.4324946,
     "ANT": 1795727199.690381,
     "XAUUSD": 1795727199.690381,
