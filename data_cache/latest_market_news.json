@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795730155.8,
-  "updated_at_et": "11-26 16:55 ET",
-  "updated_at_kst": "06:55 KST",
+  "updated_at_ts": 1795730200.403,
+  "updated_at_et": "11-26 16:56 ET",
+  "updated_at_kst": "06:56 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -1175,6 +1175,13 @@
         "pub_ts": 1795700640.0
       },
       {
+        "title": "Jensen Huang’s Return Doesn’t Make Nvidia Stock (NVDA) a Buy",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/jensen-huang-return-doesn-t-212200380.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-26 16:22 ET",
+        "pub_ts": 1795728120.0
+      },
+      {
         "title": "Broadcom Stocks Edge Lower After Rebounding From an Intraday Low of $278",
         "url": "https://finance.yahoo.com/markets/stocks/articles/broadcom-stocks-edge-lower-rebounding-183041028.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1194,13 +1201,6 @@
         "source": "Yahoo Finance",
         "time": "11-26 13:09 ET",
         "pub_ts": 1795716599.0
-      },
-      {
-        "title": "Alphabet Could Be the Safest Way to Own Anthropic. Here’s the Math.",
-        "url": "https://www.fool.com/investing/2026/11/26/alphabet-could-be-the-safest-way-to-own-anthropic-here-s-the-math/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-26 12:47 ET",
-        "pub_ts": 1795715222.0
       }
     ],
     "MSFT": [
@@ -2574,6 +2574,13 @@
     ],
     "SNDK": [
       {
+        "title": "Sandisk’s 8-for-1 Split Is Done. Here’s What Investors Should Do Next.",
+        "url": "https://www.fool.com/investing/2026/11/26/sandisks-8-for-1-split-is-done-heres-what-investors-should-do-next/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-26 16:20 ET",
+        "pub_ts": 1795728002.0
+      },
+      {
         "title": "Micron and Sandisk Are Two of the Cheapest AI Chip Stocks to Own",
         "url": "https://finance.yahoo.com/technology/ai/articles/micron-sandisk-two-cheapest-ai-112351523.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2600,13 +2607,6 @@
         "source": "Yahoo Finance",
         "time": "11-26 01:30 ET",
         "pub_ts": 1795674651.0
-      },
-      {
-        "title": "223% Upside for Sandisk? Mizuho Thinks So, and Here’s How",
-        "url": "https://www.tikr.com/blog/223-upside-for-sandisk-mizuho-thinks-so-and-heres-how?ref=yahoofinance&tlnk=yf-261126-pxqf849m&.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 18:33 ET",
-        "pub_ts": 1795649631.0
       }
     ],
     "BTC-USD": [
@@ -3328,19 +3328,19 @@
     "TLT": 1795729836.7096138,
     "GLD": 1795729836.7096138,
     "SQQQ": 1795729836.7096138,
-    "TSM": 1795728656.1522434,
+    "TSM": 1795730200.4032273,
     "VIXY": 1795729836.7096138,
     "SOXS": 1795729836.7096138,
     "NVDA": 1795729836.7096138,
     "AMD": 1795729836.7096138,
-    "ASML": 1795728656.1522434,
-    "QCOM": 1795728656.1522434,
-    "AVGO": 1795728656.1522434,
-    "AMAT": 1795728656.1522434,
-    "META": 1795728656.1522434,
-    "GOOGL": 1795728656.1522434,
-    "MSFT": 1795728656.1522434,
-    "AAPL": 1795728656.1522434,
+    "ASML": 1795730200.4032273,
+    "QCOM": 1795730200.4032273,
+    "AVGO": 1795730200.4032273,
+    "AMAT": 1795730200.4032273,
+    "META": 1795730200.4032273,
+    "GOOGL": 1795730200.4032273,
+    "MSFT": 1795730200.4032273,
+    "AAPL": 1795730200.4032273,
     "PLTR": 1795728704.2496486,
     "NOW": 1795728704.2496486,
     "AMZN": 1795728704.2496486,
@@ -3357,26 +3357,26 @@
     "SPCX": 1795729836.7096138,
     "ASTS": 1795729836.7096138,
     "AXTI": 1795728704.2496486,
-    "NASA": 1795728656.1522434,
-    "LUNR": 1795728656.1522434,
-    "TSLA": 1795728656.1522434,
-    "AXP": 1795728656.1522434,
-    "RKLB": 1795728656.1522434,
-    "KO": 1795728656.1522434,
-    "FLY": 1795728656.1522434,
-    "INTC": 1795728656.1522434,
-    "VRT": 1795728656.1522434,
-    "HPE": 1795728656.1522434,
-    "DELL": 1795728656.1522434,
-    "OKLO": 1795728656.1522434,
-    "CEG": 1795728656.1522434,
-    "FPS": 1795728656.1522434,
+    "NASA": 1795730200.4032273,
+    "LUNR": 1795730200.4032273,
+    "TSLA": 1795730200.4032273,
+    "AXP": 1795730200.4032273,
+    "RKLB": 1795730200.4032273,
+    "KO": 1795730200.4032273,
+    "FLY": 1795730200.4032273,
+    "INTC": 1795730200.4032273,
+    "VRT": 1795730200.4032273,
+    "HPE": 1795730200.4032273,
+    "DELL": 1795730200.4032273,
+    "OKLO": 1795730200.4032273,
+    "CEG": 1795730200.4032273,
+    "FPS": 1795730200.4032273,
     "MU": 1795728704.2496486,
     "SKHY": 1795728704.2496486,
     "WDC": 1795728704.2496486,
     "STX": 1795728704.2496486,
     "MSTR": 1795728704.2496486,
-    "SNDK": 1795728656.1522434,
+    "SNDK": 1795730200.4032273,
     "BTC-USD": 1795728704.2496486,
     "CRWD": 1795728704.2496486,
     "ORCL": 1795728704.2496486,
@@ -3395,7 +3395,7 @@
     "GLW": 1795729836.7096138,
     "ANT": 1795728749.5073178,
     "XAUUSD": 1795728749.5073178,
-    "KOSPI": 1795728656.1522434,
+    "KOSPI": 1795730200.4032273,
     "KSTR": 1795729836.7096138
   },
   "opex_shield": {
