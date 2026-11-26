@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795685562.315,
-  "updated_at_et": "11-26 04:32 ET",
-  "updated_at_kst": "18:32 KST",
+  "updated_at_ts": 1795685601.528,
+  "updated_at_et": "11-26 04:33 ET",
+  "updated_at_kst": "18:33 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -3197,6 +3197,20 @@
     ],
     "ANT": [
       {
+        "title": "ANT Stock Gains Overnight: US Exchange-Traded Funds’ Anthropic Holdings Swell To Over $2B",
+        "url": "https://stocktwits.com/news-articles/markets/equity/ant-stock-gains-overnight-us-exchange-traded-funds-anthropic-holdings-swell-to-over-2-b/cNbxKBjR9ZY?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-26 04:23 ET",
+        "pub_ts": 1795685004.0
+      },
+      {
+        "title": "Anthropic Stock Fell Below Its IPO Price. Is It a Buy, or Is More Downside Just Ahead?",
+        "url": "https://www.fool.com/investing/2026/11/26/anthropic-stock-fell-below-its-ipo-price-is-it-a-buy-or-is-more-downside-just-ahead/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-26 04:22 ET",
+        "pub_ts": 1795684922.0
+      },
+      {
         "title": "Anthropic’s Potential Bond Issue Could Reportedly Be Rated Junk — Here’s When Crypto Bettors Think It Could Go Bankrupt",
         "url": "https://www.benzinga.com/markets/prediction-markets/26/11/63659962/anthropic-bankruptcy-prediction-market-bond-issue-junk?utm_source=yahooFinance&utm_campaign=partner_feed&utm_medium=referral&.tsrc=rss",
         "source": "Yahoo Finance",
@@ -3216,20 +3230,6 @@
         "source": "Yahoo Finance",
         "time": "11-25 23:41 ET",
         "pub_ts": 1795668109.0
-      },
-      {
-        "title": "Does Anthropic Want AI to Run the World? CEO Dario Amodei Pushes Back Against ‘Surrender Human Free Will’ Claims",
-        "url": "https://finance.yahoo.com/technology/ai/articles/does-anthropic-want-ai-run-041314042.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 23:13 ET",
-        "pub_ts": 1795666394.0
-      },
-      {
-        "title": "Dow Jones Futures Rise After Nasdaq Slashes Losses In Wild Market Ride",
-        "url": "https://finance.yahoo.com/m/158e82fc-b889-34b6-8704-99a49e9a83ae/dow-jones-futures-rise-after.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 23:06 ET",
-        "pub_ts": 1795665992.0
       }
     ],
     "XAUUSD": [
@@ -3380,15 +3380,15 @@
     "NKE": 1795685562.314857,
     "MCD": 1795685562.314857,
     "PEP": 1795685562.314857,
-    "XOM": 1795684078.8885493,
-    "JPM": 1795684078.8885493,
-    "WMT": 1795684078.8885493,
+    "XOM": 1795685601.5284796,
+    "JPM": 1795685601.5284796,
+    "WMT": 1795685601.5284796,
     "V": 1795685562.314857,
-    "CAT": 1795684078.8885493,
+    "CAT": 1795685601.5284796,
     "FN": 1795685155.0397205,
     "GLW": 1795685434.6223276,
-    "ANT": 1795684078.8885493,
-    "XAUUSD": 1795684078.8885493,
+    "ANT": 1795685601.5284796,
+    "XAUUSD": 1795685601.5284796,
     "KOSPI": 1795685108.7946615,
     "KSTR": 1795685108.7946615
   },
