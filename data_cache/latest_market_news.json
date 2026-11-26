@@ -1,9 +1,22 @@
 {
-  "updated_at_ts": 1795685393.789,
-  "updated_at_et": "11-26 04:29 ET",
-  "updated_at_kst": "18:29 KST",
+  "updated_at_ts": 1795685434.622,
+  "updated_at_et": "11-26 04:30 ET",
+  "updated_at_kst": "18:30 KST",
   "macro_calendar": [],
   "macro_flashes": [
+    {
+      "id": "20261126172955272800",
+      "title": "特朗普政府加大对内塔尼亚胡施压，要求兑现加沙和平计划承诺",
+      "summary": "特朗普此前已亲自要求内塔尼亚胡落实加沙计划，库什纳周二又通过电话施压。美国方面希望在以色列政局出现变化前，推动计划从政治承诺进入执行阶段。",
+      "keywords": [
+        "特朗普"
+      ],
+      "pub_ts": 1795685395.0,
+      "time_et": "11-26 04:29 ET",
+      "time_bj": "17:29 BJ",
+      "time_kst": "18:29 KST",
+      "time_display": "04:29 ET / 17:29 BJ"
+    },
     {
       "id": "20261126172547528800",
       "title": "强劲数据未能钉死美联储1月加息，黄金11月再次跌破3500的概率为...｜市场赔率数据表",
@@ -330,19 +343,6 @@
       "time_bj": "14:05 BJ",
       "time_kst": "15:05 KST",
       "time_display": "01:05 ET / 14:05 BJ"
-    },
-    {
-      "id": "20261126134247017800",
-      "title": "WTI原油站上86美元/桶，布伦特原油向上触及96美元/桶，均创近10日来新高。",
-      "summary": "WTI原油站上86美元/桶，布伦特原油向上触及96美元/桶，均创近10日来新高。",
-      "keywords": [
-        "原油"
-      ],
-      "pub_ts": 1795671767.0,
-      "time_et": "11-26 00:42 ET",
-      "time_bj": "13:42 BJ",
-      "time_kst": "14:42 KST",
-      "time_display": "00:42 ET / 13:42 BJ"
     }
   ],
   "ticker_news": {
@@ -607,6 +607,13 @@
     ],
     "IWM": [
       {
+        "title": "A Third of the Russell 2000 Loses Money. This Small-Cap ETF Screens Most of Them Out",
+        "url": "https://247wallst.com/investing/etf/2026/11/26/a-third-of-the-russell-2000-loses-money-this-small-cap-etf-screens-most-of-them-out/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-26 04:04 ET",
+        "pub_ts": 1795683880.0
+      },
+      {
         "title": "The Average Stock Shrugged Off the Tech Slide. History Is Split",
         "url": "https://www.trefis.com/stock/spx/articles/628711/the-average-stock-shrugged-off-the-tech-slide-history-is-split/2026-11-25?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -633,13 +640,6 @@
         "source": "Yahoo Finance",
         "time": "11-24 11:50 ET",
         "pub_ts": 1795539001.0
-      },
-      {
-        "title": "iShares Russell 2000 (IWM) Adds Glaukos and Jackson Financial on Nov. 20",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/ishares-russell-2000-iwm-adds-110258205.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 06:02 ET",
-        "pub_ts": 1795518178.0
       }
     ],
     "IGV": [
@@ -1768,6 +1768,13 @@
         "pub_ts": 1795681559.0
       },
       {
+        "title": "AT&T Is Up 10% in a Month. Steve Eisman Calls the Big Three Carriers “Uninvestable.” Who’s Right?",
+        "url": "https://www.tikr.com/blog/att-is-up-10-in-a-month-steve-eisman-calls-the-big-three-carriers-uninvestable-whos-right?ref=yahoofinance&tlnk=yf-261126-82p43rqx&.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-26 03:24 ET",
+        "pub_ts": 1795681485.0
+      },
+      {
         "title": "Musk makes $18 billion SpaceX stock pledge for every kid in America",
         "url": "https://www.axios.com/2026/11/26/musk-spacex-shares-trump-accounts#utm_source=yahoo_finance&utm_medium=partner&utm_campaign=subs-partner-yahoo-finance-AI?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1780,13 +1787,6 @@
         "source": "Yahoo Finance",
         "time": "11-26 00:36 ET",
         "pub_ts": 1795671399.0
-      },
-      {
-        "title": "SpaceX Reportedly Slashes Some Nvidia Chip Rents — AI Researcher Sees Musk’s Edge In A GPU Glut",
-        "url": "https://stocktwits.com/news-articles/markets/equity/spacex-reportedly-slashes-nvidia-chip-rents-ai-researcher-musk-edge-gpu-glut/cNbxOPgR9ZQ?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-26 00:32 ET",
-        "pub_ts": 1795671175.0
       }
     ],
     "ASTS": [
@@ -3310,16 +3310,16 @@
     ]
   },
   "ticker_news_ts": {
-    "KORU": 1795683902.487134,
-    "SOXL": 1795683902.487134,
+    "KORU": 1795685434.6223276,
+    "SOXL": 1795685434.6223276,
     "SPY": 1795685108.7946615,
-    "DIA": 1795683902.487134,
-    "SOXX": 1795683902.487134,
-    "QQQ": 1795683902.487134,
+    "DIA": 1795685434.6223276,
+    "SOXX": 1795685434.6223276,
+    "QQQ": 1795685434.6223276,
     "SMH": 1795685108.7946615,
-    "IWM": 1795683902.487134,
-    "IGV": 1795683902.487134,
-    "TLT": 1795683902.487134,
+    "IWM": 1795685434.6223276,
+    "IGV": 1795685434.6223276,
+    "TLT": 1795685434.6223276,
     "GLD": 1795683997.95645,
     "SQQQ": 1795683997.95645,
     "TSM": 1795685108.7946615,
@@ -3341,15 +3341,15 @@
     "CRWV": 1795685155.0397205,
     "NBIS": 1795685155.0397205,
     "APLD": 1795685155.0397205,
-    "VST": 1795683902.487134,
-    "BE": 1795683902.487134,
-    "CRDO": 1795683902.487134,
-    "COHR": 1795683902.487134,
+    "VST": 1795685434.6223276,
+    "BE": 1795685434.6223276,
+    "CRDO": 1795685434.6223276,
+    "COHR": 1795685434.6223276,
     "MRVL": 1795685155.0397205,
     "LITE": 1795685155.0397205,
-    "AAOI": 1795683902.487134,
-    "SPCX": 1795683902.487134,
-    "ASTS": 1795683902.487134,
+    "AAOI": 1795685434.6223276,
+    "SPCX": 1795685434.6223276,
+    "ASTS": 1795685434.6223276,
     "AXTI": 1795685155.0397205,
     "NASA": 1795683953.9120905,
     "LUNR": 1795683953.9120905,
@@ -3386,7 +3386,7 @@
     "V": 1795684039.5806797,
     "CAT": 1795684078.8885493,
     "FN": 1795685155.0397205,
-    "GLW": 1795683902.487134,
+    "GLW": 1795685434.6223276,
     "ANT": 1795684078.8885493,
     "XAUUSD": 1795684078.8885493,
     "KOSPI": 1795685108.7946615,
@@ -3409,7 +3409,7 @@
   "calendar_banner": {
     "level": "idle_with_flash",
     "headline": "📡 宏观消息面监控中 · 今日暂无美股五星级经济数据大考",
-    "detail": "⚡ 最新核心快讯 (04:25 ET / 17:25 BJ) [美联储] [加息]：强劲经济数据未能给明年加息布局带来太多提振，市场对连续加息还存在什么疑虑？国际现货金银实现V型反弹，11月结束前再次跌破3500的概率是...",
+    "detail": "⚡ 最新核心快讯 (04:29 ET / 17:29 BJ) [特朗普]：特朗普此前已亲自要求内塔尼亚胡落实加沙计划，库什纳周二又通过电话施压。美国方面希望在以色列政局出现变化前，推动计划从政治承诺进入执行阶段。",
     "event_name": "",
     "minutes_left": 0,
     "opex_shield": {
