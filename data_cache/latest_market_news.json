@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795698925.193,
-  "updated_at_et": "11-26 08:15 ET",
-  "updated_at_kst": "22:15 KST",
+  "updated_at_ts": 1795698972.324,
+  "updated_at_et": "11-26 08:16 ET",
+  "updated_at_kst": "22:16 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -1176,6 +1176,13 @@
         "pub_ts": 1795694400.0
       },
       {
+        "title": "Will Anthropic’s Float Tripling by February Sink a Stock Already Below Its IPO Price?",
+        "url": "https://www.tikr.com/blog/will-anthropics-float-tripling-by-february-sink-a-stock-already-below-its-ipo-price?ref=yahoofinance&tlnk=yf-261126-rh7435mm&.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-26 08:02 ET",
+        "pub_ts": 1795698151.0
+      },
+      {
         "title": "Tepper Trims Alphabet by ~46% and Dumps Broadcom & AMD While Backing Micron and Oracle",
         "url": "https://247wallst.com/investing/2026/11/26/tepper-trims-alphabet-by-46-and-dumps-broadcom-amd-while-backing-micron-and-oracle/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1195,13 +1202,6 @@
         "source": "Yahoo Finance",
         "time": "11-26 06:04 ET",
         "pub_ts": 1795691088.0
-      },
-      {
-        "title": "SPDR S&P 500 ETF (SPY) Sells $400.1 Million of Apple on Nov. 24",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/spdr-p-500-etf-spy-110357521.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-26 06:03 ET",
-        "pub_ts": 1795691037.0
       }
     ],
     "MSFT": [
@@ -1243,6 +1243,13 @@
     ],
     "AAPL": [
       {
+        "title": "An Apple Executive Just Filed to Sell $19 Million of Apple Stock With Shares a Hair Below Their Record",
+        "url": "https://247wallst.com/investing/2026/11/26/an-apple-executive-just-filed-to-sell-19-million-of-apple-stock-with-shares-a-hair-below-their-record/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-26 07:57 ET",
+        "pub_ts": 1795697875.0
+      },
+      {
         "title": "MiniMax Faces Revenue Risks as Apple Removes Talkie AI Chatbot",
         "url": "https://finance.yahoo.com/technology/ai/articles/minimax-faces-revenue-risks-apple-113357968.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1269,13 +1276,6 @@
         "source": "Yahoo Finance",
         "time": "11-26 06:05 ET",
         "pub_ts": 1795691120.0
-      },
-      {
-        "title": "State Street Tech Select SPDR (XLK) Adds Apple and Nvidia on Nov. 24",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/state-street-tech-select-spdr-110452004.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-26 06:04 ET",
-        "pub_ts": 1795691092.0
       }
     ],
     "PLTR": [
@@ -1382,21 +1382,14 @@
         "pub_ts": 1795667280.0
       },
       {
-        "title": "Bill Gurley: Investors Weren’t “Scrambling to Actually Own Anthropic.” That’s a Problem for Amazon and Alphabet",
-        "url": "https://www.tikr.com/blog/bill-gurley-investors-werent-scrambling-to-actually-own-anthropic-thats-a-problem-for-amazon-and-alphabet?ref=yahoofinance&tlnk=yf-261125-5qg4553j&.tsrc=rss",
+        "title": "Will Anthropic’s Float Tripling by February Sink a Stock Already Below Its IPO Price?",
+        "url": "https://www.tikr.com/blog/will-anthropics-float-tripling-by-february-sink-a-stock-already-below-its-ipo-price?ref=yahoofinance&tlnk=yf-261126-rh7435mm&.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-25 18:43 ET",
-        "pub_ts": 1795650186.0
+        "time": "11-26 08:02 ET",
+        "pub_ts": 1795698151.0
       }
     ],
     "CRWV": [
-      {
-        "title": "Jensen Huang's return, neocloud risk, and a holiday retail rally",
-        "url": "https://finance.yahoo.com/video/jensen-huangs-return-neocloud-risk-and-a-holiday-retail-rally-222042649.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 16:00 ET",
-        "pub_ts": 1795640400.0
-      },
       {
         "title": "Evercore Cut Its CoreWeave Target to $80 From $100. It Still Sees 88% Upside",
         "url": "https://www.tikr.com/blog/evercore-cut-its-coreweave-target-to-80-from-100-it-still-sees-88-upside?ref=yahoofinance&tlnk=yf-261126-v28p9qrq&.tsrc=rss",
@@ -1424,6 +1417,13 @@
         "source": "Yahoo Finance",
         "time": "11-25 17:45 ET",
         "pub_ts": 1795646709.0
+      },
+      {
+        "title": "CoreWeave’s Bankers Reportedly Ready $4.5B GPU-Backed Loan Tied To Meta Deal",
+        "url": "https://stocktwits.com/news-articles/markets/equity/core-weave-s-bankers-reportedly-ready-4-5-b-gpu-backed-loan-tied-to-meta-deal/cNbHrsCR9mw?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 16:02 ET",
+        "pub_ts": 1795640536.0
       }
     ],
     "NBIS": [
@@ -3329,35 +3329,35 @@
     "TLT": 1795698739.5673707,
     "GLD": 1795698879.2238426,
     "SQQQ": 1795698879.2238426,
-    "TSM": 1795697467.0737665,
+    "TSM": 1795698972.324488,
     "VIXY": 1795698879.2238426,
     "SOXS": 1795698879.2238426,
     "NVDA": 1795698879.2238426,
     "AMD": 1795698879.2238426,
-    "ASML": 1795697467.0737665,
-    "QCOM": 1795697467.0737665,
+    "ASML": 1795698972.324488,
+    "QCOM": 1795698972.324488,
     "AVGO": 1795698879.2238426,
-    "AMAT": 1795697467.0737665,
-    "META": 1795697467.0737665,
-    "GOOGL": 1795697467.0737665,
-    "MSFT": 1795697467.0737665,
-    "AAPL": 1795697467.0737665,
-    "PLTR": 1795697467.0737665,
-    "NOW": 1795697467.0737665,
-    "AMZN": 1795697467.0737665,
-    "CRWV": 1795697467.0737665,
-    "NBIS": 1795697467.0737665,
-    "APLD": 1795697467.0737665,
+    "AMAT": 1795698972.324488,
+    "META": 1795698972.324488,
+    "GOOGL": 1795698972.324488,
+    "MSFT": 1795698972.324488,
+    "AAPL": 1795698972.324488,
+    "PLTR": 1795698972.324488,
+    "NOW": 1795698972.324488,
+    "AMZN": 1795698972.324488,
+    "CRWV": 1795698972.324488,
+    "NBIS": 1795698972.324488,
+    "APLD": 1795698972.324488,
     "VST": 1795698739.5673707,
     "BE": 1795698739.5673707,
     "CRDO": 1795698739.5673707,
     "COHR": 1795698739.5673707,
-    "MRVL": 1795697467.0737665,
-    "LITE": 1795697467.0737665,
+    "MRVL": 1795698972.324488,
+    "LITE": 1795698972.324488,
     "AAOI": 1795698739.5673707,
     "SPCX": 1795698739.5673707,
     "ASTS": 1795698739.5673707,
-    "AXTI": 1795697467.0737665,
+    "AXTI": 1795698972.324488,
     "NASA": 1795698879.2238426,
     "LUNR": 1795698879.2238426,
     "TSLA": 1795698879.2238426,
@@ -3373,7 +3373,7 @@
     "CEG": 1795698879.2238426,
     "FPS": 1795698925.1931996,
     "MU": 1795697515.2404723,
-    "SKHY": 1795697467.0737665,
+    "SKHY": 1795698972.324488,
     "WDC": 1795697515.2404723,
     "STX": 1795698925.1931996,
     "MSTR": 1795698925.1931996,
@@ -3387,16 +3387,16 @@
     "NKE": 1795698925.1931996,
     "MCD": 1795698925.1931996,
     "PEP": 1795698925.1931996,
-    "XOM": 1795697467.0737665,
+    "XOM": 1795698972.324488,
     "JPM": 1795698925.1931996,
     "WMT": 1795697515.2404723,
     "V": 1795698925.1931996,
     "CAT": 1795698925.1931996,
-    "FN": 1795697467.0737665,
+    "FN": 1795698972.324488,
     "GLW": 1795698739.5673707,
     "ANT": 1795698925.1931996,
     "XAUUSD": 1795697515.2404723,
-    "KOSPI": 1795697467.0737665,
+    "KOSPI": 1795698972.324488,
     "KSTR": 1795698925.1931996
   },
   "opex_shield": {
