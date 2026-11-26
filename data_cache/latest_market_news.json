@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795671406.783,
-  "updated_at_et": "11-26 00:36 ET",
-  "updated_at_kst": "14:36 KST",
+  "updated_at_ts": 1795671445.286,
+  "updated_at_et": "11-26 00:37 ET",
+  "updated_at_kst": "14:37 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -3195,6 +3195,20 @@
     ],
     "ANT": [
       {
+        "title": "2 Ways Anthropic's IPO Pays Off for Alphabet Investors",
+        "url": "https://www.fool.com/investing/2026/11/26/2-ways-anthropic-s-ipo-pays-off-for-alphabet-investors/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-26 00:20 ET",
+        "pub_ts": 1795670402.0
+      },
+      {
+        "title": "Does Anthropic Want AI to Run the World? CEO Dario Amodei Pushes Back Against ‘Surrender Human Free Will’ Claims",
+        "url": "https://finance.yahoo.com/technology/ai/articles/does-anthropic-want-ai-run-041314042.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 23:13 ET",
+        "pub_ts": 1795666394.0
+      },
+      {
         "title": "Dow Jones Futures Rise After Nasdaq Slashes Losses In Wild Market Ride",
         "url": "https://finance.yahoo.com/m/158e82fc-b889-34b6-8704-99a49e9a83ae/dow-jones-futures-rise-after.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -3214,20 +3228,6 @@
         "source": "Yahoo Finance",
         "time": "11-25 22:00 ET",
         "pub_ts": 1795662007.0
-      },
-      {
-        "title": "Anthropic's $150 Wall Street target comes with a $900B catch",
-        "url": "https://www.thestreet.com/investing/anthropic-150-wall-street-target-comes-with-900b-catch?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 21:17 ET",
-        "pub_ts": 1795659420.0
-      },
-      {
-        "title": "Coinbase CEO on the Anthropic and SpaceX IPOs: Who Actually Made the Money?",
-        "url": "https://beincrypto.com/coinbase-ceo-anthropic-spacex-ipo-money/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 21:10 ET",
-        "pub_ts": 1795659004.0
       }
     ],
     "XAUUSD": [
@@ -3278,20 +3278,20 @@
     ]
   },
   "ticker_news_ts": {
-    "KORU": 1795669910.7766206,
-    "SOXL": 1795669910.7766206,
+    "KORU": 1795671445.2857296,
+    "SOXL": 1795671445.2857296,
     "SPY": 1795671088.691203,
-    "DIA": 1795669910.7766206,
-    "SOXX": 1795669910.7766206,
-    "QQQ": 1795669910.7766206,
+    "DIA": 1795671445.2857296,
+    "SOXX": 1795671445.2857296,
+    "QQQ": 1795671445.2857296,
     "SMH": 1795671088.691203,
-    "IWM": 1795669910.7766206,
-    "IGV": 1795669910.7766206,
-    "TLT": 1795669910.7766206,
-    "GLD": 1795669910.7766206,
+    "IWM": 1795671445.2857296,
+    "IGV": 1795671445.2857296,
+    "TLT": 1795671445.2857296,
+    "GLD": 1795671445.2857296,
     "SQQQ": 1795669949.7955368,
     "TSM": 1795671088.691203,
-    "VIXY": 1795669910.7766206,
+    "VIXY": 1795671445.2857296,
     "SOXS": 1795669949.7955368,
     "NVDA": 1795669949.7955368,
     "AMD": 1795669949.7955368,
@@ -3336,27 +3336,27 @@
     "MU": 1795671088.691203,
     "SKHY": 1795671088.691203,
     "WDC": 1795671088.691203,
-    "STX": 1795669910.7766206,
+    "STX": 1795671445.2857296,
     "MSTR": 1795671406.7830198,
     "SNDK": 1795671406.7830198,
     "BTC-USD": 1795671088.691203,
     "CRWD": 1795671406.7830198,
-    "ORCL": 1795669910.7766206,
-    "COIN": 1795669910.7766206,
-    "LLY": 1795669910.7766206,
-    "MRNA": 1795669910.7766206,
-    "NKE": 1795669910.7766206,
-    "MCD": 1795669910.7766206,
-    "PEP": 1795669910.7766206,
-    "XOM": 1795669910.7766206,
-    "JPM": 1795669910.7766206,
-    "WMT": 1795669910.7766206,
-    "V": 1795669910.7766206,
-    "CAT": 1795669910.7766206,
+    "ORCL": 1795671445.2857296,
+    "COIN": 1795671445.2857296,
+    "LLY": 1795671445.2857296,
+    "MRNA": 1795671445.2857296,
+    "NKE": 1795671445.2857296,
+    "MCD": 1795671445.2857296,
+    "PEP": 1795671445.2857296,
+    "XOM": 1795671445.2857296,
+    "JPM": 1795671445.2857296,
+    "WMT": 1795671445.2857296,
+    "V": 1795671445.2857296,
+    "CAT": 1795671445.2857296,
     "FN": 1795671088.691203,
     "GLW": 1795671406.7830198,
-    "ANT": 1795669910.7766206,
-    "XAUUSD": 1795669910.7766206,
+    "ANT": 1795671445.2857296,
+    "XAUUSD": 1795671445.2857296,
     "KOSPI": 1795671088.691203
   },
   "opex_shield": {
