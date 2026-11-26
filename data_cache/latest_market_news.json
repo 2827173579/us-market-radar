@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795695630.716,
-  "updated_at_et": "11-26 07:20 ET",
-  "updated_at_kst": "21:20 KST",
+  "updated_at_ts": 1795695677.196,
+  "updated_at_et": "11-26 07:21 ET",
+  "updated_at_kst": "21:21 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -1538,6 +1538,13 @@
     ],
     "BE": [
       {
+        "title": "Bloom Energy Issued Oracle 2.15 Million Shares. Now Oracle’s Credit Is Cracking",
+        "url": "https://www.tikr.com/blog/bloom-energy-issued-oracle-2-15-million-shares-now-oracles-credit-is-cracking?ref=yahoofinance&tlnk=yf-261126-v76w4j96&.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-26 06:35 ET",
+        "pub_ts": 1795692926.0
+      },
+      {
         "title": "Morgan Stanley’s $335 Target Says Bloom Energy’s Selloff Went Too Far",
         "url": "https://www.tikr.com/blog/morgan-stanleys-335-target-says-bloom-energys-selloff-went-too-far?ref=yahoofinance&tlnk=yf-261126-27xrg2g9&.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1564,13 +1571,6 @@
         "source": "Yahoo Finance",
         "time": "11-25 10:55 ET",
         "pub_ts": 1795622137.0
-      },
-      {
-        "title": "Bloom Energy Joins Nashville Firefighters to Support Local Students and Families Ahead of Tennessee-Vanderbilt Matchup",
-        "url": "https://finance.yahoo.com/energy/articles/bloom-energy-joins-nashville-firefighters-151200024.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 10:12 ET",
-        "pub_ts": 1795619520.0
       }
     ],
     "CRDO": [
@@ -3316,16 +3316,16 @@
     ]
   },
   "ticker_news_ts": {
-    "KORU": 1795694171.2240074,
-    "SOXL": 1795694171.2240074,
+    "KORU": 1795695677.1957953,
+    "SOXL": 1795695677.1957953,
     "SPY": 1795694363.070951,
-    "DIA": 1795694171.2240074,
-    "SOXX": 1795694171.2240074,
-    "QQQ": 1795694171.2240074,
+    "DIA": 1795695677.1957953,
+    "SOXX": 1795695677.1957953,
+    "QQQ": 1795695677.1957953,
     "SMH": 1795694363.070951,
-    "IWM": 1795694171.2240074,
-    "IGV": 1795694171.2240074,
-    "TLT": 1795694171.2240074,
+    "IWM": 1795695677.1957953,
+    "IGV": 1795695677.1957953,
+    "TLT": 1795695677.1957953,
     "GLD": 1795694312.118782,
     "SQQQ": 1795694312.118782,
     "TSM": 1795694416.242457,
@@ -3347,15 +3347,15 @@
     "CRWV": 1795694416.242457,
     "NBIS": 1795694416.242457,
     "APLD": 1795694416.242457,
-    "VST": 1795694171.2240074,
-    "BE": 1795694171.2240074,
-    "CRDO": 1795694171.2240074,
-    "COHR": 1795694171.2240074,
+    "VST": 1795695677.1957953,
+    "BE": 1795695677.1957953,
+    "CRDO": 1795695677.1957953,
+    "COHR": 1795695677.1957953,
     "MRVL": 1795694416.242457,
     "LITE": 1795694416.242457,
-    "AAOI": 1795694171.2240074,
-    "SPCX": 1795694171.2240074,
-    "ASTS": 1795694171.2240074,
+    "AAOI": 1795695677.1957953,
+    "SPCX": 1795695677.1957953,
+    "ASTS": 1795695677.1957953,
     "AXTI": 1795694416.242457,
     "NASA": 1795694312.118782,
     "LUNR": 1795694312.118782,
@@ -3392,7 +3392,7 @@
     "V": 1795694363.070951,
     "CAT": 1795694363.070951,
     "FN": 1795694416.242457,
-    "GLW": 1795694171.2240074,
+    "GLW": 1795695677.1957953,
     "ANT": 1795694363.070951,
     "XAUUSD": 1795694469.991008,
     "KOSPI": 1795694416.242457,
