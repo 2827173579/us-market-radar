@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795703246.489,
-  "updated_at_et": "11-26 09:27 ET",
-  "updated_at_kst": "23:27 KST",
+  "updated_at_ts": 1795703437.16,
+  "updated_at_et": "11-26 09:30 ET",
+  "updated_at_kst": "23:30 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -1500,6 +1500,13 @@
     ],
     "VST": [
       {
+        "title": "3 AI Infrastructure Stocks That Pay You While You Wait",
+        "url": "https://247wallst.com/investing/2026/11/26/3-ai-infrastructure-stocks-that-pay-you-while-you-wait/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-26 09:03 ET",
+        "pub_ts": 1795701821.0
+      },
+      {
         "title": "What Are Wall Street Analysts' Target Price for Vistra Corp. Stock?",
         "url": "https://www.barchart.com/story/news/9006879/what-are-wall-street-analysts-target-price-for-vistra-corp-stock?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1526,13 +1533,6 @@
         "source": "Yahoo Finance",
         "time": "11-25 08:00 ET",
         "pub_ts": 1795611602.0
-      },
-      {
-        "title": "Is Vistra (VST) Still Below Fair Value After Data Center Clarity?",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/vistra-vst-still-below-fair-211126773.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 16:11 ET",
-        "pub_ts": 1795554686.0
       }
     ],
     "BE": [
@@ -1759,6 +1759,13 @@
     ],
     "SPCX": [
       {
+        "title": "SpaceX refused $738M in fed grants to give rural homes free Starlink gear. It got what it wanted from Trump in return",
+        "url": "https://finance.yahoo.com/technology/articles/spacex-refused-738m-fed-grants-140000981.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-26 09:00 ET",
+        "pub_ts": 1795701600.0
+      },
+      {
         "title": "Jensen Huang Says Grok Bot Consumption Is “Really Skyrocketing.” That’s Good News for SpaceX",
         "url": "https://www.tikr.com/blog/jensen-huang-says-grok-bot-consumption-is-really-skyrocketing-thats-good-news-for-spacex?ref=yahoofinance&tlnk=yf-261126-q7mrmmjx&.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1785,13 +1792,6 @@
         "source": "Yahoo Finance",
         "time": "11-26 06:45 ET",
         "pub_ts": 1795693559.0
-      },
-      {
-        "title": "Elon Musk's 2-Share SpaceX Giveaway Comes With an Extraordinary Prediction",
-        "url": "https://beincrypto.com/musk-spacex-shares-every-american-child/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-26 06:42 ET",
-        "pub_ts": 1795693337.0
       }
     ],
     "ASTS": [
@@ -3315,16 +3315,16 @@
     ]
   },
   "ticker_news_ts": {
-    "KORU": 1795701813.121497,
-    "SOXL": 1795701813.121497,
+    "KORU": 1795703437.1597471,
+    "SOXL": 1795703437.1597471,
     "SPY": 1795701983.4142048,
-    "DIA": 1795701813.121497,
-    "SOXX": 1795701813.121497,
-    "QQQ": 1795701813.121497,
+    "DIA": 1795703437.1597471,
+    "SOXX": 1795703437.1597471,
+    "QQQ": 1795703437.1597471,
     "SMH": 1795701983.4142048,
-    "IWM": 1795701813.121497,
-    "IGV": 1795701813.121497,
-    "TLT": 1795701813.121497,
+    "IWM": 1795703437.1597471,
+    "IGV": 1795703437.1597471,
+    "TLT": 1795703437.1597471,
     "GLD": 1795701937.5121262,
     "SQQQ": 1795701937.5121262,
     "TSM": 1795702027.861174,
@@ -3346,15 +3346,15 @@
     "CRWV": 1795702027.861174,
     "NBIS": 1795702027.861174,
     "APLD": 1795702027.861174,
-    "VST": 1795701813.121497,
-    "BE": 1795701813.121497,
-    "CRDO": 1795701813.121497,
-    "COHR": 1795701813.121497,
+    "VST": 1795703437.1597471,
+    "BE": 1795703437.1597471,
+    "CRDO": 1795703437.1597471,
+    "COHR": 1795703437.1597471,
     "MRVL": 1795702027.861174,
     "LITE": 1795702027.861174,
-    "AAOI": 1795701813.121497,
-    "SPCX": 1795701813.121497,
-    "ASTS": 1795701813.121497,
+    "AAOI": 1795703437.1597471,
+    "SPCX": 1795703437.1597471,
+    "ASTS": 1795703437.1597471,
     "AXTI": 1795702027.861174,
     "NASA": 1795701937.5121262,
     "LUNR": 1795701937.5121262,
@@ -3391,7 +3391,7 @@
     "V": 1795701983.4142048,
     "CAT": 1795701983.4142048,
     "FN": 1795702027.861174,
-    "GLW": 1795701813.121497,
+    "GLW": 1795703437.1597471,
     "ANT": 1795701983.4142048,
     "XAUUSD": 1795702073.3266833,
     "KOSPI": 1795702027.861174,
