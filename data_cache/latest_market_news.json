@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795685155.04,
-  "updated_at_et": "11-26 04:25 ET",
-  "updated_at_kst": "18:25 KST",
+  "updated_at_ts": 1795685277.058,
+  "updated_at_et": "11-26 04:27 ET",
+  "updated_at_kst": "18:27 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -2605,6 +2605,13 @@
     ],
     "BTC-USD": [
       {
+        "title": "Index Reshuffle Puts Hyperliquid’s HYPE in Franklin’s EZPZ Crypto ETF on Dec. 1",
+        "url": "https://unchainedcrypto.com/index-reshuffle-puts-hyperliquids-hype-in-franklins-ezpz-crypto-etf-on-dec-1/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-26 04:15 ET",
+        "pub_ts": 1795684557.0
+      },
+      {
         "title": "K33 AB (ARCNF) (Q3 2026) Earnings Call Highlights: 35% Revenue Growth and 40% Trading Volume ...",
         "url": "https://finance.yahoo.com/markets/crypto/articles/k33-ab-arcnf-q3-2026-082042686.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2631,13 +2638,6 @@
         "source": "Yahoo Finance",
         "time": "11-25 23:57 ET",
         "pub_ts": 1795669064.0
-      },
-      {
-        "title": "Bitcoin Reclaims $60,000: Michaël Van De Poppe Eyes ‘Great First Quarter Of 2027’, While Cathie Wood Trims Crypto Exposure",
-        "url": "https://stocktwits.com/news-articles/markets/cryptocurrency/bitcoin-reclaims-60-000-michael-van-de-poppe-eyes-great-first-quarter-of-2027-while-cathie-wood-trims-crypto-exposure/cNbxBZpR9Za?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 23:36 ET",
-        "pub_ts": 1795667764.0
       }
     ],
     "CRWD": [
@@ -3371,7 +3371,7 @@
     "STX": 1795683997.95645,
     "MSTR": 1795683997.95645,
     "SNDK": 1795683997.95645,
-    "BTC-USD": 1795683719.7673037,
+    "BTC-USD": 1795685277.0581198,
     "CRWD": 1795683997.95645,
     "ORCL": 1795684039.5806797,
     "COIN": 1795684039.5806797,
