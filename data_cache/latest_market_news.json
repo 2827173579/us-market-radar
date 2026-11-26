@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795698833.879,
-  "updated_at_et": "11-26 08:13 ET",
-  "updated_at_kst": "22:13 KST",
+  "updated_at_ts": 1795698879.224,
+  "updated_at_et": "11-26 08:14 ET",
+  "updated_at_kst": "22:14 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -910,11 +910,25 @@
     ],
     "NVDA": [
       {
+        "title": "Jensen Huang 'absolutely could be fired again,' legal expert says",
+        "url": "https://finance.yahoo.com/video/jensen-huang-absolutely-could-fired-130000374.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-26 08:00 ET",
+        "pub_ts": 1795698000.0
+      },
+      {
         "title": "5 things I'm thankful for in AI",
         "url": "https://finance.yahoo.com/video/5-things-im-thankful-ai-120000522.html?.tsrc=rss",
         "source": "Yahoo Finance",
         "time": "11-26 07:00 ET",
         "pub_ts": 1795694400.0
+      },
+      {
+        "title": "How Much Is Jensen Huang Worth to Nvidia? The Stock Market Just Gave a Clear Answer",
+        "url": "https://www.fool.com/investing/2026/11/26/how-much-is-jensen-huang-worth-to-nvidia-the-stock-market-just-gave-a-clear-answer/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-26 07:54 ET",
+        "pub_ts": 1795697642.0
       },
       {
         "title": "US Chip Curbs Can't Shake China's Appetite For Nvidia. Another Chinese Firm Is Buying 5,000 Blackwell GPUs.",
@@ -924,25 +938,11 @@
         "pub_ts": 1795696625.0
       },
       {
-        "title": "The Biggest Mistakes Investors Make During a Market Crash, and How to Avoid Them.",
-        "url": "https://www.fool.com/investing/2026/11/26/the-biggest-mistakes-investors-make-during-a-market-crash-and-how-to-avoid-them/?.tsrc=rss",
+        "title": "Nvidia Halts Server Shipments to Southeast Asia: Report. The Stock Can’t Catch a Break.",
+        "url": "https://finance.yahoo.com/m/53c36b0e-68da-370e-b98f-5f1a79f7a42a/nvidia-halts-server-shipments.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-26 07:21 ET",
-        "pub_ts": 1795695662.0
-      },
-      {
-        "title": "Billionaire Investor Paul Tudor Jones Just Doubled Down on Bitcoin. What Does He Know That the Market Doesn't?",
-        "url": "https://www.fool.com/investing/2026/11/26/billionaire-investor-paul-tudor-jones-just-doubled-down-on-bitcoin-what-does-he-know-that-you-dont/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-26 07:20 ET",
-        "pub_ts": 1795695602.0
-      },
-      {
-        "title": "Does S&P's Credit Warning Matter For Nvidia Stock?",
-        "url": "https://www.trefis.com/stock/nvda/articles/629186/does-s-p-s-credit-warning-matter-for-nvidia-stock/2026-11-26?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-26 07:03 ET",
-        "pub_ts": 1795694603.0
+        "time": "11-26 07:24 ET",
+        "pub_ts": 1795695840.0
       }
     ],
     "AMD": [
@@ -2057,6 +2057,13 @@
     ],
     "KO": [
       {
+        "title": "Coca-Cola Is the Most Boring Stock I Own. After 64 Years of Dividend Raises, I'll Never Sell.",
+        "url": "https://www.fool.com/investing/2026/11/26/coca-cola-is-the-most-boring-stock-i-own-after-64-years-of-dividend-raises-ill-never-sell/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-26 07:59 ET",
+        "pub_ts": 1795697942.0
+      },
+      {
         "title": "Here’s How Many Coca-Cola Shares It Takes to Earn $1,300 Every Quarter in Dividends",
         "url": "https://www.fool.com/investing/2026/11/25/heres-how-many-coca-cola-shares-it-takes-to-earn-1300-every-quarter-in-dividends/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2083,13 +2090,6 @@
         "source": "Yahoo Finance",
         "time": "11-25 08:35 ET",
         "pub_ts": 1795613702.0
-      },
-      {
-        "title": "Up 41% at Just Over Half Costco’s P/E: Inside Coca-Cola’s Quiet Rally",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/41-just-over-half-costco-092400539.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 04:24 ET",
-        "pub_ts": 1795598640.0
       }
     ],
     "FLY": [
@@ -3327,16 +3327,16 @@
     "IWM": 1795698739.5673707,
     "IGV": 1795698739.5673707,
     "TLT": 1795698739.5673707,
-    "GLD": 1795697357.8379624,
-    "SQQQ": 1795697357.8379624,
+    "GLD": 1795698879.2238426,
+    "SQQQ": 1795698879.2238426,
     "TSM": 1795697467.0737665,
-    "VIXY": 1795697357.8379624,
-    "SOXS": 1795697357.8379624,
-    "NVDA": 1795697357.8379624,
-    "AMD": 1795697357.8379624,
+    "VIXY": 1795698879.2238426,
+    "SOXS": 1795698879.2238426,
+    "NVDA": 1795698879.2238426,
+    "AMD": 1795698879.2238426,
     "ASML": 1795697467.0737665,
     "QCOM": 1795697467.0737665,
-    "AVGO": 1795697357.8379624,
+    "AVGO": 1795698879.2238426,
     "AMAT": 1795697467.0737665,
     "META": 1795697467.0737665,
     "GOOGL": 1795697467.0737665,
@@ -3358,19 +3358,19 @@
     "SPCX": 1795698739.5673707,
     "ASTS": 1795698739.5673707,
     "AXTI": 1795697467.0737665,
-    "NASA": 1795697357.8379624,
-    "LUNR": 1795697357.8379624,
-    "TSLA": 1795697357.8379624,
-    "AXP": 1795697357.8379624,
-    "RKLB": 1795697357.8379624,
-    "KO": 1795697357.8379624,
-    "FLY": 1795697357.8379624,
-    "INTC": 1795697357.8379624,
-    "VRT": 1795697357.8379624,
+    "NASA": 1795698879.2238426,
+    "LUNR": 1795698879.2238426,
+    "TSLA": 1795698879.2238426,
+    "AXP": 1795698879.2238426,
+    "RKLB": 1795698879.2238426,
+    "KO": 1795698879.2238426,
+    "FLY": 1795698879.2238426,
+    "INTC": 1795698879.2238426,
+    "VRT": 1795698879.2238426,
     "HPE": 1795697415.7432997,
-    "DELL": 1795697357.8379624,
+    "DELL": 1795698879.2238426,
     "OKLO": 1795697415.7432997,
-    "CEG": 1795697357.8379624,
+    "CEG": 1795698879.2238426,
     "FPS": 1795697415.7432997,
     "MU": 1795697515.2404723,
     "SKHY": 1795697467.0737665,
