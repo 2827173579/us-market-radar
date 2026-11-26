@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795715789.969,
-  "updated_at_et": "11-26 12:56 ET",
-  "updated_at_kst": "02:56 KST",
+  "updated_at_ts": 1795716077.855,
+  "updated_at_et": "11-26 13:01 ET",
+  "updated_at_kst": "03:01 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -798,6 +798,13 @@
     ],
     "TSM": [
       {
+        "title": "TSMC (TSM) Upgraded to Strong Buy: Here's Why",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/tsmc-tsm-upgraded-strong-buy-160004326.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-26 11:00 ET",
+        "pub_ts": 1795708804.0
+      },
+      {
         "title": "Taiwan Semiconductor Manufacturing (TSM) May Make Its $22.6 Billion Texas Plant Conditional",
         "url": "https://finance.yahoo.com/technology/articles/taiwan-semiconductor-manufacturing-tsm-may-111054914.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -824,13 +831,6 @@
         "source": "Yahoo Finance",
         "time": "11-25 17:56 ET",
         "pub_ts": 1795647396.0
-      },
-      {
-        "title": "TSMC eyes 3K-acre Aggieland site for $22.6B chip plant",
-        "url": "https://finance.yahoo.com/technology/articles/tsmc-eyes-3k-acre-aggieland-192901231.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 14:29 ET",
-        "pub_ts": 1795634941.0
       }
     ],
     "VIXY": [
@@ -1020,6 +1020,13 @@
     ],
     "QCOM": [
       {
+        "title": "What Is Qualcomm (QCOM) Worth Watching In Automotive AI Right Now?",
+        "url": "https://finance.yahoo.com/technology/ai/articles/qualcomm-qcom-worth-watching-automotive-171007378.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-26 12:10 ET",
+        "pub_ts": 1795713007.0
+      },
+      {
         "title": "Qualcomm vs. Sandisk: Which Technology Stock Is a Better Buy for 2027?",
         "url": "https://www.fool.com/coverage/better-buy/2026/11/25/qualcomm-vs-sandisk-which-technology-stock-is-a-better-buy-for-2027/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1046,13 +1053,6 @@
         "source": "Yahoo Finance",
         "time": "11-25 11:52 ET",
         "pub_ts": 1795625521.0
-      },
-      {
-        "title": "How Qualcomm’s CMO is reshaping his team for its post-Apple era",
-        "url": "https://finance.yahoo.com/technology/ai/articles/qualcomm-cmo-reshaping-team-post-160155309.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 11:01 ET",
-        "pub_ts": 1795622515.0
       }
     ],
     "AVGO": [
@@ -1131,39 +1131,39 @@
     ],
     "META": [
       {
+        "title": "Meta Platforms Stocks Jump 3.4% on Reported Amazon Talks Over Muse AI Agent",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/meta-platforms-stocks-jump-3-172338883.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-26 12:23 ET",
+        "pub_ts": 1795713818.0
+      },
+      {
+        "title": "Meta Platforms’ (META) Surging Capex Pressures Free Cash Flow Amid Monetization Debates",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/meta-platforms-meta-surging-capex-165927360.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-26 11:59 ET",
+        "pub_ts": 1795712367.0
+      },
+      {
+        "title": "Meta Platforms Just Partnered With Walmart. Here's Why Investors Should Pay Attention",
+        "url": "https://www.fool.com/investing/2026/11/26/meta-platforms-just-partnered-with-walmart-here-s-why-investors-should-pay-attention/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-26 11:25 ET",
+        "pub_ts": 1795710302.0
+      },
+      {
+        "title": "CoreWeave Can Now Borrow at 7% With Meta’s Name on the Loan",
+        "url": "https://247wallst.com/investing/2026/11/26/coreweave-can-now-borrow-at-7-with-metas-name-on-the-loan/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-26 10:48 ET",
+        "pub_ts": 1795708100.0
+      },
+      {
         "title": "Anthropic Broke Its $83 IPO Price. What Did Facebook Do Next?",
         "url": "https://www.trefis.com/stock/ant/articles/629153/anthropic-broke-its-83-ipo-price-what-did-facebook-do-next/2026-11-26?.tsrc=rss",
         "source": "Yahoo Finance",
         "time": "11-26 06:38 ET",
         "pub_ts": 1795693101.0
-      },
-      {
-        "title": "What Direxion Daily S&P 500 Bull 3X ETF (SPXL) Bought: Apple Leads on Tuesday",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/direxion-daily-p-500-bull-110524653.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-26 06:05 ET",
-        "pub_ts": 1795691124.0
-      },
-      {
-        "title": "ETFs Are Net Sellers of Meta Platforms (META) on Tuesday",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/etfs-net-sellers-meta-platforms-110247680.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-26 06:02 ET",
-        "pub_ts": 1795690967.0
-      },
-      {
-        "title": "Walmart (WMT) Brings Direct AI Shopping And a 3,000 Store Beauty Box Launch",
-        "url": "https://finance.yahoo.com/technology/ai/articles/walmart-wmt-brings-direct-ai-091223863.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-26 04:12 ET",
-        "pub_ts": 1795684343.0
-      },
-      {
-        "title": "CoStar Data Shows Noho Office Leasing Nearing 900,000 Sq. Ft.",
-        "url": "https://finance.yahoo.com/real-estate/articles/costar-data-shows-noho-office-090000605.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-26 04:00 ET",
-        "pub_ts": 1795683600.0
       }
     ],
     "GOOGL": [
@@ -1182,25 +1182,25 @@
         "pub_ts": 1795694400.0
       },
       {
-        "title": "AI's self-improvement era is nearly here. It will be felt everywhere",
-        "url": "https://finance.yahoo.com/video/ais-self-improvement-era-nearly-150000618.html?.tsrc=rss",
+        "title": "Alphabet Could Be the Safest Way to Own Anthropic. Here’s the Math.",
+        "url": "https://www.fool.com/investing/2026/11/26/alphabet-could-be-the-safest-way-to-own-anthropic-here-s-the-math/?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-26 10:00 ET",
-        "pub_ts": 1795705200.0
+        "time": "11-26 12:47 ET",
+        "pub_ts": 1795715222.0
       },
       {
-        "title": "Europe Cloud Computing Market Surges to $ 550.42 billion at a CAGR 11.0% by 2030 | Report by MarketsandMarkets™",
-        "url": "https://finance.yahoo.com/technology/articles/europe-cloud-computing-market-surges-150000346.html?.tsrc=rss",
+        "title": "Amazon Has 59 Buy Ratings and Not a Single Sell. Here’s Where its Headed",
+        "url": "https://247wallst.com/investing/2026/11/26/amazon-has-59-buy-ratings-and-not-a-single-sell-heres-where-its-headed/?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-26 10:00 ET",
-        "pub_ts": 1795705200.0
+        "time": "11-26 12:10 ET",
+        "pub_ts": 1795713002.0
       },
       {
-        "title": "Brazil's Data Center Market: Strategic Investment Analysis and Growth Opportunities (2026-2031) with Profiles of Prominent Operators and Infrastructure Providers",
-        "url": "https://finance.yahoo.com/technology/articles/brazils-data-center-market-strategic-140400060.html?.tsrc=rss",
+        "title": "Alphabet (GOOGL) Dropped, So What Is Behind The Latest Attention?",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/alphabet-googl-dropped-behind-latest-170937914.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-26 09:04 ET",
-        "pub_ts": 1795701840.0
+        "time": "11-26 12:09 ET",
+        "pub_ts": 1795712977.0
       }
     ],
     "MSFT": [
@@ -1219,11 +1219,11 @@
         "pub_ts": 1795691092.0
       },
       {
-        "title": "Microsoft (MSFT) Sees $91.7 Million in Net ETF Buying on Nov. 24",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/microsoft-msft-sees-91-7-110049983.html?.tsrc=rss",
+        "title": "What Does Pinterest (PINS) Pay Overhaul Mean For Its Takeover Talk And Ad Push?",
+        "url": "https://finance.yahoo.com/media-advertising/articles/does-pinterest-pins-pay-overhaul-171447901.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-26 06:00 ET",
-        "pub_ts": 1795690849.0
+        "time": "11-26 12:14 ET",
+        "pub_ts": 1795713287.0
       },
       {
         "title": "Europe Cloud Computing Market Surges to $ 550.42 billion at a CAGR 11.0% by 2030 | Report by MarketsandMarkets™",
@@ -1241,6 +1241,13 @@
       }
     ],
     "AAPL": [
+      {
+        "title": "Apple, Exxon and Lowe’s Are Rewarding Shareholders Beyond Their Regular Dividends",
+        "url": "https://247wallst.com/investing/2026/11/26/apple-exxon-and-lowes-are-rewarding-shareholders-beyond-their-regular-dividends/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-26 12:07 ET",
+        "pub_ts": 1795712854.0
+      },
       {
         "title": "If You Invest $1,000 in Apple Today, Here’s What It Could Be Worth by 2029",
         "url": "https://247wallst.com/investing/2026/11/26/if-you-invest-1000-in-apple-today-heres-what-it-could-be-worth-by-2029/?.tsrc=rss",
@@ -1268,13 +1275,6 @@
         "source": "Yahoo Finance",
         "time": "11-26 09:13 ET",
         "pub_ts": 1795702431.0
-      },
-      {
-        "title": "Hold $500,000 of Apple in an IRA and Your Kids Inherit a Tax Bill on Every Dollar. Hold the Same Shares in a Brokerage Account and They Can Sell the Day After You Die and Owe Nothing",
-        "url": "https://247wallst.com/personal-finance/2026/11/26/hold-500000-of-apple-in-an-ira-and-your-kids-inherit-a-tax-bill-on-every-dollar-hold-the-same-shares-in-a-brokerage-account-and-they-can-sell-the-day-after-you-die-and-owe-nothing/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-26 08:41 ET",
-        "pub_ts": 1795700514.0
       }
     ],
     "PLTR": [
@@ -1945,6 +1945,20 @@
     ],
     "TSLA": [
       {
+        "title": "Tesla: A SpaceX Merger Could Turn $5,000 Into $10,000",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/tesla-spacex-merger-could-turn-174606474.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-26 12:46 ET",
+        "pub_ts": 1795715166.0
+      },
+      {
+        "title": "XPeng Raises Stakes for Tesla Stock Investors' Big Growth Bet",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/xpeng-raises-stakes-tesla-stock-163240808.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-26 11:32 ET",
+        "pub_ts": 1795710760.0
+      },
+      {
         "title": "Tesla's Self-Driving Expansion in Europe Faces a Crucial Test",
         "url": "https://finance.yahoo.com/technology/ai/articles/teslas-self-driving-expansion-europe-134400727.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1964,20 +1978,6 @@
         "source": "Yahoo Finance",
         "time": "11-26 06:04 ET",
         "pub_ts": 1795691042.0
-      },
-      {
-        "title": "Cathie Wood Buys More SpaceX Amid Tesla Merger Talks — Ron Baron Says SpaceX Could Make $50B A Year From One Data Center",
-        "url": "https://stocktwits.com/news-articles/markets/equity/cathie-wood-buys-spacex-tesla-merger-talks-ron-baron-spacex-50b-one-data-center/cNbxeDKR9Z4?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 22:32 ET",
-        "pub_ts": 1795663955.0
-      },
-      {
-        "title": "Elon Musk tells Tesla investors there is 'only one way' to eliminate poverty",
-        "url": "https://www.thestreet.com/investing/elon-musk-tells-tesla-investors-optimus-robots-will-eliminate-poverty?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 19:37 ET",
-        "pub_ts": 1795653420.0
       }
     ],
     "AXP": [
@@ -2019,6 +2019,13 @@
     ],
     "RKLB": [
       {
+        "title": "Rocket Lab Stock Just Fell to Its Lowest Price in About a Year. Is It a Buy Now?",
+        "url": "https://www.fool.com/investing/2026/11/26/rocket-lab-stock-just-fell-to-its-lowest-price-in-about-a-year-is-it-a-buy-now/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-26 10:43 ET",
+        "pub_ts": 1795707782.0
+      },
+      {
         "title": "AST SpaceMobile Is Still Down 64% in 2026. Can Insider Buying and a B. Riley Upgrade Get ASTS Stock Back to $40?",
         "url": "https://247wallst.com/investing/2026/11/26/ast-spacemobile-is-still-down-64-in-2026-can-insider-buying-and-a-b-riley-upgrade-get-asts-stock-back-to-40/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2045,16 +2052,16 @@
         "source": "Yahoo Finance",
         "time": "11-26 07:11 ET",
         "pub_ts": 1795695073.0
-      },
-      {
-        "title": "RKLB Stock Rebounds Into Thanksgiving: CFO, COO And Other Execs Sell Nearly $4M In Shares Ahead Of Electron Launch",
-        "url": "https://stocktwits.com/news-articles/markets/equity/rklb-stock-cfo-coo-other-execs-sell-shares-ahead-of-electron-launch/cNbx33ZR9ZR?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 20:50 ET",
-        "pub_ts": 1795657814.0
       }
     ],
     "KO": [
+      {
+        "title": "Coca-Cola (KO) Up 6.4% Since Last Earnings Report: Can It Continue?",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/coca-cola-ko-6-4-153014132.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-26 10:30 ET",
+        "pub_ts": 1795707014.0
+      },
       {
         "title": "Investing $500 a Month in Coca-Cola, Realty Income, and Altria Could Generate Over $1,000 in Monthly Dividend Income by 2046",
         "url": "https://www.fool.com/investing/2026/11/26/investing-usd500-a-month-in-coca-cola-realty-income-and-altria-could-generate-over-usd1-000-in-monthly-dividend-income-by-2046/?.tsrc=rss",
@@ -2082,13 +2089,6 @@
         "source": "Yahoo Finance",
         "time": "11-26 07:59 ET",
         "pub_ts": 1795697942.0
-      },
-      {
-        "title": "Here’s How Many Coca-Cola Shares It Takes to Earn $1,300 Every Quarter in Dividends",
-        "url": "https://www.fool.com/investing/2026/11/25/heres-how-many-coca-cola-shares-it-takes-to-earn-1300-every-quarter-in-dividends/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 18:48 ET",
-        "pub_ts": 1795650482.0
       }
     ],
     "FLY": [
@@ -2241,6 +2241,20 @@
     ],
     "DELL": [
       {
+        "title": "Dell Is No Longer the Company You Originally Bought. Is That a Reason to Buy More Stock in 2027?",
+        "url": "https://247wallst.com/investing/2026/11/26/dell-is-no-longer-the-company-you-originally-bought-is-that-a-reason-to-buy-more-stock-in-2027/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-26 12:04 ET",
+        "pub_ts": 1795712643.0
+      },
+      {
+        "title": "DELL's AI Server Sales Surge: Can the Growth Momentum Continue?",
+        "url": "https://finance.yahoo.com/technology/ai/articles/dells-ai-server-sales-surge-160100190.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-26 11:01 ET",
+        "pub_ts": 1795708860.0
+      },
+      {
         "title": "Dell’s $132B Backlog Turns 2027 Into a Pure Multiple-Expansion Trade Toward $500",
         "url": "https://247wallst.com/investing/2026/11/26/dells-132b-backlog-turns-2027-into-a-pure-multiple-expansion-trade-toward-500/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2260,20 +2274,6 @@
         "source": "Yahoo Finance",
         "time": "11-26 04:10 ET",
         "pub_ts": 1795684204.0
-      },
-      {
-        "title": "Bad News for Intel: Dell Says Companies Are “Deferring Their PC Purchases” for AI Servers",
-        "url": "https://www.tikr.com/blog/bad-news-for-intel-dell-says-companies-are-deferring-their-pc-purchases-for-ai-servers?ref=yahoofinance&tlnk=yf-261126-x92x938h&.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-26 03:50 ET",
-        "pub_ts": 1795683021.0
-      },
-      {
-        "title": "ANT, NVDA Slide Tests Investor Resolve, Software Firms Post Sharp Growth",
-        "url": "https://stocktwits.com/news-articles/markets/equity/ant-nvda-slide-tests-investor-resolve-software-firms-post-sharp-growth/cNbxO5FR9ZX?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-26 00:33 ET",
-        "pub_ts": 1795671214.0
       }
     ],
     "OKLO": [
@@ -2315,6 +2315,13 @@
     ],
     "CEG": [
       {
+        "title": "NEE or CEG: Which Clean Energy Stock Is Better Positioned for Growth?",
+        "url": "https://finance.yahoo.com/energy/articles/nee-ceg-clean-energy-stock-154500861.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-26 10:45 ET",
+        "pub_ts": 1795707900.0
+      },
+      {
         "title": "Constellation concludes 4.4GW natural gas-fired power plants sale",
         "url": "https://www.power-technology.com/news/constellation-natural-gas-fired-power-plants/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2341,16 +2348,16 @@
         "source": "Yahoo Finance",
         "time": "11-25 16:30 ET",
         "pub_ts": 1795642200.0
-      },
-      {
-        "title": "Is Constellation Energy Stock's Fall A Bargain Or A Warning?",
-        "url": "https://www.trefis.com/stock/ceg/articles/628278/is-constellation-energy-stocks-fall-a-bargain-or-a-warning/2026-11-24?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 12:22 ET",
-        "pub_ts": 1795540954.0
       }
     ],
     "FPS": [
+      {
+        "title": "Sector-Wide Infrastructure De-Rating Pulled Back Forgent Power Solutions (FPS) in Q3",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/sector-wide-infrastructure-rating-pulled-161443951.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-26 11:14 ET",
+        "pub_ts": 1795709683.0
+      },
       {
         "title": "Why Forgent Power Solutions (FPS) Failed to Live Up to Its IPO Hype?",
         "url": "https://finance.yahoo.com/markets/stocks/articles/why-forgent-power-solutions-fps-011255361.html?.tsrc=rss",
@@ -2378,13 +2385,6 @@
         "source": "Yahoo Finance",
         "time": "11-12 21:11 ET",
         "pub_ts": 1794535915.0
-      },
-      {
-        "title": "Forgent (FPS) Q1 2027 Earnings Call Transcript",
-        "url": "https://www.fool.com/earnings/call-transcripts/2026/11/12/forgent-fps-q1-2027-earnings-call-transcript/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-12 20:02 ET",
-        "pub_ts": 1794531745.0
       }
     ],
     "MU": [
@@ -3328,19 +3328,19 @@
     "TLT": 1795715789.9685009,
     "GLD": 1795715789.9685009,
     "SQQQ": 1795715789.9685009,
-    "TSM": 1795708073.2249105,
+    "TSM": 1795716077.8553782,
     "VIXY": 1795715789.9685009,
     "SOXS": 1795715789.9685009,
     "NVDA": 1795715789.9685009,
     "AMD": 1795715789.9685009,
-    "ASML": 1795708073.2249105,
-    "QCOM": 1795708073.2249105,
-    "AVGO": 1795708073.2249105,
-    "AMAT": 1795708073.2249105,
-    "META": 1795708073.2249105,
-    "GOOGL": 1795708073.2249105,
-    "MSFT": 1795708073.2249105,
-    "AAPL": 1795708073.2249105,
+    "ASML": 1795716077.8553782,
+    "QCOM": 1795716077.8553782,
+    "AVGO": 1795716077.8553782,
+    "AMAT": 1795716077.8553782,
+    "META": 1795716077.8553782,
+    "GOOGL": 1795716077.8553782,
+    "MSFT": 1795716077.8553782,
+    "AAPL": 1795716077.8553782,
     "PLTR": 1795708187.6504436,
     "NOW": 1795708187.6504436,
     "AMZN": 1795708187.6504436,
@@ -3357,26 +3357,26 @@
     "SPCX": 1795715789.9685009,
     "ASTS": 1795715789.9685009,
     "AXTI": 1795708187.6504436,
-    "NASA": 1795708073.2249105,
-    "LUNR": 1795708073.2249105,
-    "TSLA": 1795708073.2249105,
-    "AXP": 1795708073.2249105,
-    "RKLB": 1795708073.2249105,
-    "KO": 1795708073.2249105,
-    "FLY": 1795708073.2249105,
-    "INTC": 1795708073.2249105,
-    "VRT": 1795708073.2249105,
-    "HPE": 1795708073.2249105,
-    "DELL": 1795708073.2249105,
-    "OKLO": 1795708073.2249105,
-    "CEG": 1795708073.2249105,
-    "FPS": 1795708073.2249105,
+    "NASA": 1795716077.8553782,
+    "LUNR": 1795716077.8553782,
+    "TSLA": 1795716077.8553782,
+    "AXP": 1795716077.8553782,
+    "RKLB": 1795716077.8553782,
+    "KO": 1795716077.8553782,
+    "FLY": 1795716077.8553782,
+    "INTC": 1795716077.8553782,
+    "VRT": 1795716077.8553782,
+    "HPE": 1795716077.8553782,
+    "DELL": 1795716077.8553782,
+    "OKLO": 1795716077.8553782,
+    "CEG": 1795716077.8553782,
+    "FPS": 1795716077.8553782,
     "MU": 1795708187.6504436,
     "SKHY": 1795708187.6504436,
     "WDC": 1795708187.6504436,
     "STX": 1795708187.6504436,
     "MSTR": 1795708187.6504436,
-    "SNDK": 1795708073.2249105,
+    "SNDK": 1795716077.8553782,
     "BTC-USD": 1795708187.6504436,
     "CRWD": 1795708187.6504436,
     "ORCL": 1795708187.6504436,
@@ -3395,7 +3395,7 @@
     "GLW": 1795715789.9685009,
     "ANT": 1795708231.295161,
     "XAUUSD": 1795708231.295161,
-    "KOSPI": 1795708187.6504436,
+    "KOSPI": 1795716077.8553782,
     "KSTR": 1795715789.9685009
   },
   "opex_shield": {
