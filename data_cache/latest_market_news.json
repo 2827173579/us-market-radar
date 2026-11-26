@@ -1,5 +1,5 @@
 {
-  "updated_at_ts": 1795717270.242,
+  "updated_at_ts": 1795717311.842,
   "updated_at_et": "11-26 13:21 ET",
   "updated_at_kst": "03:21 KST",
   "macro_calendar": [],
@@ -909,11 +909,25 @@
     ],
     "NVDA": [
       {
+        "title": "Billionaire John Overdeck’s former fund, Two Sigma Raised Its Nvidia Stake 67% to $2.39 Billion",
+        "url": "https://247wallst.com/investing/2026/11/26/billionaire-john-overdecks-former-fund-two-sigma-raised-its-nvidia-stake-67-to-2-39-billion/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-26 13:05 ET",
+        "pub_ts": 1795716339.0
+      },
+      {
         "title": "Should You Buy Nvidia After Its Sharp Decline? Warren Buffett’s Long-Held Investment Philosophy Provides a Clear Answer",
         "url": "https://www.fool.com/investing/2026/11/26/should-you-buy-nvidia-warren-buffett-investment-philosophy-provides-a-clear-answer/?.tsrc=rss",
         "source": "Yahoo Finance",
         "time": "11-26 12:35 ET",
         "pub_ts": 1795714502.0
+      },
+      {
+        "title": "NVIDIA Stocks Fall 3.91% as S&P Puts AA Rating on Downgrade Watch",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/nvidia-stocks-fall-3-91-173102633.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-26 12:31 ET",
+        "pub_ts": 1795714262.0
       },
       {
         "title": "Nvidia faces credit rating review as S&P flags governance concerns",
@@ -928,20 +942,6 @@
         "source": "Yahoo Finance",
         "time": "11-26 12:05 ET",
         "pub_ts": 1795712702.0
-      },
-      {
-        "title": "Did Arm CEO Rene Haas Dodge a Bullet With Jensen Huang’s Reinstatement at Nvidia?",
-        "url": "https://247wallst.com/investing/2026/11/26/did-arm-ceo-rene-haas-dodge-a-bullet-with-jensen-huangs-reinstatement-at-nvidia/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-26 11:49 ET",
-        "pub_ts": 1795711781.0
-      },
-      {
-        "title": "For the Retiree Who Wants the Portfolio to Match Their Faith at 69: 3 ETFs Built Around Values",
-        "url": "https://247wallst.com/investing/etf/2026/11/26/for-the-retiree-who-wants-the-portfolio-to-match-their-faith-at-69-3-etfs-built-around-values/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-26 11:23 ET",
-        "pub_ts": 1795710216.0
       }
     ],
     "AMD": [
@@ -1760,6 +1760,13 @@
     ],
     "SPCX": [
       {
+        "title": "Tesla: A SpaceX Merger Could Turn $5,000 Into $10,000",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/tesla-spacex-merger-could-turn-174606474.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-26 12:46 ET",
+        "pub_ts": 1795715166.0
+      },
+      {
         "title": "Elon Musk didn’t sell a single share in SpaceX’s record $85.7B IPO. Anthropic’s 7 cofounders cashed out $1.96B in theirs",
         "url": "https://finance.yahoo.com/markets/stocks/articles/elon-musk-didn-t-sell-170000854.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1786,13 +1793,6 @@
         "source": "Yahoo Finance",
         "time": "11-26 10:08 ET",
         "pub_ts": 1795705715.0
-      },
-      {
-        "title": "Elon Musk Says ‘Multiplanetary’ SpaceX Could Be Worth $118 Quintillion. Yes, Quintillion",
-        "url": "https://decrypt.co/384043/elon-musk-says-multiplanetary-spacex-could-be-worth-118-quintillion-yes-quintillion?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-26 09:38 ET",
-        "pub_ts": 1795703935.0
       }
     ],
     "ASTS": [
@@ -3316,23 +3316,23 @@
     ]
   },
   "ticker_news_ts": {
-    "KORU": 1795715789.9685009,
-    "SOXL": 1795715789.9685009,
-    "SPY": 1795715789.9685009,
-    "DIA": 1795715789.9685009,
-    "SOXX": 1795715789.9685009,
-    "QQQ": 1795715789.9685009,
-    "SMH": 1795715789.9685009,
-    "IWM": 1795715789.9685009,
-    "IGV": 1795715789.9685009,
-    "TLT": 1795715789.9685009,
-    "GLD": 1795715789.9685009,
-    "SQQQ": 1795715789.9685009,
+    "KORU": 1795717311.842482,
+    "SOXL": 1795717311.842482,
+    "SPY": 1795717311.842482,
+    "DIA": 1795717311.842482,
+    "SOXX": 1795717311.842482,
+    "QQQ": 1795717311.842482,
+    "SMH": 1795717311.842482,
+    "IWM": 1795717311.842482,
+    "IGV": 1795717311.842482,
+    "TLT": 1795717311.842482,
+    "GLD": 1795717311.842482,
+    "SQQQ": 1795717311.842482,
     "TSM": 1795716077.8553782,
-    "VIXY": 1795715789.9685009,
-    "SOXS": 1795715789.9685009,
-    "NVDA": 1795715789.9685009,
-    "AMD": 1795715789.9685009,
+    "VIXY": 1795717311.842482,
+    "SOXS": 1795717311.842482,
+    "NVDA": 1795717311.842482,
+    "AMD": 1795717311.842482,
     "ASML": 1795716077.8553782,
     "QCOM": 1795716077.8553782,
     "AVGO": 1795716077.8553782,
@@ -3347,15 +3347,15 @@
     "CRWV": 1795716124.3683472,
     "NBIS": 1795716124.3683472,
     "APLD": 1795716124.3683472,
-    "VST": 1795715789.9685009,
-    "BE": 1795715789.9685009,
-    "CRDO": 1795715789.9685009,
-    "COHR": 1795715789.9685009,
+    "VST": 1795717311.842482,
+    "BE": 1795717311.842482,
+    "CRDO": 1795717311.842482,
+    "COHR": 1795717311.842482,
     "MRVL": 1795716124.3683472,
     "LITE": 1795716124.3683472,
-    "AAOI": 1795715789.9685009,
-    "SPCX": 1795715789.9685009,
-    "ASTS": 1795715789.9685009,
+    "AAOI": 1795717311.842482,
+    "SPCX": 1795717311.842482,
+    "ASTS": 1795717311.842482,
     "AXTI": 1795716124.3683472,
     "NASA": 1795716077.8553782,
     "LUNR": 1795716077.8553782,
@@ -3392,11 +3392,11 @@
     "V": 1795716124.3683472,
     "CAT": 1795716166.6207159,
     "FN": 1795716124.3683472,
-    "GLW": 1795715789.9685009,
+    "GLW": 1795717311.842482,
     "ANT": 1795716166.6207159,
     "XAUUSD": 1795716166.6207159,
     "KOSPI": 1795716077.8553782,
-    "KSTR": 1795715789.9685009
+    "KSTR": 1795717311.842482
   },
   "opex_shield": {
     "date": "2026-11-26",
