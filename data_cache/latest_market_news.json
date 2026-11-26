@@ -1,5 +1,5 @@
 {
-  "updated_at_ts": 1795716124.368,
+  "updated_at_ts": 1795716166.621,
   "updated_at_et": "11-26 13:02 ET",
   "updated_at_kst": "03:02 KST",
   "macro_calendar": [],
@@ -2981,6 +2981,13 @@
     ],
     "JPM": [
       {
+        "title": "JPMorgan Sees $450 Billion AI Debt Wave as Credit Risks Mount",
+        "url": "https://finance.yahoo.com/technology/ai/articles/jpmorgan-sees-450-billion-ai-154741192.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-26 10:47 ET",
+        "pub_ts": 1795708061.0
+      },
+      {
         "title": "Why Outages at Apps Like Chase Mean Cybersecurity Is Now Everyone’s Problem",
         "url": "https://unchainedcrypto.com/why-outages-at-apps-like-chase-mean-cybersecurity-is-now-everyones-problem/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -3007,13 +3014,6 @@
         "source": "Yahoo Finance",
         "time": "11-25 16:58 ET",
         "pub_ts": 1795643904.0
-      },
-      {
-        "title": "JPMorgan Sees $450 Billion AI Debt Blitz in 2027 Before Plateau",
-        "url": "https://finance.yahoo.com/technology/ai/articles/jpmorgan-sees-450-billion-ai-211721263.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 16:17 ET",
-        "pub_ts": 1795641441.0
       }
     ],
     "WMT": [
@@ -3023,6 +3023,13 @@
         "source": "Yahoo Finance",
         "time": "11-26 08:00 ET",
         "pub_ts": 1795698000.0
+      },
+      {
+        "title": "Walmart, Amazon Face Surprising Shopping Shift",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/walmart-amazon-face-surprising-shopping-160813140.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-26 11:08 ET",
+        "pub_ts": 1795709293.0
       },
       {
         "title": "How to Play Walmart Stock a Week After Its Q3 Earnings Release",
@@ -3044,13 +3051,6 @@
         "source": "Yahoo Finance",
         "time": "11-26 06:00 ET",
         "pub_ts": 1795690852.0
-      },
-      {
-        "title": "Walmart (WMT) Brings Direct AI Shopping And a 3,000 Store Beauty Box Launch",
-        "url": "https://finance.yahoo.com/technology/ai/articles/walmart-wmt-brings-direct-ai-091223863.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-26 04:12 ET",
-        "pub_ts": 1795684343.0
       }
     ],
     "V": [
@@ -3210,32 +3210,32 @@
         "pub_ts": 1795705200.0
       },
       {
+        "title": "Alphabet Could Be the Safest Way to Own Anthropic. Here’s the Math.",
+        "url": "https://www.fool.com/investing/2026/11/26/alphabet-could-be-the-safest-way-to-own-anthropic-here-s-the-math/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-26 12:47 ET",
+        "pub_ts": 1795715222.0
+      },
+      {
         "title": "Dow Jones Futures Rise With U.S. Markets Shut; Look For This Bullish Signal",
         "url": "https://finance.yahoo.com/m/158e82fc-b889-34b6-8704-99a49e9a83ae/dow-jones-futures-rise-with.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-26 10:34 ET",
-        "pub_ts": 1795707299.0
+        "time": "11-26 12:42 ET",
+        "pub_ts": 1795714940.0
       },
       {
-        "title": "Anthropic Is Down 7% Since Its IPO. History Says a $5,000 Investment Could Be Worth This Much in a Year.",
-        "url": "https://www.fool.com/investing/2026/11/26/anthropic-is-down-7-since-its-ipo-history-says-a-usd5-000-investment-could-be-worth-this-much-in-a-year/?.tsrc=rss",
+        "title": "Cathie Wood Buys $87.8 Million in Anthropic Shares This Week",
+        "url": "https://finance.yahoo.com/technology/ai/articles/cathie-wood-buys-87-8-174136348.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-26 10:33 ET",
-        "pub_ts": 1795707182.0
+        "time": "11-26 12:41 ET",
+        "pub_ts": 1795714896.0
       },
       {
-        "title": "Anthropic Signed a $19 Billion Lease. Is TeraWulf (WULF) Ready?",
-        "url": "https://finance.yahoo.com/technology/ai/articles/anthropic-signed-19-billion-lease-144202573.html?.tsrc=rss",
+        "title": "Elon Musk didn’t sell a single share in SpaceX’s record $85.7B IPO. Anthropic’s 7 cofounders cashed out $1.96B in theirs",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/elon-musk-didn-t-sell-170000854.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-26 09:42 ET",
-        "pub_ts": 1795704122.0
-      },
-      {
-        "title": "Is Anthropic Joining the S&P 500? Here's What Investors Need to Know.",
-        "url": "https://www.fool.com/investing/2026/11/26/is-anthropic-joining-sp-500-what-investors-need-to-know/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-26 08:23 ET",
-        "pub_ts": 1795699382.0
+        "time": "11-26 12:00 ET",
+        "pub_ts": 1795712400.0
       }
     ],
     "XAUUSD": [
@@ -3386,15 +3386,15 @@
     "NKE": 1795716124.3683472,
     "MCD": 1795716124.3683472,
     "PEP": 1795716124.3683472,
-    "XOM": 1795708231.295161,
-    "JPM": 1795708231.295161,
-    "WMT": 1795708231.295161,
+    "XOM": 1795716166.6207159,
+    "JPM": 1795716166.6207159,
+    "WMT": 1795716166.6207159,
     "V": 1795716124.3683472,
-    "CAT": 1795708231.295161,
+    "CAT": 1795716166.6207159,
     "FN": 1795716124.3683472,
     "GLW": 1795715789.9685009,
-    "ANT": 1795708231.295161,
-    "XAUUSD": 1795708231.295161,
+    "ANT": 1795716166.6207159,
+    "XAUUSD": 1795716166.6207159,
     "KOSPI": 1795716077.8553782,
     "KSTR": 1795715789.9685009
   },
