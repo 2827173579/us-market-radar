@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795733324.25,
-  "updated_at_et": "11-26 17:48 ET",
-  "updated_at_kst": "07:48 KST",
+  "updated_at_ts": 1795733368.804,
+  "updated_at_et": "11-26 17:49 ET",
+  "updated_at_kst": "07:49 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -2983,6 +2983,13 @@
     ],
     "JPM": [
       {
+        "title": "Is Standard Chartered (LSE:STAN) Undervalued Following Its J.P. Morgan Conference Appearance?",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/standard-chartered-lse-stan-undervalued-220908677.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-26 17:09 ET",
+        "pub_ts": 1795730948.0
+      },
+      {
         "title": "JPMorgan Sees $450 Billion AI Debt Wave as Credit Risks Mount",
         "url": "https://finance.yahoo.com/technology/ai/articles/jpmorgan-sees-450-billion-ai-154741192.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -3009,13 +3016,6 @@
         "source": "Yahoo Finance",
         "time": "11-25 17:20 ET",
         "pub_ts": 1795645227.0
-      },
-      {
-        "title": "JPMorgan sees $450B in AI bond issuance in 2027",
-        "url": "https://finance.yahoo.com/technology/ai/articles/jpmorgan-sees-450b-ai-bond-215824242.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 16:58 ET",
-        "pub_ts": 1795643904.0
       }
     ],
     "WMT": [
@@ -3205,6 +3205,20 @@
     ],
     "ANT": [
       {
+        "title": "Anthropic Stock (ANT) Forecast – Analysts See 60%+ Upside Despite Ongoing AI Trade Concerns",
+        "url": "https://finance.yahoo.com/technology/ai/articles/anthropic-stock-ant-forecast-analysts-222745210.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-26 17:27 ET",
+        "pub_ts": 1795732065.0
+      },
+      {
+        "title": "Dow Jones Futures Rise On Holiday; Look For This Bullish Market Signal",
+        "url": "https://finance.yahoo.com/m/158e82fc-b889-34b6-8704-99a49e9a83ae/dow-jones-futures-rise-on.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-26 17:26 ET",
+        "pub_ts": 1795731969.0
+      },
+      {
         "title": "O’Reilly’s Sales to Professional Mechanics Jumped 12.7% Last Quarter. Here’s Why That’s the Clearest Sign of Its Moat.",
         "url": "https://www.fool.com/investing/2026/11/26/oreilly-sales-professional-mechanics-jumped-last-quarter-why-that-s-the-clearest-sign-of-its-moat/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -3224,20 +3238,6 @@
         "source": "Yahoo Finance",
         "time": "11-26 14:50 ET",
         "pub_ts": 1795722602.0
-      },
-      {
-        "title": "I'd Buy Anthropic Stock Early — but Only If I Liked the Answers to These 3 Questions",
-        "url": "https://www.fool.com/investing/2026/11/26/id-buy-anthropic-stock-on-day-1-but-only-if-you-can-answer-these-3-questions/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-26 14:37 ET",
-        "pub_ts": 1795721822.0
-      },
-      {
-        "title": "Anthropic Stocks Rise but Close Below $83 IPO Price for a Second Day",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/anthropic-stocks-rise-close-below-190552499.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-26 14:05 ET",
-        "pub_ts": 1795719952.0
       }
     ],
     "XAUUSD": [
@@ -3388,15 +3388,15 @@
     "NKE": 1795733279.5640316,
     "MCD": 1795733279.5640316,
     "PEP": 1795733279.5640316,
-    "XOM": 1795731825.009037,
-    "JPM": 1795731825.009037,
-    "WMT": 1795731825.009037,
+    "XOM": 1795733368.8039465,
+    "JPM": 1795733368.8039465,
+    "WMT": 1795733368.8039465,
     "V": 1795733279.5640316,
-    "CAT": 1795731825.009037,
+    "CAT": 1795733368.8039465,
     "FN": 1795733279.5640316,
     "GLW": 1795732915.9486449,
-    "ANT": 1795731825.009037,
-    "XAUUSD": 1795731825.009037,
+    "ANT": 1795733368.8039465,
+    "XAUUSD": 1795733368.8039465,
     "KOSPI": 1795733235.0847952,
     "KSTR": 1795732915.9486449
   },
