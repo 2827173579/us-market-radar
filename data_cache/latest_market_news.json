@@ -1,5 +1,5 @@
 {
-  "updated_at_ts": 1795657328.677,
+  "updated_at_ts": 1795657369.267,
   "updated_at_et": "11-25 20:42 ET",
   "updated_at_kst": "10:42 KST",
   "macro_calendar": [
@@ -1203,6 +1203,13 @@
     ],
     "GOOGL": [
       {
+        "title": "Apple Stock Defies AI Selloff: Is It the Market's Safe Haven?",
+        "url": "https://beincrypto.com/apple-stock-ai-selloff-safe-haven/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 20:00 ET",
+        "pub_ts": 1795654800.0
+      },
+      {
         "title": "5 Best Strong Buy Growth Stocks to Buy for 2027",
         "url": "https://finance.yahoo.com/markets/stocks/articles/5-best-strong-buy-growth-004610627.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1229,13 +1236,6 @@
         "source": "Yahoo Finance",
         "time": "11-25 17:30 ET",
         "pub_ts": 1795645805.0
-      },
-      {
-        "title": "These 5 Tech Stocks are Sidestepping the AI Downturn",
-        "url": "https://finance.yahoo.com/m/d635c9d7-dbc8-3f44-bc94-e186ec33e2bd/these-5-tech-stocks-are.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 16:16 ET",
-        "pub_ts": 1795641360.0
       }
     ],
     "MSFT": [
@@ -1245,13 +1245,6 @@
         "source": "Yahoo Finance",
         "time": "11-25 12:00 ET",
         "pub_ts": 1795626000.0
-      },
-      {
-        "title": "Tariffs are back as Anthropic sinks further below its IPO price",
-        "url": "https://finance.yahoo.com/video/tariffs-are-back-as-anthropic-sinks-further-below-its-ipo-price-160524926.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 11:05 ET",
-        "pub_ts": 1795622724.0
       },
       {
         "title": "Microsoft's Green Card Filings Reveal A Striking Pattern After Mass Layoffs. Trump's New Rule Could Freeze Sponsorships For Two Years.",
@@ -1273,6 +1266,13 @@
         "source": "Yahoo Finance",
         "time": "11-25 15:50 ET",
         "pub_ts": 1795639822.0
+      },
+      {
+        "title": "Satya Nadella Says “the Floor of Cyber Attacks Has Fallen.” Microsoft Just Declared Code Red After a 24-Hour Outage",
+        "url": "https://www.tikr.com/blog/satya-nadella-says-the-floor-of-cyber-attacks-has-fallen-microsoft-just-declared-code-red-after-a-24-hour-outage?ref=yahoofinance&tlnk=yf-261125-gxp284g5&.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 13:03 ET",
+        "pub_ts": 1795629816.0
       }
     ],
     "AAPL": [
@@ -1282,6 +1282,13 @@
         "source": "Yahoo Finance",
         "time": "11-25 16:27 ET",
         "pub_ts": 1795642024.0
+      },
+      {
+        "title": "Apple Stock Defies AI Selloff: Is It the Market's Safe Haven?",
+        "url": "https://beincrypto.com/apple-stock-ai-selloff-safe-haven/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 20:00 ET",
+        "pub_ts": 1795654800.0
       },
       {
         "title": "Apple (AAPL) Pushes Back As 24 7 Tokenized Shares Trading Opens",
@@ -1303,13 +1310,6 @@
         "source": "Yahoo Finance",
         "time": "11-25 15:20 ET",
         "pub_ts": 1795638002.0
-      },
-      {
-        "title": "How Qualcomm’s CMO is reshaping his team for its post-Apple era",
-        "url": "https://finance.yahoo.com/technology/ai/articles/qualcomm-cmo-reshaping-team-post-160155309.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 11:01 ET",
-        "pub_ts": 1795622515.0
       }
     ],
     "PLTR": [
@@ -2461,6 +2461,13 @@
     ],
     "SKHY": [
       {
+        "title": "Samsung and SK Hynix Drag KOSPI Down 6%, and Foreign Investors Are Running",
+        "url": "https://beincrypto.com/kospi-crash-south-korea-stock-market/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 19:54 ET",
+        "pub_ts": 1795654498.0
+      },
+      {
         "title": "SK hynix (KOSE:A000660) AI Memory Narrative Puts Valuation Back In Focus",
         "url": "https://finance.yahoo.com/markets/stocks/articles/sk-hynix-kose-a000660-ai-211453290.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2487,13 +2494,6 @@
         "source": "Yahoo Finance",
         "time": "11-25 12:16 ET",
         "pub_ts": 1795626966.0
-      },
-      {
-        "title": "SK hynix vs Micron: Which AI Memory Player Has the Edge?",
-        "url": "https://finance.yahoo.com/technology/ai/articles/sk-hynix-vs-micron-ai-161700194.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 11:17 ET",
-        "pub_ts": 1795623420.0
       }
     ],
     "WDC": [
@@ -3323,45 +3323,45 @@
   "ticker_news_ts": {
     "KORU": 1795656163.8711112,
     "SOXL": 1795656163.8711112,
-    "SPY": 1795655844.5600646,
+    "SPY": 1795657369.2673004,
     "DIA": 1795656163.8711112,
     "SOXX": 1795656163.8711112,
     "QQQ": 1795656163.8711112,
-    "SMH": 1795655844.5600646,
+    "SMH": 1795657369.2673004,
     "IWM": 1795656163.8711112,
     "IGV": 1795656163.8711112,
     "TLT": 1795656163.8711112,
     "GLD": 1795656163.8711112,
     "SQQQ": 1795656206.6507094,
-    "TSM": 1795655844.5600646,
+    "TSM": 1795657369.2673004,
     "VIXY": 1795656163.8711112,
     "SOXS": 1795656206.6507094,
     "NVDA": 1795656206.6507094,
     "AMD": 1795656206.6507094,
-    "ASML": 1795655844.5600646,
-    "QCOM": 1795655844.5600646,
+    "ASML": 1795657369.2673004,
+    "QCOM": 1795657369.2673004,
     "AVGO": 1795656206.6507094,
-    "AMAT": 1795655844.5600646,
-    "META": 1795655844.5600646,
-    "GOOGL": 1795655844.5600646,
-    "MSFT": 1795655844.5600646,
-    "AAPL": 1795655844.5600646,
-    "PLTR": 1795655844.5600646,
-    "NOW": 1795655844.5600646,
-    "AMZN": 1795655844.5600646,
-    "CRWV": 1795655844.5600646,
-    "NBIS": 1795655844.5600646,
-    "APLD": 1795655844.5600646,
+    "AMAT": 1795657369.2673004,
+    "META": 1795657369.2673004,
+    "GOOGL": 1795657369.2673004,
+    "MSFT": 1795657369.2673004,
+    "AAPL": 1795657369.2673004,
+    "PLTR": 1795657369.2673004,
+    "NOW": 1795657369.2673004,
+    "AMZN": 1795657369.2673004,
+    "CRWV": 1795657369.2673004,
+    "NBIS": 1795657369.2673004,
+    "APLD": 1795657369.2673004,
     "VST": 1795656123.4978912,
     "BE": 1795656123.4978912,
     "CRDO": 1795656123.4978912,
     "COHR": 1795656123.4978912,
-    "MRVL": 1795655844.5600646,
-    "LITE": 1795655844.5600646,
+    "MRVL": 1795657369.2673004,
+    "LITE": 1795657369.2673004,
     "AAOI": 1795656123.4978912,
     "SPCX": 1795656123.4978912,
     "ASTS": 1795656123.4978912,
-    "AXTI": 1795655844.5600646,
+    "AXTI": 1795657369.2673004,
     "NASA": 1795656123.4978912,
     "LUNR": 1795656123.4978912,
     "TSLA": 1795656123.4978912,
@@ -3376,13 +3376,13 @@
     "OKLO": 1795656123.4978912,
     "CEG": 1795656123.4978912,
     "FPS": 1795656123.4978912,
-    "MU": 1795655844.5600646,
-    "SKHY": 1795655844.5600646,
-    "WDC": 1795655844.5600646,
+    "MU": 1795657369.2673004,
+    "SKHY": 1795657369.2673004,
+    "WDC": 1795657369.2673004,
     "STX": 1795656163.8711112,
     "MSTR": 1795656123.4978912,
     "SNDK": 1795656123.4978912,
-    "BTC-USD": 1795655844.5600646,
+    "BTC-USD": 1795657369.2673004,
     "CRWD": 1795656123.4978912,
     "ORCL": 1795656163.8711112,
     "COIN": 1795656163.8711112,
@@ -3396,11 +3396,11 @@
     "WMT": 1795656163.8711112,
     "V": 1795656163.8711112,
     "CAT": 1795656163.8711112,
-    "FN": 1795655844.5600646,
+    "FN": 1795657369.2673004,
     "GLW": 1795656123.4978912,
     "ANT": 1795656163.8711112,
     "XAUUSD": 1795656163.8711112,
-    "KOSPI": 1795655844.5600646
+    "KOSPI": 1795657369.2673004
   },
   "opex_shield": {
     "date": "2026-11-25",
