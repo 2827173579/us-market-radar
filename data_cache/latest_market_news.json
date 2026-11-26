@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795694265.53,
-  "updated_at_et": "11-26 06:57 ET",
-  "updated_at_kst": "20:57 KST",
+  "updated_at_ts": 1795694312.119,
+  "updated_at_et": "11-26 06:58 ET",
+  "updated_at_kst": "20:58 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -909,42 +909,49 @@
     ],
     "NVDA": [
       {
+        "title": "Nvidia Makes A Record $115.8 Billion In Revenue. Now S&P Warns Its Credit Rating Could Be Cut In 90 Days.",
+        "url": "https://www.ibtimes.com/nvidia-credit-downgrade-governance-concerns-3810220?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-26 06:53 ET",
+        "pub_ts": 1795694020.0
+      },
+      {
+        "title": "3 Investing Moves All Investors Should Make Right Now if a Bear Market Is Coming",
+        "url": "https://www.fool.com/investing/2026/11/26/3-investing-moves-all-investors-should-make-right/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-26 06:39 ET",
+        "pub_ts": 1795693140.0
+      },
+      {
+        "title": "Michael Burry Turns Bullish, Exits Nasdaq Shorts but Eyes Nvidia at $200",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/michael-burry-turns-bullish-exits-113036657.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-26 06:30 ET",
+        "pub_ts": 1795692636.0
+      },
+      {
+        "title": "Nvidia Wins Three Wall Street Upgrades as Jensen Huang Returns as CEO",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/nvidia-wins-three-wall-street-112625833.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-26 06:26 ET",
+        "pub_ts": 1795692385.0
+      },
+      {
         "title": "Michael Burry flips mostly long as tech stocks slide",
         "url": "https://finance.yahoo.com/markets/stocks/articles/michael-burry-flips-mostly-long-112229765.html?.tsrc=rss",
         "source": "Yahoo Finance",
         "time": "11-26 06:22 ET",
         "pub_ts": 1795692149.0
-      },
-      {
-        "title": "Nvidia, AMD and Micron Stocks Plunge as AI Selloff Deepens",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/nvidia-amd-micron-stocks-plunge-110624788.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-26 06:06 ET",
-        "pub_ts": 1795691184.0
-      },
-      {
-        "title": "If an AI Bubble Bursts, This Is the Only Tech Stock I Want to Own",
-        "url": "https://www.fool.com/investing/2026/11/26/if-an-ai-bubble-bursts-this-is-the-only-tech-stock-i-want-to-own/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-26 06:06 ET",
-        "pub_ts": 1795691162.0
-      },
-      {
-        "title": "ProShares Ultra QQQ (QLD) Sells Apple and Nvidia on Tuesday",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/proshares-ultra-qqq-qld-sells-110520288.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-26 06:05 ET",
-        "pub_ts": 1795691120.0
-      },
-      {
-        "title": "State Street Tech Select SPDR (XLK) Adds Apple and Nvidia on Nov. 24",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/state-street-tech-select-spdr-110452004.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-26 06:04 ET",
-        "pub_ts": 1795691092.0
       }
     ],
     "AMD": [
+      {
+        "title": "Is The Client Unit Still Carrying AMD Stock?",
+        "url": "https://www.trefis.com/stock/amd/articles/629201/is-the-client-unit-still-carrying-amd-stock/2026-11-26?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-26 06:23 ET",
+        "pub_ts": 1795692219.0
+      },
       {
         "title": "Cathie Wood and Philippe Laffont Are on Opposite Sides of AMD Stock. Here's Who I Think Is Right.",
         "url": "https://www.fool.com/investing/2026/11/26/cathie-wood-and-philippe-laffont-are-on-opposite-sides-of-amd-stock-here-s-who-i-think-is-right/?.tsrc=rss",
@@ -972,13 +979,6 @@
         "source": "Yahoo Finance",
         "time": "11-25 19:56 ET",
         "pub_ts": 1795654562.0
-      },
-      {
-        "title": "Even After a Cut, UBS’s $625 Target Says AMD’s Selloff Went Too Far",
-        "url": "https://www.tikr.com/blog/even-after-a-cut-ubss-625-target-says-amds-selloff-went-too-far?ref=yahoofinance&tlnk=yf-261126-8fgrcr56&.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 17:58 ET",
-        "pub_ts": 1795647497.0
       }
     ],
     "ASML": [
@@ -1945,6 +1945,13 @@
     ],
     "TSLA": [
       {
+        "title": "JPMorgan Says S&P Could Waive Its Rules for a Tesla-SpaceX Merger. That’s Good News for SpaceX Holders",
+        "url": "https://www.tikr.com/blog/jpmorgan-says-sp-could-waive-its-rules-for-a-tesla-spacex-merger-thats-good-news-for-spacex-holders?ref=yahoofinance&tlnk=yf-261126-gpc9wr29&.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-26 06:45 ET",
+        "pub_ts": 1795693559.0
+      },
+      {
         "title": "Invesco QQQ Trust (QQQ) Buys $187.4 Million More Apple on Tuesday",
         "url": "https://finance.yahoo.com/markets/stocks/articles/invesco-qqq-trust-qqq-buys-110402435.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1971,13 +1978,6 @@
         "source": "Yahoo Finance",
         "time": "11-25 18:24 ET",
         "pub_ts": 1795649042.0
-      },
-      {
-        "title": "Billionaire Brad Gerstner’s Altimeter Opened a $680 Million Tesla Stake and Exited Qualcomm and Applied Materials",
-        "url": "https://247wallst.com/investing/2026/11/25/billionaire-brad-gerstners-altimeter-opened-a-680-million-tesla-stake-and-exited-qualcomm-and-applied-materials/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 15:22 ET",
-        "pub_ts": 1795638121.0
       }
     ],
     "AXP": [
@@ -3326,16 +3326,16 @@
     "IWM": 1795694171.2240074,
     "IGV": 1795694171.2240074,
     "TLT": 1795694171.2240074,
-    "GLD": 1795692772.3072996,
-    "SQQQ": 1795692772.3072996,
+    "GLD": 1795694312.118782,
+    "SQQQ": 1795694312.118782,
     "TSM": 1795692879.1814775,
-    "VIXY": 1795692772.3072996,
-    "SOXS": 1795692772.3072996,
-    "NVDA": 1795692772.3072996,
-    "AMD": 1795692772.3072996,
+    "VIXY": 1795694312.118782,
+    "SOXS": 1795694312.118782,
+    "NVDA": 1795694312.118782,
+    "AMD": 1795694312.118782,
     "ASML": 1795692879.1814775,
     "QCOM": 1795692879.1814775,
-    "AVGO": 1795692772.3072996,
+    "AVGO": 1795694312.118782,
     "AMAT": 1795692879.1814775,
     "META": 1795692879.1814775,
     "GOOGL": 1795692879.1814775,
@@ -3357,19 +3357,19 @@
     "SPCX": 1795694171.2240074,
     "ASTS": 1795694171.2240074,
     "AXTI": 1795692879.1814775,
-    "NASA": 1795692772.3072996,
-    "LUNR": 1795692772.3072996,
-    "TSLA": 1795692772.3072996,
-    "AXP": 1795692772.3072996,
-    "RKLB": 1795692772.3072996,
-    "KO": 1795692772.3072996,
-    "FLY": 1795692772.3072996,
-    "INTC": 1795692772.3072996,
-    "VRT": 1795692772.3072996,
+    "NASA": 1795694312.118782,
+    "LUNR": 1795694312.118782,
+    "TSLA": 1795694312.118782,
+    "AXP": 1795694312.118782,
+    "RKLB": 1795694312.118782,
+    "KO": 1795694312.118782,
+    "FLY": 1795694312.118782,
+    "INTC": 1795694312.118782,
+    "VRT": 1795694312.118782,
     "HPE": 1795692824.7296414,
-    "DELL": 1795692772.3072996,
+    "DELL": 1795694312.118782,
     "OKLO": 1795692824.7296414,
-    "CEG": 1795692772.3072996,
+    "CEG": 1795694312.118782,
     "FPS": 1795692824.7296414,
     "MU": 1795692879.1814775,
     "SKHY": 1795692879.1814775,
