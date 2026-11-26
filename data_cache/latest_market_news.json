@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795692772.307,
-  "updated_at_et": "11-26 06:32 ET",
-  "updated_at_kst": "20:32 KST",
+  "updated_at_ts": 1795692824.73,
+  "updated_at_et": "11-26 06:33 ET",
+  "updated_at_kst": "20:33 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -427,6 +427,13 @@
     ],
     "SPY": [
       {
+        "title": "SPDR S&P 500 ETF (SPY) Sells $400.1 Million of Apple on Nov. 24",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/spdr-p-500-etf-spy-110357521.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-26 06:03 ET",
+        "pub_ts": 1795691037.0
+      },
+      {
         "title": "Nvidia is cheap on paper, so why won't the market buy it?",
         "url": "https://finance.yahoo.com/video/nvidia-is-cheap-on-paper-so-why-wont-the-market-buy-it-192215326.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -434,18 +441,11 @@
         "pub_ts": 1795634535.0
       },
       {
-        "title": "SPDR S&P 500 ETF (SPY) Adds Apple and Nvidia on Monday",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/spdr-p-500-etf-spy-110402304.html?.tsrc=rss",
+        "title": "Own Palo Alto Stock? Watch Its Deferred Revenue",
+        "url": "https://www.trefis.com/stock/panw/articles/629187/own-palo-alto-stock-watch-its-deferred-revenue/2026-11-26?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-25 06:04 ET",
-        "pub_ts": 1795604642.0
-      },
-      {
-        "title": "Forget the P/E Ratio. DSTL Picks 100 Large Stocks by the Cash They Generate and the Debt They Don’t Carry",
-        "url": "https://247wallst.com/investing/etf/2026/11/25/forget-the-p-e-ratio-dstl-picks-100-large-stocks-by-the-cash-they-generate-and-the-debt-they-dont-carry/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 06:03 ET",
-        "pub_ts": 1795604617.0
+        "time": "11-26 06:15 ET",
+        "pub_ts": 1795691719.0
       },
       {
         "title": "ETFs Are Net Sellers of Thermo Fisher (TMO) on Nov. 24",
@@ -455,11 +455,11 @@
         "pub_ts": 1795691016.0
       },
       {
-        "title": "SPYD and SCHD Hold No Nvidia. Here’s What You Give Up and What You Get",
-        "url": "https://247wallst.com/investing/etf/2026/11/25/spyd-and-schd-hold-no-nvidia-heres-what-you-give-up-and-what-you-get/?.tsrc=rss",
+        "title": "ETFs Are Net Sellers of Intuitive Surgical (ISRG) on Nov. 24",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/etfs-net-sellers-intuitive-surgical-110334735.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-25 12:51 ET",
-        "pub_ts": 1795629062.0
+        "time": "11-26 06:03 ET",
+        "pub_ts": 1795691014.0
       }
     ],
     "DIA": [
@@ -2210,6 +2210,13 @@
         "pub_ts": 1795640400.0
       },
       {
+        "title": "Is HPE's 18-Quarter Inventory High A Warning?",
+        "url": "https://www.trefis.com/stock/dell/articles/629185/is-hpe-s-18-quarter-inventory-high-a-warning/2026-11-26?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-26 06:13 ET",
+        "pub_ts": 1795691593.0
+      },
+      {
         "title": "Ensign InfoSecurity partners with HPE to help enterprises deploy AI with greater control and security",
         "url": "https://finance.yahoo.com/technology/ai/articles/ensign-infosecurity-partners-hpe-help-000000295.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2229,13 +2236,6 @@
         "source": "Yahoo Finance",
         "time": "11-25 16:20 ET",
         "pub_ts": 1795641634.0
-      },
-      {
-        "title": "George Soros, Ken Fisher and 11 Other Big Funds Bought Hewlett Packard Enterprise Last Quarter, While 5 Sold. Who’s Right?",
-        "url": "https://www.tikr.com/blog/george-soros-ken-fisher-and-11-other-big-funds-bought-hewlett-packard-enterprise-last-quarter-while-5-sold-whos-right?ref=yahoofinance&tlnk=yf-261125-pp776jqf&.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 13:19 ET",
-        "pub_ts": 1795630752.0
       }
     ],
     "DELL": [
@@ -2573,6 +2573,20 @@
     ],
     "SNDK": [
       {
+        "title": "Micron and Sandisk Are Two of the Cheapest AI Chip Stocks to Own",
+        "url": "https://finance.yahoo.com/technology/ai/articles/micron-sandisk-two-cheapest-ai-112351523.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-26 06:23 ET",
+        "pub_ts": 1795692231.0
+      },
+      {
+        "title": "ETFs Are Buying SanDisk (SNDK) on Nov. 24",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/etfs-buying-sandisk-sndk-nov-110203043.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-26 06:02 ET",
+        "pub_ts": 1795690923.0
+      },
+      {
         "title": "4 Memory and Storage Stocks Cut by More Than 30% That I'd Buy Now and Hold for the Next Decade",
         "url": "https://www.fool.com/investing/2026/11/26/4-memory-and-storage-stocks-cut-by-more-than-30-that-i-d-buy-now-and-hold-for-the-next-decade/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2592,20 +2606,6 @@
         "source": "Yahoo Finance",
         "time": "11-25 18:33 ET",
         "pub_ts": 1795649631.0
-      },
-      {
-        "title": "Qualcomm vs. Sandisk: Which Technology Stock Is a Better Buy for 2027?",
-        "url": "https://www.fool.com/coverage/better-buy/2026/11/25/qualcomm-vs-sandisk-which-technology-stock-is-a-better-buy-for-2027/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 16:20 ET",
-        "pub_ts": 1795641602.0
-      },
-      {
-        "title": "SK hynix Falls 5%, Sandisk Down 10% as Asian Chip Stocks Give Back the Huang Rally",
-        "url": "https://www.tikr.com/blog/sk-hynix-falls-5-sandisk-down-10-as-asian-chip-stocks-give-back-the-huang-rally?ref=yahoofinance&tlnk=yf-261125-7hm5f9h6&.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 12:46 ET",
-        "pub_ts": 1795628786.0
       }
     ],
     "BTC-USD": [
@@ -2705,18 +2705,18 @@
         "pub_ts": 1795639212.0
       },
       {
-        "title": "Oracle Is Down 60% From Its June High. J.P. Morgan Still Sees $200",
-        "url": "https://www.tikr.com/blog/oracle-is-down-60-from-its-june-high-j-p-morgan-still-sees-200?ref=yahoofinance&tlnk=yf-261125-q6w2wj6x&.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 11:50 ET",
-        "pub_ts": 1795625456.0
-      },
-      {
         "title": "Tech Stocks Stall Into Thanksgiving: Will the AI Rebound Return?",
         "url": "https://beincrypto.com/tech-stocks-stall-thanksgiving-nvidia-rebound/?.tsrc=rss",
         "source": "Yahoo Finance",
         "time": "11-25 20:19 ET",
         "pub_ts": 1795655993.0
+      },
+      {
+        "title": "Even After a Cut, UBS’s $625 Target Says AMD’s Selloff Went Too Far",
+        "url": "https://www.tikr.com/blog/even-after-a-cut-ubss-625-target-says-amds-selloff-went-too-far?ref=yahoofinance&tlnk=yf-261126-8fgrcr56&.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 17:58 ET",
+        "pub_ts": 1795647497.0
       }
     ],
     "COIN": [
@@ -2758,6 +2758,20 @@
     ],
     "LLY": [
       {
+        "title": "State Street Health Care Select Sector SPDR (XLV) Sells LLY and JNJ on Nov. 24",
+        "url": "https://finance.yahoo.com/healthcare/articles/state-street-health-care-select-110418846.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-26 06:04 ET",
+        "pub_ts": 1795691058.0
+      },
+      {
+        "title": "ETFs Are Net Sellers of Lilly (Eli) & Co (LLY) on Nov. 24",
+        "url": "https://finance.yahoo.com/healthcare/articles/etfs-net-sellers-lilly-eli-110215574.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-26 06:02 ET",
+        "pub_ts": 1795690935.0
+      },
+      {
         "title": "Dow Jones Futures Rise After Nasdaq Slashes Losses In Wild Market Ride",
         "url": "https://finance.yahoo.com/m/158e82fc-b889-34b6-8704-99a49e9a83ae/dow-jones-futures-rise-after.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2777,20 +2791,6 @@
         "source": "Yahoo Finance",
         "time": "11-25 15:15 ET",
         "pub_ts": 1795637754.0
-      },
-      {
-        "title": "Sector Update: Healthcare Stocks Mixed Wednesday Afternoon",
-        "url": "https://finance.yahoo.com/healthcare/articles/sector-healthcare-stocks-mixed-wednesday-183851394.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 13:38 ET",
-        "pub_ts": 1795631931.0
-      },
-      {
-        "title": "Update: Market Chatter: Novo Nordisk and Eli Lilly Prepare New Warning Labels for GLP-1 Drugs Over Eye Condition Risk",
-        "url": "https://finance.yahoo.com/healthcare/articles/market-chatter-novo-nordisk-eli-150708947.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 10:07 ET",
-        "pub_ts": 1795619228.0
       }
     ],
     "MRNA": [
@@ -2906,6 +2906,13 @@
     ],
     "PEP": [
       {
+        "title": "ETFs Bought $39.1 Million of PepsiCo (PEP) on Nov. 24",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/etfs-bought-39-1-million-110120545.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-26 06:01 ET",
+        "pub_ts": 1795690880.0
+      },
+      {
         "title": "2 Bargain Stocks to Buy With $1,000 in November",
         "url": "https://www.fool.com/investing/2026/11/25/2-bargain-stocks-to-buy-with-usd1-000-in-november/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2932,13 +2939,6 @@
         "source": "Yahoo Finance",
         "time": "11-24 16:45 ET",
         "pub_ts": 1795556758.0
-      },
-      {
-        "title": "What Did Coca-Cola Do That PepsiCo Did Not?",
-        "url": "https://www.trefis.com/stock/pep/articles/628584/what-did-coca-cola-do-that-pepsico-did-not/2026-11-24?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 13:26 ET",
-        "pub_ts": 1795544817.0
       }
     ],
     "XOM": [
@@ -3031,6 +3031,13 @@
         "pub_ts": 1795691103.0
       },
       {
+        "title": "ETFs Bought $89.2 Million of Walmart (WMT) on Tuesday",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/etfs-bought-89-2-million-110052786.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-26 06:00 ET",
+        "pub_ts": 1795690852.0
+      },
+      {
         "title": "Walmart (WMT) Brings Direct AI Shopping And a 3,000 Store Beauty Box Launch",
         "url": "https://finance.yahoo.com/technology/ai/articles/walmart-wmt-brings-direct-ai-091223863.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -3043,13 +3050,6 @@
         "source": "Yahoo Finance",
         "time": "11-25 19:00 ET",
         "pub_ts": 1795651212.0
-      },
-      {
-        "title": "Walmart quietly reverses major Apple Pay decision ahead of Black Friday",
-        "url": "https://www.thestreet.com/retail/walmart-quietly-reverses-major-apple-pay-decision-ahead-of-black-friday?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 16:33 ET",
-        "pub_ts": 1795642380.0
       }
     ],
     "V": [
@@ -3202,6 +3202,13 @@
     ],
     "ANT": [
       {
+        "title": "Should You Buy Anthropic Stock After Its IPO? Here’s What History Says About Record-Breaking Debuts.",
+        "url": "https://www.fool.com/investing/2026/11/26/should-you-buy-anthropic-stock-after-its-ipo-what-history-says-about-record-breaking-debuts/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-26 06:24 ET",
+        "pub_ts": 1795692242.0
+      },
+      {
         "title": "BT launches nationwide cyber resilience drive as AI helps fuel 500% surge in malicious activity",
         "url": "https://finance.yahoo.com/small-business/articles/bt-launches-nationwide-cyber-resilience-104600266.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -3228,13 +3235,6 @@
         "source": "Yahoo Finance",
         "time": "11-26 04:22 ET",
         "pub_ts": 1795684922.0
-      },
-      {
-        "title": "Musk Confirms He Pushed Trump to Bring Back Jensen Huang. The White House Had Anthropic in Mind",
-        "url": "https://www.tikr.com/blog/musk-confirms-he-pushed-trump-to-bring-back-jensen-huang-the-white-house-had-anthropic-in-mind?ref=yahoofinance&tlnk=yf-261126-66q3rrhh&.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-26 03:59 ET",
-        "pub_ts": 1795683552.0
       }
     ],
     "XAUUSD": [
@@ -3317,11 +3317,11 @@
   "ticker_news_ts": {
     "KORU": 1795692632.128583,
     "SOXL": 1795692632.128583,
-    "SPY": 1795691296.8520343,
+    "SPY": 1795692824.7296414,
     "DIA": 1795692632.128583,
     "SOXX": 1795692632.128583,
     "QQQ": 1795692632.128583,
-    "SMH": 1795691296.8520343,
+    "SMH": 1795692824.7296414,
     "IWM": 1795692632.128583,
     "IGV": 1795692632.128583,
     "TLT": 1795692632.128583,
@@ -3365,37 +3365,37 @@
     "FLY": 1795692772.3072996,
     "INTC": 1795692772.3072996,
     "VRT": 1795692772.3072996,
-    "HPE": 1795691296.8520343,
+    "HPE": 1795692824.7296414,
     "DELL": 1795692772.3072996,
-    "OKLO": 1795691296.8520343,
+    "OKLO": 1795692824.7296414,
     "CEG": 1795692772.3072996,
-    "FPS": 1795691296.8520343,
+    "FPS": 1795692824.7296414,
     "MU": 1795691345.0477648,
     "SKHY": 1795691345.0477648,
     "WDC": 1795691396.6507773,
-    "STX": 1795691296.8520343,
-    "MSTR": 1795691296.8520343,
-    "SNDK": 1795691296.8520343,
+    "STX": 1795692824.7296414,
+    "MSTR": 1795692824.7296414,
+    "SNDK": 1795692824.7296414,
     "BTC-USD": 1795691396.6507773,
-    "CRWD": 1795691296.8520343,
-    "ORCL": 1795691296.8520343,
-    "COIN": 1795691296.8520343,
-    "LLY": 1795691296.8520343,
-    "MRNA": 1795691296.8520343,
-    "NKE": 1795691296.8520343,
-    "MCD": 1795691296.8520343,
-    "PEP": 1795691296.8520343,
-    "XOM": 1795691296.8520343,
-    "JPM": 1795691296.8520343,
-    "WMT": 1795691296.8520343,
-    "V": 1795691296.8520343,
-    "CAT": 1795691296.8520343,
+    "CRWD": 1795692824.7296414,
+    "ORCL": 1795692824.7296414,
+    "COIN": 1795692824.7296414,
+    "LLY": 1795692824.7296414,
+    "MRNA": 1795692824.7296414,
+    "NKE": 1795692824.7296414,
+    "MCD": 1795692824.7296414,
+    "PEP": 1795692824.7296414,
+    "XOM": 1795692824.7296414,
+    "JPM": 1795692824.7296414,
+    "WMT": 1795692824.7296414,
+    "V": 1795692824.7296414,
+    "CAT": 1795692824.7296414,
     "FN": 1795691345.0477648,
     "GLW": 1795692632.128583,
-    "ANT": 1795691296.8520343,
+    "ANT": 1795692824.7296414,
     "XAUUSD": 1795691345.0477648,
     "KOSPI": 1795691345.0477648,
-    "KSTR": 1795691296.8520343
+    "KSTR": 1795692824.7296414
   },
   "opex_shield": {
     "date": "2026-11-26",
