@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795676027.867,
-  "updated_at_et": "11-26 01:53 ET",
-  "updated_at_kst": "15:53 KST",
+  "updated_at_ts": 1795676063.355,
+  "updated_at_et": "11-26 01:54 ET",
+  "updated_at_kst": "15:54 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -897,6 +897,27 @@
     ],
     "NVDA": [
       {
+        "title": "MU, SNDK, SKHY Jump As Nvidia Tests Kioxia Memory Fix — Analyst Presses Memory Giants For ‘Massive’ Buybacks",
+        "url": "https://stocktwits.com/news-articles/markets/equity/mu-sndk-skhy-nvidia-kioxia-memory-fix-analyst-memory-giants-buybacks/cNbxQFgR9ZK?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-26 01:30 ET",
+        "pub_ts": 1795674651.0
+      },
+      {
+        "title": "Nvidia stops shipping AI servers to 4 Southeast Asian countries- FT",
+        "url": "https://finance.yahoo.com/technology/ai/articles/nvidia-stops-shipping-ai-servers-062916311.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-26 01:29 ET",
+        "pub_ts": 1795674556.0
+      },
+      {
+        "title": "Kioxia jumps 14% after Nvidia collaboration as chip stocks rebound",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/kioxia-jumps-14-nvidia-collaboration-062844097.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-26 01:28 ET",
+        "pub_ts": 1795674524.0
+      },
+      {
         "title": "ANT, NVDA Slide Tests Investor Resolve, Software Firms Post Sharp Growth",
         "url": "https://stocktwits.com/news-articles/markets/equity/ant-nvda-slide-tests-investor-resolve-software-firms-post-sharp-growth/cNbxO5FR9ZX?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -909,27 +930,6 @@
         "source": "Yahoo Finance",
         "time": "11-26 00:32 ET",
         "pub_ts": 1795671175.0
-      },
-      {
-        "title": "Asian stocks rally as Taiwan, South Korea rebound; Nvidia risks linger",
-        "url": "https://finance.yahoo.com/markets/world-indices/articles/asian-stocks-rally-taiwan-south-053137366.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-26 00:31 ET",
-        "pub_ts": 1795671097.0
-      },
-      {
-        "title": "Asian shares rebound led by AI stocks after Wall Street pares sharp losses",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/asian-shares-rebound-led-ai-052153058.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-26 00:21 ET",
-        "pub_ts": 1795670513.0
-      },
-      {
-        "title": "Nvidia Reportedly Sold Its Most Advanced AI Chips to US Firms Controlled by Chinese Parents as Jensen Huang Set to Face Congress",
-        "url": "https://finance.yahoo.com/technology/ai/articles/nvidia-reportedly-sold-most-advanced-042255874.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 23:22 ET",
-        "pub_ts": 1795666975.0
       }
     ],
     "AMD": [
@@ -3285,15 +3285,15 @@
     "IGV": 1795676027.8668647,
     "TLT": 1795676027.8668647,
     "GLD": 1795676027.8668647,
-    "SQQQ": 1795674552.6874037,
+    "SQQQ": 1795676063.3545713,
     "TSM": 1795675693.420199,
     "VIXY": 1795676027.8668647,
-    "SOXS": 1795674552.6874037,
-    "NVDA": 1795674552.6874037,
-    "AMD": 1795674552.6874037,
+    "SOXS": 1795676063.3545713,
+    "NVDA": 1795676063.3545713,
+    "AMD": 1795676063.3545713,
     "ASML": 1795675693.420199,
     "QCOM": 1795675693.420199,
-    "AVGO": 1795674552.6874037,
+    "AVGO": 1795676063.3545713,
     "AMAT": 1795675693.420199,
     "META": 1795675693.420199,
     "GOOGL": 1795675693.420199,
