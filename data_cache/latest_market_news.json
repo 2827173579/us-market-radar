@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795682146.007,
-  "updated_at_et": "11-26 03:35 ET",
-  "updated_at_kst": "17:35 KST",
+  "updated_at_ts": 1795682188.623,
+  "updated_at_et": "11-26 03:36 ET",
+  "updated_at_kst": "17:36 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -2601,6 +2601,13 @@
     ],
     "BTC-USD": [
       {
+        "title": "K33 AB (ARCNF) (Q3 2026) Earnings Call Highlights: 35% Revenue Growth and 40% Trading Volume ...",
+        "url": "https://finance.yahoo.com/markets/crypto/articles/k33-ab-arcnf-q3-2026-082042686.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-26 03:20 ET",
+        "pub_ts": 1795681242.0
+      },
+      {
         "title": "Bitcoin recovers to $60.5k, but rates, regulatory fears persist",
         "url": "https://finance.yahoo.com/markets/crypto/articles/bitcoin-recovers-60-5k-rates-070224193.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2627,13 +2634,6 @@
         "source": "Yahoo Finance",
         "time": "11-25 23:36 ET",
         "pub_ts": 1795667764.0
-      },
-      {
-        "title": "How Low Can Bitcoin, Ethereum and XRP Fall? 4 Price Levels to Watch",
-        "url": "https://beincrypto.com/critical-price-levels-for-bitcoin-ethereum-xrp/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 20:37 ET",
-        "pub_ts": 1795657054.0
       }
     ],
     "CRWD": [
@@ -3367,7 +3367,7 @@
     "STX": 1795680943.660106,
     "MSTR": 1795680943.660106,
     "SNDK": 1795680943.660106,
-    "BTC-USD": 1795680649.5919473,
+    "BTC-USD": 1795682188.6234741,
     "CRWD": 1795680943.660106,
     "ORCL": 1795680943.660106,
     "COIN": 1795680943.660106,
