@@ -1,5 +1,5 @@
 {
-  "updated_at_ts": 1795680904.846,
+  "updated_at_ts": 1795680943.66,
   "updated_at_et": "11-26 03:15 ET",
   "updated_at_kst": "17:15 KST",
   "macro_calendar": [],
@@ -897,6 +897,20 @@
     ],
     "NVDA": [
       {
+        "title": "S&P Weighs Nvidia Downgrade Despite Huang's Return. What Would a Cut Mean?",
+        "url": "https://beincrypto.com/sp-nvidia-credit-rating-downgrade-watch/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-26 03:00 ET",
+        "pub_ts": 1795680000.0
+      },
+      {
+        "title": "Prediction: This Is What Nvidia Stock Will Be Worth by 2028",
+        "url": "https://www.fool.com/investing/2026/11/26/prediction-this-is-what-nvidia-stock-will-be-worth-by-2028/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-26 02:54 ET",
+        "pub_ts": 1795679642.0
+      },
+      {
         "title": "Nvidia Could Shift Chips To ‘Better-Funded Buyers’ As Neoclouds Face Shakeout: Analyst Sees ‘Smaller Top Tier’",
         "url": "https://stocktwits.com/news-articles/markets/equity/nvidia-could-shift-chips-to-better-funded-buyers-as-neoclouds-face-shakeout-analyst-sees-smaller-top-tier/cNbxWjpR9ZZ?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -916,20 +930,6 @@
         "source": "Yahoo Finance",
         "time": "11-26 02:22 ET",
         "pub_ts": 1795677733.0
-      },
-      {
-        "title": "MU, SNDK, SKHY Jump As Nvidia Tests Kioxia Memory Fix — Analyst Presses Memory Giants For ‘Massive’ Buybacks",
-        "url": "https://stocktwits.com/news-articles/markets/equity/mu-sndk-skhy-nvidia-kioxia-memory-fix-analyst-memory-giants-buybacks/cNbxQFgR9ZK?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-26 01:30 ET",
-        "pub_ts": 1795674651.0
-      },
-      {
-        "title": "Nvidia stops shipping AI servers to 4 Southeast Asian countries- FT",
-        "url": "https://finance.yahoo.com/technology/ai/articles/nvidia-stops-shipping-ai-servers-062916311.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-26 01:29 ET",
-        "pub_ts": 1795674556.0
       }
     ],
     "AMD": [
@@ -2199,13 +2199,6 @@
         "pub_ts": 1795640400.0
       },
       {
-        "title": "Ten reasons the market is selling off again before Thanksgiving",
-        "url": "https://finance.yahoo.com/video/ten-reasons-the-market-is-selling-off-again-before-thanksgiving-160424234.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 11:04 ET",
-        "pub_ts": 1795622664.0
-      },
-      {
         "title": "Ensign InfoSecurity partners with HPE to help enterprises deploy AI with greater control and security",
         "url": "https://finance.yahoo.com/technology/ai/articles/ensign-infosecurity-partners-hpe-help-000000295.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2225,6 +2218,13 @@
         "source": "Yahoo Finance",
         "time": "11-25 16:20 ET",
         "pub_ts": 1795641634.0
+      },
+      {
+        "title": "George Soros, Ken Fisher and 11 Other Big Funds Bought Hewlett Packard Enterprise Last Quarter, While 5 Sold. Who’s Right?",
+        "url": "https://www.tikr.com/blog/george-soros-ken-fisher-and-11-other-big-funds-bought-hewlett-packard-enterprise-last-quarter-while-5-sold-whos-right?ref=yahoofinance&tlnk=yf-261125-pp776jqf&.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 13:19 ET",
+        "pub_ts": 1795630752.0
       }
     ],
     "DELL": [
@@ -3314,16 +3314,16 @@
     "IWM": 1795680850.7608156,
     "IGV": 1795680850.7608156,
     "TLT": 1795680850.7608156,
-    "GLD": 1795679415.056908,
-    "SQQQ": 1795679415.056908,
+    "GLD": 1795680943.660106,
+    "SQQQ": 1795680943.660106,
     "TSM": 1795680510.267537,
-    "VIXY": 1795679415.056908,
-    "SOXS": 1795679415.056908,
-    "NVDA": 1795679415.056908,
-    "AMD": 1795679415.056908,
+    "VIXY": 1795680943.660106,
+    "SOXS": 1795680943.660106,
+    "NVDA": 1795680943.660106,
+    "AMD": 1795680943.660106,
     "ASML": 1795680510.267537,
     "QCOM": 1795680510.267537,
-    "AVGO": 1795679415.056908,
+    "AVGO": 1795680943.660106,
     "AMAT": 1795680510.267537,
     "META": 1795680510.267537,
     "GOOGL": 1795680510.267537,
@@ -3354,30 +3354,30 @@
     "FLY": 1795680850.7608156,
     "INTC": 1795680850.7608156,
     "VRT": 1795680850.7608156,
-    "HPE": 1795679415.056908,
-    "DELL": 1795679415.056908,
-    "OKLO": 1795679415.056908,
-    "CEG": 1795679415.056908,
-    "FPS": 1795679415.056908,
+    "HPE": 1795680943.660106,
+    "DELL": 1795680943.660106,
+    "OKLO": 1795680943.660106,
+    "CEG": 1795680943.660106,
+    "FPS": 1795680943.660106,
     "MU": 1795680510.267537,
     "SKHY": 1795680510.267537,
     "WDC": 1795680510.267537,
-    "STX": 1795679415.056908,
-    "MSTR": 1795679415.056908,
-    "SNDK": 1795679415.056908,
+    "STX": 1795680943.660106,
+    "MSTR": 1795680943.660106,
+    "SNDK": 1795680943.660106,
     "BTC-USD": 1795680649.5919473,
-    "CRWD": 1795679415.056908,
-    "ORCL": 1795679415.056908,
-    "COIN": 1795679415.056908,
-    "LLY": 1795679415.056908,
-    "MRNA": 1795679415.056908,
-    "NKE": 1795679415.056908,
-    "MCD": 1795679415.056908,
-    "PEP": 1795679415.056908,
+    "CRWD": 1795680943.660106,
+    "ORCL": 1795680943.660106,
+    "COIN": 1795680943.660106,
+    "LLY": 1795680943.660106,
+    "MRNA": 1795680943.660106,
+    "NKE": 1795680943.660106,
+    "MCD": 1795680943.660106,
+    "PEP": 1795680943.660106,
     "XOM": 1795679498.3631167,
     "JPM": 1795679498.3631167,
     "WMT": 1795679498.3631167,
-    "V": 1795679415.056908,
+    "V": 1795680943.660106,
     "CAT": 1795679498.3631167,
     "FN": 1795680510.267537,
     "GLW": 1795680850.7608156,
