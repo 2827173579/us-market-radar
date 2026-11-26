@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795700446.097,
-  "updated_at_et": "11-26 08:40 ET",
-  "updated_at_kst": "22:40 KST",
+  "updated_at_ts": 1795700490.499,
+  "updated_at_et": "11-26 08:41 ET",
+  "updated_at_kst": "22:41 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -3130,6 +3130,13 @@
     ],
     "FN": [
       {
+        "title": "Can Optical Circuit Switching Become Fabrinet's Next Growth Driver?",
+        "url": "https://finance.yahoo.com/technology/articles/optical-circuit-switching-become-fabrinets-121200862.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-26 07:12 ET",
+        "pub_ts": 1795695120.0
+      },
+      {
         "title": "Can FN's Data Center Business Sustain its Strong Growth Momentum?",
         "url": "https://finance.yahoo.com/technology/articles/fns-data-center-business-sustain-114600279.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -3156,13 +3163,6 @@
         "source": "Yahoo Finance",
         "time": "11-20 12:38 ET",
         "pub_ts": 1795196280.0
-      },
-      {
-        "title": "AAOI Rides on AI-Led Optical Demand: Can It Beat Fabrinet and Coherent?",
-        "url": "https://finance.yahoo.com/technology/ai/articles/aaoi-rides-ai-led-optical-164700563.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-18 11:47 ET",
-        "pub_ts": 1795020420.0
       }
     ],
     "GLW": [
@@ -3250,6 +3250,13 @@
     ],
     "KOSPI": [
       {
+        "title": "Global markets rebound as tech shares recover and tariff fears ease",
+        "url": "https://finance.yahoo.com/markets/world-indices/articles/global-markets-rebound-tech-shares-042539373.html",
+        "source": "Euronews",
+        "time": "11-26 05:07 ET",
+        "pub_ts": 1795687636.0
+      },
+      {
         "title": "Bank of Korea Rate Hike Meets KOSPI Struggles: Can Chips Carry Korea?",
         "url": "https://finance.yahoo.com/markets/stocks/articles/bank-korea-rate-hike-meets-015500527.html",
         "source": "BeInCrypto",
@@ -3276,13 +3283,6 @@
         "source": "MT Newswires",
         "time": "11-24 05:36 ET",
         "pub_ts": 1795516602.0
-      },
-      {
-        "title": "Samsung Electronics Stocks Fall 3.06% as Kospi Sinks Before Nvidia's CEO Reversal",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/samsung-electronics-stocks-fall-3-170806611.html",
-        "source": "GuruFocus.com",
-        "time": "11-23 12:08 ET",
-        "pub_ts": 1795453686.0
       }
     ],
     "KSTR": [
@@ -3329,35 +3329,35 @@
     "TLT": 1795700309.0548406,
     "GLD": 1795700397.6543553,
     "SQQQ": 1795700397.6543553,
-    "TSM": 1795698972.324488,
+    "TSM": 1795700490.499101,
     "VIXY": 1795700397.6543553,
     "SOXS": 1795700397.6543553,
     "NVDA": 1795700397.6543553,
     "AMD": 1795700397.6543553,
-    "ASML": 1795698972.324488,
-    "QCOM": 1795698972.324488,
+    "ASML": 1795700490.499101,
+    "QCOM": 1795700490.499101,
     "AVGO": 1795700397.6543553,
-    "AMAT": 1795698972.324488,
-    "META": 1795698972.324488,
-    "GOOGL": 1795698972.324488,
-    "MSFT": 1795698972.324488,
-    "AAPL": 1795698972.324488,
-    "PLTR": 1795698972.324488,
-    "NOW": 1795698972.324488,
-    "AMZN": 1795698972.324488,
-    "CRWV": 1795698972.324488,
-    "NBIS": 1795698972.324488,
-    "APLD": 1795698972.324488,
+    "AMAT": 1795700490.499101,
+    "META": 1795700490.499101,
+    "GOOGL": 1795700490.499101,
+    "MSFT": 1795700490.499101,
+    "AAPL": 1795700490.499101,
+    "PLTR": 1795700490.499101,
+    "NOW": 1795700490.499101,
+    "AMZN": 1795700490.499101,
+    "CRWV": 1795700490.499101,
+    "NBIS": 1795700490.499101,
+    "APLD": 1795700490.499101,
     "VST": 1795700309.0548406,
     "BE": 1795700309.0548406,
     "CRDO": 1795700309.0548406,
     "COHR": 1795700309.0548406,
-    "MRVL": 1795698972.324488,
-    "LITE": 1795698972.324488,
+    "MRVL": 1795700490.499101,
+    "LITE": 1795700490.499101,
     "AAOI": 1795700309.0548406,
     "SPCX": 1795700309.0548406,
     "ASTS": 1795700309.0548406,
-    "AXTI": 1795698972.324488,
+    "AXTI": 1795700490.499101,
     "NASA": 1795700397.6543553,
     "LUNR": 1795700397.6543553,
     "TSLA": 1795700397.6543553,
@@ -3373,7 +3373,7 @@
     "CEG": 1795700397.6543553,
     "FPS": 1795700446.097066,
     "MU": 1795699022.424005,
-    "SKHY": 1795698972.324488,
+    "SKHY": 1795700490.499101,
     "WDC": 1795699022.424005,
     "STX": 1795700446.097066,
     "MSTR": 1795700446.097066,
@@ -3387,16 +3387,16 @@
     "NKE": 1795700446.097066,
     "MCD": 1795700446.097066,
     "PEP": 1795700446.097066,
-    "XOM": 1795698972.324488,
+    "XOM": 1795700490.499101,
     "JPM": 1795700446.097066,
     "WMT": 1795699022.424005,
     "V": 1795700446.097066,
     "CAT": 1795700446.097066,
-    "FN": 1795698972.324488,
+    "FN": 1795700490.499101,
     "GLW": 1795700309.0548406,
     "ANT": 1795700446.097066,
     "XAUUSD": 1795699022.424005,
-    "KOSPI": 1795698972.324488,
+    "KOSPI": 1795700490.499101,
     "KSTR": 1795700446.097066
   },
   "opex_shield": {
