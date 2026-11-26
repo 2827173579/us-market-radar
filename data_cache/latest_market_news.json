@@ -1,5 +1,5 @@
 {
-  "updated_at_ts": 1795736770.475,
+  "updated_at_ts": 1795736806.49,
   "updated_at_et": "11-26 18:46 ET",
   "updated_at_kst": "08:46 KST",
   "macro_calendar": [],
@@ -1354,6 +1354,13 @@
     ],
     "AMZN": [
       {
+        "title": "Amazon tried to kill Musk’s plan for 1 million AI satellites. The FCC chair scolded it and gave SpaceX the green light",
+        "url": "https://finance.yahoo.com/technology/ai/articles/amazon-tried-kill-musk-plan-233000718.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-26 18:30 ET",
+        "pub_ts": 1795735800.0
+      },
+      {
         "title": "Stanley Druckenmiller, Bill Ackman and 7 Other Famous Investors Own Amazon. Here’s Who Bought and Sold Recently",
         "url": "https://www.tikr.com/blog/stanley-druckenmiller-bill-ackman-and-7-other-famous-investors-own-amazon-heres-who-bought-and-sold-recently?ref=yahoofinance&tlnk=yf-261126-2mffj2wm&.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1380,13 +1387,6 @@
         "source": "Yahoo Finance",
         "time": "11-26 12:23 ET",
         "pub_ts": 1795713818.0
-      },
-      {
-        "title": "Amazon Stocks Fall 3.12% as Bernstein Flags a 16% Drop in Cloud Web Traffic",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/amazon-stocks-fall-3-12-171531523.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-26 12:15 ET",
-        "pub_ts": 1795713331.0
       }
     ],
     "CRWV": [
@@ -2390,6 +2390,13 @@
     ],
     "MU": [
       {
+        "title": "Not Nvidia. Not Micron. If I Could Buy and Hold Only 1 Artificial Intelligence (AI) Semiconductor Stock Through 2030, This Would Be It.",
+        "url": "https://www.fool.com/investing/2026/11/26/not-nvidia-not-micron-if-i-could-buy-and-hold-only-1-artificial-intelligence-ai-semiconductor-stock-through-2030-this-would-be-it/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-26 18:14 ET",
+        "pub_ts": 1795734884.0
+      },
+      {
         "title": "Why It’s Hard to Write Off Micron (MU) Even with a Memory Peak in Sight",
         "url": "https://finance.yahoo.com/markets/stocks/articles/why-hard-write-off-micron-210000375.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2416,13 +2423,6 @@
         "source": "Yahoo Finance",
         "time": "11-26 11:44 ET",
         "pub_ts": 1795711465.0
-      },
-      {
-        "title": "Jim Cramer Says Micron Stock Is “Comically Cheap” at About 3 Times Earnings",
-        "url": "https://247wallst.com/investing/2026/11/26/jim-cramer-says-micron-stock-is-comically-cheap-at-about-3-times-earnings/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-26 08:53 ET",
-        "pub_ts": 1795701219.0
       }
     ],
     "SKHY": [
@@ -3342,22 +3342,22 @@
     "GOOGL": 1795736690.3023224,
     "MSFT": 1795736690.3023224,
     "AAPL": 1795736690.3023224,
-    "PLTR": 1795735281.9516175,
-    "NOW": 1795735281.9516175,
-    "AMZN": 1795735281.9516175,
-    "CRWV": 1795735281.9516175,
-    "NBIS": 1795735281.9516175,
-    "APLD": 1795735281.9516175,
+    "PLTR": 1795736806.4895775,
+    "NOW": 1795736806.4895775,
+    "AMZN": 1795736806.4895775,
+    "CRWV": 1795736806.4895775,
+    "NBIS": 1795736806.4895775,
+    "APLD": 1795736806.4895775,
     "VST": 1795736613.6668968,
     "BE": 1795736613.6668968,
     "CRDO": 1795736613.6668968,
     "COHR": 1795736613.6668968,
-    "MRVL": 1795735281.9516175,
-    "LITE": 1795735281.9516175,
+    "MRVL": 1795736806.4895775,
+    "LITE": 1795736806.4895775,
     "AAOI": 1795736613.6668968,
     "SPCX": 1795736613.6668968,
     "ASTS": 1795736613.6668968,
-    "AXTI": 1795735281.9516175,
+    "AXTI": 1795736806.4895775,
     "NASA": 1795736690.3023224,
     "LUNR": 1795736690.3023224,
     "TSLA": 1795736690.3023224,
@@ -3372,31 +3372,31 @@
     "OKLO": 1795736690.3023224,
     "CEG": 1795736690.3023224,
     "FPS": 1795736690.3023224,
-    "MU": 1795735281.9516175,
-    "SKHY": 1795735281.9516175,
-    "WDC": 1795735281.9516175,
-    "STX": 1795735281.9516175,
-    "MSTR": 1795735281.9516175,
+    "MU": 1795736806.4895775,
+    "SKHY": 1795736806.4895775,
+    "WDC": 1795736806.4895775,
+    "STX": 1795736806.4895775,
+    "MSTR": 1795736806.4895775,
     "SNDK": 1795736690.3023224,
-    "BTC-USD": 1795735281.9516175,
-    "CRWD": 1795735281.9516175,
-    "ORCL": 1795735281.9516175,
-    "COIN": 1795735281.9516175,
-    "LLY": 1795735281.9516175,
-    "MRNA": 1795735281.9516175,
-    "NKE": 1795735281.9516175,
-    "MCD": 1795735281.9516175,
+    "BTC-USD": 1795736806.4895775,
+    "CRWD": 1795736806.4895775,
+    "ORCL": 1795736806.4895775,
+    "COIN": 1795736806.4895775,
+    "LLY": 1795736806.4895775,
+    "MRNA": 1795736806.4895775,
+    "NKE": 1795736806.4895775,
+    "MCD": 1795736806.4895775,
     "PEP": 1795735326.6666548,
     "XOM": 1795735326.6666548,
     "JPM": 1795735326.6666548,
     "WMT": 1795735326.6666548,
-    "V": 1795735281.9516175,
+    "V": 1795736806.4895775,
     "CAT": 1795735326.6666548,
-    "FN": 1795735281.9516175,
+    "FN": 1795736806.4895775,
     "GLW": 1795736613.6668968,
     "ANT": 1795735326.6666548,
     "XAUUSD": 1795735326.6666548,
-    "KOSPI": 1795735281.9516175,
+    "KOSPI": 1795736806.4895775,
     "KSTR": 1795736613.6668968
   },
   "opex_shield": {
