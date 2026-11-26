@@ -8693,6 +8693,20 @@ def run_radar_cycle(is_first_run=False, round_idx=1):
         )
     except Exception as _amp_err:
         print(f"  [!] 🤖 亚太/A股独立 AI 引擎静默降级: {_amp_err}")
+    _apac_ip_doc = {}
+    try:
+        import apac_intraday_path_predictor as _aip_run
+        _apac_ip_doc = _aip_run.get_or_update_apac_intraday_forecasts(
+            apac_doc=_apac_doc,
+        )
+        _aip_cov = (_apac_ip_doc or {}).get("coverage") or {}
+        print(
+            f"[+] 📈 亚太/A股独立盘中推演走廊: mode={_apac_ip_doc.get('fetch_mode')} | "
+            f"有效={_aip_cov.get('ok_count', 0)}/{_aip_cov.get('total_count', 0)} | "
+            f"http={_apac_ip_doc.get('http_calls', 0)} | 目标日={_apac_ip_doc.get('forecast_date', '--')}"
+        )
+    except Exception as _aip_err:
+        print(f"  [!] 📈 亚太/A股独立盘中推演走廊静默降级: {_aip_err}")
 
     generate_macro_radar_html(
         macro_data,
@@ -8891,7 +8905,7 @@ def run_radar_cycle(is_first_run=False, round_idx=1):
         _build_fn = create_futu_terminal.build_futu_terminal_html
     except Exception:
         _build_fn = build_futu_terminal_html
-    futu_html = _build_fn(stocks_sorted, macro_data, weather_info, update_time_str=now_str, has_realtime=has_realtime, target_watchlist=target_watchlist, terminal_notifications=terminal_notifications, session_code=session_code, session_name=session_name, sync_side_effects=True, daily_sr_anchors=_sr_anchors_map, apac_doc=_apac_doc, apac_ml_doc=_apac_ml_doc)
+    futu_html = _build_fn(stocks_sorted, macro_data, weather_info, update_time_str=now_str, has_realtime=has_realtime, target_watchlist=target_watchlist, terminal_notifications=terminal_notifications, session_code=session_code, session_name=session_name, sync_side_effects=True, daily_sr_anchors=_sr_anchors_map, apac_doc=_apac_doc, apac_ml_doc=_apac_ml_doc, apac_intraday_doc=_apac_ip_doc)
     with open(FUTU_HTML_FILE, "w", encoding="utf-8") as f:
         f.write(futu_html)
     index_html_path = os.path.join(SCRATCH_DIR, "index.html")

@@ -392,7 +392,7 @@ def resolve_long_tp_sl_ordering_guard(
     }
 
 
-def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_str="", has_realtime=False, target_watchlist=None, terminal_notifications=None, session_code="REGULAR", session_name="常规盘中", sync_side_effects=False, sync_dir=None, daily_sr_anchors=None, apac_doc=None, apac_ml_doc=None):
+def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_str="", has_realtime=False, target_watchlist=None, terminal_notifications=None, session_code="REGULAR", session_name="常规盘中", sync_side_effects=False, sync_dir=None, daily_sr_anchors=None, apac_doc=None, apac_ml_doc=None, apac_intraday_doc=None):
     is_overnight = (session_code == "OVERNIGHT")
     if session_code == "OVERNIGHT":
         session_badge_html = '<span class="tool-link" style="color: #c084fc; border: 1px solid rgba(192, 132, 252, 0.45); background: rgba(192, 132, 252, 0.12); padding: 4px 7px; font-weight: 700;">🌌 美股夜盘</span>'
@@ -1260,8 +1260,16 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
             _apac_ml_payload = _amp_term.load_apac_ml_predictions() or {}
         except Exception:
             _apac_ml_payload = {}
+    _apac_ip_payload = apac_intraday_doc if isinstance(apac_intraday_doc, dict) and apac_intraday_doc else {}
+    if not _apac_ip_payload:
+        try:
+            import apac_intraday_path_predictor as _aip_term
+            _apac_ip_payload = _aip_term.load_apac_intraday_forecasts() or {}
+        except Exception:
+            _apac_ip_payload = {}
     apac_json = json.dumps(_apac_items_map, ensure_ascii=False, separators=(",", ":"))
     apac_ml_json = json.dumps(_apac_ml_payload, ensure_ascii=False, separators=(",", ":"))
+    apac_intraday_path_json = json.dumps(_apac_ip_payload, ensure_ascii=False, separators=(",", ":"))
     _has_kospi_cross = isinstance(macro_data, dict) and ("KOSPI" in macro_data)
     apac_count_str = str(len(_apac_items_map) + (1 if _has_kospi_cross else 0))
 
@@ -4427,6 +4435,7 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
         const RESILIENT_LEADERS_INIT = __PY_TPL_LEADERS_JSON__;
         const APAC_ASHARE_DATA = __PY_TPL_APAC_JSON__;
         const APAC_ML_PREDICTIONS = __PY_TPL_APAC_ML_JSON__;
+        const APAC_INTRADAY_PATH_FORECASTS = __PY_TPL_APAC_INTRADAY_PATH_JSON__;
 
         let currentFilter = "all";
         let currentCenterView = "kline";
@@ -5637,20 +5646,27 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
             if (!svgEl || !wrapEl || !fbEl) return;
             if (tipEl) tipEl.style.display = "none";
 
-            const rootDoc = INTRADAY_PATH_FORECASTS || {};
+            const isApacPathTk = isApacAshareTicker(ticker);
+            const rootDoc = isApacPathTk
+                ? ((typeof APAC_INTRADAY_PATH_FORECASTS !== "undefined" && APAC_INTRADAY_PATH_FORECASTS) ? APAC_INTRADAY_PATH_FORECASTS : {})
+                : (INTRADAY_PATH_FORECASTS || {});
             const byTk = rootDoc.by_ticker || {};
-            const item = byTk[ticker];
-            const isKrxPath = Boolean(item && (String(item.session_tz || "").toUpperCase() === "KST" || (isPointsTicker(ticker) && item.status === "ok")));
+            const item = isApacPathTk ? (byTk[String(ticker || "").toUpperCase()] || byTk[ticker]) : byTk[ticker];
+            const isKrxPath = !isApacPathTk && Boolean(item && (String(item.session_tz || "").toUpperCase() === "KST" || (isPointsTicker(ticker) && item.status === "ok")));
+            const isNonUsCorridor = isApacPathTk || isKrxPath;
             const fmtIpPx = (v) => {
                 if (v === null || v === undefined) return "--";
                 const n = Number(v);
                 if (!Number.isFinite(n) || n <= 0) return "--";
+                if (isApacPathTk) {
+                    return fmtAssetPx(n, ticker);
+                }
                 if (isKrxPath || isPointsTicker(ticker)) {
                     return n.toLocaleString("en-US", { minimumFractionDigits: 2, maximumFractionDigits: 2 });
                 }
                 return `$${n.toFixed(2)}`;
             };
-            const timeSlots = (item && Array.isArray(item.time_slots) && item.time_slots.length === 78)
+            const timeSlots = (item && Array.isArray(item.time_slots) && item.time_slots.length >= 10)
                 ? item.time_slots
                 : (Array.isArray(rootDoc.time_slots) && rootDoc.time_slots.length === 78
                     ? rootDoc.time_slots
@@ -5661,7 +5677,7 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
 
             if (!item) {
                 if (sumEl) sumEl.innerText = `${ticker} 暂无当日盘中推演数据`;
-                if (metaEl) metaEl.innerText = "请等待每日盘前 09:25 ET 或后台增量重建完成";
+                if (metaEl) metaEl.innerText = isApacPathTk ? "亚太/A股独立推演底模同步中，请稍后刷新查看" : "请等待每日盘前 09:25 ET 或后台增量重建完成";
                 if (divEl) {
                     divEl.innerText = "⏳ 等待推演数据";
                     divEl.style.color = pal.sub;
@@ -5671,7 +5687,7 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
                 if (lvBar) lvBar.innerHTML = "";
                 wrapEl.style.display = "none";
                 fbEl.style.display = "flex";
-                fbEl.innerHTML = `<div style="font-size:24px;">📊</div><div style="font-size:14px; font-weight:700; color:${pal.text};">${escapeNewsHtml(ticker)} 盘中走廊待生成</div><div style="font-size:12px; color:${pal.sub};">下轮扫描将自动匹配近 60 日相似开盘走势</div>`;
+                fbEl.innerHTML = `<div style="font-size:24px;">📊</div><div style="font-size:14px; font-weight:700; color:${pal.text};">${escapeNewsHtml(ticker)} 盘中走廊待生成</div><div style="font-size:12px; color:${pal.sub};">${isApacPathTk ? "正在按亚太/A股独立 5m 底模匹配相似开盘走势" : "下轮扫描将自动匹配近 60 日相似开盘走势"}</div>`;
                 return;
             }
 
@@ -5687,11 +5703,12 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
             if (metaEl) {
                 if (isNonUs) {
                     metaEl.innerText = String(item.meta_header || "KRX 韩国交易所 (09:00–15:30 KST) · 亚太基准指数");
-                } else if (isKrxPath) {
+                } else if (isNonUsCorridor) {
                     const aoK = _ipNum(item.anchor_open, 0);
                     const pcK = _ipNum(item.prev_close, 0);
-                    const lockK = item.anchor_label || "09:00 KST 开盘已锁定";
-                    metaEl.innerText = `目标日 ${item.forecast_date || "--"} · 🔒 ${lockK} · 开盘锚 ${fmtIpPx(aoK)} · 昨收 ${fmtIpPx(pcK)}`;
+                    const lockK = item.anchor_label || (isKrxPath ? "09:00 KST 开盘已锁定" : "开盘已锁定");
+                    const unitSfx = (isApacPathTk && !isCnyTicker(ticker)) ? " pt" : "";
+                    metaEl.innerText = `目标日 ${item.forecast_date || "--"} · 🔒 ${lockK} · 开盘锚 ${fmtIpPx(aoK)}${unitSfx} · 昨收 ${fmtIpPx(pcK)}${unitSfx}`;
                 } else if (is24h) {
                     if (item.meta_header) {
                         metaEl.innerText = String(item.meta_header);
@@ -5757,7 +5774,7 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
                 const iconStr = isNonUs ? "🇰🇷" : (is24h ? "🌐" : "🐣");
                 const titleStr = isNonUs ? "韩国综合指数 (KRX 非美股时段)" : (is24h ? "24H 连续交易品种" : "次新上市·分时历史样本积累中");
                 const msgStr = item.status_message || item.summary_text || "当前暂不绘制美股 RTH 盘前走廊";
-                const stockInfo = STOCKS_DATA.find(s => s.ticker === ticker) || MACRO_DATA[ticker] || {};
+                const stockInfo = STOCKS_DATA.find(s => s.ticker === ticker) || MACRO_DATA[ticker] || (APAC_ASHARE_DATA && APAC_ASHARE_DATA[String(ticker || "").toUpperCase()]) || {};
                 const curPx = _ipNum(stockInfo.active_price || stockInfo.last, _ipNum(item.anchor_open, 0));
                 const curVwap = _ipNum(stockInfo.vwap, 0);
                 if (lvBar) {
@@ -5795,7 +5812,7 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
                 const hwArr = item.p75_pcts.map((h, i) => Math.abs(Number(h) - Number(item.p25_pcts[i] || 0)) / 2.0).filter(Number.isFinite);
                 if (hwArr.length) adaptOpenThresh = Math.max(0.005, 0.5 * ((hwArr.reduce((a, b) => a + b, 0) / hwArr.length) / 100.0));
             }
-            if (!has24hChart && !isKrxPath && !item.rth_open_aligned && act[0] !== null && act[0] > 0 && anchorOpen > 0 && Math.abs(act[0] - anchorOpen) / anchorOpen >= adaptOpenThresh) {
+            if (!has24hChart && !isNonUsCorridor && !item.rth_open_aligned && act[0] !== null && act[0] > 0 && anchorOpen > 0 && Math.abs(act[0] - anchorOpen) / anchorOpen >= adaptOpenThresh) {
                 const rthOpen = act[0];
                 if (Array.isArray(item.p25_pcts) && Array.isArray(item.p50_pcts) && Array.isArray(item.p75_pcts) && item.p50_pcts.length === nSlots) {
                     p25 = item.p25_pcts.map(x => Number((rthOpen * (1.0 + Number(x) / 100.0)).toFixed(2)));
@@ -5823,13 +5840,16 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
                         <span style="color:${pal.warn};">24H高 ${fmt(high24)}</span>
                         <span style="color:${pal.accent};">24H低 ${fmt(low24)}</span>
                     `;
-                } else if (isKrxPath) {
+                } else if (isNonUsCorridor) {
+                    const mktCn = isApacPathTk ? (item.market_cn || "亚太") : "韩盘";
+                    const ancTag = isApacPathTk ? (item.anchor_label || "开盘锚") : "09:00 KST 开盘锚";
+                    const uTag = (isApacPathTk && !isCnyTicker(ticker)) ? " pt" : "";
                     lvBar.innerHTML = `
                         <span style="display:inline-flex;align-items:center;gap:4px;"><span style="width:10px;height:10px;background:${pal.svgCorridorFill};border:1px solid ${pal.accent};display:inline-block;border-radius:2px;"></span>正常波动带 (P25~P75)</span>
                         <span style="color:${pal.svgP50}; font-weight:600;">┈ 预期中位线 (P50)</span>
-                        <span style="color:${pal.svgActual}; font-weight:600;">━ 今日韩盘走势</span>
-                        <span style="color:${pal.sub};">昨收 ${fmt(prevClose)}</span>
-                        <span style="color:${pal.accent};">09:00 KST 开盘锚 ${fmt(anchorOpen)}</span>
+                        <span style="color:${pal.svgActual}; font-weight:600;">━ 今日${escapeNewsHtml(mktCn)}走势</span>
+                        <span style="color:${pal.sub};">昨收 ${fmt(prevClose)}${uTag}</span>
+                        <span style="color:${pal.accent};">${escapeNewsHtml(ancTag)} ${fmt(anchorOpen)}${uTag}</span>
                     `;
                 } else {
                     lvBar.innerHTML = `
@@ -5866,7 +5886,7 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
                 const coreMid = (coreMin + coreMax) / 2.0;
                 const coreSpanRth = Math.max(coreMax - coreMin, (anchorOpen > 0 ? anchorOpen : coreMid) * 0.008);
                 const allowPad = 0.55 * coreSpanRth;
-                const rthCandidates = isKrxPath
+                const rthCandidates = isNonUsCorridor
                     ? [{ label: "昨收", val: prevClose, color: pal.svgAxis, dash: "5 4" }]
                     : [
                         { label: "昨收", val: prevClose, color: pal.svgAxis, dash: "5 4" },
@@ -5985,18 +6005,31 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
                     }
                 }
             } else {
-                const xTickIdxs = [0, 6, 12, 18, 24, 30, 36, 42, 48, 54, 60, 66, 72, 77];
+                let xTickIdxs;
+                if (isApacPathTk) {
+                    const stepTick = Math.max(4, Math.round((nSlots - 1) / 8));
+                    const setIdx = new Set([0, nSlots - 1]);
+                    for (let idx = 0; idx < nSlots; idx += stepTick) setIdx.add(idx);
+                    const seam = Number(item.lunch_seam_idx);
+                    if (Number.isFinite(seam) && seam > 0 && seam < nSlots) setIdx.add(seam);
+                    xTickIdxs = Array.from(setIdx).sort((a, b) => a - b);
+                } else {
+                    xTickIdxs = [0, 6, 12, 18, 24, 30, 36, 42, 48, 54, 60, 66, 72, 77];
+                }
                 xTickIdxs.forEach(idx => {
                     if (idx >= nSlots) return;
                     const x = xAt(idx);
                     parts.push(`<line x1="${x.toFixed(1)}" y1="${pad.top}" x2="${x.toFixed(1)}" y2="${H - pad.bottom}" stroke="${pal.svgGrid}" stroke-width="1" />`);
                     parts.push(`<text x="${x.toFixed(1)}" y="${H - pad.bottom + 15}" text-anchor="middle" fill="${pal.svgAxis}" font-size="10">${timeSlots[idx] || ""}</text>`);
                 });
-                const x0945 = xAt(3);
+                const earlySlotIdx = (isApacPathTk && Number.isFinite(Number(item.early_window_slot))) ? Number(item.early_window_slot) : 3;
+                const x0945 = xAt(Math.max(0, Math.min(nSlots - 1, earlySlotIdx)));
                 if (Number.isFinite(x0945)) {
-                    const earlyWinTxt = isKrxPath ? "09:15 KST 观察窗" : "09:45 背离窗";
+                    const earlyWinTxt = isApacPathTk
+                        ? (item.early_window_label || "开盘15m 观察窗")
+                        : (isKrxPath ? "09:15 KST 观察窗" : "09:45 背离窗");
                     parts.push(`<line x1="${x0945.toFixed(1)}" y1="${pad.top}" x2="${x0945.toFixed(1)}" y2="${H - pad.bottom}" stroke="${pal.svgDiv0945}" stroke-width="1.2" stroke-dasharray="3 3" />`);
-                    parts.push(`<text x="${(x0945 + 4).toFixed(1)}" y="${pad.top + 12}" fill="${pal.svgDiv0945Text}" font-size="10" font-weight="700">${earlyWinTxt}</text>`);
+                    parts.push(`<text x="${(x0945 + 4).toFixed(1)}" y="${pad.top + 12}" fill="${pal.svgDiv0945Text}" font-size="10" font-weight="700">${escapeNewsHtml(earlyWinTxt)}</text>`);
                 }
             }
 
@@ -6175,7 +6208,7 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
                         const actDisp = (actVal !== null && Number.isFinite(actVal) && actVal > 0)
                             ? `<b style="color:${pal.svgActual};">${f(actVal)}</b>`
                             : `<span style="color:${pal.sub};">—（未到时段）</span>`;
-                        const tzLbl = isKrxPath ? "KST" : "ET";
+                        const tzLbl = isApacPathTk ? (item.session_tz || "CST") : (isKrxPath ? "KST" : "ET");
                         tipEl.innerHTML = `<b>${escapeNewsHtml(ticker)} · ${timeSlots[si] || ""} ${tzLbl}</b><br>实际 5m: ${actDisp}<br>P50 预期: <b style="color:${pal.svgP50};">${f(p50[si])}</b><br>走廊 [P25~P75]: <span style="color:${pal.accent};">${f(p25[si])} ~ ${f(p75[si])}</span>`;
                     }
                     tipEl.style.display = "block";
@@ -8686,6 +8719,7 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
         "__PY_TPL_LEADERS_JSON__": leaders_json,
         "__PY_TPL_APAC_JSON__": apac_json,
         "__PY_TPL_APAC_ML_JSON__": apac_ml_json,
+        "__PY_TPL_APAC_INTRADAY_PATH_JSON__": apac_intraday_path_json,
         "__PY_TPL_APAC_COUNT__": apac_count_str,
     }
     try:
