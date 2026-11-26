@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795659219.981,
-  "updated_at_et": "11-25 21:13 ET",
-  "updated_at_kst": "11:13 KST",
+  "updated_at_ts": 1795659262.925,
+  "updated_at_et": "11-25 21:14 ET",
+  "updated_at_kst": "11:14 KST",
   "macro_calendar": [
     {
       "event_id": "1599680",
@@ -944,6 +944,13 @@
     ],
     "NVDA": [
       {
+        "title": "Tech Stocks Stall Into Thanksgiving: Will the AI Rebound Return?",
+        "url": "https://beincrypto.com/tech-stocks-stall-thanksgiving-nvidia-rebound/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 20:19 ET",
+        "pub_ts": 1795655993.0
+      },
+      {
         "title": "S&P 500, Nasdaq End Lower But Dow Rebounds As Traders Rotate Out Of AI — NVDA, SPCX, PANW In Focus",
         "url": "https://stocktwits.com/news-articles/markets/equity/s-and-p-500-nasdaq-end-lower-but-dow-rebounds-as-traders-rotate-out-of-ai-nvda-spcx-panw-in-focus/cNbx21AR9mC?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -970,13 +977,6 @@
         "source": "Yahoo Finance",
         "time": "11-25 18:18 ET",
         "pub_ts": 1795648685.0
-      },
-      {
-        "title": "Broadcom Stock Hasn't Traded This Low Since July 2025. I Think It's a Buy.",
-        "url": "https://www.fool.com/investing/2026/11/25/broadcom-stock-hasn-t-traded-this-low-since-july-2025-i-think-it-s-a-buy/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 20:03 ET",
-        "pub_ts": 1795654982.0
       }
     ],
     "AMD": [
@@ -3332,15 +3332,15 @@
     "IGV": 1795659219.9807472,
     "TLT": 1795659219.9807472,
     "GLD": 1795659219.9807472,
-    "SQQQ": 1795657731.4289868,
+    "SQQQ": 1795659262.9252965,
     "TSM": 1795658901.123013,
     "VIXY": 1795659219.9807472,
-    "SOXS": 1795657731.4289868,
-    "NVDA": 1795657731.4289868,
-    "AMD": 1795657731.4289868,
+    "SOXS": 1795659262.9252965,
+    "NVDA": 1795659262.9252965,
+    "AMD": 1795659262.9252965,
     "ASML": 1795658901.123013,
     "QCOM": 1795658901.123013,
-    "AVGO": 1795657731.4289868,
+    "AVGO": 1795659262.9252965,
     "AMAT": 1795658901.123013,
     "META": 1795658901.123013,
     "GOOGL": 1795658901.123013,
