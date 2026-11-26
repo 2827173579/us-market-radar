@@ -885,11 +885,16 @@ def generate_all_four_briefs(
 
 
 def _is_in_web_auto_window(now_et: datetime) -> bool:
-    """美东周一至周五 08:30 ~ 16:15 盘前及正规交易时段。"""
+    """美东周一至周五 08:30 ~ close_min + 15 (正常 16:15 / 半日市 13:15 ET) 盘前及正规交易时段。"""
     if now_et.weekday() >= 5:
         return False
+    try:
+        import us_market_calendar as _umc
+        close_min = _umc.get_us_market_close_minutes(now_et.date())
+    except Exception:
+        close_min = 16 * 60
     mins = now_et.hour * 60 + now_et.minute
-    return (8 * 60 + 30) <= mins <= (16 * 60 + 15)
+    return (8 * 60 + 30) <= mins <= (close_min + 15)
 
 
 def maybe_refresh_web_brief(

@@ -21,11 +21,21 @@ import os
 from datetime import date, datetime, timedelta, timezone
 from typing import Any, Callable, Dict, Iterable, List, Optional, Tuple
 
+import us_market_calendar as _umc
+
 try:
     from zoneinfo import ZoneInfo
     _NY_TZ = ZoneInfo("America/New_York")
 except Exception:
     _NY_TZ = timezone(timedelta(hours=-5))
+
+get_us_market_holidays = _umc.get_us_market_holidays
+get_us_early_close_days = _umc.get_us_early_close_days
+is_us_trading_day = _umc.is_us_trading_day
+is_us_early_close_day = _umc.is_us_early_close_day
+get_us_market_close_minutes = _umc.get_us_market_close_minutes
+get_us_after_hours_end_minutes = _umc.get_us_after_hours_end_minutes
+get_us_session_schedule = _umc.get_us_session_schedule
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 DEFAULT_COPY_LEDGER_PATH = os.path.join(BASE_DIR, "data_cache", "copy_trade_ledger.json")
@@ -64,79 +74,7 @@ def _safe_float(val: Any, default: float = 0.0) -> float:
 
 
 def _to_et_datetime(now_et: Optional[datetime] = None) -> datetime:
-    if now_et is None:
-        return datetime.now(_NY_TZ)
-    if now_et.tzinfo is None:
-        try:
-            return now_et.replace(tzinfo=_NY_TZ)
-        except Exception:
-            return now_et
-    return now_et.astimezone(_NY_TZ)
-
-
-def _easter_sunday(year: int) -> date:
-    """Anonymous Gregorian algorithm for Easter Sunday (to compute Good Friday)."""
-    a = year % 19
-    b = year // 100
-    c = year % 100
-    d = b // 4
-    e = b % 4
-    f = (b + 8) // 25
-    g = (b - f + 1) // 3
-    h = (19 * a + b - d - g + 15) % 30
-    i = c // 4
-    k = c % 4
-    l = (32 + 2 * e + 2 * i - h - k) % 7
-    m = (a + 11 * h + 22 * l) // 451
-    month = (h + l - 7 * m + 114) // 31
-    day = ((h + l - 7 * m + 114) % 31) + 1
-    return date(year, month, day)
-
-
-def _observed_date(d: date) -> date:
-    if d.weekday() == 5:  # Saturday -> Friday
-        return d - timedelta(days=1)
-    if d.weekday() == 6:  # Sunday -> Monday
-        return d + timedelta(days=1)
-    return d
-
-
-def _nth_weekday(year: int, month: int, weekday: int, n: int) -> date:
-    first = date(year, month, 1)
-    offset = (weekday - first.weekday()) % 7
-    return first + timedelta(days=offset + (n - 1) * 7)
-
-
-def _last_weekday(year: int, month: int, weekday: int) -> date:
-    nxt = date(year + (1 if month == 12 else 0), 1 if month == 12 else month + 1, 1) - timedelta(days=1)
-    offset = (nxt.weekday() - weekday) % 7
-    return nxt - timedelta(days=offset)
-
-
-def get_us_market_holidays(year: int) -> frozenset:
-    """返回指定年份美股 NYSE 常规休市日集合。"""
-    hols = {
-        _observed_date(date(year, 1, 1)),          # New Year's Day
-        _nth_weekday(year, 1, 0, 3),               # MLK Day (3rd Mon Jan)
-        _nth_weekday(year, 2, 0, 3),               # Presidents' Day (3rd Mon Feb)
-        _easter_sunday(year) - timedelta(days=2),  # Good Friday
-        _last_weekday(year, 5, 0),                 # Memorial Day (last Mon May)
-        _observed_date(date(year, 6, 19)),         # Juneteenth
-        _observed_date(date(year, 7, 4)),          # Independence Day
-        _nth_weekday(year, 9, 0, 1),               # Labor Day (1st Mon Sep)
-        _nth_weekday(year, 11, 3, 4),              # Thanksgiving (4th Thu Nov)
-        _observed_date(date(year, 12, 25)),        # Christmas Day
-    }
-    # If Jan 1 of next year is Saturday, observed on Dec 31 of this year
-    if date(year + 1, 1, 1).weekday() == 5:
-        hols.add(date(year, 12, 31))
-    return frozenset(hols)
-
-
-def is_us_trading_day(d: date) -> bool:
-    if d.weekday() >= 5:
-        return False
-    return d not in get_us_market_holidays(d.year)
+    return _umc.to_et_datetime(now_et)
 
 
 def add_us_trading_days(start_date: date, trading_days: int = HOLD_TRADING_DAYS) -> date:
@@ -682,8 +620,12 @@ def run_copy_trade_cycle(
     today_d = cur_et.date()
     today_str = today_d.isoformat()
     et_min = cur_et.hour * 60 + cur_et.minute
+    close_min = get_us_market_close_minutes(today_d)
+    force_exit_min = close_min - 10  # 正常日 15:50 ET / 半日市 12:50 ET
     sess_u = str(session_code or "").strip().upper()
-    is_regular_session = (sess_u in ("REGULAR", "RTH", "INTRADAY") or (is_us_trading_day(today_d) and 9 * 60 + 30 <= et_min < 16 * 60))
+    is_regular_session = (sess_u in ("REGULAR", "RTH", "INTRADAY") or (is_us_trading_day(today_d) and 9 * 60 + 30 <= et_min < close_min))
+    if is_us_early_close_day(today_d) and et_min >= close_min:
+        is_regular_session = False
 
     eff_dry_run = bool(dry_run) if dry_run is not None else is_external_alerts_disabled()
     ledger = load_copy_ledger(ledger_path=ledger_path, now_et=cur_et)
@@ -727,7 +669,7 @@ def run_copy_trade_cycle(
                     exit_reason = "SL_HIT"
 
             if not exit_reason:
-                if (today_d == exp_d and et_min >= 15 * 60 + 50) or (today_d > exp_d):
+                if (today_d == exp_d and et_min >= force_exit_min) or (today_d > exp_d):
                     exit_reason = "T5_EXPIRE"
 
             if exit_reason:
@@ -770,8 +712,8 @@ def run_copy_trade_cycle(
     # 先重算净值以便新开仓准确计算 25% 仓位额度
     _recalculate_account_equity(ledger, live_quotes, cur_et, record_curve_point=False)
 
-    # 2. 正规盘 >= 09:35 ET 且 < 15:50 ET 且当日未锁定时执行开仓扫描
-    in_entry_window = bool(is_regular_session and (9 * 60 + 35 <= et_min < 15 * 60 + 50))
+    # 2. 正规盘 >= 09:35 ET 且 < close_min - 10 (正常 15:50 / 半日市 12:50 ET) 且当日未锁定时执行开仓扫描
+    in_entry_window = bool(is_regular_session and (9 * 60 + 35 <= et_min < force_exit_min))
     if in_entry_window and str(ledger.get("last_entry_date_et") or "") != today_str:
         cands = screen_copy_trade_candidates(
             ai_predictions=ai_predictions,

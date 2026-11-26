@@ -1261,13 +1261,16 @@ def _fetch_single_ticker(ticker: str, start_date: str = '2021-11-01', max_retrie
     return None
 
 
-def _get_latest_expected_trading_day(ref_dt: Optional[datetime] = None) -> datetime.date:
+def _get_latest_expected_trading_day(
+    ref_dt: Optional[datetime] = None,
+    buffer_minutes: int = 0,
+) -> datetime.date:
     """
-    计算最近一个应该已经收盘的美股交易日 (周一至周五)。
-    以美东时间 (America/New_York) 为基准，美股常规交易时段于 16:00 ET 收盘：
-    - 若当前美东时间处于周一至周五且 >= 16:00 ET，则今日常规交易已收盘，最新应收盘交易日即为今日。
-    - 若当前美东时间处于周一至周五但 < 16:00 ET，则今日未收盘，最新应收盘交易日为上一交易日 (周一盘中退回上周五)。
-    - 若当前美东时间处于周六或周日，退回本周五。
+    计算最近一个应该已经收盘的美股交易日 (周一至周五，兼容半日市 13:00 ET 收盘)。
+    以美东时间 (America/New_York) 为基准：
+    - 常规交易日于 16:00 ET 收盘，半日市于 13:00 ET 收盘；
+    - 若当前美东时间处于工作日且 >= close_min + buffer_minutes，则今日已收盘，最新应收盘交易日即为今日；
+    - 否则退回上一工作日 (跳过周六与周日)。
     """
     try:
         import zoneinfo
@@ -1284,11 +1287,16 @@ def _get_latest_expected_trading_day(ref_dt: Optional[datetime] = None) -> datet
         ref_dt = ref_dt.replace(tzinfo=et_tz)
 
     cur_d = ref_dt.date()
-    # 周一至周五 16:00 ET 之后常规交易已收盘，最新已收盘交易日即为今日
-    if cur_d.weekday() < 5 and ref_dt.hour >= 16:
+    try:
+        import us_market_calendar as _umc
+        close_min = _umc.get_us_market_close_minutes(cur_d)
+    except Exception:
+        close_min = 16 * 60
+    hm = ref_dt.hour * 60 + ref_dt.minute
+    if cur_d.weekday() < 5 and hm >= (close_min + int(buffer_minutes)):
         return cur_d
 
-    # 16:00 ET 之前或周末，退回上一交易日 (跳过周六与周日)
+    # 收盘前或周末，退回上一交易日 (跳过周六与周日)
     check_d = cur_d - timedelta(days=1)
     while check_d.weekday() >= 5:  # 5=Sat, 6=Sun
         check_d -= timedelta(days=1)
@@ -1321,19 +1329,26 @@ def _get_chart_session(ref_dt: Optional[datetime] = None):
     hm = et.hour * 60 + et.minute
     last_closed = _get_latest_expected_trading_day(et)
 
+    try:
+        import us_market_calendar as _umc
+        _close_min = _umc.get_us_market_close_minutes(day)
+        _ah_end_min = _umc.get_us_after_hours_end_minutes(day)
+    except Exception:
+        _close_min = 16 * 60
+        _ah_end_min = 20 * 60
     if wd == 6 and hm >= 20 * 60:
         return day + timedelta(days=1), last_closed, "今日", True
     if wd >= 5:
         return last_closed, last_closed, f"最新收盘 ({last_closed.strftime('%m-%d')})", False
-    if hm >= 20 * 60 and wd < 4:
+    if hm >= _ah_end_min and wd < 4:
         return day + timedelta(days=1), last_closed, "今日", True
-    if hm >= 20 * 60 and wd == 4:
+    if hm >= _ah_end_min and wd == 4:
         return last_closed, last_closed, f"最新收盘 ({last_closed.strftime('%m-%d')})", False
     if hm < 4 * 60:
         return day, last_closed, "今日", True
     if hm < 9 * 60 + 30:
         return day, last_closed, f"盘前实时 ({day.strftime('%m-%d')})", True
-    if hm < 16 * 60:
+    if hm < _close_min:
         return day, last_closed, f"盘中实时 ({day.strftime('%m-%d')})", True
     return day, last_closed, f"最新收盘 ({day.strftime('%m-%d')})", False
 
@@ -3789,18 +3804,22 @@ def align_time_cycle_projections_with_live(
 
     sc = str(session_code or "").upper().strip()
     if not sc:
-        wd_n = et_now.weekday()
-        hm_n = et_now.hour * 60 + et_now.minute
-        if wd_n >= 5 or (wd_n == 4 and hm_n >= 20 * 60):
-            sc = "WEEKEND"
-        elif hm_n >= 20 * 60 or hm_n < 4 * 60:
-            sc = "OVERNIGHT"
-        elif hm_n < 9 * 60 + 30:
-            sc = "PRE_MARKET"
-        elif hm_n < 16 * 60:
-            sc = "REGULAR"
-        else:
-            sc = "POST_MARKET"
+        try:
+            import us_market_calendar as _umc
+            sc, _ = _umc.classify_us_market_session(et_now, post_market_code="POST_MARKET")
+        except Exception:
+            wd_n = et_now.weekday()
+            hm_n = et_now.hour * 60 + et_now.minute
+            if wd_n >= 5 or (wd_n == 4 and hm_n >= 20 * 60):
+                sc = "WEEKEND"
+            elif hm_n >= 20 * 60 or hm_n < 4 * 60:
+                sc = "OVERNIGHT"
+            elif hm_n < 9 * 60 + 30:
+                sc = "PRE_MARKET"
+            elif hm_n < 16 * 60:
+                sc = "REGULAR"
+            else:
+                sc = "POST_MARKET"
 
     if sc == "PRE_MARKET":
         eq_day = et_now.date() if et_now.weekday() < 5 else sess_day

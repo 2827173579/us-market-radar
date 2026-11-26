@@ -145,10 +145,16 @@ def should_refresh_60d_cache(
     last_date = str(meta.get("last_refresh_date", ""))
     last_slot = str(meta.get("last_refresh_slot", ""))
     cur_min = cur_et.hour * 60 + cur_et.minute
+    try:
+        import us_market_calendar as _umc
+        close_min = _umc.get_us_market_close_minutes(cur_et.date())
+    except Exception:
+        close_min = 16 * 60
+    postclose_refresh_min = close_min + 15  # 正常日 16:15 ET / 半日市 13:15 ET
 
     if 4 * 60 <= cur_min < 9 * 60 + 28:
         return not (last_date == today_str and last_slot in ("premarket", "postclose"))
-    if cur_min >= 16 * 60 + 15:
+    if cur_min >= postclose_refresh_min:
         return not (last_date == today_str and last_slot == "postclose")
     return False
 
@@ -452,7 +458,12 @@ def refresh_intraday_5m_60d_cache(
 
     cur_et = _to_et_datetime(now_et)
     cur_min = cur_et.hour * 60 + cur_et.minute
-    slot_tag = "postclose" if cur_min >= 16 * 60 + 15 else ("premarket" if cur_min < 9 * 60 + 30 else "intraday")
+    try:
+        import us_market_calendar as _umc
+        _close_min_meta = _umc.get_us_market_close_minutes(cur_et.date())
+    except Exception:
+        _close_min_meta = 16 * 60
+    slot_tag = "postclose" if cur_min >= (_close_min_meta + 15) else ("premarket" if cur_min < 9 * 60 + 30 else "intraday")
     try:
         os.makedirs(os.path.dirname(full_meta), exist_ok=True)
         with open(full_meta, "w", encoding="utf-8") as mf:
@@ -1793,8 +1804,13 @@ def _resolve_target_date_and_lock(
     """
     cur_min = cur_et.hour * 60 + cur_et.minute
     is_weekday = cur_et.weekday() < 5
+    try:
+        import us_market_calendar as _umc
+        close_min = _umc.get_us_market_close_minutes(cur_et.date())
+    except Exception:
+        close_min = 16 * 60
 
-    if is_weekday and (4 * 60 <= cur_min < 16 * 60):
+    if is_weekday and (4 * 60 <= cur_min < close_min):
         target_d = cur_et.date()
         if 9 * 60 + 25 <= cur_min < 9 * 60 + 30:
             return target_d, True, "PREOPEN_0925_LOCK"
@@ -1863,7 +1879,12 @@ def _extract_day_features_for_target(
             pml = float(tgt_pre["Low"].min())
             anchor_open = float(tgt_pre["Close"].iloc[-1])
 
-        tgt_rth = sub[(sub["_date"] == target_date) & (sub["_min"] >= 9 * 60 + 30) & (sub["_min"] < 16 * 60)].sort_values("Datetime")
+        try:
+            import us_market_calendar as _umc
+            _tgt_close_min = _umc.get_us_market_close_minutes(target_date)
+        except Exception:
+            _tgt_close_min = 16 * 60
+        tgt_rth = sub[(sub["_date"] == target_date) & (sub["_min"] >= 9 * 60 + 30) & (sub["_min"] < _tgt_close_min)].sort_values("Datetime")
         if not tgt_rth.empty:
             anchor_open = float(tgt_rth["Open"].iloc[0])
             for dt_val, c_val in zip(tgt_rth["Datetime"], tgt_rth["Close"]):
@@ -1908,12 +1929,17 @@ def _extract_day_features_for_target(
     ext_px = _safe_float(info.get("ext_price"), 0.0)
     live_px = _safe_float((rq or {}).get("last"), 0.0)
     if target_date == cur_et.date():
+        try:
+            import us_market_calendar as _umc
+            _cur_close_min = _umc.get_us_market_close_minutes(target_date)
+        except Exception:
+            _cur_close_min = 16 * 60
         if cur_et.hour * 60 + cur_et.minute < 9 * 60 + 30:
             if ext_px > 0:
                 anchor_open = ext_px
                 pmh = ext_px if pmh is None else max(pmh, ext_px)
                 pml = ext_px if pml is None else min(pml, ext_px)
-        elif cur_et.hour * 60 + cur_et.minute < 16 * 60:
+        elif cur_et.hour * 60 + cur_et.minute < _cur_close_min:
             if live_px > 0:
                 if anchor_open <= 0:
                     anchor_open = _safe_float((rq or {}).get("open"), live_px)

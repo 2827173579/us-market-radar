@@ -876,39 +876,38 @@ def now_et_str(fmt="%Y-%m-%d %H:%M:%S"):
         return datetime.now(timezone(timedelta(hours=-5))).strftime(fmt)
 
 
-def get_us_market_session():
+def get_us_market_session(now_et=None):
     """
-    判断当前美东时间 (America/New_York) 交易时段 (精准对齐美股 24/5 夜盘日历):
-    - 周末休市 (WEEKEND): 周五 20:00 ET 盘后结束 ~ 周日 20:00 ET 夜盘开启前
-      (即 weekday == 4 and hour >= 20.0, 或 weekday == 5 全天, 或 weekday == 6 and hour < 20.0)
-    - 美股夜盘 (OVERNIGHT, Blue Ocean ATS 20:00 ET ~ 次日 04:00 ET):
-      * 周日 20:00 ~ 24:00 ET (对应亚洲周一早盘: 夏令时北京时间 08:00/首尔 09:00 起，冬令时北京时间 09:00/首尔 10:00 起)
-      * 周一至周四 20:00 ~ 24:00 ET 及 周一至周五 00:00 ~ 04:00 ET
+    判断美东时间 (America/New_York) 交易时段（统一对接 us_market_calendar，支持半日市 13:00 ET 收盘 / 17:00 ET 盘后结束）：
+    - 周末休市 (WEEKEND): 周五盘后结束后 (常规 20:00 / 半日市 17:00) ~ 周日 20:00 ET 夜盘开启前
+    - 美股夜盘 (OVERNIGHT, Blue Ocean ATS): 其余 24/5 夜间时段
     - 盘前交易 (PRE_MARKET): 周一至周五 04:00 ~ 09:30 ET
-    - 常规盘中 (REGULAR): 周一至周五 09:30 ~ 16:00 ET
-    - 盘后交易 (POST_MARKET): 周一至周五 16:00 ~ 20:00 ET
+    - 常规盘中 (REGULAR): 周一至周五 09:30 ~ close_min (常规 16:00 / 半日市 13:00 ET)
+    - 盘后交易 (POST_MARKET): 周一至周五 close_min ~ ah_end_min (常规 20:00 / 半日市 17:00 ET)
     """
     try:
-        import zoneinfo
-        ny_tz = zoneinfo.ZoneInfo("America/New_York")
+        import us_market_calendar as _umc
+        return _umc.classify_us_market_session(now_et, post_market_code="POST_MARKET")
     except Exception:
-        from datetime import timezone, timedelta
-        ny_tz = timezone(timedelta(hours=-5))
-    now_ny = datetime.now(ny_tz)
-    weekday = now_ny.weekday()  # 0=Mon ... 4=Fri, 5=Sat, 6=Sun
-    hour = now_ny.hour + now_ny.minute / 60.0
-
-    if weekday == 5 or (weekday == 4 and hour >= 20.0) or (weekday == 6 and hour < 20.0):
-        return "WEEKEND", "☕ 周末休市"
-    elif weekday == 6 and hour >= 20.0:
-        return "OVERNIGHT", "🌌 美股夜盘"
-    elif 9.5 <= hour < 16.0:
-        return "REGULAR", "🟢 常规盘中"
-    elif 4.0 <= hour < 9.5:
-        return "PRE_MARKET", "🌅 盘前交易"
-    elif 16.0 <= hour < 20.0:
-        return "POST_MARKET", "🌙 盘后交易"
-    else:
+        try:
+            import zoneinfo
+            ny_tz = zoneinfo.ZoneInfo("America/New_York")
+        except Exception:
+            from datetime import timezone, timedelta
+            ny_tz = timezone(timedelta(hours=-5))
+        now_ny = now_et.astimezone(ny_tz) if (now_et is not None and now_et.tzinfo is not None) else (now_et or datetime.now(ny_tz))
+        weekday = now_ny.weekday()
+        hour = now_ny.hour + now_ny.minute / 60.0
+        if weekday == 5 or (weekday == 4 and hour >= 20.0) or (weekday == 6 and hour < 20.0):
+            return "WEEKEND", "☕ 周末休市"
+        elif weekday == 6 and hour >= 20.0:
+            return "OVERNIGHT", "🌌 美股夜盘"
+        elif 9.5 <= hour < 16.0:
+            return "REGULAR", "🟢 常规盘中"
+        elif 4.0 <= hour < 9.5:
+            return "PRE_MARKET", "🌅 盘前交易"
+        elif 16.0 <= hour < 20.0:
+            return "POST_MARKET", "🌙 盘后交易"
         return "OVERNIGHT", "🌌 美股夜盘"
 
 def fetch_intraday_5m_and_ext_data(tickers):
@@ -967,19 +966,32 @@ def fetch_intraday_5m_and_ext_data(tickers):
                 _now_et = datetime.now(ny_tz)
                 _today = _now_et.date()
                 _d = _now_et.hour * 60 + _now_et.minute
+                try:
+                    import us_market_calendar as _umc
+                    _today_close_min = _umc.get_us_market_close_minutes(_today)
+                    _today_ah_end_min = _umc.get_us_after_hours_end_minutes(_today)
+                    _last_close_hr = _umc.get_us_market_close_minutes(last_date) / 60.0
+                    _last_ah_end_hr = _umc.get_us_after_hours_end_minutes(last_date) / 60.0
+                except Exception:
+                    _today_close_min = 16 * 60
+                    _today_ah_end_min = 20 * 60
+                    _last_close_hr = 16.0
+                    _last_ah_end_hr = 20.0
+                _today_close_hr = _today_close_min / 60.0
+                _today_ah_end_hr = _today_ah_end_min / 60.0
                 _ext_mask = None
                 _price_kind = "regular"
                 if 4 * 60 <= _d < 9 * 60 + 30:
                     _ext_mask = (ny_idx.date == _today) & (ny_hr >= 4.0) & (ny_hr < 9.5)
                     _price_kind = "premarket"
-                elif 16 * 60 <= _d < 20 * 60:
-                    _ext_mask = (ny_idx.date == _today) & (ny_hr >= 16.0) & (ny_hr < 20.0)
+                elif _today_close_min <= _d < _today_ah_end_min:
+                    _ext_mask = (ny_idx.date == _today) & (ny_hr >= _today_close_hr) & (ny_hr < _today_ah_end_hr)
                     _price_kind = "postmarket"
-                elif _d >= 20 * 60 or _d < 4 * 60:
-                    _ext_mask = (ny_idx.date == _today) & (ny_hr >= 20.0) if _d >= 20 * 60 else (ny_idx.date == _today) & (ny_hr < 4.0)
+                elif _d >= _today_ah_end_min or _d < 4 * 60:
+                    _ext_mask = (ny_idx.date == _today) & (ny_hr >= _today_ah_end_hr) if _d >= _today_ah_end_min else (ny_idx.date == _today) & (ny_hr < 4.0)
                     _price_kind = "overnight"
                     if not bool(np.any(_ext_mask)):
-                        _ext_mask = (ny_idx.date == last_date) & (ny_hr >= 16.0) & (ny_hr < 20.0)
+                        _ext_mask = (ny_idx.date == last_date) & (ny_hr >= _last_close_hr) & (ny_hr < _last_ah_end_hr)
                         _price_kind = "postmarket"
                 ext_price = 0.0
                 ext_time = ""
@@ -987,15 +999,19 @@ def fetch_intraday_5m_and_ext_data(tickers):
                     _ext_c = c[_ext_mask]
                     ext_price = float(_ext_c.iloc[-1])
                     ext_time = str(_ext_c.index[-1])
-                # 正股收盘 bar 仍按今日 RTH 计算
+                # 正股收盘 bar 仍按今日 RTH 计算（半日市自动截止于 13:00 ET）
 
-                # 过滤出最新交易日正股常规时段 (09:30 ~ 16:00 EDT) 用于纯净 VWAP 与日高低点计算
-                rth_mask = (ny_idx.date == last_date) & (ny_hr >= 9.5) & (ny_hr < 16.0)
+                # 过滤出最新交易日正股常规时段 (09:30 ~ close_hr) 用于纯净 VWAP 与日高低点计算
+                rth_mask = (ny_idx.date == last_date) & (ny_hr >= 9.5) & (ny_hr < _last_close_hr)
                 if not rth_mask.any():
                     # 若当前处于盘前 (当日尚未开盘)，则回溯前一个正股交易日计算基准 VWAP
                     unique_dates = sorted(list(set(ny_idx.date)))
                     prev_date = unique_dates[-2] if len(unique_dates) >= 2 else last_date
-                    rth_mask = (ny_idx.date == prev_date) & (ny_hr >= 9.5) & (ny_hr < 16.0)
+                    try:
+                        _prev_close_hr = _umc.get_us_market_close_minutes(prev_date) / 60.0
+                    except Exception:
+                        _prev_close_hr = 16.0
+                    rth_mask = (ny_idx.date == prev_date) & (ny_hr >= 9.5) & (ny_hr < _prev_close_hr)
 
                 pmh_val = 0.0
                 pml_val = 0.0
@@ -3072,7 +3088,12 @@ def dispatch_intraday_corridor_divergence_alerts(
         return res
 
     hm_min = cur_et.hour * 60 + cur_et.minute
-    if not (9 * 60 + 45 <= hm_min <= 15 * 60 + 50):
+    try:
+        import us_market_calendar as _umc
+        _corr_end_min = _umc.get_us_market_close_minutes(cur_et.date()) - 10
+    except Exception:
+        _corr_end_min = 15 * 60 + 50
+    if not (9 * 60 + 45 <= hm_min <= _corr_end_min):
         res["blocked_reason"] = "OUTSIDE_0945_1550_ET"
         return res
 
@@ -8904,20 +8925,27 @@ def run_radar_cycle(is_first_run=False, round_idx=1):
 # 九、 主入口与智能同步锁调度引擎 (3分钟自动轮询 + 手动刷新无缝重置)
 # ==============================================================================
 
-def _latest_closed_us_day_et():
-    """返回最近一个已经收盘的美股交易日（周末/节假日自动回退）。"""
+def _latest_closed_us_day_et(ref_dt=None):
+    """返回最近一个已经收盘超过 5 分钟 (close_time + 5m: 正常 16:05 / 半日市 13:05 ET) 的美股交易日。"""
     try:
         import ml_predictor_5y
-        return ml_predictor_5y._get_latest_expected_trading_day()
+        return ml_predictor_5y._get_latest_expected_trading_day(ref_dt=ref_dt, buffer_minutes=5)
     except Exception:
         try:
-            from zoneinfo import ZoneInfo
-            et = datetime.now(ZoneInfo("America/New_York"))
+            import us_market_calendar as _umc
+            et = _umc.to_et_datetime(ref_dt)
+            d = et.date()
+            close_min = _umc.get_us_market_close_minutes(d)
         except Exception:
-            et = datetime.now(timezone(timedelta(hours=-5)))
-        d = et.date()
+            try:
+                from zoneinfo import ZoneInfo
+                et = datetime.now(ZoneInfo("America/New_York")) if ref_dt is None else ref_dt
+            except Exception:
+                et = datetime.now(timezone(timedelta(hours=-5))) if ref_dt is None else ref_dt
+            d = et.date()
+            close_min = 16 * 60
         hm = et.hour * 60 + et.minute
-        if d.weekday() < 5 and hm >= 16 * 60 + 5:
+        if d.weekday() < 5 and hm >= close_min + 5:
             return d
         d = d - timedelta(days=1)
         while d.weekday() >= 5:

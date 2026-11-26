@@ -265,22 +265,32 @@ def create_empty_kol_ledger(initial_capital: float = INITIAL_CAPITAL, now_et: Op
 
 
 def _classify_market_session(session_code: str, cur_et: datetime) -> Tuple[bool, bool, str]:
-    """返回 (is_regular, is_extended, normalized_session_code)。显式 session_code 优先。"""
+    """返回 (is_regular, is_extended, normalized_session_code)。支持美股半日市 13:00 ET 收盘切入 AFTER_HOURS。"""
+    today_d = cur_et.date()
+    et_min = cur_et.hour * 60 + cur_et.minute
+    close_min = cte.get_us_market_close_minutes(today_d)
+    ah_end_min = cte.get_us_after_hours_end_minutes(today_d)
+    is_early = cte.is_us_early_close_day(today_d)
+
     sess_u = str(session_code or "").strip().upper()
     if sess_u in REGULAR_SESSIONS:
+        if is_early and et_min >= close_min:
+            if et_min < ah_end_min:
+                return False, True, "AFTER_HOURS"
+            return False, False, "CLOSED"
         return True, False, "REGULAR"
     if sess_u in EXTENDED_SESSIONS:
+        if sess_u in ("POST_MARKET", "AFTERHOURS"):
+            return False, True, "AFTER_HOURS"
         return False, True, sess_u
     if sess_u in CLOSED_SESSIONS:
         return False, False, sess_u
-    today_d = cur_et.date()
-    et_min = cur_et.hour * 60 + cur_et.minute
     if cte.is_us_trading_day(today_d):
-        if 9 * 60 + 30 <= et_min < 16 * 60:
+        if 9 * 60 + 30 <= et_min < close_min:
             return True, False, "REGULAR"
         if 4 * 60 <= et_min < 9 * 60 + 30:
             return False, True, "PRE_MARKET"
-        if 16 * 60 <= et_min < 20 * 60:
+        if close_min <= et_min < ah_end_min:
             return False, True, "AFTER_HOURS"
     return False, False, "CLOSED"
 
@@ -867,6 +877,9 @@ def run_kol_copy_trade_cycle(
     today_d = cur_et.date()
     today_str = today_d.isoformat()
     et_min = cur_et.hour * 60 + cur_et.minute
+    close_min = cte.get_us_market_close_minutes(today_d)
+    t3_force_exit_min = close_min - 10            # 正常日 15:50 ET / 半日市 12:50 ET
+    entry_end_min = min(close_min - 40, close_min - 10)  # 正常日 15:20 ET / 半日市 12:20 ET（尾盘禁开新仓）
     eff_session_arg = market_session if (market_session is not None and str(market_session).strip()) else session_code
     is_regular_session, is_extended_session, norm_session = _classify_market_session(eff_session_arg, cur_et)
 
@@ -1030,7 +1043,7 @@ def run_kol_copy_trade_cycle(
                     except Exception:
                         exp_d = today_d
 
-                    if (today_d == exp_d and et_min >= T3_FORCE_EXIT_MIN) or (today_d > exp_d):
+                    if (today_d == exp_d and et_min >= t3_force_exit_min) or (today_d > exp_d):
                         exit_reason = "T3_EXPIRE"
                     elif (not partial_done) and today_d > entry_d:
                         days_held = _count_trading_days_between(entry_d, today_d)
@@ -1038,7 +1051,7 @@ def run_kol_copy_trade_cycle(
                             entry_dt = _parse_et_timestamp(str(pos.get("entry_time_et") or ""), cur_et)
                             entry_min = (entry_dt.hour * 60 + entry_dt.minute) if entry_dt else 10 * 60
                             check_min = (
-                                EARLY_CHECK_LATE_MIN
+                                min(EARLY_CHECK_LATE_MIN, close_min - 15)
                                 if (days_held == WEAK_EXIT_MIN_TRADING_DAYS and entry_min > LATE_ENTRY_CUTOFF_MIN)
                                 else EARLY_CHECK_NORMAL_MIN
                             )
@@ -1147,8 +1160,8 @@ def run_kol_copy_trade_cycle(
     # 先重算净值以便新开仓计算准确仓位额度
     _recalculate_kol_equity(ledger, live_quotes, cur_et, record_curve_point=False, is_extended=is_extended_session)
 
-    # 2. 仅常规盘中 09:45 ~ 15:20 ET 开放盘中滚动狙击新开仓（延展时段严禁开新仓）
-    in_sniper_window = bool(is_regular_session and (ENTRY_START_MIN <= et_min <= ENTRY_END_MIN))
+    # 2. 仅常规盘中 09:45 ~ entry_end_min (正常 15:20 / 半日市 12:20 ET，且严格 < close_min - 10) 开放盘中滚动狙击新开仓
+    in_sniper_window = bool(is_regular_session and (ENTRY_START_MIN <= et_min <= entry_end_min))
     entries_today = int(ledger.get("entries_today_count") or 0)
     last_close_dt = _parse_et_timestamp(str(ledger.get("last_close_time_et") or ""), cur_et)
     slot_cd_ok = True
