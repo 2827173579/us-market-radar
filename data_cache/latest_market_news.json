@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795695825.778,
-  "updated_at_et": "11-26 07:23 ET",
-  "updated_at_kst": "21:23 KST",
+  "updated_at_ts": 1795695879.758,
+  "updated_at_et": "11-26 07:24 ET",
+  "updated_at_kst": "21:24 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -435,13 +435,6 @@
         "pub_ts": 1795691037.0
       },
       {
-        "title": "Nvidia is cheap on paper, so why won't the market buy it?",
-        "url": "https://finance.yahoo.com/video/nvidia-is-cheap-on-paper-so-why-wont-the-market-buy-it-192215326.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 14:22 ET",
-        "pub_ts": 1795634535.0
-      },
-      {
         "title": "Own Palo Alto Stock? Watch Its Deferred Revenue",
         "url": "https://www.trefis.com/stock/panw/articles/629187/own-palo-alto-stock-watch-its-deferred-revenue/2026-11-26?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -461,6 +454,13 @@
         "source": "Yahoo Finance",
         "time": "11-26 06:03 ET",
         "pub_ts": 1795691014.0
+      },
+      {
+        "title": "ETFs Are Net Sellers of Medtronic (MDT) on Tuesday",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/etfs-net-sellers-medtronic-mdt-110331824.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-26 06:03 ET",
+        "pub_ts": 1795691011.0
       }
     ],
     "DIA": [
@@ -2685,6 +2685,13 @@
     ],
     "ORCL": [
       {
+        "title": "Bloom Energy Issued Oracle 2.15 Million Shares. Now Oracle’s Credit Is Cracking",
+        "url": "https://www.tikr.com/blog/bloom-energy-issued-oracle-2-15-million-shares-now-oracles-credit-is-cracking?ref=yahoofinance&tlnk=yf-261126-v76w4j96&.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-26 06:35 ET",
+        "pub_ts": 1795692926.0
+      },
+      {
         "title": "Oracle Bond Yields Hit 9% as AI Debt Fears Deepen",
         "url": "https://finance.yahoo.com/technology/ai/articles/oracle-bond-yields-hit-9-113300522.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2711,13 +2718,6 @@
         "source": "Yahoo Finance",
         "time": "11-25 15:40 ET",
         "pub_ts": 1795639212.0
-      },
-      {
-        "title": "Tech Stocks Stall Into Thanksgiving: Will the AI Rebound Return?",
-        "url": "https://beincrypto.com/tech-stocks-stall-thanksgiving-nvidia-rebound/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 20:19 ET",
-        "pub_ts": 1795655993.0
       }
     ],
     "COIN": [
@@ -3318,11 +3318,11 @@
   "ticker_news_ts": {
     "KORU": 1795695677.1957953,
     "SOXL": 1795695677.1957953,
-    "SPY": 1795694363.070951,
+    "SPY": 1795695879.7584026,
     "DIA": 1795695677.1957953,
     "SOXX": 1795695677.1957953,
     "QQQ": 1795695677.1957953,
-    "SMH": 1795694363.070951,
+    "SMH": 1795695879.7584026,
     "IWM": 1795695677.1957953,
     "IGV": 1795695677.1957953,
     "TLT": 1795695677.1957953,
@@ -3366,37 +3366,37 @@
     "FLY": 1795695825.7776139,
     "INTC": 1795695825.7776139,
     "VRT": 1795695825.7776139,
-    "HPE": 1795694363.070951,
+    "HPE": 1795695879.7584026,
     "DELL": 1795695825.7776139,
-    "OKLO": 1795694363.070951,
+    "OKLO": 1795695879.7584026,
     "CEG": 1795695825.7776139,
-    "FPS": 1795694363.070951,
+    "FPS": 1795695879.7584026,
     "MU": 1795694416.242457,
     "SKHY": 1795694416.242457,
     "WDC": 1795694469.991008,
-    "STX": 1795694363.070951,
-    "MSTR": 1795694363.070951,
-    "SNDK": 1795694363.070951,
+    "STX": 1795695879.7584026,
+    "MSTR": 1795695879.7584026,
+    "SNDK": 1795695879.7584026,
     "BTC-USD": 1795694469.991008,
-    "CRWD": 1795694363.070951,
-    "ORCL": 1795694363.070951,
-    "COIN": 1795694363.070951,
-    "LLY": 1795694363.070951,
-    "MRNA": 1795694363.070951,
-    "NKE": 1795694363.070951,
-    "MCD": 1795694363.070951,
-    "PEP": 1795694363.070951,
-    "XOM": 1795694363.070951,
-    "JPM": 1795694363.070951,
+    "CRWD": 1795695879.7584026,
+    "ORCL": 1795695879.7584026,
+    "COIN": 1795695879.7584026,
+    "LLY": 1795695879.7584026,
+    "MRNA": 1795695879.7584026,
+    "NKE": 1795695879.7584026,
+    "MCD": 1795695879.7584026,
+    "PEP": 1795695879.7584026,
+    "XOM": 1795695879.7584026,
+    "JPM": 1795695879.7584026,
     "WMT": 1795694416.242457,
-    "V": 1795694363.070951,
-    "CAT": 1795694363.070951,
+    "V": 1795695879.7584026,
+    "CAT": 1795695879.7584026,
     "FN": 1795694416.242457,
     "GLW": 1795695677.1957953,
-    "ANT": 1795694363.070951,
+    "ANT": 1795695879.7584026,
     "XAUUSD": 1795694469.991008,
     "KOSPI": 1795694416.242457,
-    "KSTR": 1795694363.070951
+    "KSTR": 1795695879.7584026
   },
   "opex_shield": {
     "date": "2026-11-26",
