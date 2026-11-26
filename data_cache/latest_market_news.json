@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795675946.736,
-  "updated_at_et": "11-26 01:52 ET",
-  "updated_at_kst": "15:52 KST",
+  "updated_at_ts": 1795675992.597,
+  "updated_at_et": "11-26 01:53 ET",
+  "updated_at_kst": "15:53 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -1769,18 +1769,18 @@
         "pub_ts": 1795671175.0
       },
       {
+        "title": "Elon Musk, SpaceX pledge major stock donations to active Trump Accounts",
+        "url": "https://www.foxbusiness.com/markets/elon-musk-spacex-pledge-major-stock-donations-active-trump-accounts?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 23:29 ET",
+        "pub_ts": 1795667395.0
+      },
+      {
         "title": "Cathie Wood Buys More SpaceX Amid Tesla Merger Talks — Ron Baron Says SpaceX Could Make $50B A Year From One Data Center",
         "url": "https://stocktwits.com/news-articles/markets/equity/cathie-wood-buys-spacex-tesla-merger-talks-ron-baron-spacex-50b-one-data-center/cNbxeDKR9Z4?.tsrc=rss",
         "source": "Yahoo Finance",
         "time": "11-25 22:32 ET",
         "pub_ts": 1795663955.0
-      },
-      {
-        "title": "SpaceX gets approval for 1 million data center satellites",
-        "url": "https://finance.yahoo.com/technology/ai/articles/spacex-gets-approval-1-million-023847485.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 21:38 ET",
-        "pub_ts": 1795660727.0
       }
     ],
     "ASTS": [
@@ -2206,13 +2206,6 @@
         "pub_ts": 1795622664.0
       },
       {
-        "title": "10 things fueling this nasty market pullback",
-        "url": "https://finance.yahoo.com/video/10-things-fueling-this-nasty-market-pullback-144906243.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 09:49 ET",
-        "pub_ts": 1795618146.0
-      },
-      {
         "title": "Ensign InfoSecurity partners with HPE to help enterprises deploy AI with greater control and security",
         "url": "https://finance.yahoo.com/technology/ai/articles/ensign-infosecurity-partners-hpe-help-000000295.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2225,6 +2218,13 @@
         "source": "Yahoo Finance",
         "time": "11-25 18:17 ET",
         "pub_ts": 1795648620.0
+      },
+      {
+        "title": "Dell, HPE Post Big Sales Growth But Investors Sense AI Spending Peak",
+        "url": "https://finance.yahoo.com/m/509b8d3a-b338-3181-bdcf-b7e931f38513/dell%2C-hpe-post-big-sales.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 16:20 ET",
+        "pub_ts": 1795641634.0
       }
     ],
     "DELL": [
@@ -2303,6 +2303,13 @@
     ],
     "CEG": [
       {
+        "title": "How Investors May Respond To Constellation Energy Stock After Earnings Estimate Upgrades",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/investors-may-respond-constellation-energy-061507801.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-26 01:15 ET",
+        "pub_ts": 1795673707.0
+      },
+      {
         "title": "LS Power Completes Acquisition of 4.4 GW Natural Gas Generation Assets from Constellation",
         "url": "https://finance.yahoo.com/energy/articles/ls-power-completes-acquisition-4-213800844.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2329,13 +2336,6 @@
         "source": "Yahoo Finance",
         "time": "11-24 11:00 ET",
         "pub_ts": 1795536004.0
-      },
-      {
-        "title": "Can CEG's Improving Cash Flow Support Its Expanding Investment Plans?",
-        "url": "https://finance.yahoo.com/energy/articles/cegs-improving-cash-flow-support-150500837.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 10:05 ET",
-        "pub_ts": 1795532700.0
       }
     ],
     "FPS": [
@@ -2562,6 +2562,13 @@
     ],
     "SNDK": [
       {
+        "title": "MU, SNDK, SKHY Jump As Nvidia Tests Kioxia Memory Fix — Analyst Presses Memory Giants For ‘Massive’ Buybacks",
+        "url": "https://stocktwits.com/news-articles/markets/equity/mu-sndk-skhy-nvidia-kioxia-memory-fix-analyst-memory-giants-buybacks/cNbxQFgR9ZK?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-26 01:30 ET",
+        "pub_ts": 1795674651.0
+      },
+      {
         "title": "Qualcomm vs. Sandisk: Which Technology Stock Is a Better Buy for 2027?",
         "url": "https://www.fool.com/coverage/better-buy/2026/11/25/qualcomm-vs-sandisk-which-technology-stock-is-a-better-buy-for-2027/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2588,13 +2595,6 @@
         "source": "Yahoo Finance",
         "time": "11-25 11:31 ET",
         "pub_ts": 1795624301.0
-      },
-      {
-        "title": "Cantor’s CJ Muse Sees Sandisk Buying Back “60% of the Outstanding Shares” Over Six Quarters",
-        "url": "https://www.tikr.com/blog/cantors-cj-muse-sees-sandisk-buying-back-60-of-the-outstanding-shares-over-six-quarters?ref=yahoofinance&tlnk=yf-261125-pj55v44v&.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 10:50 ET",
-        "pub_ts": 1795621816.0
       }
     ],
     "BTC-USD": [
@@ -3298,38 +3298,38 @@
     "CRWV": 1795675693.420199,
     "NBIS": 1795675693.420199,
     "APLD": 1795675693.420199,
-    "VST": 1795674469.3908434,
-    "BE": 1795674469.3908434,
-    "CRDO": 1795674469.3908434,
-    "COHR": 1795674469.3908434,
+    "VST": 1795675992.5972252,
+    "BE": 1795675992.5972252,
+    "CRDO": 1795675992.5972252,
+    "COHR": 1795675992.5972252,
     "MRVL": 1795675693.420199,
     "LITE": 1795675693.420199,
-    "AAOI": 1795674469.3908434,
-    "SPCX": 1795674469.3908434,
-    "ASTS": 1795674469.3908434,
+    "AAOI": 1795675992.5972252,
+    "SPCX": 1795675992.5972252,
+    "ASTS": 1795675992.5972252,
     "AXTI": 1795675693.420199,
-    "NASA": 1795674469.3908434,
-    "LUNR": 1795674469.3908434,
-    "TSLA": 1795674469.3908434,
-    "AXP": 1795674469.3908434,
-    "RKLB": 1795674469.3908434,
-    "KO": 1795674469.3908434,
-    "FLY": 1795674469.3908434,
-    "INTC": 1795674469.3908434,
-    "VRT": 1795674469.3908434,
-    "HPE": 1795674469.3908434,
-    "DELL": 1795674469.3908434,
-    "OKLO": 1795674469.3908434,
-    "CEG": 1795674469.3908434,
-    "FPS": 1795674469.3908434,
+    "NASA": 1795675992.5972252,
+    "LUNR": 1795675992.5972252,
+    "TSLA": 1795675992.5972252,
+    "AXP": 1795675992.5972252,
+    "RKLB": 1795675992.5972252,
+    "KO": 1795675992.5972252,
+    "FLY": 1795675992.5972252,
+    "INTC": 1795675992.5972252,
+    "VRT": 1795675992.5972252,
+    "HPE": 1795675992.5972252,
+    "DELL": 1795675992.5972252,
+    "OKLO": 1795675992.5972252,
+    "CEG": 1795675992.5972252,
+    "FPS": 1795675992.5972252,
     "MU": 1795675693.420199,
     "SKHY": 1795675693.420199,
     "WDC": 1795675693.420199,
     "STX": 1795674512.8439806,
-    "MSTR": 1795674469.3908434,
-    "SNDK": 1795674469.3908434,
+    "MSTR": 1795675992.5972252,
+    "SNDK": 1795675992.5972252,
     "BTC-USD": 1795675693.420199,
-    "CRWD": 1795674469.3908434,
+    "CRWD": 1795675992.5972252,
     "ORCL": 1795674512.8439806,
     "COIN": 1795674512.8439806,
     "LLY": 1795674512.8439806,
@@ -3343,7 +3343,7 @@
     "V": 1795674512.8439806,
     "CAT": 1795674512.8439806,
     "FN": 1795675693.420199,
-    "GLW": 1795674469.3908434,
+    "GLW": 1795675992.5972252,
     "ANT": 1795674512.8439806,
     "XAUUSD": 1795674512.8439806,
     "KOSPI": 1795675693.420199
