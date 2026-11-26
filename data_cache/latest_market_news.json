@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795685067.441,
-  "updated_at_et": "11-26 04:24 ET",
-  "updated_at_kst": "18:24 KST",
+  "updated_at_ts": 1795685108.795,
+  "updated_at_et": "11-26 04:25 ET",
+  "updated_at_kst": "18:25 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -1131,6 +1131,13 @@
         "pub_ts": 1795634535.0
       },
       {
+        "title": "CoStar Data Shows Noho Office Leasing Nearing 900,000 Sq. Ft.",
+        "url": "https://finance.yahoo.com/real-estate/articles/costar-data-shows-noho-office-090000605.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-26 04:00 ET",
+        "pub_ts": 1795683600.0
+      },
+      {
         "title": "Stocks Pare Losses as Anthropic Shares Swing Higher",
         "url": "https://www.wsj.com/finance/stocks/nasdaq-futures-slide-as-ai-growth-fears-return-to-center-stage-ff9a6d6b?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1150,13 +1157,6 @@
         "source": "Yahoo Finance",
         "time": "11-25 14:09 ET",
         "pub_ts": 1795633740.0
-      },
-      {
-        "title": "CoreWeave banks prepare $4.5 billion Meta-tied loan sale next week, Bloomberg says",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/coreweave-banks-prepare-4-5-183018691.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 13:30 ET",
-        "pub_ts": 1795631418.0
       }
     ],
     "GOOGL": [
@@ -1272,6 +1272,13 @@
     ],
     "PLTR": [
       {
+        "title": "Palantir Is Down 22% From Its October High. Dan Ives Puts It Among the Sell-Off’s “Clear Areas of Safety”",
+        "url": "https://www.tikr.com/blog/palantir-is-down-22-from-its-october-high-dan-ives-puts-it-among-the-sell-offs-clear-areas-of-safety?ref=yahoofinance&tlnk=yf-261126-xw5cpjr4&.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-26 03:26 ET",
+        "pub_ts": 1795681576.0
+      },
+      {
         "title": "Michael Burry Says His Portfolio Was Discussed 'About the Time the Market Reversed Off Its Lows': He Is 'Temporarily Almost Entirely Long'",
         "url": "https://finance.yahoo.com/markets/stocks/articles/michael-burry-says-portfolio-discussed-025825540.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1298,13 +1305,6 @@
         "source": "Yahoo Finance",
         "time": "11-25 15:07 ET",
         "pub_ts": 1795637255.0
-      },
-      {
-        "title": "Peter Thiel Buys $122M of PLTR After Years Of Selling — And He Could Buy Millions More Shares",
-        "url": "https://www.benzinga.com/markets/prediction-markets/26/11/63645021/peter-thiel-palantir-stock-purchase?utm_source=yahooFinance&utm_campaign=partner_feed&utm_medium=referral&.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 13:18 ET",
-        "pub_ts": 1795630722.0
       }
     ],
     "NOW": [
@@ -3311,32 +3311,32 @@
   "ticker_news_ts": {
     "KORU": 1795683902.487134,
     "SOXL": 1795683902.487134,
-    "SPY": 1795683572.234353,
+    "SPY": 1795685108.7946615,
     "DIA": 1795683902.487134,
     "SOXX": 1795683902.487134,
     "QQQ": 1795683902.487134,
-    "SMH": 1795683572.234353,
+    "SMH": 1795685108.7946615,
     "IWM": 1795683902.487134,
     "IGV": 1795683902.487134,
     "TLT": 1795683902.487134,
     "GLD": 1795683997.95645,
     "SQQQ": 1795683997.95645,
-    "TSM": 1795683572.234353,
+    "TSM": 1795685108.7946615,
     "VIXY": 1795683997.95645,
     "SOXS": 1795683997.95645,
     "NVDA": 1795683997.95645,
     "AMD": 1795683997.95645,
-    "ASML": 1795683572.234353,
-    "QCOM": 1795683572.234353,
+    "ASML": 1795685108.7946615,
+    "QCOM": 1795685108.7946615,
     "AVGO": 1795683997.95645,
-    "AMAT": 1795683572.234353,
-    "META": 1795683572.234353,
-    "GOOGL": 1795683572.234353,
-    "MSFT": 1795683572.234353,
-    "AAPL": 1795683572.234353,
-    "PLTR": 1795683572.234353,
-    "NOW": 1795683572.234353,
-    "AMZN": 1795683572.234353,
+    "AMAT": 1795685108.7946615,
+    "META": 1795685108.7946615,
+    "GOOGL": 1795685108.7946615,
+    "MSFT": 1795685108.7946615,
+    "AAPL": 1795685108.7946615,
+    "PLTR": 1795685108.7946615,
+    "NOW": 1795685108.7946615,
+    "AMZN": 1795685108.7946615,
     "CRWV": 1795683572.234353,
     "NBIS": 1795683612.6969247,
     "APLD": 1795683612.6969247,
@@ -3388,8 +3388,8 @@
     "GLW": 1795683902.487134,
     "ANT": 1795684078.8885493,
     "XAUUSD": 1795684078.8885493,
-    "KOSPI": 1795683572.234353,
-    "KSTR": 1795683572.234353
+    "KOSPI": 1795685108.7946615,
+    "KSTR": 1795685108.7946615
   },
   "opex_shield": {
     "date": "2026-11-26",
