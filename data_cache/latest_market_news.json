@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795686618.78,
-  "updated_at_et": "11-26 04:50 ET",
-  "updated_at_kst": "18:50 KST",
+  "updated_at_ts": 1795686675.372,
+  "updated_at_et": "11-26 04:51 ET",
+  "updated_at_kst": "18:51 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -2384,38 +2384,38 @@
     "MU": [
       {
         "title": "Micron Technology (MU) Products Are Exempt From New US Tariffs",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/micron-technology-mu-products-exempt-071205634.html?.tsrc=rss",
-        "source": "Yahoo Finance",
+        "url": "https://finnhub.io/api/news?id=3bbe03025dd8683ecb460f804dc8b7bbdd037735d66d342e161e898d91927b19",
+        "source": "Yahoo",
         "time": "11-26 02:12 ET",
         "pub_ts": 1795677125.0
       },
       {
         "title": "MU, SNDK, SKHY Jump As Nvidia Tests Kioxia Memory Fix — Analyst Presses Memory Giants For ‘Massive’ Buybacks",
-        "url": "https://stocktwits.com/news-articles/markets/equity/mu-sndk-skhy-nvidia-kioxia-memory-fix-analyst-memory-giants-buybacks/cNbxQFgR9ZK?.tsrc=rss",
-        "source": "Yahoo Finance",
+        "url": "https://finnhub.io/api/news?id=5acae23e11e6f6b78440abd7944bc37cb5ef34cc5dec472d00ad062a9d2f110f",
+        "source": "Yahoo",
         "time": "11-26 01:30 ET",
         "pub_ts": 1795674651.0
       },
       {
         "title": "Micron faces Taiwan uncertainty as labor dispute threatens expansion, report warns",
-        "url": "https://finance.yahoo.com/technology/articles/micron-faces-taiwan-uncertainty-labor-055543451.html?.tsrc=rss",
-        "source": "Yahoo Finance",
+        "url": "https://finnhub.io/api/news?id=3516b15a70403489bea7da0ef81e1c5691519007e6bb7602a29b75254e6041d1",
+        "source": "Yahoo",
         "time": "11-26 00:55 ET",
         "pub_ts": 1795672543.0
       },
       {
-        "title": "Is Micron Cheap Only If Its Record Margin Lasts?",
-        "url": "https://www.trefis.com/stock/mu/articles/628939/is-micron-cheap-only-if-its-record-margin-lasts/2026-11-25?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 18:43 ET",
-        "pub_ts": 1795650187.0
+        "title": "Dow Jones Futures Rise After Nasdaq Slashes Losses In Wild Market Ride",
+        "url": "https://finnhub.io/api/news?id=a0d43b3eb4a909a4aac44c3d968497747a467d227e9de03170793573844b8eb5",
+        "source": "Yahoo",
+        "time": "11-25 23:06 ET",
+        "pub_ts": 1795665992.0
       },
       {
-        "title": "Micron's CEO pay rose 28%. His security bill rose way faster",
-        "url": "https://www.thestreet.com/investing/micron-ceo-pay-security-costs-soar?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 17:33 ET",
-        "pub_ts": 1795645980.0
+        "title": "Dow Jones Futures Rise; Market Goes On Wild Ride As Nasdaq Slashes Losses",
+        "url": "https://finnhub.io/api/news?id=44a96bba1bfc393fcabed4ca3666db1b64e5fa8d9c85f7a1ac35285748b71fbf",
+        "source": "Yahoo",
+        "time": "11-25 20:34 ET",
+        "pub_ts": 1795656875.0
       }
     ],
     "SKHY": [
@@ -3338,19 +3338,19 @@
     "PLTR": 1795686618.7798305,
     "NOW": 1795686618.7798305,
     "AMZN": 1795686618.7798305,
-    "CRWV": 1795685155.0397205,
-    "NBIS": 1795685155.0397205,
-    "APLD": 1795685155.0397205,
+    "CRWV": 1795686675.3715272,
+    "NBIS": 1795686675.3715272,
+    "APLD": 1795686675.3715272,
     "VST": 1795685434.6223276,
     "BE": 1795685434.6223276,
     "CRDO": 1795685434.6223276,
     "COHR": 1795685434.6223276,
-    "MRVL": 1795685155.0397205,
-    "LITE": 1795685155.0397205,
+    "MRVL": 1795686675.3715272,
+    "LITE": 1795686675.3715272,
     "AAOI": 1795685434.6223276,
     "SPCX": 1795685434.6223276,
     "ASTS": 1795685434.6223276,
-    "AXTI": 1795685155.0397205,
+    "AXTI": 1795686675.3715272,
     "NASA": 1795685477.1279023,
     "LUNR": 1795685477.1279023,
     "TSLA": 1795685477.1279023,
@@ -3365,9 +3365,9 @@
     "OKLO": 1795685518.8681004,
     "CEG": 1795685518.8681004,
     "FPS": 1795685518.8681004,
-    "MU": 1795685155.0397205,
-    "SKHY": 1795685155.0397205,
-    "WDC": 1795685155.0397205,
+    "MU": 1795686675.3715272,
+    "SKHY": 1795686675.3715272,
+    "WDC": 1795686675.3715272,
     "STX": 1795685518.8681004,
     "MSTR": 1795685518.8681004,
     "SNDK": 1795685518.8681004,
@@ -3385,7 +3385,7 @@
     "WMT": 1795685601.5284796,
     "V": 1795685562.314857,
     "CAT": 1795685601.5284796,
-    "FN": 1795685155.0397205,
+    "FN": 1795686675.3715272,
     "GLW": 1795685434.6223276,
     "ANT": 1795685601.5284796,
     "XAUUSD": 1795685601.5284796,
