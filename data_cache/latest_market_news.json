@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795656163.871,
-  "updated_at_et": "11-25 20:22 ET",
-  "updated_at_kst": "10:22 KST",
+  "updated_at_ts": 1795656206.651,
+  "updated_at_et": "11-25 20:23 ET",
+  "updated_at_kst": "10:23 KST",
   "macro_calendar": [
     {
       "event_id": "1599680",
@@ -944,13 +944,6 @@
     ],
     "NVDA": [
       {
-        "title": "Dow Jones Futures Rise; Market Goes On Wild Ride As Nasdaq Slashes Losses",
-        "url": "https://finance.yahoo.com/m/158e82fc-b889-34b6-8704-99a49e9a83ae/dow-jones-futures-rise%3B.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 19:43 ET",
-        "pub_ts": 1795653794.0
-      },
-      {
         "title": "S&P 500, Nasdaq End Lower But Dow Rebounds As Traders Rotate Out Of AI — NVDA, SPCX, PANW In Focus",
         "url": "https://stocktwits.com/news-articles/markets/equity/s-and-p-500-nasdaq-end-lower-but-dow-rebounds-as-traders-rotate-out-of-ai-nvda-spcx-panw-in-focus/cNbx21AR9mC?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -977,9 +970,23 @@
         "source": "Yahoo Finance",
         "time": "11-25 18:18 ET",
         "pub_ts": 1795648685.0
+      },
+      {
+        "title": "Broadcom Stock Hasn't Traded This Low Since July 2025. I Think It's a Buy.",
+        "url": "https://www.fool.com/investing/2026/11/25/broadcom-stock-hasn-t-traded-this-low-since-july-2025-i-think-it-s-a-buy/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 20:03 ET",
+        "pub_ts": 1795654982.0
       }
     ],
     "AMD": [
+      {
+        "title": "Big AI Buyers Want a Second Source. Is AMD (AMD) It?",
+        "url": "https://finance.yahoo.com/technology/ai/articles/big-ai-buyers-want-second-005602621.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 19:56 ET",
+        "pub_ts": 1795654562.0
+      },
       {
         "title": "2 Billionaire Funds Dumped AMD Last Quarter. Is It a Sell?",
         "url": "https://www.fool.com/investing/2026/11/25/2-billionaire-funds-dumped-amd-last-quarter-is-it-a-sell/?.tsrc=rss",
@@ -1007,13 +1014,6 @@
         "source": "Yahoo Finance",
         "time": "11-25 12:47 ET",
         "pub_ts": 1795628820.0
-      },
-      {
-        "title": "AMD is Actually on Sale at a 52% Discount Now Based on This Number and I’m Buying It",
-        "url": "https://247wallst.com/investing/2026/11/25/amd-is-actually-on-sale-at-a-52-discount-now-based-on-this-number-and-im-buying-it/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 12:45 ET",
-        "pub_ts": 1795628702.0
       }
     ],
     "ASML": [
@@ -1092,6 +1092,13 @@
     ],
     "AVGO": [
       {
+        "title": "Broadcom Stock Hasn't Traded This Low Since July 2025. I Think It's a Buy.",
+        "url": "https://www.fool.com/investing/2026/11/25/broadcom-stock-hasn-t-traded-this-low-since-july-2025-i-think-it-s-a-buy/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 20:03 ET",
+        "pub_ts": 1795654982.0
+      },
+      {
         "title": "Not Micron. Not Broadcom. This Is My Top Oversold Artificial Intelligence (AI) Stock to Buy in December",
         "url": "https://www.fool.com/investing/2026/11/25/not-micron-not-broadcom-this-is-my-top-oversold-artificial-intelligence-ai-stock-to-buy-in-december/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1118,13 +1125,6 @@
         "source": "Yahoo Finance",
         "time": "11-25 11:55 ET",
         "pub_ts": 1795625749.0
-      },
-      {
-        "title": "Broadcom vs. Qualcomm: Which Technology Stock Is a Better Buy for 2027?",
-        "url": "https://www.fool.com/coverage/better-buy/2026/11/25/broadcom-vs-qualcomm-which-technology-stock-is-a-better-buy-for-2027/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 11:52 ET",
-        "pub_ts": 1795625521.0
       }
     ],
     "AMAT": [
@@ -3332,15 +3332,15 @@
     "IGV": 1795656163.8711112,
     "TLT": 1795656163.8711112,
     "GLD": 1795656163.8711112,
-    "SQQQ": 1795654672.7044883,
+    "SQQQ": 1795656206.6507094,
     "TSM": 1795655844.5600646,
     "VIXY": 1795656163.8711112,
-    "SOXS": 1795654672.7044883,
-    "NVDA": 1795654672.7044883,
-    "AMD": 1795654672.7044883,
+    "SOXS": 1795656206.6507094,
+    "NVDA": 1795656206.6507094,
+    "AMD": 1795656206.6507094,
     "ASML": 1795655844.5600646,
     "QCOM": 1795655844.5600646,
-    "AVGO": 1795654672.7044883,
+    "AVGO": 1795656206.6507094,
     "AMAT": 1795655844.5600646,
     "META": 1795655844.5600646,
     "GOOGL": 1795655844.5600646,
