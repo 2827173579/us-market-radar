@@ -1,5 +1,5 @@
 {
-  "updated_at_ts": 1795697467.074,
+  "updated_at_ts": 1795697515.24,
   "updated_at_et": "11-26 07:51 ET",
   "updated_at_kst": "21:51 KST",
   "macro_calendar": [],
@@ -2390,6 +2390,13 @@
     ],
     "MU": [
       {
+        "title": "Micron Can’t Stop Sliding. UBS Cut Its Target, but Still Sees 83% Upside",
+        "url": "https://www.tikr.com/blog/micron-cant-stop-sliding-ubs-cut-its-target-but-still-sees-83-upside?ref=yahoofinance&tlnk=yf-261126-5mxg7gm6&.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-26 07:21 ET",
+        "pub_ts": 1795695663.0
+      },
+      {
         "title": "Tepper Trims Alphabet by ~46% and Dumps Broadcom & AMD While Backing Micron and Oracle",
         "url": "https://247wallst.com/investing/2026/11/26/tepper-trims-alphabet-by-46-and-dumps-broadcom-amd-while-backing-micron-and-oracle/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2416,13 +2423,6 @@
         "source": "Yahoo Finance",
         "time": "11-26 06:17 ET",
         "pub_ts": 1795691844.0
-      },
-      {
-        "title": "Nvidia, AMD and Micron Stocks Plunge as AI Selloff Deepens",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/nvidia-amd-micron-stocks-plunge-110624788.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-26 06:06 ET",
-        "pub_ts": 1795691184.0
       }
     ],
     "SKHY": [
@@ -2612,6 +2612,20 @@
     ],
     "BTC-USD": [
       {
+        "title": "Galaxy Research Withdraws Call That Bitcoin's Bear Market Is Over",
+        "url": "https://decrypt.co/384030/galaxy-research-withdraws-call-that-bitcoins-bear-market-is-over?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-26 07:26 ET",
+        "pub_ts": 1795695968.0
+      },
+      {
+        "title": "Billionaire Investor Paul Tudor Jones Just Doubled Down on Bitcoin. What Does He Know That the Market Doesn't?",
+        "url": "https://www.fool.com/investing/2026/11/26/billionaire-investor-paul-tudor-jones-just-doubled-down-on-bitcoin-what-does-he-know-that-you-dont/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-26 07:20 ET",
+        "pub_ts": 1795695602.0
+      },
+      {
         "title": "Crypto Market Faces 3 Critical Risks Heading Into December 2026",
         "url": "https://beincrypto.com/crypto-market-outlook-december-2026-three-risks/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2631,20 +2645,6 @@
         "source": "Yahoo Finance",
         "time": "11-26 05:34 ET",
         "pub_ts": 1795689268.0
-      },
-      {
-        "title": "Galaxy Withdraws Bitcoin Bottom Call, Warns BTC Could Fall to $28,200",
-        "url": "https://www.ccn.com/news/crypto/galaxy-bitcoin-bear-market-bottom-28200-price-target/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-26 05:32 ET",
-        "pub_ts": 1795689135.0
-      },
-      {
-        "title": "Why Is Crypto Up Today? BTC Back Above $60K – is the Bull Market Back?",
-        "url": "https://cryptonews.com/news/why-is-crypto-up-today-btc-back-above-60k-bull-market-back/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-26 05:11 ET",
-        "pub_ts": 1795687882.0
       }
     ],
     "CRWD": [
@@ -3372,13 +3372,13 @@
     "OKLO": 1795697415.7432997,
     "CEG": 1795697357.8379624,
     "FPS": 1795697415.7432997,
-    "MU": 1795695987.9650087,
+    "MU": 1795697515.2404723,
     "SKHY": 1795697467.0737665,
-    "WDC": 1795695987.9650087,
+    "WDC": 1795697515.2404723,
     "STX": 1795697415.7432997,
     "MSTR": 1795697415.7432997,
     "SNDK": 1795697415.7432997,
-    "BTC-USD": 1795695987.9650087,
+    "BTC-USD": 1795697515.2404723,
     "CRWD": 1795697415.7432997,
     "ORCL": 1795697415.7432997,
     "COIN": 1795697415.7432997,
@@ -3389,13 +3389,13 @@
     "PEP": 1795697415.7432997,
     "XOM": 1795697467.0737665,
     "JPM": 1795697415.7432997,
-    "WMT": 1795695987.9650087,
+    "WMT": 1795697515.2404723,
     "V": 1795697415.7432997,
     "CAT": 1795697415.7432997,
     "FN": 1795697467.0737665,
     "GLW": 1795697206.2564774,
     "ANT": 1795697415.7432997,
-    "XAUUSD": 1795695987.9650087,
+    "XAUUSD": 1795697515.2404723,
     "KOSPI": 1795697467.0737665,
     "KSTR": 1795697415.7432997
   },
