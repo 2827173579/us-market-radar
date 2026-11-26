@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795729792.148,
-  "updated_at_et": "11-26 16:49 ET",
-  "updated_at_kst": "06:49 KST",
+  "updated_at_ts": 1795729836.71,
+  "updated_at_et": "11-26 16:50 ET",
+  "updated_at_kst": "06:50 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -909,6 +909,13 @@
     ],
     "NVDA": [
       {
+        "title": "Jensen Huang’s Return Doesn’t Make Nvidia Stock (NVDA) a Buy",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/jensen-huang-return-doesn-t-212200380.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-26 16:22 ET",
+        "pub_ts": 1795728120.0
+      },
+      {
         "title": "Nvidia halts server shipments to 4 countries just weeks after Jensen Huang’s affair with alleged spy was exposed",
         "url": "https://nypost.com/2026/11/26/business/nvidia-halts-server-shipments-to-4-southeast-asian-countries-report/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -935,13 +942,6 @@
         "source": "Yahoo Finance",
         "time": "11-26 13:17 ET",
         "pub_ts": 1795717022.0
-      },
-      {
-        "title": "Super Micro Computer (SMCI) Faces Southeast Asia AI Server Disruption After Export Halt",
-        "url": "https://finance.yahoo.com/technology/ai/articles/super-micro-computer-smci-faces-181532913.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-26 13:15 ET",
-        "pub_ts": 1795716932.0
       }
     ],
     "AMD": [
@@ -3316,23 +3316,23 @@
     ]
   },
   "ticker_news_ts": {
-    "KORU": 1795728331.4324946,
-    "SOXL": 1795728331.4324946,
-    "SPY": 1795728331.4324946,
-    "DIA": 1795728331.4324946,
-    "SOXX": 1795728331.4324946,
-    "QQQ": 1795728331.4324946,
-    "SMH": 1795728331.4324946,
-    "IWM": 1795728331.4324946,
-    "IGV": 1795728331.4324946,
-    "TLT": 1795728331.4324946,
-    "GLD": 1795728331.4324946,
-    "SQQQ": 1795728331.4324946,
+    "KORU": 1795729836.7096138,
+    "SOXL": 1795729836.7096138,
+    "SPY": 1795729836.7096138,
+    "DIA": 1795729836.7096138,
+    "SOXX": 1795729836.7096138,
+    "QQQ": 1795729836.7096138,
+    "SMH": 1795729836.7096138,
+    "IWM": 1795729836.7096138,
+    "IGV": 1795729836.7096138,
+    "TLT": 1795729836.7096138,
+    "GLD": 1795729836.7096138,
+    "SQQQ": 1795729836.7096138,
     "TSM": 1795728656.1522434,
-    "VIXY": 1795728331.4324946,
-    "SOXS": 1795728331.4324946,
-    "NVDA": 1795728331.4324946,
-    "AMD": 1795728331.4324946,
+    "VIXY": 1795729836.7096138,
+    "SOXS": 1795729836.7096138,
+    "NVDA": 1795729836.7096138,
+    "AMD": 1795729836.7096138,
     "ASML": 1795728656.1522434,
     "QCOM": 1795728656.1522434,
     "AVGO": 1795728656.1522434,
@@ -3347,15 +3347,15 @@
     "CRWV": 1795728704.2496486,
     "NBIS": 1795728704.2496486,
     "APLD": 1795728704.2496486,
-    "VST": 1795728331.4324946,
-    "BE": 1795728331.4324946,
-    "CRDO": 1795728331.4324946,
-    "COHR": 1795728331.4324946,
+    "VST": 1795729836.7096138,
+    "BE": 1795729836.7096138,
+    "CRDO": 1795729836.7096138,
+    "COHR": 1795729836.7096138,
     "MRVL": 1795728704.2496486,
     "LITE": 1795728704.2496486,
-    "AAOI": 1795728331.4324946,
-    "SPCX": 1795728331.4324946,
-    "ASTS": 1795728331.4324946,
+    "AAOI": 1795729836.7096138,
+    "SPCX": 1795729836.7096138,
+    "ASTS": 1795729836.7096138,
     "AXTI": 1795728704.2496486,
     "NASA": 1795728656.1522434,
     "LUNR": 1795728656.1522434,
@@ -3392,11 +3392,11 @@
     "V": 1795728704.2496486,
     "CAT": 1795728749.5073178,
     "FN": 1795728704.2496486,
-    "GLW": 1795728331.4324946,
+    "GLW": 1795729836.7096138,
     "ANT": 1795728749.5073178,
     "XAUUSD": 1795728749.5073178,
     "KOSPI": 1795728656.1522434,
-    "KSTR": 1795728331.4324946
+    "KSTR": 1795729836.7096138
   },
   "opex_shield": {
     "date": "2026-11-26",
