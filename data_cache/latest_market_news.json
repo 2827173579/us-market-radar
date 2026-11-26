@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795717607.452,
-  "updated_at_et": "11-26 13:26 ET",
-  "updated_at_kst": "03:26 KST",
+  "updated_at_ts": 1795717652.438,
+  "updated_at_et": "11-26 13:27 ET",
+  "updated_at_kst": "03:27 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -1353,6 +1353,13 @@
     ],
     "AMZN": [
       {
+        "title": "Amazon , Walmart Battle for $124 Billion Holiday Shopping Market",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/amazon-walmart-battle-124-billion-175223253.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-26 12:52 ET",
+        "pub_ts": 1795715543.0
+      },
+      {
         "title": "NFL's Thanksgiving Boom Raises Stakes for Disney, Netflix",
         "url": "https://finance.yahoo.com/media-advertising/articles/nfls-thanksgiving-boom-raises-stakes-174228885.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1379,13 +1386,6 @@
         "source": "Yahoo Finance",
         "time": "11-26 12:10 ET",
         "pub_ts": 1795713002.0
-      },
-      {
-        "title": "Walmart, Amazon Face Surprising Shopping Shift",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/walmart-amazon-face-surprising-shopping-160813140.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-26 11:08 ET",
-        "pub_ts": 1795709293.0
       }
     ],
     "CRWV": [
@@ -1448,18 +1448,18 @@
         "pub_ts": 1795632501.0
       },
       {
+        "title": "Cloud Cover: How Nebius Group Is Filling the Gaps Left by Hyperscalers",
+        "url": "https://www.marketbeat.com/articles/cloud-cover-how-nebius-group-is-filling-the-gaps-left-by-hyperscalers/?utm_source=yahoofinance&utm_medium=yahoofinance&.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 12:45 ET",
+        "pub_ts": 1795628700.0
+      },
+      {
         "title": "Freedom Capital Markets’ $314 Target Says Nebius’s Selloff Went Too Far",
         "url": "https://www.tikr.com/blog/freedom-capital-markets-314-target-says-nebiuss-selloff-went-too-far?ref=yahoofinance&tlnk=yf-261125-28wv344f&.tsrc=rss",
         "source": "Yahoo Finance",
         "time": "11-25 12:02 ET",
         "pub_ts": 1795626140.0
-      },
-      {
-        "title": "Nebius Plunges 12%, Oracle Sinks 8% as AI Cloud Selloff Deepens; IBM Rises 2%: Is IBM a Safer AI Play?",
-        "url": "https://247wallst.com/investing/2026/11/25/nebius-plunges-12-oracle-sinks-8-as-ai-cloud-selloff-deepens-ibm-rises-2-is-ibm-a-safer-ai-play/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 11:56 ET",
-        "pub_ts": 1795625761.0
       }
     ],
     "APLD": [
@@ -2389,6 +2389,13 @@
     ],
     "MU": [
       {
+        "title": "Micron Stock Faces Surprising New Threat From Huawei",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/micron-stock-faces-surprising-threat-180348513.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-26 13:03 ET",
+        "pub_ts": 1795716228.0
+      },
+      {
         "title": "Micron Stocks Fall 4.53% as TrendForce Cuts 2027 Memory Forecasts",
         "url": "https://finance.yahoo.com/markets/stocks/articles/micron-stocks-fall-4-53-172600974.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2415,13 +2422,6 @@
         "source": "Yahoo Finance",
         "time": "11-26 08:37 ET",
         "pub_ts": 1795700222.0
-      },
-      {
-        "title": "Micron May Now Face a Threat From Two Chinese Rivals but Shouldn’t Sweat It",
-        "url": "https://finance.yahoo.com/m/75ebee7a-b584-3441-9bac-c4a6ec75020e/micron-may-now-face-a-threat.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-26 08:01 ET",
-        "pub_ts": 1795698060.0
       }
     ],
     "SKHY": [
@@ -3341,22 +3341,22 @@
     "GOOGL": 1795717607.4524271,
     "MSFT": 1795717607.4524271,
     "AAPL": 1795717607.4524271,
-    "PLTR": 1795716124.3683472,
-    "NOW": 1795716124.3683472,
-    "AMZN": 1795716124.3683472,
-    "CRWV": 1795716124.3683472,
-    "NBIS": 1795716124.3683472,
-    "APLD": 1795716124.3683472,
+    "PLTR": 1795717652.4379408,
+    "NOW": 1795717652.4379408,
+    "AMZN": 1795717652.4379408,
+    "CRWV": 1795717652.4379408,
+    "NBIS": 1795717652.4379408,
+    "APLD": 1795717652.4379408,
     "VST": 1795717311.842482,
     "BE": 1795717311.842482,
     "CRDO": 1795717311.842482,
     "COHR": 1795717311.842482,
-    "MRVL": 1795716124.3683472,
-    "LITE": 1795716124.3683472,
+    "MRVL": 1795717652.4379408,
+    "LITE": 1795717652.4379408,
     "AAOI": 1795717311.842482,
     "SPCX": 1795717311.842482,
     "ASTS": 1795717311.842482,
-    "AXTI": 1795716124.3683472,
+    "AXTI": 1795717652.4379408,
     "NASA": 1795717607.4524271,
     "LUNR": 1795717607.4524271,
     "TSLA": 1795717607.4524271,
@@ -3371,27 +3371,27 @@
     "OKLO": 1795717607.4524271,
     "CEG": 1795717607.4524271,
     "FPS": 1795717607.4524271,
-    "MU": 1795716124.3683472,
-    "SKHY": 1795716124.3683472,
-    "WDC": 1795716124.3683472,
-    "STX": 1795716124.3683472,
-    "MSTR": 1795716124.3683472,
+    "MU": 1795717652.4379408,
+    "SKHY": 1795717652.4379408,
+    "WDC": 1795717652.4379408,
+    "STX": 1795717652.4379408,
+    "MSTR": 1795717652.4379408,
     "SNDK": 1795717607.4524271,
-    "BTC-USD": 1795716124.3683472,
-    "CRWD": 1795716124.3683472,
-    "ORCL": 1795716124.3683472,
-    "COIN": 1795716124.3683472,
-    "LLY": 1795716124.3683472,
-    "MRNA": 1795716124.3683472,
-    "NKE": 1795716124.3683472,
-    "MCD": 1795716124.3683472,
-    "PEP": 1795716124.3683472,
+    "BTC-USD": 1795717652.4379408,
+    "CRWD": 1795717652.4379408,
+    "ORCL": 1795717652.4379408,
+    "COIN": 1795717652.4379408,
+    "LLY": 1795717652.4379408,
+    "MRNA": 1795717652.4379408,
+    "NKE": 1795717652.4379408,
+    "MCD": 1795717652.4379408,
+    "PEP": 1795717652.4379408,
     "XOM": 1795716166.6207159,
     "JPM": 1795716166.6207159,
     "WMT": 1795716166.6207159,
-    "V": 1795716124.3683472,
+    "V": 1795717652.4379408,
     "CAT": 1795716166.6207159,
-    "FN": 1795716124.3683472,
+    "FN": 1795717652.4379408,
     "GLW": 1795717311.842482,
     "ANT": 1795716166.6207159,
     "XAUUSD": 1795716166.6207159,
