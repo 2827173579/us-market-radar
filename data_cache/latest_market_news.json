@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795703437.16,
-  "updated_at_et": "11-26 09:30 ET",
-  "updated_at_kst": "23:30 KST",
+  "updated_at_ts": 1795703492.752,
+  "updated_at_et": "11-26 09:31 ET",
+  "updated_at_kst": "23:31 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -922,6 +922,13 @@
         "pub_ts": 1795698000.0
       },
       {
+        "title": "Nvidia’s Reliance on Huang Could Now Hurt Its Credit Rating",
+        "url": "https://247wallst.com/investing/2026/11/26/nvidias-reliance-on-huang-could-now-hurt-its-credit-rating/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-26 09:17 ET",
+        "pub_ts": 1795702648.0
+      },
+      {
         "title": "Heading Into FY27: How to Trade Broadcom’s ~$115B AI Target Against Nvidia’s Multiple Reset",
         "url": "https://247wallst.com/investing/2026/11/26/heading-into-fy27-how-to-trade-broadcoms-115b-ai-target-against-nvidias-multiple-reset/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -934,13 +941,6 @@
         "source": "Yahoo Finance",
         "time": "11-26 08:28 ET",
         "pub_ts": 1795699709.0
-      },
-      {
-        "title": "Trump Is Hiking Tariffs Again. Here Are the New Tariff Rates on 14 Countries",
-        "url": "https://247wallst.com/investing/2026/11/26/trump-is-hiking-tariffs-again-here-are-the-new-tariff-rates-on-14-countries/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-26 08:17 ET",
-        "pub_ts": 1795699058.0
       }
     ],
     "AMD": [
@@ -1056,6 +1056,13 @@
     ],
     "AVGO": [
       {
+        "title": "3 AI Infrastructure Stocks That Pay You While You Wait",
+        "url": "https://247wallst.com/investing/2026/11/26/3-ai-infrastructure-stocks-that-pay-you-while-you-wait/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-26 09:03 ET",
+        "pub_ts": 1795701821.0
+      },
+      {
         "title": "Heading Into FY27: How to Trade Broadcom’s ~$115B AI Target Against Nvidia’s Multiple Reset",
         "url": "https://247wallst.com/investing/2026/11/26/heading-into-fy27-how-to-trade-broadcoms-115b-ai-target-against-nvidias-multiple-reset/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1082,13 +1089,6 @@
         "source": "Yahoo Finance",
         "time": "11-26 06:04 ET",
         "pub_ts": 1795691051.0
-      },
-      {
-        "title": "ETFs Are Net Sellers of Broadcom (AVGO) on Nov. 24",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/etfs-net-sellers-broadcom-avgo-110258196.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-26 06:02 ET",
-        "pub_ts": 1795690978.0
       }
     ],
     "AMAT": [
@@ -2210,6 +2210,13 @@
         "pub_ts": 1795700222.0
       },
       {
+        "title": "3 Stocks to Watch That Announced Dividend Hikes Amid Market Turmoil",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/3-stocks-watch-announced-dividend-131500607.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-26 08:15 ET",
+        "pub_ts": 1795698900.0
+      },
+      {
         "title": "Is HPE's 18-Quarter Inventory High A Warning?",
         "url": "https://www.trefis.com/stock/dell/articles/629185/is-hpe-s-18-quarter-inventory-high-a-warning/2026-11-26?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2229,13 +2236,6 @@
         "source": "Yahoo Finance",
         "time": "11-25 18:17 ET",
         "pub_ts": 1795648620.0
-      },
-      {
-        "title": "Dell, HPE Post Big Sales Growth But Investors Sense AI Spending Peak",
-        "url": "https://finance.yahoo.com/m/509b8d3a-b338-3181-bdcf-b7e931f38513/dell%2C-hpe-post-big-sales.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 16:20 ET",
-        "pub_ts": 1795641634.0
       }
     ],
     "DELL": [
@@ -3317,24 +3317,24 @@
   "ticker_news_ts": {
     "KORU": 1795703437.1597471,
     "SOXL": 1795703437.1597471,
-    "SPY": 1795701983.4142048,
+    "SPY": 1795703492.7522597,
     "DIA": 1795703437.1597471,
     "SOXX": 1795703437.1597471,
     "QQQ": 1795703437.1597471,
-    "SMH": 1795701983.4142048,
+    "SMH": 1795703492.7522597,
     "IWM": 1795703437.1597471,
     "IGV": 1795703437.1597471,
     "TLT": 1795703437.1597471,
-    "GLD": 1795701937.5121262,
-    "SQQQ": 1795701937.5121262,
+    "GLD": 1795703492.7522597,
+    "SQQQ": 1795703492.7522597,
     "TSM": 1795702027.861174,
-    "VIXY": 1795701937.5121262,
-    "SOXS": 1795701937.5121262,
-    "NVDA": 1795701937.5121262,
-    "AMD": 1795701937.5121262,
+    "VIXY": 1795703492.7522597,
+    "SOXS": 1795703492.7522597,
+    "NVDA": 1795703492.7522597,
+    "AMD": 1795703492.7522597,
     "ASML": 1795702027.861174,
     "QCOM": 1795702027.861174,
-    "AVGO": 1795701937.5121262,
+    "AVGO": 1795703492.7522597,
     "AMAT": 1795702027.861174,
     "META": 1795702027.861174,
     "GOOGL": 1795702027.861174,
@@ -3356,26 +3356,26 @@
     "SPCX": 1795703437.1597471,
     "ASTS": 1795703437.1597471,
     "AXTI": 1795702027.861174,
-    "NASA": 1795701937.5121262,
-    "LUNR": 1795701937.5121262,
-    "TSLA": 1795701937.5121262,
-    "AXP": 1795701937.5121262,
-    "RKLB": 1795701937.5121262,
-    "KO": 1795701937.5121262,
-    "FLY": 1795701937.5121262,
-    "INTC": 1795701937.5121262,
-    "VRT": 1795701937.5121262,
-    "HPE": 1795701983.4142048,
-    "DELL": 1795701937.5121262,
-    "OKLO": 1795701983.4142048,
-    "CEG": 1795701937.5121262,
-    "FPS": 1795701983.4142048,
+    "NASA": 1795703492.7522597,
+    "LUNR": 1795703492.7522597,
+    "TSLA": 1795703492.7522597,
+    "AXP": 1795703492.7522597,
+    "RKLB": 1795703492.7522597,
+    "KO": 1795703492.7522597,
+    "FLY": 1795703492.7522597,
+    "INTC": 1795703492.7522597,
+    "VRT": 1795703492.7522597,
+    "HPE": 1795703492.7522597,
+    "DELL": 1795703492.7522597,
+    "OKLO": 1795703492.7522597,
+    "CEG": 1795703492.7522597,
+    "FPS": 1795703492.7522597,
     "MU": 1795702073.3266833,
     "SKHY": 1795702027.861174,
     "WDC": 1795702073.3266833,
     "STX": 1795701983.4142048,
     "MSTR": 1795701983.4142048,
-    "SNDK": 1795701983.4142048,
+    "SNDK": 1795703492.7522597,
     "BTC-USD": 1795702073.3266833,
     "CRWD": 1795701983.4142048,
     "ORCL": 1795701983.4142048,
@@ -3395,7 +3395,7 @@
     "ANT": 1795701983.4142048,
     "XAUUSD": 1795702073.3266833,
     "KOSPI": 1795702027.861174,
-    "KSTR": 1795701983.4142048
+    "KSTR": 1795703492.7522597
   },
   "opex_shield": {
     "date": "2026-11-26",
