@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795701897.344,
-  "updated_at_et": "11-26 09:04 ET",
-  "updated_at_kst": "23:04 KST",
+  "updated_at_ts": 1795701937.512,
+  "updated_at_et": "11-26 09:05 ET",
+  "updated_at_kst": "23:05 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -910,11 +910,25 @@
     ],
     "NVDA": [
       {
+        "title": "Will Jensen Huang's second act as Nvidia CEO be different?",
+        "url": "https://finance.yahoo.com/video/jensen-huangs-second-act-nvidia-140000599.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-26 09:00 ET",
+        "pub_ts": 1795701600.0
+      },
+      {
         "title": "Jensen Huang 'absolutely could be fired again,' legal expert says",
         "url": "https://finance.yahoo.com/video/jensen-huang-absolutely-could-fired-130000374.html?.tsrc=rss",
         "source": "Yahoo Finance",
         "time": "11-26 08:00 ET",
         "pub_ts": 1795698000.0
+      },
+      {
+        "title": "Heading Into FY27: How to Trade Broadcom’s ~$115B AI Target Against Nvidia’s Multiple Reset",
+        "url": "https://247wallst.com/investing/2026/11/26/heading-into-fy27-how-to-trade-broadcoms-115b-ai-target-against-nvidias-multiple-reset/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-26 08:45 ET",
+        "pub_ts": 1795700733.0
       },
       {
         "title": "New U.S. Chip Rule Is Now Hitting AI Data-Center Loans, Not Just Nvidia Chips",
@@ -929,20 +943,6 @@
         "source": "Yahoo Finance",
         "time": "11-26 08:17 ET",
         "pub_ts": 1795699058.0
-      },
-      {
-        "title": "How Much Is Jensen Huang Worth to Nvidia? The Stock Market Just Gave a Clear Answer",
-        "url": "https://www.fool.com/investing/2026/11/26/how-much-is-jensen-huang-worth-to-nvidia-the-stock-market-just-gave-a-clear-answer/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-26 07:54 ET",
-        "pub_ts": 1795697642.0
-      },
-      {
-        "title": "US Chip Curbs Can't Shake China's Appetite For Nvidia. Another Chinese Firm Is Buying 5,000 Blackwell GPUs.",
-        "url": "https://www.ibtimes.com/weimob-buying-5000-nvidia-blackwell-gpus-3810225?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-26 07:37 ET",
-        "pub_ts": 1795696625.0
       }
     ],
     "AMD": [
@@ -1058,6 +1058,13 @@
     ],
     "AVGO": [
       {
+        "title": "Heading Into FY27: How to Trade Broadcom’s ~$115B AI Target Against Nvidia’s Multiple Reset",
+        "url": "https://247wallst.com/investing/2026/11/26/heading-into-fy27-how-to-trade-broadcoms-115b-ai-target-against-nvidias-multiple-reset/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-26 08:45 ET",
+        "pub_ts": 1795700733.0
+      },
+      {
         "title": "Tepper Trims Alphabet by ~46% and Dumps Broadcom & AMD While Backing Micron and Oracle",
         "url": "https://247wallst.com/investing/2026/11/26/tepper-trims-alphabet-by-46-and-dumps-broadcom-amd-while-backing-micron-and-oracle/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1084,13 +1091,6 @@
         "source": "Yahoo Finance",
         "time": "11-26 06:02 ET",
         "pub_ts": 1795690978.0
-      },
-      {
-        "title": "3 AI Infrastructure Stocks With Revenue Growth Up To 168%",
-        "url": "https://finance.yahoo.com/technology/ai/articles/3-ai-infrastructure-stocks-revenue-100924358.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-26 05:09 ET",
-        "pub_ts": 1795687764.0
       }
     ],
     "AMAT": [
@@ -1909,6 +1909,13 @@
     ],
     "LUNR": [
       {
+        "title": "RKLB vs. LUNR: Which Space Stock Has the Stronger Growth Outlook?",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/rklb-vs-lunr-space-stock-125000446.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-26 07:50 ET",
+        "pub_ts": 1795697400.0
+      },
+      {
         "title": "SPCX Wins Million-Satellite Nod And Retail Attention — But ASTS Leads Space Stocks Into Thanksgiving",
         "url": "https://stocktwits.com/news-articles/markets/equity/spcx-stock-million-satellite-nod-asts-leads-rklb-lunr-bksy-thanksgiving/cNbxLqbR9ZV?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1935,13 +1942,6 @@
         "source": "Yahoo Finance",
         "time": "11-23 12:01 ET",
         "pub_ts": 1795453262.0
-      },
-      {
-        "title": "MarketBeat Week in Review – 11/16 - 11/20",
-        "url": "https://www.marketbeat.com/articles/marketbeat-week-in-review-2026-11-16-11-20/?utm_source=yahoofinance&utm_medium=yahoofinance&.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-21 07:00 ET",
-        "pub_ts": 1795262400.0
       }
     ],
     "TSLA": [
@@ -2020,6 +2020,13 @@
     ],
     "RKLB": [
       {
+        "title": "RKLB vs. LUNR: Which Space Stock Has the Stronger Growth Outlook?",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/rklb-vs-lunr-space-stock-125000446.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-26 07:50 ET",
+        "pub_ts": 1795697400.0
+      },
+      {
         "title": "Rocket Lab (RKLB) Stock Sees Fair Value Cut As Analysts Weigh Backlog And Neutron Risk",
         "url": "https://finance.yahoo.com/markets/stocks/articles/rocket-lab-rklb-stock-sees-121113577.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2046,16 +2053,16 @@
         "source": "Yahoo Finance",
         "time": "11-25 09:17 ET",
         "pub_ts": 1795616238.0
-      },
-      {
-        "title": "Rocket Lab Just Grew Revenue 73%. Its Next Chapter Could Be Even Bigger",
-        "url": "https://247wallst.com/investing/2026/11/25/rocket-lab-just-grew-revenue-73-its-next-chapter-could-be-even-bigger/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 09:03 ET",
-        "pub_ts": 1795615437.0
       }
     ],
     "KO": [
+      {
+        "title": "3 Dividend Kings Retirees Can Own for the Rest of Their Lives",
+        "url": "https://247wallst.com/investing/2026/11/26/3-dividend-kings-retirees-can-own-for-the-rest-of-their-lives/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-26 08:32 ET",
+        "pub_ts": 1795699976.0
+      },
       {
         "title": "Coca-Cola Is the Most Boring Stock I Own. After 64 Years of Dividend Raises, I'll Never Sell.",
         "url": "https://www.fool.com/investing/2026/11/26/coca-cola-is-the-most-boring-stock-i-own-after-64-years-of-dividend-raises-ill-never-sell/?.tsrc=rss",
@@ -2083,13 +2090,6 @@
         "source": "Yahoo Finance",
         "time": "11-25 08:51 ET",
         "pub_ts": 1795614712.0
-      },
-      {
-        "title": "Coca-Cola (KO) Just Reclaimed the 20-Day Moving Average",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/coca-cola-ko-just-reclaimed-133502639.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 08:35 ET",
-        "pub_ts": 1795613702.0
       }
     ],
     "FLY": [
@@ -2242,6 +2242,13 @@
     ],
     "DELL": [
       {
+        "title": "Dell’s $132B Backlog Turns 2027 Into a Pure Multiple-Expansion Trade Toward $500",
+        "url": "https://247wallst.com/investing/2026/11/26/dells-132b-backlog-turns-2027-into-a-pure-multiple-expansion-trade-toward-500/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-26 08:45 ET",
+        "pub_ts": 1795700729.0
+      },
+      {
         "title": "DELL Stock Heads For Worst Month Since 2021: Morningstar Sees Risk Ahead For Dell Despite AI-Led Earnings Beat",
         "url": "https://stocktwits.com/news-articles/markets/equity/dell-stock-heads-for-worst-month-since-2021-morningstar-sees-risk-ahead-for-dell-despite-ai-led-earnings-beat/cNbx0U7R9Zo?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2268,13 +2275,6 @@
         "source": "Yahoo Finance",
         "time": "11-25 22:07 ET",
         "pub_ts": 1795662422.0
-      },
-      {
-        "title": "TD Cowen Just Cut Its Dell Target From $550 to $325 After a Record Quarter",
-        "url": "https://www.tikr.com/blog/td-cowen-just-cut-its-dell-target-from-550-to-325-after-a-record-quarter?ref=yahoofinance&tlnk=yf-261126-835vp4w8&.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 21:27 ET",
-        "pub_ts": 1795660063.0
       }
     ],
     "OKLO": [
@@ -3327,16 +3327,16 @@
     "IWM": 1795701813.121497,
     "IGV": 1795701813.121497,
     "TLT": 1795701813.121497,
-    "GLD": 1795700397.6543553,
-    "SQQQ": 1795700397.6543553,
+    "GLD": 1795701937.5121262,
+    "SQQQ": 1795701937.5121262,
     "TSM": 1795700490.499101,
-    "VIXY": 1795700397.6543553,
-    "SOXS": 1795700397.6543553,
-    "NVDA": 1795700397.6543553,
-    "AMD": 1795700397.6543553,
+    "VIXY": 1795701937.5121262,
+    "SOXS": 1795701937.5121262,
+    "NVDA": 1795701937.5121262,
+    "AMD": 1795701937.5121262,
     "ASML": 1795700490.499101,
     "QCOM": 1795700490.499101,
-    "AVGO": 1795700397.6543553,
+    "AVGO": 1795701937.5121262,
     "AMAT": 1795700490.499101,
     "META": 1795700490.499101,
     "GOOGL": 1795700490.499101,
@@ -3358,19 +3358,19 @@
     "SPCX": 1795701813.121497,
     "ASTS": 1795701813.121497,
     "AXTI": 1795700490.499101,
-    "NASA": 1795700397.6543553,
-    "LUNR": 1795700397.6543553,
-    "TSLA": 1795700397.6543553,
-    "AXP": 1795700397.6543553,
-    "RKLB": 1795700397.6543553,
-    "KO": 1795700397.6543553,
-    "FLY": 1795700397.6543553,
-    "INTC": 1795700397.6543553,
-    "VRT": 1795700397.6543553,
+    "NASA": 1795701937.5121262,
+    "LUNR": 1795701937.5121262,
+    "TSLA": 1795701937.5121262,
+    "AXP": 1795701937.5121262,
+    "RKLB": 1795701937.5121262,
+    "KO": 1795701937.5121262,
+    "FLY": 1795701937.5121262,
+    "INTC": 1795701937.5121262,
+    "VRT": 1795701937.5121262,
     "HPE": 1795700446.097066,
-    "DELL": 1795700397.6543553,
+    "DELL": 1795701937.5121262,
     "OKLO": 1795700446.097066,
-    "CEG": 1795700397.6543553,
+    "CEG": 1795701937.5121262,
     "FPS": 1795700446.097066,
     "MU": 1795700534.367195,
     "SKHY": 1795700490.499101,
