@@ -1,5 +1,5 @@
 {
-  "updated_at_ts": 1795688524.247,
+  "updated_at_ts": 1795688566.077,
   "updated_at_et": "11-26 05:22 ET",
   "updated_at_kst": "19:22 KST",
   "macro_calendar": [],
@@ -908,11 +908,25 @@
     ],
     "NVDA": [
       {
-        "title": "Nvidia halts chip exports to south-east Asia after US crackdown",
+        "title": "A vocal cohort of tech leaders celebrates Huang’s Nvidia return, but others are keeping quiet",
+        "url": "https://finance.yahoo.com/technology/articles/vocal-cohort-tech-leaders-celebrates-100052004.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-26 05:00 ET",
+        "pub_ts": 1795687252.0
+      },
+      {
+        "title": "Nvidia halts chip exports to south-east Asia",
         "url": "https://uk.finance.yahoo.com/news/nvidia-halts-chip-exports-south-091719498.html?.tsrc=rss",
         "source": "Yahoo Finance",
         "time": "11-26 04:17 ET",
         "pub_ts": 1795684639.0
+      },
+      {
+        "title": "Musk Confirms He Pushed Trump to Bring Back Jensen Huang. The White House Had Anthropic in Mind",
+        "url": "https://www.tikr.com/blog/musk-confirms-he-pushed-trump-to-bring-back-jensen-huang-the-white-house-had-anthropic-in-mind?ref=yahoofinance&tlnk=yf-261126-66q3rrhh&.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-26 03:59 ET",
+        "pub_ts": 1795683552.0
       },
       {
         "title": "Nvidia Wins Back Wall Street Backing As Jensen Huang Returns; CRWD, LI Stocks Score Upgrades While DKNG, AMBA Face Pressure",
@@ -927,20 +941,6 @@
         "source": "Yahoo Finance",
         "time": "11-26 03:11 ET",
         "pub_ts": 1795680707.0
-      },
-      {
-        "title": "S&P Weighs Nvidia Downgrade Despite Huang's Return. What Would a Cut Mean?",
-        "url": "https://beincrypto.com/sp-nvidia-credit-rating-downgrade-watch/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-26 03:00 ET",
-        "pub_ts": 1795680000.0
-      },
-      {
-        "title": "Prediction: This Is What Nvidia Stock Will Be Worth by 2028",
-        "url": "https://www.fool.com/investing/2026/11/26/prediction-this-is-what-nvidia-stock-will-be-worth-by-2028/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-26 02:54 ET",
-        "pub_ts": 1795679642.0
       }
     ],
     "AMD": [
@@ -2573,6 +2573,13 @@
     ],
     "SNDK": [
       {
+        "title": "4 Memory and Storage Stocks Cut by More Than 30% That I'd Buy Now and Hold for the Next Decade",
+        "url": "https://www.fool.com/investing/2026/11/26/4-memory-and-storage-stocks-cut-by-more-than-30-that-i-d-buy-now-and-hold-for-the-next-decade/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-26 05:01 ET",
+        "pub_ts": 1795687262.0
+      },
+      {
         "title": "MU, SNDK, SKHY Jump As Nvidia Tests Kioxia Memory Fix — Analyst Presses Memory Giants For ‘Massive’ Buybacks",
         "url": "https://stocktwits.com/news-articles/markets/equity/mu-sndk-skhy-nvidia-kioxia-memory-fix-analyst-memory-giants-buybacks/cNbxQFgR9ZK?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2599,13 +2606,6 @@
         "source": "Yahoo Finance",
         "time": "11-25 12:46 ET",
         "pub_ts": 1795628786.0
-      },
-      {
-        "title": "Sandisk vs. Western Digital: Which Computer Drive Stock Is a Better Buy for 2027?",
-        "url": "https://www.fool.com/coverage/better-buy/2026/11/25/sandisk-vs-western-digital-which-computer-drive-stock-is-a-better-buy-for-2027/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 12:19 ET",
-        "pub_ts": 1795627142.0
       }
     ],
     "BTC-USD": [
@@ -3325,16 +3325,16 @@
     "IWM": 1795688482.4674537,
     "IGV": 1795688482.4674537,
     "TLT": 1795688482.4674537,
-    "GLD": 1795687045.1444387,
-    "SQQQ": 1795687045.1444387,
+    "GLD": 1795688566.0768943,
+    "SQQQ": 1795688566.0768943,
     "TSM": 1795688240.8938398,
-    "VIXY": 1795687045.1444387,
-    "SOXS": 1795687045.1444387,
-    "NVDA": 1795687045.1444387,
-    "AMD": 1795687045.1444387,
+    "VIXY": 1795688566.0768943,
+    "SOXS": 1795688566.0768943,
+    "NVDA": 1795688566.0768943,
+    "AMD": 1795688566.0768943,
     "ASML": 1795688240.8938398,
     "QCOM": 1795688240.8938398,
-    "AVGO": 1795687045.1444387,
+    "AVGO": 1795688566.0768943,
     "AMAT": 1795688240.8938398,
     "META": 1795688240.8938398,
     "GOOGL": 1795688240.8938398,
@@ -3366,18 +3366,18 @@
     "INTC": 1795688524.2469726,
     "VRT": 1795688524.2469726,
     "HPE": 1795687098.3996685,
-    "DELL": 1795687045.1444387,
-    "OKLO": 1795687045.1444387,
-    "CEG": 1795687045.1444387,
-    "FPS": 1795687045.1444387,
+    "DELL": 1795688566.0768943,
+    "OKLO": 1795688566.0768943,
+    "CEG": 1795688566.0768943,
+    "FPS": 1795688566.0768943,
     "MU": 1795688240.8938398,
     "SKHY": 1795688240.8938398,
     "WDC": 1795688240.8938398,
-    "STX": 1795687045.1444387,
-    "MSTR": 1795687045.1444387,
-    "SNDK": 1795687045.1444387,
+    "STX": 1795688566.0768943,
+    "MSTR": 1795688566.0768943,
+    "SNDK": 1795688566.0768943,
     "BTC-USD": 1795688347.7431552,
-    "CRWD": 1795687045.1444387,
+    "CRWD": 1795688566.0768943,
     "ORCL": 1795687098.3996685,
     "COIN": 1795687098.3996685,
     "LLY": 1795687098.3996685,
