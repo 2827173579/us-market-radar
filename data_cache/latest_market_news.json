@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795686895.261,
-  "updated_at_et": "11-26 04:54 ET",
-  "updated_at_kst": "18:54 KST",
+  "updated_at_ts": 1795686944.167,
+  "updated_at_et": "11-26 04:55 ET",
+  "updated_at_kst": "18:55 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -1759,6 +1759,13 @@
     ],
     "SPCX": [
       {
+        "title": "SpaceX Catalyst Puts 3 Space AI Infrastructure Stocks In Focus",
+        "url": "https://finance.yahoo.com/technology/ai/articles/spacex-catalyst-puts-3-space-091200765.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-26 04:12 ET",
+        "pub_ts": 1795684320.0
+      },
+      {
         "title": "Musk says will give two SpaceX shares to 'every child in America'",
         "url": "https://finance.yahoo.com/markets/stocks/articles/musk-says-two-spacex-shares-085820244.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1785,13 +1792,6 @@
         "source": "Yahoo Finance",
         "time": "11-26 00:39 ET",
         "pub_ts": 1795671542.0
-      },
-      {
-        "title": "Musk says every U.S. child will receive two SpaceX shares",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/musk-says-every-u-child-053639491.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-26 00:36 ET",
-        "pub_ts": 1795671399.0
       }
     ],
     "ASTS": [
@@ -3315,16 +3315,16 @@
     ]
   },
   "ticker_news_ts": {
-    "KORU": 1795685434.6223276,
-    "SOXL": 1795685434.6223276,
+    "KORU": 1795686944.1668537,
+    "SOXL": 1795686944.1668537,
     "SPY": 1795686618.7798305,
-    "DIA": 1795685434.6223276,
-    "SOXX": 1795685434.6223276,
-    "QQQ": 1795685434.6223276,
+    "DIA": 1795686944.1668537,
+    "SOXX": 1795686944.1668537,
+    "QQQ": 1795686944.1668537,
     "SMH": 1795686618.7798305,
-    "IWM": 1795685434.6223276,
-    "IGV": 1795685434.6223276,
-    "TLT": 1795685434.6223276,
+    "IWM": 1795686944.1668537,
+    "IGV": 1795686944.1668537,
+    "TLT": 1795686944.1668537,
     "GLD": 1795685518.8681004,
     "SQQQ": 1795685518.8681004,
     "TSM": 1795686618.7798305,
@@ -3346,15 +3346,15 @@
     "CRWV": 1795686675.3715272,
     "NBIS": 1795686675.3715272,
     "APLD": 1795686675.3715272,
-    "VST": 1795685434.6223276,
-    "BE": 1795685434.6223276,
-    "CRDO": 1795685434.6223276,
-    "COHR": 1795685434.6223276,
+    "VST": 1795686944.1668537,
+    "BE": 1795686944.1668537,
+    "CRDO": 1795686944.1668537,
+    "COHR": 1795686944.1668537,
     "MRVL": 1795686675.3715272,
     "LITE": 1795686675.3715272,
-    "AAOI": 1795685434.6223276,
-    "SPCX": 1795685434.6223276,
-    "ASTS": 1795685434.6223276,
+    "AAOI": 1795686944.1668537,
+    "SPCX": 1795686944.1668537,
+    "ASTS": 1795686944.1668537,
     "AXTI": 1795686675.3715272,
     "NASA": 1795685477.1279023,
     "LUNR": 1795685477.1279023,
@@ -3391,7 +3391,7 @@
     "V": 1795685562.314857,
     "CAT": 1795685601.5284796,
     "FN": 1795686675.3715272,
-    "GLW": 1795685434.6223276,
+    "GLW": 1795686944.1668537,
     "ANT": 1795685601.5284796,
     "XAUUSD": 1795685601.5284796,
     "KOSPI": 1795686618.7798305,
