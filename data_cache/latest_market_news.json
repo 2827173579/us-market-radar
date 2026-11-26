@@ -1,5 +1,5 @@
 {
-  "updated_at_ts": 1795653129.072,
+  "updated_at_ts": 1795653169.149,
   "updated_at_et": "11-25 19:32 ET",
   "updated_at_kst": "09:32 KST",
   "macro_calendar": [
@@ -941,8 +941,15 @@
         "title": "Dow Jones Futures: Market Goes On Wild Ride. Nasdaq, Nvidia Slash Losses While Anthropic Reverses Higher.",
         "url": "https://finance.yahoo.com/m/158e82fc-b889-34b6-8704-99a49e9a83ae/dow-jones-futures%3A-market.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-25 18:56 ET",
-        "pub_ts": 1795650985.0
+        "time": "11-25 19:16 ET",
+        "pub_ts": 1795652172.0
+      },
+      {
+        "title": "S&P 500, Nasdaq End Lower But Dow Rebounds As Traders Rotate Out Of AI — NVDA, SPCX, PANW In Focus",
+        "url": "https://stocktwits.com/news-articles/markets/equity/s-and-p-500-nasdaq-end-lower-but-dow-rebounds-as-traders-rotate-out-of-ai-nvda-spcx-panw-in-focus/cNbx21AR9mC?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 19:09 ET",
+        "pub_ts": 1795651790.0
       },
       {
         "title": "Altimeter’s Brad Gerstner Says Nvidia Was Priced for “Negative Growth for 2028 and 2029.” Wall Street Expects 29%",
@@ -964,13 +971,6 @@
         "source": "Yahoo Finance",
         "time": "11-25 18:18 ET",
         "pub_ts": 1795648685.0
-      },
-      {
-        "title": "S&P considers Nvidia credit downgrade over governance and ‘key man’ risks",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/p-considers-nvidia-credit-downgrade-224432360.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 17:44 ET",
-        "pub_ts": 1795646672.0
       }
     ],
     "AMD": [
@@ -3326,15 +3326,15 @@
     "IGV": 1795653129.0720277,
     "TLT": 1795653129.0720277,
     "GLD": 1795653129.0720277,
-    "SQQQ": 1795651621.7366173,
+    "SQQQ": 1795653169.1487494,
     "TSM": 1795652788.6469965,
     "VIXY": 1795653129.0720277,
-    "SOXS": 1795651621.7366173,
-    "NVDA": 1795651621.7366173,
-    "AMD": 1795651621.7366173,
+    "SOXS": 1795653169.1487494,
+    "NVDA": 1795653169.1487494,
+    "AMD": 1795653169.1487494,
     "ASML": 1795652788.6469965,
     "QCOM": 1795652788.6469965,
-    "AVGO": 1795651621.7366173,
+    "AVGO": 1795653169.1487494,
     "AMAT": 1795652788.6469965,
     "META": 1795652788.6469965,
     "GOOGL": 1795652788.6469965,
