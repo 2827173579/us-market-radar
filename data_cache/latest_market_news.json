@@ -1,9 +1,49 @@
 {
-  "updated_at_ts": 1795677597.726,
-  "updated_at_et": "11-26 02:19 ET",
-  "updated_at_kst": "16:19 KST",
+  "updated_at_ts": 1795680035.165,
+  "updated_at_et": "11-26 03:00 ET",
+  "updated_at_kst": "17:00 KST",
   "macro_calendar": [],
   "macro_flashes": [
+    {
+      "id": "20261126154705207800",
+      "title": "【期货盯盘神器专属文章】欧美盘中关注：美国10月通胀超预期回升，三季度增速上修至4.3%…",
+      "summary": "【期货盯盘神器专属文章】欧美盘中关注：美国10月通胀超预期回升，三季度增速上修至4.3%，美联储12月加息几成定局；油价两日大涨逾5美元重返95美元上方。波动加剧，避险与风险资产分化背后藏着什么信号？",
+      "keywords": [
+        "美联储",
+        "加息"
+      ],
+      "pub_ts": 1795679225.0,
+      "time_et": "11-26 02:47 ET",
+      "time_bj": "15:47 BJ",
+      "time_kst": "16:47 KST",
+      "time_display": "02:47 ET / 15:47 BJ"
+    },
+    {
+      "id": "20261126154642968800",
+      "title": "“英伟达银行”面临两难，黄仁勋能否维系AI融资循环？",
+      "summary": "黄仁勋复职并未消除市场对AI融资模式的担忧。继续为客户提供资金支持可能增加英伟达的财务风险，但缩减融资又可能削弱其市场份额和定价能力。",
+      "keywords": [
+        "英伟达"
+      ],
+      "pub_ts": 1795679202.0,
+      "time_et": "11-26 02:46 ET",
+      "time_bj": "15:46 BJ",
+      "time_kst": "16:46 KST",
+      "time_display": "02:46 ET / 15:46 BJ"
+    },
+    {
+      "id": "20261126153831903800",
+      "title": "【高盛：预计沪深300明年上涨10% 上调港股至高配】 11月26日讯，“未来一年，港股…",
+      "summary": "【高盛：预计沪深300明年上涨10% 上调港股至高配】 11月26日讯，“未来一年，港股的盈利同比增速有可能达到15%左右。”11月25日，高盛首席中国股票策略分析师刘劲津在该行年度经济与股市展望媒体会上表示，高盛将港股由中性上调至高配。高盛预计，2027年MSCI中国指数和沪深300指数将分别上涨23%和10%。从中国市场来看，高盛将半导体、医药和服务消费由中性上调至高配，维持对银行板块的高配建议。",
+      "keywords": [
+        "半导体"
+      ],
+      "pub_ts": 1795678711.0,
+      "time_et": "11-26 02:38 ET",
+      "time_bj": "15:38 BJ",
+      "time_kst": "16:38 KST",
+      "time_display": "02:38 ET / 15:38 BJ"
+    },
     {
       "id": "20261126151704520800",
       "title": "【外交部：关税战、贸易战不符合任何一方利益，所谓“产能过剩”是伪命题】 11月26日讯，…",
@@ -295,47 +335,6 @@
       "time_bj": "11:08 BJ",
       "time_kst": "12:08 KST",
       "time_display": "22:08 ET / 11:08 BJ"
-    },
-    {
-      "id": "20261126110846088800",
-      "title": "整理：每日存储市场要闻速递（2026-11-26）",
-      "summary": "1. 报道：英伟达芯片卖家寻找新买家，数千颗B300 GPU寻求转售。 2. 消息称三星与SK海力士获准使用长江存储部分晶栈技术。 3. 集邦下调2027年存储产值预估，NAND合约价预计转跌。 4. 机构：部分CSP需求下修影响价格展望，2027年存储器产值增速放缓。 5. 三星拟披露500层TLC NAND，SK海力士将展示375层方案。 6. 三星HBM4E论文披露17Gbps单引脚速率，进入英伟达目标区间。 7. SK海力士瞄准2031年前后商用3D DRAM，首款目标为100层。 8. MLC NAND退出供货周期，利基应用转向SLC或TLC。 9. 兆易创新与德赛西威共建实验室，聚焦车规存储和MCU验证。 10. 集邦称消费级DRAM现货买气偏弱，南亚科与华邦电补位。",
-      "keywords": [
-        "芯片",
-        "英伟达"
-      ],
-      "pub_ts": 1795662526.0,
-      "time_et": "11-25 22:08 ET",
-      "time_bj": "11:08 BJ",
-      "time_kst": "12:08 KST",
-      "time_display": "22:08 ET / 11:08 BJ"
-    },
-    {
-      "id": "20261126105817615800",
-      "title": "远期过剩预期与近端溢价交锋，原油反弹动能正在回归",
-      "summary": "中东产量恢复后投行预计2027年市场将面临供应过剩，但叙事已被充分交易，深跌需更大利空。原油虽有基本面压制，但风险溢价回归后短期需警惕反弹的可能。",
-      "keywords": [
-        "中东",
-        "原油"
-      ],
-      "pub_ts": 1795661897.0,
-      "time_et": "11-25 21:58 ET",
-      "time_bj": "10:58 BJ",
-      "time_kst": "11:58 KST",
-      "time_display": "21:58 ET / 10:58 BJ"
-    },
-    {
-      "id": "20261126104536775800",
-      "title": "恒生科技指数涨超4%，芯片、光通信、PCB等板块涨幅居前；成分股中，智谱(02513.H…",
-      "summary": "恒生科技指数涨超4%，芯片、光通信、PCB等板块涨幅居前；成分股中，智谱(02513.HK)涨超15%。",
-      "keywords": [
-        "芯片"
-      ],
-      "pub_ts": 1795661136.0,
-      "time_et": "11-25 21:45 ET",
-      "time_bj": "10:45 BJ",
-      "time_kst": "11:45 KST",
-      "time_display": "21:45 ET / 10:45 BJ"
     }
   ],
   "ticker_news": {
@@ -792,6 +791,13 @@
         "pub_ts": 1795662196.0
       },
       {
+        "title": "Trump heads to Arizona next week for a high-stakes expansion of TSMC's computer chip factories",
+        "url": "https://finance.yahoo.com/technology/articles/trump-heads-arizona-next-week-225636899.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 17:56 ET",
+        "pub_ts": 1795647396.0
+      },
+      {
         "title": "TSMC eyes 3K-acre Aggieland site for $22.6B chip plant",
         "url": "https://finance.yahoo.com/technology/articles/tsmc-eyes-3k-acre-aggieland-192901231.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -811,13 +817,6 @@
         "source": "Yahoo Finance",
         "time": "11-25 11:37 ET",
         "pub_ts": 1795624622.0
-      },
-      {
-        "title": "Nvidia Chipmaker TSMC Sends $22.6 Billion AI Signal",
-        "url": "https://finance.yahoo.com/technology/ai/articles/nvidia-chipmaker-tsmc-sends-22-162725540.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 11:27 ET",
-        "pub_ts": 1795624045.0
       }
     ],
     "VIXY": [
@@ -896,6 +895,27 @@
     ],
     "NVDA": [
       {
+        "title": "Nvidia Could Shift Chips To ‘Better-Funded Buyers’ As Neoclouds Face Shakeout: Analyst Sees ‘Smaller Top Tier’",
+        "url": "https://stocktwits.com/news-articles/markets/equity/nvidia-could-shift-chips-to-better-funded-buyers-as-neoclouds-face-shakeout-analyst-sees-smaller-top-tier/cNbxWjpR9ZZ?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-26 02:41 ET",
+        "pub_ts": 1795678868.0
+      },
+      {
+        "title": "Apple Is November's Mag7 Winner — Nvidia Takes The Biggest Hit",
+        "url": "https://stocktwits.com/news-articles/markets/equity/apple-is-november-s-mag7-winner-nvidia-takes-the-biggest-hit/cNbxWaAR9Zm?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-26 02:32 ET",
+        "pub_ts": 1795678362.0
+      },
+      {
+        "title": "Mike Pompeo Has ‘No Doubt’ Alice Huang Coordinated With Communist Party of China: Crypto Bettors Weigh Odds of Her Arrest",
+        "url": "https://www.benzinga.com/markets/prediction-markets/26/11/63660281/mike-pompeo-has-no-doubt-alice-huang-coordinated-with-communist-party-of-china-crypto-bettors-weigh-odds-of-her-arrest?utm_source=yahooFinance&utm_campaign=partner_feed&utm_medium=referral&.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-26 02:22 ET",
+        "pub_ts": 1795677733.0
+      },
+      {
         "title": "MU, SNDK, SKHY Jump As Nvidia Tests Kioxia Memory Fix — Analyst Presses Memory Giants For ‘Massive’ Buybacks",
         "url": "https://stocktwits.com/news-articles/markets/equity/mu-sndk-skhy-nvidia-kioxia-memory-fix-analyst-memory-giants-buybacks/cNbxQFgR9ZK?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -908,27 +928,6 @@
         "source": "Yahoo Finance",
         "time": "11-26 01:29 ET",
         "pub_ts": 1795674556.0
-      },
-      {
-        "title": "Kioxia jumps 14% after Nvidia collaboration as chip stocks rebound",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/kioxia-jumps-14-nvidia-collaboration-062844097.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-26 01:28 ET",
-        "pub_ts": 1795674524.0
-      },
-      {
-        "title": "ANT, NVDA Slide Tests Investor Resolve, Software Firms Post Sharp Growth",
-        "url": "https://stocktwits.com/news-articles/markets/equity/ant-nvda-slide-tests-investor-resolve-software-firms-post-sharp-growth/cNbxO5FR9ZX?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-26 00:33 ET",
-        "pub_ts": 1795671214.0
-      },
-      {
-        "title": "SpaceX Reportedly Slashes Some Nvidia Chip Rents — AI Researcher Sees Musk’s Edge In A GPU Glut",
-        "url": "https://stocktwits.com/news-articles/markets/equity/spacex-reportedly-slashes-nvidia-chip-rents-ai-researcher-musk-edge-gpu-glut/cNbxOPgR9ZQ?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-26 00:32 ET",
-        "pub_ts": 1795671175.0
       }
     ],
     "AMD": [
@@ -2376,6 +2375,13 @@
     ],
     "MU": [
       {
+        "title": "Micron Technology (MU) Products Are Exempt From New US Tariffs",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/micron-technology-mu-products-exempt-071205634.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-26 02:12 ET",
+        "pub_ts": 1795677125.0
+      },
+      {
         "title": "MU, SNDK, SKHY Jump As Nvidia Tests Kioxia Memory Fix — Analyst Presses Memory Giants For ‘Massive’ Buybacks",
         "url": "https://stocktwits.com/news-articles/markets/equity/mu-sndk-skhy-nvidia-kioxia-memory-fix-analyst-memory-giants-buybacks/cNbxQFgR9ZK?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2402,16 +2408,16 @@
         "source": "Yahoo Finance",
         "time": "11-25 17:33 ET",
         "pub_ts": 1795645980.0
-      },
-      {
-        "title": "Not Micron. Not Broadcom. This Is My Top Oversold Artificial Intelligence (AI) Stock to Buy in December",
-        "url": "https://www.fool.com/investing/2026/11/25/not-micron-not-broadcom-this-is-my-top-oversold-artificial-intelligence-ai-stock-to-buy-in-december/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 16:51 ET",
-        "pub_ts": 1795643461.0
       }
     ],
     "SKHY": [
+      {
+        "title": "Asian stocks stabilise after tech rout",
+        "url": "https://finance.yahoo.com/markets/world-indices/articles/asian-stocks-enjoy-another-bounce-023024729.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-26 02:11 ET",
+        "pub_ts": 1795677102.0
+      },
       {
         "title": "MU, SNDK, SKHY Jump As Nvidia Tests Kioxia Memory Fix — Analyst Presses Memory Giants For ‘Massive’ Buybacks",
         "url": "https://stocktwits.com/news-articles/markets/equity/mu-sndk-skhy-nvidia-kioxia-memory-fix-analyst-memory-giants-buybacks/cNbxQFgR9ZK?.tsrc=rss",
@@ -2439,16 +2445,16 @@
         "source": "Yahoo Finance",
         "time": "11-25 16:12 ET",
         "pub_ts": 1795641120.0
-      },
-      {
-        "title": "SK hynix Falls 5%, Sandisk Down 10% as Asian Chip Stocks Give Back the Huang Rally",
-        "url": "https://www.tikr.com/blog/sk-hynix-falls-5-sandisk-down-10-as-asian-chip-stocks-give-back-the-huang-rally?ref=yahoofinance&tlnk=yf-261125-7hm5f9h6&.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 12:46 ET",
-        "pub_ts": 1795628786.0
       }
     ],
     "WDC": [
+      {
+        "title": "Elite Growth Stocks To Own In November 2026",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/elite-growth-stocks-own-november-071347242.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-26 02:13 ET",
+        "pub_ts": 1795677227.0
+      },
       {
         "title": "Western Digital Stocks Sink 7.42%, Trading 139% Above GF Value",
         "url": "https://finance.yahoo.com/markets/stocks/articles/western-digital-stocks-sink-7-172258485.html?.tsrc=rss",
@@ -2476,13 +2482,6 @@
         "source": "Yahoo Finance",
         "time": "11-25 13:00 ET",
         "pub_ts": 1795629657.0
-      },
-      {
-        "title": "SK hynix Falls 5%, Sandisk Down 10% as Asian Chip Stocks Give Back the Huang Rally",
-        "url": "https://www.tikr.com/blog/sk-hynix-falls-5-sandisk-down-10-as-asian-chip-stocks-give-back-the-huang-rally?ref=yahoofinance&tlnk=yf-261125-7hm5f9h6&.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 12:46 ET",
-        "pub_ts": 1795628786.0
       }
     ],
     "STX": [
@@ -3270,89 +3269,120 @@
         "time": "11-23 12:08 ET",
         "pub_ts": 1795453686.0
       }
+    ],
+    "KSTR": [
+      {
+        "title": "Investors Who Piled Into China’s AI Boom Just Watched About $480 Billion Vanish in Under Four Months. Are America’s AI Bulls Next?",
+        "url": "https://247wallst.com/investing/2026/10/28/investors-who-piled-into-chinas-ai-boom-just-watched-about-480-billion-vanish-in-under-four-months-are-americas-ai-bulls-next/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "10-28 13:15 ET",
+        "pub_ts": 1793207702.0
+      },
+      {
+        "title": "Best ETF Areas of June",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/best-etf-areas-june-120000507.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "07-06 08:00 ET",
+        "pub_ts": 1783339200.0
+      },
+      {
+        "title": "KraneShares China Fund (NYSE: KSTR) Up +71.70% Year-To-Date",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/kraneshares-china-fund-nyse-kstr-130000804.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "07-01 09:00 ET",
+        "pub_ts": 1782910800.0
+      },
+      {
+        "title": "China ETF (KSTR) Hits New 52-Week High",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/china-etf-kstr-hits-52-135400923.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "05-20 09:54 ET",
+        "pub_ts": 1779285240.0
+      }
     ]
   },
   "ticker_news_ts": {
-    "KORU": 1795677550.7186947,
-    "SOXL": 1795677550.7186947,
-    "SPY": 1795677207.6342847,
-    "DIA": 1795677550.7186947,
-    "SOXX": 1795677550.7186947,
-    "QQQ": 1795677550.7186947,
-    "SMH": 1795677207.6342847,
-    "IWM": 1795677550.7186947,
-    "IGV": 1795677550.7186947,
-    "TLT": 1795677550.7186947,
-    "GLD": 1795677550.7186947,
-    "SQQQ": 1795677597.7258859,
-    "TSM": 1795677207.6342847,
-    "VIXY": 1795677550.7186947,
-    "SOXS": 1795677597.7258859,
-    "NVDA": 1795677597.7258859,
-    "AMD": 1795677597.7258859,
-    "ASML": 1795677207.6342847,
-    "QCOM": 1795677207.6342847,
-    "AVGO": 1795677597.7258859,
-    "AMAT": 1795677207.6342847,
-    "META": 1795677207.6342847,
-    "GOOGL": 1795677207.6342847,
-    "MSFT": 1795677207.6342847,
-    "AAPL": 1795677207.6342847,
-    "PLTR": 1795677207.6342847,
-    "NOW": 1795677207.6342847,
-    "AMZN": 1795677207.6342847,
-    "CRWV": 1795677207.6342847,
-    "NBIS": 1795677207.6342847,
-    "APLD": 1795677207.6342847,
-    "VST": 1795677500.9202545,
-    "BE": 1795677500.9202545,
-    "CRDO": 1795677500.9202545,
-    "COHR": 1795677500.9202545,
-    "MRVL": 1795677207.6342847,
-    "LITE": 1795677207.6342847,
-    "AAOI": 1795677500.9202545,
-    "SPCX": 1795677500.9202545,
-    "ASTS": 1795677500.9202545,
-    "AXTI": 1795677207.6342847,
-    "NASA": 1795677500.9202545,
-    "LUNR": 1795677500.9202545,
-    "TSLA": 1795677500.9202545,
-    "AXP": 1795677500.9202545,
-    "RKLB": 1795677500.9202545,
-    "KO": 1795677500.9202545,
-    "FLY": 1795677500.9202545,
-    "INTC": 1795677500.9202545,
-    "VRT": 1795677500.9202545,
-    "HPE": 1795677550.7186947,
-    "DELL": 1795677550.7186947,
-    "OKLO": 1795677550.7186947,
-    "CEG": 1795677550.7186947,
-    "FPS": 1795677550.7186947,
-    "MU": 1795677207.6342847,
-    "SKHY": 1795677207.6342847,
-    "WDC": 1795677207.6342847,
-    "STX": 1795677550.7186947,
-    "MSTR": 1795677550.7186947,
-    "SNDK": 1795677550.7186947,
-    "BTC-USD": 1795677207.6342847,
-    "CRWD": 1795677550.7186947,
-    "ORCL": 1795677550.7186947,
-    "COIN": 1795677550.7186947,
-    "LLY": 1795677550.7186947,
-    "MRNA": 1795677550.7186947,
-    "NKE": 1795677597.7258859,
-    "MCD": 1795677550.7186947,
-    "PEP": 1795677597.7258859,
-    "XOM": 1795677597.7258859,
-    "JPM": 1795677597.7258859,
-    "WMT": 1795677597.7258859,
-    "V": 1795677597.7258859,
-    "CAT": 1795677597.7258859,
-    "FN": 1795677207.6342847,
-    "GLW": 1795677500.9202545,
-    "ANT": 1795677597.7258859,
-    "XAUUSD": 1795677597.7258859,
-    "KOSPI": 1795677207.6342847
+    "KORU": 1795679320.649686,
+    "SOXL": 1795679320.649686,
+    "SPY": 1795678967.1137688,
+    "DIA": 1795679320.649686,
+    "SOXX": 1795679320.649686,
+    "QQQ": 1795679320.649686,
+    "SMH": 1795678967.1137688,
+    "IWM": 1795679320.649686,
+    "IGV": 1795679320.649686,
+    "TLT": 1795679320.649686,
+    "GLD": 1795679415.056908,
+    "SQQQ": 1795679415.056908,
+    "TSM": 1795678967.1137688,
+    "VIXY": 1795679415.056908,
+    "SOXS": 1795679415.056908,
+    "NVDA": 1795679415.056908,
+    "AMD": 1795679415.056908,
+    "ASML": 1795678967.1137688,
+    "QCOM": 1795678967.1137688,
+    "AVGO": 1795679415.056908,
+    "AMAT": 1795678967.1137688,
+    "META": 1795678967.1137688,
+    "GOOGL": 1795678967.1137688,
+    "MSFT": 1795678967.1137688,
+    "AAPL": 1795678967.1137688,
+    "PLTR": 1795678967.1137688,
+    "NOW": 1795678967.1137688,
+    "AMZN": 1795678967.1137688,
+    "CRWV": 1795678967.1137688,
+    "NBIS": 1795678967.1137688,
+    "APLD": 1795678967.1137688,
+    "VST": 1795679320.649686,
+    "BE": 1795679320.649686,
+    "CRDO": 1795679320.649686,
+    "COHR": 1795679320.649686,
+    "MRVL": 1795678967.1137688,
+    "LITE": 1795678967.1137688,
+    "AAOI": 1795679320.649686,
+    "SPCX": 1795679320.649686,
+    "ASTS": 1795679320.649686,
+    "AXTI": 1795678967.1137688,
+    "NASA": 1795679320.649686,
+    "LUNR": 1795679320.649686,
+    "TSLA": 1795679320.649686,
+    "AXP": 1795679320.649686,
+    "RKLB": 1795679320.649686,
+    "KO": 1795679320.649686,
+    "FLY": 1795679320.649686,
+    "INTC": 1795679320.649686,
+    "VRT": 1795679320.649686,
+    "HPE": 1795679415.056908,
+    "DELL": 1795679415.056908,
+    "OKLO": 1795679415.056908,
+    "CEG": 1795679415.056908,
+    "FPS": 1795679415.056908,
+    "MU": 1795678967.1137688,
+    "SKHY": 1795678967.1137688,
+    "WDC": 1795678967.1137688,
+    "STX": 1795679415.056908,
+    "MSTR": 1795679415.056908,
+    "SNDK": 1795679415.056908,
+    "BTC-USD": 1795678967.1137688,
+    "CRWD": 1795679415.056908,
+    "ORCL": 1795679415.056908,
+    "COIN": 1795679415.056908,
+    "LLY": 1795679415.056908,
+    "MRNA": 1795679415.056908,
+    "NKE": 1795679415.056908,
+    "MCD": 1795679415.056908,
+    "PEP": 1795679415.056908,
+    "XOM": 1795679498.3631167,
+    "JPM": 1795679498.3631167,
+    "WMT": 1795679498.3631167,
+    "V": 1795679415.056908,
+    "CAT": 1795679498.3631167,
+    "FN": 1795678967.1137688,
+    "GLW": 1795679320.649686,
+    "ANT": 1795679498.3631167,
+    "XAUUSD": 1795679498.3631167,
+    "KOSPI": 1795678967.1137688,
+    "KSTR": 1795678967.1137688
   },
   "opex_shield": {
     "date": "2026-11-26",
@@ -3371,7 +3401,7 @@
   "calendar_banner": {
     "level": "idle_with_flash",
     "headline": "📡 宏观消息面监控中 · 今日暂无美股五星级经济数据大考",
-    "detail": "⚡ 最新核心快讯 (02:17 ET / 15:17 BJ) [关税]：【外交部：关税战、贸易战不符合任何一方利益，所谓“产能过剩”是伪命题】 11月26日讯，外交部发言人郭嘉昆主持例行记者会。彭博社记者提问，美国宣布即将加征新一轮关税，针对中国进口产品税率将提",
+    "detail": "⚡ 最新核心快讯 (02:47 ET / 15:47 BJ) [美联储] [加息]：【期货盯盘神器专属文章】欧美盘中关注：美国10月通胀超预期回升，三季度增速上修至4.3%，美联储12月加息几成定局；油价两日大涨逾5美元重返95美元上方。波动加剧，避险与风险资产分化背后藏着",
     "event_name": "",
     "minutes_left": 0,
     "opex_shield": {
