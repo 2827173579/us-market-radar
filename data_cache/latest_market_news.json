@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795648957.509,
-  "updated_at_et": "11-25 18:22 ET",
-  "updated_at_kst": "08:22 KST",
+  "updated_at_ts": 1795651250.149,
+  "updated_at_et": "11-25 19:00 ET",
+  "updated_at_kst": "09:00 KST",
   "macro_calendar": [
     {
       "event_id": "1599680",
@@ -43,6 +43,19 @@
     }
   ],
   "macro_flashes": [
+    {
+      "id": "20261126073439116800",
+      "title": "AI大空头伯里突然转多！平仓纳指看跌期权，仍盯英伟达做空机会",
+      "summary": "伯里认为，市场波动率上升已推高看跌期权成本，因此暂时减少相关空头头寸。他仍看空AI，并计划在英伟达接近200美元时重新建立空头仓位。点击查看...",
+      "keywords": [
+        "英伟达"
+      ],
+      "pub_ts": 1795649679.0,
+      "time_et": "11-25 18:34 ET",
+      "time_bj": "07:34 BJ",
+      "time_kst": "08:34 KST",
+      "time_display": "18:34 ET / 07:34 BJ"
+    },
     {
       "id": "20261126071722691800",
       "title": "全球财经早餐 | 2026年11月26日",
@@ -370,19 +383,6 @@
       "time_bj": "23:09 BJ",
       "time_kst": "00:09 KST",
       "time_display": "10:09 ET / 23:09 BJ"
-    },
-    {
-      "id": "20261125230537600800",
-      "title": "【布伦特原油日内涨约3%】 11月25日讯，WTI原油日内走高2.00美元，现报84.7…",
-      "summary": "【布伦特原油日内涨约3%】 11月25日讯，WTI原油日内走高2.00美元，现报84.70美元/桶，涨幅2.42%。布伦特原油涨约3%。",
-      "keywords": [
-        "原油"
-      ],
-      "pub_ts": 1795619137.0,
-      "time_et": "11-25 10:05 ET",
-      "time_bj": "23:05 BJ",
-      "time_kst": "00:05 KST",
-      "time_display": "10:05 ET / 23:05 BJ"
     }
   ],
   "ticker_news": {
@@ -1202,6 +1202,13 @@
     ],
     "GOOGL": [
       {
+        "title": "Trump Has A Message for Big Tech Firms Like Amazon, Google and Microsoft Building Data Centers Abroad: ‘We’re Going to Put A Tremendous Tax On Them’",
+        "url": "https://finance.yahoo.com/economy/policy/articles/trump-message-big-tech-firms-223005233.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 17:30 ET",
+        "pub_ts": 1795645805.0
+      },
+      {
         "title": "These 5 Tech Stocks are Sidestepping the AI Downturn",
         "url": "https://finance.yahoo.com/m/d635c9d7-dbc8-3f44-bc94-e186ec33e2bd/these-5-tech-stocks-are.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1228,13 +1235,6 @@
         "source": "Yahoo Finance",
         "time": "11-25 15:32 ET",
         "pub_ts": 1795638730.0
-      },
-      {
-        "title": "Is the AI Correction Over? Why Ram Ahluwalia Thinks the AI Trade Has Hit Bottom",
-        "url": "https://unchainedcrypto.com/is-the-ai-correction-over-why-ram-ahluwalia-thinks-the-ai-trade-has-hit-bottom/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 15:00 ET",
-        "pub_ts": 1795636807.0
       }
     ],
     "MSFT": [
@@ -1253,25 +1253,25 @@
         "pub_ts": 1795622724.0
       },
       {
+        "title": "Microsoft's Green Card Filings Reveal A Striking Pattern After Mass Layoffs. Trump's New Rule Could Freeze Sponsorships For Two Years.",
+        "url": "https://www.ibtimes.com/microsoft-green-card-filings-after-2025-layoffs-3810211?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 18:48 ET",
+        "pub_ts": 1795650487.0
+      },
+      {
+        "title": "Trump Has A Message for Big Tech Firms Like Amazon, Google and Microsoft Building Data Centers Abroad: ‘We’re Going to Put A Tremendous Tax On Them’",
+        "url": "https://finance.yahoo.com/economy/policy/articles/trump-message-big-tech-firms-223005233.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 17:30 ET",
+        "pub_ts": 1795645805.0
+      },
+      {
         "title": "Bill Ackman, George Soros and 5 Other Famous Investors Own Microsoft. Here’s Who Bought and Sold Recently",
         "url": "https://www.tikr.com/blog/bill-ackman-george-soros-and-5-other-famous-investors-own-microsoft-heres-who-bought-and-sold-recently?ref=yahoofinance&tlnk=yf-261125-hv5wfr5m&.tsrc=rss",
         "source": "Yahoo Finance",
         "time": "11-25 15:50 ET",
         "pub_ts": 1795639822.0
-      },
-      {
-        "title": "Satya Nadella Says “the Floor of Cyber Attacks Has Fallen.” Microsoft Just Declared Code Red After a 24-Hour Outage",
-        "url": "https://www.tikr.com/blog/satya-nadella-says-the-floor-of-cyber-attacks-has-fallen-microsoft-just-declared-code-red-after-a-24-hour-outage?ref=yahoofinance&tlnk=yf-261125-gxp284g5&.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 13:03 ET",
-        "pub_ts": 1795629816.0
-      },
-      {
-        "title": "Every Dollar of Your Retirement Income Comes From One Fund at 73. These 3 ETFs Spread the Load",
-        "url": "https://247wallst.com/investing/etf/2026/11/25/every-dollar-of-your-retirement-income-comes-from-one-fund-at-73-these-3-etfs-spread-the-load/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 12:52 ET",
-        "pub_ts": 1795629177.0
       }
     ],
     "AAPL": [
@@ -1313,6 +1313,13 @@
     ],
     "PLTR": [
       {
+        "title": "Are You Overpaying For Palantir Stock Versus Its Rivals?",
+        "url": "https://www.trefis.com/stock/pltr/articles/628772/are-you-overpaying-for-palantir-stock-versus-its-rivals/2026-11-25?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 18:31 ET",
+        "pub_ts": 1795649464.0
+      },
+      {
         "title": "Goldman Sachs bets on Palantir's 'mega customers' after NYC demo",
         "url": "https://www.thestreet.com/investing/palantir-mega-customers-goldman-sachs?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1339,13 +1346,6 @@
         "source": "Yahoo Finance",
         "time": "11-25 13:16 ET",
         "pub_ts": 1795630613.0
-      },
-      {
-        "title": "Palantir Is Down 25% From Its High. Is It a Bargain or Still Overvalued?",
-        "url": "https://www.fool.com/investing/2026/11/25/palantir-is-down-25-from-its-high-is-it-a-bargain-or-still-overvalued/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 12:20 ET",
-        "pub_ts": 1795627203.0
       }
     ],
     "NOW": [
@@ -1401,25 +1401,25 @@
         "pub_ts": 1795634535.0
       },
       {
+        "title": "Musk's Plan To Put 1 Million AI Satellites In Orbit Gets US Approval. Amazon Questions Whether It Can Be Done.",
+        "url": "https://www.ibtimes.com/fcc-approves-spacex-ai-satellite-constellation-3810209?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 18:16 ET",
+        "pub_ts": 1795648590.0
+      },
+      {
+        "title": "Trump Has A Message for Big Tech Firms Like Amazon, Google and Microsoft Building Data Centers Abroad: ‘We’re Going to Put A Tremendous Tax On Them’",
+        "url": "https://finance.yahoo.com/economy/policy/articles/trump-message-big-tech-firms-223005233.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 17:30 ET",
+        "pub_ts": 1795645805.0
+      },
+      {
         "title": "SpaceX is now on the clock to launch 1,000,000 satellites — 60x what exists in space today. Amazon calls it impossible",
         "url": "https://finance.yahoo.com/technology/ai/articles/spacex-now-clock-launch-1-220000396.html?.tsrc=rss",
         "source": "Yahoo Finance",
         "time": "11-25 17:00 ET",
         "pub_ts": 1795644000.0
-      },
-      {
-        "title": "Federal Court Rules in Favor of CPSC in Landmark E-Commerce Product Safety Case",
-        "url": "https://finance.yahoo.com/economy/policy/articles/federal-court-rules-favor-cpsc-212500597.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 16:25 ET",
-        "pub_ts": 1795641900.0
-      },
-      {
-        "title": "Amazon Is Backing More Than 5 Gigawatts of New Nuclear by 2039. This Reactor Developer Could Cash In.",
-        "url": "https://www.fool.com/investing/2026/11/25/amazon-is-backing-more-than-5-gigawatts-of-new-nuclear-by-2039-this-reactor-developer-could-cash-in/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 13:35 ET",
-        "pub_ts": 1795631702.0
       }
     ],
     "CRWV": [
@@ -1498,6 +1498,13 @@
     ],
     "APLD": [
       {
+        "title": "Applied Digital Dropped 14% in a Week Despite a $5.4 Billion Lease. Lucid Still Sees 227% Upside",
+        "url": "https://www.tikr.com/blog/applied-digital-dropped-14-in-a-week-despite-a-5-4-billion-lease-lucid-still-sees-227-upside?ref=yahoofinance&tlnk=yf-261125-mhcw2483&.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 18:37 ET",
+        "pub_ts": 1795649864.0
+      },
+      {
         "title": "Data Center Americas 2027 Announces Industry Leaders from AWS, Google, Microsoft, Oracle, CoreWeave and Applied Digital as Featured Speakers",
         "url": "https://finance.yahoo.com/technology/ai/articles/data-center-americas-2027-announces-140000391.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1524,13 +1531,6 @@
         "source": "Yahoo Finance",
         "time": "11-24 15:02 ET",
         "pub_ts": 1795550566.0
-      },
-      {
-        "title": "Can Applied Digital Stock Double From Here?",
-        "url": "https://www.trefis.com/stock/apld/articles/628276/can-applied-digital-stock-double-from-here/2026-11-24?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 12:56 ET",
-        "pub_ts": 1795543009.0
       }
     ],
     "VST": [
@@ -2444,18 +2444,18 @@
         "pub_ts": 1795643102.0
       },
       {
+        "title": "Anthropic, Nvidia, Micron, HP Inc., Dell, Deere, and More Stocks That Explain Today’s Market",
+        "url": "https://finance.yahoo.com/m/18e72c51-c6d7-33b1-aa90-ccce17a9b32f/anthropic%2C-nvidia%2C-micron%2C-hp.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 16:41 ET",
+        "pub_ts": 1795642860.0
+      },
+      {
         "title": "Chips and iPhones Are Safe From New Tariffs. Here’s What Isn’t.",
         "url": "https://finance.yahoo.com/m/fed0ba1a-1835-3234-b475-4ad6bcc3e25d/chips-and-iphones-are-safe.html?.tsrc=rss",
         "source": "Yahoo Finance",
         "time": "11-25 15:47 ET",
         "pub_ts": 1795639620.0
-      },
-      {
-        "title": "David Tepper Sold All of His AMD Stock. His Biggest Position Is Micron.",
-        "url": "https://www.fool.com/investing/2026/11/25/david-tepper-sold-all-of-his-amd-stock-his-biggest-position-is-micron/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 14:20 ET",
-        "pub_ts": 1795634402.0
       }
     ],
     "SKHY": [
@@ -2645,6 +2645,27 @@
     ],
     "BTC-USD": [
       {
+        "title": "Bitcoin miners bet big on AI. Now, one is down 70%",
+        "url": "https://www.thestreet.com/crypto/markets/bitcoin-miners-bet-big-on-ai-now-one-is-down-70?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 18:45 ET",
+        "pub_ts": 1795650300.0
+      },
+      {
+        "title": "Is XRP a Good Investment for Building Wealth by 2035?",
+        "url": "https://247wallst.com/investing/cryptocurrency/2026/11/25/is-xrp-a-good-investment-for-building-wealth-by-2035/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 18:42 ET",
+        "pub_ts": 1795650170.0
+      },
+      {
+        "title": "Gold vs. Bitcoin: Analyst reveals why the tide is turning",
+        "url": "https://www.thestreet.com/crypto/markets/gold-vs-bitcoin-analyst-reveals-why-the-tide-is-turning?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 18:15 ET",
+        "pub_ts": 1795648500.0
+      },
+      {
         "title": "Nvidia settles 8-year-old investor suit for $290M",
         "url": "https://www.thestreet.com/crypto/artificial-intelligence/nvidia-settles-8-year-old-investor-suit-for-290m?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2657,27 +2678,6 @@
         "source": "Yahoo Finance",
         "time": "11-25 17:26 ET",
         "pub_ts": 1795645579.0
-      },
-      {
-        "title": "How Much of Your Portfolio Should Be in Bitcoin After a 50% Drop?",
-        "url": "https://247wallst.com/investing/cryptocurrency/2026/11/25/how-much-of-your-portfolio-should-be-in-bitcoin-after-a-50-drop/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 17:14 ET",
-        "pub_ts": 1795644888.0
-      },
-      {
-        "title": "Why Has Strategy Stock Trailed Dropbox?",
-        "url": "https://www.trefis.com/stock/mstr/articles/628944/why-has-strategy-stock-trailed-dropbox/2026-11-25?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 17:10 ET",
-        "pub_ts": 1795644642.0
-      },
-      {
-        "title": "Analyst explains why Bitcoin’s next move depends on Nasdaq",
-        "url": "https://www.thestreet.com/crypto/markets/analyst-explains-why-bitcoins-next-move-depends-on-nasdaq?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 17:00 ET",
-        "pub_ts": 1795644000.0
       }
     ],
     "CRWD": [
@@ -3322,45 +3322,45 @@
   "ticker_news_ts": {
     "KORU": 1795648477.2377093,
     "SOXL": 1795648477.2377093,
-    "SPY": 1795647562.4201586,
+    "SPY": 1795651250.149443,
     "DIA": 1795648477.2377093,
     "SOXX": 1795648477.2377093,
     "QQQ": 1795648477.2377093,
-    "SMH": 1795647562.4201586,
+    "SMH": 1795651250.149443,
     "IWM": 1795648477.2377093,
     "IGV": 1795648477.2377093,
     "TLT": 1795648477.2377093,
     "GLD": 1795648477.2377093,
     "SQQQ": 1795648477.2377093,
-    "TSM": 1795647562.4201586,
+    "TSM": 1795651250.149443,
     "VIXY": 1795648477.2377093,
     "SOXS": 1795648477.2377093,
     "NVDA": 1795648477.2377093,
     "AMD": 1795648477.2377093,
-    "ASML": 1795647562.4201586,
-    "QCOM": 1795647562.4201586,
+    "ASML": 1795651250.149443,
+    "QCOM": 1795651250.149443,
     "AVGO": 1795648477.2377093,
-    "AMAT": 1795647562.4201586,
-    "META": 1795647562.4201586,
-    "GOOGL": 1795647562.4201586,
-    "MSFT": 1795647562.4201586,
-    "AAPL": 1795647562.4201586,
-    "PLTR": 1795647562.4201586,
-    "NOW": 1795647562.4201586,
-    "AMZN": 1795647562.4201586,
-    "CRWV": 1795647562.4201586,
-    "NBIS": 1795647562.4201586,
-    "APLD": 1795648100.0065973,
+    "AMAT": 1795651250.149443,
+    "META": 1795651250.149443,
+    "GOOGL": 1795651250.149443,
+    "MSFT": 1795651250.149443,
+    "AAPL": 1795651250.149443,
+    "PLTR": 1795651250.149443,
+    "NOW": 1795651250.149443,
+    "AMZN": 1795651250.149443,
+    "CRWV": 1795651250.149443,
+    "NBIS": 1795651250.149443,
+    "APLD": 1795651250.149443,
     "VST": 1795648100.0065973,
     "BE": 1795648100.0065973,
     "CRDO": 1795648100.0065973,
     "COHR": 1795648100.0065973,
-    "MRVL": 1795647562.4201586,
-    "LITE": 1795647562.4201586,
+    "MRVL": 1795651250.149443,
+    "LITE": 1795651250.149443,
     "AAOI": 1795648100.0065973,
     "SPCX": 1795648100.0065973,
     "ASTS": 1795648100.0065973,
-    "AXTI": 1795647562.4201586,
+    "AXTI": 1795651250.149443,
     "NASA": 1795648100.0065973,
     "LUNR": 1795648100.0065973,
     "TSLA": 1795648271.628085,
@@ -3375,13 +3375,13 @@
     "OKLO": 1795648271.628085,
     "CEG": 1795648271.628085,
     "FPS": 1795648271.628085,
-    "MU": 1795647562.4201586,
-    "SKHY": 1795647562.4201586,
-    "WDC": 1795647562.4201586,
+    "MU": 1795651250.149443,
+    "SKHY": 1795651250.149443,
+    "WDC": 1795651250.149443,
     "STX": 1795648356.5257907,
     "MSTR": 1795648271.628085,
     "SNDK": 1795648271.628085,
-    "BTC-USD": 1795647607.2859182,
+    "BTC-USD": 1795651250.149443,
     "CRWD": 1795648271.628085,
     "ORCL": 1795648271.628085,
     "COIN": 1795648271.628085,
@@ -3395,11 +3395,11 @@
     "WMT": 1795648395.0145252,
     "V": 1795648271.628085,
     "CAT": 1795648395.0145252,
-    "FN": 1795647562.4201586,
+    "FN": 1795651250.149443,
     "GLW": 1795648100.0065973,
     "ANT": 1795648395.0145252,
     "XAUUSD": 1795648395.0145252,
-    "KOSPI": 1795647562.4201586
+    "KOSPI": 1795651250.149443
   },
   "opex_shield": {
     "date": "2026-11-25",
