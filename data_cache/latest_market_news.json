@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795701937.512,
-  "updated_at_et": "11-26 09:05 ET",
-  "updated_at_kst": "23:05 KST",
+  "updated_at_ts": 1795701983.414,
+  "updated_at_et": "11-26 09:06 ET",
+  "updated_at_kst": "23:06 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -2205,6 +2205,13 @@
     ],
     "HPE": [
       {
+        "title": "Is Micron Stock a Buy After HPE Said Memory Will Stay Scarce Into 2028?",
+        "url": "https://www.fool.com/investing/2026/11/26/is-micron-stock-a-buy-after-hpe-said-memory-will-stay-scarce-into-2028/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-26 08:37 ET",
+        "pub_ts": 1795700222.0
+      },
+      {
         "title": "Is HPE's 18-Quarter Inventory High A Warning?",
         "url": "https://www.trefis.com/stock/dell/articles/629185/is-hpe-s-18-quarter-inventory-high-a-warning/2026-11-26?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2231,13 +2238,6 @@
         "source": "Yahoo Finance",
         "time": "11-25 16:20 ET",
         "pub_ts": 1795641634.0
-      },
-      {
-        "title": "Jensen Huang's return, neocloud risk, and a holiday retail rally",
-        "url": "https://finance.yahoo.com/video/jensen-huangs-return-neocloud-risk-and-a-holiday-retail-rally-222042649.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 16:00 ET",
-        "pub_ts": 1795640400.0
       }
     ],
     "DELL": [
@@ -2760,11 +2760,11 @@
     ],
     "LLY": [
       {
-        "title": "Dow Jones Futures Rise After Nasdaq Slashes Losses In Wild Market Ride",
-        "url": "https://finance.yahoo.com/m/158e82fc-b889-34b6-8704-99a49e9a83ae/dow-jones-futures-rise-after.html?.tsrc=rss",
+        "title": "Dow Jones Futures Rise With U.S. Markets Shut; Look For This Bullish Signal",
+        "url": "https://finance.yahoo.com/m/158e82fc-b889-34b6-8704-99a49e9a83ae/dow-jones-futures-rise-with.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-26 08:22 ET",
-        "pub_ts": 1795699324.0
+        "time": "11-26 08:56 ET",
+        "pub_ts": 1795701416.0
       },
       {
         "title": "Can Oncology Emerge as Eli Lilly's Next Major Growth Driver?",
@@ -2908,6 +2908,13 @@
     ],
     "PEP": [
       {
+        "title": "Forget the Market's Hottest Stocks. This Boring Dividend Stock Is Where I'd Put $1,000 Before 2027.",
+        "url": "https://www.fool.com/investing/2026/11/26/forget-the-markets-hottest-stocks-this-boring-dividend-stock-is-where-id-put-1000-before-2027/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-26 08:52 ET",
+        "pub_ts": 1795701122.0
+      },
+      {
         "title": "ETFs Bought $39.1 Million of PepsiCo (PEP) on Nov. 24",
         "url": "https://finance.yahoo.com/markets/stocks/articles/etfs-bought-39-1-million-110120545.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2934,13 +2941,6 @@
         "source": "Yahoo Finance",
         "time": "11-24 17:15 ET",
         "pub_ts": 1795558530.0
-      },
-      {
-        "title": "Anthropic falls below IPO price as Nvidia gives back gains",
-        "url": "https://finance.yahoo.com/video/anthropic-falls-below-ipo-price-as-nvidia-gives-back-gains-214558309.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 16:45 ET",
-        "pub_ts": 1795556758.0
       }
     ],
     "XOM": [
@@ -3204,18 +3204,18 @@
     ],
     "ANT": [
       {
+        "title": "Dow Jones Futures Rise With U.S. Markets Shut; Look For This Bullish Signal",
+        "url": "https://finance.yahoo.com/m/158e82fc-b889-34b6-8704-99a49e9a83ae/dow-jones-futures-rise-with.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-26 08:56 ET",
+        "pub_ts": 1795701416.0
+      },
+      {
         "title": "Is Anthropic Joining the S&P 500? Here's What Investors Need to Know.",
         "url": "https://www.fool.com/investing/2026/11/26/is-anthropic-joining-sp-500-what-investors-need-to-know/?.tsrc=rss",
         "source": "Yahoo Finance",
         "time": "11-26 08:23 ET",
         "pub_ts": 1795699382.0
-      },
-      {
-        "title": "Dow Jones Futures Rise After Nasdaq Slashes Losses In Wild Market Ride",
-        "url": "https://finance.yahoo.com/m/158e82fc-b889-34b6-8704-99a49e9a83ae/dow-jones-futures-rise-after.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-26 08:22 ET",
-        "pub_ts": 1795699324.0
       },
       {
         "title": "Will Anthropic’s Float Tripling by February Sink a Stock Already Below Its IPO Price?",
@@ -3319,11 +3319,11 @@
   "ticker_news_ts": {
     "KORU": 1795701813.121497,
     "SOXL": 1795701813.121497,
-    "SPY": 1795700446.097066,
+    "SPY": 1795701983.4142048,
     "DIA": 1795701813.121497,
     "SOXX": 1795701813.121497,
     "QQQ": 1795701813.121497,
-    "SMH": 1795700446.097066,
+    "SMH": 1795701983.4142048,
     "IWM": 1795701813.121497,
     "IGV": 1795701813.121497,
     "TLT": 1795701813.121497,
@@ -3367,37 +3367,37 @@
     "FLY": 1795701937.5121262,
     "INTC": 1795701937.5121262,
     "VRT": 1795701937.5121262,
-    "HPE": 1795700446.097066,
+    "HPE": 1795701983.4142048,
     "DELL": 1795701937.5121262,
-    "OKLO": 1795700446.097066,
+    "OKLO": 1795701983.4142048,
     "CEG": 1795701937.5121262,
-    "FPS": 1795700446.097066,
+    "FPS": 1795701983.4142048,
     "MU": 1795700534.367195,
     "SKHY": 1795700490.499101,
     "WDC": 1795700534.367195,
-    "STX": 1795700446.097066,
-    "MSTR": 1795700446.097066,
-    "SNDK": 1795700446.097066,
+    "STX": 1795701983.4142048,
+    "MSTR": 1795701983.4142048,
+    "SNDK": 1795701983.4142048,
     "BTC-USD": 1795700534.367195,
-    "CRWD": 1795700446.097066,
-    "ORCL": 1795700446.097066,
-    "COIN": 1795700446.097066,
-    "LLY": 1795700446.097066,
-    "MRNA": 1795700446.097066,
-    "NKE": 1795700446.097066,
-    "MCD": 1795700446.097066,
-    "PEP": 1795700446.097066,
+    "CRWD": 1795701983.4142048,
+    "ORCL": 1795701983.4142048,
+    "COIN": 1795701983.4142048,
+    "LLY": 1795701983.4142048,
+    "MRNA": 1795701983.4142048,
+    "NKE": 1795701983.4142048,
+    "MCD": 1795701983.4142048,
+    "PEP": 1795701983.4142048,
     "XOM": 1795700490.499101,
-    "JPM": 1795700446.097066,
+    "JPM": 1795701983.4142048,
     "WMT": 1795700534.367195,
-    "V": 1795700446.097066,
-    "CAT": 1795700446.097066,
+    "V": 1795701983.4142048,
+    "CAT": 1795701983.4142048,
     "FN": 1795700490.499101,
     "GLW": 1795701813.121497,
-    "ANT": 1795700446.097066,
+    "ANT": 1795701983.4142048,
     "XAUUSD": 1795700534.367195,
     "KOSPI": 1795700490.499101,
-    "KSTR": 1795700446.097066
+    "KSTR": 1795701983.4142048
   },
   "opex_shield": {
     "date": "2026-11-26",
