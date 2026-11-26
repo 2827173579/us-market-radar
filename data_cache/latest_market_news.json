@@ -1,9 +1,22 @@
 {
-  "updated_at_ts": 1795704933.298,
-  "updated_at_et": "11-26 09:55 ET",
-  "updated_at_kst": "23:55 KST",
+  "updated_at_ts": 1795704998.484,
+  "updated_at_et": "11-26 09:56 ET",
+  "updated_at_kst": "23:56 KST",
   "macro_calendar": [],
   "macro_flashes": [
+    {
+      "id": "20261126225544721800",
+      "title": "美国总统特朗普：乌克兰与俄罗斯很有可能迅速达成协议。",
+      "summary": "美国总统特朗普：乌克兰与俄罗斯很有可能迅速达成协议。",
+      "keywords": [
+        "特朗普"
+      ],
+      "pub_ts": 1795704944.0,
+      "time_et": "11-26 09:55 ET",
+      "time_bj": "22:55 BJ",
+      "time_kst": "23:55 KST",
+      "time_display": "09:55 ET / 22:55 BJ"
+    },
     {
       "id": "20261126222609141800",
       "title": "【特朗普质疑GDP数据为什么不在大选前上修 将展开调查】 11月26日讯，美国总统特朗普…",
@@ -335,19 +348,6 @@
       "time_bj": "15:00 BJ",
       "time_kst": "16:00 KST",
       "time_display": "02:00 ET / 15:00 BJ"
-    },
-    {
-      "id": "20261126145938660800",
-      "title": "【国家发改委：自11月26日24时起，国内汽、柴油价格每吨分别下调440元、425元】 …",
-      "summary": "【国家发改委：自11月26日24时起，国内汽、柴油价格每吨分别下调440元、425元】 11月26日讯，国家发改委公告，11月12日国内成品油价格调整以来，国际市场原油价格震荡下行后近日又有所回升，本次调价的前10个工作日平均价格低于上次调价前10个工作日平均价格。根据国际市场油价变化情况，自11月26日24时起，国内汽、柴油（标准品）价格每吨分别下调440元、425元。",
-      "keywords": [
-        "原油"
-      ],
-      "pub_ts": 1795676378.0,
-      "time_et": "11-26 01:59 ET",
-      "time_bj": "14:59 BJ",
-      "time_kst": "15:59 KST",
-      "time_display": "01:59 ET / 14:59 BJ"
     }
   ],
   "ticker_news": {
@@ -915,11 +915,25 @@
         "pub_ts": 1795701600.0
       },
       {
-        "title": "Jensen Huang 'absolutely could be fired again,' legal expert says",
-        "url": "https://finance.yahoo.com/video/jensen-huang-absolutely-could-fired-130000374.html?.tsrc=rss",
+        "title": "Dow Investors Chased Tech Swings—While Amgen Quietly Surged 77%",
+        "url": "https://finance.yahoo.com/healthcare/articles/dow-investors-chased-tech-swings-144540662.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-26 08:00 ET",
-        "pub_ts": 1795698000.0
+        "time": "11-26 09:45 ET",
+        "pub_ts": 1795704340.0
+      },
+      {
+        "title": "Stocks’ Swoon and Higher Interest Rates Are a Bad Combo for the Economy",
+        "url": "https://finance.yahoo.com/m/faf3cdb5-65de-33b2-bf66-cb69fde1728a/stocks%E2%80%99-swoon-and-higher.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-26 09:44 ET",
+        "pub_ts": 1795704240.0
+      },
+      {
+        "title": "President Donald Trump Considers Jensen Huang's Return to Nvidia a \"Great Decision,\" but It Doesn't Resolve a Critical Problem",
+        "url": "https://www.fool.com/investing/2026/11/26/donald-trump-considers-jensen-huang-return-nvidia-great-decision-doesnt-resolve-critical-problem/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-26 09:26 ET",
+        "pub_ts": 1795703161.0
       },
       {
         "title": "Nvidia’s Reliance on Huang Could Now Hurt Its Credit Rating",
@@ -927,20 +941,6 @@
         "source": "Yahoo Finance",
         "time": "11-26 09:17 ET",
         "pub_ts": 1795702648.0
-      },
-      {
-        "title": "Heading Into FY27: How to Trade Broadcom’s ~$115B AI Target Against Nvidia’s Multiple Reset",
-        "url": "https://247wallst.com/investing/2026/11/26/heading-into-fy27-how-to-trade-broadcoms-115b-ai-target-against-nvidias-multiple-reset/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-26 08:45 ET",
-        "pub_ts": 1795700733.0
-      },
-      {
-        "title": "New U.S. Chip Rule Is Now Hitting AI Data-Center Loans, Not Just Nvidia Chips",
-        "url": "https://247wallst.com/investing/2026/11/26/new-u-s-chip-rule-is-now-hitting-ai-data-center-loans-not-just-nvidia-chips/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-26 08:28 ET",
-        "pub_ts": 1795699709.0
       }
     ],
     "AMD": [
@@ -1722,6 +1722,13 @@
     ],
     "AAOI": [
       {
+        "title": "Applied Optoelectronics (AAOI) Has the Orders. Does It Have the Parts?",
+        "url": "https://finance.yahoo.com/technology/ai/articles/applied-optoelectronics-aaoi-orders-does-144805709.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-26 09:48 ET",
+        "pub_ts": 1795704485.0
+      },
+      {
         "title": "Applied Optoelectronics to Present at the Raymond James TMT & Consumer Conference",
         "url": "https://finance.yahoo.com/technology/articles/applied-optoelectronics-present-raymond-james-211000385.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1748,16 +1755,23 @@
         "source": "Yahoo Finance",
         "time": "11-24 09:58 ET",
         "pub_ts": 1795532304.0
-      },
-      {
-        "title": "Applied Optoelectronics stock rises on datacenter deal",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/applied-optoelectronics-stock-rises-datacenter-144409714.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 09:44 ET",
-        "pub_ts": 1795531449.0
       }
     ],
     "SPCX": [
+      {
+        "title": "Elon Musk Says ‘Multiplanetary’ SpaceX Could Be Worth $118 Quintillion. Yes, Quintillion",
+        "url": "https://decrypt.co/384043/elon-musk-says-multiplanetary-spacex-could-be-worth-118-quintillion-yes-quintillion?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-26 09:38 ET",
+        "pub_ts": 1795703935.0
+      },
+      {
+        "title": "SpaceX Gets the First U.S. Approval for Data Centers in Space",
+        "url": "https://247wallst.com/investing/2026/11/26/spacex-gets-the-first-u-s-approval-for-data-centers-in-space/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-26 09:28 ET",
+        "pub_ts": 1795703287.0
+      },
       {
         "title": "SpaceX refused $738M in fed grants to give rural homes free Starlink gear. It got what it wanted from Trump in return",
         "url": "https://finance.yahoo.com/technology/articles/spacex-refused-738m-fed-grants-140000981.html?.tsrc=rss",
@@ -1766,35 +1780,28 @@
         "pub_ts": 1795701600.0
       },
       {
+        "title": "SpaceX pledges stock for active Trump Accounts, Elon Musk to match",
+        "url": "https://www.proactiveinvestors.com/companies/news/1102523/spacex-pledges-stock-for-active-trump-accounts-elon-musk-to-match-1102523.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-26 08:54 ET",
+        "pub_ts": 1795701240.0
+      },
+      {
         "title": "Jensen Huang Says Grok Bot Consumption Is “Really Skyrocketing.” That’s Good News for SpaceX",
         "url": "https://www.tikr.com/blog/jensen-huang-says-grok-bot-consumption-is-really-skyrocketing-thats-good-news-for-spacex?ref=yahoofinance&tlnk=yf-261126-q7mrmmjx&.tsrc=rss",
         "source": "Yahoo Finance",
         "time": "11-26 08:16 ET",
         "pub_ts": 1795698985.0
-      },
-      {
-        "title": "Musk to gift SpaceX shares to every child in America",
-        "url": "https://uk.finance.yahoo.com/news/musk-gift-spacex-shares-every-131214750.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-26 08:12 ET",
-        "pub_ts": 1795698734.0
-      },
-      {
-        "title": "SpaceX and Elon Musk Will Each Give a Share to Every Active Trump Account",
-        "url": "https://247wallst.com/investing/2026/11/26/spacex-and-elon-musk-will-each-give-a-share-to-every-active-trump-account/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-26 07:38 ET",
-        "pub_ts": 1795696715.0
-      },
-      {
-        "title": "JPMorgan Says S&P Could Waive Its Rules for a Tesla-SpaceX Merger. That’s Good News for SpaceX Holders",
-        "url": "https://www.tikr.com/blog/jpmorgan-says-sp-could-waive-its-rules-for-a-tesla-spacex-merger-thats-good-news-for-spacex-holders?ref=yahoofinance&tlnk=yf-261126-gpc9wr29&.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-26 06:45 ET",
-        "pub_ts": 1795693559.0
       }
     ],
     "ASTS": [
+      {
+        "title": "AST SpaceMobile Is Down 80% From Its May High. Jim Cramer Calls It “A Very Hard Stock to Own”",
+        "url": "https://www.tikr.com/blog/ast-spacemobile-is-down-80-from-its-may-high-jim-cramer-calls-it-a-very-hard-stock-to-own?ref=yahoofinance&tlnk=yf-261126-26mpx8wg&.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-26 09:05 ET",
+        "pub_ts": 1795701937.0
+      },
       {
         "title": "SPCX Wins Million-Satellite Nod And Retail Attention — But ASTS Leads Space Stocks Into Thanksgiving",
         "url": "https://stocktwits.com/news-articles/markets/equity/spcx-stock-million-satellite-nod-asts-leads-rklb-lunr-bksy-thanksgiving/cNbxLqbR9ZV?.tsrc=rss",
@@ -1822,13 +1829,6 @@
         "source": "Yahoo Finance",
         "time": "11-25 06:52 ET",
         "pub_ts": 1795607571.0
-      },
-      {
-        "title": "AST SpaceMobile Is 82% Below Its May High. A Director Just Bought $1 Million More",
-        "url": "https://www.tikr.com/blog/ast-spacemobile-is-82-below-its-may-high-a-director-just-bought-1-million-more?ref=yahoofinance&tlnk=yf-261125-j8v5vv4r&.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 04:02 ET",
-        "pub_ts": 1795597322.0
       }
     ],
     "AXTI": [
@@ -3315,23 +3315,23 @@
     ]
   },
   "ticker_news_ts": {
-    "KORU": 1795703437.1597471,
-    "SOXL": 1795703437.1597471,
-    "SPY": 1795703492.7522597,
-    "DIA": 1795703437.1597471,
-    "SOXX": 1795703437.1597471,
-    "QQQ": 1795703437.1597471,
-    "SMH": 1795703492.7522597,
-    "IWM": 1795703437.1597471,
-    "IGV": 1795703437.1597471,
-    "TLT": 1795703437.1597471,
-    "GLD": 1795703492.7522597,
-    "SQQQ": 1795703492.7522597,
+    "KORU": 1795704998.48446,
+    "SOXL": 1795704998.48446,
+    "SPY": 1795704998.48446,
+    "DIA": 1795704998.48446,
+    "SOXX": 1795704998.48446,
+    "QQQ": 1795704998.48446,
+    "SMH": 1795704998.48446,
+    "IWM": 1795704998.48446,
+    "IGV": 1795704998.48446,
+    "TLT": 1795704998.48446,
+    "GLD": 1795704998.48446,
+    "SQQQ": 1795704998.48446,
     "TSM": 1795703535.6595688,
-    "VIXY": 1795703492.7522597,
-    "SOXS": 1795703492.7522597,
-    "NVDA": 1795703492.7522597,
-    "AMD": 1795703492.7522597,
+    "VIXY": 1795704998.48446,
+    "SOXS": 1795704998.48446,
+    "NVDA": 1795704998.48446,
+    "AMD": 1795704998.48446,
     "ASML": 1795703535.6595688,
     "QCOM": 1795703535.6595688,
     "AVGO": 1795703492.7522597,
@@ -3346,15 +3346,15 @@
     "CRWV": 1795703579.4366949,
     "NBIS": 1795703579.4366949,
     "APLD": 1795703579.4366949,
-    "VST": 1795703437.1597471,
-    "BE": 1795703437.1597471,
-    "CRDO": 1795703437.1597471,
-    "COHR": 1795703437.1597471,
+    "VST": 1795704998.48446,
+    "BE": 1795704998.48446,
+    "CRDO": 1795704998.48446,
+    "COHR": 1795704998.48446,
     "MRVL": 1795703579.4366949,
     "LITE": 1795703579.4366949,
-    "AAOI": 1795703437.1597471,
-    "SPCX": 1795703437.1597471,
-    "ASTS": 1795703437.1597471,
+    "AAOI": 1795704998.48446,
+    "SPCX": 1795704998.48446,
+    "ASTS": 1795704998.48446,
     "AXTI": 1795703579.4366949,
     "NASA": 1795703492.7522597,
     "LUNR": 1795703492.7522597,
@@ -3391,11 +3391,11 @@
     "V": 1795703535.6595688,
     "CAT": 1795703535.6595688,
     "FN": 1795703579.4366949,
-    "GLW": 1795703437.1597471,
+    "GLW": 1795704998.48446,
     "ANT": 1795703535.6595688,
     "XAUUSD": 1795703579.4366949,
     "KOSPI": 1795703535.6595688,
-    "KSTR": 1795703492.7522597
+    "KSTR": 1795704998.48446
   },
   "opex_shield": {
     "date": "2026-11-26",
@@ -3414,7 +3414,7 @@
   "calendar_banner": {
     "level": "idle_with_flash",
     "headline": "📡 宏观消息面监控中 · 今日暂无美股五星级经济数据大考",
-    "detail": "⚡ 最新核心快讯 (09:26 ET / 22:26 BJ) [特朗普]：【特朗普质疑GDP数据为什么不在大选前上修 将展开调查】 11月26日讯，美国总统特朗普：“刚刚披露的消息显示，在大选前公布的经济数据其实是虚假的；负责统计这些数据的政府机构人员昨天发布了修",
+    "detail": "⚡ 最新核心快讯 (09:55 ET / 22:55 BJ) [特朗普]：美国总统特朗普：乌克兰与俄罗斯很有可能迅速达成协议。",
     "event_name": "",
     "minutes_left": 0,
     "opex_shield": {
