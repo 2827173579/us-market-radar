@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795694312.119,
-  "updated_at_et": "11-26 06:58 ET",
-  "updated_at_kst": "20:58 KST",
+  "updated_at_ts": 1795694363.071,
+  "updated_at_et": "11-26 06:59 ET",
+  "updated_at_kst": "20:59 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -2685,6 +2685,13 @@
     ],
     "ORCL": [
       {
+        "title": "Oracle Bond Yields Hit 9% as AI Debt Fears Deepen",
+        "url": "https://finance.yahoo.com/technology/ai/articles/oracle-bond-yields-hit-9-113300522.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-26 06:33 ET",
+        "pub_ts": 1795692780.0
+      },
+      {
         "title": "Is Oracle the First AI Casualty as It Sheds 70% of Its Value?",
         "url": "https://beincrypto.com/oracle-stock-falls-70-ai-debt/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2711,13 +2718,6 @@
         "source": "Yahoo Finance",
         "time": "11-25 20:19 ET",
         "pub_ts": 1795655993.0
-      },
-      {
-        "title": "Even After a Cut, UBS’s $625 Target Says AMD’s Selloff Went Too Far",
-        "url": "https://www.tikr.com/blog/even-after-a-cut-ubss-625-target-says-amds-selloff-went-too-far?ref=yahoofinance&tlnk=yf-261126-8fgrcr56&.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 17:58 ET",
-        "pub_ts": 1795647497.0
       }
     ],
     "COIN": [
@@ -3203,6 +3203,20 @@
     ],
     "ANT": [
       {
+        "title": "Anthropic Broke Its $83 IPO Price. What Did Facebook Do Next?",
+        "url": "https://www.trefis.com/stock/ant/articles/629153/anthropic-broke-its-83-ipo-price-what-did-facebook-do-next/2026-11-26?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-26 06:38 ET",
+        "pub_ts": 1795693101.0
+      },
+      {
+        "title": "KPMG taps Anthropic’s Claude Mythos to power cybersecurity services",
+        "url": "https://www.internationalaccountingbulletin.com/news/kpmg-taps-anthropics-claude-mythos-to-power-cybersecurity-services/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-26 06:25 ET",
+        "pub_ts": 1795692304.0
+      },
+      {
         "title": "Should You Buy Anthropic Stock After Its IPO? Here’s What History Says About Record-Breaking Debuts.",
         "url": "https://www.fool.com/investing/2026/11/26/should-you-buy-anthropic-stock-after-its-ipo-what-history-says-about-record-breaking-debuts/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -3222,20 +3236,6 @@
         "source": "Yahoo Finance",
         "time": "11-26 04:55 ET",
         "pub_ts": 1795686944.0
-      },
-      {
-        "title": "ANT Stock Gains Overnight: US Exchange-Traded Funds’ Anthropic Holdings Swell To Over $2B",
-        "url": "https://stocktwits.com/news-articles/markets/equity/ant-stock-gains-overnight-us-exchange-traded-funds-anthropic-holdings-swell-to-over-2-b/cNbxKBjR9ZY?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-26 04:23 ET",
-        "pub_ts": 1795685004.0
-      },
-      {
-        "title": "Anthropic Stock Fell Below Its IPO Price. Is It a Buy, or Is More Downside Just Ahead?",
-        "url": "https://www.fool.com/investing/2026/11/26/anthropic-stock-fell-below-its-ipo-price-is-it-a-buy-or-is-more-downside-just-ahead/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-26 04:22 ET",
-        "pub_ts": 1795684922.0
       }
     ],
     "XAUUSD": [
@@ -3318,11 +3318,11 @@
   "ticker_news_ts": {
     "KORU": 1795694171.2240074,
     "SOXL": 1795694171.2240074,
-    "SPY": 1795692824.7296414,
+    "SPY": 1795694363.070951,
     "DIA": 1795694171.2240074,
     "SOXX": 1795694171.2240074,
     "QQQ": 1795694171.2240074,
-    "SMH": 1795692824.7296414,
+    "SMH": 1795694363.070951,
     "IWM": 1795694171.2240074,
     "IGV": 1795694171.2240074,
     "TLT": 1795694171.2240074,
@@ -3366,37 +3366,37 @@
     "FLY": 1795694312.118782,
     "INTC": 1795694312.118782,
     "VRT": 1795694312.118782,
-    "HPE": 1795692824.7296414,
+    "HPE": 1795694363.070951,
     "DELL": 1795694312.118782,
-    "OKLO": 1795692824.7296414,
+    "OKLO": 1795694363.070951,
     "CEG": 1795694312.118782,
-    "FPS": 1795692824.7296414,
+    "FPS": 1795694363.070951,
     "MU": 1795692879.1814775,
     "SKHY": 1795692879.1814775,
     "WDC": 1795692937.288266,
-    "STX": 1795692824.7296414,
-    "MSTR": 1795692824.7296414,
-    "SNDK": 1795692824.7296414,
+    "STX": 1795694363.070951,
+    "MSTR": 1795694363.070951,
+    "SNDK": 1795694363.070951,
     "BTC-USD": 1795692937.288266,
-    "CRWD": 1795692824.7296414,
-    "ORCL": 1795692824.7296414,
-    "COIN": 1795692824.7296414,
-    "LLY": 1795692824.7296414,
-    "MRNA": 1795692824.7296414,
-    "NKE": 1795692824.7296414,
-    "MCD": 1795692824.7296414,
-    "PEP": 1795692824.7296414,
-    "XOM": 1795692824.7296414,
-    "JPM": 1795692824.7296414,
+    "CRWD": 1795694363.070951,
+    "ORCL": 1795694363.070951,
+    "COIN": 1795694363.070951,
+    "LLY": 1795694363.070951,
+    "MRNA": 1795694363.070951,
+    "NKE": 1795694363.070951,
+    "MCD": 1795694363.070951,
+    "PEP": 1795694363.070951,
+    "XOM": 1795694363.070951,
+    "JPM": 1795694363.070951,
     "WMT": 1795692824.7296414,
-    "V": 1795692824.7296414,
-    "CAT": 1795692824.7296414,
+    "V": 1795694363.070951,
+    "CAT": 1795694363.070951,
     "FN": 1795692879.1814775,
     "GLW": 1795694171.2240074,
-    "ANT": 1795692824.7296414,
+    "ANT": 1795694363.070951,
     "XAUUSD": 1795692937.288266,
     "KOSPI": 1795692879.1814775,
-    "KSTR": 1795692824.7296414
+    "KSTR": 1795694363.070951
   },
   "opex_shield": {
     "date": "2026-11-26",
