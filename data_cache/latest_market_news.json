@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795652748.384,
-  "updated_at_et": "11-25 19:25 ET",
-  "updated_at_kst": "09:25 KST",
+  "updated_at_ts": 1795652788.647,
+  "updated_at_et": "11-25 19:26 ET",
+  "updated_at_kst": "09:26 KST",
   "macro_calendar": [
     {
       "event_id": "1599680",
@@ -1197,6 +1197,13 @@
     ],
     "GOOGL": [
       {
+        "title": "Bill Gurley: Investors Weren’t “Scrambling to Actually Own Anthropic.” That’s a Problem for Amazon and Alphabet",
+        "url": "https://www.tikr.com/blog/bill-gurley-investors-werent-scrambling-to-actually-own-anthropic-thats-a-problem-for-amazon-and-alphabet?ref=yahoofinance&tlnk=yf-261125-5qg4553j&.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 18:43 ET",
+        "pub_ts": 1795650186.0
+      },
+      {
         "title": "Trump Has A Message for Big Tech Firms Like Amazon, Google and Microsoft Building Data Centers Abroad: ‘We’re Going to Put A Tremendous Tax On Them’",
         "url": "https://finance.yahoo.com/economy/policy/articles/trump-message-big-tech-firms-223005233.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1223,13 +1230,6 @@
         "source": "Yahoo Finance",
         "time": "11-25 15:49 ET",
         "pub_ts": 1795639749.0
-      },
-      {
-        "title": "SpaceX stock price crashes on concerns over compute demand",
-        "url": "https://blockspace.media/short/spacex-stock-price-crashes-on-concerns-over-compute-demand/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 15:32 ET",
-        "pub_ts": 1795638730.0
       }
     ],
     "MSFT": [
@@ -1396,6 +1396,13 @@
         "pub_ts": 1795634535.0
       },
       {
+        "title": "Bill Gurley: Investors Weren’t “Scrambling to Actually Own Anthropic.” That’s a Problem for Amazon and Alphabet",
+        "url": "https://www.tikr.com/blog/bill-gurley-investors-werent-scrambling-to-actually-own-anthropic-thats-a-problem-for-amazon-and-alphabet?ref=yahoofinance&tlnk=yf-261125-5qg4553j&.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 18:43 ET",
+        "pub_ts": 1795650186.0
+      },
+      {
         "title": "Musk's Plan To Put 1 Million AI Satellites In Orbit Gets US Approval. Amazon Questions Whether It Can Be Done.",
         "url": "https://www.ibtimes.com/fcc-approves-spacex-ai-satellite-constellation-3810209?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1408,13 +1415,6 @@
         "source": "Yahoo Finance",
         "time": "11-25 17:30 ET",
         "pub_ts": 1795645805.0
-      },
-      {
-        "title": "SpaceX is now on the clock to launch 1,000,000 satellites — 60x what exists in space today. Amazon calls it impossible",
-        "url": "https://finance.yahoo.com/technology/ai/articles/spacex-now-clock-launch-1-220000396.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 17:00 ET",
-        "pub_ts": 1795644000.0
       }
     ],
     "CRWV": [
@@ -2418,6 +2418,13 @@
     ],
     "MU": [
       {
+        "title": "Is Micron Cheap Only If Its Record Margin Lasts?",
+        "url": "https://www.trefis.com/stock/mu/articles/628939/is-micron-cheap-only-if-its-record-margin-lasts/2026-11-25?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 18:43 ET",
+        "pub_ts": 1795650187.0
+      },
+      {
         "title": "Micron's CEO pay rose 28%. His security bill rose way faster",
         "url": "https://www.thestreet.com/investing/micron-ceo-pay-security-costs-soar?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2444,13 +2451,6 @@
         "source": "Yahoo Finance",
         "time": "11-25 16:41 ET",
         "pub_ts": 1795642860.0
-      },
-      {
-        "title": "Chips and iPhones Are Safe From New Tariffs. Here’s What Isn’t.",
-        "url": "https://finance.yahoo.com/m/fed0ba1a-1835-3234-b475-4ad6bcc3e25d/chips-and-iphones-are-safe.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 15:47 ET",
-        "pub_ts": 1795639620.0
       }
     ],
     "SKHY": [
@@ -2640,6 +2640,20 @@
     ],
     "BTC-USD": [
       {
+        "title": "If you invested $1,000 in gold, Bitcoin or silver last Thanksgiving, here’s what you’d have today",
+        "url": "https://www.thestreet.com/crypto/markets/if-you-invested-1000-in-gold-bitcoin-or-silver-last-thanksgiving-heres-what-youd-have-today?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 19:15 ET",
+        "pub_ts": 1795652100.0
+      },
+      {
+        "title": "New U.S. Bill to lock Bitcoin for 20 years",
+        "url": "https://www.thestreet.com/crypto/policy/new-u-s-bill-to-lock-bitcoin-for-20-years?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 19:04 ET",
+        "pub_ts": 1795651459.0
+      },
+      {
         "title": "Bitcoin miners bet big on AI. Now, one is down 70%",
         "url": "https://www.thestreet.com/crypto/markets/bitcoin-miners-bet-big-on-ai-now-one-is-down-70?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2659,20 +2673,6 @@
         "source": "Yahoo Finance",
         "time": "11-25 18:15 ET",
         "pub_ts": 1795648500.0
-      },
-      {
-        "title": "Nvidia settles 8-year-old investor suit for $290M",
-        "url": "https://www.thestreet.com/crypto/artificial-intelligence/nvidia-settles-8-year-old-investor-suit-for-290m?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 17:30 ET",
-        "pub_ts": 1795645800.0
-      },
-      {
-        "title": "Crypto Market Today, Nov. 25: Bitcoin, Ethereum, and Solana as Short Liquidations Fuel Fragile Rebound",
-        "url": "https://www.fool.com/coverage/stock-market-today/2026/11/25/crypto-market-today-nov-25-bitcoin-ethereum-and-solana-as-short-liquidations-fuel-fragile-rebound/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 17:26 ET",
-        "pub_ts": 1795645579.0
       }
     ],
     "CRWD": [
@@ -3317,45 +3317,45 @@
   "ticker_news_ts": {
     "KORU": 1795651582.437306,
     "SOXL": 1795651582.437306,
-    "SPY": 1795651250.149443,
+    "SPY": 1795652788.6469965,
     "DIA": 1795651582.437306,
     "SOXX": 1795651582.437306,
     "QQQ": 1795651582.437306,
-    "SMH": 1795651250.149443,
+    "SMH": 1795652788.6469965,
     "IWM": 1795651582.437306,
     "IGV": 1795651582.437306,
     "TLT": 1795651582.437306,
     "GLD": 1795651582.437306,
     "SQQQ": 1795651621.7366173,
-    "TSM": 1795651250.149443,
+    "TSM": 1795652788.6469965,
     "VIXY": 1795651582.437306,
     "SOXS": 1795651621.7366173,
     "NVDA": 1795651621.7366173,
     "AMD": 1795651621.7366173,
-    "ASML": 1795651250.149443,
-    "QCOM": 1795651250.149443,
+    "ASML": 1795652788.6469965,
+    "QCOM": 1795652788.6469965,
     "AVGO": 1795651621.7366173,
-    "AMAT": 1795651250.149443,
-    "META": 1795651250.149443,
-    "GOOGL": 1795651250.149443,
-    "MSFT": 1795651250.149443,
-    "AAPL": 1795651250.149443,
-    "PLTR": 1795651250.149443,
-    "NOW": 1795651250.149443,
-    "AMZN": 1795651250.149443,
-    "CRWV": 1795651250.149443,
-    "NBIS": 1795651250.149443,
-    "APLD": 1795651250.149443,
+    "AMAT": 1795652788.6469965,
+    "META": 1795652788.6469965,
+    "GOOGL": 1795652788.6469965,
+    "MSFT": 1795652788.6469965,
+    "AAPL": 1795652788.6469965,
+    "PLTR": 1795652788.6469965,
+    "NOW": 1795652788.6469965,
+    "AMZN": 1795652788.6469965,
+    "CRWV": 1795652788.6469965,
+    "NBIS": 1795652788.6469965,
+    "APLD": 1795652788.6469965,
     "VST": 1795651541.4839842,
     "BE": 1795651541.4839842,
     "CRDO": 1795651541.4839842,
     "COHR": 1795651541.4839842,
-    "MRVL": 1795651250.149443,
-    "LITE": 1795651250.149443,
+    "MRVL": 1795652788.6469965,
+    "LITE": 1795652788.6469965,
     "AAOI": 1795651541.4839842,
     "SPCX": 1795651541.4839842,
     "ASTS": 1795651541.4839842,
-    "AXTI": 1795651250.149443,
+    "AXTI": 1795652788.6469965,
     "NASA": 1795651541.4839842,
     "LUNR": 1795651541.4839842,
     "TSLA": 1795651541.4839842,
@@ -3370,13 +3370,13 @@
     "OKLO": 1795651541.4839842,
     "CEG": 1795651541.4839842,
     "FPS": 1795651541.4839842,
-    "MU": 1795651250.149443,
-    "SKHY": 1795651250.149443,
-    "WDC": 1795651250.149443,
+    "MU": 1795652788.6469965,
+    "SKHY": 1795652788.6469965,
+    "WDC": 1795652788.6469965,
     "STX": 1795651582.437306,
     "MSTR": 1795651541.4839842,
     "SNDK": 1795651541.4839842,
-    "BTC-USD": 1795651250.149443,
+    "BTC-USD": 1795652788.6469965,
     "CRWD": 1795651541.4839842,
     "ORCL": 1795651582.437306,
     "COIN": 1795651582.437306,
@@ -3390,11 +3390,11 @@
     "WMT": 1795651582.437306,
     "V": 1795651582.437306,
     "CAT": 1795651582.437306,
-    "FN": 1795651250.149443,
+    "FN": 1795652788.6469965,
     "GLW": 1795651541.4839842,
     "ANT": 1795651582.437306,
     "XAUUSD": 1795651582.437306,
-    "KOSPI": 1795651250.149443
+    "KOSPI": 1795652788.6469965
   },
   "opex_shield": {
     "date": "2026-11-25",
