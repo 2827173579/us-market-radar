@@ -155,6 +155,78 @@ BUILTIN_TICKER_ALIASES: Dict[str, List[str]] = {
     "spacex": ["SPCX"],
     "glw": ["GLW"],
     "康宁": ["GLW"],
+    # V5.6 美股池新增 KSTR + 6 只亚太纯指数 + 10 只 A 股 ETF 中文与代码别名
+    "kstr": ["KSTR"],
+    "中国科技半导体": ["KSTR"],
+    "中国半导体": ["KSTR"],
+    "科创板美股": ["KSTR"],
+    "^n225": ["^N225"],
+    "n225": ["^N225"],
+    "日经": ["^N225"],
+    "日经225": ["^N225"],
+    "日股": ["^N225"],
+    "nikkei": ["^N225"],
+    "^twii": ["^TWII"],
+    "twii": ["^TWII"],
+    "台股": ["^TWII"],
+    "台湾加权": ["^TWII"],
+    "加权指数": ["^TWII"],
+    "^hsi": ["^HSI"],
+    "hsi": ["^HSI"],
+    "恒指": ["^HSI"],
+    "恒生": ["^HSI"],
+    "恒生指数": ["^HSI"],
+    "港股": ["^HSI", "HSTECH"],
+    "hstech": ["HSTECH"],
+    "恒科": ["HSTECH"],
+    "恒生科技": ["HSTECH"],
+    "000688": ["000688"],
+    "科创50": ["000688"],
+    "科创板": ["000688", "KSTR"],
+    "399006": ["399006"],
+    "创业板": ["399006"],
+    "创业板指": ["399006"],
+    "创指": ["399006"],
+    "512530": ["512530"],
+    "沪深300红利": ["512530"],
+    "沪深300红利etf": ["512530"],
+    "红利etf": ["512530"],
+    "512880": ["512880"],
+    "证券etf": ["512880"],
+    "证券etf国泰": ["512880"],
+    "券商etf": ["512880"],
+    "券商": ["512880"],
+    "512800": ["512800"],
+    "银行etf": ["512800"],
+    "银行etf华宝": ["512800"],
+    "银行": ["512800"],
+    "512690": ["512690"],
+    "酒etf": ["512690"],
+    "白酒etf": ["512690"],
+    "白酒": ["512690"],
+    "159530": ["159530"],
+    "机器人etf": ["159530"],
+    "机器人etf易方达": ["159530"],
+    "机器人": ["159530"],
+    "159995": ["159995"],
+    "芯片etf": ["159995"],
+    "芯片etf华夏": ["159995"],
+    "159562": ["159562"],
+    "黄金股etf": ["159562"],
+    "黄金股etf华夏": ["159562"],
+    "黄金股": ["159562"],
+    "588200": ["588200"],
+    "科创芯片": ["588200"],
+    "科创芯片etf": ["588200"],
+    "科创芯片etf嘉实": ["588200"],
+    "515880": ["515880"],
+    "通信etf": ["515880"],
+    "通信etf国泰": ["515880"],
+    "通信": ["515880"],
+    "588170": ["588170"],
+    "科创半导体": ["588170"],
+    "科创半导体etf": ["588170"],
+    "科创半导体etf华夏": ["588170"],
 }
 
 FLAGSHIP_PREVIEW_ORDER: Tuple[str, ...] = (
@@ -213,15 +285,37 @@ def _opt_float(val: Any) -> Optional[float]:
         return None
 
 
-def _fmt_price(val: Any, is_pts: bool = False) -> str:
+def _fmt_price(val: Any, is_pts: bool = False, price_unit: str = "usd") -> str:
     fv = _opt_float(val)
     if fv is None or fv <= 0:
         return "--"
-    if is_pts:
+    unit = str(price_unit or "usd").lower()
+    if unit == "cny":
+        return f"¥{fv:.3f}"
+    if is_pts or unit == "pts":
         return f"{fv:,.2f}"
     if fv >= 1000:
         return f"${fv:,.2f}"
     return f"${fv:.2f}"
+
+
+def _combined_snapshot_items(snapshot: Optional[Dict[str, Any]]) -> Dict[str, Dict[str, Any]]:
+    """合并美股主池与只读亚太/A股分区供 /check 检索（保持 snapshot['tickers'] 纯美股不变）。"""
+    out: Dict[str, Dict[str, Any]] = {}
+    if not isinstance(snapshot, dict):
+        return out
+    us_map = snapshot.get("tickers")
+    if isinstance(us_map, dict):
+        for k, v in us_map.items():
+            if isinstance(v, dict):
+                out[str(k).upper()] = v
+    apac_map = snapshot.get("apac_ashare_items")
+    if isinstance(apac_map, dict):
+        for k, v in apac_map.items():
+            ku = str(k).upper()
+            if isinstance(v, dict) and ku not in out:
+                out[ku] = v
+    return out
 
 
 def _fmt_pct(val: Any, digits: int = 2) -> str:
@@ -262,8 +356,8 @@ def search_ticker_candidates(
     """
     if not isinstance(snapshot, dict):
         return []
-    tickers_map = snapshot.get("tickers")
-    if not isinstance(tickers_map, dict) or not tickers_map:
+    tickers_map = _combined_snapshot_items(snapshot)
+    if not tickers_map:
         return []
 
     raw_q = str(query or "").strip()
@@ -357,8 +451,8 @@ def resolve_ticker(query: str, snapshot: Optional[Dict[str, Any]]) -> Optional[s
     """
     if not isinstance(snapshot, dict):
         return None
-    tickers_map = snapshot.get("tickers")
-    if not isinstance(tickers_map, dict) or not tickers_map:
+    tickers_map = _combined_snapshot_items(snapshot)
+    if not tickers_map:
         return None
 
     raw_q = str(query or "").strip()
@@ -495,7 +589,7 @@ def build_check_embed_dict(
             "footer": {"text": footer_txt},
         }
 
-    tickers_map = snapshot["tickers"]
+    tickers_map = _combined_snapshot_items(snapshot)
     tk = resolve_ticker(query, snapshot)
     if not tk or tk not in tickers_map:
         cands = search_ticker_candidates(query, snapshot, limit=5)
@@ -503,11 +597,11 @@ def build_check_embed_dict(
             f"• **{c['ticker']}** · {c['name']}" + (f"（{c['cat']}）" if c.get("cat") else "")
             for c in cands
         ]
-        sug_block = "\n".join(sug_lines) if sug_lines else "• 热门示例：`NVDA` · `SOXL` · `QQQ` · `SPY` · `XAUUSD` · `BTC-USD`"
+        sug_block = "\n".join(sug_lines) if sug_lines else "• 热门示例：`NVDA` · `SOXL` · `KSTR` · `512690` · `科创50` · `恒生科技`"
         return {
             "title": f"🔍 没找到「{str(query or '').strip()[:40] or '--'}」",
             "description": _strip_bare_hr_lines(
-                f"💬 一句话结论：这只票不在当前监控的 {len(tickers_map)} 只核心名单里（支持大小写和中文搜名字）。\n\n"
+                f"💬 一句话结论：这只票不在当前监控名单里（支持美股 81 只 + 亚太/A股 16 只，支持大小写和中文搜名字）。\n\n"
                 f"**您是不是要找：**\n{sug_block}"
             ),
             "color": 0xF59E0B,
@@ -516,6 +610,79 @@ def build_check_embed_dict(
         }
 
     item = tickers_map[tk]
+
+    # V5.6 亚太纯指数 (6 只 · pt 零 $) 与 A 股场内 ETF (10 只 · ¥ 三位小数零 $) 专属只读诊断卡
+    item_kind = str(item.get("kind") or "").upper()
+    if item_kind in ("APAC_INDEX", "ASHARE_ETF") or (
+        isinstance(snapshot.get("apac_ashare_items"), dict) and tk in snapshot["apac_ashare_items"]
+    ):
+        p_unit = str(item.get("price_unit") or ("cny" if item_kind == "ASHARE_ETF" else "pts")).lower()
+        is_cny = (p_unit == "cny")
+        fp = lambda v: _fmt_price(v, is_pts=(not is_cny), price_unit=p_unit)
+        px_v = _opt_float(item.get("last") or item.get("price"))
+        pct_v = _opt_float(item.get("pct_change"))
+        rsi_v = _opt_float(item.get("rsi"))
+        ma20_v = _opt_float(item.get("ma20"))
+        ma50_v = _opt_float(item.get("ma50"))
+        bias20_v = _opt_float(item.get("bias_ma20"))
+        s1_v, s2_v = _opt_float(item.get("s1")), _opt_float(item.get("s2"))
+        r1_v, r2_v = _opt_float(item.get("r1")), _opt_float(item.get("r2"))
+        turn_v = _opt_float(item.get("turnover"))
+        sess_lbl = str(item.get("session_label") or ("A股交易时段 09:30–15:00 CST" if is_cny else "亚太交易时段"))
+        name_a = str(item.get("name") or tk)
+        cat_a = str(item.get("cat") or ("A股ETF" if is_cny else "亚太指数"))
+        sub_a = str(item.get("sub") or "")
+        unit_suffix = "" if is_cny else " pt"
+
+        if pct_v is not None and pct_v >= 1.2 and (bias20_v is None or bias20_v >= 0):
+            icon_a, clr_a, verdict_a = "🟢", 0x10B981, "走势偏强，站稳短期均线，留意回踩支撑承接、别情绪追高。"
+        elif pct_v is not None and pct_v <= -1.5:
+            icon_a, clr_a, verdict_a = "🔴", 0xEF4444, "短线回调承压，重点观察下方支撑位是否止跌企稳，暂不急于左侧接刀。"
+        else:
+            icon_a, clr_a, verdict_a = "🟡", 0xF59E0B, "震荡整理格局，围绕均线与撑压区间高抛低吸或耐心观望。"
+
+        turn_str = "--"
+        if turn_v is not None and turn_v > 0:
+            if turn_v >= 1e8:
+                turn_str = f"{turn_v / 1e8:.2f} 亿元" if is_cny else f"{turn_v / 1e8:.2f} 亿"
+            elif turn_v >= 1e4:
+                turn_str = f"{turn_v / 1e4:.1f} 万元" if is_cny else f"{turn_v / 1e4:.1f} 万"
+            else:
+                turn_str = f"{turn_v:,.0f}"
+
+        px_line = f"{'现价' if is_cny else '点位'} **{fp(px_v)}{unit_suffix}**（今日 **{_fmt_pct(pct_v)}**）\n🕒 {sess_lbl}"
+        if turn_str != "--":
+            px_line += f" ｜ 成交额：{turn_str}"
+        sr_lines = [
+            f"• 下方支撑：**{fp(s1_v)}{unit_suffix}**{_rel_pct_str(s1_v, px_v)} ｜ 深度支撑 {fp(s2_v)}{unit_suffix}",
+            f"• 上方压力：**{fp(r1_v)}{unit_suffix}**{_rel_pct_str(r1_v, px_v)} ｜ 强压力 {fp(r2_v)}{unit_suffix}",
+        ]
+        tech_lines = [
+            f"• **均线锚点**：MA20 {fp(ma20_v)}{unit_suffix}（偏离 {_fmt_pct(bias20_v)}）｜ MA50 {fp(ma50_v)}{unit_suffix}",
+            f"• **14日 RSI**：{_fmt_num(rsi_v, 1)}（{'超买防回落' if (rsi_v is not None and rsi_v >= 70) else ('超卖留意企稳' if (rsi_v is not None and rsi_v <= 32) else '中性区间')}）",
+            f"• **分区说明**：🇨🇳 亚太/A股独立只读分区（不计入纯美股温度计与模拟跟单池，无美股期权与美股财报）",
+        ]
+        apac_meta = snapshot.get("apac_ashare_meta") if isinstance(snapshot.get("apac_ashare_meta"), dict) else {}
+        upd_cst = str(apac_meta.get("updated_at_cst") or "").strip()
+        apac_footer = (
+            f"亚太/A股快照更新: {upd_cst} CST · 独立免费源只读 · 仅作量化参考"
+            if upd_cst
+            else footer_txt
+        )
+        return {
+            "title": f"{icon_a} {tk} · {name_a}（{cat_a}）"[:256],
+            "description": _strip_bare_hr_lines(
+                f"💬 一句话结论：**{verdict_a}**" + (f"\n定位：{sub_a}" if sub_a else "")
+            ),
+            "color": clr_a,
+            "fields": [
+                {"name": "💴 实时行情" if is_cny else "📊 指数点位", "value": px_line[:1024], "inline": False},
+                {"name": "🧱 关键撑压" if is_cny else "🧱 关键点位", "value": "\n".join(sr_lines)[:1024], "inline": False},
+                {"name": "📐 技术体检", "value": "\n".join(tech_lines)[:1024], "inline": False},
+            ],
+            "timestamp": now_iso,
+            "footer": {"text": apac_footer},
+        }
     stance = str(item.get("decision_stance") or "NEUTRAL").upper()
     verdict = str(item.get("decision_verdict") or "")
     is_inv = bool(item.get("is_inverse_hedge") or tk in ("SQQQ", "SOXS", "VIXY"))

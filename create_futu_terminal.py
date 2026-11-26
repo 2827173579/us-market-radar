@@ -392,7 +392,7 @@ def resolve_long_tp_sl_ordering_guard(
     }
 
 
-def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_str="", has_realtime=False, target_watchlist=None, terminal_notifications=None, session_code="REGULAR", session_name="常规盘中", sync_side_effects=False, sync_dir=None, daily_sr_anchors=None):
+def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_str="", has_realtime=False, target_watchlist=None, terminal_notifications=None, session_code="REGULAR", session_name="常规盘中", sync_side_effects=False, sync_dir=None, daily_sr_anchors=None, apac_doc=None):
     is_overnight = (session_code == "OVERNIGHT")
     if session_code == "OVERNIGHT":
         session_badge_html = '<span class="tool-link" style="color: #c084fc; border: 1px solid rgba(192, 132, 252, 0.45); background: rgba(192, 132, 252, 0.12); padding: 4px 7px; font-weight: 700;">🌌 美股夜盘</span>'
@@ -539,7 +539,7 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
                     _panel_last_close = _pdf.sort_values("Date").groupby("Ticker")["Close"].last().to_dict()
             except Exception:
                 _panel_last_close = {}
-            pure_etf_set = {"QQQ", "SPY", "DIA", "IWM", "SMH", "SOXX", "SOXL", "KORU", "KOSPI", "IGV", "TLT", "GLD", "VIXY", "SQQQ", "SOXS"}
+            pure_etf_set = {"QQQ", "SPY", "DIA", "IWM", "SMH", "SOXX", "SOXL", "KORU", "KOSPI", "KSTR", "IGV", "TLT", "GLD", "VIXY", "SQQQ", "SOXS"}
             offensive_lev_etfs = {"SOXL", "KORU"}
             _exempt_regime_set = {"SQQQ", "SOXS", "VIXY", "TLT", "GLD", "XAUUSD", "KOSPI"}
             _active_regime = str(
@@ -1241,6 +1241,18 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
                 intraday_path_forecasts = json.load(_ipf) or {}
     except Exception:
         intraday_path_forecasts = {}
+
+    # V5.6 亚太纯指数 (6 只) + A 股场内 ETF (10 只) 独立只读分区数据（绝不混入 stocks_data / macro_data）
+    _apac_payload = apac_doc if isinstance(apac_doc, dict) and apac_doc else {}
+    if not _apac_payload:
+        try:
+            import apac_ashare_feed as _aaf_term
+            _apac_payload = _aaf_term.load_apac_ashare_cache() or {}
+        except Exception:
+            _apac_payload = {}
+    _apac_items_map = _apac_payload.get("items") if isinstance(_apac_payload.get("items"), dict) else {}
+    apac_json = json.dumps(_apac_items_map, ensure_ascii=False, separators=(",", ":"))
+    apac_count_str = str(len(_apac_items_map))
 
     # 将标的数据转为 JSON 供前端动态渲染
     resilient_leaders_top5 = compute_resilient_leaders_top5(
@@ -1955,18 +1967,20 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
         }
 
         .wl-leader-bar {
-            display: flex;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 6px;
             align-items: center;
         }
 
         .wl-leader-btn {
             width: 100%;
-            padding: 6px 10px;
+            padding: 6px 8px;
             border-radius: 8px;
             border: 1px solid rgba(16, 185, 129, 0.35);
             background: rgba(16, 185, 129, 0.10);
             color: var(--color-up);
-            font-size: 11.5px;
+            font-size: 11px;
             font-weight: 700;
             cursor: pointer;
             text-align: center;
@@ -1985,6 +1999,34 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
             background: var(--color-up);
             color: #FFFFFF;
             border-color: var(--color-up);
+        }
+
+        .wl-apac-btn {
+            width: 100%;
+            padding: 6px 8px;
+            border-radius: 8px;
+            border: 1px solid rgba(245, 158, 11, 0.42);
+            background: rgba(245, 158, 11, 0.10);
+            color: var(--color-warn);
+            font-size: 11px;
+            font-weight: 700;
+            cursor: pointer;
+            text-align: center;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            transition: all 0.15s ease;
+        }
+
+        .wl-apac-btn:hover {
+            border-color: var(--color-warn);
+            background: rgba(245, 158, 11, 0.20);
+        }
+
+        .wl-apac-btn.active {
+            background: var(--color-warn);
+            color: #FFFFFF;
+            border-color: var(--color-warn);
         }
 
         .resilient-leaders-strip {
@@ -3859,11 +3901,13 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
                 </div>
                 <div class="wl-leader-bar">
                     <button type="button" id="btnResilientTop5" class="wl-leader-btn" data-filter="resilient_top5" onclick="setWatchlistFilter('resilient_top5')" title="恐慌退潮真龙头：排除反向ETF，优先站稳VWAP + 20日超额RS + 相对SPY强弱">🛡️ 抗跌领涨 Top 5</button>
+                    <button type="button" id="btnApacAshare" class="wl-apac-btn" data-filter="apac_ashare" onclick="setWatchlistFilter('apac_ashare')" title="独立分区：6只亚太纯指数(pt) + 10只A股场内ETF(¥三位小数)，原生真实K线，不污染美股主池">🇨🇳 A股/亚太 (__PY_TPL_APAC_COUNT__)</button>
                 </div>
                 <!-- 二级细分赛道下拉 + 展开按钮 -->
                 <div class="wl-secondary-bar">
                     <select id="sectorFilterSelect" class="wl-sector-select" onchange="onSectorSelectChange(this.value)" aria-label="按行业赛道或策略筛选">
                         <option value="">更多赛道 / 策略筛选...</option>
+                        <option value="apac_ashare">🇨🇳 A股/亚太 (__PY_TPL_APAC_COUNT__)</option>
                         <option value="resilient_top5">🛡️ 抗跌领涨 Top 5</option>
                         <option value="ai_top">⚡ AI高胜率排序</option>
                         <option value="ai_short">🩸 AI做空榜 (Top 5)</option>
@@ -3892,6 +3936,7 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
             <!-- 默认折叠的细分赛道标签栏 -->
             <div class="watchlist-categories" id="watchlistCategories">
                 <div class="w-tab active" data-filter="all">全部 (__PY_TPL_TOTAL_COUNT__)</div>
+                <div class="w-tab" data-filter="apac_ashare" style="color: var(--color-warn); font-weight: 700;">🇨🇳 A股/亚太 (__PY_TPL_APAC_COUNT__)</div>
                 <div class="w-tab" data-filter="resilient_top5" style="color: var(--color-up); font-weight: 700;">🛡️ 抗跌领涨 Top 5</div>
                 <div class="w-tab" data-filter="ai_top" style="color: #a78bfa; font-weight: 700;">⚡ AI高胜率 (__PY_TPL_TOTAL_COUNT__)</div>
                 <div class="w-tab" data-filter="ai_short" style="color: #ff5252; font-weight: 700; background: rgba(248, 81, 73, 0.14); border-color: rgba(248, 81, 73, 0.35);">🩸 AI做空榜 (Top 5)</div>
@@ -4369,6 +4414,7 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
         const INTRADAY_PATH_FORECASTS = __PY_TPL_INTRADAY_PATH_JSON__;
         const SESSION_CODE = "__PY_TPL_SESSION_CODE__";
         const RESILIENT_LEADERS_INIT = __PY_TPL_LEADERS_JSON__;
+        const APAC_ASHARE_DATA = __PY_TPL_APAC_JSON__;
 
         let currentFilter = "all";
         let currentCenterView = "kline";
@@ -4772,17 +4818,33 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
         const LEADER_EXCLUDED_TICKERS = new Set(["SQQQ", "SOXS", "VIXY", "TLT", "GLD", "XAUUSD", "BTC-USD", "KOSPI", "SHY", "IEF", "HYG", "UUP"]);
         const LEADER_EXCLUDED_CATS = new Set(["大宗商品", "数字资产", "避险美债", "恐慌指数", "反向做空", "亚太指数"]);
 
+        function isApacAshareTicker(tk) {
+            const sym = String(tk || "").toUpperCase();
+            return Boolean(typeof APAC_ASHARE_DATA !== "undefined" && APAC_ASHARE_DATA && APAC_ASHARE_DATA[sym]);
+        }
+
+        function isCnyTicker(tk) {
+            const sym = String(tk || "").toUpperCase();
+            const ap = (typeof APAC_ASHARE_DATA !== "undefined" && APAC_ASHARE_DATA) ? APAC_ASHARE_DATA[sym] : null;
+            return Boolean(ap && (ap.price_unit === "cny" || ap.kind === "ASHARE_ETF"));
+        }
+
         function isPointsTicker(tk) {
             const sym = String(tk || "").toUpperCase();
             if (sym === "KOSPI") return true;
             const m = (typeof MACRO_DATA !== "undefined" && MACRO_DATA) ? MACRO_DATA[sym] : null;
             if (m && (m.price_unit === "pts" || m.is_index === true)) return true;
+            const ap = (typeof APAC_ASHARE_DATA !== "undefined" && APAC_ASHARE_DATA) ? APAC_ASHARE_DATA[sym] : null;
+            if (ap && (ap.price_unit === "pts" || ap.kind === "APAC_INDEX")) return true;
             return false;
         }
 
         function fmtAssetPx(val, tk = currentTicker, digits = 2) {
             const n = Number(val);
             if (!Number.isFinite(n) || n <= 0) return "--";
+            if (isCnyTicker(tk)) {
+                return "¥" + n.toFixed(3);
+            }
             if (isPointsTicker(tk)) {
                 return n.toLocaleString("en-US", { minimumFractionDigits: digits, maximumFractionDigits: digits });
             }
@@ -5146,7 +5208,7 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
             })
             .catch(() => {});
 
-        // TradingView 交易所标的代码映射 (全量 80 只)
+        // TradingView 交易所标的代码映射 (全量 81 只)
         const SYMBOL_MAP = {
             "QQQ": "NASDAQ:QQQ",
             "SPY": "AMEX:SPY",
@@ -5157,6 +5219,7 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
             "SOXL": "AMEX:SOXL",
             "KORU": "AMEX:KORU",
             "KOSPI": "KRX:KOSPI",
+            "KSTR": "AMEX:KSTR",
             "IGV": "AMEX:IGV",
             "TLT": "NASDAQ:TLT",
             "GLD": "AMEX:GLD",
@@ -5232,13 +5295,17 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
 
         let _kospiNativeMode = "daily";
 
-        function renderKospiNativeChart(container, interval, tvTheme) {
+        function renderNativeAssetChart(ticker, container, interval, tvTheme) {
             const pal = getThemePalette();
-            const m = (MACRO_DATA && MACRO_DATA["KOSPI"]) ? MACRO_DATA["KOSPI"] : {};
+            const sym = String(ticker || "KOSPI").toUpperCase();
+            const isKospi = (sym === "KOSPI");
+            const apacItem = (!isKospi && typeof APAC_ASHARE_DATA !== "undefined" && APAC_ASHARE_DATA) ? (APAC_ASHARE_DATA[sym] || {}) : {};
+            const m = isKospi ? ((MACRO_DATA && MACRO_DATA["KOSPI"]) ? MACRO_DATA["KOSPI"] : {}) : apacItem;
+            const isCny = isCnyTicker(sym);
             const aiByTk = (AI_PREDICTIONS && AI_PREDICTIONS.by_ticker) ? AI_PREDICTIONS.by_ticker : {};
-            const aiKs = aiByTk["KOSPI"] || {};
+            const aiKs = isKospi ? (aiByTk["KOSPI"] || {}) : {};
             const tcByTk = (AI_PREDICTIONS && AI_PREDICTIONS.time_cycle_projections) ? AI_PREDICTIONS.time_cycle_projections : {};
-            const tcKs = tcByTk["KOSPI"] || {};
+            const tcKs = isKospi ? (tcByTk["KOSPI"] || {}) : {};
 
             const intvStr = String(interval || "D").toUpperCase();
             if (["1", "3", "5", "10", "15", "30", "60"].includes(intvStr)) {
@@ -5247,8 +5314,10 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
                 _kospiNativeMode = "daily";
             }
 
-            let dailyRows = Array.isArray(m.krx_daily_ohlc) ? m.krx_daily_ohlc.slice() : [];
-            if (dailyRows.length < 3 && Array.isArray(tcKs.history) && tcKs.history.length >= 2) {
+            let dailyRows = isKospi
+                ? (Array.isArray(m.krx_daily_ohlc) ? m.krx_daily_ohlc.slice() : [])
+                : (Array.isArray(m.daily_ohlc) ? m.daily_ohlc.slice() : []);
+            if (isKospi && dailyRows.length < 3 && Array.isArray(tcKs.history) && tcKs.history.length >= 2) {
                 dailyRows = tcKs.history.map((h, i, arr) => {
                     const c = Number(h.price || m.last || 2500);
                     const prev = i > 0 ? Number(arr[i - 1].price || c) : c;
@@ -5258,24 +5327,29 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
                 });
             }
             if (dailyRows.length < 2) {
-                const baseP = Number(m.last || 2500);
+                const baseP = Number(m.last || m.price || (isCny ? 1.0 : 2500));
+                const dN = isCny ? 3 : 2;
                 dailyRows = [
-                    ["T-2", Number((baseP * 0.992).toFixed(2)), Number((baseP * 0.998).toFixed(2)), Number((baseP * 0.988).toFixed(2)), Number((baseP * 0.995).toFixed(2)), 100000],
-                    ["T-1", Number((baseP * 0.995).toFixed(2)), Number((baseP * 1.002).toFixed(2)), Number((baseP * 0.991).toFixed(2)), Number((baseP * 0.998).toFixed(2)), 110000],
-                    ["今日", Number((baseP * 0.998).toFixed(2)), Number((baseP * 1.005).toFixed(2)), Number((baseP * 0.994).toFixed(2)), Number(baseP.toFixed(2)), 120000]
+                    ["T-2", Number((baseP * 0.992).toFixed(dN)), Number((baseP * 0.998).toFixed(dN)), Number((baseP * 0.988).toFixed(dN)), Number((baseP * 0.995).toFixed(dN)), 100000],
+                    ["T-1", Number((baseP * 0.995).toFixed(dN)), Number((baseP * 1.002).toFixed(dN)), Number((baseP * 0.991).toFixed(dN)), Number((baseP * 0.998).toFixed(dN)), 110000],
+                    ["今日", Number((baseP * 0.998).toFixed(dN)), Number((baseP * 1.005).toFixed(dN)), Number((baseP * 0.994).toFixed(dN)), Number(baseP.toFixed(dN)), 120000]
                 ];
             }
-            let intraRows = Array.isArray(m.krx_intraday_5m) ? m.krx_intraday_5m.slice() : [];
+            let intraRows = isKospi
+                ? (Array.isArray(m.krx_intraday_5m) ? m.krx_intraday_5m.slice() : [])
+                : (Array.isArray(m.intraday_5m) ? m.intraday_5m.slice() : []);
             const useIntra = (_kospiNativeMode === "5m") && intraRows.length >= 2;
             const rows = useIntra ? intraRows : dailyRows;
 
-            const krxLbl = m.krx_session_label || "韩国交易时段 09:00–15:30 KST";
-            const s1Val = Number(aiKs.anchor_s1 || aiKs.s1 || m.fib_low || 0);
-            const r1Val = Number(aiKs.anchor_r1 || aiKs.r1 || m.fib_high || 0);
+            const sessLbl = isKospi
+                ? (m.krx_session_label || "韩国交易时段 09:00–15:30 KST")
+                : (m.session_label || (isCny ? "A股交易时段 09:30–15:00 CST" : "亚太交易时段"));
+            const s1Val = Number(isKospi ? (aiKs.anchor_s1 || aiKs.s1 || m.fib_low || 0) : (m.s1 || 0));
+            const r1Val = Number(isKospi ? (aiKs.anchor_r1 || aiKs.r1 || m.fib_high || 0) : (m.r1 || 0));
             const vwapVal = Number(m.vwap || 0);
 
             const W = 920, H = 430;
-            const padL = 16, padR = 76, padT = 18, padB = 28;
+            const padL = 16, padR = 82, padT = 18, padB = 28;
             const plotW = W - padL - padR;
             const mainH = Math.round((H - padT - padB) * 0.76);
             const volTop = padT + mainH + 10;
@@ -5288,27 +5362,34 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
             let minP = Math.min(...lows);
             let maxP = Math.max(...highs);
             if (!useIntra) {
-                if (s1Val > minP * 0.92 && s1Val < maxP) minP = Math.min(minP, s1Val);
-                if (r1Val > minP && r1Val < maxP * 1.08) maxP = Math.max(maxP, r1Val);
+                if (s1Val > minP * 0.90 && s1Val < maxP) minP = Math.min(minP, s1Val);
+                if (r1Val > minP && r1Val < maxP * 1.10) maxP = Math.max(maxP, r1Val);
             } else if (vwapVal > 0) {
                 minP = Math.min(minP, vwapVal);
                 maxP = Math.max(maxP, vwapVal);
             }
-            const spanP = Math.max(maxP - minP, (closes[closes.length - 1] || 2500) * 0.006);
+            const spanP = Math.max(maxP - minP, (closes[closes.length - 1] || (isCny ? 1.0 : 2500)) * 0.006);
             minP -= spanP * 0.08;
             maxP += spanP * 0.08;
             const maxVol = Math.max(1, ...vols);
 
             const xAt = (i) => padL + ((i + 0.5) / rows.length) * plotW;
             const yAt = (p) => padT + ((maxP - p) / (maxP - minP)) * mainH;
-            const fmtPt = (p) => Number(p).toLocaleString("en-US", { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+            const fmtChartVal = (p) => isCny
+                ? ("¥" + Number(p).toFixed(3))
+                : Number(p).toLocaleString("en-US", { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+            const unitTag = isCny ? "" : " pt";
+            const unitDesc = isCny ? "人民币计价 (¥ · 三位小数)" : "指数点数计价 (pt)";
+            const chartTitle = isKospi
+                ? "🇰🇷 KOSPI 原生行情引擎 (^KS11 真实数据)"
+                : `${isCny ? "🇨🇳" : "🌏"} ${escapeNewsHtml(sym)} ${escapeNewsHtml(m.name || "")} 原生行情引擎 (本地真实数据)`;
 
             let svgParts = [];
             for (let g = 0; g <= 4; g++) {
                 const gy = padT + (g / 4) * mainH;
                 const gp = maxP - (g / 4) * (maxP - minP);
                 svgParts.push(`<line x1="${padL}" y1="${gy.toFixed(1)}" x2="${W - padR}" y2="${gy.toFixed(1)}" stroke="${pal.svgGrid}" stroke-dasharray="3,3"/>`);
-                svgParts.push(`<text x="${W - padR + 6}" y="${(gy + 3.5).toFixed(1)}" fill="${pal.svgAxis}" font-size="10.5" font-family="monospace">${fmtPt(gp)}</text>`);
+                svgParts.push(`<text x="${W - padR + 6}" y="${(gy + 3.5).toFixed(1)}" fill="${pal.svgAxis}" font-size="10.5" font-family="monospace">${fmtChartVal(gp)}</text>`);
             }
 
             const stepX = Math.max(1, Math.floor(rows.length / 6));
@@ -5368,26 +5449,26 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
                 if (r1Val >= minP && r1Val <= maxP) {
                     const yr1 = yAt(r1Val);
                     svgParts.push(`<line x1="${padL}" y1="${yr1.toFixed(1)}" x2="${W - padR}" y2="${yr1.toFixed(1)}" stroke="${pal.down}" stroke-width="1.1" stroke-dasharray="4,3"/>`);
-                    svgParts.push(`<text x="${padL + 6}" y="${(yr1 - 4).toFixed(1)}" fill="${pal.down}" font-size="10" font-weight="700">R1 ${fmtPt(r1Val)}</text>`);
+                    svgParts.push(`<text x="${padL + 6}" y="${(yr1 - 4).toFixed(1)}" fill="${pal.down}" font-size="10" font-weight="700">R1 ${fmtChartVal(r1Val)}</text>`);
                 }
                 if (s1Val >= minP && s1Val <= maxP) {
                     const ys1 = yAt(s1Val);
                     svgParts.push(`<line x1="${padL}" y1="${ys1.toFixed(1)}" x2="${W - padR}" y2="${ys1.toFixed(1)}" stroke="${pal.up}" stroke-width="1.1" stroke-dasharray="4,3"/>`);
-                    svgParts.push(`<text x="${padL + 6}" y="${(ys1 - 4).toFixed(1)}" fill="${pal.up}" font-size="10" font-weight="700">S1 ${fmtPt(s1Val)}</text>`);
+                    svgParts.push(`<text x="${padL + 6}" y="${(ys1 - 4).toFixed(1)}" fill="${pal.up}" font-size="10" font-weight="700">S1 ${fmtChartVal(s1Val)}</text>`);
                 }
             }
 
             const lastR = rows[rows.length - 1];
-            const defaultReadout = `${lastR[0]} ｜ 开 ${fmtPt(lastR[1])} · 高 ${fmtPt(lastR[2])} · 低 ${fmtPt(lastR[3])} · 收 ${fmtPt(lastR[4])} pt`;
+            const defaultReadout = `${lastR[0]} ｜ 开 ${fmtChartVal(lastR[1])} · 高 ${fmtChartVal(lastR[2])} · 低 ${fmtChartVal(lastR[3])} · 收 ${fmtChartVal(lastR[4])}${unitTag}`;
 
             container.innerHTML = `
-                <div id="kospiNativeChartBox" data-tv-theme="${tvTheme}" style="width:100%; height:100%; display:flex; flex-direction:column; background:${pal.cardBg}; padding:8px 10px; box-sizing:border-box; gap:6px;">
+                <div id="kospiNativeChartBox" data-native-ticker="${escapeNewsHtml(sym)}" data-tv-theme="${tvTheme}" style="width:100%; height:100%; display:flex; flex-direction:column; background:${pal.cardBg}; padding:8px 10px; box-sizing:border-box; gap:6px;">
                     <div style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:6px; font-size:11.5px;">
                         <div style="display:flex; align-items:center; gap:6px; flex-wrap:wrap;">
-                            <span style="font-weight:800; color:${pal.text};">🇰🇷 KOSPI 原生行情引擎 (^KS11 真实数据)</span>
+                            <span style="font-weight:800; color:${pal.text};">${chartTitle}</span>
                             <button type="button" id="btnKospiDaily" style="padding:2px 8px; border-radius:5px; border:1px solid ${!useIntra ? pal.accent : pal.border}; background:${!useIntra ? pal.accentBg : pal.elevatedBg}; color:${!useIntra ? pal.accent : pal.sub}; cursor:pointer; font-size:11px; font-weight:700;">日K线 + MA5/20</button>
-                            <button type="button" id="btnKospi5m" style="padding:2px 8px; border-radius:5px; border:1px solid ${useIntra ? pal.accent : pal.border}; background:${useIntra ? pal.accentBg : pal.elevatedBg}; color:${useIntra ? pal.accent : pal.sub}; cursor:pointer; font-size:11px; font-weight:700;" ${intraRows.length < 2 ? 'disabled title="当前无5m分时切片"' : ''}>5m 韩盘分时 + VWAP</button>
-                            <span style="font-size:10.5px; color:${pal.sub};">${escapeNewsHtml(krxLbl)} · 指数点数计价</span>
+                            <button type="button" id="btnKospi5m" style="padding:2px 8px; border-radius:5px; border:1px solid ${useIntra ? pal.accent : pal.border}; background:${useIntra ? pal.accentBg : pal.elevatedBg}; color:${useIntra ? pal.accent : pal.sub}; cursor:pointer; font-size:11px; font-weight:700;" ${intraRows.length < 2 ? 'disabled title="当前无5m分时切片"' : ''}>5m 盘中分时 + VWAP</button>
+                            <span style="font-size:10.5px; color:${pal.sub};">${escapeNewsHtml(sessLbl)} · ${unitDesc}</span>
                         </div>
                         <div id="kospiHoverReadout" class="tabular" style="font-size:11px; color:${pal.sub}; font-family:monospace;">${escapeNewsHtml(defaultReadout)}</div>
                     </div>
@@ -5402,8 +5483,8 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
 
             const btnD = document.getElementById("btnKospiDaily");
             const btnM = document.getElementById("btnKospi5m");
-            if (btnD) btnD.onclick = () => { _kospiNativeMode = "daily"; renderKospiNativeChart(container, "D", tvTheme); };
-            if (btnM && intraRows.length >= 2) btnM.onclick = () => { _kospiNativeMode = "5m"; renderKospiNativeChart(container, "5", tvTheme); };
+            if (btnD) btnD.onclick = () => { _kospiNativeMode = "daily"; renderNativeAssetChart(sym, container, "D", tvTheme); };
+            if (btnM && intraRows.length >= 2) btnM.onclick = () => { _kospiNativeMode = "5m"; renderNativeAssetChart(sym, container, "5", tvTheme); };
 
             const svgDom = document.getElementById("kospiNativeChartSvg");
             const crossX = document.getElementById("kospiCrossX");
@@ -5421,13 +5502,17 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
                         crossX.setAttribute("x2", cx.toFixed(1));
                         crossX.style.display = "block";
                     }
-                    readoutEl.innerText = `${r[0]} ｜ 开 ${fmtPt(r[1])} · 高 ${fmtPt(r[2])} · 低 ${fmtPt(r[3])} · 收 ${fmtPt(r[4])} pt`;
+                    readoutEl.innerText = `${r[0]} ｜ 开 ${fmtChartVal(r[1])} · 高 ${fmtChartVal(r[2])} · 低 ${fmtChartVal(r[3])} · 收 ${fmtChartVal(r[4])}${unitTag}`;
                 };
                 svgDom.onmouseleave = () => {
                     if (crossX) crossX.style.display = "none";
                     readoutEl.innerText = defaultReadout;
                 };
             }
+        }
+
+        function renderKospiNativeChart(container, interval, tvTheme) {
+            return renderNativeAssetChart("KOSPI", container, interval, tvTheme);
         }
 
         function loadTvWidget(ticker, interval, style) {
@@ -5440,9 +5525,10 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
             const toolbarBg = tvTheme === "light" ? "#FFFFFF" : "#121826";
             container.dataset.tvTheme = tvTheme;
 
-            // KRX:KOSPI / TVC:KOSPI 在免费嵌入组件中受韩国交易所版权限制拦截，自动切换为基于真实 ^KS11 的原生交互式日K/5m分时引擎
-            if (String(ticker || "").toUpperCase() === "KOSPI") {
-                renderKospiNativeChart(container, interval, tvTheme);
+            // KRX:KOSPI 及 V5.6 亚太纯指数(6只)/A股场内ETF(10只) 全部使用本地真实数据原生交互式日K/5m分时引擎，彻底规避 TradingView 免费嵌入拦截
+            const symUp = String(ticker || "").toUpperCase();
+            if (symUp === "KOSPI" || isApacAshareTicker(symUp)) {
+                renderNativeAssetChart(symUp, container, interval, tvTheme);
                 return;
             }
 
@@ -6079,6 +6165,14 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
         function toggleCurrentStar() {}
 
         function getPlainStatusBadge(item, pal) {
+            if (item && item.is_apac_ashare) {
+                const isIdx = (item.price_unit === "pts" || item.kind === "APAC_INDEX");
+                return {
+                    label: item._apac_badge || (isIdx ? "🌏 指数" : "🇨🇳 ETF"),
+                    color: isIdx ? pal.accent : pal.warn,
+                    bg: isIdx ? pal.accentBg : pal.warnBg
+                };
+            }
             const sig = String(item.signal || "");
             const isTakeProfit = Boolean(item.is_take_profit || sig.includes("止盈") || sig.includes("超买") || sig.includes("冲顶"));
             const isStop = Boolean(item.is_stop || sig.includes("破位") || sig.includes("跌破"));
@@ -6107,12 +6201,16 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
             if (leaderBtn) {
                 leaderBtn.classList.toggle("active", filter === "resilient_top5");
             }
+            const apacBtn = document.getElementById("btnApacAshare");
+            if (apacBtn) {
+                apacBtn.classList.toggle("active", filter === "apac_ashare");
+            }
             document.querySelectorAll(".w-tab").forEach(t => {
                 t.classList.toggle("active", t.getAttribute("data-filter") === filter);
             });
             const sel = document.getElementById("sectorFilterSelect");
             if (sel) {
-                sel.value = (primaryFilters.has(filter) || filter === "resilient_top5") ? "" : filter;
+                sel.value = (primaryFilters.has(filter) || filter === "resilient_top5" || filter === "apac_ashare") ? "" : filter;
             }
         }
 
@@ -6219,6 +6317,24 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
             const aiByTicker = (AI_PREDICTIONS && AI_PREDICTIONS.by_ticker) ? AI_PREDICTIONS.by_ticker : {};
             let items = [];
 
+            if (filter === "apac_ashare") {
+                const apacMap = (typeof APAC_ASHARE_DATA !== "undefined" && APAC_ASHARE_DATA) ? APAC_ASHARE_DATA : {};
+                Object.keys(apacMap).forEach(k => {
+                    const a = apacMap[k];
+                    if (!a || typeof a !== "object") return;
+                    const p = Number(a.pct_change || 0);
+                    const isIdx = (a.price_unit === "pts" || a.kind === "APAC_INDEX");
+                    items.push({
+                        ...a,
+                        ticker: k,
+                        last: Number(a.last || a.price || 0),
+                        pct_change: p,
+                        signal: p >= 1.2 ? "多头偏强" : (p <= -1.5 ? "回调观察" : "震荡整理"),
+                        _apac_badge: isIdx ? "🌏 指数" : "🇨🇳 ETF",
+                        is_apac_ashare: true,
+                    });
+                });
+            } else {
             STOCKS_DATA.forEach(s => {
                 let match = false;
                 const aiRow = aiByTicker[s.ticker];
@@ -6276,13 +6392,14 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
                 else if (filter === "pit" && !m.is_crash_halt && !m.is_cooling_halt && !m.is_inverse_hedge && !["SQQQ", "SOXS", "VIXY"].includes(t) && (m.is_pit || (m.signal && m.signal.includes("黄金坑")) || (m.pit_status && (m.pit_status.includes("坑内") || m.pit_status.includes("黄金坑"))) || (m.dist_to_pit !== undefined && m.dist_to_pit <= 0.0 && m.dist_to_pit >= -8.0))) match = true;
                 else if (filter === "take_profit" && (m.is_take_profit || (m.signal && (m.signal.includes("止盈") || m.signal.includes("超买") || m.signal.includes("冲顶"))))) match = true;
                 else if (filter === "stop" && (m.is_stop || m.is_deep_pullback || (m.signal && (m.signal.includes("破位") || m.signal.includes("跌破") || m.signal.includes("回踩"))))) match = true;
-                else if (filter === "芯片与半导体" && (t === "SMH" || t === "SOXX" || t === "SOXL" || t === "SOXS" || t === "KORU" || t === "KOSPI")) match = true;
+                else if (filter === "芯片与半导体" && (t === "SMH" || t === "SOXX" || t === "SOXL" || t === "SOXS" || t === "KORU" || t === "KOSPI" || t === "KSTR")) match = true;
                 else if (filter === "云与软件" && (t === "QQQ" || t === "IGV" || t === "SQQQ")) match = true;
                 else if (filter === "数字资产" && (t === "BTC-USD" || m.cat === "数字资产")) match = true;
                 else if (filter === "大宗商品" && (t === "GLD" || m.cat === "大宗商品")) match = true;
 
                 if (match) items.push(buildMacroListEntry(t, m));
             });
+            }
 
             if (filter === "resilient_top5") {
                 items = computeResilientLeadersTop5().map(ld => ({
@@ -6448,7 +6565,10 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
 
             const stock = STOCKS_DATA.find(s => s.ticker === ticker);
             const macro = MACRO_DATA[ticker];
-            const data = stock || macro || {};
+            const apacItem = (typeof APAC_ASHARE_DATA !== "undefined" && APAC_ASHARE_DATA) ? APAC_ASHARE_DATA[String(ticker || "").toUpperCase()] : null;
+            const data = stock || macro || apacItem || {};
+            const isApacCur = Boolean(apacItem);
+            const isCnyCur = isCnyTicker(ticker);
 
             // 1. 顶部 / 图表头部行情标识
             const curSymEl = document.getElementById("curSym");
@@ -6456,10 +6576,12 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
             const curPriceEl = document.getElementById("curPrice");
             const curChangeEl = document.getElementById("curChange");
             const isPtsCur = isPointsTicker(ticker);
+            const isNonUsdCur = isPtsCur || isCnyCur;
             const fpCur = (v) => fmtAssetPx(v, ticker);
             if (curSymEl) curSymEl.innerText = ticker;
             if (curNameEl) curNameEl.innerText = data.name || "";
-            if (curPriceEl) curPriceEl.innerText = (data.last && data.last > 0) ? fpCur(data.last) : "--";
+            const topPxVal = Number(data.last || data.price || 0);
+            if (curPriceEl) curPriceEl.innerText = (topPxVal > 0) ? fpCur(topPxVal) : "--";
 
             const pct = data.pct_change || 0;
             if (curChangeEl) {
@@ -6470,7 +6592,14 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
 
             const extBadgeEl = document.getElementById("curExtBadge");
             if (extBadgeEl) {
-                if (isPtsCur && data.krx_session_label) {
+                if (isApacCur) {
+                    extBadgeEl.style.display = "inline-block";
+                    extBadgeEl.style.background = pal.warnBg;
+                    extBadgeEl.style.color = pal.warn;
+                    const apFlag = isCnyCur ? "🇨🇳" : "🌏";
+                    const apUnitLbl = isCnyCur ? "人民币 ¥ · 三位小数" : "指数点数 pt";
+                    extBadgeEl.innerHTML = `${apFlag} ${escapeNewsHtml(data.session_label || "亚太时段")} · ${apUnitLbl}`;
+                } else if (isPtsCur && data.krx_session_label) {
                     extBadgeEl.style.display = "inline-block";
                     extBadgeEl.style.background = pal.accentBg;
                     extBadgeEl.style.color = pal.accent;
@@ -6822,7 +6951,7 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
                         intraStatusEl.style.color = pal.warn;
                     }
                 }
-                if (isPtsCur) {
+                if (isNonUsdCur) {
                     intraStatusEl.innerText = String(intraStatusEl.innerText || "").replace(/\$([0-9,]+(?:\.[0-9]+)?)/g, (_, d) => fpCur(Number(d.replace(/,/g, ""))));
                     intraReasonEl.innerText = String(intraReasonEl.innerText || "").replace(/\$([0-9,]+(?:\.[0-9]+)?)/g, (_, d) => fpCur(Number(d.replace(/,/g, ""))));
                 }
@@ -6831,6 +6960,10 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
             function getMicroLabelSuffixHtml(sym) {
                 const ipByTk = (typeof INTRADAY_PATH_FORECASTS !== "undefined" && INTRADAY_PATH_FORECASTS && INTRADAY_PATH_FORECASTS.by_ticker) ? INTRADAY_PATH_FORECASTS.by_ticker : {};
                 const ipTk = ipByTk[sym] || {};
+                if (isApacAshareTicker(sym)) {
+                    const apM = (APAC_ASHARE_DATA && APAC_ASHARE_DATA[String(sym).toUpperCase()]) || {};
+                    return `<span class="stale-ref-tag">(${escapeNewsHtml(apM.session_label || "亚太时段")})</span>`;
+                }
                 if (sym === "KOSPI") {
                     const ksM = (MACRO_DATA && MACRO_DATA["KOSPI"]) || {};
                     return ksM.krx_session_open
@@ -6939,6 +7072,9 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
                 } else if (data.earnings_tag) {
                     earnEl.innerText = data.earnings_tag;
                     earnEl.style.color = data.is_earnings_risk ? pal.down : pal.warn;
+                } else if (isApacCur) {
+                    earnEl.innerText = `${isCnyCur ? "🇨🇳" : "🌏"} ${data.session_label || "亚太交易时段"}（无美股财报）`;
+                    earnEl.style.color = pal.warn;
                 } else if (ticker === "KOSPI") {
                     earnEl.innerText = "🇰🇷 KRX 09:00–15:30 KST";
                     earnEl.style.color = pal.accent;
@@ -6977,6 +7113,22 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
                     const krPct = Number(kr.pct_change || 0);
                     const krClr = krPct >= 0 ? pal.up : pal.down;
                     vixHintEl.innerHTML = `<b>🔗 美股可交易联动参考 KORU (3倍做多韩国)：</b><b>${krPx}</b> <span style="color:${krClr}; font-weight:700;">(${krPct >= 0 ? "+" : ""}${krPct.toFixed(2)}%)</span><br><span style="color: var(--text-secondary);">注：KOSPI 为韩国综合指数（点数计价，无美元符号），交易时段为周一至周五 09:00–15:30 KST。</span>`;
+                    vixHintEl.style.display = "block";
+                } else if (isApacCur) {
+                    const turnRaw = Number(data.turnover || 0);
+                    let turnDisp = "--";
+                    if (turnRaw >= 1e8) turnDisp = (turnRaw / 1e8).toFixed(2) + (isCnyCur ? " 亿元" : " 亿");
+                    else if (turnRaw >= 1e4) turnDisp = (turnRaw / 1e4).toFixed(1) + (isCnyCur ? " 万元" : " 万");
+                    else if (turnRaw > 0) turnDisp = turnRaw.toLocaleString("en-US");
+                    const uTag = isCnyCur ? "" : " pt";
+                    const apS1 = data.s1 ? `${fpCur(data.s1)}${uTag}` : "--";
+                    const apS2 = data.s2 ? `${fpCur(data.s2)}${uTag}` : "--";
+                    const apR1 = data.r1 ? `${fpCur(data.r1)}${uTag}` : "--";
+                    const apR2 = data.r2 ? `${fpCur(data.r2)}${uTag}` : "--";
+                    const apMa20 = data.ma20 ? `${fpCur(data.ma20)}${uTag}` : "--";
+                    const apMa50 = data.ma50 ? `${fpCur(data.ma50)}${uTag}` : "--";
+                    const apRsi = (data.rsi !== null && data.rsi !== undefined) ? Number(data.rsi).toFixed(1) : "--";
+                    vixHintEl.innerHTML = `<b>${isCnyCur ? "🇨🇳 A股场内 ETF 独立分区" : "🌏 亚太纯指数独立分区"}：</b>支撑 <b>${apS1}</b> / ${apS2} ｜ 压力 <b>${apR1}</b> / ${apR2}<br><span style="color: var(--text-secondary);">MA20 ${apMa20} · MA50 ${apMa50} · RSI ${apRsi} · 成交额 ${turnDisp}（仅独立观察，不计入美股温度计与模拟跟单）</span>`;
                     vixHintEl.style.display = "block";
                 } else {
                     vixHintEl.style.display = "none";
@@ -7550,6 +7702,47 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
             }
             renderResilientLeadersStrip();
 
+            if (isApacCur) {
+                const apUnit = isCnyCur ? "" : " pt";
+                const apS1v = Number(data.s1 || 0);
+                const apS2v = Number(data.s2 || 0);
+                const apR1v = Number(data.r1 || 0);
+                const apPctNow = Number(data.pct_change || 0);
+                if (vTitle) {
+                    vTitle.innerText = apPctNow >= 1.2
+                        ? `${isCnyCur ? "🇨🇳" : "🌏"} 亚太/A股偏强运行 · 顺势跟踪`
+                        : (apPctNow <= -1.5 ? `${isCnyCur ? "🇨🇳" : "🌏"} 短线回调承压 · 观察支撑` : `${isCnyCur ? "🇨🇳" : "🌏"} 震荡整理 · 围绕撑压观察`);
+                    vTitle.style.color = apPctNow >= 1.2 ? pal.up : (apPctNow <= -1.5 ? pal.down : pal.warn);
+                }
+                if (vSub) {
+                    vSub.innerText = `${data.sub || data.name || ticker} · 独立只读分区（${isCnyCur ? "人民币 ¥ 三位小数" : "指数点数 pt"} · 零美股期权与跟单污染）。`;
+                }
+                if (priceLabelEl) priceLabelEl.innerText = "🧭 下方支撑 S1";
+                if (optEl) { optEl.innerText = apS1v > 0 ? `${fpCur(apS1v)}${apUnit}` : "--"; optEl.style.color = pal.up; }
+                if (noteEl) {
+                    const dS1 = (topPxVal > 0 && apS1v > 0) ? ((apS1v - topPxVal) / topPxVal * 100) : null;
+                    noteEl.innerText = dS1 !== null ? `距现价 ${dS1 >= 0 ? "+" : ""}${dS1.toFixed(1)}%` : "60日支撑参考";
+                }
+                const tileTpLblAp = document.getElementById("pTileTpLbl");
+                const tileSlLblAp = document.getElementById("pTileStopLbl");
+                if (tileTpLblAp) tileTpLblAp.innerText = "上方压力 R1";
+                if (tileSlLblAp) tileSlLblAp.innerText = "深度支撑 S2";
+                if (tpBegEl) { tpBegEl.innerText = apR1v > 0 ? `${fpCur(apR1v)}${apUnit}` : "--"; tpBegEl.style.color = pal.down; }
+                if (tpPctEl) {
+                    const dR1 = (topPxVal > 0 && apR1v > 0) ? ((apR1v - topPxVal) / topPxVal * 100) : null;
+                    tpPctEl.innerText = dR1 !== null ? `距现价 ${dR1 >= 0 ? "+" : ""}${dR1.toFixed(1)}%` : "60日压力参考";
+                    tpPctEl.style.color = pal.down;
+                }
+                if (stopEl) { stopEl.innerText = apS2v > 0 ? `${fpCur(apS2v)}${apUnit}` : "--"; stopEl.style.color = pal.warn; }
+                if (stopDistEl) {
+                    const dS2 = (topPxVal > 0 && apS2v > 0) ? ((apS2v - topPxVal) / topPxVal * 100) : null;
+                    stopDistEl.innerText = dS2 !== null ? `距现价 ${dS2 >= 0 ? "+" : ""}${dS2.toFixed(1)}%` : "二级防守参考";
+                    stopDistEl.style.color = pal.warn;
+                }
+                if (proEntryRef) proEntryRef.innerText = apS1v > 0 ? `${fpCur(apS1v)}${apUnit}` : "--";
+                if (proStopRef) proStopRef.innerText = apS2v > 0 ? `${fpCur(apS2v)}${apUnit}` : "--";
+            }
+
             // 8. 机构期权雷达 (Group ②)
             const optBox = document.getElementById("optionsAnomalyBox");
             const optUnavail = document.getElementById("optionsUnavailableNote");
@@ -7599,12 +7792,14 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
                     optBox.style.display = "none";
                     if (optUnavail) {
                         optUnavail.style.display = "block";
-                        optUnavail.innerText = (ticker === "KOSPI")
-                            ? "🇰🇷 指数基准 · 无美股期权链（美股交易联动参考 KORU）"
-                            : "⚪ 当前标的暂无美股期权链数据（现货/加密/新股仅展示现货与均线量价指标）。";
+                        optUnavail.innerText = isApacCur
+                            ? `${isCnyCur ? "🇨🇳" : "🌏"} 亚太/A股独立分区 · 无美股期权链（仅展示本地真实日K/5m均线、RSI与撑压）`
+                            : ((ticker === "KOSPI")
+                                ? "🇰🇷 指数基准 · 无美股期权链（美股交易联动参考 KORU）"
+                                : "⚪ 当前标的暂无美股期权链数据（现货/加密/新股仅展示现货与均线量价指标）。");
                     }
                     if (pcrBadge) {
-                        pcrBadge.innerText = (ticker === "KOSPI") ? "🇰🇷 指数无期权" : "⚪ 无美股期权";
+                        pcrBadge.innerText = isApacCur ? "🇨🇳 无美股期权" : ((ticker === "KOSPI") ? "🇰🇷 指数无期权" : "⚪ 无美股期权");
                         pcrBadge.style.color = pal.sub;
                         pcrBadge.style.background = pal.elevatedBg;
                     }
@@ -7638,6 +7833,14 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
                 const m = MACRO_DATA[k];
                 allEntries.push({ ticker: k, name: m.name || "", last: m.last || 0, pct: m.pct_change || 0 });
             });
+            if (typeof APAC_ASHARE_DATA !== "undefined" && APAC_ASHARE_DATA) {
+                Object.keys(APAC_ASHARE_DATA).forEach(k => {
+                    const a = APAC_ASHARE_DATA[k];
+                    if (a && typeof a === "object") {
+                        allEntries.push({ ticker: k, name: a.name || "", last: Number(a.last || a.price || 0), pct: Number(a.pct_change || 0) });
+                    }
+                });
+            }
 
             const renderHits = (q) => {
                 const pal = getThemePalette();
@@ -8308,14 +8511,14 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
                 const urlParams = new URLSearchParams(window.location.search);
                 const urlSym = (urlParams.get("symbol") || urlParams.get("ticker") || "").trim().toUpperCase();
                 const savedT = localStorage.getItem("lastSelectedTicker");
-                if (urlSym && (STOCKS_DATA.some(s => s.ticker === urlSym) || MACRO_DATA[urlSym])) {
+                if (urlSym && (STOCKS_DATA.some(s => s.ticker === urlSym) || MACRO_DATA[urlSym] || (typeof APAC_ASHARE_DATA !== "undefined" && APAC_ASHARE_DATA && APAC_ASHARE_DATA[urlSym]))) {
                     initTicker = urlSym;
                     localStorage.setItem("lastSelectedTicker", urlSym);
                     urlParams.delete("symbol");
                     urlParams.delete("ticker");
                     const newQuery = urlParams.toString();
                     window.history.replaceState(null, "", window.location.pathname + (newQuery ? "?" + newQuery : "") + window.location.hash);
-                } else if (savedT && (STOCKS_DATA.some(s => s.ticker === savedT) || MACRO_DATA[savedT])) {
+                } else if (savedT && (STOCKS_DATA.some(s => s.ticker === savedT) || MACRO_DATA[savedT] || (typeof APAC_ASHARE_DATA !== "undefined" && APAC_ASHARE_DATA && APAC_ASHARE_DATA[savedT]))) {
                     initTicker = savedT;
                 }
             } catch(e) {}
@@ -8403,6 +8606,8 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
         "__PY_TPL_INTRADAY_PATH_JSON__": intraday_path_json,
         "__PY_TPL_SESSION_CODE__": str(session_code or "REGULAR"),
         "__PY_TPL_LEADERS_JSON__": leaders_json,
+        "__PY_TPL_APAC_JSON__": apac_json,
+        "__PY_TPL_APAC_COUNT__": apac_count_str,
     }
     try:
         import copy_trade_kol_engine as _ct_dual_term_mod

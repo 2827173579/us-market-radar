@@ -7747,7 +7747,7 @@ def render_html_dashboard(tables_data: Dict, output_path: str = 'predict_radar_5
 
     # 生成 Table 4-A 做多排行榜与全域 70 标的 HTML (默认展示 Top 5，支持展开全池与按赛道/ETF筛选)
     t4_rows_html = ""
-    pure_etf_set = {'QQQ', 'SPY', 'DIA', 'IWM', 'SMH', 'SOXX', 'SOXL', 'KORU', 'KOSPI', 'IGV', 'TLT', 'GLD', 'VIXY', 'SQQQ', 'SOXS'}
+    pure_etf_set = {'QQQ', 'SPY', 'DIA', 'IWM', 'SMH', 'SOXX', 'SOXL', 'KORU', 'KOSPI', 'KSTR', 'IGV', 'TLT', 'GLD', 'VIXY', 'SQQQ', 'SOXS'}
     etf_count = 0
     for r in all_live:
         rk = int(r['rank'])
@@ -10087,7 +10087,7 @@ def render_html_dashboard(tables_data: Dict, output_path: str = 'predict_radar_5
                     'SMH': 'VanEck半导体', 'TSM': '台积电', 'NVDA': '英伟达算力',
                     'MU': '美光存储', 'AMD': '超威半导体', 'AVGO': '博通通信',
                     'MRVL': '迈威尔芯片', 'INTC': '英特尔芯片', 'SNDK': '闪迪数据存储',
-                    'QQQ': '纳指100微型', 'SQQQ': '3倍做空纳指', 'KORU': '3倍做多韩股', 'KOSPI': '韩国综合指数',
+                    'QQQ': '纳指100微型', 'SQQQ': '3倍做空纳指', 'KORU': '3倍做多韩股', 'KOSPI': '韩国综合指数', 'KSTR': '中国科技半导体ETF',
                     'BTC-USD': '比特币现货', 'XAUUSD': '伦敦金现货', 'ANT': 'Anthropic (IPO)',
                     'TSLA': '特斯拉物理AI', 'PLTR': 'Palantir企业AI'
                 }};
@@ -10808,6 +10808,7 @@ EXTENDED_RADAR_SECTOR_MAP: Dict[str, Tuple[str, str]] = {
     'SOXL': ('Semiconductors', '半导体3倍做多'),
     'SMH':  ('Semiconductors', '半导体ETF'),
     'KORU': ('Memory', '韩股存储3倍做多'),
+    'KSTR': ('Semiconductors', '中国科技半导体ETF'),
     # 存储与闪存生态
     'SKHY': ('Memory', '存储芯片'),
     'SNDK': ('Memory', '存储芯片'),

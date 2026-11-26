@@ -112,7 +112,7 @@ def verify_desktop(browser):
     badge_counts = page.locator("#watchlistContainer .stock-item").evaluate_all(
         "els => els.map(e => e.querySelectorAll('.s-status-pill').length)"
     )
-    assert len(badge_counts) == 80, f"Expected 80 watchlist rows, got {len(badge_counts)}"
+    assert len(badge_counts) == 81, f"Expected 81 watchlist rows, got {len(badge_counts)}"
     assert all(c == 1 for c in badge_counts), f"Each stock item must have strictly 1 status pill: {set(badge_counts)}"
 
     for flt in ("opportunity", "risk", "gold_crypto", "all"):

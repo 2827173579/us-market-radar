@@ -72,6 +72,7 @@ MONITORED_TARGETS = {
         "SOXL": {"name": "3倍做多半导体", "sub": "费半三倍正向杠杆·实盘底仓跟踪", "cat": "正向杠杆", "cost": 0.0, "shares": 0.0, "trim1": 94.50, "trim1_shares": 4.22594, "trim2": 102.50, "base_val": 82.09, "target": 0.0},
         "KORU": {"name": "3倍做多韩国", "sub": "韩国股市3倍正向杠杆·三星海力士先导", "cat": "正向杠杆"},
         "KOSPI": {"name": "韩国综合指数", "sub": "韩国股市总基准 (三星/SK海力士)", "cat": "亚太指数", "yf_symbol": "^KS11", "is_index": True, "price_unit": "pts"},
+        "KSTR": {"name": "中国科技半导体ETF", "sub": "KraneShares中国科创50/半导体ETF (NYSE Arca)", "cat": "半导体"},
         "IGV":  {"name": "软件科技ETF", "sub": "SaaS与AI企业级应用", "cat": "云与软件"},
         "TLT":  {"name": "20年+美债", "sub": "长端利率与避险情绪", "cat": "利率债券"},
         "GLD":  {"name": "黄金现货ETF", "sub": "抗通胀与终极地缘避险", "cat": "大宗商品"},
@@ -5631,6 +5632,7 @@ def build_latest_radar_snapshot(
     opex_shield: Optional[Dict[str, Any]] = None,
     daily_sr_anchors: Optional[Dict[str, Any]] = None,
     market_temperature: Optional[Dict[str, Any]] = None,
+    apac_doc: Optional[Dict[str, Any]] = None,
 ) -> Dict[str, Any]:
     """构建供 Discord 交互机器人零 API 压力只读消费的轻量全市场快照。"""
     sess = str(session_code or "REGULAR").strip().upper() or "REGULAR"
@@ -6184,6 +6186,29 @@ def build_latest_radar_snapshot(
     except Exception:
         pass
 
+    # V5.6 亚太纯指数与 A 股 ETF 独立只读分区 + 亚盘半导体风向 (严禁混入 tickers_out / ticker_count)
+    _apac_src = apac_doc if isinstance(apac_doc, dict) and apac_doc else {}
+    if not _apac_src:
+        try:
+            import apac_ashare_feed as _aaf_snap
+            _apac_src = _aaf_snap.load_apac_ashare_cache() or {}
+        except Exception:
+            _apac_src = {}
+    _apac_sentiment_out = (
+        _apac_src.get("apac_chip_sentiment")
+        if isinstance(_apac_src.get("apac_chip_sentiment"), dict)
+        else {}
+    )
+    _apac_items_compact: Dict[str, Dict[str, Any]] = {}
+    for _ak_sym, _ak_row in (_apac_src.get("items") or {}).items():
+        if not isinstance(_ak_row, dict):
+            continue
+        _apac_items_compact[str(_ak_sym).upper()] = {
+            k: v
+            for k, v in _ak_row.items()
+            if k not in ("daily_ohlc", "intraday_5m")
+        }
+
     return {
         "schema_version": "v4.4-bot-snapshot",
         "updated_at_et": updated_at_et,
@@ -6207,6 +6232,14 @@ def build_latest_radar_snapshot(
             if isinstance(market_temperature, dict) and market_temperature
             else (wi.get("market_temperature") if isinstance(wi.get("market_temperature"), dict) else {})
         ),
+        "apac_chip_sentiment": _apac_sentiment_out,
+        "apac_ashare_meta": {
+            "active_window": bool(_apac_src.get("active_window", False)),
+            "fetch_mode": str(_apac_src.get("fetch_mode") or "CACHE"),
+            "updated_at_cst": str(_apac_src.get("updated_at_cst") or ""),
+            "count": len(_apac_items_compact),
+        },
+        "apac_ashare_items": _apac_items_compact,
         "resilient_leaders_top5": top5_out,
         "ticker_count": len(tickers_out),
         "tickers": tickers_out,
@@ -6244,6 +6277,7 @@ def generate_macro_radar_html(
     cross_market_liquidity=None,
     market_temperature=None,
     ai_commentary=None,
+    apac_doc=None,
 ):
     """生成包含 14 只核心 ETF、股指期货先导哨、四维温度计、AI首席策略师剧本与跨市场流动性监测的宏观大盘司令塔看板"""
     if not update_time_str:
@@ -6281,6 +6315,12 @@ def generate_macro_radar_html(
         ai_commentary_section_html = _ace_html.render_macro_ai_commentary_html(_ai_payload)
     except Exception:
         ai_commentary_section_html = ""
+    try:
+        import apac_ashare_feed as _aaf_html
+        _apac_payload = apac_doc if isinstance(apac_doc, dict) and apac_doc else (_aaf_html.load_apac_ashare_cache() or {})
+        apac_section_html = _aaf_html.render_macro_apac_section_html(_apac_payload) if _apac_payload else ""
+    except Exception:
+        apac_section_html = ""
     _liq = cross_market_liquidity if isinstance(cross_market_liquidity, dict) else ((weather_info or {}).get("cross_market_liquidity") or {})
     if not _liq:
         try:
@@ -6908,6 +6948,7 @@ def generate_macro_radar_html(
 
     {futures_temp_section_html}
     {ai_commentary_section_html}
+    {apac_section_html}
 
 
 
@@ -8594,6 +8635,23 @@ def run_radar_cycle(is_first_run=False, round_idx=1):
     except Exception as _ace_err:
         print(f"  [!] 🧠 V5.1 AI 解盘引擎静默降级: {_ace_err}")
 
+    # 7.07 V5.6 亚太纯指数 (6只) + A 股场内 ETF (10只) + 亚盘半导体风向聚合
+    # 红线：美股盘前/盘中时段自动时区休眠 (0 次外部 HTTP 请求、0ms 额外延迟)，零 Finnhub 消耗，严禁混入美股温度计与模拟跟单池
+    _apac_doc = {}
+    try:
+        import apac_ashare_feed as _aaf_run
+        _apac_doc = _aaf_run.fetch_apac_ashare_snapshot(
+            kospi_item=(macro_data or {}).get("KOSPI"),
+        )
+        _apac_sent = (_apac_doc or {}).get("apac_chip_sentiment") or {}
+        print(
+            f"[+] 🌏 V5.6 亚太/A股独立分区: mode={_apac_doc.get('fetch_mode')} | "
+            f"标的={len(_apac_doc.get('items') or {})} | http={_apac_doc.get('http_calls', 0)} | "
+            f"{_apac_sent.get('summary_cn', '')}"
+        )
+    except Exception as _apac_err:
+        print(f"  [!] 🌏 V5.6 亚太/A股独立分区静默降级: {_apac_err}")
+
     generate_macro_radar_html(
         macro_data,
         weather_info,
@@ -8603,6 +8661,7 @@ def run_radar_cycle(is_first_run=False, round_idx=1):
         cross_market_liquidity=cross_market_liquidity,
         market_temperature=_market_temperature,
         ai_commentary=_ai_commentary_safe,
+        apac_doc=_apac_doc,
     )
     generate_stocks_radar_html(stocks_sorted, history_dict, update_time_str=now_str, has_realtime=has_realtime, vix_regime=vix_regime)
     
@@ -8789,7 +8848,7 @@ def run_radar_cycle(is_first_run=False, round_idx=1):
         _build_fn = create_futu_terminal.build_futu_terminal_html
     except Exception:
         _build_fn = build_futu_terminal_html
-    futu_html = _build_fn(stocks_sorted, macro_data, weather_info, update_time_str=now_str, has_realtime=has_realtime, target_watchlist=target_watchlist, terminal_notifications=terminal_notifications, session_code=session_code, session_name=session_name, sync_side_effects=True, daily_sr_anchors=_sr_anchors_map)
+    futu_html = _build_fn(stocks_sorted, macro_data, weather_info, update_time_str=now_str, has_realtime=has_realtime, target_watchlist=target_watchlist, terminal_notifications=terminal_notifications, session_code=session_code, session_name=session_name, sync_side_effects=True, daily_sr_anchors=_sr_anchors_map, apac_doc=_apac_doc)
     with open(FUTU_HTML_FILE, "w", encoding="utf-8") as f:
         f.write(futu_html)
     index_html_path = os.path.join(SCRATCH_DIR, "index.html")
@@ -8815,6 +8874,7 @@ def run_radar_cycle(is_first_run=False, round_idx=1):
             now_str=now_str,
             daily_sr_anchors=_sr_anchors_map,
             market_temperature=_market_temperature,
+            apac_doc=_apac_doc,
         )
         _snap_written = write_latest_radar_snapshot(_snap_obj)
         print(f"[+] 📦 轻量只读快照已更新: {_snap_written} ({_snap_obj.get('ticker_count', 0)} 只标的)")

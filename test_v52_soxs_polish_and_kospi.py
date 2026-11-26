@@ -173,9 +173,9 @@ class TestV52SoxsPolishAndKospi(unittest.TestCase):
     def test_05_kospi_80th_target_zero_finnhub_and_cross_tz_cache_guard(self):
         etfs = imr.MONITORED_TARGETS["ETFS"]
         stocks = imr.MONITORED_TARGETS["STOCKS"]
-        self.assertEqual(len(etfs), 15)
+        self.assertEqual(len(etfs), 16)
         self.assertEqual(len(stocks), 65)
-        self.assertEqual(len(etfs) + len(stocks), 80)
+        self.assertEqual(len(etfs) + len(stocks), 81)
         self.assertIn("KOSPI", etfs)
         self.assertNotIn("^KS11", etfs)
         self.assertEqual(etfs["KOSPI"]["yf_symbol"], "^KS11")
