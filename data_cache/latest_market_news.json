@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795736575.037,
-  "updated_at_et": "11-26 18:42 ET",
-  "updated_at_kst": "08:42 KST",
+  "updated_at_ts": 1795736613.667,
+  "updated_at_et": "11-26 18:43 ET",
+  "updated_at_kst": "08:43 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -910,6 +910,13 @@
     ],
     "NVDA": [
       {
+        "title": "Not Nvidia. Not Micron. If I Could Buy and Hold Only 1 Artificial Intelligence (AI) Semiconductor Stock Through 2030, This Would Be It.",
+        "url": "https://www.fool.com/investing/2026/11/26/not-nvidia-not-micron-if-i-could-buy-and-hold-only-1-artificial-intelligence-ai-semiconductor-stock-through-2030-this-would-be-it/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-26 18:14 ET",
+        "pub_ts": 1795734884.0
+      },
+      {
         "title": "Did Jensen Huang’s Alleged Chinese Spy Get Him to Do Anything Nvidia Didn’t Want?",
         "url": "https://unchainedcrypto.com/did-jensen-huangs-alleged-chinese-spy-get-him-to-do-anything-nvidia-didnt-want/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -936,13 +943,6 @@
         "source": "Yahoo Finance",
         "time": "11-26 16:22 ET",
         "pub_ts": 1795728120.0
-      },
-      {
-        "title": "Nvidia halts server shipments to 4 countries just weeks after Jensen Huang’s affair with alleged spy was exposed",
-        "url": "https://nypost.com/2026/11/26/business/nvidia-halts-server-shipments-to-4-southeast-asian-countries-report/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-26 15:30 ET",
-        "pub_ts": 1795725014.0
       }
     ],
     "AMD": [
@@ -1761,6 +1761,13 @@
     ],
     "SPCX": [
       {
+        "title": "Amazon tried to kill Musk’s plan for 1 million AI satellites. The FCC chair scolded it and gave SpaceX the green light",
+        "url": "https://finance.yahoo.com/technology/ai/articles/amazon-tried-kill-musk-plan-233000718.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-26 18:30 ET",
+        "pub_ts": 1795735800.0
+      },
+      {
         "title": "Stanley Druckenmiller Sees 70% Chance of Data Centers in Space Within 10 Years — Duquesne Adds $30 Million to SpaceX Stake in Q3",
         "url": "https://finance.yahoo.com/technology/ai/articles/stanley-druckenmiller-sees-70-chance-213004535.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1787,13 +1794,6 @@
         "source": "Yahoo Finance",
         "time": "11-26 14:10 ET",
         "pub_ts": 1795720228.0
-      },
-      {
-        "title": "Elon Musk doubles SpaceX share pledge for U.S. children",
-        "url": "https://www.cbsnews.com/news/elon-musk-spacex-shares-trump-accounts/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-26 13:22 ET",
-        "pub_ts": 1795717354.0
       }
     ],
     "ASTS": [
@@ -3317,23 +3317,23 @@
     ]
   },
   "ticker_news_ts": {
-    "KORU": 1795735108.0022829,
-    "SOXL": 1795735108.0022829,
-    "SPY": 1795735108.0022829,
-    "DIA": 1795735108.0022829,
-    "SOXX": 1795735108.0022829,
-    "QQQ": 1795735108.0022829,
-    "SMH": 1795735108.0022829,
-    "IWM": 1795735108.0022829,
-    "IGV": 1795735108.0022829,
-    "TLT": 1795735108.0022829,
-    "GLD": 1795735108.0022829,
-    "SQQQ": 1795735108.0022829,
+    "KORU": 1795736613.6668968,
+    "SOXL": 1795736613.6668968,
+    "SPY": 1795736613.6668968,
+    "DIA": 1795736613.6668968,
+    "SOXX": 1795736613.6668968,
+    "QQQ": 1795736613.6668968,
+    "SMH": 1795736613.6668968,
+    "IWM": 1795736613.6668968,
+    "IGV": 1795736613.6668968,
+    "TLT": 1795736613.6668968,
+    "GLD": 1795736613.6668968,
+    "SQQQ": 1795736613.6668968,
     "TSM": 1795735173.045,
-    "VIXY": 1795735108.0022829,
-    "SOXS": 1795735108.0022829,
-    "NVDA": 1795735108.0022829,
-    "AMD": 1795735108.0022829,
+    "VIXY": 1795736613.6668968,
+    "SOXS": 1795736613.6668968,
+    "NVDA": 1795736613.6668968,
+    "AMD": 1795736613.6668968,
     "ASML": 1795735173.045,
     "QCOM": 1795735173.045,
     "AVGO": 1795735173.045,
@@ -3348,15 +3348,15 @@
     "CRWV": 1795735281.9516175,
     "NBIS": 1795735281.9516175,
     "APLD": 1795735281.9516175,
-    "VST": 1795735108.0022829,
-    "BE": 1795735108.0022829,
-    "CRDO": 1795735108.0022829,
-    "COHR": 1795735108.0022829,
+    "VST": 1795736613.6668968,
+    "BE": 1795736613.6668968,
+    "CRDO": 1795736613.6668968,
+    "COHR": 1795736613.6668968,
     "MRVL": 1795735281.9516175,
     "LITE": 1795735281.9516175,
-    "AAOI": 1795735108.0022829,
-    "SPCX": 1795735108.0022829,
-    "ASTS": 1795735108.0022829,
+    "AAOI": 1795736613.6668968,
+    "SPCX": 1795736613.6668968,
+    "ASTS": 1795736613.6668968,
     "AXTI": 1795735281.9516175,
     "NASA": 1795735173.045,
     "LUNR": 1795735173.045,
@@ -3393,11 +3393,11 @@
     "V": 1795735281.9516175,
     "CAT": 1795735326.6666548,
     "FN": 1795735281.9516175,
-    "GLW": 1795735108.0022829,
+    "GLW": 1795736613.6668968,
     "ANT": 1795735326.6666548,
     "XAUUSD": 1795735326.6666548,
     "KOSPI": 1795735281.9516175,
-    "KSTR": 1795735108.0022829
+    "KSTR": 1795736613.6668968
   },
   "opex_shield": {
     "date": "2026-11-26",
