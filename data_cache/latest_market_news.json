@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795733190.35,
-  "updated_at_et": "11-26 17:46 ET",
-  "updated_at_kst": "07:46 KST",
+  "updated_at_ts": 1795733235.085,
+  "updated_at_et": "11-26 17:47 ET",
+  "updated_at_kst": "07:47 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -1207,6 +1207,13 @@
     ],
     "MSFT": [
       {
+        "title": "Tech Stock Sell-Off: Down 13%, Is Microsoft a Buy Now?",
+        "url": "https://www.fool.com/investing/2026/11/26/tech-stock-sell-off-down-13-is-microsoft-a-buy-now/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-26 17:20 ET",
+        "pub_ts": 1795731602.0
+      },
+      {
         "title": "Microsoft Stocks Slip 1.25% While Nadella Backs Cheaper In-House AI Models",
         "url": "https://finance.yahoo.com/markets/stocks/articles/microsoft-stocks-slip-1-25-184200035.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1233,13 +1240,6 @@
         "source": "Yahoo Finance",
         "time": "11-26 13:12 ET",
         "pub_ts": 1795716770.0
-      },
-      {
-        "title": "Stanley Druckenmiller, Bill Ackman and 7 Other Famous Investors Own Amazon. Here’s Who Bought and Sold Recently",
-        "url": "https://www.tikr.com/blog/stanley-druckenmiller-bill-ackman-and-7-other-famous-investors-own-amazon-heres-who-bought-and-sold-recently?ref=yahoofinance&tlnk=yf-261126-2mffj2wm&.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-26 13:11 ET",
-        "pub_ts": 1795716673.0
       }
     ],
     "AAPL": [
@@ -1947,6 +1947,13 @@
     ],
     "TSLA": [
       {
+        "title": "Should You Buy Tesla Stock Before December?",
+        "url": "https://www.fool.com/investing/2026/11/26/should-you-buy-tesla-stock-before-december/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-26 17:35 ET",
+        "pub_ts": 1795732502.0
+      },
+      {
         "title": "Tesla Stocks Slip 1.18% as EU Delays Self-Driving Vote to December 15",
         "url": "https://finance.yahoo.com/markets/stocks/articles/tesla-stocks-slip-1-18-190357031.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1973,13 +1980,6 @@
         "source": "Yahoo Finance",
         "time": "11-26 08:44 ET",
         "pub_ts": 1795700640.0
-      },
-      {
-        "title": "JPMorgan Says S&P Could Waive Its Rules for a Tesla-SpaceX Merger. That’s Good News for SpaceX Holders",
-        "url": "https://www.tikr.com/blog/jpmorgan-says-sp-could-waive-its-rules-for-a-tesla-spacex-merger-thats-good-news-for-spacex-holders?ref=yahoofinance&tlnk=yf-261126-gpc9wr29&.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-26 06:45 ET",
-        "pub_ts": 1795693559.0
       }
     ],
     "AXP": [
@@ -2146,6 +2146,13 @@
         "pub_ts": 1795716730.0
       },
       {
+        "title": "Nvidia Just Revealed a Major $19 Billion Vote of Confidence in Intel Stock",
+        "url": "https://www.barchart.com/story/news/9021482/nvidia-just-revealed-a-major-19-billion-vote-of-confidence-in-intel-stock?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-26 11:30 ET",
+        "pub_ts": 1795710603.0
+      },
+      {
         "title": "Here’s Why $35 Is The Price to Buy Intel, and No Higher",
         "url": "https://247wallst.com/investing/2026/11/26/heres-why-35-is-the-price-to-buy-intel-and-no-higher/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2158,13 +2165,6 @@
         "source": "Yahoo Finance",
         "time": "11-26 03:50 ET",
         "pub_ts": 1795683021.0
-      },
-      {
-        "title": "Intel Stocks Drop 7.47% as GuruFocus Flags 48.7% Premium to GF Value",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/intel-stocks-drop-7-47-174206192.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 12:42 ET",
-        "pub_ts": 1795628526.0
       }
     ],
     "VRT": [
@@ -3330,19 +3330,19 @@
     "TLT": 1795732915.9486449,
     "GLD": 1795732915.9486449,
     "SQQQ": 1795732915.9486449,
-    "TSM": 1795731733.961666,
+    "TSM": 1795733235.0847952,
     "VIXY": 1795732915.9486449,
     "SOXS": 1795732915.9486449,
     "NVDA": 1795732915.9486449,
     "AMD": 1795732915.9486449,
-    "ASML": 1795731733.961666,
-    "QCOM": 1795731733.961666,
-    "AVGO": 1795731733.961666,
-    "AMAT": 1795731733.961666,
-    "META": 1795731733.961666,
-    "GOOGL": 1795731733.961666,
-    "MSFT": 1795731733.961666,
-    "AAPL": 1795731733.961666,
+    "ASML": 1795733235.0847952,
+    "QCOM": 1795733235.0847952,
+    "AVGO": 1795733235.0847952,
+    "AMAT": 1795733235.0847952,
+    "META": 1795733235.0847952,
+    "GOOGL": 1795733235.0847952,
+    "MSFT": 1795733235.0847952,
+    "AAPL": 1795733235.0847952,
     "PLTR": 1795731779.3031247,
     "NOW": 1795731779.3031247,
     "AMZN": 1795731779.3031247,
@@ -3359,26 +3359,26 @@
     "SPCX": 1795732915.9486449,
     "ASTS": 1795732915.9486449,
     "AXTI": 1795731779.3031247,
-    "NASA": 1795731733.961666,
-    "LUNR": 1795731733.961666,
-    "TSLA": 1795731733.961666,
-    "AXP": 1795731733.961666,
-    "RKLB": 1795731733.961666,
-    "KO": 1795731733.961666,
-    "FLY": 1795731733.961666,
-    "INTC": 1795731733.961666,
-    "VRT": 1795731733.961666,
-    "HPE": 1795731733.961666,
-    "DELL": 1795731733.961666,
-    "OKLO": 1795731733.961666,
-    "CEG": 1795731733.961666,
-    "FPS": 1795731733.961666,
+    "NASA": 1795733235.0847952,
+    "LUNR": 1795733235.0847952,
+    "TSLA": 1795733235.0847952,
+    "AXP": 1795733235.0847952,
+    "RKLB": 1795733235.0847952,
+    "KO": 1795733235.0847952,
+    "FLY": 1795733235.0847952,
+    "INTC": 1795733235.0847952,
+    "VRT": 1795733235.0847952,
+    "HPE": 1795733235.0847952,
+    "DELL": 1795733235.0847952,
+    "OKLO": 1795733235.0847952,
+    "CEG": 1795733235.0847952,
+    "FPS": 1795733235.0847952,
     "MU": 1795731779.3031247,
     "SKHY": 1795731779.3031247,
     "WDC": 1795731779.3031247,
     "STX": 1795731779.3031247,
     "MSTR": 1795731779.3031247,
-    "SNDK": 1795731733.961666,
+    "SNDK": 1795733235.0847952,
     "BTC-USD": 1795731779.3031247,
     "CRWD": 1795731779.3031247,
     "ORCL": 1795731779.3031247,
@@ -3397,7 +3397,7 @@
     "GLW": 1795732915.9486449,
     "ANT": 1795731825.009037,
     "XAUUSD": 1795731825.009037,
-    "KOSPI": 1795731733.961666,
+    "KOSPI": 1795733235.0847952,
     "KSTR": 1795732915.9486449
   },
   "opex_shield": {
