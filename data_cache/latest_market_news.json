@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795663846.796,
-  "updated_at_et": "11-25 22:30 ET",
-  "updated_at_kst": "12:30 KST",
+  "updated_at_ts": 1795663886.917,
+  "updated_at_et": "11-25 22:31 ET",
+  "updated_at_kst": "12:31 KST",
   "macro_calendar": [
     {
       "event_id": "1599680",
@@ -43,6 +43,32 @@
     }
   ],
   "macro_flashes": [
+    {
+      "id": "20261126113053737800",
+      "title": "通胀数据扼杀短期转鸽可能，市场流动性或进一步收紧",
+      "summary": "PCE与GDP数据的表现支撑紧缩交易剧本，市场流动性收缩将支撑美元并打压非美资产和科技股。若信用利差继续走扩，市场可能进入第二轮调整。",
+      "keywords": [
+        "PCE"
+      ],
+      "pub_ts": 1795663853.0,
+      "time_et": "11-25 22:30 ET",
+      "time_bj": "11:30 BJ",
+      "time_kst": "12:30 KST",
+      "time_display": "22:30 ET / 11:30 BJ"
+    },
+    {
+      "id": "20261126113049456800",
+      "title": "早盘收盘，国内期货主力合约涨多跌少，燃料油涨超6%，乙二醇（EG）涨超5%，苹果涨超4%…",
+      "summary": "早盘收盘，国内期货主力合约涨多跌少，燃料油涨超6%，乙二醇（EG）涨超5%，苹果涨超4%，塑料、丙烯、钯、铂、集运欧线涨超3%。跌幅方面，氢氧化锂跌近6%，沪锡跌超3%，碳酸锂跌超2%，生猪跌超1%。",
+      "keywords": [
+        "苹果"
+      ],
+      "pub_ts": 1795663849.0,
+      "time_et": "11-25 22:30 ET",
+      "time_bj": "11:30 BJ",
+      "time_kst": "12:30 KST",
+      "time_display": "22:30 ET / 11:30 BJ"
+    },
     {
       "id": "20261126111250635800",
       "title": "韩国央行：预计今年芯片企业营业利润达700万亿韩元。",
@@ -356,36 +382,6 @@
       "time_bj": "06:31 BJ",
       "time_kst": "07:31 KST",
       "time_display": "17:31 ET / 06:31 BJ"
-    },
-    {
-      "id": "20261126060712883800",
-      "title": "美伊冲突： 1. 一艘违规LNG运输船在霍尔木兹海峡发生爆炸并起火。 2. 伊朗外长指责…",
-      "summary": "美伊冲突： 1. 一艘违规LNG运输船在霍尔木兹海峡发生爆炸并起火。 2. 伊朗外长指责以色列企图借虚假指控将美国拖入对伊战争。 3. 特朗普称对伊军事行动资金可覆盖到明年1月 承认未来或受限。 也门冲突： 1. 也门胡塞武装：袭击沙特吉达港和吉赞港。 2. 也门胡塞武装：打击沙特炼油厂和首都金融区。 3. 沙特领导的联军：打击了荷台达港的作战能力目标。 4. 胡塞武装：重申若荷台达港遭袭，将打击沙特红海沿岸港口。 其他情况： 1. 库什纳敦促内塔尼亚胡兑现加沙和平计划承诺。 2. 伊朗副总统称不惧美国封锁，将采取措施稳物价。 3. 市场消息：以色列议会通过限制总理任期的法案。 4. 据以色列第12频道：以色列正直党领导人、反对派领袖埃森科特今晚将与以色列总统会面，预计不会宣布已成功组建政府。 5. 据伊拉克国家电视台：伊拉克联邦最高法院已裁定，伊拉克可在包括库尔德斯坦地区部署军队，以保障伊拉克国际边界安全。",
-      "keywords": [
-        "特朗普",
-        "中东"
-      ],
-      "pub_ts": 1795644432.0,
-      "time_et": "11-25 17:07 ET",
-      "time_bj": "06:07 BJ",
-      "time_kst": "07:07 KST",
-      "time_display": "17:07 ET / 06:07 BJ"
-    },
-    {
-      "id": "20261126050141009800",
-      "title": "【美股收盘：三大股指较低点大幅反弹 英伟达跌近4%】 11月26日讯，美股周三收盘，道指…",
-      "summary": "【美股收盘：三大股指较低点大幅反弹 英伟达跌近4%】 11月26日讯，美股周三收盘，道指初步收涨0.33%，标普500指数跌0.25%，纳指跌0.6%，三大股指盘中分别曾跌2%、3%和4.5%。费城半导体指数跌0.65%。英伟达(NVDA.O)跌3.9%，Anthropic(ANT.O)涨1%，闪迪(SNDK.O)跌5.5%，惠普(HPQ.N)涨11%。纳斯达克中国金龙指数涨1.87%，理想汽车(LI.O)涨11%。",
-      "keywords": [
-        "半导体",
-        "英伟达",
-        "纳斯达克",
-        "标普"
-      ],
-      "pub_ts": 1795640501.0,
-      "time_et": "11-25 16:01 ET",
-      "time_bj": "05:01 BJ",
-      "time_kst": "06:01 KST",
-      "time_display": "16:01 ET / 05:01 BJ"
     }
   ],
   "ticker_news": {
@@ -946,39 +942,39 @@
     ],
     "NVDA": [
       {
+        "title": "Trump admin weighed using Cold War law to reinstate Nvidia CEO Huang, WaPo reports",
+        "url": "https://finance.yahoo.com/technology/articles/trump-admin-weighed-using-cold-032247551.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 22:22 ET",
+        "pub_ts": 1795663367.0
+      },
+      {
+        "title": "Nvidia chips reach Chinese-owned U.S. firms despite export curbs, CBS reports",
+        "url": "https://finance.yahoo.com/technology/ai/articles/nvidia-chips-reach-chinese-owned-031146505.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 22:11 ET",
+        "pub_ts": 1795662706.0
+      },
+      {
+        "title": "Kioxia and NVIDIA Collaborate to Expand Effective High-Bandwidth Memory Capacity with SSDs",
+        "url": "https://finance.yahoo.com/technology/ai/articles/kioxia-nvidia-collaborate-expand-effective-031000587.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 22:10 ET",
+        "pub_ts": 1795662600.0
+      },
+      {
+        "title": "Is Nvidia Stock a Buy After Dell's Record AI Backlog?",
+        "url": "https://www.fool.com/investing/2026/11/25/is-nvidia-stock-a-buy-after-dell-s-record-ai-backlog/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 22:07 ET",
+        "pub_ts": 1795662422.0
+      },
+      {
         "title": "Nvidia’s Market Cap Falls Below Microsoft’s: Analyst Flags Five Overhangs For NVDA Stock",
         "url": "https://stocktwits.com/news-articles/markets/equity/nvidia-s-market-cap-falls-below-microsoft-s-analyst-flags-five-overhangs-for-nvda-stock/cNbx4KZR9Z3?.tsrc=rss",
         "source": "Yahoo Finance",
         "time": "11-25 21:39 ET",
         "pub_ts": 1795660782.0
-      },
-      {
-        "title": "Nvidia Put on Negative Credit Watch by S&P Over ‘Key Man’ Risk: Moody’s Says Jensen Huang’s Return as CEO ‘Reduces Near-Term Uncertainty’",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/nvidia-put-negative-credit-watch-013558626.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 20:35 ET",
-        "pub_ts": 1795656958.0
-      },
-      {
-        "title": "Pete Hegseth, Trump Officials Reportedly Floated Wartime Law to Force Jensen Huang’s Return as Nvidia CEO, But Pentagon Says It ‘Never Happened’",
-        "url": "https://finance.yahoo.com/technology/articles/pete-hegseth-trump-officials-reportedly-013224994.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 20:32 ET",
-        "pub_ts": 1795656744.0
-      },
-      {
-        "title": "Tech Stocks Stall Into Thanksgiving: Will the AI Rebound Return?",
-        "url": "https://beincrypto.com/tech-stocks-stall-thanksgiving-nvidia-rebound/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 20:19 ET",
-        "pub_ts": 1795655993.0
-      },
-      {
-        "title": "S&P 500, Nasdaq End Lower But Dow Rebounds As Traders Rotate Out Of AI — NVDA, SPCX, PANW In Focus",
-        "url": "https://stocktwits.com/news-articles/markets/equity/s-and-p-500-nasdaq-end-lower-but-dow-rebounds-as-traders-rotate-out-of-ai-nvda-spcx-panw-in-focus/cNbx21AR9mC?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 19:09 ET",
-        "pub_ts": 1795651790.0
       }
     ],
     "AMD": [
@@ -3327,15 +3323,15 @@
     "IGV": 1795663846.7960312,
     "TLT": 1795663846.7960312,
     "GLD": 1795663846.7960312,
-    "SQQQ": 1795662359.5235136,
+    "SQQQ": 1795663886.9172378,
     "TSM": 1795663531.2037733,
     "VIXY": 1795663846.7960312,
-    "SOXS": 1795662359.5235136,
-    "NVDA": 1795662359.5235136,
-    "AMD": 1795662359.5235136,
+    "SOXS": 1795663886.9172378,
+    "NVDA": 1795663886.9172378,
+    "AMD": 1795663886.9172378,
     "ASML": 1795663531.2037733,
     "QCOM": 1795663531.2037733,
-    "AVGO": 1795662359.5235136,
+    "AVGO": 1795663886.9172378,
     "AMAT": 1795663531.2037733,
     "META": 1795663531.2037733,
     "GOOGL": 1795663531.2037733,
