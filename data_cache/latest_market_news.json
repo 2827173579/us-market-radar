@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795697159.521,
-  "updated_at_et": "11-26 07:45 ET",
-  "updated_at_kst": "21:45 KST",
+  "updated_at_ts": 1795697206.256,
+  "updated_at_et": "11-26 07:46 ET",
+  "updated_at_kst": "21:46 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -1576,6 +1576,13 @@
     ],
     "CRDO": [
       {
+        "title": "Credo Technology Has Had a Wild Ride to a 25% Decline Year-to-Date: Two Wall Street Teams Target 190% Returns Moving Forward",
+        "url": "https://247wallst.com/investing/2026/11/26/credo-technology-has-had-a-wild-ride-to-a-25-decline-year-to-date-two-wall-street-teams-target-190-returns-moving-forward/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-26 07:15 ET",
+        "pub_ts": 1795695300.0
+      },
+      {
         "title": "Why Is Credo Stock Going Up?",
         "url": "https://www.trefis.com/stock/crdo/articles/628617/why-is-credo-stock-going-up/2026-11-25?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1602,13 +1609,6 @@
         "source": "Yahoo Finance",
         "time": "11-25 10:05 ET",
         "pub_ts": 1795619138.0
-      },
-      {
-        "title": "Own Credo Stock? Watch Its Inventory On Dec 1",
-        "url": "https://www.trefis.com/stock/crdo/articles/628767/own-credo-stock-watch-its-inventory-on-dec-1/2026-11-25?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 06:45 ET",
-        "pub_ts": 1795607107.0
       }
     ],
     "COHR": [
@@ -1768,6 +1768,13 @@
         "pub_ts": 1795693559.0
       },
       {
+        "title": "Elon Musk's 2-Share SpaceX Giveaway Comes With an Extraordinary Prediction",
+        "url": "https://beincrypto.com/musk-spacex-shares-every-american-child/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-26 06:42 ET",
+        "pub_ts": 1795693337.0
+      },
+      {
         "title": "SpaceX's $18.4 Billion Share Pledge Raises Dilution Questions",
         "url": "https://finance.yahoo.com/markets/stocks/articles/spacexs-18-4-billion-share-112938645.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1787,13 +1794,6 @@
         "source": "Yahoo Finance",
         "time": "11-26 05:59 ET",
         "pub_ts": 1795690796.0
-      },
-      {
-        "title": "Why SpaceX’s Approval for Data Centers Is Impossible for Rivals to Copy",
-        "url": "https://finance.yahoo.com/m/f2facb44-8fb6-3aed-a0b9-e6e29b08bf05/why-spacex%E2%80%99s-approval-for.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-26 05:36 ET",
-        "pub_ts": 1795689360.0
       }
     ],
     "ASTS": [
@@ -3317,16 +3317,16 @@
     ]
   },
   "ticker_news_ts": {
-    "KORU": 1795695677.1957953,
-    "SOXL": 1795695677.1957953,
+    "KORU": 1795697206.2564774,
+    "SOXL": 1795697206.2564774,
     "SPY": 1795695879.7584026,
-    "DIA": 1795695677.1957953,
-    "SOXX": 1795695677.1957953,
-    "QQQ": 1795695677.1957953,
+    "DIA": 1795697206.2564774,
+    "SOXX": 1795697206.2564774,
+    "QQQ": 1795697206.2564774,
     "SMH": 1795695879.7584026,
-    "IWM": 1795695677.1957953,
-    "IGV": 1795695677.1957953,
-    "TLT": 1795695677.1957953,
+    "IWM": 1795697206.2564774,
+    "IGV": 1795697206.2564774,
+    "TLT": 1795697206.2564774,
     "GLD": 1795695825.7776139,
     "SQQQ": 1795695825.7776139,
     "TSM": 1795695933.933526,
@@ -3348,15 +3348,15 @@
     "CRWV": 1795695933.933526,
     "NBIS": 1795695933.933526,
     "APLD": 1795695933.933526,
-    "VST": 1795695677.1957953,
-    "BE": 1795695677.1957953,
-    "CRDO": 1795695677.1957953,
-    "COHR": 1795695677.1957953,
+    "VST": 1795697206.2564774,
+    "BE": 1795697206.2564774,
+    "CRDO": 1795697206.2564774,
+    "COHR": 1795697206.2564774,
     "MRVL": 1795695933.933526,
     "LITE": 1795695933.933526,
-    "AAOI": 1795695677.1957953,
-    "SPCX": 1795695677.1957953,
-    "ASTS": 1795695677.1957953,
+    "AAOI": 1795697206.2564774,
+    "SPCX": 1795697206.2564774,
+    "ASTS": 1795697206.2564774,
     "AXTI": 1795695933.933526,
     "NASA": 1795695825.7776139,
     "LUNR": 1795695825.7776139,
@@ -3393,7 +3393,7 @@
     "V": 1795695879.7584026,
     "CAT": 1795695879.7584026,
     "FN": 1795695933.933526,
-    "GLW": 1795695677.1957953,
+    "GLW": 1795697206.2564774,
     "ANT": 1795695879.7584026,
     "XAUUSD": 1795695987.9650087,
     "KOSPI": 1795695933.933526,
