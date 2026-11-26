@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795683856.934,
-  "updated_at_et": "11-26 04:04 ET",
-  "updated_at_kst": "18:04 KST",
+  "updated_at_ts": 1795683902.487,
+  "updated_at_et": "11-26 04:05 ET",
+  "updated_at_kst": "18:05 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -1753,6 +1753,13 @@
     ],
     "SPCX": [
       {
+        "title": "Musk says will give two SpaceX shares to 'every child in America'",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/musk-says-two-spacex-shares-085820244.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-26 03:58 ET",
+        "pub_ts": 1795683500.0
+      },
+      {
         "title": "SPCX Wins Million-Satellite Nod And Retail Attention — But ASTS Leads Space Stocks Into Thanksgiving",
         "url": "https://stocktwits.com/news-articles/markets/equity/spcx-stock-million-satellite-nod-asts-leads-rklb-lunr-bksy-thanksgiving/cNbxLqbR9ZV?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1779,13 +1786,6 @@
         "source": "Yahoo Finance",
         "time": "11-26 00:32 ET",
         "pub_ts": 1795671175.0
-      },
-      {
-        "title": "Elon Musk, SpaceX pledge major stock donations to active Trump Accounts",
-        "url": "https://www.foxbusiness.com/markets/elon-musk-spacex-pledge-major-stock-donations-active-trump-accounts?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 23:29 ET",
-        "pub_ts": 1795667395.0
       }
     ],
     "ASTS": [
@@ -3309,16 +3309,16 @@
     ]
   },
   "ticker_news_ts": {
-    "KORU": 1795682375.1200671,
-    "SOXL": 1795682375.1200671,
+    "KORU": 1795683902.487134,
+    "SOXL": 1795683902.487134,
     "SPY": 1795683572.234353,
-    "DIA": 1795682375.1200671,
-    "SOXX": 1795682375.1200671,
-    "QQQ": 1795682375.1200671,
+    "DIA": 1795683902.487134,
+    "SOXX": 1795683902.487134,
+    "QQQ": 1795683902.487134,
     "SMH": 1795683572.234353,
-    "IWM": 1795682375.1200671,
-    "IGV": 1795682375.1200671,
-    "TLT": 1795682375.1200671,
+    "IWM": 1795683902.487134,
+    "IGV": 1795683902.487134,
+    "TLT": 1795683902.487134,
     "GLD": 1795682475.8118412,
     "SQQQ": 1795682475.8118412,
     "TSM": 1795683572.234353,
@@ -3340,15 +3340,15 @@
     "CRWV": 1795683572.234353,
     "NBIS": 1795683612.6969247,
     "APLD": 1795683612.6969247,
-    "VST": 1795682375.1200671,
-    "BE": 1795682375.1200671,
-    "CRDO": 1795682375.1200671,
-    "COHR": 1795682375.1200671,
+    "VST": 1795683902.487134,
+    "BE": 1795683902.487134,
+    "CRDO": 1795683902.487134,
+    "COHR": 1795683902.487134,
     "MRVL": 1795683612.6969247,
     "LITE": 1795683612.6969247,
-    "AAOI": 1795682375.1200671,
-    "SPCX": 1795682375.1200671,
-    "ASTS": 1795682375.1200671,
+    "AAOI": 1795683902.487134,
+    "SPCX": 1795683902.487134,
+    "ASTS": 1795683902.487134,
     "AXTI": 1795683612.6969247,
     "NASA": 1795682427.0656705,
     "LUNR": 1795682427.0656705,
@@ -3385,7 +3385,7 @@
     "V": 1795682527.4577682,
     "CAT": 1795682578.3107145,
     "FN": 1795683612.6969247,
-    "GLW": 1795682375.1200671,
+    "GLW": 1795683902.487134,
     "ANT": 1795682578.3107145,
     "XAUUSD": 1795682578.3107145,
     "KOSPI": 1795683572.234353,
