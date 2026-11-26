@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795706605.851,
-  "updated_at_et": "11-26 10:23 ET",
-  "updated_at_kst": "00:23 KST",
+  "updated_at_ts": 1795706654.774,
+  "updated_at_et": "11-26 10:24 ET",
+  "updated_at_kst": "00:24 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -2610,6 +2610,13 @@
     ],
     "BTC-USD": [
       {
+        "title": "What TeraWulf (WULF) Long Term Data Center Contracts Mean For Shareholders",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/terawulf-wulf-long-term-data-150921107.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-26 10:09 ET",
+        "pub_ts": 1795705761.0
+      },
+      {
         "title": "Core Scientific (CORZ) Quit Bitcoin for AI. Was It Worth It?",
         "url": "https://finance.yahoo.com/technology/ai/articles/core-scientific-corz-quit-bitcoin-144324574.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2636,13 +2643,6 @@
         "source": "Yahoo Finance",
         "time": "11-26 09:37 ET",
         "pub_ts": 1795703820.0
-      },
-      {
-        "title": "Polygon Brings Its Cross-Border Payments Stack to Coinbase’s Base",
-        "url": "https://decrypt.co/384023/polygon-cross-border-payments-stack-coinbase-base?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-26 09:01 ET",
-        "pub_ts": 1795701662.0
       }
     ],
     "CRWD": [
@@ -3202,6 +3202,13 @@
     ],
     "ANT": [
       {
+        "title": "AI's self-improvement era is nearly here. It will be felt everywhere",
+        "url": "https://finance.yahoo.com/video/ais-self-improvement-era-nearly-150000618.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-26 10:00 ET",
+        "pub_ts": 1795705200.0
+      },
+      {
         "title": "Anthropic Signed a $19 Billion Lease. Is TeraWulf (WULF) Ready?",
         "url": "https://finance.yahoo.com/technology/ai/articles/anthropic-signed-19-billion-lease-144202573.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -3228,13 +3235,6 @@
         "source": "Yahoo Finance",
         "time": "11-26 08:02 ET",
         "pub_ts": 1795698151.0
-      },
-      {
-        "title": "Anthropic Broke Its $83 IPO Price. What Did Facebook Do Next?",
-        "url": "https://www.trefis.com/stock/ant/articles/629153/anthropic-broke-its-83-ipo-price-what-did-facebook-do-next/2026-11-26?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-26 06:38 ET",
-        "pub_ts": 1795693101.0
       }
     ],
     "XAUUSD": [
@@ -3370,30 +3370,30 @@
     "OKLO": 1795706561.9586165,
     "CEG": 1795706561.9586165,
     "FPS": 1795706561.9586165,
-    "MU": 1795705129.6114542,
-    "SKHY": 1795705129.6114542,
-    "WDC": 1795705129.6114542,
+    "MU": 1795706654.7739391,
+    "SKHY": 1795706654.7739391,
+    "WDC": 1795706654.7739391,
     "STX": 1795706605.850624,
     "MSTR": 1795706605.850624,
     "SNDK": 1795706561.9586165,
-    "BTC-USD": 1795705129.6114542,
+    "BTC-USD": 1795706654.7739391,
     "CRWD": 1795706605.850624,
     "ORCL": 1795706605.850624,
     "COIN": 1795706605.850624,
     "LLY": 1795706605.850624,
     "MRNA": 1795706605.850624,
-    "NKE": 1795705084.7063785,
+    "NKE": 1795706654.7739391,
     "MCD": 1795706605.850624,
-    "PEP": 1795705084.7063785,
-    "XOM": 1795705129.6114542,
-    "JPM": 1795705084.7063785,
-    "WMT": 1795705129.6114542,
+    "PEP": 1795706654.7739391,
+    "XOM": 1795706654.7739391,
+    "JPM": 1795706654.7739391,
+    "WMT": 1795706654.7739391,
     "V": 1795706605.850624,
-    "CAT": 1795705084.7063785,
+    "CAT": 1795706654.7739391,
     "FN": 1795706605.850624,
     "GLW": 1795706518.9781039,
-    "ANT": 1795705084.7063785,
-    "XAUUSD": 1795705129.6114542,
+    "ANT": 1795706654.7739391,
+    "XAUUSD": 1795706654.7739391,
     "KOSPI": 1795706605.850624,
     "KSTR": 1795706518.9781039
   },
