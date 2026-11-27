@@ -8439,9 +8439,13 @@
     "2026-11-27:AMZN/KSTR:5M_ENTRY": {
       "device": "PC",
       "ts": 1795798959.0406
+    },
+    "2026-11-27:DEFENSIVE_FLIGHT:green:-3.5": {
+      "device": "PC",
+      "ts": 1795799054.5122452
     }
   },
   "device": "PC",
-  "last_heartbeat_ts": 1795798984.4200554,
-  "updated_at": "2026-11-27T17:03:04.420663+00:00"
+  "last_heartbeat_ts": 1795799030.0024056,
+  "updated_at": "2026-11-27T17:04:14.512734+00:00"
 }
