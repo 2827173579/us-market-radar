@@ -8303,9 +8303,17 @@
     "2026-11-27:DEFENSIVE_FLIGHT:blue:-1.2": {
       "device": "PC",
       "ts": 1795791568.550063
+    },
+    "2026-11-27:PLTR:5M_ENTRY": {
+      "device": "PC",
+      "ts": 1795791733.2681553
+    },
+    "2026-11-27:DEFENSIVE_FLIGHT:yellow:-0.4": {
+      "device": "PC",
+      "ts": 1795791734.8584607
     }
   },
   "device": "PC",
-  "last_heartbeat_ts": 1795791589.3778918,
-  "updated_at": "2026-11-27T14:59:49.378348+00:00"
+  "last_heartbeat_ts": 1795791651.9368916,
+  "updated_at": "2026-11-27T15:02:14.858972+00:00"
 }
