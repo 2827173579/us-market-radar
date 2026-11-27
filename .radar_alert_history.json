@@ -2,8 +2,8 @@
   "weather": "",
   "targets": {
     "PLTR": {
-      "state": "NORMAL",
-      "last_notified_at": 0.0
+      "state": "WATCHLIST_ENTRY_READY",
+      "last_notified_at": 1795815546.3783393
     },
     "SPY": {
       "state": "NORMAL",
