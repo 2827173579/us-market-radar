@@ -8343,9 +8343,17 @@
     "2026-11-27:DEFENSIVE_FLIGHT:blue:-1.5": {
       "device": "PC",
       "ts": 1795792679.6113555
+    },
+    "KOL_CLOSE:2026-11-27:KOL_SOXL_SHORT_2026-11-27_1:SL_HIT": {
+      "device": "PC",
+      "ts": 1795792723.7218115
+    },
+    "2026-11-27:DEFENSIVE_FLIGHT:green:-2.1": {
+      "device": "PC",
+      "ts": 1795792725.7333255
     }
   },
   "device": "PC",
-  "last_heartbeat_ts": 1795792657.1661346,
-  "updated_at": "2026-11-27T15:17:59.611908+00:00"
+  "last_heartbeat_ts": 1795792700.423823,
+  "updated_at": "2026-11-27T15:18:45.733867+00:00"
 }
