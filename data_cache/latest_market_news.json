@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795783915.433,
-  "updated_at_et": "11-27 07:51 ET",
-  "updated_at_kst": "21:51 KST",
+  "updated_at_ts": 1795784028.91,
+  "updated_at_et": "11-27 07:53 ET",
+  "updated_at_kst": "21:53 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -2974,6 +2974,13 @@
     ],
     "JPM": [
       {
+        "title": "JPMorgan, BofA, Citigroup issue same red alert over US bank accounts — official policy changes shift liability to you",
+        "url": "https://finance.yahoo.com/markets/currencies/articles/jpmorgan-bofa-citigroup-issue-same-123000336.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-27 07:30 ET",
+        "pub_ts": 1795782600.0
+      },
+      {
         "title": "AI Risk Is 'Moving Somewhere Harder to See': Citigroup, JPMorgan Reportedly Look to Offload AI Debt as Investors Grow Wary of Buildout",
         "url": "https://finance.yahoo.com/technology/ai/articles/ai-risk-moving-somewhere-harder-033352825.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -3000,13 +3007,6 @@
         "source": "Yahoo Finance",
         "time": "11-26 06:00 ET",
         "pub_ts": 1795690808.0
-      },
-      {
-        "title": "What Is JPMorgan Chase (JPM) Saying With Its $450 Billion AI Debt Call?",
-        "url": "https://finance.yahoo.com/technology/ai/articles/jpmorgan-chase-jpm-saying-450-080838063.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-26 03:08 ET",
-        "pub_ts": 1795680518.0
       }
     ],
     "WMT": [
@@ -3048,6 +3048,13 @@
     ],
     "V": [
       {
+        "title": "What Is Visa (V) Doing With Stablecoin Payments In Europe And Asia?",
+        "url": "https://finance.yahoo.com/markets/crypto/articles/visa-v-doing-stablecoin-payments-120939492.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-27 07:09 ET",
+        "pub_ts": 1795781379.0
+      },
+      {
         "title": "Visa and NBX plan stablecoin-linked payment card",
         "url": "https://www.electronicpaymentsinternational.com/news/visa-and-nbx-plan-stablecoin-linked-payment-card/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -3074,16 +3081,16 @@
         "source": "Yahoo Finance",
         "time": "11-25 18:08 ET",
         "pub_ts": 1795648111.0
-      },
-      {
-        "title": "The Best Dividend Stocks to Buy With $5,000 in November",
-        "url": "https://www.fool.com/investing/2026/11/25/the-best-dividend-stocks-to-buy-with-5000-in-november/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 16:21 ET",
-        "pub_ts": 1795641662.0
       }
     ],
     "CAT": [
+      {
+        "title": "How Bad Would A Data Center Slowdown Be For Caterpillar Stock?",
+        "url": "https://www.trefis.com/stock/cat/articles/629352/how-bad-would-a-data-center-slowdown-be-for-caterpillar-stock/2026-11-27?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-27 07:32 ET",
+        "pub_ts": 1795782773.0
+      },
       {
         "title": "Caterpillar's $78 Billion Backlog, Explained",
         "url": "https://www.fool.com/investing/2026/11/26/caterpillar-s-usd78-billion-backlog-explained/?.tsrc=rss",
@@ -3111,13 +3118,6 @@
         "source": "Yahoo Finance",
         "time": "11-24 12:12 ET",
         "pub_ts": 1795540359.0
-      },
-      {
-        "title": "Caterpillar (CAT) Falls In Broad Pullback As Undervalued Narrative Stays In Focus",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/caterpillar-cat-falls-broad-pullback-191143887.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 14:11 ET",
-        "pub_ts": 1795461103.0
       }
     ],
     "FN": [
@@ -3199,8 +3199,8 @@
         "title": "Dow Jones Futures Rise; Look For This Bullish Market Signal On Black Friday",
         "url": "https://finance.yahoo.com/m/158e82fc-b889-34b6-8704-99a49e9a83ae/dow-jones-futures-rise%3B-look.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-27 07:17 ET",
-        "pub_ts": 1795781859.0
+        "time": "11-27 07:49 ET",
+        "pub_ts": 1795783743.0
       },
       {
         "title": "Prediction: These Will Be Anthropic’s and SpaceX’s Stock Prices by the End of 2027 (Hint: Both Are Buys)",
@@ -3242,6 +3242,13 @@
     ],
     "KOSPI": [
       {
+        "title": "Stocks advance as tech firms stage recovery",
+        "url": "https://finance.yahoo.com/markets/world-indices/articles/asian-stocks-mostly-rise-markets-025702679.html",
+        "source": "AFP",
+        "time": "11-27 07:08 ET",
+        "pub_ts": 1795781318.0
+      },
+      {
         "title": "The AI Trade Is Back On as Tech Stocks Surge",
         "url": "https://finance.yahoo.com/m/ddb8323f-d469-376b-abad-98b6c10ceabb/the-ai-trade-is-back-on-as.html",
         "source": "Barrons.com",
@@ -3268,13 +3275,6 @@
         "source": "BeInCrypto",
         "time": "11-25 19:54 ET",
         "pub_ts": 1795654498.0
-      },
-      {
-        "title": "AI Angst Undercuts Asian Stock Markets",
-        "url": "https://finance.yahoo.com/markets/world-indices/articles/ai-angst-undercuts-asian-stock-104226080.html",
-        "source": "MT Newswires",
-        "time": "11-25 05:42 ET",
-        "pub_ts": 1795603346.0
       }
     ],
     "KSTR": [
@@ -3378,17 +3378,17 @@
     "MRNA": 1795783856.5541563,
     "NKE": 1795783856.5541563,
     "MCD": 1795783856.5541563,
-    "PEP": 1795782480.7987573,
-    "XOM": 1795782480.7987573,
-    "JPM": 1795782480.7987573,
-    "WMT": 1795782480.7987573,
-    "V": 1795782480.7987573,
-    "CAT": 1795782480.7987573,
+    "PEP": 1795784028.9098036,
+    "XOM": 1795784028.9098036,
+    "JPM": 1795784028.9098036,
+    "WMT": 1795784028.9098036,
+    "V": 1795784028.9098036,
+    "CAT": 1795784028.9098036,
     "FN": 1795783793.7810085,
     "GLW": 1795783793.7810085,
-    "ANT": 1795782480.7987573,
-    "XAUUSD": 1795782480.7987573,
-    "KOSPI": 1795782431.335721,
+    "ANT": 1795784028.9098036,
+    "XAUUSD": 1795784028.9098036,
+    "KOSPI": 1795784028.9098036,
     "KSTR": 1795783155.550618
   },
   "opex_shield": {
