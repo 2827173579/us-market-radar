@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795772782.287,
-  "updated_at_et": "11-27 04:46 ET",
-  "updated_at_kst": "18:46 KST",
+  "updated_at_ts": 1795772835.639,
+  "updated_at_et": "11-27 04:47 ET",
+  "updated_at_kst": "18:47 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -2972,13 +2972,6 @@
     ],
     "JPM": [
       {
-        "title": "J.P. Morgan sees luxury sales stagnating in 2027, but which category stands out?",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/j-p-morgan-sees-luxury-072816536.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-27 02:28 ET",
-        "pub_ts": 1795764496.0
-      },
-      {
         "title": "AI Risk Is 'Moving Somewhere Harder to See': Citigroup, JPMorgan Reportedly Look to Offload AI Debt as Investors Grow Wary of Buildout",
         "url": "https://finance.yahoo.com/technology/ai/articles/ai-risk-moving-somewhere-harder-033352825.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -3005,6 +2998,13 @@
         "source": "Yahoo Finance",
         "time": "11-26 06:00 ET",
         "pub_ts": 1795690808.0
+      },
+      {
+        "title": "What Is JPMorgan Chase (JPM) Saying With Its $450 Billion AI Debt Call?",
+        "url": "https://finance.yahoo.com/technology/ai/articles/jpmorgan-chase-jpm-saying-450-080838063.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-26 03:08 ET",
+        "pub_ts": 1795680518.0
       }
     ],
     "WMT": [
@@ -3376,16 +3376,16 @@
     "MRNA": 1795772782.2866035,
     "NKE": 1795772782.2866035,
     "MCD": 1795772782.2866035,
-    "PEP": 1795771322.3570619,
-    "XOM": 1795771322.3570619,
-    "JPM": 1795771322.3570619,
-    "WMT": 1795771322.3570619,
-    "V": 1795771322.3570619,
-    "CAT": 1795771322.3570619,
+    "PEP": 1795772835.6385756,
+    "XOM": 1795772835.6385756,
+    "JPM": 1795772835.6385756,
+    "WMT": 1795772835.6385756,
+    "V": 1795772835.6385756,
+    "CAT": 1795772835.6385756,
     "FN": 1795772678.2302423,
     "GLW": 1795772564.5498898,
-    "ANT": 1795771322.3570619,
-    "XAUUSD": 1795771322.3570619,
+    "ANT": 1795772835.6385756,
+    "XAUUSD": 1795772835.6385756,
     "KOSPI": 1795772678.2302423,
     "KSTR": 1795772507.2061296
   },
