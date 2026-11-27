@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795809981.792,
-  "updated_at_et": "11-27 15:06 ET",
-  "updated_at_kst": "05:06 KST",
+  "updated_at_ts": 1795810056.367,
+  "updated_at_et": "11-27 15:07 ET",
+  "updated_at_kst": "05:07 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -955,6 +955,13 @@
     ],
     "META": [
       {
+        "title": "Top Stock Reports for Alphabet, Meta & Bank of America",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/top-stock-reports-alphabet-meta-184100991.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-27 13:41 ET",
+        "pub_ts": 1795804860.0
+      },
+      {
         "title": "What Is Meta Platforms (META) Up Against With Australia And EU AI Rules?",
         "url": "https://finance.yahoo.com/technology/ai/articles/meta-platforms-meta-against-australia-171148667.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -981,13 +988,6 @@
         "source": "Yahoo Finance",
         "time": "11-27 11:12 ET",
         "pub_ts": 1795795976.0
-      },
-      {
-        "title": "Meta Disrupts AI-Driven Commerce",
-        "url": "https://www.mediapost.com/publications/article/419717/meta-disrupts-ai-driven-commerce.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-27 09:49 ET",
-        "pub_ts": 1795790958.0
       }
     ],
     "AAPL": [
@@ -1029,6 +1029,13 @@
     ],
     "AMZN": [
       {
+        "title": "Amazon, Target and Walmart Chase Holiday Toy Spending",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/amazon-target-walmart-chase-holiday-195308961.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-27 14:53 ET",
+        "pub_ts": 1795809188.0
+      },
+      {
         "title": "Amazon’s AWS Profit Rose 55%. Can It Absorb a $220 Billion Capex Bill?",
         "url": "https://finance.yahoo.com/markets/stocks/articles/amazon-aws-profit-rose-55-191859418.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1055,13 +1062,6 @@
         "source": "Yahoo Finance",
         "time": "11-27 12:57 ET",
         "pub_ts": 1795802222.0
-      },
-      {
-        "title": "Stock Market Midday, Nov. 27: Tech Stocks Recover and Amazon Posts Black Friday Gains",
-        "url": "https://www.fool.com/coverage/stock-market-today/2026/11/27/stock-market-midday-nov-27-tech-stocks-recover-and-amazon-posts-black-friday-gains/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-27 12:31 ET",
-        "pub_ts": 1795800677.0
       }
     ],
     "PLTR": [
@@ -1679,18 +1679,18 @@
         "pub_ts": 1795792201.0
       },
       {
-        "title": "SpaceX, Tesla have had a bumpy 2026 thus far: What to know",
-        "url": "https://finance.yahoo.com/video/spacex-tesla-have-had-a-bumpy-2026-thus-far-what-to-know-145849441.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-27 09:58 ET",
-        "pub_ts": 1795791529.0
-      },
-      {
         "title": "SpaceX Stocks Climb 2.74% as FCC Clears One Million AI Satellites",
         "url": "https://finance.yahoo.com/markets/stocks/articles/spacex-stocks-climb-2-74-192236570.html?.tsrc=rss",
         "source": "Yahoo Finance",
         "time": "11-27 14:22 ET",
         "pub_ts": 1795807356.0
+      },
+      {
+        "title": "ATEX Stock Jumps After SpaceX Reportedly Eyes 900 MHz Spectrum For Direct-To-Device Expansion; Alternative Target NN Climbs Double Digits",
+        "url": "https://stocktwits.com/news-articles/markets/equity/atex-stock-jumps-after-space-x-reportedly-eyes-900-m-hz-spectrum-for-direct-to-device-expansion-alternative-target-nn-climbs-double-digits/cNb6G6ER9VO?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-27 12:52 ET",
+        "pub_ts": 1795801976.0
       }
     ],
     "RKLB": [
@@ -3024,31 +3024,31 @@
     "GOOGL": 1795809981.7923043,
     "ASML": 1795809981.7923043,
     "KOSPI": 1795809981.7923043,
-    "META": 1795808520.605874,
-    "AAPL": 1795808520.605874,
-    "AMZN": 1795808520.605874,
-    "PLTR": 1795808520.605874,
-    "CRWV": 1795808520.605874,
-    "NBIS": 1795808520.605874,
-    "NOW": 1795808520.605874,
-    "BE": 1795808520.605874,
-    "APLD": 1795808520.605874,
-    "VST": 1795808520.605874,
-    "COHR": 1795808520.605874,
-    "CRDO": 1795808520.605874,
-    "MRVL": 1795808520.605874,
-    "AXTI": 1795808520.605874,
-    "AAOI": 1795808520.605874,
-    "LITE": 1795808520.605874,
-    "GLW": 1795808520.605874,
-    "ASTS": 1795808520.605874,
-    "FN": 1795808520.605874,
-    "SPCX": 1795808520.605874,
-    "RKLB": 1795808520.605874,
-    "FLY": 1795808520.605874,
-    "LUNR": 1795808520.605874,
-    "NASA": 1795808520.605874,
-    "KO": 1795808520.605874,
+    "META": 1795810056.367443,
+    "AAPL": 1795810056.367443,
+    "AMZN": 1795810056.367443,
+    "PLTR": 1795810056.367443,
+    "CRWV": 1795810056.367443,
+    "NBIS": 1795810056.367443,
+    "NOW": 1795810056.367443,
+    "BE": 1795810056.367443,
+    "APLD": 1795810056.367443,
+    "VST": 1795810056.367443,
+    "COHR": 1795810056.367443,
+    "CRDO": 1795810056.367443,
+    "MRVL": 1795810056.367443,
+    "AXTI": 1795810056.367443,
+    "AAOI": 1795810056.367443,
+    "LITE": 1795810056.367443,
+    "GLW": 1795810056.367443,
+    "ASTS": 1795810056.367443,
+    "FN": 1795810056.367443,
+    "SPCX": 1795810056.367443,
+    "RKLB": 1795810056.367443,
+    "FLY": 1795810056.367443,
+    "LUNR": 1795810056.367443,
+    "NASA": 1795810056.367443,
+    "KO": 1795810056.367443,
     "INTC": 1795808601.384806,
     "AXP": 1795808601.384806,
     "VRT": 1795808601.384806,
