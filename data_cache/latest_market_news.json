@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795794456.688,
-  "updated_at_et": "11-27 10:47 ET",
-  "updated_at_kst": "00:47 KST",
+  "updated_at_ts": 1795794500.188,
+  "updated_at_et": "11-27 10:48 ET",
+  "updated_at_kst": "00:48 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -1654,6 +1654,13 @@
         "pub_ts": 1795791360.0
       },
       {
+        "title": "MRVL to Post Q3 Earnings: Time to Buy, Sell or Hold the Stock?",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/mrvl-post-q3-earnings-time-142700413.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-27 09:27 ET",
+        "pub_ts": 1795789620.0
+      },
+      {
         "title": "AMD Rises 4% Despite Erste Group Downgrade on Valuation; Marvell Climbs 6%, Intel Gains 5%",
         "url": "https://247wallst.com/investing/2026/11/27/amd-rises-4-despite-erste-group-downgrade-on-valuation-marvell-climbs-6-intel-gains-5/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1673,13 +1680,6 @@
         "source": "Yahoo Finance",
         "time": "11-27 06:52 ET",
         "pub_ts": 1795780335.0
-      },
-      {
-        "title": "Marvell Faces Critical Earnings Test Amid AI Chip Market Turmoil",
-        "url": "https://finance.yahoo.com/technology/ai/articles/marvell-faces-critical-earnings-test-112308097.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-27 06:23 ET",
-        "pub_ts": 1795778588.0
       }
     ],
     "LITE": [
@@ -2017,6 +2017,13 @@
     ],
     "RKLB": [
       {
+        "title": "Rocket Lab (RKLB) Completed Its 101st Electron Launch",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/rocket-lab-rklb-completed-101st-151036962.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-27 10:10 ET",
+        "pub_ts": 1795792236.0
+      },
+      {
         "title": "AST SpaceMobile Gains 2% Despite Berenberg’s Price Target Cut to $30, Rocket Lab Climbs 5% After Electron Launch; Cathie Wood-Backed SpaceX Rises 3%",
         "url": "https://247wallst.com/investing/2026/11/27/ast-spacemobile-gains-2-despite-berenbergs-price-target-cut-to-30-rocket-lab-climbs-5-after-electron-launch-cathie-wood-backed-spacex-rises-3/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2043,13 +2050,6 @@
         "source": "Yahoo Finance",
         "time": "11-26 20:38 ET",
         "pub_ts": 1795743480.0
-      },
-      {
-        "title": "Rocket Lab Stock Just Fell to Its Lowest Price in About a Year. Is It a Buy Now?",
-        "url": "https://www.fool.com/investing/2026/11/26/rocket-lab-stock-just-fell-to-its-lowest-price-in-about-a-year-is-it-a-buy-now/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-26 10:43 ET",
-        "pub_ts": 1795707782.0
       }
     ],
     "KO": [
@@ -3339,29 +3339,29 @@
     "GOOGL": 1795793916.4457018,
     "MSFT": 1795793916.4457018,
     "AAPL": 1795793916.4457018,
-    "PLTR": 1795792997.8306353,
-    "NOW": 1795792997.8306353,
-    "AMZN": 1795792997.8306353,
-    "CRWV": 1795792997.8306353,
-    "NBIS": 1795792997.8306353,
-    "APLD": 1795792997.8306353,
+    "PLTR": 1795794500.1877816,
+    "NOW": 1795794500.1877816,
+    "AMZN": 1795794500.1877816,
+    "CRWV": 1795794500.1877816,
+    "NBIS": 1795794500.1877816,
+    "APLD": 1795794500.1877816,
     "VST": 1795793916.4457018,
     "BE": 1795793916.4457018,
     "CRDO": 1795793916.4457018,
     "COHR": 1795793916.4457018,
-    "MRVL": 1795792997.8306353,
-    "LITE": 1795792997.8306353,
-    "AAOI": 1795792997.8306353,
+    "MRVL": 1795794500.1877816,
+    "LITE": 1795794500.1877816,
+    "AAOI": 1795794500.1877816,
     "SPCX": 1795793916.4457018,
-    "ASTS": 1795792997.8306353,
-    "AXTI": 1795792997.8306353,
-    "NASA": 1795792997.8306353,
-    "LUNR": 1795792997.8306353,
+    "ASTS": 1795794500.1877816,
+    "AXTI": 1795794500.1877816,
+    "NASA": 1795794500.1877816,
+    "LUNR": 1795794500.1877816,
     "TSLA": 1795793108.5706723,
-    "AXP": 1795792997.8306353,
-    "RKLB": 1795792997.8306353,
-    "KO": 1795792997.8306353,
-    "FLY": 1795792997.8306353,
+    "AXP": 1795794500.1877816,
+    "RKLB": 1795794500.1877816,
+    "KO": 1795794500.1877816,
+    "FLY": 1795794500.1877816,
     "INTC": 1795793108.5706723,
     "VRT": 1795793108.5706723,
     "HPE": 1795793108.5706723,
@@ -3389,8 +3389,8 @@
     "WMT": 1795793159.6453369,
     "V": 1795793159.6453369,
     "CAT": 1795793159.6453369,
-    "FN": 1795792997.8306353,
-    "GLW": 1795792997.8306353,
+    "FN": 1795794500.1877816,
+    "GLW": 1795794500.1877816,
     "ANT": 1795793159.6453369,
     "XAUUSD": 1795793159.6453369,
     "KOSPI": 1795793159.6453369,
