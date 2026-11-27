@@ -8259,9 +8259,21 @@
     "2026-11-27:INTRADAY_CORRIDOR:SPY:BELOW_P25": {
       "device": "PC",
       "ts": 1795790756.300832
+    },
+    "2026-11-27:DEFENSIVE_FLIGHT:yellow:-0.5": {
+      "device": "PC",
+      "ts": 1795790800.0537393
+    },
+    "2026-11-27:INTRADAY_CORRIDOR:QQQ:BELOW_P25": {
+      "device": "PC",
+      "ts": 1795790801.3731928
+    },
+    "2026-11-27:INTRADAY_CORRIDOR:SOXL:BELOW_P25": {
+      "device": "PC",
+      "ts": 1795790802.6393843
     }
   },
   "device": "PC",
-  "last_heartbeat_ts": 1795790718.3507898,
-  "updated_at": "2026-11-27T14:45:56.301387+00:00"
+  "last_heartbeat_ts": 1795790777.5435092,
+  "updated_at": "2026-11-27T14:46:42.639891+00:00"
 }
