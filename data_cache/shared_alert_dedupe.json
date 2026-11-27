@@ -115,9 +115,13 @@
     "2026-11-27:DIA/IWM:5M_ENTRY": {
       "device": "PC",
       "ts": 1795815122.1434374
+    },
+    "2026-11-27:DEFENSIVE_FLIGHT:blue:+0.9": {
+      "device": "PC",
+      "ts": 1795815341.2089763
     }
   },
   "device": "PC",
-  "last_heartbeat_ts": 1795815207.7013369,
-  "updated_at": "2026-11-27T21:33:27.701386+00:00"
+  "last_heartbeat_ts": 1795815282.53597,
+  "updated_at": "2026-11-27T21:35:41.209021+00:00"
 }
