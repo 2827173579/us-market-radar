@@ -8279,9 +8279,13 @@
     "2026-11-27:PLTR/FLY/QCOM/AMZN:5M_ENTRY": {
       "device": "PC",
       "ts": 1795791101.3237777
+    },
+    "2026-11-27:DEFENSIVE_FLIGHT:blue:-1.0": {
+      "device": "PC",
+      "ts": 1795791147.0954645
     }
   },
   "device": "PC",
-  "last_heartbeat_ts": 1795791022.597623,
-  "updated_at": "2026-11-27T14:51:41.324251+00:00"
+  "last_heartbeat_ts": 1795791124.6592972,
+  "updated_at": "2026-11-27T14:52:27.095947+00:00"
 }
