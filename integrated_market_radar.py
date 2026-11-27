@@ -1238,7 +1238,10 @@ def fetch_intraday_5m_and_ext_data(tickers):
                     "rvol_5m": round(rvol_5m, 2) if len(c) >= 2 else None,
                     "is_5m_green": is_5m_green,
                     "is_5m_higher_low": is_5m_higher_low,
+                    "open_5m": round(float(o.iloc[-1]), 4) if len(o) else round(float(c.iloc[-1]), 4),
                     "low_5m": round(float(l.iloc[-1]), 4) if len(l) else round(float(c.iloc[-1]), 4),
+                    "prev_low_5m": round(float(l.iloc[-2]), 4) if len(l) >= 2 else (round(float(l.iloc[-1]), 4) if len(l) else round(float(c.iloc[-1]), 4)),
+                    "prev_close_5m": round(float(c.iloc[-2]), 4) if len(c) >= 2 else 0.0,
                     "rth_low": round(rth_low, 2),
                     "rth_high": round(rth_high, 2),
                     "rth_open": round(rth_open_val, 4),
@@ -9181,6 +9184,19 @@ def run_radar_cycle(is_first_run=False, round_idx=1):
                 _qcopy["quote_source"] = "BINANCE_EQUITY"
                 if session_code in ("PRE_MARKET", "POST_MARKET", "OVERNIGHT") and _bn_q.get("price"):
                     _qcopy["ext_price"] = _bn_q.get("price")
+            _id_q = (intraday_map or {}).get(_qk) if isinstance(locals().get("intraday_map"), dict) else None
+            if isinstance(_id_q, dict):
+                for _ik in (
+                    "vwap", "rsi_5m", "prev_rsi_5m", "rvol_5m", "is_5m_green",
+                    "open_5m", "low_5m", "prev_low_5m", "prev_close_5m",
+                    "rth_open", "rth_low", "rth_high", "pml", "pmh",
+                ):
+                    if _qcopy.get(_ik) is None and _id_q.get(_ik) is not None:
+                        _qcopy[_ik] = _id_q.get(_ik)
+                _q_px = float(_qcopy.get("active_price") or _qcopy.get("last") or 0.0)
+                _q_vw = float(_qcopy.get("vwap") or 0.0)
+                if _qcopy.get("vwap_diff_pct") is None and _q_px > 0 and _q_vw > 0:
+                    _qcopy["vwap_diff_pct"] = round(((_q_px - _q_vw) / _q_vw) * 100.0, 2)
             _qcopy.setdefault("has_realtime", bool(has_realtime))
             _kol_quotes[_qk] = _qcopy
         _kol_res = _kol_eng.run_kol_copy_trade_cycle(
@@ -9211,14 +9227,14 @@ def run_radar_cycle(is_first_run=False, round_idx=1):
         )
         _kol_ldg = _kol_res.get("ledger") or {}
         print(
-            f"[+] ⚡ V5.7 精简 KOL 狙击轨 ({session_code}): 净值 ${_kol_ldg.get('total_equity', 1000.0):,.2f} "
+            f"[+] ⚡ V5.8 KOL 狙击轨 ({session_code}): 净值 ${_kol_ldg.get('total_equity', 1000.0):,.2f} "
             f"({_kol_ldg.get('total_return_pct', 0.0):+.2f}%) | 持仓 {len(_kol_ldg.get('open_positions') or [])}/2 | "
             f"本轮开仓 {len(_kol_res.get('opened_now') or [])} / 加仓 {len(_kol_res.get('addons_now') or [])} / "
-            f"落袋 {len(_kol_res.get('partials_now') or [])} / 平仓 {len(_kol_res.get('closed_now') or [])} "
+            f"VWAP纯推BE {len(_kol_res.get('vwap_be_now') or [])} / 落袋 {len(_kol_res.get('partials_now') or [])} / 平仓 {len(_kol_res.get('closed_now') or [])} "
             f"[dry_run={_kol_res.get('dry_run')}, persisted={_kol_res.get('persisted')}]"
         )
     except Exception as _kol_err:
-        print(f"  [!] ⚡ V5.7 精简 KOL 狙击引擎降级跳过: {_kol_err}")
+        print(f"  [!] ⚡ V5.8 KOL 狙击引擎降级跳过: {_kol_err}")
 
     try:
         import importlib, create_futu_terminal

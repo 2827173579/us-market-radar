@@ -1,29 +1,19 @@
 # -*- coding: utf-8 -*-
 """
-V5.7 精简版独立模块：$1,000 精简 KOL 狙击轨模拟跟单引擎 (copy_trade_kol_engine.py)
+V5.8 精简版独立模块：$1,000 精简 KOL 狙击轨模拟跟单引擎 (copy_trade_kol_engine.py)
 
-经 51/52 日防穿越全维度消融与「做减法」精简对照验证 (`Slim_2S_BE26_ETF52`:
-25 bps 净收益 +26.27% / PF 1.53 / MaxDD -7.86% / 均笔 +$3.28 / 9-10月 +$145.65 / 11月 +$117.07 / 2~3%倒亏降至 6 笔；
-3 bps 净收益 +35.77% / PF 1.76) 验货达标后正式上线，与 V5.4 稳健基准轨 (data_cache/copy_trade_ledger.json)
-100% 物理隔离，独立持久化至 data_cache/copy_trade_ledger_kol.json。
-
-V5.7 精简版核心规则（严格零夹带未经回测验证参数）：
-1. 火力底座（沿用 V5.5.1 高质选股与 2 槽×50% 集中度）：
-   - 初始 $1,000.00，正盘主槽位 2 槽 × 50%（30% 底仓 + 20% 浮盈顺势加仓，严禁浮亏摊平）；
-   - 个股沿用 AI 校准胜率 >= 55.0% 且净差 >= 10.0%、`prob + spread*0.25 + pri` 排序与 `09:45 ~ close-40min`（半日市动态锚定）正盘窗；
-   - 1x 结构硬止损区间收紧为 [2.0%, 3.5%]，3x 杠杆 ETF 为 [2.5%, 4.5%]；
-   - 彻底关闭负效噪音项：不开 09:35~09:44 开盘半仓、不开盘前开仓、不做 AI 软权重重排、不开动态换仓、不做温度计硬拦截与 SOXS 尾盘盲目减半。
-2. 7 只核心 ETF 独立门槛 + 禁空反向/波动率 ETF：
-   - SOXX / SOXL / SOXS / QQQ / TQQQ / SQQQ / KSTR 放宽至 >= 52.0% 且净差 >= 6.0% (`MAIN_AI_ETF`)；
-   - 严禁做空 SOXS / SQQQ / VIXY（看空仅顺势做多反向 ETF 或做空正股/SOXX/QQQ，贴合实盘零借券费与防逼空）。
-3. Neo Lee 快推保本 `BE26` + 完整 50% 尾仓追踪：
-   - 先执行金字塔顺势加仓 (+1.8% 1x / +2.8% 3x + 移损至原底仓外侧 1.0%)；
-   - 达到 +2.6% (1x) / +4.0% (3x) 先平 25% 落袋现金并将余仓止损推至保本微利 (+0.3%)；
-   - 达到 +4.0% (1x) / +6.5% (3x) 再平余仓 1/3（即保留完整 50% 尾仓）进入 TRAIL_TP / CLIMAX_TP 让大肉奔跑。
-4. 夜盘 `OVERNIGHT_APAC_PILOT` 10% 轻仓特批通道（独立于主槽位）：
-   - 仅限 OVERNIGHT 时段 + 亚盘半导体风向 (`apac_chip_sentiment`) 明确多/空共振 + 白名单 + 点差 <= 35 bps + 连续 2 轮(>=60s)确认；
-   - 单笔上限 10% 轻仓、最多 1 笔，独立打标审计且不挤占正盘 2 个主槽位。
-5. 延展时段防插针保护止损（连续 2 轮 >= 60s 确认 + 宽点差 > 60 bps 护栏），严禁输出“建议股数”，严禁干跑写盘/外发。
+在 V5.7 (`Slim_2S_BE26_ETF52`) 底座之上，经 50 交易日四组控制变量对照与去 Top-1 极值抗压验证
+(`run_v57_sweep_vwap_ab.py` / `reports/v57_sweep_vwap_ab.md`：`C_PLUS_PURE_BE` 在 25 bps 下净收益 +24.46%、
+MaxDD -8.56%、Calmar 2.86、`SWEEP_RECLAIM_LONG` 单独 PF 2.13，且为唯一剔除 Top-1 盈利单后仍保持 PF>1.0 的方案)，
+正式 1:1 合入 `C+ (C_PLUS_PURE_BE)` 四项升级为 V5.8：
+1. 松绑 `SWEEP_RECLAIM_LONG` 入场 VWAP 硬锁 + 针尖窄止损：
+   - 去掉原 `vwap_diff >= -0.20%` 入场硬锁；盘中扫穿 `S1 / PML / P25` 后当根/次根 5m 收回支撑上方且收阳拐头 + `rvol_5m >= 1.1x` 即 30% 轻仓入场；
+   - 初始止损紧贴扫损低点 `sweep_low` 下方 0.25%(1x) / 0.35%(3x)（最小缓冲 0.60%，严格不超原最大硬止损上限 3.5%/4.5%）。
+2. 全量非避险 `QQQ_FLUSH_ALL` 防单边接飞刀门禁：
+   - 当 `qqq_pct <= -1.0%` 且 `qqq_vwap_diff <= -0.40%` 时，拦截全部非避险/非反向多头 `SWEEP_RECLAIM_LONG`（不论水下或略高于 VWAP），同时明确豁免 `SOXS / SQQQ / VIXY` 等反向避险 ETF。
+3. 水下入场反抽触及 VWAP → 纯推保本（0% 提前减仓）：
+   - 对水下入场 (`entered_below_vwap=True`) 且尚未推保本的 `SWEEP_RECLAIM_LONG` 持仓，反抽至 `vwap_diff >= -0.15%` 且毛浮盈 `>= +0.80%` 时，仅将止损上移至保本位 (`+0.3%`)，严格 `0%` 提前减仓，完整保留 30% 筹码交由顺势加仓、BE26、追踪止盈与放量高潮卖强管理。
+4. 保留 V5.7 全部其余规则 100% 不变（2 槽×50%、7 只核心 ETF 52%/6%、禁空反向 ETF、突破多与空头通道、BE26、50% 尾仓追踪、夜盘 10% 特批与旧账本向后兼容）。
 """
 
 import html as _html
@@ -63,11 +53,26 @@ T3_FORCE_EXIT_MIN = 15 * 60 + 50
 SLOT_COOLDOWN_MINUTES = 30
 MAX_NEW_ENTRIES_PER_DAY = 3     # 2 正常槽位 + 平仓冷却后允许补 1 笔
 
-# V5.7 精简版结构硬止损收紧区间（1x 回归 [2.0%, 3.5%] 对齐 Slim_2S_BE26_ETF52）
+KOL_ENGINE_VERSION = "V5.8"
+
+# V5.8 精简版结构硬止损收紧区间（1x [2.0%, 3.5%]，3x [2.5%, 4.5%]）
 SL_MIN_1X = 0.020
 SL_MAX_1X = 0.035
 SL_MIN_3X = 0.025
 SL_MAX_3X = 0.045
+
+# V5.8 C+ (C_PLUS_PURE_BE) SWEEP_RECLAIM_LONG 精确参数（与 run_v57_sweep_vwap_ab.py 1:1 对齐）
+SWEEP_RVOL_MIN = 1.1
+SWEEP_ANCHOR_TOL = 1.003
+SWEEP_SL_BUF_1X = 0.0025
+SWEEP_SL_BUF_3X = 0.0035
+SWEEP_SL_MIN_ROOM = 0.0060
+QQQ_FLUSH_PCT_MAX = -1.0
+QQQ_FLUSH_VWAP_DIFF_MAX = -0.40
+VWAP_BE_ENTRY_UNDERWATER_PCT = -0.15
+VWAP_BE_TRIGGER_VWAP_DIFF_PCT = -0.15
+VWAP_BE_MIN_PROFIT_PCT = 0.80
+VWAP_BE_TRIM_FRAC = 0.0          # 严格 0% 提前减仓（纯推保本）
 
 # 顺势加仓触发线与外侧 1.0% 呼吸缓冲
 ADDON_TRIGGER_1X_PCT = 1.8
@@ -166,6 +171,7 @@ def _compute_kol_stats(closed_trades: List[Dict[str, Any]]) -> Dict[str, Any]:
     overnight_pilot_wins = 0
     overnight_pilot_pnl = 0.0
     fast_be_triggered_cnt = 0
+    vwap_be_pushed_cnt = 0
 
     for tr in closed_trades or []:
         if not isinstance(tr, dict):
@@ -180,6 +186,8 @@ def _compute_kol_stats(closed_trades: List[Dict[str, Any]]) -> Dict[str, Any]:
             flip_trades += 1
         if bool(tr.get("fast_be_trimmed", False)):
             fast_be_triggered_cnt += 1
+        if bool(tr.get("vwap_be_pushed", False)):
+            vwap_be_pushed_cnt += 1
         if entry_tag_u == "OVERNIGHT_APAC_PILOT":
             overnight_pilot_cnt += 1
             overnight_pilot_pnl += pnl
@@ -252,6 +260,7 @@ def _compute_kol_stats(closed_trades: List[Dict[str, Any]]) -> Dict[str, Any]:
         "addon_trade_count": addon_trades,
         "flip_trade_count": flip_trades,
         "fast_be_triggered_count": fast_be_triggered_cnt,
+        "vwap_be_pushed_count": vwap_be_pushed_cnt,
         "overnight_pilot_count": overnight_pilot_cnt,
         "overnight_pilot_wins": overnight_pilot_wins,
         "overnight_pilot_pnl_usd": round(overnight_pilot_pnl, 2),
@@ -272,8 +281,8 @@ def create_empty_kol_ledger(initial_capital: float = INITIAL_CAPITAL, now_et: Op
     cur_et = cte._to_et_datetime(now_et)
     cap = round(float(initial_capital), 2)
     return {
-        "schema_version": "v5.7-kol-sniper-ledger",
-        "track_name": "V5.7 精简 KOL 狙击轨 (Slim_2S_BE26_ETF52)",
+        "schema_version": "v5.8-kol-sniper-ledger",
+        "track_name": "V5.8 KOL 狙击轨 (C_PLUS_PURE_BE)",
         "initial_capital": cap,
         "max_positions": MAX_POSITIONS,
         "starter_weight": STARTER_WEIGHT,
@@ -509,6 +518,31 @@ def resolve_kol_structural_sl(
     return max(round(entry_price + 0.01, 2), round(sl_px, 2))
 
 
+def resolve_kol_tight_sweep_sl(
+    ticker: str,
+    entry_price: float,
+    sweep_low: float,
+    fallback_sl: float,
+) -> float:
+    """
+    V5.8 C+ 针尖窄止损（与 run_v57_sweep_vwap_ab.py 1:1 对齐）：
+    - 紧贴本次扫损针尖低点 sweep_low 下方 0.25% (1x) / 0.35% (3x)；
+    - 受原最大硬止损上限保护（lo_cap = 1 - SL_MAX_1X/3X），且预留至少 0.60% 防噪音缓冲（hi_cap）。
+    """
+    if entry_price <= 0:
+        return max(0.01, round(fallback_sl, 2))
+    lev3 = is_3x_leveraged(ticker)
+    sl_max = SL_MAX_3X if lev3 else SL_MAX_1X
+    buf = SWEEP_SL_BUF_3X if lev3 else SWEEP_SL_BUF_1X
+    lo_cap = entry_price * (1.0 - sl_max)
+    hi_cap = entry_price * (1.0 - SWEEP_SL_MIN_ROOM)
+    if sweep_low > 0 and sweep_low < entry_price:
+        raw = sweep_low * (1.0 - buf)
+        clamped = max(lo_cap, min(hi_cap, raw))
+        return max(0.01, round(clamped, 2))
+    return max(0.01, round(fallback_sl, 2))
+
+
 def _is_nq_reclaimed_vwap(futures_data: Optional[Dict[str, Any]]) -> bool:
     if not isinstance(futures_data, dict):
         return False
@@ -576,7 +610,25 @@ def screen_kol_sniper_candidates(
         if x
     }
     qqq_lv = (live_quotes or {}).get("QQQ") if isinstance(live_quotes, dict) else None
-    qqq_pct = cte._safe_float((qqq_lv or {}).get("pct_change"), 0.0)
+    qqq_pct = cte._safe_float(
+        (qqq_lv or {}).get("pct_change") if (qqq_lv or {}).get("pct_change") is not None else (qqq_lv or {}).get("pct_chg"),
+        0.0,
+    )
+    qqq_px = cte._safe_float((qqq_lv or {}).get("active_price") or (qqq_lv or {}).get("last"), 0.0)
+    qqq_vwap = cte._safe_float((qqq_lv or {}).get("vwap") or (qqq_lv or {}).get("vwap_rth"), 0.0)
+    if (qqq_lv or {}).get("vwap_diff_pct") is not None:
+        qqq_vwap_diff = cte._safe_float((qqq_lv or {}).get("vwap_diff_pct"), 0.0)
+    elif qqq_px > 0 and qqq_vwap > 0:
+        qqq_vwap_diff = ((qqq_px - qqq_vwap) / qqq_vwap) * 100.0
+    else:
+        qqq_vwap_diff = 0.0
+    qqq_day_open = cte._safe_float((qqq_lv or {}).get("day_open") or (qqq_lv or {}).get("rth_open"), 0.0)
+    qqq_intra_open = ((qqq_px - qqq_day_open) / qqq_day_open * 100.0) if (qqq_px > 0 and qqq_day_open > 0) else 0.0
+    qqq_flush_all = bool(
+        isinstance(qqq_lv, dict)
+        and (qqq_pct <= QQQ_FLUSH_PCT_MAX)
+        and (qqq_vwap_diff <= QQQ_FLUSH_VWAP_DIFF_MAX)
+    )
 
     corridor_by_tk = {}
     if isinstance(intraday_path_payload, dict):
@@ -667,17 +719,65 @@ def screen_kol_sniper_candidates(
         if _check_reentry_cooldown("LONG") and gap_pct <= max_gap and (not is_cooling):
             normal_long_allowed = (not long_regime_blocked) or (tk in cte.SAFE_HAVEN_LONG_EXEMPT)
             if normal_long_allowed and (not is_crash) and p_long >= min_prob_req and (p_long - p_short) >= min_spread_req:
-                # 形态 1: 抗跌扫损收回多 (Sweep / 回踩 S1 或 P25 收回 VWAP)
-                swept_low = (
-                    (s1 > 0 and ((day_low > 0 and day_low <= s1 * 1.006 and active_px >= s1) or abs(active_px - s1) / s1 <= 0.012))
-                    or (pm_low > 0 and day_low > 0 and day_low <= pm_low * 1.005 and active_px >= pm_low)
-                    or is_deep_pb
-                    or corr_div == "BELOW_P25"
-                )
-                resilient_vs_qqq = (pct_chg >= qqq_pct - 0.5) or (tk in leaders_set)
-                sweep_reclaim = swept_low and (vwap_diff >= -0.20) and (rvol_5m >= 1.3) and resilient_vs_qqq
+                # 形态 1 (V5.8 C_PLUS_PURE_BE): 松绑 VWAP 硬锁的扫损收回多 + 针尖窄损 + 全量非避险 QQQ_FLUSH_ALL 防飞刀门禁
+                low_5m = cte._safe_float(lv.get("low_5m"), 0.0)
+                prev_low_5m = cte._safe_float(lv.get("prev_low_5m"), 0.0)
+                open_5m = cte._safe_float(lv.get("open_5m"), 0.0)
+                prev_close_5m = cte._safe_float(lv.get("prev_close_5m"), 0.0)
+                prev_rsi_5m = cte._safe_float(lv.get("prev_rsi_5m"), rsi_5m)
+                if low_5m > 0 and prev_low_5m > 0:
+                    sweep_low = min(low_5m, prev_low_5m)
+                elif low_5m > 0:
+                    sweep_low = low_5m
+                elif day_low > 0:
+                    sweep_low = day_low
+                else:
+                    sweep_low = active_px
 
-                # 形态 2: 顺势突破共振多 (站稳 VWAP + 突破 R1 或 P75 + 放量)
+                day_open = cte._safe_float(lv.get("day_open") or lv.get("rth_open") or ci.get("day_open") or ci.get("rth_open"), 0.0)
+                atr_val = cte._safe_float(lv.get("atr"), 0.0)
+                atr_pct = cte._safe_float(lv.get("atr_pct"), (atr_val / active_px * 100.0) if (atr_val > 0 and active_px > 0) else 3.0)
+                p25_px = cte._safe_float(
+                    ci.get("p25_price") or lv.get("p25_price"),
+                    (day_open * (1.0 - 0.55 * atr_pct / 100.0)) if day_open > 0 else 0.0,
+                )
+
+                s1_reclaim = (s1 > 0) and (sweep_low <= s1 * SWEEP_ANCHOR_TOL) and (active_px >= s1)
+                pml_reclaim = (pm_low > 0) and (sweep_low <= pm_low * SWEEP_ANCHOR_TOL) and (active_px >= pm_low)
+                p25_reclaim = (p25_px > 0) and (sweep_low <= p25_px * SWEEP_ANCHOR_TOL) and (active_px >= p25_px)
+                if open_5m > 0:
+                    is_green_5m = active_px > open_5m
+                elif "is_5m_green" in lv:
+                    is_green_5m = bool(lv.get("is_5m_green"))
+                else:
+                    is_green_5m = (prev_close_5m > 0) and (active_px > prev_close_5m)
+                turn_up_5m = (prev_close_5m <= 0) or (active_px >= prev_close_5m) or (rsi_5m > prev_rsi_5m)
+                raw_sweep_reclaim = (s1_reclaim or pml_reclaim or p25_reclaim) and is_green_5m and turn_up_5m and (rvol_5m >= SWEEP_RVOL_MIN)
+
+                has_vwap_ref = (vwap > 0) or (lv.get("vwap_diff_pct") is not None)
+                entered_below_vwap = bool(has_vwap_ref and (vwap_diff < VWAP_BE_ENTRY_UNDERWATER_PCT))
+                is_haven_or_inv = (tk in cte.SAFE_HAVEN_LONG_EXEMPT) or (tk in cte.INVERSE_ETFS)
+                stampede_blocked = False
+                if raw_sweep_reclaim and (not is_haven_or_inv):
+                    if qqq_flush_all:
+                        stampede_blocked = True
+                    elif entered_below_vwap:
+                        consec_below_p25 = int(lv.get("consec_below_p25") or 0)
+                        tk_knife = (
+                            consec_below_p25 >= 2
+                            and pct_chg <= (-4.5 if lev3 else -2.5)
+                            and vwap_diff <= (-2.5 if lev3 else -1.5)
+                        )
+                        rel_bleed = (
+                            qqq_intra_open <= -0.80
+                            and pct_chg < qqq_pct - (3.0 if lev3 else 1.5)
+                        )
+                        if tk_knife or rel_bleed:
+                            stampede_blocked = True
+
+                sweep_reclaim = raw_sweep_reclaim and (not stampede_blocked)
+
+                # 形态 2: 顺势突破共振多 (站稳 VWAP + 突破 R1 或 P75 + 放量；与 V5.7 100% 一致)
                 breakout_hit = (
                     (vwap_diff >= 0.0)
                     and ((r1 > 0 and active_px >= r1 * 0.998) or corr_div == "ABOVE_P75")
@@ -687,7 +787,8 @@ def screen_kol_sniper_candidates(
 
                 if sweep_reclaim or breakout_hit:
                     setup_name = "SWEEP_RECLAIM_LONG" if sweep_reclaim else "BREAKOUT_MOMENTUM_LONG"
-                    sl_px = resolve_kol_structural_sl(tk, "LONG", active_px, lv, sr, ci)
+                    std_sl = resolve_kol_structural_sl(tk, "LONG", active_px, lv, sr, ci)
+                    sl_px = resolve_kol_tight_sweep_sl(tk, active_px, sweep_low, std_sl) if sweep_reclaim else std_sl
                     raw_cands.append({
                         "ticker": tk, "direction": "LONG", "setup": setup_name,
                         "entry_tag": cand_entry_tag, "slot_weight": STARTER_WEIGHT, "can_add": True,
@@ -696,6 +797,9 @@ def screen_kol_sniper_candidates(
                         "score": p_long + (p_long - p_short) * 0.25 + priority_bonus + (2.0 if sweep_reclaim else 1.0),
                         "entry_price": round(active_px, 2), "sl_price": sl_px,
                         "gap_pct": round(gap_pct, 2), "mirror_group": mgrp,
+                        "entered_below_vwap": bool(sweep_reclaim and entered_below_vwap),
+                        "vwap_be_pushed": False,
+                        "sweep_low_anchor": round(sweep_low, 2) if (sweep_reclaim and sweep_low > 0) else None,
                     })
 
         # ================== B. SHORT 通道（严禁做空反向/波动率 ETF: SOXS/SQQQ/VIXY） ==================
@@ -961,11 +1065,23 @@ def format_kol_sniper_event_alert(event_kind: str, payload: Dict[str, Any], ledg
         sl_pct = ((sl - entry) / entry) * 100.0 if entry > 0 else 0.0
         setup = str(payload.get("setup") or "KOL_SNIPER")
         tag = str(payload.get("entry_tag") or "NORMAL")
+        uw_note = " · 水下针尖狙击" if bool(payload.get("entered_below_vwap", False)) else ""
         title = f"⚡ [KOL狙击·开仓] {dir_icon} {tk} ({wt}%仓位 · {tag})"
         body = (
-            f"⚡ [V5.7 KOL狙击·开仓] {dir_icon} {tk} ({wt}%仓位) | "
+            f"⚡ [V5.8 KOL狙击·开仓] {dir_icon} {tk} ({wt}%仓位{uw_note}) | "
             f"入场 ${entry:.2f} | 结构止损 ${sl:.2f} ({sl_pct:+.1f}%) | 形态: {setup} | 最大持有至 T+3 ({payload.get('expiry_date', '--')})\n"
             f"• 账户净值: ${eq:,.2f} ({tot_ret:+.2f}%) · 滑点口径: 单边 1.5 bps"
+        )
+        return title, body
+
+    if event_kind == "VWAP_BE":
+        px = cte._safe_float(payload.get("vwap_be_push_price") or payload.get("last_price"), 0.0)
+        sl = cte._safe_float(payload.get("sl_price"), 0.0)
+        title = f"🛡️ [KOL狙击·VWAP纯推保本] {dir_icon} {tk} (0%减仓·保本锁利)"
+        body = (
+            f"🛡️ [V5.8 VWAP纯推保本] {dir_icon} {tk} 反抽触及 VWAP @ ${px:.2f} | "
+            f"止损已上移至保本位 ${sl:.2f}，严格 0% 提前减仓，完整保留底仓继续博弈主升浪\n"
+            f"• 账户净值: ${eq:,.2f} ({tot_ret:+.2f}%)"
         )
         return title, body
 
@@ -975,7 +1091,7 @@ def format_kol_sniper_event_alert(event_kind: str, payload: Dict[str, Any], ledg
         sl = cte._safe_float(payload.get("sl_price"), 0.0)
         title = f"📈 [KOL狙击·顺势加仓] {dir_icon} {tk} (30%→50%仓位)"
         body = (
-            f"📈 [V5.7 顺势加仓] {dir_icon} {tk} 加仓 +20% @ ${add_px:.2f} ➔ 新均价 ${avg_ep:.2f} | "
+            f"📈 [V5.8 顺势加仓] {dir_icon} {tk} 加仓 +20% @ ${add_px:.2f} ➔ 新均价 ${avg_ep:.2f} | "
             f"硬止损已强制上移至原底仓附近 ${sl:.2f}（锁定总风险不放大）\n"
             f"• 账户净值: ${eq:,.2f} ({tot_ret:+.2f}%)"
         )
@@ -987,7 +1103,7 @@ def format_kol_sniper_event_alert(event_kind: str, payload: Dict[str, Any], ledg
         rp = cte._safe_float(payload.get("fast_be_realized_pnl_usd"), 0.0)
         title = f"🛡️ [KOL狙击·BE26快推保本] {dir_icon} {tk} 先平25% + 推保本"
         body = (
-            f"🛡️ [V5.7 BE26快推保本] {dir_icon} {tk} 先落袋 25% @ ${px:.2f} (已落袋 +${abs(rp):.2f}) | "
+            f"🛡️ [V5.8 BE26快推保本] {dir_icon} {tk} 先落袋 25% @ ${px:.2f} (已落袋 +${abs(rp):.2f}) | "
             f"余仓 75% 止损已无条件推至保本损 ${sl:.2f}，杜绝浮盈倒亏\n"
             f"• 账户净值: ${eq:,.2f} ({tot_ret:+.2f}%)"
         )
@@ -999,7 +1115,7 @@ def format_kol_sniper_event_alert(event_kind: str, payload: Dict[str, Any], ledg
         rp = cte._safe_float(payload.get("partial_realized_pnl_usd"), 0.0)
         title = f"💰 [KOL狙击·一阶落袋] {dir_icon} {tk} 锁利 + 50%尾仓追踪"
         body = (
-            f"💰 [V5.7 一阶止盈] {dir_icon} {tk} 阶梯减仓 @ ${px:.2f} (累计已落袋 +${abs(rp):.2f}) | "
+            f"💰 [V5.8 一阶止盈] {dir_icon} {tk} 阶梯减仓 @ ${px:.2f} (累计已落袋 +${abs(rp):.2f}) | "
             f"保留完整 50% 尾仓保本损 ${sl:.2f} 并开启移动追踪止盈\n"
             f"• 账户净值: ${eq:,.2f} ({tot_ret:+.2f}%)"
         )
@@ -1082,6 +1198,7 @@ def run_kol_copy_trade_cycle(
     closed_now: List[Dict[str, Any]] = []
     opened_now: List[Dict[str, Any]] = []
     addons_now: List[Dict[str, Any]] = []
+    vwap_be_now: List[Dict[str, Any]] = []
     fast_be_now: List[Dict[str, Any]] = []
     partials_now: List[Dict[str, Any]] = []
     alerts_sent: List[Dict[str, str]] = []
@@ -1174,6 +1291,31 @@ def run_kol_copy_trade_cycle(
                 elif direction == "SHORT" and sl_px > 0 and cur_px >= sl_px:
                     exit_reason = "BE_STOP" if be_active else "SL_HIT"
 
+                # (1a-v58) V5.8 C+ 水下 SWEEP_RECLAIM_LONG 反抽触及 VWAP -> 纯推保本 (0% 提前减仓，完整保留 30% 底仓)
+                vwap_be_pushed = bool(pos.get("vwap_be_pushed", False))
+                has_vwap_now = (vwap > 0) or ((lv or {}).get("vwap_diff_pct") is not None)
+                if (
+                    (not exit_reason)
+                    and direction == "LONG"
+                    and str(pos.get("setup") or "").upper() == "SWEEP_RECLAIM_LONG"
+                    and bool(pos.get("entered_below_vwap", False))
+                    and (not vwap_be_pushed)
+                    and (not partial_done)
+                    and (not be_active)
+                    and has_vwap_now
+                ):
+                    if vwap_diff >= VWAP_BE_TRIGGER_VWAP_DIFF_PCT and gross_ret_pct >= VWAP_BE_MIN_PROFIT_PCT:
+                        # 严格 0% 提前减仓：不平任何底仓金额/股数，仅推止损至保本位
+                        pos["vwap_be_pushed"] = True
+                        pos["vwap_be_push_price"] = round(cur_px, 2)
+                        pos["vwap_be_push_time_et"] = cur_et.strftime("%Y-%m-%d %H:%M:%S")
+                        pos["be_stop_active"] = True
+                        pos["sl_price"] = max(sl_px, round(entry_px * (1.0 + BE_STOP_BUFFER), 2))
+                        be_active = True
+                        vwap_be_pushed = True
+                        sl_px = pos["sl_price"]
+                        vwap_be_now.append(dict(pos))
+
                 # (1b) 金字塔顺势加仓 (+1.8% / 3x +2.8%，优先于 BE26，仅主槽位底仓允许加仓)
                 if (
                     (not exit_reason)
@@ -1207,7 +1349,8 @@ def run_kol_copy_trade_cycle(
                             pos["stage"] = 2
                             pos["can_add"] = False
                             if direction == "LONG":
-                                pos["sl_price"] = max(sl_px, round(orig_ep * (1.0 - ADDON_SL_BUFFER), 2))
+                                sl_floor = round(entry_px * (1.0 + BE_STOP_BUFFER), 2) if be_active else round(orig_ep * (1.0 - ADDON_SL_BUFFER), 2)
+                                pos["sl_price"] = max(sl_px, sl_floor)
                             else:
                                 pos["sl_price"] = min(sl_px, round(orig_ep * (1.0 + ADDON_SL_BUFFER), 2))
                             sl_px = pos["sl_price"]
@@ -1218,8 +1361,10 @@ def run_kol_copy_trade_cycle(
                             ) * 100.0
                             addons_now.append(dict(pos))
 
-                # (1c) V5.7 Neo Lee 快推保本 BE26 (+2.6% / 3x +4.0%)：先平 25% 落袋现金 + 止损无条件推至 +0.3% 保本
-                if (not exit_reason) and (not be_active) and (not partial_done):
+                # (1c) V5.7/V5.8 Neo Lee 快推保本 BE26 (+2.6% / 3x +4.0%)：先平 25% 落袋现金 + 止损无条件推至 +0.3% 保本
+                # V5.8 C+ 若仅做过 VWAP 纯推保本 (0% 减仓) 且尚未执行 BE26，仍严格沿用标准止盈阶梯
+                can_fast_be = (not be_active) or (bool(pos.get("vwap_be_pushed", False)) and (not bool(pos.get("fast_be_trimmed", False))))
+                if (not exit_reason) and can_fast_be and (not partial_done):
                     fast_be_trig = FAST_BE_3X_PCT if lev3 else FAST_BE_1X_PCT
                     if gross_ret_pct >= fast_be_trig:
                         close_alloc = round(alloc * FAST_BE_TRIM_FRAC, 2)
@@ -1360,6 +1505,9 @@ def run_kol_copy_trade_cycle(
                     "orig_entry_price": pos.get("orig_entry_price", round(entry_px, 2)),
                     "entry_price": round(entry_px, 2),
                     "sl_price": round(sl_px, 2),
+                    "entered_below_vwap": bool(pos.get("entered_below_vwap", False)),
+                    "vwap_be_pushed": bool(pos.get("vwap_be_pushed", False)),
+                    "sweep_low_anchor": pos.get("sweep_low_anchor"),
                     "fast_be_trimmed": bool(pos.get("fast_be_trimmed", False)),
                     "partial_tp_done": partial_done,
                     "partial_exit_price": pos.get("partial_exit_price"),
@@ -1448,6 +1596,9 @@ def run_kol_copy_trade_cycle(
                 "last_price": c["entry_price"],
                 "best_price": c["entry_price"],
                 "sl_price": c["sl_price"],
+                "entered_below_vwap": bool(c.get("entered_below_vwap", False)),
+                "vwap_be_pushed": bool(c.get("vwap_be_pushed", False)),
+                "sweep_low_anchor": c.get("sweep_low_anchor"),
                 "ext_sl_breach_count": 0,
                 "ext_sl_first_breach_ts": "",
                 "fast_be_trimmed": False,
@@ -1567,6 +1718,16 @@ def run_kol_copy_trade_cycle(
                         alerts_sent.append({"type": "CLOSE", "ticker": tr["ticker"], "title": t_title})
                     except Exception:
                         pass
+            for vb in vwap_be_now:
+                dkey = f"KOL_VWAPBE:{today_str}:{vb.get('trade_id')}"
+                if dkey not in dedupe_set:
+                    t_title, t_body = format_kol_sniper_event_alert("VWAP_BE", vb, ledger)
+                    try:
+                        alert_sender(t_title, t_body, dkey, 0x10B981)
+                        dedupe_set.add(dkey)
+                        alerts_sent.append({"type": "VWAP_BE", "ticker": vb["ticker"], "title": t_title})
+                    except Exception:
+                        pass
             for fb in fast_be_now:
                 dkey = f"KOL_FASTBE:{today_str}:{fb.get('trade_id')}"
                 if dkey not in dedupe_set:
@@ -1615,6 +1776,7 @@ def run_kol_copy_trade_cycle(
         "ledger": ledger,
         "opened_now": opened_now,
         "addons_now": addons_now,
+        "vwap_be_now": vwap_be_now,
         "fast_be_now": fast_be_now,
         "partials_now": partials_now,
         "closed_now": closed_now,
@@ -1659,7 +1821,7 @@ def build_dual_track_copy_embed_dict(
 
     pk_lines = [
         f"• **🛡️ V5.4 稳健轨 (4槽×25% · T+5)**：净值 **${s_eq:,.2f}** (`{s_ret:+.2f}%`) | 回撤 `-{s_dd:.2f}%` | 胜率 `{_fmt_wr(s_st.get('overall_win_rate_pct'))}` ({s_st.get('closed_count', 0)}笔) | PF `{_fmt_pf(s_st.get('profit_factor'))}` | 持仓 `{len(s_open)}/4`",
-        f"• **⚡ V5.7 精简 KOL 轨 (2槽×50% · BE26 · T+3)**：净值 **${k_eq:,.2f}** (`{k_ret:+.2f}%`) | 回撤 `-{k_dd:.2f}%` | 胜率 `{_fmt_wr(k_st.get('overall_win_rate_pct'))}` ({k_st.get('closed_count', 0)}笔) | PF `{_fmt_pf(k_st.get('profit_factor'))}` | 持仓 `{len(k_open)}/2`",
+        f"• **⚡ V5.8 KOL 狙击轨 (2槽×50% · C+纯推BE · T+3)**：净值 **${k_eq:,.2f}** (`{k_ret:+.2f}%`) | 回撤 `-{k_dd:.2f}%` | 胜率 `{_fmt_wr(k_st.get('overall_win_rate_pct'))}` ({k_st.get('closed_count', 0)}笔) | PF `{_fmt_pf(k_st.get('profit_factor'))}` | 持仓 `{len(k_open)}/2`",
         f"• **KOL 退出拆解**：追踪/卖强 `{k_st.get('tp_hit_count', 0)}` · 保本 `{k_st.get('be_stop_count', 0)}` · 早撤 `{k_st.get('weak_early_exit_count', 0)}` · 止损 `{k_st.get('sl_hit_count', 0)}` · 加仓 `{k_st.get('addon_trade_count', 0)}` · 夜盘特批 `{k_st.get('overnight_pilot_count', 0)}`",
     ]
 
@@ -1681,6 +1843,8 @@ def build_dual_track_copy_embed_dict(
                     stage_s = "50%尾仓追踪"
                 elif p.get("fast_be_trimmed"):
                     stage_s = "BE26保本75%"
+                elif p.get("vwap_be_pushed"):
+                    stage_s = f"VWAP纯推BE·{wt}%"
                 elif int(p.get("stage") or 1) >= 2:
                     stage_s = "已加满50%"
                 else:
@@ -1712,11 +1876,11 @@ def build_dual_track_copy_embed_dict(
         "color": color,
         "fields": [
             {"name": "🏆 双轨净值与胜率对比", "value": "\n".join(pk_lines)[:1024], "inline": False},
-            {"name": f"⚡ V5.7 精简 KOL 在途持仓 ({len(k_open)}/2)", "value": "\n".join(_fmt_open_list(k_open, True))[:1024], "inline": False},
+            {"name": f"⚡ V5.8 KOL 狙击在途持仓 ({len(k_open)}/2)", "value": "\n".join(_fmt_open_list(k_open, True))[:1024], "inline": False},
             {"name": f"🛡️ V5.4 稳健基准在途持仓 ({len(s_open)}/4)", "value": "\n".join(_fmt_open_list(s_open, False))[:1024], "inline": False},
             {"name": "🧾 最近双轨已平仓记录", "value": "\n".join(hist_lines)[:1024], "inline": False},
         ],
-        "footer": {"text": f"更新于 {cur_et.strftime('%Y-%m-%d %H:%M:%S')} ET · V5.4 稳健 vs V5.7 精简 KOL 双轨同台验证"},
+        "footer": {"text": f"更新于 {cur_et.strftime('%Y-%m-%d %H:%M:%S')} ET · V5.4 稳健 vs V5.8 KOL (C+纯推BE) 双轨同台验证"},
     }
 
 
@@ -1855,7 +2019,16 @@ def _render_single_track_panel(doc: Dict[str, Any], is_kol: bool) -> str:
             sl = cte._safe_float(p.get("sl_price"), 0.0)
             ur_cls = "ct-up" if ur > 0 else ("ct-down" if ur < 0 else "ct-neu")
             if is_kol:
-                st_txt = "半仓保本追踪" if p.get("partial_tp_done") else ("已加满50%" if int(p.get("stage") or 1) >= 2 else f"{wt}%底仓")
+                if p.get("partial_tp_done"):
+                    st_txt = "半仓保本追踪"
+                elif p.get("fast_be_trimmed"):
+                    st_txt = "BE26保本75%"
+                elif p.get("vwap_be_pushed"):
+                    st_txt = f"VWAP纯推BE·{wt}%"
+                elif int(p.get("stage") or 1) >= 2:
+                    st_txt = "已加满50%"
+                else:
+                    st_txt = f"{wt}%底仓"
                 extra_col = f"{_html.escape(st_txt)} · 止损 ${sl:.2f}"
             else:
                 tp = cte._safe_float(p.get("tp_price"), 0.0)
@@ -1893,7 +2066,7 @@ def _render_single_track_panel(doc: Dict[str, Any], is_kol: bool) -> str:
 
     if is_kol:
         exit_note = (
-            f"V5.7 精简版 · 个股55%/10% · 7大ETF 52%/6% · 禁空反向ETF · BE26快推保本 · 夜盘10%特批 · "
+            f"V5.8 C+狙击 · 水下扫损窄损 · VWAP纯推BE(0%减) · QQQ踩踏门禁 · 7大ETF 52%/6% · 禁空反向ETF · "
             f"追踪/卖强 {st.get('tp_hit_count', 0)} · 保本 {st.get('be_stop_count', 0)} · 早撤 {st.get('weak_early_exit_count', 0)} · 止损 {st.get('sl_hit_count', 0)}"
         )
         col_hdr = "状态 / 止损"
@@ -1975,7 +2148,7 @@ def render_dual_track_copy_drawer_html(
         f'<div class="ct-body">'
         f'<div class="ct-pk-strip">'
         f'<div class="ct-pk-card is-kol">'
-        f'<div class="ct-pk-head"><span>⚡ V5.7 精简 KOL 狙击轨</span><span>持仓 {k_open_n}/2</span></div>'
+        f'<div class="ct-pk-head"><span>⚡ V5.8 KOL 狙击轨 (C+)</span><span>持仓 {k_open_n}/2</span></div>'
         f'<div class="ct-pk-val {k_cls}">${k_eq:,.2f} ({k_ret:+.2f}%)</div>'
         f'<div class="ct-pk-sub">最大回撤 -{k_dd:.2f}% · 胜率 {k_wr} ({k_st.get("closed_count", 0)}笔)</div>'
         f'</div>'
@@ -1986,7 +2159,7 @@ def render_dual_track_copy_drawer_html(
         f'</div>'
         f'</div>'
         f'<div class="ct-track-tabs">'
-        f'<button type="button" class="ct-track-tab is-active" data-ct-tab="kol" onclick="{js_switch}">⚡ V5.7 精简 KOL 轨明细</button>'
+        f'<button type="button" class="ct-track-tab is-active" data-ct-tab="kol" onclick="{js_switch}">⚡ V5.8 KOL 狙击轨明细</button>'
         f'<button type="button" class="ct-track-tab" data-ct-tab="steady" onclick="{js_switch}">🛡️ V5.4 稳健基准轨明细</button>'
         f'</div>'
         f'<div class="ct-track-panel is-active" data-ct-panel="kol">{panel_kol}</div>'
