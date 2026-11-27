@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795799852.712,
-  "updated_at_et": "11-27 12:17 ET",
-  "updated_at_kst": "02:17 KST",
+  "updated_at_ts": 1795799914.763,
+  "updated_at_et": "11-27 12:18 ET",
+  "updated_at_kst": "02:18 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -914,11 +914,25 @@
         "pub_ts": 1795795203.0
       },
       {
-        "title": "PacSun CEO talks brand resurgence, holiday shopping season boom",
-        "url": "https://finance.yahoo.com/video/pacsun-ceo-talks-brand-resurgence-holiday-shopping-season-boom-154316985.html?.tsrc=rss",
+        "title": "Stocks gain as tech rebound holds, but Nvidia dips",
+        "url": "https://finance.yahoo.com/markets/world-indices/articles/asian-stocks-mostly-rise-markets-025702679.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-27 10:43 ET",
-        "pub_ts": 1795794196.0
+        "time": "11-27 12:05 ET",
+        "pub_ts": 1795799152.0
+      },
+      {
+        "title": "One Magnificent Seven Stock Could Be a Much Bigger Winner by 2030",
+        "url": "https://247wallst.com/investing/2026/11/27/one-magnificent-seven-stock-could-be-a-much-bigger-winner-by-2030/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-27 12:03 ET",
+        "pub_ts": 1795799018.0
+      },
+      {
+        "title": "Nvidia fans just got worrying news from China",
+        "url": "https://finance.yahoo.com/technology/articles/nvidia-fans-just-got-worrying-165257509.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-27 11:52 ET",
+        "pub_ts": 1795798377.0
       },
       {
         "title": "Top Midday Stories: US October Advance Trade Gap Widens; Nvidia Chips Found Installed at Chinese Data Center Tied to Megaspeed",
@@ -926,20 +940,6 @@
         "source": "Yahoo Finance",
         "time": "11-27 11:42 ET",
         "pub_ts": 1795797740.0
-      },
-      {
-        "title": "Jensen Huang’s Troubles Cost Him $30 Billion",
-        "url": "https://247wallst.com/investing/2026/11/27/jensen-huangs-troubles-cost-him-30-billion/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-27 11:34 ET",
-        "pub_ts": 1795797248.0
-      },
-      {
-        "title": "Frank Talk: Jensen Huang’s return and Anthropic’s shaky debut prove AI is now a national security trade",
-        "url": "https://www.proactiveinvestors.com/companies/news/1102593/frank-talk-jensen-huang-s-return-and-anthropic-s-shaky-debut-prove-ai-is-now-a-national-security-trade-1102593.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-27 11:24 ET",
-        "pub_ts": 1795796640.0
       }
     ],
     "AMD": [
@@ -3314,22 +3314,22 @@
     ]
   },
   "ticker_news_ts": {
-    "KORU": 1795798360.0584161,
-    "SOXL": 1795798360.0584161,
-    "SPY": 1795798360.0584161,
-    "DIA": 1795798360.0584161,
-    "SOXX": 1795798360.0584161,
-    "QQQ": 1795798360.0584161,
-    "SMH": 1795798360.0584161,
-    "IWM": 1795798360.0584161,
-    "IGV": 1795798360.0584161,
+    "KORU": 1795799914.7634335,
+    "SOXL": 1795799914.7634335,
+    "SPY": 1795799914.7634335,
+    "DIA": 1795799914.7634335,
+    "SOXX": 1795799914.7634335,
+    "QQQ": 1795799914.7634335,
+    "SMH": 1795799914.7634335,
+    "IWM": 1795799914.7634335,
+    "IGV": 1795799914.7634335,
     "TLT": 1795798360.0584161,
-    "GLD": 1795798360.0584161,
-    "SQQQ": 1795798360.0584161,
-    "TSM": 1795798360.0584161,
-    "VIXY": 1795798360.0584161,
-    "SOXS": 1795798360.0584161,
-    "NVDA": 1795798360.0584161,
+    "GLD": 1795799914.7634335,
+    "SQQQ": 1795799914.7634335,
+    "TSM": 1795799914.7634335,
+    "VIXY": 1795799914.7634335,
+    "SOXS": 1795799914.7634335,
+    "NVDA": 1795799914.7634335,
     "AMD": 1795798610.5376043,
     "ASML": 1795798610.5376043,
     "QCOM": 1795798610.5376043,
@@ -3394,7 +3394,7 @@
     "ANT": 1795799339.1630125,
     "XAUUSD": 1795799339.1630125,
     "KOSPI": 1795799339.1630125,
-    "KSTR": 1795798360.0584161
+    "KSTR": 1795799914.7634335
   },
   "opex_shield": {
     "date": "2026-11-27",
