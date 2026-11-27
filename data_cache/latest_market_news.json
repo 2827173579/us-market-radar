@@ -1,9 +1,22 @@
 {
-  "updated_at_ts": 1795766545.453,
-  "updated_at_et": "11-27 03:02 ET",
-  "updated_at_kst": "17:02 KST",
+  "updated_at_ts": 1795766590.956,
+  "updated_at_et": "11-27 03:03 ET",
+  "updated_at_kst": "17:03 KST",
   "macro_calendar": [],
   "macro_flashes": [
+    {
+      "id": "20261127160236484800",
+      "title": "AI版“格林斯潘时刻”难以重现？沃什可能需要先大幅加息才能复制历史",
+      "summary": "格林斯潘当年在互联网投资热潮中选择不再进一步收紧政策，如今市场也希望沃什等待AI生产率红利逐步兑现。但通胀、利率、财政环境差异巨大，令沃什很难简单效仿。点击查看",
+      "keywords": [
+        "加息"
+      ],
+      "pub_ts": 1795766556.0,
+      "time_et": "11-27 03:02 ET",
+      "time_bj": "16:02 BJ",
+      "time_kst": "17:02 KST",
+      "time_display": "03:02 ET / 16:02 BJ"
+    },
     {
       "id": "20261127154612804800",
       "title": "法国11月CPI月率初值 -0.7%，预期-0.4%，前值0.40%。",
@@ -317,19 +330,6 @@
       "time_bj": "13:07 BJ",
       "time_kst": "14:07 KST",
       "time_display": "00:07 ET / 13:07 BJ"
-    },
-    {
-      "id": "20261127130427318800",
-      "title": "创业板指涨超7%，半导体、光刻机、CPO板块涨幅居前。",
-      "summary": "创业板指涨超7%，半导体、光刻机、CPO板块涨幅居前。",
-      "keywords": [
-        "半导体"
-      ],
-      "pub_ts": 1795755867.0,
-      "time_et": "11-27 00:04 ET",
-      "time_bj": "13:04 BJ",
-      "time_kst": "14:04 KST",
-      "time_display": "00:04 ET / 13:04 BJ"
     }
   ],
   "ticker_news": {
@@ -2592,6 +2592,13 @@
     ],
     "BTC-USD": [
       {
+        "title": "LIVE – Crypto News Today: Why Is Bitcoin Up? Gold and Wall Street Rally Fuel BTC Bounce",
+        "url": "https://cryptonews.com/news/bitcoin-rises-from-grave-black-friday-crypto-news/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-27 02:18 ET",
+        "pub_ts": 1795763914.0
+      },
+      {
         "title": "Bitcoin recovers to $61.5k; set for first positive week in 8",
         "url": "https://finance.yahoo.com/markets/crypto/articles/bitcoin-recovers-61-5k-set-062257549.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2618,16 +2625,16 @@
         "source": "Yahoo Finance",
         "time": "11-26 16:00 ET",
         "pub_ts": 1795726800.0
-      },
-      {
-        "title": "Is Bitcoin a Good Investment for Building Wealth After a 50% Drop?",
-        "url": "https://247wallst.com/investing/cryptocurrency/2026/11/26/is-bitcoin-a-good-investment-for-building-wealth-after-a-50-drop/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-26 15:50 ET",
-        "pub_ts": 1795726217.0
       }
     ],
     "CRWD": [
+      {
+        "title": "The Zacks Analyst Blog Highlights CrowdStrike, Lockheed Martin, S&P Global, The Eastern and AmeriServ Financial",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/zacks-analyst-blog-highlights-crowdstrike-064800574.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-27 01:48 ET",
+        "pub_ts": 1795762080.0
+      },
       {
         "title": "Was CrowdStrike’s $43.9 Billion Bid for Zscaler the Right Move at the Wrong Time?",
         "url": "https://247wallst.com/investing/2026/11/26/was-crowdstrikes-43-9-billion-bid-for-zscaler-the-right-move-at-the-wrong-time/?.tsrc=rss",
@@ -2655,16 +2662,16 @@
         "source": "Yahoo Finance",
         "time": "11-26 03:29 ET",
         "pub_ts": 1795681782.0
-      },
-      {
-        "title": "Bridgewater Sees 1-in-3 Odds of a Destabilizing Cyberattack. CrowdStrike’s Workload Is Already “Up 50%”",
-        "url": "https://www.tikr.com/blog/bridgewater-sees-1-in-3-odds-of-a-destabilizing-cyberattack-crowdstrikes-workload-is-already-up-50?ref=yahoofinance&tlnk=yf-261125-gjg8qh7p&.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 18:40 ET",
-        "pub_ts": 1795650020.0
       }
     ],
     "ORCL": [
+      {
+        "title": "Michael Burry Shares Stark Warning About AI Boom, as Nvidia, Oracle and Meta Face Surging Debt Insurance Costs",
+        "url": "https://finance.yahoo.com/technology/ai/articles/michael-burry-shares-stark-warning-063128312.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-27 01:31 ET",
+        "pub_ts": 1795761088.0
+      },
       {
         "title": "Wondering Why Oracle Fell? Here's What The Bears Saw",
         "url": "https://finance.yahoo.com/markets/stocks/articles/wondering-why-oracle-fell-heres-012625677.html?.tsrc=rss",
@@ -2692,13 +2699,6 @@
         "source": "Yahoo Finance",
         "time": "11-26 11:27 ET",
         "pub_ts": 1795710442.0
-      },
-      {
-        "title": "Brazil's Data Center Market: Strategic Investment Analysis and Growth Opportunities (2026-2031) with Profiles of Prominent Operators and Infrastructure Providers",
-        "url": "https://finance.yahoo.com/technology/articles/brazils-data-center-market-strategic-140400060.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-26 09:04 ET",
-        "pub_ts": 1795701840.0
       }
     ],
     "COIN": [
@@ -3349,23 +3349,23 @@
     "VRT": 1795766488.2696986,
     "HPE": 1795766488.2696986,
     "DELL": 1795766488.2696986,
-    "OKLO": 1795765071.0675068,
-    "CEG": 1795765071.0675068,
-    "FPS": 1795765071.0675068,
-    "MU": 1795765071.0675068,
-    "SKHY": 1795765071.0675068,
-    "WDC": 1795765071.0675068,
-    "STX": 1795765071.0675068,
-    "MSTR": 1795765071.0675068,
-    "SNDK": 1795765071.0675068,
-    "BTC-USD": 1795765071.0675068,
-    "CRWD": 1795765071.0675068,
-    "ORCL": 1795765071.0675068,
-    "COIN": 1795765071.0675068,
-    "LLY": 1795765071.0675068,
-    "MRNA": 1795765071.0675068,
+    "OKLO": 1795766590.9557276,
+    "CEG": 1795766590.9557276,
+    "FPS": 1795766590.9557276,
+    "MU": 1795766590.9557276,
+    "SKHY": 1795766590.9557276,
+    "WDC": 1795766590.9557276,
+    "STX": 1795766590.9557276,
+    "MSTR": 1795766590.9557276,
+    "SNDK": 1795766590.9557276,
+    "BTC-USD": 1795766590.9557276,
+    "CRWD": 1795766590.9557276,
+    "ORCL": 1795766590.9557276,
+    "COIN": 1795766590.9557276,
+    "LLY": 1795766590.9557276,
+    "MRNA": 1795766590.9557276,
     "NKE": 1795765138.6395876,
-    "MCD": 1795765071.0675068,
+    "MCD": 1795766590.9557276,
     "PEP": 1795765138.6395876,
     "XOM": 1795765138.6395876,
     "JPM": 1795765138.6395876,
@@ -3396,7 +3396,7 @@
   "calendar_banner": {
     "level": "idle_with_flash",
     "headline": "📡 宏观消息面监控中 · 今日暂无美股五星级经济数据大考",
-    "detail": "⚡ 最新核心快讯 (02:46 ET / 15:46 BJ) [CPI]：法国11月CPI月率初值 -0.7%，预期-0.4%，前值0.40%。",
+    "detail": "⚡ 最新核心快讯 (03:02 ET / 16:02 BJ) [加息]：格林斯潘当年在互联网投资热潮中选择不再进一步收紧政策，如今市场也希望沃什等待AI生产率红利逐步兑现。但通胀、利率、财政环境差异巨大，令沃什很难简单效仿。点击查看",
     "event_name": "",
     "minutes_left": 0,
     "opex_shield": {
