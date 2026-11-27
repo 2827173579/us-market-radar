@@ -2,8 +2,8 @@
   "weather": "",
   "targets": {
     "PLTR": {
-      "state": "WATCHLIST_ENTRY_READY",
-      "last_notified_at": 1795808613.1743321
+      "state": "NORMAL",
+      "last_notified_at": 0.0
     },
     "SPY": {
       "state": "NORMAL",
@@ -14,8 +14,8 @@
       "last_notified_at": 0.0
     },
     "AMZN": {
-      "state": "NORMAL",
-      "last_notified_at": 0.0
+      "state": "WATCHLIST_ENTRY_READY",
+      "last_notified_at": 1795809924.7993784
     },
     "DIA": {
       "state": "NORMAL",
