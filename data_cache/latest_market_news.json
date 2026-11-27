@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795810123.363,
-  "updated_at_et": "11-27 15:08 ET",
-  "updated_at_kst": "05:08 KST",
+  "updated_at_ts": 1795810202.376,
+  "updated_at_et": "11-27 15:10 ET",
+  "updated_at_kst": "05:10 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -2812,6 +2812,13 @@
         "pub_ts": 1795794488.0
       },
       {
+        "title": "Amazon, Target and Walmart Chase Holiday Toy Spending",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/amazon-target-walmart-chase-holiday-195308961.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-27 14:53 ET",
+        "pub_ts": 1795809188.0
+      },
+      {
         "title": "Stock Market Midday, Nov. 27: Tech Stocks Recover and Amazon Posts Black Friday Gains",
         "url": "https://www.fool.com/coverage/stock-market-today/2026/11/27/stock-market-midday-nov-27-tech-stocks-recover-and-amazon-posts-black-friday-gains/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2831,13 +2838,6 @@
         "source": "Yahoo Finance",
         "time": "11-27 10:52 ET",
         "pub_ts": 1795794776.0
-      },
-      {
-        "title": "Is Walmart Stock Priced Like 1999 Again?",
-        "url": "https://www.trefis.com/stock/wmt/articles/629160/walmart-is-priced-almost-like-1999-holders-then-waited-12-years/2026-11-27?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-27 10:42 ET",
-        "pub_ts": 1795794140.0
       }
     ],
     "XOM": [
@@ -2916,6 +2916,13 @@
     ],
     "CAT": [
       {
+        "title": "Caterpillar is quietly making plans for a bigger 2027",
+        "url": "https://www.thestreet.com/investing/stocks/caterpillar-is-quietly-making-plans-for-a-bigger-2027?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-27 14:47 ET",
+        "pub_ts": 1795808820.0
+      },
+      {
         "title": "Caterpillar (CAT) Stock May Be 44% Below Fair Value Despite AI Sell Off",
         "url": "https://finance.yahoo.com/markets/stocks/articles/caterpillar-cat-stock-may-44-181003127.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2942,16 +2949,16 @@
         "source": "Yahoo Finance",
         "time": "11-27 07:32 ET",
         "pub_ts": 1795782773.0
-      },
-      {
-        "title": "Caterpillar's $78 Billion Backlog, Explained",
-        "url": "https://www.fool.com/investing/2026/11/26/caterpillar-s-usd78-billion-backlog-explained/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-26 13:57 ET",
-        "pub_ts": 1795719422.0
       }
     ],
     "ANT": [
+      {
+        "title": "Anthropic Stocks Jump 8.49% Back Above IPO Price as ARK Keeps Buying",
+        "url": "https://finance.yahoo.com/technology/ai/articles/anthropic-stocks-jump-8-49-195111243.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-27 14:51 ET",
+        "pub_ts": 1795809071.0
+      },
       {
         "title": "Anthropic Gets a Blockbuster IPO; Take-Two Gets a Blockbuster GTA VI Release",
         "url": "https://www.fool.com/investing/2026/11/27/anthropic-gets-a-blockbuster-ipo-take-two-gets-a-blockbuster-gta-vi-release/?.tsrc=rss",
@@ -2979,13 +2986,6 @@
         "source": "Yahoo Finance",
         "time": "11-27 13:01 ET",
         "pub_ts": 1795802466.0
-      },
-      {
-        "title": "Nvidia’s Key Man Problem",
-        "url": "https://www.fool.com/investing/2026/11/27/nvidias-key-man-problem/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-27 13:01 ET",
-        "pub_ts": 1795802462.0
       }
     ],
     "XAUUSD": [
@@ -3073,13 +3073,13 @@
     "MCD": 1795810123.3633726,
     "NKE": 1795810123.3633726,
     "V": 1795810123.3633726,
-    "JPM": 1795808674.6607623,
-    "WMT": 1795808674.6607623,
-    "XOM": 1795808674.6607623,
+    "JPM": 1795810202.3764281,
+    "WMT": 1795810202.3764281,
+    "XOM": 1795810202.3764281,
     "PEP": 1795810123.3633726,
-    "CAT": 1795808674.6607623,
-    "ANT": 1795808674.6607623,
-    "XAUUSD": 1795808674.6607623
+    "CAT": 1795810202.3764281,
+    "ANT": 1795810202.3764281,
+    "XAUUSD": 1795810202.3764281
   },
   "opex_shield": {
     "date": "2026-11-27",
