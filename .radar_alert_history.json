@@ -34,8 +34,8 @@
       "last_notified_at": 0.0
     },
     "QCOM": {
-      "state": "NORMAL",
-      "last_notified_at": 0.0
+      "state": "WATCHLIST_ENTRY_READY",
+      "last_notified_at": 1795801992.3467078
     },
     "LUNR": {
       "state": "NORMAL",
@@ -78,16 +78,16 @@
       "last_notified_at": 0.0
     },
     "SPY": {
-      "state": "NORMAL",
-      "last_notified_at": 0.0
+      "state": "WATCHLIST_ENTRY_READY",
+      "last_notified_at": 1795801992.3467078
     },
     "DIA": {
-      "state": "NORMAL",
-      "last_notified_at": 0.0
+      "state": "WATCHLIST_ENTRY_READY",
+      "last_notified_at": 1795801992.3467078
     },
     "IWM": {
-      "state": "NORMAL",
-      "last_notified_at": 0.0
+      "state": "WATCHLIST_ENTRY_READY",
+      "last_notified_at": 1795801992.3467078
     },
     "IGV": {
       "state": "NORMAL",

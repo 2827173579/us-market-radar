@@ -8483,9 +8483,13 @@
     "2026-11-27:QCOM/SPY/KSTR:5M_ENTRY": {
       "device": "PC",
       "ts": 1795801397.430816
+    },
+    "2026-11-27:QCOM/SPY/DIA/IWM:5M_ENTRY": {
+      "device": "PC",
+      "ts": 1795801993.2693484
     }
   },
   "device": "PC",
-  "last_heartbeat_ts": 1795801924.56648,
-  "updated_at": "2026-11-27T17:52:04.567094+00:00"
+  "last_heartbeat_ts": 1795801969.8336413,
+  "updated_at": "2026-11-27T17:53:13.269932+00:00"
 }
