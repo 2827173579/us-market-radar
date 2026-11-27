@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795777015.763,
-  "updated_at_et": "11-27 05:56 ET",
-  "updated_at_kst": "19:56 KST",
+  "updated_at_ts": 1795777060.564,
+  "updated_at_et": "11-27 05:57 ET",
+  "updated_at_kst": "19:57 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -901,6 +901,20 @@
     ],
     "NVDA": [
       {
+        "title": "Singapore Reportedly In Talks With US To Retain Advanced AI Chip Access As Washington Tightens Export Restrictions",
+        "url": "https://stocktwits.com/news-articles/markets/equity/singapore-reportedly-in-talks-with-us-to-retain-advanced-ai-chip-access-as-washington-tightens-export-restrictions/cNbCpMoR9No?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-27 05:54 ET",
+        "pub_ts": 1795776854.0
+      },
+      {
+        "title": "Does Bill Ackman Know Something Wall Street Doesn't? The Billionaire Investor Keeps Buying a Tech Stock That's Now Down 44% Over the Past Year.",
+        "url": "https://www.fool.com/investing/2026/11/27/does-bill-ackman-know-something-wall-street-doesn-t-the-billionaire-investor-keeps-buying-a-tech-stock-down-44-over-the-past-year/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-27 05:40 ET",
+        "pub_ts": 1795776002.0
+      },
+      {
         "title": "Market Chatter: Nvidia Stops Southeast Asia Chip Sales Following Proposed US Restrictions",
         "url": "https://finance.yahoo.com/technology/ai/articles/market-chatter-nvidia-stops-southeast-102254508.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -920,20 +934,6 @@
         "source": "Yahoo Finance",
         "time": "11-27 03:27 ET",
         "pub_ts": 1795768068.0
-      },
-      {
-        "title": "1 No-Brainer Stock to Buy and Hold for 10 Years",
-        "url": "https://www.fool.com/investing/2026/11/27/1-no-brainer-stock-to-buy-on-the-dip-and-hold-for-10-years/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-27 05:13 ET",
-        "pub_ts": 1795774382.0
-      },
-      {
-        "title": "Yikes! Anthropic Stock Is Down 28%, but Wall Street says This Will Happen Next.",
-        "url": "https://www.fool.com/investing/2026/11/27/anthropic-stock-down-28-wall-street-this-happens-next/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-27 05:04 ET",
-        "pub_ts": 1795773842.0
       }
     ],
     "AMD": [
@@ -3308,22 +3308,22 @@
     ]
   },
   "ticker_news_ts": {
-    "KORU": 1795775532.5117595,
-    "SOXL": 1795775532.5117595,
-    "SPY": 1795775532.5117595,
-    "DIA": 1795775532.5117595,
-    "SOXX": 1795775532.5117595,
-    "QQQ": 1795775532.5117595,
-    "SMH": 1795775532.5117595,
-    "IWM": 1795775532.5117595,
-    "IGV": 1795775532.5117595,
-    "TLT": 1795775532.5117595,
-    "GLD": 1795775532.5117595,
-    "SQQQ": 1795775532.5117595,
-    "TSM": 1795775532.5117595,
-    "VIXY": 1795775532.5117595,
-    "SOXS": 1795775532.5117595,
-    "NVDA": 1795775532.5117595,
+    "KORU": 1795777060.5641994,
+    "SOXL": 1795777060.5641994,
+    "SPY": 1795777060.5641994,
+    "DIA": 1795777060.5641994,
+    "SOXX": 1795777060.5641994,
+    "QQQ": 1795777060.5641994,
+    "SMH": 1795777060.5641994,
+    "IWM": 1795777060.5641994,
+    "IGV": 1795777060.5641994,
+    "TLT": 1795777060.5641994,
+    "GLD": 1795777060.5641994,
+    "SQQQ": 1795777060.5641994,
+    "TSM": 1795777060.5641994,
+    "VIXY": 1795777060.5641994,
+    "SOXS": 1795777060.5641994,
+    "NVDA": 1795777060.5641994,
     "AMD": 1795775649.2141895,
     "ASML": 1795775649.2141895,
     "QCOM": 1795775649.2141895,
@@ -3388,7 +3388,7 @@
     "ANT": 1795775920.3715477,
     "XAUUSD": 1795775920.3715477,
     "KOSPI": 1795775759.5065196,
-    "KSTR": 1795775532.5117595
+    "KSTR": 1795777060.5641994
   },
   "opex_shield": {
     "date": "2026-11-27",
