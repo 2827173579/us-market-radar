@@ -1,5 +1,5 @@
 {
-  "updated_at_ts": 1795747206.302,
+  "updated_at_ts": 1795747243.967,
   "updated_at_et": "11-26 21:40 ET",
   "updated_at_kst": "11:40 KST",
   "macro_calendar": [],
@@ -898,6 +898,20 @@
     ],
     "NVDA": [
       {
+        "title": "Stocks Are Plunging Right Now. Here's What History Says Investors Should Do.",
+        "url": "https://www.fool.com/investing/2026/11/26/stocks-are-plunging-right-now-heres-what-history-s/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-26 21:20 ET",
+        "pub_ts": 1795746000.0
+      },
+      {
+        "title": "Trump Says Huang Is Excited About His ‘Second Term’ at Nvidia",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/trump-says-huang-excited-second-003925008.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-26 19:39 ET",
+        "pub_ts": 1795739965.0
+      },
+      {
         "title": "These 2 AI Chip Stocks Are Down 36% to 39% From Their Highs. Here’s What History Says Happens Next.",
         "url": "https://www.fool.com/investing/2026/11/26/these-2-ai-chip-stocks-are-down-36-to-39-from-their-highs-here-s-what-history-says-happens-next/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -917,20 +931,6 @@
         "source": "Yahoo Finance",
         "time": "11-26 18:00 ET",
         "pub_ts": 1795734049.0
-      },
-      {
-        "title": "Nvidia Is the Worst-Performing \"Magnificent Seven\" Stock This Year. Is It a Buy Before 2027?",
-        "url": "https://www.fool.com/investing/2026/11/26/nvidia-is-the-worst-performing-magnificent-seven-stock-this-year-is-it-a-buy-before-2027/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-26 17:50 ET",
-        "pub_ts": 1795733449.0
-      },
-      {
-        "title": "Loonie weakens amid Thanksgiving holiday lull, Canadian labor market data",
-        "url": "https://finance.yahoo.com/markets/currencies/articles/loonie-weakens-amid-thanksgiving-holiday-222803240.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-26 17:28 ET",
-        "pub_ts": 1795732083.0
       }
     ],
     "AMD": [
@@ -3305,23 +3305,23 @@
     ]
   },
   "ticker_news_ts": {
-    "KORU": 1795745721.1015732,
-    "SOXL": 1795745721.1015732,
-    "SPY": 1795745721.1015732,
-    "DIA": 1795745721.1015732,
-    "SOXX": 1795745721.1015732,
-    "QQQ": 1795745721.1015732,
-    "SMH": 1795745721.1015732,
-    "IWM": 1795745721.1015732,
-    "IGV": 1795745721.1015732,
-    "TLT": 1795745721.1015732,
-    "GLD": 1795745721.1015732,
-    "SQQQ": 1795745721.1015732,
+    "KORU": 1795747243.9669685,
+    "SOXL": 1795747243.9669685,
+    "SPY": 1795747243.9669685,
+    "DIA": 1795747243.9669685,
+    "SOXX": 1795747243.9669685,
+    "QQQ": 1795747243.9669685,
+    "SMH": 1795747243.9669685,
+    "IWM": 1795747243.9669685,
+    "IGV": 1795747243.9669685,
+    "TLT": 1795747243.9669685,
+    "GLD": 1795747243.9669685,
+    "SQQQ": 1795747243.9669685,
     "TSM": 1795745931.6981282,
-    "VIXY": 1795745721.1015732,
-    "SOXS": 1795745721.1015732,
-    "NVDA": 1795745721.1015732,
-    "AMD": 1795745721.1015732,
+    "VIXY": 1795747243.9669685,
+    "SOXS": 1795747243.9669685,
+    "NVDA": 1795747243.9669685,
+    "AMD": 1795747243.9669685,
     "ASML": 1795745931.6981282,
     "QCOM": 1795745931.6981282,
     "AVGO": 1795745931.6981282,
@@ -3336,15 +3336,15 @@
     "CRWV": 1795745975.1278615,
     "NBIS": 1795745975.1278615,
     "APLD": 1795745975.1278615,
-    "VST": 1795745721.1015732,
-    "BE": 1795745721.1015732,
-    "CRDO": 1795745721.1015732,
-    "COHR": 1795745721.1015732,
+    "VST": 1795747243.9669685,
+    "BE": 1795747243.9669685,
+    "CRDO": 1795747243.9669685,
+    "COHR": 1795747243.9669685,
     "MRVL": 1795745975.1278615,
     "LITE": 1795745975.1278615,
-    "AAOI": 1795745721.1015732,
-    "SPCX": 1795745721.1015732,
-    "ASTS": 1795745721.1015732,
+    "AAOI": 1795747243.9669685,
+    "SPCX": 1795747243.9669685,
+    "ASTS": 1795747243.9669685,
     "AXTI": 1795745975.1278615,
     "NASA": 1795745931.6981282,
     "LUNR": 1795745931.6981282,
@@ -3381,11 +3381,11 @@
     "V": 1795745975.1278615,
     "CAT": 1795746017.9016838,
     "FN": 1795745975.1278615,
-    "GLW": 1795745721.1015732,
+    "GLW": 1795747243.9669685,
     "ANT": 1795746017.9016838,
     "XAUUSD": 1795746017.9016838,
     "KOSPI": 1795745975.1278615,
-    "KSTR": 1795745721.1015732
+    "KSTR": 1795747243.9669685
   },
   "opex_shield": {
     "date": "2026-11-26",
