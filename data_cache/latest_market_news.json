@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795778834.32,
-  "updated_at_et": "11-27 06:27 ET",
-  "updated_at_kst": "20:27 KST",
+  "updated_at_ts": 1795778890.471,
+  "updated_at_et": "11-27 06:28 ET",
+  "updated_at_kst": "20:28 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -2603,6 +2603,20 @@
     ],
     "BTC-USD": [
       {
+        "title": "Bitcoin recovers to $61.5k; set for first positive week in 8",
+        "url": "https://finance.yahoo.com/markets/crypto/articles/bitcoin-recovers-61-5k-set-062257549.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-27 01:22 ET",
+        "pub_ts": 1795760577.0
+      },
+      {
+        "title": "BTC News: $7B Bitcoin Options Expiry Aftermath – What Happens Next?",
+        "url": "https://99bitcoins.com/news/bitcoin-btc/btc-news-7b-bitcoin-options-expiry-aftermath-what-happens-next/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-27 05:59 ET",
+        "pub_ts": 1795777141.0
+      },
+      {
         "title": "One asset is 51% off this Black Friday",
         "url": "https://www.thestreet.com/crypto/markets/one-asset-is-51-off-this-black-friday?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2622,20 +2636,6 @@
         "source": "Yahoo Finance",
         "time": "11-27 05:15 ET",
         "pub_ts": 1795774548.0
-      },
-      {
-        "title": "KuCoin Drops Monero Monday; Its Pairs Carried Over Half of Tracked XMR Volume",
-        "url": "https://unchainedcrypto.com/kucoin-drops-monero-monday-its-pairs-carried-over-half-of-tracked-xmr-volume/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-27 04:45 ET",
-        "pub_ts": 1795772728.0
-      },
-      {
-        "title": "LIVE – Crypto News Today: Why Is Bitcoin Up? Gold and Wall Street Rally Fuel BTC Bounce",
-        "url": "https://cryptonews.com/news/bitcoin-rises-from-grave-black-friday-crypto-news/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-27 02:18 ET",
-        "pub_ts": 1795763914.0
       }
     ],
     "CRWD": [
@@ -2788,6 +2788,27 @@
     ],
     "MRNA": [
       {
+        "title": "Direxion NASDAQ-100 Equal Weighted (QQQE) Adds IDEXX and Walmart on Nov. 25",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/direxion-nasdaq-100-equal-weighted-110509309.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-27 06:05 ET",
+        "pub_ts": 1795777509.0
+      },
+      {
+        "title": "Invesco S&P 500 Equal Weight (RSP) Buys $2.7 Million More Moderna on Nov. 25",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/invesco-p-500-equal-weight-110341275.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-27 06:03 ET",
+        "pub_ts": 1795777421.0
+      },
+      {
+        "title": "Nvidia Lost $1.7 Trillion This Fall. Who Won?",
+        "url": "https://www.trefis.com/stock/mrna/articles/629143/nvidia-lost-1-7-trillion-this-fall-moderna-and-walmart-won-why/2026-11-27?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-27 06:00 ET",
+        "pub_ts": 1795777213.0
+      },
+      {
         "title": "$1,000 in Moderna Stock on Jan. 1 Is Worth About $7,500 Today",
         "url": "https://247wallst.com/investing/2026/11/26/1000-in-moderna-stock-on-jan-1-is-worth-about-7500-today/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2800,27 +2821,6 @@
         "source": "Yahoo Finance",
         "time": "11-26 10:46 ET",
         "pub_ts": 1795707960.0
-      },
-      {
-        "title": "Invesco S&P 500 Equal Weight (RSP) Sells Moderna and PTC on Nov. 24",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/invesco-p-500-equal-weight-110438813.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-26 06:04 ET",
-        "pub_ts": 1795691078.0
-      },
-      {
-        "title": "What Sent Moderna Stock Higher?",
-        "url": "https://www.trefis.com/stock/mrna/articles/628629/what-sent-moderna-stock-higher/2026-11-25?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 18:36 ET",
-        "pub_ts": 1795649781.0
-      },
-      {
-        "title": "What Invesco S&P 500 Equal Weight ETF (RSP) Sold: Moderna Leads on Nov. 23",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/invesco-p-500-equal-weight-110443601.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 06:04 ET",
-        "pub_ts": 1795604683.0
       }
     ],
     "NKE": [
@@ -3366,17 +3366,17 @@
     "MU": 1795778834.3195145,
     "SKHY": 1795778834.3195145,
     "WDC": 1795778834.3195145,
-    "STX": 1795777329.2599885,
-    "MSTR": 1795777329.2599885,
+    "STX": 1795778890.471393,
+    "MSTR": 1795778890.471393,
     "SNDK": 1795778834.3195145,
-    "BTC-USD": 1795777329.2599885,
-    "CRWD": 1795777329.2599885,
-    "ORCL": 1795777329.2599885,
-    "COIN": 1795777329.2599885,
-    "LLY": 1795777329.2599885,
-    "MRNA": 1795777329.2599885,
-    "NKE": 1795777329.2599885,
-    "MCD": 1795777329.2599885,
+    "BTC-USD": 1795778890.471393,
+    "CRWD": 1795778890.471393,
+    "ORCL": 1795778890.471393,
+    "COIN": 1795778890.471393,
+    "LLY": 1795778890.471393,
+    "MRNA": 1795778890.471393,
+    "NKE": 1795778890.471393,
+    "MCD": 1795778890.471393,
     "PEP": 1795777939.328296,
     "XOM": 1795777939.328296,
     "JPM": 1795777939.328296,
