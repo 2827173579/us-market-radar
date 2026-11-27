@@ -8179,9 +8179,17 @@
     "2026-11-27:pre_market": {
       "device": "PC",
       "ts": 1795789272.544189
+    },
+    "2026-11-27:MSFT/QCOM:5M_ENTRY": {
+      "device": "PC",
+      "ts": 1795789866.1077452
+    },
+    "2026-11-27:DEFENSIVE_FLIGHT:green:-3.4": {
+      "device": "PC",
+      "ts": 1795789868.0972137
     }
   },
   "device": "PC",
-  "last_heartbeat_ts": 1795789649.0389998,
-  "updated_at": "2026-11-27T14:27:29.039457+00:00"
+  "last_heartbeat_ts": 1795789752.1194847,
+  "updated_at": "2026-11-27T14:31:08.097716+00:00"
 }
