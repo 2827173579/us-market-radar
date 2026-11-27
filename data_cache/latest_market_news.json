@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795765071.068,
-  "updated_at_et": "11-27 02:37 ET",
-  "updated_at_kst": "16:37 KST",
+  "updated_at_ts": 1795765138.64,
+  "updated_at_et": "11-27 02:38 ET",
+  "updated_at_kst": "16:38 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -2962,6 +2962,13 @@
     ],
     "JPM": [
       {
+        "title": "J.P. Morgan sees luxury sales stagnating in 2027, but which category stands out?",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/j-p-morgan-sees-luxury-072816536.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-27 02:28 ET",
+        "pub_ts": 1795764496.0
+      },
+      {
         "title": "AI Risk Is 'Moving Somewhere Harder to See': Citigroup, JPMorgan Reportedly Look to Offload AI Debt as Investors Grow Wary of Buildout",
         "url": "https://finance.yahoo.com/technology/ai/articles/ai-risk-moving-somewhere-harder-033352825.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2988,13 +2995,6 @@
         "source": "Yahoo Finance",
         "time": "11-26 06:00 ET",
         "pub_ts": 1795690808.0
-      },
-      {
-        "title": "What Is JPMorgan Chase (JPM) Saying With Its $450 Billion AI Debt Call?",
-        "url": "https://finance.yahoo.com/technology/ai/articles/jpmorgan-chase-jpm-saying-450-080838063.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-26 03:08 ET",
-        "pub_ts": 1795680518.0
       }
     ],
     "WMT": [
@@ -3184,6 +3184,13 @@
     ],
     "ANT": [
       {
+        "title": "Prediction: This Will Be Anthropic’s Stock Price by the End of 2026",
+        "url": "https://www.fool.com/investing/2026/11/27/prediction-this-will-be-anthropic-s-stock-price-by-the-end-of-2026/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-27 02:23 ET",
+        "pub_ts": 1795764182.0
+      },
+      {
         "title": "Dow Jones Futures Rise; Look For This Bullish Market Signal On Black Friday",
         "url": "https://finance.yahoo.com/m/158e82fc-b889-34b6-8704-99a49e9a83ae/dow-jones-futures-rise%3B-look.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -3210,13 +3217,6 @@
         "source": "Yahoo Finance",
         "time": "11-26 17:27 ET",
         "pub_ts": 1795732065.0
-      },
-      {
-        "title": "O’Reilly’s Sales to Professional Mechanics Jumped 12.7% Last Quarter. Here’s Why That’s the Clearest Sign of Its Moat.",
-        "url": "https://www.fool.com/investing/2026/11/26/oreilly-sales-professional-mechanics-jumped-last-quarter-why-that-s-the-clearest-sign-of-its-moat/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-26 16:50 ET",
-        "pub_ts": 1795729802.0
       }
     ],
     "XAUUSD": [
@@ -3364,18 +3364,18 @@
     "COIN": 1795765071.0675068,
     "LLY": 1795765071.0675068,
     "MRNA": 1795765071.0675068,
-    "NKE": 1795763511.9249094,
+    "NKE": 1795765138.6395876,
     "MCD": 1795765071.0675068,
-    "PEP": 1795763563.5041897,
-    "XOM": 1795763563.5041897,
-    "JPM": 1795763563.5041897,
-    "WMT": 1795763563.5041897,
-    "V": 1795763563.5041897,
-    "CAT": 1795763563.5041897,
+    "PEP": 1795765138.6395876,
+    "XOM": 1795765138.6395876,
+    "JPM": 1795765138.6395876,
+    "WMT": 1795765138.6395876,
+    "V": 1795765138.6395876,
+    "CAT": 1795765138.6395876,
     "FN": 1795764966.6982048,
     "GLW": 1795764852.1757023,
-    "ANT": 1795763563.5041897,
-    "XAUUSD": 1795763563.5041897,
+    "ANT": 1795765138.6395876,
+    "XAUUSD": 1795765138.6395876,
     "KOSPI": 1795764966.6982048,
     "KSTR": 1795764801.5013754
   },
