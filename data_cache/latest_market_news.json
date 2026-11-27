@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795787033.137,
-  "updated_at_et": "11-27 08:43 ET",
-  "updated_at_kst": "22:43 KST",
+  "updated_at_ts": 1795787080.503,
+  "updated_at_et": "11-27 08:44 ET",
+  "updated_at_kst": "22:44 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -3197,6 +3197,13 @@
     ],
     "ANT": [
       {
+        "title": "Was investor Leopold Aschenbrenner right about AI, but wrong on risk?",
+        "url": "https://finance.yahoo.com/video/was-investor-leopold-aschenbrenner-right-about-ai-but-wrong-on-risk-133749438.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-27 08:37 ET",
+        "pub_ts": 1795786669.0
+      },
+      {
         "title": "Stock Market Today: Dow Jumps 715 Points As Nvidia Rebounds; Anthropic, SpaceX, Tesla Rally (Live Coverage)",
         "url": "https://finance.yahoo.com/m/86a4597f-ee47-3048-ae92-1a56fa4711e5/stock-market-today%3A-dow-jumps.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -3223,13 +3230,6 @@
         "source": "Yahoo Finance",
         "time": "11-27 06:01 ET",
         "pub_ts": 1795777260.0
-      },
-      {
-        "title": "Anthropic and OpenAI Race to Embed Engineers as Faith in AI Buildout Wobbles",
-        "url": "https://finance.yahoo.com/m/de03ba4c-b160-33f0-a172-cfde9f4eb51f/anthropic-and-openai-race-to.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-27 06:00 ET",
-        "pub_ts": 1795777200.0
       }
     ],
     "XAUUSD": [
@@ -3379,17 +3379,17 @@
     "MRNA": 1795786935.0137258,
     "NKE": 1795786935.0137258,
     "MCD": 1795786935.0137258,
-    "PEP": 1795785547.890979,
-    "XOM": 1795785547.890979,
-    "JPM": 1795785547.890979,
-    "WMT": 1795785547.890979,
-    "V": 1795785547.890979,
-    "CAT": 1795785547.890979,
+    "PEP": 1795787080.5032365,
+    "XOM": 1795787080.5032365,
+    "JPM": 1795787080.5032365,
+    "WMT": 1795787080.5032365,
+    "V": 1795787080.5032365,
+    "CAT": 1795787080.5032365,
     "FN": 1795786834.2418282,
     "GLW": 1795786834.2418282,
-    "ANT": 1795785547.890979,
-    "XAUUSD": 1795785547.890979,
-    "KOSPI": 1795785547.890979,
+    "ANT": 1795787080.5032365,
+    "XAUUSD": 1795787080.5032365,
+    "KOSPI": 1795787080.5032365,
     "KSTR": 1795786173.3539343
   },
   "opex_shield": {
