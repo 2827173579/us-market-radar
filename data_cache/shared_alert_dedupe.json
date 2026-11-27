@@ -8487,9 +8487,13 @@
     "2026-11-27:QCOM/SPY/DIA/IWM:5M_ENTRY": {
       "device": "PC",
       "ts": 1795801993.2693484
+    },
+    "2026-11-27:DEFENSIVE_FLIGHT:green:-4.0": {
+      "device": "PC",
+      "ts": 1795802180.0391831
     }
   },
   "device": "PC",
-  "last_heartbeat_ts": 1795802101.039739,
-  "updated_at": "2026-11-27T17:55:24.264068+00:00"
+  "last_heartbeat_ts": 1795802154.741627,
+  "updated_at": "2026-11-27T17:56:20.039695+00:00"
 }
