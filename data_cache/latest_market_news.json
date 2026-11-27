@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795744396.871,
-  "updated_at_et": "11-26 20:53 ET",
-  "updated_at_kst": "10:53 KST",
+  "updated_at_ts": 1795744440.099,
+  "updated_at_et": "11-26 20:54 ET",
+  "updated_at_kst": "10:54 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -1643,6 +1643,13 @@
     ],
     "MRVL": [
       {
+        "title": "Credo Technology Group Holding (CRDO) Could Be 50% Below Fair Value After Marvell Settlement",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/credo-technology-group-holding-crdo-012531407.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-26 20:25 ET",
+        "pub_ts": 1795742731.0
+      },
+      {
         "title": "Is Marvell Technology, Inc. (MRVL) a Hidden AI Infrastructure Winner for 2027?",
         "url": "https://finance.yahoo.com/technology/ai/articles/marvell-technology-inc-mrvl-hidden-194807832.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1669,13 +1676,6 @@
         "source": "Yahoo Finance",
         "time": "11-26 08:00 ET",
         "pub_ts": 1795698006.0
-      },
-      {
-        "title": "Lumentum Sinks 14% in a Week as AI Stocks Slide, but Its CEO Says “We Haven’t Seen Any Slowdown”",
-        "url": "https://www.tikr.com/blog/lumentum-sinks-14-in-a-week-as-ai-stocks-slide-but-its-ceo-says-we-havent-seen-any-slowdown?ref=yahoofinance&tlnk=yf-261126-mcfhw988&.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-26 03:27 ET",
-        "pub_ts": 1795681663.0
       }
     ],
     "LITE": [
@@ -2679,6 +2679,13 @@
     ],
     "ORCL": [
       {
+        "title": "Wondering Why Oracle Fell? Here's What The Bears Saw",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/wondering-why-oracle-fell-heres-012625677.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-26 20:26 ET",
+        "pub_ts": 1795742785.0
+      },
+      {
         "title": "‘Room to Spare,’ Says Investor About Oracle Stock",
         "url": "https://finance.yahoo.com/markets/stocks/articles/room-spare-says-investor-oracle-215243159.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2705,16 +2712,16 @@
         "source": "Yahoo Finance",
         "time": "11-26 09:04 ET",
         "pub_ts": 1795701840.0
-      },
-      {
-        "title": "Oracle Is Down 47% in 2026. Is There Really a “Reasonable Chance Oracle Goes Bankrupt”?",
-        "url": "https://www.tikr.com/blog/oracle-is-down-47-in-2026-is-there-really-a-reasonable-chance-oracle-goes-bankrupt?ref=yahoofinance&tlnk=yf-261126-97j6xfvm&.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-26 08:50 ET",
-        "pub_ts": 1795701019.0
       }
     ],
     "COIN": [
+      {
+        "title": "Coinbase (COIN) Stock Sees Modest Fair Value Cut As Analyst Views Stay Split",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/coinbase-coin-stock-sees-modest-012524546.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-26 20:25 ET",
+        "pub_ts": 1795742724.0
+      },
       {
         "title": "Polygon Brings Its Cross-Border Payments Stack to Coinbase’s Base",
         "url": "https://decrypt.co/384023/polygon-cross-border-payments-stack-coinbase-base?.tsrc=rss",
@@ -2742,13 +2749,6 @@
         "source": "Yahoo Finance",
         "time": "11-25 15:31 ET",
         "pub_ts": 1795638668.0
-      },
-      {
-        "title": "Coinbase Is Buying Back COIN Again as Shares Slide",
-        "url": "https://www.bankless.com/read/news/coinbase-is-buying-back-coin-again-as-shares-slide?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 15:07 ET",
-        "pub_ts": 1795637258.0
       }
     ],
     "LLY": [
@@ -3335,22 +3335,22 @@
     "GOOGL": 1795744396.871075,
     "MSFT": 1795744396.871075,
     "AAPL": 1795744396.871075,
-    "PLTR": 1795742885.5688972,
-    "NOW": 1795742885.5688972,
-    "AMZN": 1795742885.5688972,
-    "CRWV": 1795742885.5688972,
-    "NBIS": 1795742885.5688972,
-    "APLD": 1795742885.5688972,
+    "PLTR": 1795744440.0993042,
+    "NOW": 1795744440.0993042,
+    "AMZN": 1795744440.0993042,
+    "CRWV": 1795744440.0993042,
+    "NBIS": 1795744440.0993042,
+    "APLD": 1795744440.0993042,
     "VST": 1795744176.9782598,
     "BE": 1795744176.9782598,
     "CRDO": 1795744176.9782598,
     "COHR": 1795744176.9782598,
-    "MRVL": 1795742885.5688972,
-    "LITE": 1795742885.5688972,
+    "MRVL": 1795744440.0993042,
+    "LITE": 1795744440.0993042,
     "AAOI": 1795744176.9782598,
     "SPCX": 1795744176.9782598,
     "ASTS": 1795744176.9782598,
-    "AXTI": 1795742885.5688972,
+    "AXTI": 1795744440.0993042,
     "NASA": 1795744396.871075,
     "LUNR": 1795744396.871075,
     "TSLA": 1795744396.871075,
@@ -3365,31 +3365,31 @@
     "OKLO": 1795744396.871075,
     "CEG": 1795744396.871075,
     "FPS": 1795744396.871075,
-    "MU": 1795742885.5688972,
-    "SKHY": 1795742885.5688972,
-    "WDC": 1795742885.5688972,
-    "STX": 1795742885.5688972,
-    "MSTR": 1795742885.5688972,
+    "MU": 1795744440.0993042,
+    "SKHY": 1795744440.0993042,
+    "WDC": 1795744440.0993042,
+    "STX": 1795744440.0993042,
+    "MSTR": 1795744440.0993042,
     "SNDK": 1795744396.871075,
-    "BTC-USD": 1795742885.5688972,
-    "CRWD": 1795742885.5688972,
-    "ORCL": 1795742885.5688972,
-    "COIN": 1795742885.5688972,
-    "LLY": 1795742885.5688972,
-    "MRNA": 1795742885.5688972,
-    "NKE": 1795742885.5688972,
-    "MCD": 1795742885.5688972,
+    "BTC-USD": 1795744440.0993042,
+    "CRWD": 1795744440.0993042,
+    "ORCL": 1795744440.0993042,
+    "COIN": 1795744440.0993042,
+    "LLY": 1795744440.0993042,
+    "MRNA": 1795744440.0993042,
+    "NKE": 1795744440.0993042,
+    "MCD": 1795744440.0993042,
     "PEP": 1795742927.454232,
     "XOM": 1795742927.454232,
     "JPM": 1795742927.454232,
     "WMT": 1795742927.454232,
-    "V": 1795742885.5688972,
+    "V": 1795744440.0993042,
     "CAT": 1795742927.454232,
-    "FN": 1795742885.5688972,
+    "FN": 1795744440.0993042,
     "GLW": 1795744176.9782598,
     "ANT": 1795742927.454232,
     "XAUUSD": 1795742927.454232,
-    "KOSPI": 1795742885.5688972,
+    "KOSPI": 1795744440.0993042,
     "KSTR": 1795744176.9782598
   },
   "opex_shield": {
