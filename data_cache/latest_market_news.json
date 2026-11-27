@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795787660.742,
-  "updated_at_et": "11-27 08:54 ET",
-  "updated_at_kst": "22:54 KST",
+  "updated_at_ts": 1795787707.229,
+  "updated_at_et": "11-27 08:55 ET",
+  "updated_at_kst": "22:55 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -911,6 +911,20 @@
         "pub_ts": 1795783742.0
       },
       {
+        "title": "AI Needs More Than Nvidia Chips. This Stock Could Benefit",
+        "url": "https://247wallst.com/investing/2026/11/27/ai-needs-more-than-nvidia-chips-this-stock-could-benefit/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-27 08:47 ET",
+        "pub_ts": 1795787250.0
+      },
+      {
+        "title": "Is Nvidia a Screaming Buy or a Value Trap?",
+        "url": "https://www.fool.com/investing/2026/11/27/is-nvidia-a-screaming-buy-or-a-value-trap/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-27 08:25 ET",
+        "pub_ts": 1795785902.0
+      },
+      {
         "title": "Stock Market Today: Dow Jumps 715 Points As Nvidia Rebounds; Anthropic, SpaceX, Tesla Rally (Live Coverage)",
         "url": "https://finance.yahoo.com/m/86a4597f-ee47-3048-ae92-1a56fa4711e5/stock-market-today%3A-dow-jumps.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -923,20 +937,6 @@
         "source": "Yahoo Finance",
         "time": "11-27 07:45 ET",
         "pub_ts": 1795783506.0
-      },
-      {
-        "title": "Nvidia Chips Turn Up at China Site Linked to Alice Huang",
-        "url": "https://finance.yahoo.com/video/nvidia-chips-turn-china-linked-124500841.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-27 07:45 ET",
-        "pub_ts": 1795783500.0
-      },
-      {
-        "title": "Nvidia Blackwell chips found in Shanghai data center tied to Alice Huang",
-        "url": "https://finance.yahoo.com/technology/ai/articles/nvidia-blackwell-chips-found-shanghai-124008621.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-27 07:40 ET",
-        "pub_ts": 1795783208.0
       }
     ],
     "AMD": [
@@ -3311,22 +3311,22 @@
     ]
   },
   "ticker_news_ts": {
-    "KORU": 1795786173.3539343,
-    "SOXL": 1795786173.3539343,
-    "SPY": 1795786173.3539343,
-    "DIA": 1795786173.3539343,
-    "SOXX": 1795786173.3539343,
-    "QQQ": 1795786173.3539343,
-    "SMH": 1795786173.3539343,
-    "IWM": 1795786173.3539343,
-    "IGV": 1795786173.3539343,
-    "TLT": 1795786173.3539343,
-    "GLD": 1795786173.3539343,
-    "SQQQ": 1795786173.3539343,
-    "TSM": 1795786173.3539343,
-    "VIXY": 1795786173.3539343,
-    "SOXS": 1795786173.3539343,
-    "NVDA": 1795786173.3539343,
+    "KORU": 1795787707.2289057,
+    "SOXL": 1795787707.2289057,
+    "SPY": 1795787707.2289057,
+    "DIA": 1795787707.2289057,
+    "SOXX": 1795787707.2289057,
+    "QQQ": 1795787707.2289057,
+    "SMH": 1795787707.2289057,
+    "IWM": 1795787707.2289057,
+    "IGV": 1795787707.2289057,
+    "TLT": 1795787707.2289057,
+    "GLD": 1795787707.2289057,
+    "SQQQ": 1795787707.2289057,
+    "TSM": 1795787707.2289057,
+    "VIXY": 1795787707.2289057,
+    "SOXS": 1795787707.2289057,
+    "NVDA": 1795787707.2289057,
     "AMD": 1795786307.8609195,
     "ASML": 1795786307.8609195,
     "QCOM": 1795786307.8609195,
@@ -3391,7 +3391,7 @@
     "ANT": 1795787080.5032365,
     "XAUUSD": 1795787080.5032365,
     "KOSPI": 1795787080.5032365,
-    "KSTR": 1795786173.3539343
+    "KSTR": 1795787707.2289057
   },
   "opex_shield": {
     "date": "2026-11-27",
