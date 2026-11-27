@@ -14,8 +14,8 @@
       "last_notified_at": 1795568545.5093307
     },
     "META": {
-      "state": "WATCHLIST_ENTRY_READY",
-      "last_notified_at": 1795802576.5904174
+      "state": "NORMAL",
+      "last_notified_at": 0.0
     },
     "MRNA": {
       "state": "NORMAL",
@@ -50,8 +50,8 @@
       "last_notified_at": 0.0
     },
     "FLY": {
-      "state": "WATCHLIST_ENTRY_READY",
-      "last_notified_at": 1795802576.5904174
+      "state": "NORMAL",
+      "last_notified_at": 0.0
     },
     "LLY": {
       "state": "NORMAL",
@@ -82,12 +82,12 @@
       "last_notified_at": 0.0
     },
     "DIA": {
-      "state": "WATCHLIST_ENTRY_READY",
-      "last_notified_at": 1795801992.3467078
-    },
-    "IWM": {
       "state": "NORMAL",
       "last_notified_at": 0.0
+    },
+    "IWM": {
+      "state": "WATCHLIST_ENTRY_READY",
+      "last_notified_at": 1795803279.1110423
     },
     "IGV": {
       "state": "NORMAL",
@@ -182,8 +182,8 @@
       "last_notified_at": 0.0
     },
     "AVGO": {
-      "state": "WATCHLIST_ENTRY_READY",
-      "last_notified_at": 1795802431.4942195
+      "state": "NORMAL",
+      "last_notified_at": 0.0
     },
     "KSTR": {
       "state": "NORMAL",

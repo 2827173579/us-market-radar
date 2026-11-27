@@ -1,17 +1,17 @@
 {
-  "updated_at": "2026-11-27 00:49:21",
+  "updated_at": "2026-11-28 03:13:46",
   "win_rate_7d_pct": 100.0,
-  "win_rate_30d_pct": 57.6,
-  "long_win_rate_7d_pct": 9.1,
+  "win_rate_30d_pct": 64.4,
+  "long_win_rate_7d_pct": 7.4,
   "short_win_rate_7d_pct": 100.0,
-  "long_win_rate_30d_pct": 29.8,
-  "short_win_rate_30d_pct": 57.6,
-  "sample_count_7d": 3,
-  "sample_count_30d": 118,
-  "avg_return_7d_pct": 8.85,
-  "avg_return_30d_pct": 1.56,
-  "window_7d_range": "2026-11-15~2026-11-21",
-  "window_30d_range": "2026-10-23~2026-11-21",
+  "long_win_rate_30d_pct": 27.2,
+  "short_win_rate_30d_pct": 64.4,
+  "sample_count_7d": 4,
+  "sample_count_30d": 101,
+  "avg_return_7d_pct": 8.27,
+  "avg_return_30d_pct": 2.35,
+  "window_7d_range": "2026-11-16~2026-11-22",
+  "window_30d_range": "2026-10-24~2026-11-22",
   "is_degraded": false,
   "warning_text": "✅ 模型近期实盘命中稳健",
   "reconciled_live_count": 1,
@@ -1203,17 +1203,352 @@
       "direction": "SHORT",
       "pred_prob_pct": 57.5,
       "entry_price": 121.32
+    },
+    {
+      "ticker": "AXTI",
+      "pred_date": "2026-11-28",
+      "direction": "SHORT",
+      "pred_prob_pct": 57.2,
+      "entry_price": 36.37
+    },
+    {
+      "ticker": "MRVL",
+      "pred_date": "2026-11-28",
+      "direction": "SHORT",
+      "pred_prob_pct": 57.4,
+      "entry_price": 140.54
+    },
+    {
+      "ticker": "LITE",
+      "pred_date": "2026-11-28",
+      "direction": "SHORT",
+      "pred_prob_pct": 57.1,
+      "entry_price": 514.63
+    },
+    {
+      "ticker": "INTC",
+      "pred_date": "2026-11-28",
+      "direction": "SHORT",
+      "pred_prob_pct": 58.5,
+      "entry_price": 57.4
+    },
+    {
+      "ticker": "APLD",
+      "pred_date": "2026-11-28",
+      "direction": "SHORT",
+      "pred_prob_pct": 57.6,
+      "entry_price": 12.99
+    },
+    {
+      "ticker": "ASTS",
+      "pred_date": "2026-11-28",
+      "direction": "SHORT",
+      "pred_prob_pct": 57.3,
+      "entry_price": 26.85
+    },
+    {
+      "ticker": "COIN",
+      "pred_date": "2026-11-28",
+      "direction": "SHORT",
+      "pred_prob_pct": 58.3,
+      "entry_price": 107.04
+    },
+    {
+      "ticker": "AAOI",
+      "pred_date": "2026-11-28",
+      "direction": "SHORT",
+      "pred_prob_pct": 58.0,
+      "entry_price": 40.9
+    },
+    {
+      "ticker": "MSTR",
+      "pred_date": "2026-11-28",
+      "direction": "SHORT",
+      "pred_prob_pct": 60.6,
+      "entry_price": 81.62
+    },
+    {
+      "ticker": "STX",
+      "pred_date": "2026-11-28",
+      "direction": "SHORT",
+      "pred_prob_pct": 58.3,
+      "entry_price": 509.66
+    },
+    {
+      "ticker": "BE",
+      "pred_date": "2026-11-28",
+      "direction": "SHORT",
+      "pred_prob_pct": 60.0,
+      "entry_price": 163.03
+    },
+    {
+      "ticker": "CRDO",
+      "pred_date": "2026-11-28",
+      "direction": "SHORT",
+      "pred_prob_pct": 60.1,
+      "entry_price": 115.57
+    },
+    {
+      "ticker": "MU",
+      "pred_date": "2026-11-28",
+      "direction": "SHORT",
+      "pred_prob_pct": 59.4,
+      "entry_price": 646.95
+    },
+    {
+      "ticker": "OKLO",
+      "pred_date": "2026-11-28",
+      "direction": "SHORT",
+      "pred_prob_pct": 58.6,
+      "entry_price": 20.85
+    },
+    {
+      "ticker": "NBIS",
+      "pred_date": "2026-11-28",
+      "direction": "SHORT",
+      "pred_prob_pct": 55.5,
+      "entry_price": 89.46
+    },
+    {
+      "ticker": "AMAT",
+      "pred_date": "2026-11-28",
+      "direction": "SHORT",
+      "pred_prob_pct": 59.0,
+      "entry_price": 322.04
+    },
+    {
+      "ticker": "DELL",
+      "pred_date": "2026-11-28",
+      "direction": "SHORT",
+      "pred_prob_pct": 58.9,
+      "entry_price": 316.96
+    },
+    {
+      "ticker": "CRWV",
+      "pred_date": "2026-11-28",
+      "direction": "SHORT",
+      "pred_prob_pct": 55.0,
+      "entry_price": 44.15
+    },
+    {
+      "ticker": "NVDA",
+      "pred_date": "2026-11-28",
+      "direction": "SHORT",
+      "pred_prob_pct": 59.5,
+      "entry_price": 150.49
+    },
+    {
+      "ticker": "NOW",
+      "pred_date": "2026-11-28",
+      "direction": "SHORT",
+      "pred_prob_pct": 57.2,
+      "entry_price": 92.9
+    },
+    {
+      "ticker": "AMD",
+      "pred_date": "2026-11-28",
+      "direction": "SHORT",
+      "pred_prob_pct": 58.9,
+      "entry_price": 424.54
+    },
+    {
+      "ticker": "HPE",
+      "pred_date": "2026-11-28",
+      "direction": "SHORT",
+      "pred_prob_pct": 58.7,
+      "entry_price": 42.87
+    },
+    {
+      "ticker": "FPS",
+      "pred_date": "2026-11-28",
+      "direction": "SHORT",
+      "pred_prob_pct": 55.0,
+      "entry_price": 19.63
+    },
+    {
+      "ticker": "FLY",
+      "pred_date": "2026-11-28",
+      "direction": "SHORT",
+      "pred_prob_pct": 55.0,
+      "entry_price": 19.44
+    },
+    {
+      "ticker": "COHR",
+      "pred_date": "2026-11-28",
+      "direction": "SHORT",
+      "pred_prob_pct": 59.7,
+      "entry_price": 224.0
+    },
+    {
+      "ticker": "XAUUSD",
+      "pred_date": "2026-11-28",
+      "direction": "SHORT",
+      "pred_prob_pct": 62.1,
+      "entry_price": 3646.17
+    },
+    {
+      "ticker": "CEG",
+      "pred_date": "2026-11-28",
+      "direction": "SHORT",
+      "pred_prob_pct": 67.1,
+      "entry_price": 238.1
+    },
+    {
+      "ticker": "WDC",
+      "pred_date": "2026-11-28",
+      "direction": "SHORT",
+      "pred_prob_pct": 64.2,
+      "entry_price": 292.11
+    },
+    {
+      "ticker": "FN",
+      "pred_date": "2026-11-28",
+      "direction": "SHORT",
+      "pred_prob_pct": 67.5,
+      "entry_price": 308.37
+    },
+    {
+      "ticker": "VST",
+      "pred_date": "2026-11-28",
+      "direction": "SHORT",
+      "pred_prob_pct": 66.0,
+      "entry_price": 122.66
+    },
+    {
+      "ticker": "V",
+      "pred_date": "2026-11-28",
+      "direction": "SHORT",
+      "pred_prob_pct": 59.5,
+      "entry_price": 430.0
+    },
+    {
+      "ticker": "TSLA",
+      "pred_date": "2026-11-28",
+      "direction": "SHORT",
+      "pred_prob_pct": 64.0,
+      "entry_price": 400.0
+    },
+    {
+      "ticker": "LUNR",
+      "pred_date": "2026-11-28",
+      "direction": "SHORT",
+      "pred_prob_pct": 63.8,
+      "entry_price": 10.0
+    },
+    {
+      "ticker": "CRWD",
+      "pred_date": "2026-11-28",
+      "direction": "SHORT",
+      "pred_prob_pct": 59.7,
+      "entry_price": 217.2
+    },
+    {
+      "ticker": "META",
+      "pred_date": "2026-11-28",
+      "direction": "SHORT",
+      "pred_prob_pct": 58.6,
+      "entry_price": 628.96
+    },
+    {
+      "ticker": "ORCL",
+      "pred_date": "2026-11-28",
+      "direction": "SHORT",
+      "pred_prob_pct": 63.5,
+      "entry_price": 107.41
+    },
+    {
+      "ticker": "RKLB",
+      "pred_date": "2026-11-28",
+      "direction": "SHORT",
+      "pred_prob_pct": 60.9,
+      "entry_price": 50.88
+    },
+    {
+      "ticker": "CAT",
+      "pred_date": "2026-11-28",
+      "direction": "SHORT",
+      "pred_prob_pct": 57.3,
+      "entry_price": 562.21
+    },
+    {
+      "ticker": "LLY",
+      "pred_date": "2026-11-28",
+      "direction": "SHORT",
+      "pred_prob_pct": 63.0,
+      "entry_price": 1395.14
+    },
+    {
+      "ticker": "AVGO",
+      "pred_date": "2026-11-28",
+      "direction": "SHORT",
+      "pred_prob_pct": 60.9,
+      "entry_price": 312.34
+    },
+    {
+      "ticker": "AAPL",
+      "pred_date": "2026-11-28",
+      "direction": "SHORT",
+      "pred_prob_pct": 60.1,
+      "entry_price": 358.54
+    },
+    {
+      "ticker": "MSFT",
+      "pred_date": "2026-11-28",
+      "direction": "SHORT",
+      "pred_prob_pct": 55.2,
+      "entry_price": 492.85
+    },
+    {
+      "ticker": "GLW",
+      "pred_date": "2026-11-28",
+      "direction": "SHORT",
+      "pred_prob_pct": 64.3,
+      "entry_price": 105.21
+    },
+    {
+      "ticker": "PLTR",
+      "pred_date": "2026-11-28",
+      "direction": "SHORT",
+      "pred_prob_pct": 55.5,
+      "entry_price": 172.17
+    },
+    {
+      "ticker": "VRT",
+      "pred_date": "2026-11-28",
+      "direction": "SHORT",
+      "pred_prob_pct": 63.5,
+      "entry_price": 178.93
+    },
+    {
+      "ticker": "GOOGL",
+      "pred_date": "2026-11-28",
+      "direction": "SHORT",
+      "pred_prob_pct": 57.9,
+      "entry_price": 274.96
+    },
+    {
+      "ticker": "BTC-USD",
+      "pred_date": "2026-11-28",
+      "direction": "SHORT",
+      "pred_prob_pct": 73.3,
+      "entry_price": 59844.41
+    },
+    {
+      "ticker": "ASML",
+      "pred_date": "2026-11-28",
+      "direction": "SHORT",
+      "pred_prob_pct": 57.5,
+      "entry_price": 1325.82
+    },
+    {
+      "ticker": "TSM",
+      "pred_date": "2026-11-28",
+      "direction": "SHORT",
+      "pred_prob_pct": 63.9,
+      "entry_price": 353.67
     }
   ],
   "daily_breakdown_30d": [
-    {
-      "date": "2026-10-23",
-      "win_rate_pct": 22.7,
-      "long_win_rate_pct": 100.0,
-      "short_win_rate_pct": 22.7,
-      "sample_count": 22,
-      "avg_return_pct": -2.23
-    },
     {
       "date": "2026-10-24",
       "win_rate_pct": 100.0,
@@ -1232,35 +1567,35 @@
     },
     {
       "date": "2026-10-26",
-      "win_rate_pct": 43.5,
+      "win_rate_pct": 40.0,
       "long_win_rate_pct": 100.0,
-      "short_win_rate_pct": 43.5,
-      "sample_count": 23,
-      "avg_return_pct": -0.97
+      "short_win_rate_pct": 40.0,
+      "sample_count": 25,
+      "avg_return_pct": -1.45
     },
     {
       "date": "2026-10-27",
-      "win_rate_pct": 66.7,
+      "win_rate_pct": 50.0,
       "long_win_rate_pct": 0.0,
-      "short_win_rate_pct": 66.7,
-      "sample_count": 3,
-      "avg_return_pct": 2.01
+      "short_win_rate_pct": 50.0,
+      "sample_count": 4,
+      "avg_return_pct": 0.35
     },
     {
       "date": "2026-10-28",
-      "win_rate_pct": 87.5,
+      "win_rate_pct": 100.0,
       "long_win_rate_pct": 0.0,
-      "short_win_rate_pct": 0.0,
-      "sample_count": 8,
-      "avg_return_pct": 5.81
+      "short_win_rate_pct": 100.0,
+      "sample_count": 1,
+      "avg_return_pct": 9.03
     },
     {
       "date": "2026-10-29",
       "win_rate_pct": 100.0,
       "long_win_rate_pct": 0.0,
       "short_win_rate_pct": 100.0,
-      "sample_count": 3,
-      "avg_return_pct": 7.82
+      "sample_count": 1,
+      "avg_return_pct": 6.4
     },
     {
       "date": "2026-10-30",
@@ -1291,8 +1626,8 @@
       "win_rate_pct": 100.0,
       "long_win_rate_pct": 18.8,
       "short_win_rate_pct": 100.0,
-      "sample_count": 4,
-      "avg_return_pct": 5.13
+      "sample_count": 2,
+      "avg_return_pct": 5.26
     },
     {
       "date": "2026-11-03",
@@ -1360,19 +1695,19 @@
     },
     {
       "date": "2026-11-11",
-      "win_rate_pct": 61.1,
+      "win_rate_pct": 63.2,
       "long_win_rate_pct": 0.0,
-      "short_win_rate_pct": 61.1,
-      "sample_count": 18,
-      "avg_return_pct": 2.16
+      "short_win_rate_pct": 63.2,
+      "sample_count": 19,
+      "avg_return_pct": 2.44
     },
     {
       "date": "2026-11-12",
       "win_rate_pct": 100.0,
       "long_win_rate_pct": 0.0,
       "short_win_rate_pct": 100.0,
-      "sample_count": 2,
-      "avg_return_pct": 8.41
+      "sample_count": 5,
+      "avg_return_pct": 8.92
     },
     {
       "date": "2026-11-13",
@@ -1408,27 +1743,27 @@
     },
     {
       "date": "2026-11-17",
-      "win_rate_pct": 71.4,
+      "win_rate_pct": 100.0,
       "long_win_rate_pct": 5.0,
-      "short_win_rate_pct": 0.0,
-      "sample_count": 7,
-      "avg_return_pct": 3.66
+      "short_win_rate_pct": 100.0,
+      "sample_count": 1,
+      "avg_return_pct": 9.45
     },
     {
       "date": "2026-11-18",
       "win_rate_pct": 100.0,
       "long_win_rate_pct": 0.0,
       "short_win_rate_pct": 100.0,
-      "sample_count": 3,
-      "avg_return_pct": 8.85
+      "sample_count": 2,
+      "avg_return_pct": 8.55
     },
     {
       "date": "2026-11-19",
-      "win_rate_pct": 0.0,
+      "win_rate_pct": 100.0,
       "long_win_rate_pct": 0.0,
-      "short_win_rate_pct": 0.0,
+      "short_win_rate_pct": 100.0,
       "sample_count": 1,
-      "avg_return_pct": -4.07
+      "avg_return_pct": 6.51
     },
     {
       "date": "2026-11-20",
@@ -1445,6 +1780,14 @@
       "short_win_rate_pct": 0.0,
       "sample_count": 1,
       "avg_return_pct": 6.25
+    },
+    {
+      "date": "2026-11-22",
+      "win_rate_pct": 0.0,
+      "long_win_rate_pct": 0.0,
+      "short_win_rate_pct": 0.0,
+      "sample_count": 1,
+      "avg_return_pct": -4.61
     }
   ]
 }

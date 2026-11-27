@@ -1,13 +1,26 @@
 {
-  "updated_at_ts": 1795802570.633,
-  "updated_at_et": "11-27 13:02 ET",
-  "updated_at_kst": "03:02 KST",
+  "updated_at_ts": 1795803243.746,
+  "updated_at_et": "11-27 13:14 ET",
+  "updated_at_kst": "03:14 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
+      "id": "20261128020446637800",
+      "title": "本周，标普500指数上涨5.6%，道指上涨5.5%，纳指上涨6.7%。标普500指数创2…",
+      "summary": "本周，标普500指数上涨5.6%，道指上涨5.5%，纳指上涨6.7%。标普500指数创2025年4月以来最大单周涨幅。纳指录得2026年4月以来最大单周涨幅。",
+      "keywords": [
+        "标普"
+      ],
+      "pub_ts": 1795802686.0,
+      "time_et": "11-27 13:04 ET",
+      "time_bj": "02:04 BJ",
+      "time_kst": "03:04 KST",
+      "time_display": "13:04 ET / 02:04 BJ"
+    },
+    {
       "id": "20261128020133700800",
       "title": "【美股收盘：三大股指高收，Anthropic涨近11%】 11月28日讯，美股周五收盘，…",
-      "summary": "【美股收盘：三大股指高收，Anthropic涨近11%】 11月28日讯，美股周五收盘，道指初步收涨1.19%，标普500指数涨1.61%，纳指涨2.31%。芯片股大涨，Anthropic(ANT.O)涨10.98%，SK海力士(SKHY.O)涨7.5%，博通(AVGO.O)涨3.8%，台积电(TSM.N)涨3.3%。纳斯达克中国金龙指数涨超3%，阿里巴巴(BABA.N)涨超4%。",
+      "summary": "【美股收盘：三大股指高收，Anthropic涨近11%】 11月28日讯，美股周五收盘，道指初步收涨1.19%，标普500指数涨1.61%，纳指涨2.31%。芯片股大涨，Anthropic(ANT.O)涨10.98%，，创11月19日上市以来最佳单日表现。SK海力士(SKHY.O)涨7.5%，博通(AVGO.O)涨3.8%，台积电(TSM.N)涨3.3%。纳斯达克中国金龙指数涨超3%，阿里巴巴(BABA.N)涨超4%。",
       "keywords": [
         "芯片",
         "台积电",
@@ -335,21 +348,6 @@
       "time_bj": "16:32 BJ",
       "time_kst": "17:32 KST",
       "time_display": "03:32 ET / 16:32 BJ"
-    },
-    {
-      "id": "20261127161625450800",
-      "title": "整理：每日投行/机构观点梳理（2026-11-27）",
-      "summary": "国外 1. 施罗德投资：美联储降息救不了美股。 2. 澳新银行：受强劲AI支出预期支撑，铜价上涨。 3. 巴克莱：预计日本11月核心通胀升至2.6%，油价上涨带来压力。 4. 华侨银行：日元兑美元走弱风险似乎有限。 5. 荷兰国际：德科斯若成为欧洲央行行长，影响力将超越拉加德。 6. 荷兰国际：韩元2027年有望进一步走强，经常账户盈余扩大提供支撑。 7. 摩根大通：印度股市有望在2027年进一步上涨。 8. 三井住友日兴证券：日本核心通胀预计至2027年9月维持在央行目标附近。 9. 三菱日联摩根士丹利证券将日本央行终端利率预期上调至2%。 国内 1. 中信建投：国产算力供需共振，AI安全需求持续升级。 2. 中信证券：美妆赛道继续坚定看好高端赛道的本土替代。 3. 中信证券：坚定看好物理AI板块，建议关注国产硬件供应链相关标的。 4. 中信建投：船舶行业正处于十年维度的上行景气周期。 5. 中信证券：钢铁供需持续磨底，关注板块龙头红利属性。 6. 德邦证券：预计2027年A股结构机会主导，建议“红利打底、科技搏弹性”。 7. 国金证券：晶圆制造2.0时代，台积电竞争优势有望延续。 8. 银河证券：光通信行业成长逻辑迈向由前沿互连架构驱动的单端口价值跃升新周期。 9. 华泰证券：建议关注油气开采和具备产业链完整性的高分红龙头企业。 10. 国联民生证券：国常会稳市定调出现三个“第一次”，后续增量政策工具的量级值得期待。",
-      "keywords": [
-        "美联储",
-        "降息",
-        "台积电"
-      ],
-      "pub_ts": 1795767385.0,
-      "time_et": "11-27 03:16 ET",
-      "time_bj": "16:16 BJ",
-      "time_kst": "17:16 KST",
-      "time_display": "03:16 ET / 16:16 BJ"
     }
   ],
   "ticker_news": {
@@ -430,38 +428,38 @@
     "SPY": [
       {
         "title": "SoFi’s 500-Stock ETF Doesn’t Weight Strictly by Size. SFY Tilts America’s Biggest Companies Toward Growth",
-        "url": "https://247wallst.com/investing/etf/2026/11/27/sofis-500-stock-etf-doesnt-weight-strictly-by-size-sfy-tilts-americas-biggest-companies-toward-growth/?.tsrc=rss",
-        "source": "Yahoo Finance",
+        "url": "https://finnhub.io/api/news?id=b057dae842804fff90c7166b0a3dd9b6f991d2b4f3c67bd7df2621ef22b2390b",
+        "source": "Yahoo",
         "time": "11-27 10:32 ET",
         "pub_ts": 1795793560.0
       },
       {
-        "title": "Should State Street SPDR S&P 500 ETF Trust (SPY) Be on Your Investing Radar?",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/state-street-spdr-p-500-102002352.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-27 05:20 ET",
-        "pub_ts": 1795774802.0
+        "title": "Stock Market Today: Markets Off to a Strong Black Friday Start",
+        "url": "https://finnhub.io/api/news?id=5b1c67c57bf857b213429b4149e45abe6fa1a35440baf83821650461d5d1e4d0",
+        "source": "Yahoo",
+        "time": "11-27 10:03 ET",
+        "pub_ts": 1795791793.0
       },
       {
-        "title": "Dave Ramsey Is 66 and Owns Zero Bonds. Should Retirees Follow Him?",
-        "url": "https://247wallst.com/personal-finance/2026/11/26/dave-ramsey-is-66-and-owns-zero-bonds-should-retirees-follow-him/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-26 18:07 ET",
-        "pub_ts": 1795734431.0
+        "title": "The Nasdaq Needs Two Huge Days to Dodge Its Worst November Since 2008",
+        "url": "https://finnhub.io/api/news?id=d724c0f55500ee4fb07b63b9944eb7d89952a65c42a30ce4b4b4ab5f35b43f38",
+        "source": "Yahoo",
+        "time": "11-27 09:52 ET",
+        "pub_ts": 1795791153.0
+      },
+      {
+        "title": "Pre-Markets Up Ahead of Shortened Trading Session",
+        "url": "https://finnhub.io/api/news?id=a4097e73b39547900fc525f59d343e26948fa740ad63129eb3344da62a9db01c",
+        "source": "Yahoo",
+        "time": "11-27 09:14 ET",
+        "pub_ts": 1795788840.0
       },
       {
         "title": "Exchange-Traded Funds, Equity Futures Higher Pre-Bell Friday Amid Technology Stock Rebound",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/exchange-traded-funds-equity-futures-140653942.html?.tsrc=rss",
-        "source": "Yahoo Finance",
+        "url": "https://finnhub.io/api/news?id=f329c9016bdeb5920b0797aa2cc3d23ffca02c0b12d636f10a2b750b5e6e737d",
+        "source": "Yahoo",
         "time": "11-27 09:06 ET",
         "pub_ts": 1795788413.0
-      },
-      {
-        "title": "JEPI Gets the Attention. JPMorgan’s 0.12% Quality ETF Has Quietly Grown Past $9 Billion",
-        "url": "https://247wallst.com/investing/etf/2026/11/27/jepi-gets-the-attention-jpmorgans-0-12-quality-etf-has-quietly-grown-past-9-billion/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-27 08:03 ET",
-        "pub_ts": 1795784638.0
       }
     ],
     "DIA": [
@@ -910,6 +908,27 @@
     ],
     "NVDA": [
       {
+        "title": "Nvidia’s Key Man Problem",
+        "url": "https://www.fool.com/investing/2026/11/27/nvidias-key-man-problem/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-27 13:01 ET",
+        "pub_ts": 1795802462.0
+      },
+      {
+        "title": "Stock Market Today: Dow, Nasdaq Pop In Post-Holiday Trade; Nvidia Falls, Sandisk Vaults Higher (Live Coverage)",
+        "url": "https://finance.yahoo.com/m/86a4597f-ee47-3048-ae92-1a56fa4711e5/stock-market-today%3A-dow%2C.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-27 12:47 ET",
+        "pub_ts": 1795801677.0
+      },
+      {
+        "title": "Not AMD. This Is the 1 Company Nvidia Should Worry About Most.",
+        "url": "https://www.fool.com/investing/2026/11/27/not-amd-this-is-the-1-company-nvidia-should-worry-about-most/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-27 12:35 ET",
+        "pub_ts": 1795800902.0
+      },
+      {
         "title": "Stock Market Midday, Nov. 27: Tech Stocks Recover and Amazon Posts Black Friday Gains",
         "url": "https://www.fool.com/coverage/stock-market-today/2026/11/27/stock-market-midday-nov-27-tech-stocks-recover-and-amazon-posts-black-friday-gains/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -917,32 +936,11 @@
         "pub_ts": 1795800677.0
       },
       {
-        "title": "Nvidia, CoreWeave Face New U.S. Restrictions on China AI Chip Access",
-        "url": "https://finance.yahoo.com/technology/ai/articles/nvidia-coreweave-face-u-restrictions-172327378.html?.tsrc=rss",
+        "title": "Gold mining stocks hit oversold levels as fear grips markets",
+        "url": "https://investorshub.advfn.com/market-news/article/40827/gold-mining-stocks-oversold-market-fear?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-27 12:23 ET",
-        "pub_ts": 1795800207.0
-      },
-      {
-        "title": "Dell Faces AI Server Shipment Halt as Nvidia Tightens Asia Restrictions",
-        "url": "https://finance.yahoo.com/technology/ai/articles/dell-faces-ai-server-shipment-171229537.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-27 12:12 ET",
-        "pub_ts": 1795799549.0
-      },
-      {
-        "title": "Trump Says Market Selloff Briefly Worried Him as He Defends Nvidia CEO Jensen Huang",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/trump-says-market-selloff-briefly-170723440.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-27 12:07 ET",
-        "pub_ts": 1795799243.0
-      },
-      {
-        "title": "Stocks gain as tech rebound holds, but Nvidia dips",
-        "url": "https://finance.yahoo.com/markets/world-indices/articles/asian-stocks-mostly-rise-markets-025702679.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-27 12:05 ET",
-        "pub_ts": 1795799152.0
+        "time": "11-27 12:30 ET",
+        "pub_ts": 1795800640.0
       }
     ],
     "AMD": [
@@ -1021,6 +1019,13 @@
     ],
     "QCOM": [
       {
+        "title": "Qualcomm, Cava, and Dutch Bros Earnings and a Robotics IPO",
+        "url": "https://www.fool.com/investing/2026/11/27/qualcomm-cava-and-dutch-bros-earnings-and-a-robotics-ipo/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-27 13:06 ET",
+        "pub_ts": 1795802762.0
+      },
+      {
         "title": "Qualcomm Is Betting Big on a $5 Billion Opportunity. Here’s What It Could Mean for the Stock",
         "url": "https://247wallst.com/investing/2026/11/27/qualcomm-is-betting-big-on-a-5-billion-opportunity-heres-what-it-could-mean-for-the-stock/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1047,13 +1052,6 @@
         "source": "Yahoo Finance",
         "time": "11-27 06:50 ET",
         "pub_ts": 1795780239.0
-      },
-      {
-        "title": "What Is Qualcomm (QCOM) Worth Watching In Automotive AI Right Now?",
-        "url": "https://finance.yahoo.com/technology/ai/articles/qualcomm-qcom-worth-watching-automotive-171007378.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-26 12:10 ET",
-        "pub_ts": 1795713007.0
       }
     ],
     "AVGO": [
@@ -1169,11 +1167,32 @@
     ],
     "GOOGL": [
       {
-        "title": "Man accused of ‘trapping’ Waymos and pelting them with eggs",
-        "url": "https://www.independent.co.uk/tech/waymo-trap-denver-protest-egg-robotaxi-b3092659.html?.tsrc=rss",
+        "title": "PLTR vs. ARM: Which AI-Tech Stock is Better Positioned Now?",
+        "url": "https://finance.yahoo.com/technology/ai/articles/pltr-vs-arm-ai-tech-165200990.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-27 08:18 ET",
-        "pub_ts": 1795785491.0
+        "time": "11-27 11:52 ET",
+        "pub_ts": 1795798320.0
+      },
+      {
+        "title": "Franklin Templeton Flags Hidden Risk in S&P 500 Investing",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/franklin-templeton-flags-hidden-risk-180023148.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-27 13:00 ET",
+        "pub_ts": 1795802423.0
+      },
+      {
+        "title": "Snap vs. The Trade Desk: Which Stock Is a Better Buy for 2027?",
+        "url": "https://www.fool.com/coverage/better-buy/2026/11/27/snap-vs-the-trade-desk-which-stock-is-a-better-buy-for-2027/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-27 12:52 ET",
+        "pub_ts": 1795801955.0
+      },
+      {
+        "title": "Tech Stock Sell-Off: Down 32%, Is Alphabet a Buy Now?",
+        "url": "https://www.fool.com/investing/2026/11/27/tech-stock-sell-off-down-32-is-alphabet-a-buy-now/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-27 12:51 ET",
+        "pub_ts": 1795801862.0
       },
       {
         "title": "Target $140 Entries, $240 Exits After Ken Griffin and Citadel’s Distressed Bloom Energy Buy",
@@ -1181,27 +1200,6 @@
         "source": "Yahoo Finance",
         "time": "11-27 12:45 ET",
         "pub_ts": 1795801502.0
-      },
-      {
-        "title": "Sector Update: Tech Stocks Gain Friday Afternoon",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/sector-tech-stocks-gain-friday-172702126.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-27 12:27 ET",
-        "pub_ts": 1795800422.0
-      },
-      {
-        "title": "3 Ways To Own Alphabet In ETFs When Each Fund Holds It Differently",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/3-ways-own-alphabet-etfs-171242209.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-27 12:12 ET",
-        "pub_ts": 1795799562.0
-      },
-      {
-        "title": "CoreWeave Default Insurance Costs Hit Record 15.34% Amid AI Debt Fears",
-        "url": "https://finance.yahoo.com/technology/ai/articles/coreweave-default-insurance-costs-hit-171055522.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-27 12:10 ET",
-        "pub_ts": 1795799455.0
       }
     ],
     "MSFT": [
@@ -1782,11 +1780,11 @@
         "pub_ts": 1795791529.0
       },
       {
-        "title": "SpaceX stock rises after Musk pledges annual share giveaway for kids",
-        "url": "https://finance.yahoo.com/technology/article/spacex-stock-rises-after-musk-pledges-annual-share-giveaway-for-kids-140708762.html?.tsrc=rss",
+        "title": "ATEX Stock Jumps After SpaceX Reportedly Eyes 900 MHz Spectrum For Direct-To-Device Expansion; Alternative Target NN Climbs Double Digits",
+        "url": "https://stocktwits.com/news-articles/markets/equity/atex-stock-jumps-after-space-x-reportedly-eyes-900-m-hz-spectrum-for-direct-to-device-expansion-alternative-target-nn-climbs-double-digits/cNb6G6ER9VO?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-27 09:04 ET",
-        "pub_ts": 1795788295.0
+        "time": "11-27 12:52 ET",
+        "pub_ts": 1795801976.0
       },
       {
         "title": "Here's Why SpaceX’s Starship Could Lift Linde’s Space Revenue up to 700%",
@@ -3317,45 +3315,45 @@
     ]
   },
   "ticker_news_ts": {
-    "KORU": 1795801437.6941788,
-    "SOXL": 1795801437.6941788,
-    "SPY": 1795801437.6941788,
-    "DIA": 1795801437.6941788,
-    "SOXX": 1795801437.6941788,
-    "QQQ": 1795801437.6941788,
-    "SMH": 1795801437.6941788,
-    "IWM": 1795801437.6941788,
-    "IGV": 1795801437.6941788,
-    "TLT": 1795801487.758256,
-    "GLD": 1795801437.6941788,
-    "SQQQ": 1795801437.6941788,
-    "TSM": 1795801437.6941788,
-    "VIXY": 1795801437.6941788,
-    "SOXS": 1795801437.6941788,
-    "NVDA": 1795801437.6941788,
-    "AMD": 1795801738.1633306,
-    "ASML": 1795801738.1633306,
-    "QCOM": 1795801738.1633306,
-    "AVGO": 1795801738.1633306,
-    "AMAT": 1795801738.1633306,
-    "META": 1795801738.1633306,
-    "GOOGL": 1795801738.1633306,
-    "MSFT": 1795801738.1633306,
-    "AAPL": 1795801738.1633306,
+    "KORU": 1795803243.7459934,
+    "SOXL": 1795803083.2957447,
+    "SPY": 1795803083.2957447,
+    "DIA": 1795803083.2957447,
+    "SOXX": 1795803083.2957447,
+    "QQQ": 1795803083.2957447,
+    "SMH": 1795803083.2957447,
+    "IWM": 1795803083.2957447,
+    "IGV": 1795803083.2957447,
+    "TLT": 1795803083.2957447,
+    "GLD": 1795803083.2957447,
+    "SQQQ": 1795803083.2957447,
+    "TSM": 1795803083.2957447,
+    "VIXY": 1795803083.2957447,
+    "SOXS": 1795803083.2957447,
+    "NVDA": 1795803083.2957447,
+    "AMD": 1795803243.7459934,
+    "ASML": 1795803243.7459934,
+    "QCOM": 1795803243.7459934,
+    "AVGO": 1795803243.7459934,
+    "AMAT": 1795803243.7459934,
+    "META": 1795803243.7459934,
+    "GOOGL": 1795803243.7459934,
+    "MSFT": 1795803243.7459934,
+    "AAPL": 1795803243.7459934,
     "PLTR": 1795802368.1384478,
     "NOW": 1795802368.1384478,
     "AMZN": 1795802368.1384478,
     "CRWV": 1795802368.1384478,
     "NBIS": 1795802368.1384478,
     "APLD": 1795802368.1384478,
-    "VST": 1795801738.1633306,
-    "BE": 1795801738.1633306,
-    "CRDO": 1795801738.1633306,
-    "COHR": 1795801738.1633306,
+    "VST": 1795803243.7459934,
+    "BE": 1795803243.7459934,
+    "CRDO": 1795803243.7459934,
+    "COHR": 1795803243.7459934,
     "MRVL": 1795802368.1384478,
     "LITE": 1795802368.1384478,
     "AAOI": 1795802368.1384478,
-    "SPCX": 1795801738.1633306,
+    "SPCX": 1795803243.7459934,
     "ASTS": 1795802368.1384478,
     "AXTI": 1795802368.1384478,
     "NASA": 1795802368.1384478,
@@ -3397,7 +3395,7 @@
     "ANT": 1795802479.9323592,
     "XAUUSD": 1795802479.9323592,
     "KOSPI": 1795802420.8009427,
-    "KSTR": 1795801437.6941788
+    "KSTR": 1795803083.2957447
   },
   "opex_shield": {
     "date": "2026-11-27",
@@ -3416,7 +3414,7 @@
   "calendar_banner": {
     "level": "idle_with_flash",
     "headline": "📡 宏观消息面监控中 · 今日暂无美股五星级经济数据大考",
-    "detail": "⚡ 最新核心快讯 (13:01 ET / 02:01 BJ) [芯片] [台积电] [纳斯达克]：【美股收盘：三大股指高收，Anthropic涨近11%】 11月28日讯，美股周五收盘，道指初步收涨1.19%，标普500指数涨1.61%，纳指涨2.31%。芯片股大涨，Anthropic(",
+    "detail": "⚡ 最新核心快讯 (13:04 ET / 02:04 BJ) [标普]：本周，标普500指数上涨5.6%，道指上涨5.5%，纳指上涨6.7%。标普500指数创2025年4月以来最大单周涨幅。纳指录得2026年4月以来最大单周涨幅。",
     "event_name": "",
     "minutes_left": 0,
     "opex_shield": {
