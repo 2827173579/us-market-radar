@@ -1296,7 +1296,7 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
 <html lang="zh-CN" data-theme="dark">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="refresh" content="90">
+    <meta name="radar-build-ts" content="__PY_TPL_PORTFOLIO_TS__">
     <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
     <meta http-equiv="Pragma" content="no-cache">
     <meta http-equiv="Expires" content="0">
@@ -1310,23 +1310,6 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
                 document.documentElement.setAttribute("data-theme", "dark");
             }
         })();
-        // ⚡ 客户端智能防缓存自动刷新 (彻底突破 GitHub Pages / Fastly CDN 10分钟 max-age=600 强缓存)
-        setTimeout(function() {
-            try {
-                var cleanPath = window.location.pathname;
-                var searchParams = new URLSearchParams(window.location.search);
-                searchParams.delete('symbol');
-                searchParams.delete('ticker');
-                searchParams.set('_t', Date.now());
-                var wl = document.getElementById("watchlistContainer");
-                if (wl) {
-                    localStorage.setItem("futu_watchlist_scroll", wl.scrollTop);
-                }
-                window.location.replace(cleanPath + '?' + searchParams.toString() + window.location.hash);
-            } catch(e) {
-                window.location.reload();
-            }
-        }, 60000);
     </script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
     <meta name="apple-mobile-web-app-capable" content="yes">
@@ -3830,6 +3813,70 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
                 max-width: calc(100vw - 20px);
             }
         }
+        /* 静默版本检测提示胶囊 & 可选防打断自动刷新开关 */
+        @keyframes updatePillPulse {
+            0%, 100% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.34); }
+            50% { box-shadow: 0 0 0 6px rgba(16, 185, 129, 0.0); }
+        }
+        .update-ready-pill,
+        .footer-update-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            padding: 4px 10px;
+            border-radius: 999px;
+            border: 1px solid var(--color-up-border);
+            background: var(--color-up-bg);
+            color: var(--color-up);
+            font-size: 11.5px;
+            font-weight: 700;
+            cursor: pointer;
+            white-space: nowrap;
+            transition: transform 0.14s ease, filter 0.14s ease, border-color 0.14s ease;
+            animation: updatePillPulse 2.4s ease-in-out infinite;
+        }
+        .update-ready-pill:hover,
+        .footer-update-pill:hover {
+            filter: brightness(1.08);
+            transform: translateY(-1px);
+        }
+        .update-ready-pill.is-deferred,
+        .footer-update-pill.is-deferred {
+            border-color: var(--color-warn-border);
+            background: var(--color-warn-bg);
+            color: var(--color-warn);
+            animation: none;
+        }
+        .auto-reload-toggle-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            padding: 3px 9px;
+            border-radius: 999px;
+            border: 1px solid var(--border-strong);
+            background: var(--bg-elevated);
+            color: var(--text-secondary);
+            font-size: 11px;
+            font-weight: 700;
+            cursor: pointer;
+            white-space: nowrap;
+            transition: all 0.15s ease;
+        }
+        .auto-reload-toggle-btn:hover {
+            color: var(--text-primary);
+            border-color: var(--color-accent-border);
+        }
+        .auto-reload-toggle-btn.is-on {
+            border-color: var(--color-up-border);
+            background: var(--color-up-bg);
+            color: var(--color-up);
+        }
+        @media (max-width: 768px) {
+            .update-ready-pill {
+                padding: 4px 8px;
+                font-size: 11px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -3878,8 +3925,11 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
                 <a href="backtest_report_5y.html" class="tool-link m-quick-link" id="navLinkBacktest5y">5Y回测</a>
             </nav>
 
-            <!-- 预警中心 & 声音切换 -->
+            <!-- 预警中心 & 声音切换 & 静默版本更新轻提示 -->
             <div class="header-alert-controls">
+                <button type="button" id="btnNewUpdatePill" class="update-ready-pill" style="display: none;" onclick="triggerManualRefresh()" title="后台静默检测到新行情快照，点击安全刷新并自动恢复当前标的与视图">
+                    <span id="newUpdatePillText">🟢 发现新行情 · 点击刷新</span>
+                </button>
                 <button type="button" id="btnNotifCenter" onclick="toggleNotifDrawer()" class="btn-notif-pill" title="打开预警通知中心">
                     <span>🔔</span>
                     <span class="notif-btn-label">预警中心</span>
@@ -4357,9 +4407,13 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
                 <span class="chip">RS相对强弱</span>
                 <span class="chip">财报日历</span>
             </div>
-            <div style="display: flex; align-items: center; gap: 14px;">
+            <div style="display: flex; align-items: center; gap: 10px; flex-wrap: wrap;">
+                <button type="button" id="btnFooterUpdatePill" class="footer-update-pill" style="display: none;" onclick="triggerManualRefresh()" title="点击安全刷新最新行情，并无缝恢复当前标的与视图">🟢 发现新行情 · 点击刷新</button>
+                <button type="button" id="btnAutoReloadToggle" class="auto-reload-toggle-btn" onclick="toggleAutoReload()" aria-pressed="false" title="默认关闭以防打断看盘；开启后仅在您 20 秒无操作且未打开搜索/弹窗/全屏时静默自动更新">
+                    <span id="autoReloadLabel">自动刷新: 关</span>
+                </button>
                 <span style="color: var(--color-accent); cursor: pointer;" onclick="toggleFullscreen()" title="点击全屏或按F11">🖥️ 全屏模式(F11)</span>
-                <span class="tabular">⏱️ 60秒自动轮询 | 标的池: __PY_TPL_TOTAL_COUNT__只 | 更新: __PY_TPL_UPDATE_TIME__</span>
+                <span id="footerSyncStatus" class="tabular">⏱️ 60秒静默检测 | 标的池: __PY_TPL_TOTAL_COUNT__只 | 更新: __PY_TPL_UPDATE_TIME__</span>
             </div>
         </div>
         <div class="site-disclaimer-banner" id="siteDisclaimerBanner">
@@ -5621,6 +5675,7 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
 
         function switchCenterChartView(view) {
             currentCenterView = (view === "intraday_path") ? "intraday_path" : "kline";
+            try { localStorage.setItem("futu_center_view", currentCenterView); } catch (e) {}
             const chartMid = document.getElementById("chartMiddle");
             const tabK = document.getElementById("tabKlineView");
             const tabI = document.getElementById("tabIntradayPathView");
@@ -8601,14 +8656,385 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
             document.querySelectorAll(".notif-category-bar, .mobile-period-bar").forEach(bar => enableHorizontalDragScroll(bar));
         }
 
+        // =========================================================================
+        // 🛡️ 静默版本检测 + 非阻塞轻提示 + 可选防打断自动刷新 (20s Idle Guard) + 状态无缝恢复
+        // =========================================================================
+        const AUTO_RELOAD_STORAGE_KEY = "radar_auto_reload_enabled";
+        const REFRESH_STATE_SESSION_KEY = "radar_refresh_state_v1";
+        const VERSION_CHECK_INTERVAL_MS = 60000;
+        const IDLE_GUARD_MS = 20000;
+        const PAGE_BUILD_TS = (function() {
+            const metaEl = document.querySelector('meta[name="radar-build-ts"]');
+            const metaVal = metaEl ? String(metaEl.getAttribute("content") || "").trim() : "";
+            return metaVal || String(typeof INITIAL_PORTFOLIO_TS !== "undefined" ? INITIAL_PORTFOLIO_TS : "");
+        })();
+
+        const _refreshState = {
+            autoReloadEnabled: false,
+            hasRemoteUpdate: false,
+            baselineHeaderSig: null,
+            lastUserActivityAt: Date.now(),
+            deferredToastShown: false,
+            idleRecheckTimer: null,
+            versionCheckTimer: null,
+            navigatorFn: null,
+        };
+
+        function readAutoReloadPref() {
+            try {
+                return localStorage.getItem(AUTO_RELOAD_STORAGE_KEY) === "true";
+            } catch (e) {
+                return false;
+            }
+        }
+
+        function writeAutoReloadPref(enabled) {
+            try {
+                localStorage.setItem(AUTO_RELOAD_STORAGE_KEY, enabled ? "true" : "false");
+            } catch (e) {}
+        }
+
+        function updateAutoReloadToggleUI() {
+            const btn = document.getElementById("btnAutoReloadToggle");
+            const lbl = document.getElementById("autoReloadLabel");
+            const isOn = !!_refreshState.autoReloadEnabled;
+            if (lbl) lbl.innerText = isOn ? "自动刷新: 开" : "自动刷新: 关";
+            if (btn) {
+                btn.classList.toggle("is-on", isOn);
+                btn.setAttribute("aria-pressed", isOn ? "true" : "false");
+                btn.title = isOn
+                    ? "已开启防打断自动刷新：检测到新行情且您 20 秒无操作、未打开搜索/弹窗/全屏时自动更新（点击关闭）"
+                    : "默认关闭以防打断看盘；开启后仅在您 20 秒无操作且未打开搜索/弹窗/全屏时静默自动更新";
+            }
+        }
+
+        function renderUpdateAvailableUI(deferredReason) {
+            const topPill = document.getElementById("btnNewUpdatePill");
+            const topText = document.getElementById("newUpdatePillText");
+            const footerPill = document.getElementById("btnFooterUpdatePill");
+            if (!_refreshState.hasRemoteUpdate) {
+                if (topPill) topPill.style.display = "none";
+                if (footerPill) footerPill.style.display = "none";
+                return;
+            }
+            const isDeferred = !!(_refreshState.autoReloadEnabled && deferredReason);
+            const label = isDeferred ? "🟡 检测到操作，空闲后自动更新" : "🟢 发现新行情 · 点击刷新";
+            if (topPill) {
+                topPill.style.display = "inline-flex";
+                topPill.classList.toggle("is-deferred", isDeferred);
+            }
+            if (topText) topText.innerText = label;
+            if (footerPill) {
+                footerPill.style.display = "inline-flex";
+                footerPill.classList.toggle("is-deferred", isDeferred);
+                footerPill.innerText = label;
+            }
+        }
+
+        function saveTerminalUiState() {
+            const wl = document.getElementById("watchlistContainer");
+            const scrollTop = wl ? wl.scrollTop : 0;
+            const snapshot = {
+                ticker: currentTicker || "NVDA",
+                filter: currentFilter || "all",
+                centerView: currentCenterView || "kline",
+                theme: getCurrentTheme(),
+                scrollTop: scrollTop,
+                interval: currentInterval || "D",
+                style: currentStyle || "1",
+                savedAt: Date.now(),
+            };
+            try {
+                sessionStorage.setItem(REFRESH_STATE_SESSION_KEY, JSON.stringify(snapshot));
+            } catch (e) {}
+            try {
+                localStorage.setItem("lastSelectedTicker", snapshot.ticker);
+                localStorage.setItem("futu_watchlist_filter", snapshot.filter);
+                localStorage.setItem("futu_center_view", snapshot.centerView);
+                localStorage.setItem("futu_theme", snapshot.theme);
+                localStorage.setItem("futu_watchlist_scroll", String(snapshot.scrollTop));
+                localStorage.setItem("futu_kline_period", snapshot.interval);
+                localStorage.setItem("futu_kline_style", snapshot.style);
+            } catch (e) {}
+            return snapshot;
+        }
+
+        function executeSafeReload() {
+            saveTerminalUiState();
+            const cleanPath = window.location.pathname;
+            const searchParams = new URLSearchParams(window.location.search);
+            searchParams.delete("symbol");
+            searchParams.delete("ticker");
+            searchParams.set("_t", String(Date.now()));
+            const targetUrl = cleanPath + "?" + searchParams.toString() + window.location.hash;
+            if (typeof _refreshState.navigatorFn === "function") {
+                _refreshState.navigatorFn(targetUrl);
+                return targetUrl;
+            }
+            try {
+                window.location.replace(targetUrl);
+            } catch (e) {
+                window.location.reload();
+            }
+            return targetUrl;
+        }
+
+        function triggerManualRefresh() {
+            return executeSafeReload();
+        }
+
+        function hasBlockingInteractiveOverlay() {
+            try {
+                const searchInput = document.getElementById("quickSearchInput");
+                const searchDropdown = document.getElementById("quickSearchDropdown");
+                if (searchInput && (document.activeElement === searchInput || String(searchInput.value || "").trim().length > 0)) {
+                    return "search_active";
+                }
+                if (searchDropdown && searchDropdown.classList.contains("show")) {
+                    return "search_dropdown";
+                }
+                const notifOverlay = document.getElementById("notifDrawerOverlay");
+                if (notifOverlay && notifOverlay.style.display === "flex") {
+                    return "notif_drawer";
+                }
+                const vixPop = document.getElementById("vixDetailPopover");
+                if (vixPop && (vixPop.classList.contains("is-open") || vixPop.classList.contains("is-hover-open"))) {
+                    return "vix_popover";
+                }
+                const tempPop = document.getElementById("tempDetailPopover");
+                if (tempPop && (tempPop.classList.contains("is-open") || tempPop.classList.contains("is-hover-open"))) {
+                    return "temp_popover";
+                }
+                if (document.fullscreenElement || document.webkitFullscreenElement) {
+                    return "fullscreen_mode";
+                }
+                const openModal = document.querySelector('[role="dialog"].is-open, .modal.show, .lightbox-overlay.show, .copy-trade-drawer.is-open');
+                if (openModal) {
+                    return "modal_open";
+                }
+            } catch (e) {}
+            return "";
+        }
+
+        function canSafelyAutoReload(nowMs) {
+            const ts = (typeof nowMs === "number") ? nowMs : Date.now();
+            if (!_refreshState.autoReloadEnabled) {
+                return { allowed: false, reason: "disabled" };
+            }
+            if (!_refreshState.hasRemoteUpdate) {
+                return { allowed: false, reason: "no_update" };
+            }
+            if (document.hidden) {
+                return { allowed: false, reason: "tab_hidden" };
+            }
+            const overlayBlock = hasBlockingInteractiveOverlay();
+            if (overlayBlock) {
+                return { allowed: false, reason: overlayBlock };
+            }
+            const idleMs = ts - _refreshState.lastUserActivityAt;
+            if (idleMs < IDLE_GUARD_MS) {
+                return { allowed: false, reason: "user_active", idleMs: idleMs };
+            }
+            return { allowed: true, reason: "idle_ready", idleMs: idleMs };
+        }
+
+        function scheduleIdleRecheck() {
+            if (_refreshState.idleRecheckTimer) return;
+            _refreshState.idleRecheckTimer = setInterval(function() {
+                if (!_refreshState.autoReloadEnabled || !_refreshState.hasRemoteUpdate) {
+                    clearInterval(_refreshState.idleRecheckTimer);
+                    _refreshState.idleRecheckTimer = null;
+                    return;
+                }
+                evaluateAutoReload();
+            }, 2000);
+        }
+
+        function evaluateAutoReload(nowMs) {
+            if (!_refreshState.hasRemoteUpdate) {
+                renderUpdateAvailableUI("");
+                return { reloaded: false, reason: "no_update" };
+            }
+            if (!_refreshState.autoReloadEnabled) {
+                renderUpdateAvailableUI("");
+                return { reloaded: false, reason: "disabled" };
+            }
+            const check = canSafelyAutoReload(nowMs);
+            if (check.allowed) {
+                if (_refreshState.idleRecheckTimer) {
+                    clearInterval(_refreshState.idleRecheckTimer);
+                    _refreshState.idleRecheckTimer = null;
+                }
+                const targetUrl = executeSafeReload();
+                return { reloaded: true, reason: "idle_ready", targetUrl: targetUrl };
+            }
+            if (check.reason !== "tab_hidden") {
+                renderUpdateAvailableUI(check.reason);
+                if (!_refreshState.deferredToastShown) {
+                    _refreshState.deferredToastShown = true;
+                    showToast("⏳ 检测到操作，空闲后自动更新");
+                }
+            } else {
+                renderUpdateAvailableUI("");
+            }
+            scheduleIdleRecheck();
+            return { reloaded: false, reason: check.reason };
+        }
+
+        function markRemoteUpdateAvailable() {
+            const wasAlready = _refreshState.hasRemoteUpdate;
+            _refreshState.hasRemoteUpdate = true;
+            if (!wasAlready) {
+                _refreshState.deferredToastShown = false;
+            }
+            if (document.hidden) {
+                renderUpdateAvailableUI("");
+                return { reloaded: false, reason: "tab_hidden" };
+            }
+            if (_refreshState.autoReloadEnabled) {
+                return evaluateAutoReload();
+            }
+            renderUpdateAvailableUI("");
+            return { reloaded: false, reason: "manual_prompt_only" };
+        }
+
+        function toggleAutoReload() {
+            _refreshState.autoReloadEnabled = !_refreshState.autoReloadEnabled;
+            writeAutoReloadPref(_refreshState.autoReloadEnabled);
+            _refreshState.lastUserActivityAt = Date.now();
+            _refreshState.deferredToastShown = false;
+            updateAutoReloadToggleUI();
+            if (_refreshState.autoReloadEnabled) {
+                showToast("✅ 已开启自动刷新（检测到操作将自动延后，20秒空闲后再更新）");
+                if (_refreshState.hasRemoteUpdate) {
+                    evaluateAutoReload();
+                }
+            } else {
+                if (_refreshState.idleRecheckTimer) {
+                    clearInterval(_refreshState.idleRecheckTimer);
+                    _refreshState.idleRecheckTimer = null;
+                }
+                renderUpdateAvailableUI("");
+                showToast("🛡️ 已关闭自动刷新（发现新行情仅显示轻提示，不打断看盘）");
+            }
+        }
+
+        function bindUserActivityListeners() {
+            const bumpActivity = function() {
+                _refreshState.lastUserActivityAt = Date.now();
+            };
+            ["mousemove", "mousedown", "wheel", "keydown", "touchstart"].forEach(function(evt) {
+                window.addEventListener(evt, bumpActivity, { passive: true, capture: true });
+            });
+            document.addEventListener("visibilitychange", function() {
+                if (!document.hidden) {
+                    // 从后台切回标签页时重置活跃时间，仅展示轻提示胶囊，绝不擅自抢屏刷新
+                    _refreshState.lastUserActivityAt = Date.now();
+                    if (_refreshState.hasRemoteUpdate) {
+                        renderUpdateAvailableUI(_refreshState.autoReloadEnabled ? "tab_returned" : "");
+                        if (_refreshState.autoReloadEnabled) {
+                            scheduleIdleRecheck();
+                        }
+                    }
+                }
+            });
+        }
+
+        async function checkRemoteVersionUpdate(isBaselineInit) {
+            if (window.location.protocol !== "http:" && window.location.protocol !== "https:") {
+                return { checked: false, reason: "non_http_protocol" };
+            }
+            try {
+                const headResp = await fetch(window.location.pathname, { method: "HEAD", cache: "no-store" });
+                if (headResp && headResp.ok) {
+                    const etag = (headResp.headers && headResp.headers.get("etag")) || "";
+                    const lastMod = (headResp.headers && headResp.headers.get("last-modified")) || "";
+                    const sig = (etag || lastMod) ? `${etag}|${lastMod}` : "";
+                    if (sig) {
+                        if (isBaselineInit || !_refreshState.baselineHeaderSig) {
+                            _refreshState.baselineHeaderSig = sig;
+                            return { checked: true, updated: false, mode: "head_baseline", sig: sig };
+                        }
+                        if (sig !== _refreshState.baselineHeaderSig) {
+                            markRemoteUpdateAvailable();
+                            return { checked: true, updated: true, mode: "head_diff", sig: sig };
+                        }
+                        return { checked: true, updated: false, mode: "head_same", sig: sig };
+                    }
+                }
+            } catch (e) {
+                // HEAD 不可用时继续尝试轻量 GET 对比内嵌构建时间戳
+            }
+
+            if (isBaselineInit) {
+                return { checked: true, updated: false, mode: "build_ts_baseline", buildTs: PAGE_BUILD_TS };
+            }
+            try {
+                const getResp = await fetch(window.location.pathname, { method: "GET", cache: "no-store" });
+                if (!getResp || !getResp.ok) {
+                    return { checked: false, reason: "get_failed" };
+                }
+                const htmlText = await getResp.text();
+                const mMeta = htmlText.match(/<meta\s+name=["']radar-build-ts["']\s+content=["']([^"']+)["']/i);
+                const mTs = htmlText.match(/INITIAL_PORTFOLIO_TS\s*=\s*(\d+)/);
+                const remoteBuildTs = (mMeta && mMeta[1]) ? String(mMeta[1]).trim() : ((mTs && mTs[1]) ? String(mTs[1]).trim() : "");
+                if (remoteBuildTs && PAGE_BUILD_TS && remoteBuildTs !== PAGE_BUILD_TS) {
+                    markRemoteUpdateAvailable();
+                    return { checked: true, updated: true, mode: "get_build_ts_diff", remoteBuildTs: remoteBuildTs };
+                }
+                return { checked: true, updated: false, mode: "get_build_ts_same", remoteBuildTs: remoteBuildTs };
+            } catch (e) {
+                return { checked: false, reason: "network_error" };
+            }
+        }
+
+        function initSmartVersionMonitor() {
+            _refreshState.autoReloadEnabled = readAutoReloadPref();
+            _refreshState.lastUserActivityAt = Date.now();
+            updateAutoReloadToggleUI();
+            bindUserActivityListeners();
+            checkRemoteVersionUpdate(true);
+            if (_refreshState.versionCheckTimer) clearInterval(_refreshState.versionCheckTimer);
+            _refreshState.versionCheckTimer = setInterval(function() {
+                checkRemoteVersionUpdate(false);
+            }, VERSION_CHECK_INTERVAL_MS);
+        }
+
+        window.__RADAR_REFRESH_GUARD__ = {
+            getState: function() { return Object.assign({ pageBuildTs: PAGE_BUILD_TS }, _refreshState); },
+            checkRemoteVersionUpdate: checkRemoteVersionUpdate,
+            markRemoteUpdateAvailable: markRemoteUpdateAvailable,
+            canSafelyAutoReload: canSafelyAutoReload,
+            evaluateAutoReload: evaluateAutoReload,
+            triggerManualRefresh: triggerManualRefresh,
+            toggleAutoReload: toggleAutoReload,
+            saveTerminalUiState: saveTerminalUiState,
+            setNavigatorFn: function(fn) { _refreshState.navigatorFn = (typeof fn === "function") ? fn : null; },
+            setLastActivityAt: function(ts) { _refreshState.lastUserActivityAt = ts; },
+        };
+
         window.addEventListener("DOMContentLoaded", function() {
             initAllHorizontalScrollBars();
             initQuickSearch();
+            initSmartVersionMonitor();
+
+            // 0. 读取刷新前会话暂存状态 (sessionStorage 优先，localStorage 兜底)
+            let restoredSession = null;
+            try {
+                const rawSess = sessionStorage.getItem(REFRESH_STATE_SESSION_KEY);
+                if (rawSess) {
+                    restoredSession = JSON.parse(rawSess);
+                    sessionStorage.removeItem(REFRESH_STATE_SESSION_KEY);
+                }
+            } catch (e) {
+                restoredSession = null;
+            }
 
             // 1. 恢复主题 (默认深色 dark)
             let savedTheme = "dark";
             try {
-                if (localStorage.getItem("futu_theme") === "light") savedTheme = "light";
+                const themeCand = (restoredSession && restoredSession.theme) || localStorage.getItem("futu_theme");
+                if (themeCand === "light") savedTheme = "light";
             } catch(e) {}
             applyTheme(savedTheme, true);
 
@@ -8622,7 +9048,7 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
             // 3. 还原左侧筛选状态
             let savedFilter = "all";
             try {
-                savedFilter = localStorage.getItem("futu_watchlist_filter") || "all";
+                savedFilter = (restoredSession && restoredSession.filter) || localStorage.getItem("futu_watchlist_filter") || "all";
                 if (savedFilter === "starred") savedFilter = "all";
             } catch(e) {}
             syncFilterControlsUI(savedFilter);
@@ -8635,9 +9061,11 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
                     try { localStorage.setItem("futu_watchlist_scroll", wlContainer.scrollTop); } catch(e) {}
                 }, { passive: true });
                 try {
-                    const savedScroll = localStorage.getItem("futu_watchlist_scroll");
-                    if (savedScroll) {
-                        setTimeout(() => { wlContainer.scrollTop = parseInt(savedScroll, 10); }, 60);
+                    const savedScroll = (restoredSession && restoredSession.scrollTop !== undefined)
+                        ? restoredSession.scrollTop
+                        : localStorage.getItem("futu_watchlist_scroll");
+                    if (savedScroll !== null && savedScroll !== undefined && savedScroll !== "") {
+                        setTimeout(() => { wlContainer.scrollTop = parseInt(savedScroll, 10) || 0; }, 60);
                     }
                 } catch(e) {}
             }
@@ -8647,23 +9075,24 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
             try {
                 const urlParams = new URLSearchParams(window.location.search);
                 const urlSym = (urlParams.get("symbol") || urlParams.get("ticker") || "").trim().toUpperCase();
-                const savedT = localStorage.getItem("lastSelectedTicker");
-                if (urlSym && (STOCKS_DATA.some(s => s.ticker === urlSym) || MACRO_DATA[urlSym] || (typeof APAC_ASHARE_DATA !== "undefined" && APAC_ASHARE_DATA && APAC_ASHARE_DATA[urlSym]))) {
+                const savedT = ((restoredSession && restoredSession.ticker) || localStorage.getItem("lastSelectedTicker") || "").trim().toUpperCase();
+                const isKnownTicker = (sym) => !!(sym && (STOCKS_DATA.some(s => s.ticker === sym) || MACRO_DATA[sym] || (typeof APAC_ASHARE_DATA !== "undefined" && APAC_ASHARE_DATA && APAC_ASHARE_DATA[sym])));
+                if (isKnownTicker(urlSym)) {
                     initTicker = urlSym;
                     localStorage.setItem("lastSelectedTicker", urlSym);
                     urlParams.delete("symbol");
                     urlParams.delete("ticker");
                     const newQuery = urlParams.toString();
                     window.history.replaceState(null, "", window.location.pathname + (newQuery ? "?" + newQuery : "") + window.location.hash);
-                } else if (savedT && (STOCKS_DATA.some(s => s.ticker === savedT) || MACRO_DATA[savedT] || (typeof APAC_ASHARE_DATA !== "undefined" && APAC_ASHARE_DATA && APAC_ASHARE_DATA[savedT]))) {
+                } else if (isKnownTicker(savedT)) {
                     initTicker = savedT;
                 }
             } catch(e) {}
 
             // 6. 还原 K 线周期
             try {
-                const savedPeriod = localStorage.getItem("futu_kline_period");
-                const savedStyle = localStorage.getItem("futu_kline_style");
+                const savedPeriod = (restoredSession && restoredSession.interval) || localStorage.getItem("futu_kline_period");
+                const savedStyle = (restoredSession && restoredSession.style) || localStorage.getItem("futu_kline_style");
                 if (savedPeriod) {
                     currentInterval = savedPeriod;
                     currentStyle = savedStyle || "1";
@@ -8681,9 +9110,17 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
                 }
             } catch(e) {}
 
-            // 7. 选中初始标的 + 刷新顶部红绿灯/成绩单
+            // 7. 选中初始标的 + 恢复中区视图（实时行情K线 / 今日盘中推演） + 刷新顶部红绿灯/成绩单
+            let savedCenterView = "kline";
+            try {
+                const cv = (restoredSession && restoredSession.centerView) || localStorage.getItem("futu_center_view") || "kline";
+                if (cv === "intraday_path") savedCenterView = "intraday_path";
+            } catch(e) {}
             updateTopRegimeAndScorecard();
             selectTicker(initTicker, false);
+            if (savedCenterView === "intraday_path") {
+                switchCenterChartView("intraday_path");
+            }
 
             // 8. 手机端视图还原
             if (window.innerWidth <= 768) {
