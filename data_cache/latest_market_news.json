@@ -1,5 +1,5 @@
 {
-  "updated_at_ts": 1795773963.999,
+  "updated_at_ts": 1795774018.999,
   "updated_at_et": "11-27 05:06 ET",
   "updated_at_kst": "19:06 KST",
   "macro_calendar": [],
@@ -907,6 +907,13 @@
         "pub_ts": 1795768068.0
       },
       {
+        "title": "Former SEC Chair Gensler: Nvidia Has “a Disclosure Vulnerability.” The White House’s Huang Assurances May Have to Be Filed",
+        "url": "https://www.tikr.com/blog/former-sec-chair-gensler-nvidia-has-a-disclosure-vulnerability-the-white-houses-huang-assurances-may-have-to-be-filed?ref=yahoofinance&tlnk=yf-261127-h7247f3q&.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-27 01:54 ET",
+        "pub_ts": 1795762458.0
+      },
+      {
         "title": "Michael Burry Shares Stark Warning About AI Boom, as Nvidia, Oracle and Meta Face Surging Debt Insurance Costs",
         "url": "https://finance.yahoo.com/technology/ai/articles/michael-burry-shares-stark-warning-063128312.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -926,13 +933,6 @@
         "source": "Yahoo Finance",
         "time": "11-27 03:50 ET",
         "pub_ts": 1795769400.0
-      },
-      {
-        "title": "Prediction: This Will Be Anthropic’s Stock Price by the End of 2026",
-        "url": "https://www.fool.com/investing/2026/11/27/prediction-this-will-be-anthropic-s-stock-price-by-the-end-of-2026/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-27 02:23 ET",
-        "pub_ts": 1795764182.0
       }
     ],
     "AMD": [
@@ -3307,22 +3307,22 @@
     ]
   },
   "ticker_news_ts": {
-    "KORU": 1795772507.2061296,
-    "SOXL": 1795772507.2061296,
-    "SPY": 1795772507.2061296,
-    "DIA": 1795772507.2061296,
-    "SOXX": 1795772507.2061296,
-    "QQQ": 1795772507.2061296,
-    "SMH": 1795772507.2061296,
-    "IWM": 1795772507.2061296,
-    "IGV": 1795772507.2061296,
-    "TLT": 1795772507.2061296,
-    "GLD": 1795772507.2061296,
-    "SQQQ": 1795772507.2061296,
-    "TSM": 1795772507.2061296,
-    "VIXY": 1795772507.2061296,
-    "SOXS": 1795772507.2061296,
-    "NVDA": 1795772507.2061296,
+    "KORU": 1795774018.9992092,
+    "SOXL": 1795774018.9992092,
+    "SPY": 1795774018.9992092,
+    "DIA": 1795774018.9992092,
+    "SOXX": 1795774018.9992092,
+    "QQQ": 1795774018.9992092,
+    "SMH": 1795774018.9992092,
+    "IWM": 1795774018.9992092,
+    "IGV": 1795774018.9992092,
+    "TLT": 1795774018.9992092,
+    "GLD": 1795774018.9992092,
+    "SQQQ": 1795774018.9992092,
+    "TSM": 1795774018.9992092,
+    "VIXY": 1795774018.9992092,
+    "SOXS": 1795774018.9992092,
+    "NVDA": 1795774018.9992092,
     "AMD": 1795772564.5498898,
     "ASML": 1795772564.5498898,
     "QCOM": 1795772564.5498898,
@@ -3387,7 +3387,7 @@
     "ANT": 1795772835.6385756,
     "XAUUSD": 1795772835.6385756,
     "KOSPI": 1795772678.2302423,
-    "KSTR": 1795772507.2061296
+    "KSTR": 1795774018.9992092
   },
   "opex_shield": {
     "date": "2026-11-27",
