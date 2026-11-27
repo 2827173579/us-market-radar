@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795808348.897,
-  "updated_at_et": "11-27 14:39 ET",
-  "updated_at_kst": "04:39 KST",
+  "updated_at_ts": 1795808432.961,
+  "updated_at_et": "11-27 14:40 ET",
+  "updated_at_kst": "04:40 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -585,6 +585,13 @@
     ],
     "NVDA": [
       {
+        "title": "Stock Market Today: Indexes Log Best Thanksgiving Week In 18 Years",
+        "url": "https://finance.yahoo.com/m/86a4597f-ee47-3048-ae92-1a56fa4711e5/stock-market-today%3A-indexes.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-27 14:19 ET",
+        "pub_ts": 1795807162.0
+      },
+      {
         "title": "'Big Short' Investor Michael Burry Thinks This Chinese Stock Is Worth About 60% More Than Its Price. Should You Buy?",
         "url": "https://www.fool.com/investing/2026/11/27/big-short-investor-michael-burry-thinks-this-chinese-stock-is-worth-about-60-more-than-its-price-should-you-buy/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -611,13 +618,6 @@
         "source": "Yahoo Finance",
         "time": "11-27 13:31 ET",
         "pub_ts": 1795804262.0
-      },
-      {
-        "title": "Investing.com’s stocks of the week",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/investing-com-stocks-week-182910314.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-27 13:29 ET",
-        "pub_ts": 1795804150.0
       }
     ],
     "TSM": [
@@ -659,6 +659,13 @@
     ],
     "AMD": [
       {
+        "title": "AMD Stocks Rise Despite Erste Group Downgrade on Valuation",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/amd-stocks-rise-despite-erste-191808508.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-27 14:18 ET",
+        "pub_ts": 1795807088.0
+      },
+      {
         "title": "Dual AI Growth Catalysts Position Advanced Micro Devices (AMD) for Revenue Acceleration",
         "url": "https://finance.yahoo.com/technology/ai/articles/dual-ai-growth-catalysts-position-164930131.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -685,13 +692,6 @@
         "source": "Yahoo Finance",
         "time": "11-27 10:54 ET",
         "pub_ts": 1795794841.0
-      },
-      {
-        "title": "HPE vs. AMD: Which Stock Should Value Investors Buy Now?",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/hpe-vs-amd-stock-value-154003186.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-27 10:40 ET",
-        "pub_ts": 1795794003.0
       }
     ],
     "AVGO": [
@@ -851,6 +851,13 @@
         "pub_ts": 1795798320.0
       },
       {
+        "title": "Alphabet Stocks Move Lower as Record Credit Spreads Shadow AI Spending",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/alphabet-stocks-move-lower-record-191839414.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-27 14:18 ET",
+        "pub_ts": 1795807119.0
+      },
+      {
         "title": "Jim Cramer Is Still Bullish On These 5 Tech Stocks Despite AI Bear Market",
         "url": "https://finance.yahoo.com/technology/articles/jim-cramer-still-bullish-5-184921596.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -870,13 +877,6 @@
         "source": "Yahoo Finance",
         "time": "11-27 13:10 ET",
         "pub_ts": 1795803025.0
-      },
-      {
-        "title": "Franklin Templeton Flags Hidden Risk in S&P 500 Investing",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/franklin-templeton-flags-hidden-risk-180023148.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-27 13:00 ET",
-        "pub_ts": 1795802423.0
       }
     ],
     "ASML": [
@@ -2999,31 +2999,31 @@
     ]
   },
   "ticker_news_ts": {
-    "DIA": 1795806898.9647121,
-    "IWM": 1795806898.9647121,
-    "SOXX": 1795806898.9647121,
-    "SPY": 1795806898.9647121,
-    "QQQ": 1795806898.9647121,
-    "KORU": 1795806898.9647121,
-    "SOXL": 1795806898.9647121,
-    "SMH": 1795806898.9647121,
-    "KSTR": 1795806898.9647121,
-    "TLT": 1795806898.9647121,
-    "SQQQ": 1795806898.9647121,
-    "GLD": 1795806898.9647121,
-    "IGV": 1795806898.9647121,
-    "SOXS": 1795806898.9647121,
-    "VIXY": 1795806898.9647121,
-    "NVDA": 1795806898.9647121,
-    "TSM": 1795806898.9647121,
-    "AMD": 1795806898.9647121,
-    "AVGO": 1795806898.9647121,
-    "AMAT": 1795806898.9647121,
-    "QCOM": 1795806898.9647121,
-    "MSFT": 1795806898.9647121,
-    "GOOGL": 1795806898.9647121,
-    "ASML": 1795806898.9647121,
-    "KOSPI": 1795806898.9647121,
+    "DIA": 1795808432.9606965,
+    "IWM": 1795808432.9606965,
+    "SOXX": 1795808432.9606965,
+    "SPY": 1795808432.9606965,
+    "QQQ": 1795808432.9606965,
+    "KORU": 1795808432.9606965,
+    "SOXL": 1795808432.9606965,
+    "SMH": 1795808432.9606965,
+    "KSTR": 1795808432.9606965,
+    "TLT": 1795808432.9606965,
+    "SQQQ": 1795808432.9606965,
+    "GLD": 1795808432.9606965,
+    "IGV": 1795808432.9606965,
+    "SOXS": 1795808432.9606965,
+    "VIXY": 1795808432.9606965,
+    "NVDA": 1795808432.9606965,
+    "TSM": 1795808432.9606965,
+    "AMD": 1795808432.9606965,
+    "AVGO": 1795808432.9606965,
+    "AMAT": 1795808432.9606965,
+    "QCOM": 1795808432.9606965,
+    "MSFT": 1795808432.9606965,
+    "GOOGL": 1795808432.9606965,
+    "ASML": 1795808432.9606965,
+    "KOSPI": 1795808432.9606965,
     "META": 1795806898.9647121,
     "AAPL": 1795806898.9647121,
     "AMZN": 1795806898.9647121,
