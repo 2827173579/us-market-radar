@@ -78,12 +78,12 @@
       "last_notified_at": 0.0
     },
     "SPY": {
-      "state": "WATCHLIST_ENTRY_READY",
-      "last_notified_at": 1795792632.6586583
-    },
-    "DIA": {
       "state": "NORMAL",
       "last_notified_at": 0.0
+    },
+    "DIA": {
+      "state": "WATCHLIST_ENTRY_READY",
+      "last_notified_at": 1795792857.7394207
     },
     "IWM": {
       "state": "NORMAL",
@@ -162,8 +162,8 @@
       "last_notified_at": 1795482111.35759
     },
     "AMZN": {
-      "state": "WATCHLIST_ENTRY_READY",
-      "last_notified_at": 1795792047.8298793
+      "state": "NORMAL",
+      "last_notified_at": 0.0
     },
     "MSFT": {
       "state": "NORMAL",
