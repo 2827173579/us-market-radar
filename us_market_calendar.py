@@ -211,9 +211,15 @@ def classify_us_market_session(
 
     if weekday == 5 or (weekday == 4 and et_min >= ah_end_min) or (weekday == 6 and et_min < 20 * 60):
         return "WEEKEND", "☕ 周末休市"
+    next_d = d + timedelta(days=1)
     if weekday == 6 and et_min >= 20 * 60:
-        return "OVERNIGHT", "🌌 美股夜盘"
+        if is_us_trading_day(next_d):
+            return "OVERNIGHT", "🌌 美股夜盘"
+        return "HOLIDAY", "🏖️ 节假日休市"
     if is_us_market_holiday(d):
+        # 法定假日 20:00 ET 起若次日为美股交易日（如感恩节晚 20:00 ET 开启黑五夜盘），切入 Blue Ocean 24/5 美股夜盘
+        if et_min >= 20 * 60 and is_us_trading_day(next_d):
+            return "OVERNIGHT", "🌌 美股夜盘"
         return "HOLIDAY", "🏖️ 节假日休市"
     if REGULAR_OPEN_MIN <= et_min < close_min:
         return "REGULAR", "🟢 常规盘中"
@@ -221,4 +227,6 @@ def classify_us_market_session(
         return "PRE_MARKET", "🌅 盘前交易"
     if close_min <= et_min < ah_end_min:
         return post_market_code, "🌙 盘后交易"
+    if et_min >= ah_end_min and not is_us_trading_day(next_d):
+        return "HOLIDAY", "🏖️ 节假日休市"
     return "OVERNIGHT", "🌌 美股夜盘"

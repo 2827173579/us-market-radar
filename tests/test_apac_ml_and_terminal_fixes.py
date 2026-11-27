@@ -180,8 +180,8 @@ class TestApacMlAndTerminalFixes(unittest.TestCase):
         self.assertGreaterEqual(sl_dist_pct, -8.5)
 
     def test_06_us_holiday_classification_thanksgiving_2026_11_26(self):
-        """验证 Bug 4：感恩节 2026-11-26 全天返回 HOLIDAY (🏖️ 节假日休市)，不再误判 PRE_MARKET。"""
-        for hh, mm in ((4, 30), (6, 0), (10, 0), (15, 0)):
+        """验证 Bug 4：感恩节 2026-11-26 00:00~19:59 ET 返回 HOLIDAY，20:00 ET 起开启黑五夜盘切入 OVERNIGHT。"""
+        for hh, mm in ((4, 30), (6, 0), (10, 0), (15, 0), (19, 59)):
             dt = datetime(2026, 11, 26, hh, mm, tzinfo=ET)
             code, label = umc.classify_us_market_session(dt)
             self.assertEqual(code, "HOLIDAY")
@@ -189,6 +189,17 @@ class TestApacMlAndTerminalFixes(unittest.TestCase):
             r_code, r_label = imr.get_us_market_session(dt)
             self.assertEqual(r_code, "HOLIDAY")
             self.assertIn("节假日休市", r_label)
+
+        # 感恩节晚 20:00 ET 起（对应北京时间次日 09:00 / 韩国时间 10:00），次日黑五为交易日 -> 切入美股夜盘
+        for hh, mm in ((20, 0), (21, 10)):
+            dt_ov = datetime(2026, 11, 26, hh, mm, tzinfo=ET)
+            code_ov, label_ov = umc.classify_us_market_session(dt_ov)
+            self.assertEqual(code_ov, "OVERNIGHT")
+            self.assertIn("美股夜盘", label_ov)
+
+        # 感恩节前夜 2026-11-25 20:05 ET（次日为假日）-> 休市
+        code_pre, _ = umc.classify_us_market_session(datetime(2026, 11, 25, 20, 5, tzinfo=ET))
+        self.assertEqual(code_pre, "HOLIDAY")
 
     def test_07_kospi_frontend_cross_filter_without_cloning_and_holiday_badge(self):
         """验证 KOSPI 仅视图交叉归队（APAC_ASHARE_DATA 绝不克隆 KOSPI），总数显示 17，且顶部显示节假日休市。"""
