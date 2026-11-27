@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795753339.06,
-  "updated_at_et": "11-26 23:22 ET",
-  "updated_at_kst": "13:22 KST",
+  "updated_at_ts": 1795753389.331,
+  "updated_at_et": "11-26 23:23 ET",
+  "updated_at_kst": "13:23 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -1597,6 +1597,13 @@
     ],
     "COHR": [
       {
+        "title": "Coherent Targets $250 Million in Quarterly PhotonLink Sales. Can Capacity Keep Up?",
+        "url": "https://finance.yahoo.com/technology/articles/coherent-targets-250-million-quarterly-040735182.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-26 23:07 ET",
+        "pub_ts": 1795752455.0
+      },
+      {
         "title": "Coherent’s Director Has Now Bought $50 Million of COHR Stock in 3 Trading Days",
         "url": "https://247wallst.com/investing/2026/11/26/coherents-director-has-now-bought-50-million-of-cohr-stock-in-3-trading-days/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1623,13 +1630,6 @@
         "source": "Yahoo Finance",
         "time": "11-25 04:03 ET",
         "pub_ts": 1795597389.0
-      },
-      {
-        "title": "Coherent Spent $776 Million on Capex Last Quarter. Now It Wants a $2 Billion Buyback",
-        "url": "https://www.tikr.com/blog/coherent-spent-776-million-on-capex-last-quarter-now-it-wants-a-2-billion-buyback?ref=yahoofinance&tlnk=yf-261125-fpw4g4vq&.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 03:35 ET",
-        "pub_ts": 1795595727.0
       }
     ],
     "MRVL": [
@@ -1745,6 +1745,20 @@
     ],
     "SPCX": [
       {
+        "title": "SpaceX (SPCX) Balances Starlink Growth With Its AI Funding Needs",
+        "url": "https://finance.yahoo.com/technology/ai/articles/spacex-spcx-balances-starlink-growth-035503007.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-26 22:55 ET",
+        "pub_ts": 1795751703.0
+      },
+      {
+        "title": "Amazon Lost 40 Satellites on a Boeing-Lockheed Rocket in November. SpaceX Is the Only Company That Can Fix Amazon’s Problem. Is the Stock a Buy Near $130?",
+        "url": "https://www.fool.com/investing/2026/11/26/amazon-lost-40-satellites-on-a-boeing-lockheed-rocket-in-november-spacex-is-the-only-company-that-can-fix-amazon-s-problem-is-the-stock-a-buy-near-usd130/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-26 22:53 ET",
+        "pub_ts": 1795751582.0
+      },
+      {
         "title": "What Could Tesla (TSLA) Merger Talks Mean For Its Stock?",
         "url": "https://finance.yahoo.com/markets/stocks/articles/could-tesla-tsla-merger-talks-013007632.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1764,20 +1778,6 @@
         "source": "Yahoo Finance",
         "time": "11-26 19:01 ET",
         "pub_ts": 1795737707.0
-      },
-      {
-        "title": "Amazon tried to kill Musk’s plan for 1 million AI satellites. The FCC chair scolded it and gave SpaceX the green light",
-        "url": "https://finance.yahoo.com/technology/ai/articles/amazon-tried-kill-musk-plan-233000718.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-26 18:30 ET",
-        "pub_ts": 1795735800.0
-      },
-      {
-        "title": "Stanley Druckenmiller Sees 70% Chance of Data Centers in Space Within 10 Years — Duquesne Adds $30 Million to SpaceX Stake in Q3",
-        "url": "https://finance.yahoo.com/technology/ai/articles/stanley-druckenmiller-sees-70-chance-213004535.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-26 16:30 ET",
-        "pub_ts": 1795728604.0
       }
     ],
     "ASTS": [
@@ -3151,6 +3151,13 @@
     ],
     "GLW": [
       {
+        "title": "Corning’s 80-Million-Mile Fiber Deal Puts Its 2027 Expansion to the Test",
+        "url": "https://finance.yahoo.com/technology/articles/corning-80-million-mile-fiber-041319616.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-26 23:13 ET",
+        "pub_ts": 1795752799.0
+      },
+      {
         "title": "Corning (GLW) Down 23.6% Since Last Earnings Report: Can It Rebound?",
         "url": "https://finance.yahoo.com/markets/stocks/articles/corning-glw-down-23-6-153011443.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -3177,13 +3184,6 @@
         "source": "Yahoo Finance",
         "time": "11-25 08:00 ET",
         "pub_ts": 1795611604.0
-      },
-      {
-        "title": "Corning Jumped $10. Jim Cramer Had a Lower Price in Mind",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/corning-jumped-10-jim-cramer-180300762.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 13:03 ET",
-        "pub_ts": 1795543380.0
       }
     ],
     "ANT": [
@@ -3317,7 +3317,7 @@
     "VIXY": 1795753339.059503,
     "SOXS": 1795753339.059503,
     "NVDA": 1795753339.059503,
-    "AMD": 1795751860.5515761,
+    "AMD": 1795753389.3312013,
     "ASML": 1795752229.7597258,
     "QCOM": 1795752229.7597258,
     "AVGO": 1795752229.7597258,
@@ -3332,15 +3332,15 @@
     "CRWV": 1795752280.8999395,
     "NBIS": 1795752280.8999395,
     "APLD": 1795752280.8999395,
-    "VST": 1795751860.5515761,
-    "BE": 1795751860.5515761,
-    "CRDO": 1795751860.5515761,
-    "COHR": 1795751860.5515761,
+    "VST": 1795753389.3312013,
+    "BE": 1795753389.3312013,
+    "CRDO": 1795753389.3312013,
+    "COHR": 1795753389.3312013,
     "MRVL": 1795752280.8999395,
     "LITE": 1795752332.029581,
-    "AAOI": 1795751860.5515761,
-    "SPCX": 1795751860.5515761,
-    "ASTS": 1795751860.5515761,
+    "AAOI": 1795753389.3312013,
+    "SPCX": 1795753389.3312013,
+    "ASTS": 1795753389.3312013,
     "AXTI": 1795752280.8999395,
     "NASA": 1795752229.7597258,
     "LUNR": 1795752229.7597258,
@@ -3377,7 +3377,7 @@
     "V": 1795752332.029581,
     "CAT": 1795752332.029581,
     "FN": 1795752332.029581,
-    "GLW": 1795751860.5515761,
+    "GLW": 1795753389.3312013,
     "ANT": 1795752384.388433,
     "XAUUSD": 1795752384.388433,
     "KOSPI": 1795752280.8999395,
