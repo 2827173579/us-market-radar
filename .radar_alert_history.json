@@ -50,8 +50,8 @@
       "last_notified_at": 0.0
     },
     "FLY": {
-      "state": "NORMAL",
-      "last_notified_at": 0.0
+      "state": "WATCHLIST_ENTRY_READY",
+      "last_notified_at": 1795801631.196411
     },
     "LLY": {
       "state": "NORMAL",
@@ -186,8 +186,8 @@
       "last_notified_at": 0.0
     },
     "KSTR": {
-      "state": "WATCHLIST_ENTRY_READY",
-      "last_notified_at": 1795801396.5906818
+      "state": "NORMAL",
+      "last_notified_at": 0.0
     }
   },
   "position_peaks": {
