@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795796167.43,
-  "updated_at_et": "11-27 11:16 ET",
-  "updated_at_kst": "01:16 KST",
+  "updated_at_ts": 1795796245.597,
+  "updated_at_et": "11-27 11:17 ET",
+  "updated_at_kst": "01:17 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -2868,6 +2868,13 @@
     ],
     "MCD": [
       {
+        "title": "McDonald's new deals take aim at Chili's and convenience stores",
+        "url": "https://www.thestreet.com/restaurants/mcdonalds-adds-a-new-value-deal-and-gives-customers-something-for-free?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-27 11:07 ET",
+        "pub_ts": 1795795620.0
+      },
+      {
         "title": "Can McDonald's (MCD) Command A Premium Despite Its Costly Makeover Plan?",
         "url": "https://finance.yahoo.com/markets/stocks/articles/mcdonalds-mcd-command-premium-despite-140936937.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2894,13 +2901,6 @@
         "source": "Yahoo Finance",
         "time": "11-26 11:00 ET",
         "pub_ts": 1795708802.0
-      },
-      {
-        "title": "MCD's Entry-Level Value Push: A Key Catalyst for Its 2027 Outlook?",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/mcds-entry-level-value-push-143800328.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-26 09:38 ET",
-        "pub_ts": 1795703880.0
       }
     ],
     "PEP": [
@@ -3023,6 +3023,20 @@
         "pub_ts": 1795794488.0
       },
       {
+        "title": "Walmart technical outlook amid Black Friday",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/walmart-technical-outlook-amid-black-155256189.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-27 10:52 ET",
+        "pub_ts": 1795794776.0
+      },
+      {
+        "title": "Is Walmart Stock Priced Like 1999 Again?",
+        "url": "https://www.trefis.com/stock/wmt/articles/629160/walmart-is-priced-almost-like-1999-holders-then-waited-12-years/2026-11-27?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-27 10:42 ET",
+        "pub_ts": 1795794140.0
+      },
+      {
         "title": "Walmart (WMT) Could Be 15% Undervalued Following Defensive Rotation And Holiday Momentum",
         "url": "https://finance.yahoo.com/markets/stocks/articles/walmart-wmt-could-15-undervalued-151004257.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -3035,20 +3049,6 @@
         "source": "Yahoo Finance",
         "time": "11-27 09:34 ET",
         "pub_ts": 1795790040.0
-      },
-      {
-        "title": "S&P 500 Investors Make Surprising Shift as Tech Stocks Sink",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/p-500-investors-surprising-shift-142353935.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-27 09:23 ET",
-        "pub_ts": 1795789433.0
-      },
-      {
-        "title": "Amazon Blocked Meta’s Muse Two Months Ago. Now It’s in Talks to Let It Shop, and Walmart Already Did",
-        "url": "https://www.tikr.com/blog/amazon-blocked-metas-muse-two-months-ago-now-its-in-talks-to-let-it-shop-and-walmart-already-did?ref=yahoofinance&tlnk=yf-261127-c9m256qx&.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-27 06:52 ET",
-        "pub_ts": 1795780363.0
       }
     ],
     "V": [
@@ -3215,6 +3215,13 @@
         "pub_ts": 1795786669.0
       },
       {
+        "title": "Anthropic Just Hit an $81 Billion Run Rate—Why Wall Street’s Post-IPO Jitters Are a Gift",
+        "url": "https://247wallst.com/investing/2026/11/27/anthropic-just-hit-an-81-billion-run-rate-why-wall-streets-post-ipo-jitters-are-a-gift/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-27 10:45 ET",
+        "pub_ts": 1795794329.0
+      },
+      {
         "title": "Stock Market Today: Dow Rises, Nasdaq Up As Anthropic, SpaceX Gain; Biotech Name Plummets (Live Coverage)",
         "url": "https://finance.yahoo.com/m/86a4597f-ee47-3048-ae92-1a56fa4711e5/stock-market-today%3A-dow.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -3227,13 +3234,6 @@
         "source": "Yahoo Finance",
         "time": "11-27 10:25 ET",
         "pub_ts": 1795793101.0
-      },
-      {
-        "title": "Anthropic Stock Jumps to Reveal Its True Place in the AI Trade",
-        "url": "https://finance.yahoo.com/m/eac9c281-033c-3c73-8b9a-a27703a8cdc9/anthropic-stock-jumps-to.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-27 10:09 ET",
-        "pub_ts": 1795792140.0
       }
     ],
     "XAUUSD": [
@@ -3382,18 +3382,18 @@
     "LLY": 1795796167.4298697,
     "MRNA": 1795796167.4298697,
     "NKE": 1795796167.4298697,
-    "MCD": 1795794654.6965606,
-    "PEP": 1795794706.2981498,
-    "XOM": 1795794706.2981498,
-    "JPM": 1795794706.2981498,
-    "WMT": 1795794706.2981498,
-    "V": 1795794706.2981498,
-    "CAT": 1795794706.2981498,
+    "MCD": 1795796245.5966678,
+    "PEP": 1795796245.5966678,
+    "XOM": 1795796245.5966678,
+    "JPM": 1795796245.5966678,
+    "WMT": 1795796245.5966678,
+    "V": 1795796245.5966678,
+    "CAT": 1795796245.5966678,
     "FN": 1795796116.6133018,
     "GLW": 1795796116.6133018,
-    "ANT": 1795794706.2981498,
-    "XAUUSD": 1795794706.2981498,
-    "KOSPI": 1795794706.2981498,
+    "ANT": 1795796245.5966678,
+    "XAUUSD": 1795796245.5966678,
+    "KOSPI": 1795796245.5966678,
     "KSTR": 1795795294.4694958
   },
   "opex_shield": {
