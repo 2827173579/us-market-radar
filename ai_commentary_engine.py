@@ -230,7 +230,7 @@ def evaluate_risk_lock(
     if tk in ("QQQ", "SPY", "SOXX"):
         t_item = tickers.get(tk) if isinstance(tickers.get(tk), dict) else {}
         if bool(t_item.get("bear_inertia_active", False)) or str(t_item.get("v46_regime_mode") or "") == "BEAR_INERTIA_C5":
-            reasons.append(f"{tk}处于熊市惯性模式(BEAR_INERTIA_C5)")
+            reasons.append(f"{tk}处于熊市惯性防守阶段")
     return (len(reasons) > 0), reasons
 
 
@@ -396,7 +396,7 @@ def build_system_prompt(
     )
     return (
         "你是美股量化雷达的「AI 首席策略师」，只对资深个人交易者用大白话讲透盘面。\n"
-        "必须严格遵守以下四条铁律：\n"
+        "必须严格遵守以下五条铁律：\n"
         "1. 【零编造】所有价格、点位、百分比与指标数值必须 100% 源自输入 JSON，严禁自行编造任何点位或数据。\n"
         f"2. 【风控铁笼】{lock_clause}\n"
         f"3. 【时段与盘前/盘后口径】{session_clause}\n"
@@ -404,13 +404,59 @@ def build_system_prompt(
         "【一句话定性】...\n"
         "【关键多空分水岭】...\n"
         "【开盘/盘中条件剧本】如果……就……；否则……（强制使用双边条件句）\n"
+        "5. 【零代码变量泄漏】严禁在正文中出现任何底层英文变量名、键值对或枚举代号（如 weather=、risk_lock_active=true/false、regime=、BEAR_INERTIA_C5、BEAR_DEFENSE、BULL_TREND、NEUTRAL_CHOP、p15_t5=、RSI_5m、last、ext_price 等），必须全部转化为自然中文（如“处于暴雨空仓防守期”“硬风控锁生效中”“处于熊市惯性阶段”“5日下行风险”“5分钟RSI”“最新价”）。\n"
         f"{fmt_clause}"
     )
 
 
+def sanitize_plain_chinese_text(text: str) -> str:
+    """代码层清洗：彻底剥离/翻译底层英文变量名、key=value 键值对与内部体制代号，防止泄漏到前台文案。"""
+    s = str(text or "").strip()
+    if not s:
+        return s
+
+    # 1. 常见 key=value 键值对直接翻译为自然中文
+    replacements = [
+        (r"\bweather\s*=\s*([^\s，。、；;）)]+)", r"宏观天气处于\1"),
+        (r"\brisk_lock_active\s*=\s*true\b", "系统硬风控锁生效中"),
+        (r"\brisk_lock_active\s*=\s*false\b", "系统硬风控锁已解除"),
+        (r"\bvix_hard_brake\s*=\s*true\b", "VIX恐慌硬刹车生效"),
+        (r"\bvix_hard_brake\s*=\s*false\b", "VIX恐慌硬刹车已解除"),
+        (r"\bknife_catch_locked\s*=\s*true\b", "防接飞刀锁生效"),
+        (r"\bknife_catch_locked\s*=\s*false\b", "防接飞刀锁已解除"),
+        (r"\b(?:market_)?regime\s*=\s*BEAR_INERTIA_C5\b", "处于熊市惯性防守阶段"),
+        (r"\b(?:market_)?regime\s*=\s*BEAR_DEFENSE\b", "处于空头防守体制"),
+        (r"\b(?:market_)?regime\s*=\s*BULL_TREND\b", "处于多头顺风体制"),
+        (r"\b(?:market_)?regime\s*=\s*NEUTRAL_CHOP\b", "处于震荡分化体制"),
+        (r"\bp15_t5(?:_pct)?\s*=\s*", "5日偏弱预期 "),
+        (r"\bp15_t15(?:_pct)?\s*=\s*", "15日偏弱预期 "),
+        (r"\bp85_t15(?:_pct)?\s*=\s*", "15日偏强预期 "),
+        (r"\bBEAR_INERTIA_C5\b", "熊市惯性防守阶段"),
+        (r"\bBEAR_DEFENSE\b", "空头防守体制"),
+        (r"\bBULL_TREND\b", "多头顺风体制"),
+        (r"\bNEUTRAL_CHOP\b", "震荡分化体制"),
+        (r"\bPRE_MARKET\b", "美股盘前"),
+        (r"\bPOST_MARKET\b", "美股盘后"),
+        (r"\bOVERNIGHT\b", "美股夜盘"),
+        (r"\bHOLIDAY\b", "节假日休市"),
+        (r"\bRSI_5m\b|\brsi_5m\b", "5分钟RSI"),
+        (r"\bext_price\b|\bextended_price\b", "盘前/盘后价"),
+        (r"(?<=的)\s*\blast\b", "最新价"),
+        (r"\blast\s*(?=均为|为上日|仅为)", "最新价"),
+    ]
+    for pat, repl in replacements:
+        s = re.sub(pat, repl, s, flags=re.IGNORECASE)
+
+    # 2. 兜底清理残留的 snake_case=val 形式
+    s = re.sub(r"\b[a-z][a-z0-9_]{2,}\s*=\s*(true|false)\b", "", s, flags=re.IGNORECASE)
+    s = re.sub(r"[，、；]{2,}", "，", s)
+    s = re.sub(r"\s{2,}", " ", s).strip()
+    return s
+
+
 def apply_post_risk_safety_net(text: str, risk_lock_active: bool) -> str:
-    """代码层后置复核：若 risk_lock_active=True 且命中未经否定的激进抄底词，强制追加红警覆盖。"""
-    cleaned = str(text or "").strip()
+    """代码层后置复核：先清洗底层代码黑话；若 risk_lock_active=True 且命中未经否定的激进抄底词，强制追加红警覆盖。"""
+    cleaned = sanitize_plain_chinese_text(text)
     if not risk_lock_active or not cleaned:
         return cleaned
     if RISK_OVERRIDE_BANNER in cleaned:
@@ -864,12 +910,22 @@ def generate_all_four_briefs(
                 if not provider_used:
                     provider_used = single.get("provider_used", "")
 
+    _snap_vr = (snapshot or {}).get("vix_regime") if isinstance((snapshot or {}).get("vix_regime"), dict) else {}
+    _snap_mt = (snapshot or {}).get("market_temperature") if isinstance((snapshot or {}).get("market_temperature"), dict) else {}
+    _snap_futs = (snapshot or {}).get("futures") if isinstance((snapshot or {}).get("futures"), dict) else (_snap_mt.get("futures") if isinstance(_snap_mt.get("futures"), dict) else {})
+    _snap_nq_pct = _safe_float(((_snap_futs.get("NQ=F") or {}) if isinstance(_snap_futs.get("NQ=F"), dict) else {}).get("pct_chg"))
     doc = {
         "schema_version": "v5.1-ai-commentary",
         "status": "OK" if items_out else "ERROR",
         "updated_at_ts": now_et.timestamp(),
         "updated_at_et": now_et.strftime("%Y-%m-%d %H:%M ET"),
         "updated_at_kst": now_kst.strftime("%Y-%m-%d %H:%M KST"),
+        "cache_date_et": now_et.strftime("%Y-%m-%d"),
+        "session_code": str((snapshot or {}).get("session_code") or "").strip().upper(),
+        "vix_spot": _safe_float(_snap_vr.get("vix_spot")),
+        "vix_term_ratio": _safe_float(_snap_vr.get("vix_term_ratio")),
+        "nq_pct_chg": _snap_nq_pct,
+        "market_regime": str((snapshot or {}).get("market_regime") or ""),
         "provider_used": provider_used,
         "risk_lock_active": macro_locked,
         "risk_lock_reasons": ctx.get("risk_lock_reasons", []),
@@ -897,6 +953,77 @@ def _is_in_web_auto_window(now_et: datetime) -> bool:
     return (8 * 60 + 30) <= mins <= (close_min + 15)
 
 
+def _detect_cache_staleness_reason(
+    existing: Optional[Dict[str, Any]],
+    snapshot: Optional[Dict[str, Any]],
+    now_et: datetime,
+) -> Optional[str]:
+    """
+    判定已有 AI 首席策略师缓存是否因跨交易日、时段切换或核心风控/VIX/期货体制突变而失效。
+    返回失效原因字符串；返回 None 表示当前缓存仍新鲜有效。
+    """
+    if not isinstance(existing, dict) or not existing.get("items"):
+        return "empty_cache"
+    snap = snapshot if isinstance(snapshot, dict) else {}
+    cur_sess = str(snap.get("session_code") or "").strip().upper()
+    cur_date_et = now_et.strftime("%Y-%m-%d")
+
+    cached_date_et = str(existing.get("cache_date_et") or "").strip()
+    if not cached_date_et:
+        upd_et = str(existing.get("updated_at_et") or "").strip()
+        if len(upd_et) >= 10 and upd_et[4:5] == "-":
+            cached_date_et = upd_et[:10]
+
+    cached_sess = str(existing.get("session_code") or "").strip().upper()
+    if not cached_sess:
+        sl = str(existing.get("session_label") or "")
+        if "节假日" in sl or "休市" in sl:
+            cached_sess = "HOLIDAY"
+        elif "盘前" in sl:
+            cached_sess = "PRE_MARKET"
+        elif "盘中" in sl or "常规" in sl:
+            cached_sess = "REGULAR"
+        elif "盘后" in sl:
+            cached_sess = "POST_MARKET"
+        elif "夜盘" in sl:
+            cached_sess = "OVERNIGHT"
+
+    # 1. 从休市/节假日切入真实盘前/盘中，或交易日跨日失效
+    if cur_sess in ("PRE_MARKET", "REGULAR", "POST_MARKET"):
+        if cached_date_et and cached_date_et != cur_date_et:
+            return f"cross_day({cached_date_et}->{cur_date_et})"
+        if cached_sess == "HOLIDAY":
+            return f"session_shift(HOLIDAY->{cur_sess})"
+        if cur_sess == "REGULAR" and cached_sess in ("OVERNIGHT", "WEEKEND", "HOLIDAY"):
+            return f"session_shift({cached_sess}->REGULAR)"
+
+    # 2. VIX 倒挂状态翻转 / VIX 剧烈变化 >= 1.5 / 纳指期货异动 >= 1.0% / 硬风控锁翻转
+    vr = snap.get("vix_regime") if isinstance(snap.get("vix_regime"), dict) else {}
+    cur_vix = _safe_float(vr.get("vix_spot"))
+    cur_ratio = _safe_float(vr.get("vix_term_ratio"))
+    old_vix = _safe_float(existing.get("vix_spot"))
+    old_ratio = _safe_float(existing.get("vix_term_ratio"))
+
+    if cur_ratio is not None and old_ratio is not None:
+        if (cur_ratio >= 1.0) != (old_ratio >= 1.0):
+            return f"vix_inversion_flip({old_ratio:.2f}->{cur_ratio:.2f})"
+    if cur_vix is not None and old_vix is not None and abs(cur_vix - old_vix) >= 1.5:
+        return f"vix_jump({old_vix:.2f}->{cur_vix:.2f})"
+
+    mt = snap.get("market_temperature") if isinstance(snap.get("market_temperature"), dict) else {}
+    futs = snap.get("futures") if isinstance(snap.get("futures"), dict) else (mt.get("futures") if isinstance(mt.get("futures"), dict) else {})
+    cur_nq = _safe_float(((futs.get("NQ=F") or {}) if isinstance(futs.get("NQ=F"), dict) else {}).get("pct_chg"))
+    old_nq = _safe_float(existing.get("nq_pct_chg"))
+    if cur_nq is not None and old_nq is not None and abs(cur_nq - old_nq) >= 1.0:
+        return f"nq_swing({old_nq:+.2f}%->{cur_nq:+.2f}%)"
+
+    cur_locked, _ = evaluate_risk_lock(snap, target="OVERVIEW")
+    if bool(existing.get("risk_lock_active", False)) != bool(cur_locked):
+        return f"risk_lock_flip({bool(existing.get('risk_lock_active', False))}->{cur_locked})"
+
+    return None
+
+
 def maybe_refresh_web_brief(
     snapshot: Optional[Dict[str, Any]],
     cache_path: str = DEFAULT_CACHE_PATH,
@@ -912,8 +1039,9 @@ def maybe_refresh_web_brief(
     方案 B 智能节流调度：
     - RADAR_DISABLE_EXTERNAL_ALERTS=1 干跑下严格 0 外部 LLM 调用；
     - AI_WEB_AUTO_BRIEF_ENABLED=0 时关闭自动刷新，直接返回已有缓存；
-    - 美东周一至周五 08:30~16:15 按 AI_WEB_REFRESH_MINUTES (默认 25 分钟) 打包刷新；
-    - 休市/周末已有有效缓存则 0 消耗直接复用；若缓存为空且 allow_cold_start=True 则补刷 1 次收盘剧本。
+    - 美东周一至周五 08:30~close+15 按 AI_WEB_REFRESH_MINUTES (默认 25 分钟) 打包刷新；
+    - 跨交易日 / 节假日切入盘前正盘 / VIX 倒挂翻转或跳变>=1.5 / NQ期货异动>=1.0% / 硬风控锁翻转时，
+      自动突破休市缓存复用，立即触发刷新（带 10 分钟最小冷却防抖）。
     """
     cfg = load_env_config(env_path=env_path, env_override=env_override)
     existing = load_ai_commentary_cache(cache_path)
@@ -967,12 +1095,16 @@ def maybe_refresh_web_brief(
     last_ts = _safe_float(existing.get("updated_at_ts"), 0.0) or 0.0
     age_sec = max(0.0, now_ts - last_ts) if last_ts > 0 else float("inf")
     in_window = _is_in_web_auto_window(now_et)
+    stale_reason = _detect_cache_staleness_reason(existing, snapshot, now_et) if has_valid_items else "empty_cache"
 
     should_refresh = False
     if force_refresh:
         should_refresh = True
     elif in_window:
-        should_refresh = (not has_valid_items) or (age_sec >= refresh_mins * 60.0)
+        should_refresh = (not has_valid_items) or (age_sec >= refresh_mins * 60.0) or (stale_reason is not None and age_sec >= 600.0)
+    elif stale_reason is not None and has_valid_items and age_sec >= 600.0:
+        # 即使处于 04:00~08:30 早盘前或盘后，只要缓存跨日/节假日切盘前/VIX或期货大幅切换，立刻重刷
+        should_refresh = True
     else:
         # 休市/周末：有缓存直接复用（0 消耗）；缓存为空时允许冷启动补刷 1 次
         should_refresh = (not has_valid_items) and bool(allow_cold_start)
@@ -1019,7 +1151,7 @@ def sanitize_ai_commentary_for_web(ai_cache: Optional[Dict[str, Any]]) -> Dict[s
     doc = ai_cache if isinstance(ai_cache, dict) else {}
     raw_items = doc.get("items") if isinstance(doc.get("items"), dict) else {}
     clean_items = {
-        tk: str(raw_items.get(tk) or "").strip()
+        tk: sanitize_plain_chinese_text(str(raw_items.get(tk) or ""))
         for tk in VALID_TARGETS
         if isinstance(raw_items.get(tk), str) and raw_items.get(tk).strip()
     }

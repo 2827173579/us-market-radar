@@ -1016,11 +1016,16 @@ def fetch_intraday_5m_and_ext_data(tickers):
 
                 pmh_val = 0.0
                 pml_val = 0.0
-                pm_target_date = _today if (4 * 60 <= _d < 9 * 60 + 30) else last_date
+                _in_premarket_now = (4 * 60 <= _d < 9 * 60 + 30)
+                pm_target_date = _today if _in_premarket_now else last_date
                 pm_mask = (ny_idx.date == pm_target_date) & (ny_hr >= 4.0) & (ny_hr < 9.5)
                 if pm_mask.any():
                     pmh_val = float(h[pm_mask].max())
                     pml_val = float(l[pm_mask].min())
+                elif _in_premarket_now and ext_price > 0 and _price_kind == "premarket":
+                    pmh_val = float(ext_price)
+                    pml_val = float(ext_price)
+                pm_date_str = str(pm_target_date) if pmh_val > 0 else ""
 
                 if rth_mask.any():
                     tp_rth = (h[rth_mask] + l[rth_mask] + c[rth_mask]) / 3.0
@@ -1031,12 +1036,14 @@ def fetch_intraday_5m_and_ext_data(tickers):
                     rth_open_val = float(o[rth_mask].iloc[0])
                     rth_close = float(c[rth_mask].iloc[-1])
                     rth_date = str(ny_idx[rth_mask][-1].date())
-                    if pmh_val <= 0:
+                    if pmh_val <= 0 and not _in_premarket_now:
                         _rth_dt_obj = ny_idx[rth_mask][-1].date()
-                        _pm_day_mask = (ny_idx.date == _rth_dt_obj) & (ny_hr >= 4.0) & (ny_hr < 9.5)
-                        if _pm_day_mask.any():
-                            pmh_val = float(h[_pm_day_mask].max())
-                            pml_val = float(l[_pm_day_mask].min())
+                        if _rth_dt_obj == pm_target_date:
+                            _pm_day_mask = (ny_idx.date == _rth_dt_obj) & (ny_hr >= 4.0) & (ny_hr < 9.5)
+                            if _pm_day_mask.any():
+                                pmh_val = float(h[_pm_day_mask].max())
+                                pml_val = float(l[_pm_day_mask].min())
+                                pm_date_str = str(_rth_dt_obj)
                     rth_5m_series = []
                     for _dt_r, _px_r in zip(ny_idx[rth_mask], c[rth_mask]):
                         _s_idx = (int(_dt_r.hour) * 60 + int(_dt_r.minute) - 570) // 5
@@ -1239,6 +1246,8 @@ def fetch_intraday_5m_and_ext_data(tickers):
                     "rth_date": rth_date,
                     "pmh": round(pmh_val, 2) if pmh_val > 0 else 0.0,
                     "pml": round(pml_val, 2) if pml_val > 0 else 0.0,
+                    "pm_date": pm_date_str,
+                    "price_kind": _price_kind,
                     "rth_5m_series": rth_5m_series,
                 }
                 if continuous_24h_payload is not None:
@@ -5501,6 +5510,8 @@ def sync_live_prices_to_predict_html(macro_data=None, stocks_data=None, session_
             return False
 
         by_tk = (ai_payload.get("by_ticker") if isinstance(ai_payload, dict) else None) or {}
+        if by_tk:
+            html_tc_data = {k: v for k, v in html_tc_data.items() if k in by_tk}
         ml_predictor_5y.align_time_cycle_projections_with_live(
             tc_dict=html_tc_data,
             live_prices=live,
@@ -8705,6 +8716,12 @@ def run_radar_cycle(is_first_run=False, round_idx=1):
             f"有效={_aip_cov.get('ok_count', 0)}/{_aip_cov.get('total_count', 0)} | "
             f"http={_apac_ip_doc.get('http_calls', 0)} | 目标日={_apac_ip_doc.get('forecast_date', '--')}"
         )
+        try:
+            import apac_ashare_feed as _aaf_hyd
+            if isinstance(_apac_doc, dict) and hasattr(_aaf_hyd, "hydrate_missing_5m_from_local_parquet"):
+                _aaf_hyd.hydrate_missing_5m_from_local_parquet(_apac_doc)
+        except Exception:
+            pass
     except Exception as _aip_err:
         print(f"  [!] 📈 亚太/A股独立盘中推演走廊静默降级: {_aip_err}")
 

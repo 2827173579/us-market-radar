@@ -7245,6 +7245,8 @@ def render_html_dashboard(tables_data: Dict, output_path: str = 'predict_radar_5
     }
     tc_enriched: Dict[str, Any] = {}
     for tk_c, item_c in raw_tc.items():
+        if live_by_tk and str(tk_c) not in live_by_tk:
+            continue
         if not isinstance(item_c, dict):
             tc_enriched[tk_c] = item_c
             continue
@@ -11163,7 +11165,10 @@ def export_latest_ai_predictions_json(tables_data: Dict, json_path: str = 'data_
         'by_ticker': by_ticker,
         'defensive_flight': tables_data.get('defensive_flight') or mw.get('defensive_flight', {}),
         'cross_industry_breadth': tables_data.get('cross_industry_breadth') or mw.get('cross_industry_breadth', {}),
-        'time_cycle_projections': tables_data.get('time_cycle_projections', {})
+        'time_cycle_projections': (
+            {k: v for k, v in (tables_data.get('time_cycle_projections') or {}).items() if k in by_ticker}
+            if by_ticker else (tables_data.get('time_cycle_projections') or {})
+        )
     }
     with open(full_json_path, 'w', encoding='utf-8') as f:
         json.dump(payload, f, ensure_ascii=False, indent=2)

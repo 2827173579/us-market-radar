@@ -3892,13 +3892,13 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
             <!-- 大盘红绿灯一句话胶囊 + 全局真VIX恐慌胶囊 + 实盘成绩单胶囊 -->
             <span id="pAiRegimePill" class="regime-pill" title="大盘体制状态">--</span>
             <div class="vix-pill-wrap" id="vixPillWrap">
-                <button type="button" id="pVixRegimePill" class="vix-regime-pill" onclick="toggleVixPopover(event)" title="全局真 VIX 恐慌中枢" aria-expanded="false" aria-controls="vixDetailPopover">⚪ VIX --</button>
+                <button type="button" id="pVixRegimePill" class="vix-regime-pill" onclick="toggleVixPopover(event)" aria-label="全局真 VIX 恐慌中枢" aria-expanded="false" aria-controls="vixDetailPopover">⚪ VIX --</button>
                 <div id="vixDetailPopover" class="vix-detail-popover" role="dialog" aria-label="全局真 VIX 恐慌中枢详情"></div>
             </div>
             <div class="temp-pill-wrap" id="tempPillWrap">
-                <button type="button" id="pBubbleTempPill" class="temp-pill-btn tabular" onclick="toggleTempPopover(event)" title="大盘/日内泡沫评分（点击展开详情 · 不含BTC）" aria-expanded="false" aria-controls="tempDetailPopover">🔥 泡沫 --/--</button>
-                <button type="button" id="pBottomTempPill" class="temp-pill-btn tabular" onclick="toggleTempPopover(event)" title="大盘/日内抄底指数（点击展开详情 · 不含BTC）" aria-expanded="false" aria-controls="tempDetailPopover">🧲 抄底 --/--</button>
-                <span id="pFuturesMiniPill" class="temp-futures-mini tabular" title="美股指期货先导哨 (NQ=F / ES=F)">NQ -- · ES --</span>
+                <button type="button" id="pBubbleTempPill" class="temp-pill-btn tabular" onclick="toggleTempPopover(event)" aria-label="大盘与日内泡沫评分详情" aria-expanded="false" aria-controls="tempDetailPopover">🔥 泡沫 --/--</button>
+                <button type="button" id="pBottomTempPill" class="temp-pill-btn tabular" onclick="toggleTempPopover(event)" aria-label="大盘与日内抄底指数详情" aria-expanded="false" aria-controls="tempDetailPopover">🧲 抄底 --/--</button>
+                <span id="pFuturesMiniPill" class="temp-futures-mini tabular" aria-label="美股指期货先导哨">NQ -- · ES --</span>
                 <div id="tempDetailPopover" class="temp-detail-popover" role="dialog" aria-label="大盘与日内泡沫抄底温度计详情"></div>
             </div>
             <span id="pAiScorecardPill" class="scorecard-pill tabular" title="AI 实盘近7日/30日滚动胜率">--</span>
@@ -4821,8 +4821,7 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
                     bubblePill.innerText = `🔥 泡沫 ${mb}/${ib}`;
                     const clr = (Number(mt.macro_bubble_score) >= 65 || Number(mt.intraday_bubble_score) >= 75) ? pal.down : ((Number(mt.macro_bubble_score) >= 50 || Number(mt.intraday_bubble_score) >= 60) ? pal.warn : pal.sub);
                     bubblePill.style.color = clr;
-                    const ibNote = mt.intraday_bubble_note ? ` · ${mt.intraday_bubble_note}` : "";
-                    bubblePill.title = `大盘泡沫 ${mt.macro_bubble_score} (${mt.macro_bubble_tier || ''}) | 日内泡沫 ${mt.intraday_bubble_score} (${mt.intraday_bubble_tier || ''}${ibNote})`;
+                    bubblePill.removeAttribute("title");
                 } else {
                     bubblePill.innerText = "🔥 泡沫 --/--";
                 }
@@ -4835,8 +4834,7 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
                     bottomPill.innerText = `🧲 抄底 ${mbt}/${ibt}${lockIcon}`;
                     const clr = mt.knife_catch_locked ? pal.down : ((Number(mt.macro_bottom_score) >= 65 || Number(mt.intraday_bottom_score) >= 65) ? pal.up : pal.sub);
                     bottomPill.style.color = clr;
-                    const idNote = mt.intraday_dip_note ? ` · ${mt.intraday_dip_note}` : "";
-                    bottomPill.title = `大盘抄底 ${mt.macro_bottom_score} (${mt.macro_bottom_tier || ''}) | 日内抄底 ${mt.intraday_bottom_score} (${mt.intraday_bottom_tier || ''}${idNote})`;
+                    bottomPill.removeAttribute("title");
                 } else {
                     bottomPill.innerText = "🧲 抄底 --/--";
                 }
@@ -6072,12 +6070,23 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
             } else {
                 let xTickIdxs;
                 if (isApacPathTk) {
+                    const minTickGapPx = 44;
                     const stepTick = Math.max(4, Math.round((nSlots - 1) / 8));
-                    const setIdx = new Set([0, nSlots - 1]);
-                    for (let idx = 0; idx < nSlots; idx += stepTick) setIdx.add(idx);
+                    const pinned = [0, nSlots - 1];
                     const seam = Number(item.lunch_seam_idx);
-                    if (Number.isFinite(seam) && seam > 0 && seam < nSlots) setIdx.add(seam);
-                    xTickIdxs = Array.from(setIdx).sort((a, b) => a - b);
+                    if (Number.isFinite(seam) && seam > 0 && seam < nSlots - 1) {
+                        const xSeam = xAt(seam);
+                        if (Math.abs(xSeam - xAt(0)) >= minTickGapPx && Math.abs(xSeam - xAt(nSlots - 1)) >= minTickGapPx) {
+                            pinned.push(seam);
+                        }
+                    }
+                    const chosen = pinned.slice();
+                    for (let idx = stepTick; idx < nSlots - 1; idx += stepTick) {
+                        const xi = xAt(idx);
+                        const collides = chosen.some(p => Math.abs(xi - xAt(p)) < minTickGapPx);
+                        if (!collides) chosen.push(idx);
+                    }
+                    xTickIdxs = chosen.sort((a, b) => a - b);
                 } else {
                     xTickIdxs = [0, 6, 12, 18, 24, 30, 36, 42, 48, 54, 60, 66, 72, 77];
                 }

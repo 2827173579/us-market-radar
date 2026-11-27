@@ -629,6 +629,107 @@ def compute_apac_5m_microstructure(
     }
 
 
+def hydrate_missing_5m_from_local_parquet(
+    apac_doc: Optional[Dict[str, Any]],
+    parquet_path: Optional[str] = None,
+    persist_cache_path: Optional[str] = None,
+) -> int:
+    """
+    零新增外部网络请求：当 apac_doc 中某只亚太标的（典型如 HSTECH）缺少 intraday_5m / rsi_5m / vwap 时，
+    直接从本地 data_cache/apac_intraday_5m_60d.parquet 读取其最新交易日 5m K 线，
+    计算真实日内 VWAP（无量指数自动用 5m 典型均价 TWAP）、5m RSI 与量比并回填。
+    返回成功补齐的标的数量。
+    """
+    if not isinstance(apac_doc, dict):
+        return 0
+    items = apac_doc.get("items")
+    if not isinstance(items, dict) or not items:
+        return 0
+
+    need_tks: List[str] = []
+    for tk, row in items.items():
+        if not isinstance(row, dict):
+            continue
+        if (
+            not row.get("intraday_5m")
+            or row.get("rsi_5m") is None
+            or row.get("vwap") is None
+            or not bool(row.get("has_5m_intraday"))
+        ):
+            need_tks.append(tk)
+    if not need_tks:
+        return 0
+
+    pq_path = parquet_path or os.path.join(BASE_DIR, "data_cache", "apac_intraday_5m_60d.parquet")
+    if not os.path.exists(pq_path):
+        return 0
+
+    try:
+        df_pq = pd.read_parquet(pq_path)
+    except Exception:
+        return 0
+    if df_pq is None or df_pq.empty or "ticker" not in df_pq.columns or "date" not in df_pq.columns:
+        return 0
+
+    hydrated = 0
+    for tk in need_tks:
+        row = items.get(tk)
+        if not isinstance(row, dict):
+            continue
+        sub = df_pq[df_pq["ticker"] == tk]
+        if sub.empty:
+            continue
+        latest_d = str(sub["date"].astype(str).max())
+        day_df = sub[sub["date"].astype(str) == latest_d].sort_values("time_slot")
+        if len(day_df) < 2:
+            continue
+        meta = APAC_ASHARE_BY_TICKER.get(tk, {})
+        mkt = str(row.get("market") or meta.get("market") or "HK")
+        dec = int(row.get("decimals") or meta.get("decimals") or 2)
+        raw_rows: List[List[Any]] = []
+        for _, r in day_df.iterrows():
+            ts = str(r.get("time_slot") or "")
+            op = _safe_float(r.get("open"))
+            hi = _safe_float(r.get("high"))
+            lo = _safe_float(r.get("low"))
+            cl = _safe_float(r.get("close"))
+            vo = max(0.0, _safe_float(r.get("volume"), 0.0) or 0.0)
+            if ts and cl and cl > 0:
+                raw_rows.append([
+                    ts,
+                    round(op if (op and op > 0) else cl, dec),
+                    round(hi if (hi and hi > 0) else cl, dec),
+                    round(lo if (lo and lo > 0) else cl, dec),
+                    round(cl, dec),
+                    round(vo, 2),
+                ])
+        if len(raw_rows) < 2:
+            continue
+        clean_rows, vol_capped = sanitize_apac_5m_bars(raw_rows, market=mkt, decimals=dec)
+        if len(clean_rows) < 2:
+            continue
+        spot_px = _safe_float(row.get("last") or row.get("price"))
+        micro = compute_apac_5m_microstructure(clean_rows, spot_price=spot_px, decimals=dec)
+        row["intraday_5m"] = clean_rows
+        row["vwap"] = micro["vwap"]
+        row["vwap_diff_pct"] = micro["vwap_diff_pct"]
+        row["rsi_5m"] = micro["rsi_5m"]
+        row["rvol_5m"] = micro["rvol_5m"]
+        row["has_5m_intraday"] = micro["has_5m_intraday"]
+        row["vol_outlier_capped"] = bool(vol_capped)
+        hydrated += 1
+
+    if hydrated > 0 and persist_cache_path:
+        try:
+            _tmp_p = f"{persist_cache_path}.tmp.{os.getpid()}"
+            with open(_tmp_p, "w", encoding="utf-8") as _wf:
+                json.dump(apac_doc, _wf, ensure_ascii=False, indent=2)
+            os.replace(_tmp_p, persist_cache_path)
+        except Exception:
+            pass
+    return hydrated
+
+
 def _compute_technicals_from_daily(
     daily_ohlc: List[List[Any]],
     spot_price: Optional[float] = None,
@@ -1288,7 +1389,7 @@ def fetch_apac_ashare_snapshot(
     if not should_fetch:
         items_out = dict(cached.get("items") or {})
         sentiment = compute_apac_chip_sentiment(items_out, kospi_item=kospi_item)
-        return {
+        out_cached = {
             "schema_version": "v5.6-apac-ashare-snapshot",
             "active_window": active,
             "fetch_mode": "SLEEP_CACHE" if (not active) else "TTL_CACHE",
@@ -1300,6 +1401,8 @@ def fetch_apac_ashare_snapshot(
             "items": items_out,
             "apac_chip_sentiment": sentiment,
         }
+        hydrate_missing_5m_from_local_parquet(out_cached, persist_cache_path=cache_path)
+        return out_cached
 
     # 2) 执行实时拉取（零 Finnhub 消耗）
     t0 = time.perf_counter()

@@ -1521,9 +1521,9 @@ def compute_knn_intraday_corridor(
     ao_val = round(_safe_float(anchor_open, pc_val), 2)
     if ao_val <= 0 and pc_val > 0:
         ao_val = pc_val
-    pmh_val = round(_safe_float(pmh, ao_val), 2) if (_safe_float(pmh, 0.0) > 0) else ao_val
-    pml_val = round(_safe_float(pml, ao_val), 2) if (_safe_float(pml, 0.0) > 0) else ao_val
-    if pmh_val < pml_val:
+    pmh_val = round(_safe_float(pmh, 0.0), 2) if (_safe_float(pmh, 0.0) > 0) else None
+    pml_val = round(_safe_float(pml, 0.0), 2) if (_safe_float(pml, 0.0) > 0) else None
+    if pmh_val is not None and pml_val is not None and pmh_val < pml_val:
         pmh_val, pml_val = pml_val, pmh_val
     gap_pct = round(((ao_val - pc_val) / pc_val) * 100.0, 2) if (pc_val > 0 and ao_val > 0) else 0.0
 
@@ -1918,16 +1918,20 @@ def _extract_day_features_for_target(
         except Exception:
             prev_close = _safe_float(hd["Close"].iloc[-1], 0.0)
 
-    # 3. 融入当前轮询抓到的盘前/盘中最新分时特征 (零额外网络开销)
+    # 3. 融入当前轮询抓到的盘前/盘中最新分时特征 (严格按当日美东日期过滤 PMH/PML，杜绝跨日旧极值混入)
     info = intraday_info or {}
-    if _safe_float(info.get("pmh"), 0.0) > 0:
-        cand_pmh = float(info["pmh"])
-        pmh = cand_pmh if pmh is None else max(pmh, cand_pmh)
-    if _safe_float(info.get("pml"), 0.0) > 0:
-        cand_pml = float(info["pml"])
-        pml = cand_pml if pml is None else min(pml, cand_pml)
+    info_pm_date = str(info.get("pm_date") or "").strip()
+    info_rth_date = str(info.get("rth_date") or "").strip()
+    pm_date_matches = (info_pm_date == target_str) if info_pm_date else (info_rth_date == target_str)
+    if pm_date_matches:
+        if _safe_float(info.get("pmh"), 0.0) > 0:
+            cand_pmh = float(info["pmh"])
+            pmh = cand_pmh if pmh is None else max(pmh, cand_pmh)
+        if _safe_float(info.get("pml"), 0.0) > 0:
+            cand_pml = float(info["pml"])
+            pml = cand_pml if pml is None else min(pml, cand_pml)
 
-    if str(info.get("rth_date", "")) == target_str:
+    if info_rth_date == target_str:
         if _safe_float(info.get("rth_open"), 0.0) > 0:
             anchor_open = float(info["rth_open"])
         for slot_pair in info.get("rth_5m_series") or []:
@@ -1937,6 +1941,7 @@ def _extract_day_features_for_target(
                     actual_prices[si] = round(px_v, 2)
 
     ext_px = _safe_float(info.get("ext_price"), 0.0)
+    price_kind = str(info.get("price_kind") or "").strip().lower()
     live_px = _safe_float((rq or {}).get("last"), 0.0)
     if target_date == cur_et.date():
         try:
@@ -1944,16 +1949,20 @@ def _extract_day_features_for_target(
             _cur_close_min = _umc.get_us_market_close_minutes(target_date)
         except Exception:
             _cur_close_min = 16 * 60
-        if cur_et.hour * 60 + cur_et.minute < 9 * 60 + 30:
-            if ext_px > 0:
+        cur_et_min = cur_et.hour * 60 + cur_et.minute
+        if 4 * 60 <= cur_et_min < 9 * 60 + 30:
+            if ext_px > 0 and (not price_kind or price_kind == "premarket"):
                 anchor_open = ext_px
                 pmh = ext_px if pmh is None else max(pmh, ext_px)
                 pml = ext_px if pml is None else min(pml, ext_px)
-        elif cur_et.hour * 60 + cur_et.minute < _cur_close_min:
+        elif cur_et_min < 4 * 60:
+            if ext_px > 0 and price_kind == "premarket":
+                anchor_open = ext_px
+        elif cur_et_min < _cur_close_min:
             if live_px > 0:
                 if anchor_open <= 0:
                     anchor_open = _safe_float((rq or {}).get("open"), live_px)
-                cur_slot = min(len(TIME_SLOTS) - 1, max(0, ((cur_et.hour * 60 + cur_et.minute) - 570) // 5))
+                cur_slot = min(len(TIME_SLOTS) - 1, max(0, (cur_et_min - 570) // 5))
                 actual_prices[cur_slot] = round(live_px, 2)
 
     if anchor_open <= 0:
