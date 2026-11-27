@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795805457.958,
-  "updated_at_et": "11-27 13:50 ET",
-  "updated_at_kst": "03:50 KST",
+  "updated_at_ts": 1795805504.764,
+  "updated_at_et": "11-27 13:51 ET",
+  "updated_at_kst": "03:51 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -2388,7 +2388,7 @@
     ],
     "MU": [
       {
-        "title": "Stocks snap from a $6 trillion washout to a $3 trillion surge as Nvidia, Micron, and SpaceX bounce back",
+        "title": "Stocks snap from a $6 trillion washout to a $3.5 trillion surge as Nvidia, Micron, and SpaceX bounce back",
         "url": "https://finance.yahoo.com/markets/article/stocks-snap-from-a-6-trillion-washout-to-a-3-trillion-surge-as-nvidia-micron-and-spacex-bounce-back-151218930.html?.tsrc=rss",
         "source": "Yahoo Finance",
         "time": "11-27 10:12 ET",
@@ -2580,6 +2580,13 @@
         "pub_ts": 1795789800.0
       },
       {
+        "title": "SanDisk Stocks Jump 12.85% After Kioxia and Nvidia Stretch GPU Memory With SSDs",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/sandisk-stocks-jump-12-85-181316890.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-27 13:13 ET",
+        "pub_ts": 1795803196.0
+      },
+      {
         "title": "SanDisk Surges 16% as Memory Stocks Extend Their Rebound: Can SNDK Stock Blast Through $100 Before 2026 Ends?",
         "url": "https://247wallst.com/investing/2026/11/27/sandisk-surges-16-as-memory-stocks-extend-their-rebound-can-sndk-stock-blast-through-100-before-2026-ends/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2599,13 +2606,6 @@
         "source": "Yahoo Finance",
         "time": "11-27 12:47 ET",
         "pub_ts": 1795801677.0
-      },
-      {
-        "title": "Stock Market Midday, Nov. 27: Tech Stocks Recover and Amazon Posts Black Friday Gains",
-        "url": "https://www.fool.com/coverage/stock-market-today/2026/11/27/stock-market-midday-nov-27-tech-stocks-recover-and-amazon-posts-black-friday-gains/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-27 12:31 ET",
-        "pub_ts": 1795800677.0
       }
     ],
     "BTC-USD": [
@@ -2943,6 +2943,13 @@
     ],
     "XOM": [
       {
+        "title": "XOM Boosts Angola Prospects With Kizomba Redevelopment & New Discovery",
+        "url": "https://finance.yahoo.com/energy/articles/xom-boosts-angola-prospects-kizomba-171600732.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-27 12:16 ET",
+        "pub_ts": 1795799760.0
+      },
+      {
         "title": "ExxonMobil Holdings Corporation (XOM) is Attracting Investor Attention: Here is What You Should Know",
         "url": "https://finance.yahoo.com/markets/stocks/articles/exxonmobil-holdings-corporation-xom-attracting-130003011.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2969,13 +2976,6 @@
         "source": "Yahoo Finance",
         "time": "11-25 10:02 ET",
         "pub_ts": 1795618961.0
-      },
-      {
-        "title": "Global Ethyl Derivatives Market Report 2026: Executive Strategy and Forecast to 2030 | Capitalize on Bio-Based and Pharma Demand with BASF, Dow, Arkema, Clariant, and Exxon Mobil",
-        "url": "https://finance.yahoo.com/markets/commodities/articles/global-ethyl-derivatives-market-report-143100666.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 09:31 ET",
-        "pub_ts": 1795617060.0
       }
     ],
     "JPM": [
@@ -3364,31 +3364,31 @@
     "KO": 1795805457.9580562,
     "FLY": 1795805457.9580562,
     "INTC": 1795805457.9580562,
-    "VRT": 1795803923.173732,
-    "HPE": 1795803923.173732,
-    "DELL": 1795803923.173732,
-    "OKLO": 1795803923.173732,
-    "CEG": 1795803923.173732,
-    "FPS": 1795803923.173732,
-    "MU": 1795803923.173732,
-    "SKHY": 1795803923.173732,
-    "WDC": 1795803923.173732,
-    "STX": 1795803923.173732,
-    "MSTR": 1795803923.173732,
-    "SNDK": 1795803923.173732,
-    "BTC-USD": 1795803923.173732,
-    "CRWD": 1795803923.173732,
-    "ORCL": 1795803923.173732,
-    "COIN": 1795803923.173732,
-    "LLY": 1795803923.173732,
-    "MRNA": 1795803923.173732,
-    "NKE": 1795803923.173732,
-    "MCD": 1795803923.173732,
-    "PEP": 1795804004.0674784,
-    "XOM": 1795804004.0674784,
-    "JPM": 1795804004.0674784,
+    "VRT": 1795805504.7640328,
+    "HPE": 1795805504.7640328,
+    "DELL": 1795805504.7640328,
+    "OKLO": 1795805504.7640328,
+    "CEG": 1795805504.7640328,
+    "FPS": 1795805504.7640328,
+    "MU": 1795805504.7640328,
+    "SKHY": 1795805504.7640328,
+    "WDC": 1795805504.7640328,
+    "STX": 1795805504.7640328,
+    "MSTR": 1795805504.7640328,
+    "SNDK": 1795805504.7640328,
+    "BTC-USD": 1795805504.7640328,
+    "CRWD": 1795805504.7640328,
+    "ORCL": 1795805504.7640328,
+    "COIN": 1795805504.7640328,
+    "LLY": 1795805504.7640328,
+    "MRNA": 1795805504.7640328,
+    "NKE": 1795805504.7640328,
+    "MCD": 1795805504.7640328,
+    "PEP": 1795805504.7640328,
+    "XOM": 1795805504.7640328,
+    "JPM": 1795805504.7640328,
     "WMT": 1795804004.0674784,
-    "V": 1795804004.0674784,
+    "V": 1795805504.7640328,
     "CAT": 1795804004.0674784,
     "FN": 1795805457.9580562,
     "GLW": 1795805457.9580562,
