@@ -1,5 +1,5 @@
 {
-  "updated_at_ts": 1795805420.508,
+  "updated_at_ts": 1795805457.958,
   "updated_at_et": "11-27 13:50 ET",
   "updated_at_kst": "03:50 KST",
   "macro_calendar": [],
@@ -1278,6 +1278,13 @@
     ],
     "PLTR": [
       {
+        "title": "Peter Thiel Takes $122M of Palantir Off the Market",
+        "url": "https://app.moby.co/home/news/news-peter-thiel-takes-122m-of-palantir-off-the-market?utm_source=yahoo_finance&utm_medium=rss&.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-27 13:29 ET",
+        "pub_ts": 1795804173.0
+      },
+      {
         "title": "Palantir Lands Major Defense Deal as European Demand Grows",
         "url": "https://finance.yahoo.com/technology/articles/palantir-lands-major-defense-deal-175756769.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1304,13 +1311,6 @@
         "source": "Yahoo Finance",
         "time": "11-27 11:31 ET",
         "pub_ts": 1795797091.0
-      },
-      {
-        "title": "Palantir Stock Jumps. It Could Land a Major Poland Defense Deal",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/palantir-stock-jumps-could-land-143921179.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-27 09:39 ET",
-        "pub_ts": 1795790361.0
       }
     ],
     "NOW": [
@@ -1396,6 +1396,13 @@
         "pub_ts": 1795780800.0
       },
       {
+        "title": "CoreWeave Eyes $4.5B Loan, but Bankruptcy Odds Rise to 21% on Prediction Markets",
+        "url": "https://www.benzinga.com/markets/prediction-markets/26/11/63685963/coreweave-wall-street-loan-bankruptcy?utm_source=yahooFinance&utm_campaign=partner_feed&utm_medium=referral&.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-27 13:30 ET",
+        "pub_ts": 1795804208.0
+      },
+      {
         "title": "Nvidia, CoreWeave Face New U.S. Restrictions on China AI Chip Access",
         "url": "https://finance.yahoo.com/technology/ai/articles/nvidia-coreweave-face-u-restrictions-172327378.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1415,13 +1422,6 @@
         "source": "Yahoo Finance",
         "time": "11-26 12:38 ET",
         "pub_ts": 1795714686.0
-      },
-      {
-        "title": "CoreWeave Seeks $4.5 Billion Meta-Backed Loan as Bond Yields Hit 18%",
-        "url": "https://finance.yahoo.com/technology/ai/articles/coreweave-seeks-4-5-billion-163142061.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-26 11:31 ET",
-        "pub_ts": 1795710702.0
       }
     ],
     "NBIS": [
@@ -2136,13 +2136,6 @@
         "pub_ts": 1795794312.0
       },
       {
-        "title": "BC-Most Active Stocks",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/bc-most-active-stocks-153017329.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-27 10:30 ET",
-        "pub_ts": 1795793417.0
-      },
-      {
         "title": "How Much More Could You Lose In Intel Stock?",
         "url": "https://www.trefis.com/stock/intc/articles/629327/how-much-more-could-you-lose-in-intel-stock/2026-11-27?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2162,6 +2155,13 @@
         "source": "Yahoo Finance",
         "time": "11-26 22:14 ET",
         "pub_ts": 1795749256.0
+      },
+      {
+        "title": "AMD Rises 4% Despite Erste Group Downgrade on Valuation; Marvell Climbs 6%, Intel Gains 5%",
+        "url": "https://247wallst.com/investing/2026/11/27/amd-rises-4-despite-erste-group-downgrade-on-valuation-marvell-climbs-6-intel-gains-5/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-27 09:02 ET",
+        "pub_ts": 1795788175.0
       }
     ],
     "VRT": [
@@ -3340,30 +3340,30 @@
     "GOOGL": 1795804763.7409952,
     "MSFT": 1795804763.7409952,
     "AAPL": 1795804763.7409952,
-    "PLTR": 1795803923.173732,
-    "NOW": 1795803923.173732,
-    "AMZN": 1795803923.173732,
-    "CRWV": 1795803923.173732,
-    "NBIS": 1795803923.173732,
-    "APLD": 1795803923.173732,
+    "PLTR": 1795805457.9580562,
+    "NOW": 1795805457.9580562,
+    "AMZN": 1795805457.9580562,
+    "CRWV": 1795805457.9580562,
+    "NBIS": 1795805457.9580562,
+    "APLD": 1795805457.9580562,
     "VST": 1795804763.7409952,
     "BE": 1795804763.7409952,
     "CRDO": 1795804763.7409952,
     "COHR": 1795804763.7409952,
-    "MRVL": 1795803923.173732,
-    "LITE": 1795803923.173732,
-    "AAOI": 1795803923.173732,
+    "MRVL": 1795805457.9580562,
+    "LITE": 1795805457.9580562,
+    "AAOI": 1795805457.9580562,
     "SPCX": 1795804763.7409952,
-    "ASTS": 1795803923.173732,
-    "AXTI": 1795803923.173732,
-    "NASA": 1795803923.173732,
-    "LUNR": 1795803923.173732,
-    "TSLA": 1795803923.173732,
-    "AXP": 1795803923.173732,
-    "RKLB": 1795803923.173732,
-    "KO": 1795803923.173732,
-    "FLY": 1795803923.173732,
-    "INTC": 1795803923.173732,
+    "ASTS": 1795805457.9580562,
+    "AXTI": 1795805457.9580562,
+    "NASA": 1795805457.9580562,
+    "LUNR": 1795805457.9580562,
+    "TSLA": 1795805457.9580562,
+    "AXP": 1795805457.9580562,
+    "RKLB": 1795805457.9580562,
+    "KO": 1795805457.9580562,
+    "FLY": 1795805457.9580562,
+    "INTC": 1795805457.9580562,
     "VRT": 1795803923.173732,
     "HPE": 1795803923.173732,
     "DELL": 1795803923.173732,
@@ -3390,11 +3390,11 @@
     "WMT": 1795804004.0674784,
     "V": 1795804004.0674784,
     "CAT": 1795804004.0674784,
-    "FN": 1795803923.173732,
-    "GLW": 1795803923.173732,
+    "FN": 1795805457.9580562,
+    "GLW": 1795805457.9580562,
     "ANT": 1795804004.0674784,
     "XAUUSD": 1795804004.0674784,
-    "KOSPI": 1795803923.173732,
+    "KOSPI": 1795805457.9580562,
     "KSTR": 1795804621.7671812
   },
   "opex_shield": {
