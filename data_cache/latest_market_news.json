@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795755434.775,
-  "updated_at_et": "11-26 23:57 ET",
-  "updated_at_kst": "13:57 KST",
+  "updated_at_ts": 1795755483.456,
+  "updated_at_et": "11-26 23:58 ET",
+  "updated_at_kst": "13:58 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -2597,7 +2597,7 @@
     ],
     "BTC-USD": [
       {
-        "title": "How a 35-Cent Attack Could Expose Bitcoin Wallet IP Addresses",
+        "title": "How a 35-cent attack could expose Bitcoin wallet IP addresses",
         "url": "http://videos.coindesk.com/previews/lUGLwF4n?.tsrc=rss",
         "source": "Yahoo Finance",
         "time": "11-26 23:17 ET",
@@ -2967,6 +2967,13 @@
     ],
     "JPM": [
       {
+        "title": "AI Risk Is 'Moving Somewhere Harder to See': Citigroup, JPMorgan Reportedly Look to Offload AI Debt as Investors Grow Wary of Buildout",
+        "url": "https://finance.yahoo.com/technology/ai/articles/ai-risk-moving-somewhere-harder-033352825.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-26 22:33 ET",
+        "pub_ts": 1795750432.0
+      },
+      {
         "title": "Is Standard Chartered (LSE:STAN) Undervalued Following Its J.P. Morgan Conference Appearance?",
         "url": "https://finance.yahoo.com/markets/stocks/articles/standard-chartered-lse-stan-undervalued-220908677.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2993,13 +3000,6 @@
         "source": "Yahoo Finance",
         "time": "11-26 03:08 ET",
         "pub_ts": 1795680518.0
-      },
-      {
-        "title": "Market Chatter: JPMorgan Projects $450 Billion in AI High-Grade Debt Issuance for 2027",
-        "url": "https://finance.yahoo.com/technology/ai/articles/market-chatter-jpmorgan-projects-450-222027435.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 17:20 ET",
-        "pub_ts": 1795645227.0
       }
     ],
     "WMT": [
@@ -3192,8 +3192,8 @@
         "title": "Dow Jones Futures Rise; Look For This Bullish Market Signal On Black Friday",
         "url": "https://finance.yahoo.com/m/158e82fc-b889-34b6-8704-99a49e9a83ae/dow-jones-futures-rise%3B-look.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-26 23:19 ET",
-        "pub_ts": 1795753169.0
+        "time": "11-26 23:23 ET",
+        "pub_ts": 1795753438.0
       },
       {
         "title": "Is DXC Technology (DXC) Fully Valued On Its New AI Security Push?",
@@ -3358,28 +3358,28 @@
     "CEG": 1795755434.7754054,
     "FPS": 1795755434.7754054,
     "MU": 1795755434.7754054,
-    "SKHY": 1795753961.143889,
+    "SKHY": 1795755483.4556623,
     "WDC": 1795755434.7754054,
     "STX": 1795755434.7754054,
-    "MSTR": 1795753961.143889,
+    "MSTR": 1795755483.4556623,
     "SNDK": 1795755434.7754054,
-    "BTC-USD": 1795753961.143889,
-    "CRWD": 1795753961.143889,
-    "ORCL": 1795753961.143889,
-    "COIN": 1795753961.143889,
-    "LLY": 1795753961.143889,
-    "MRNA": 1795753961.143889,
-    "NKE": 1795753961.143889,
-    "MCD": 1795753961.143889,
-    "PEP": 1795753961.143889,
-    "XOM": 1795753961.143889,
-    "JPM": 1795753961.143889,
-    "WMT": 1795753961.143889,
-    "V": 1795753961.143889,
-    "CAT": 1795753961.143889,
+    "BTC-USD": 1795755483.4556623,
+    "CRWD": 1795755483.4556623,
+    "ORCL": 1795755483.4556623,
+    "COIN": 1795755483.4556623,
+    "LLY": 1795755483.4556623,
+    "MRNA": 1795755483.4556623,
+    "NKE": 1795755483.4556623,
+    "MCD": 1795755483.4556623,
+    "PEP": 1795755483.4556623,
+    "XOM": 1795755483.4556623,
+    "JPM": 1795755483.4556623,
+    "WMT": 1795755483.4556623,
+    "V": 1795755483.4556623,
+    "CAT": 1795755483.4556623,
     "FN": 1795755434.7754054,
     "GLW": 1795755123.3736885,
-    "ANT": 1795753961.143889,
+    "ANT": 1795755483.4556623,
     "XAUUSD": 1795754012.7798982,
     "KOSPI": 1795755434.7754054,
     "KSTR": 1795755123.3736885
