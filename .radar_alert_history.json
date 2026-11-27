@@ -34,8 +34,8 @@
       "last_notified_at": 0.0
     },
     "QCOM": {
-      "state": "NORMAL",
-      "last_notified_at": 0.0
+      "state": "WATCHLIST_ENTRY_READY",
+      "last_notified_at": 1795791958.7714531
     },
     "LUNR": {
       "state": "NORMAL",
@@ -90,8 +90,8 @@
       "last_notified_at": 0.0
     },
     "IGV": {
-      "state": "WATCHLIST_ENTRY_READY",
-      "last_notified_at": 1795791912.8958957
+      "state": "NORMAL",
+      "last_notified_at": 0.0
     },
     "CEG": {
       "state": "NORMAL",
@@ -162,8 +162,8 @@
       "last_notified_at": 1795482111.35759
     },
     "AMZN": {
-      "state": "WATCHLIST_ENTRY_READY",
-      "last_notified_at": 1795791820.9164774
+      "state": "NORMAL",
+      "last_notified_at": 0.0
     },
     "MSFT": {
       "state": "NORMAL",
@@ -178,8 +178,8 @@
       "last_notified_at": 1795615946.2530591
     },
     "PLTR": {
-      "state": "WATCHLIST_ENTRY_READY",
-      "last_notified_at": 1795791912.8958957
+      "state": "NORMAL",
+      "last_notified_at": 0.0
     }
   },
   "position_peaks": {
