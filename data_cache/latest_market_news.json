@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795816023.182,
-  "updated_at_et": "11-27 16:47 ET",
-  "updated_at_kst": "06:47 KST",
+  "updated_at_ts": 1795816101.693,
+  "updated_at_et": "11-27 16:48 ET",
+  "updated_at_kst": "06:48 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -841,21 +841,28 @@
         "pub_ts": 1795793427.0
       },
       {
-        "title": "Anthropic, Meta and Microsoft Join AI Data Center Talks in Japan",
-        "url": "https://finance.yahoo.com/technology/ai/articles/anthropic-meta-microsoft-join-ai-143801446.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-27 09:38 ET",
-        "pub_ts": 1795790281.0
-      },
-      {
         "title": "IREN (NasdaqGS:IREN) Stock Sees Modest Fair Value Cut After AI Cloud Sentiment Swings",
         "url": "https://finance.yahoo.com/markets/stocks/articles/iren-nasdaqgs-iren-stock-sees-190922720.html?.tsrc=rss",
         "source": "Yahoo Finance",
         "time": "11-27 14:09 ET",
         "pub_ts": 1795806562.0
+      },
+      {
+        "title": "What Does Alphabet (GOOGL) Need To Prove After The Air Force Cloud Breach?",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/does-alphabet-googl-prove-air-181025421.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-27 13:10 ET",
+        "pub_ts": 1795803025.0
       }
     ],
     "GOOGL": [
+      {
+        "title": "5 Best Tech Stocks to Buy for 2027 According to Hedge Funds",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/5-best-tech-stocks-buy-030856400.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-27 16:28 ET",
+        "pub_ts": 1795814936.0
+      },
       {
         "title": "Jensen Huang Is Back. Nvidia’s (NVDA) Bull Case Remains",
         "url": "https://finance.yahoo.com/markets/stocks/articles/jensen-huang-back-nvidia-nvda-210600721.html?.tsrc=rss",
@@ -883,13 +890,6 @@
         "source": "Yahoo Finance",
         "time": "11-27 13:49 ET",
         "pub_ts": 1795805361.0
-      },
-      {
-        "title": "Top Stock Reports for Alphabet, Meta & Bank of America",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/top-stock-reports-alphabet-meta-184100991.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-27 13:41 ET",
-        "pub_ts": 1795804860.0
       }
     ],
     "ASML": [
@@ -3012,31 +3012,31 @@
     ]
   },
   "ticker_news_ts": {
-    "DIA": 1795814568.392329,
-    "IWM": 1795814568.392329,
-    "SOXX": 1795814568.392329,
-    "SPY": 1795814568.392329,
-    "QQQ": 1795814568.392329,
-    "KORU": 1795814568.392329,
-    "SOXL": 1795814568.392329,
-    "SMH": 1795814568.392329,
-    "KSTR": 1795814568.392329,
-    "TLT": 1795814568.392329,
-    "SQQQ": 1795814568.392329,
-    "GLD": 1795814568.392329,
-    "IGV": 1795814568.392329,
-    "SOXS": 1795814568.392329,
-    "VIXY": 1795814568.392329,
-    "NVDA": 1795814568.392329,
-    "TSM": 1795814568.392329,
-    "AMD": 1795814568.392329,
-    "AVGO": 1795814568.392329,
-    "AMAT": 1795814568.392329,
-    "QCOM": 1795814568.392329,
-    "MSFT": 1795814568.392329,
-    "GOOGL": 1795814568.392329,
-    "ASML": 1795814568.392329,
-    "KOSPI": 1795814568.392329,
+    "DIA": 1795816101.6929255,
+    "IWM": 1795816101.6929255,
+    "SOXX": 1795816101.6929255,
+    "SPY": 1795816101.6929255,
+    "QQQ": 1795816101.6929255,
+    "KORU": 1795816101.6929255,
+    "SOXL": 1795816101.6929255,
+    "SMH": 1795816101.6929255,
+    "KSTR": 1795816101.6929255,
+    "TLT": 1795816101.6929255,
+    "SQQQ": 1795816101.6929255,
+    "GLD": 1795816101.6929255,
+    "IGV": 1795816101.6929255,
+    "SOXS": 1795816101.6929255,
+    "VIXY": 1795816101.6929255,
+    "NVDA": 1795816101.6929255,
+    "TSM": 1795816101.6929255,
+    "AMD": 1795816101.6929255,
+    "AVGO": 1795816101.6929255,
+    "AMAT": 1795816101.6929255,
+    "QCOM": 1795816101.6929255,
+    "MSFT": 1795816101.6929255,
+    "GOOGL": 1795816101.6929255,
+    "ASML": 1795816101.6929255,
+    "KOSPI": 1795816101.6929255,
     "META": 1795814660.8614402,
     "AAPL": 1795814660.8614402,
     "AMZN": 1795814660.8614402,
