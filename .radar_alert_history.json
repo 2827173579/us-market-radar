@@ -18,20 +18,20 @@
       "last_notified_at": 0.0
     },
     "DIA": {
-      "state": "NORMAL",
-      "last_notified_at": 0.0
+      "state": "WATCHLIST_ENTRY_READY",
+      "last_notified_at": 1795813483.2777324
     },
     "AXP": {
-      "state": "WATCHLIST_ENTRY_READY",
-      "last_notified_at": 1795811673.0726717
+      "state": "NORMAL",
+      "last_notified_at": 0.0
     },
     "FLY": {
       "state": "NORMAL",
       "last_notified_at": 0.0
     },
     "IWM": {
-      "state": "WATCHLIST_ENTRY_READY",
-      "last_notified_at": 1795813404.702897
+      "state": "NORMAL",
+      "last_notified_at": 0.0
     }
   },
   "position_peaks": {}
