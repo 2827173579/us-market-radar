@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795745672.975,
-  "updated_at_et": "11-26 21:14 ET",
-  "updated_at_kst": "11:14 KST",
+  "updated_at_ts": 1795745721.102,
+  "updated_at_et": "11-26 21:15 ET",
+  "updated_at_kst": "11:15 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -1749,6 +1749,13 @@
     ],
     "SPCX": [
       {
+        "title": "What Could Tesla (TSLA) Merger Talks Mean For Its Stock?",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/could-tesla-tsla-merger-talks-013007632.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-26 20:30 ET",
+        "pub_ts": 1795743007.0
+      },
+      {
         "title": "Mexico wants a say in where SpaceX flies — says harmful rocket debris keeps washing up on its shores",
         "url": "https://finance.yahoo.com/economy/policy/articles/mexico-wants-where-spacex-flies-003000153.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1775,13 +1782,6 @@
         "source": "Yahoo Finance",
         "time": "11-26 16:30 ET",
         "pub_ts": 1795728604.0
-      },
-      {
-        "title": "SpaceX Is a Great Company. Is It a Great Stock at This Price?",
-        "url": "https://www.fool.com/investing/2026/11/26/spacex-is-a-great-company-is-it-a-great-stock-at-this-price/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-26 15:56 ET",
-        "pub_ts": 1795726562.0
       }
     ],
     "ASTS": [
@@ -3305,23 +3305,23 @@
     ]
   },
   "ticker_news_ts": {
-    "KORU": 1795744176.9782598,
-    "SOXL": 1795744176.9782598,
-    "SPY": 1795744176.9782598,
-    "DIA": 1795744176.9782598,
-    "SOXX": 1795744176.9782598,
-    "QQQ": 1795744176.9782598,
-    "SMH": 1795744176.9782598,
-    "IWM": 1795744176.9782598,
-    "IGV": 1795744176.9782598,
-    "TLT": 1795744176.9782598,
-    "GLD": 1795744176.9782598,
-    "SQQQ": 1795744176.9782598,
+    "KORU": 1795745721.1015732,
+    "SOXL": 1795745721.1015732,
+    "SPY": 1795745721.1015732,
+    "DIA": 1795745721.1015732,
+    "SOXX": 1795745721.1015732,
+    "QQQ": 1795745721.1015732,
+    "SMH": 1795745721.1015732,
+    "IWM": 1795745721.1015732,
+    "IGV": 1795745721.1015732,
+    "TLT": 1795745721.1015732,
+    "GLD": 1795745721.1015732,
+    "SQQQ": 1795745721.1015732,
     "TSM": 1795744396.871075,
-    "VIXY": 1795744176.9782598,
-    "SOXS": 1795744176.9782598,
-    "NVDA": 1795744176.9782598,
-    "AMD": 1795744176.9782598,
+    "VIXY": 1795745721.1015732,
+    "SOXS": 1795745721.1015732,
+    "NVDA": 1795745721.1015732,
+    "AMD": 1795745721.1015732,
     "ASML": 1795744396.871075,
     "QCOM": 1795744396.871075,
     "AVGO": 1795744396.871075,
@@ -3336,15 +3336,15 @@
     "CRWV": 1795744440.0993042,
     "NBIS": 1795744440.0993042,
     "APLD": 1795744440.0993042,
-    "VST": 1795744176.9782598,
-    "BE": 1795744176.9782598,
-    "CRDO": 1795744176.9782598,
-    "COHR": 1795744176.9782598,
+    "VST": 1795745721.1015732,
+    "BE": 1795745721.1015732,
+    "CRDO": 1795745721.1015732,
+    "COHR": 1795745721.1015732,
     "MRVL": 1795744440.0993042,
     "LITE": 1795744440.0993042,
-    "AAOI": 1795744176.9782598,
-    "SPCX": 1795744176.9782598,
-    "ASTS": 1795744176.9782598,
+    "AAOI": 1795745721.1015732,
+    "SPCX": 1795745721.1015732,
+    "ASTS": 1795745721.1015732,
     "AXTI": 1795744440.0993042,
     "NASA": 1795744396.871075,
     "LUNR": 1795744396.871075,
@@ -3381,11 +3381,11 @@
     "V": 1795744440.0993042,
     "CAT": 1795744492.9272506,
     "FN": 1795744440.0993042,
-    "GLW": 1795744176.9782598,
+    "GLW": 1795745721.1015732,
     "ANT": 1795744492.9272506,
     "XAUUSD": 1795744492.9272506,
     "KOSPI": 1795744440.0993042,
-    "KSTR": 1795744176.9782598
+    "KSTR": 1795745721.1015732
   },
   "opex_shield": {
     "date": "2026-11-26",
