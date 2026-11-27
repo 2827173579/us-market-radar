@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795778621.216,
-  "updated_at_et": "11-27 06:23 ET",
-  "updated_at_kst": "20:23 KST",
+  "updated_at_ts": 1795778670.195,
+  "updated_at_et": "11-27 06:24 ET",
+  "updated_at_kst": "20:24 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -1160,6 +1160,20 @@
     ],
     "GOOGL": [
       {
+        "title": "ETFs Bought $134.0 Million of Alphabet (GOOG) on Wednesday",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/etfs-bought-134-0-million-110107981.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-27 06:01 ET",
+        "pub_ts": 1795777267.0
+      },
+      {
+        "title": "Alphabet (GOOGL) Sees $153.3 Million in Net ETF Buying on Wednesday",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/alphabet-googl-sees-153-3-110056379.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-27 06:00 ET",
+        "pub_ts": 1795777256.0
+      },
+      {
         "title": "SpaceX's AI Business Is Now Nearly Half of Revenue. Here's What Happens to the Stock if Google and Anthropic Both Renew.",
         "url": "https://www.fool.com/investing/2026/11/27/spacexs-ai-business-is-now-nearly-half-of-revenue/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1179,23 +1193,16 @@
         "source": "Yahoo Finance",
         "time": "11-26 22:22 ET",
         "pub_ts": 1795749723.0
-      },
-      {
-        "title": "5 Best Quantum Computing Stocks To Buy for 2027",
-        "url": "https://finance.yahoo.com/technology/articles/5-best-quantum-computing-stocks-032149616.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-26 22:21 ET",
-        "pub_ts": 1795749709.0
-      },
-      {
-        "title": "5 Best Tech Stocks to Buy for 2027 According to Hedge Funds",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/5-best-tech-stocks-buy-030856400.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-26 22:08 ET",
-        "pub_ts": 1795748936.0
       }
     ],
     "MSFT": [
+      {
+        "title": "ETFs Are Buying Microsoft (MSFT) on Nov. 25",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/etfs-buying-microsoft-msft-nov-110036387.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-27 06:00 ET",
+        "pub_ts": 1795777236.0
+      },
       {
         "title": "Is Microsoft (MSFT) Fully Valued Following Its Atos Sovereign Cloud Deal?",
         "url": "https://finance.yahoo.com/markets/stocks/articles/microsoft-msft-fully-valued-following-090939545.html?.tsrc=rss",
@@ -1223,16 +1230,16 @@
         "source": "Yahoo Finance",
         "time": "11-26 13:42 ET",
         "pub_ts": 1795718520.0
-      },
-      {
-        "title": "Can NICE (TASE:NICE) Support A Reasonable Price On Earnings?",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/nice-tase-nice-support-reasonable-181420159.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-26 13:14 ET",
-        "pub_ts": 1795716860.0
       }
     ],
     "AAPL": [
+      {
+        "title": "Apple (AAPL) Sees $437.3 Million in Net ETF Buying on Nov. 25",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/apple-aapl-sees-437-3-110032009.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-27 06:00 ET",
+        "pub_ts": 1795777232.0
+      },
       {
         "title": "Airbnb CEO Brian Chesky says staff call him a ‘control freak’—but that he learned it from Apple’s Steve Jobs",
         "url": "https://finance.yahoo.com/small-business/articles/airbnb-ceo-brian-chesky-says-080100881.html?.tsrc=rss",
@@ -1260,13 +1267,6 @@
         "source": "Yahoo Finance",
         "time": "11-26 14:30 ET",
         "pub_ts": 1795721403.0
-      },
-      {
-        "title": "Apple Stocks Rise as AI Selloff Spares the iPhone Maker",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/apple-stocks-rise-ai-selloff-190038273.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-26 14:00 ET",
-        "pub_ts": 1795719638.0
       }
     ],
     "PLTR": [
@@ -1752,6 +1752,13 @@
     ],
     "SPCX": [
       {
+        "title": "ETFs Bought $76.1 Million of SpaceX (SPCX) on Nov. 25",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/etfs-bought-76-1-million-110130440.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-27 06:01 ET",
+        "pub_ts": 1795777290.0
+      },
+      {
         "title": "SpaceX's AI Business Is Now Nearly Half of Revenue. Here's What Happens to the Stock if Google and Anthropic Both Renew.",
         "url": "https://www.fool.com/investing/2026/11/27/spacexs-ai-business-is-now-nearly-half-of-revenue/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1778,13 +1785,6 @@
         "source": "Yahoo Finance",
         "time": "11-26 22:55 ET",
         "pub_ts": 1795751703.0
-      },
-      {
-        "title": "Amazon Lost 40 Satellites on a Boeing-Lockheed Rocket in November. SpaceX Is the Only Company That Can Fix Amazon’s Problem. Is the Stock a Buy Near $130?",
-        "url": "https://www.fool.com/investing/2026/11/26/amazon-lost-40-satellites-on-a-boeing-lockheed-rocket-in-november-spacex-is-the-only-company-that-can-fix-amazon-s-problem-is-the-stock-a-buy-near-usd130/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-26 22:53 ET",
-        "pub_ts": 1795751582.0
       }
     ],
     "ASTS": [
@@ -3324,29 +3324,29 @@
     "VIXY": 1795778570.8721757,
     "SOXS": 1795778570.8721757,
     "NVDA": 1795778570.8721757,
-    "AMD": 1795777168.9245915,
-    "ASML": 1795777168.9245915,
-    "QCOM": 1795777168.9245915,
-    "AVGO": 1795777168.9245915,
-    "AMAT": 1795777168.9245915,
-    "META": 1795777168.9245915,
-    "GOOGL": 1795777168.9245915,
-    "MSFT": 1795777168.9245915,
-    "AAPL": 1795777168.9245915,
+    "AMD": 1795778670.1948578,
+    "ASML": 1795778670.1948578,
+    "QCOM": 1795778670.1948578,
+    "AVGO": 1795778670.1948578,
+    "AMAT": 1795778670.1948578,
+    "META": 1795778670.1948578,
+    "GOOGL": 1795778670.1948578,
+    "MSFT": 1795778670.1948578,
+    "AAPL": 1795778670.1948578,
     "PLTR": 1795777224.2801063,
     "NOW": 1795777224.2801063,
     "AMZN": 1795777224.2801063,
     "CRWV": 1795777224.2801063,
     "NBIS": 1795777224.2801063,
     "APLD": 1795777224.2801063,
-    "VST": 1795777168.9245915,
-    "BE": 1795777168.9245915,
-    "CRDO": 1795777168.9245915,
-    "COHR": 1795777168.9245915,
+    "VST": 1795778670.1948578,
+    "BE": 1795778670.1948578,
+    "CRDO": 1795778670.1948578,
+    "COHR": 1795778670.1948578,
     "MRVL": 1795777224.2801063,
     "LITE": 1795777279.7014213,
     "AAOI": 1795777168.9245915,
-    "SPCX": 1795777168.9245915,
+    "SPCX": 1795778670.1948578,
     "ASTS": 1795777224.2801063,
     "AXTI": 1795777279.7014213,
     "NASA": 1795777224.2801063,
