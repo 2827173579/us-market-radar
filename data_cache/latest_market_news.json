@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795761920.89,
-  "updated_at_et": "11-27 01:45 ET",
-  "updated_at_kst": "15:45 KST",
+  "updated_at_ts": 1795761974.202,
+  "updated_at_et": "11-27 01:46 ET",
+  "updated_at_kst": "15:46 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -2592,6 +2592,13 @@
     ],
     "BTC-USD": [
       {
+        "title": "Bitcoin recovers to $61.5k; set for first positive week in 8",
+        "url": "https://finance.yahoo.com/markets/crypto/articles/bitcoin-recovers-61-5k-set-062257549.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-27 01:22 ET",
+        "pub_ts": 1795760577.0
+      },
+      {
         "title": "How a 35-cent attack could expose Bitcoin wallet IP addresses",
         "url": "http://videos.coindesk.com/previews/lUGLwF4n?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2618,13 +2625,6 @@
         "source": "Yahoo Finance",
         "time": "11-26 15:50 ET",
         "pub_ts": 1795726217.0
-      },
-      {
-        "title": "Bitcoin’s Price Every Thanksgiving Since 2013",
-        "url": "https://247wallst.com/investing/cryptocurrency/2026/11/26/bitcoins-price-every-thanksgiving-since-2013/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-26 14:44 ET",
-        "pub_ts": 1795722296.0
       }
     ],
     "CRWD": [
@@ -3358,23 +3358,23 @@
     "STX": 1795761920.889986,
     "MSTR": 1795761920.889986,
     "SNDK": 1795761920.889986,
-    "BTC-USD": 1795760400.3782628,
+    "BTC-USD": 1795761974.202155,
     "CRWD": 1795761920.889986,
-    "ORCL": 1795760400.3782628,
-    "COIN": 1795760400.3782628,
-    "LLY": 1795760400.3782628,
-    "MRNA": 1795760400.3782628,
-    "NKE": 1795760400.3782628,
-    "MCD": 1795760400.3782628,
-    "PEP": 1795760400.3782628,
-    "XOM": 1795760400.3782628,
-    "JPM": 1795760400.3782628,
-    "WMT": 1795760400.3782628,
-    "V": 1795760400.3782628,
-    "CAT": 1795760400.3782628,
+    "ORCL": 1795761974.202155,
+    "COIN": 1795761974.202155,
+    "LLY": 1795761974.202155,
+    "MRNA": 1795761974.202155,
+    "NKE": 1795761974.202155,
+    "MCD": 1795761974.202155,
+    "PEP": 1795761974.202155,
+    "XOM": 1795761974.202155,
+    "JPM": 1795761974.202155,
+    "WMT": 1795761974.202155,
+    "V": 1795761974.202155,
+    "CAT": 1795761974.202155,
     "FN": 1795761920.889986,
     "GLW": 1795761744.2903082,
-    "ANT": 1795760400.3782628,
+    "ANT": 1795761974.202155,
     "XAUUSD": 1795760501.4043067,
     "KOSPI": 1795761920.889986,
     "KSTR": 1795761744.2903082
