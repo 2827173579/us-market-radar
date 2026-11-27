@@ -14,8 +14,8 @@
       "last_notified_at": 1795568545.5093307
     },
     "META": {
-      "state": "WATCHLIST_ENTRY_READY",
-      "last_notified_at": 1795796362.7038603
+      "state": "NORMAL",
+      "last_notified_at": 0.0
     },
     "MRNA": {
       "state": "NORMAL",
@@ -74,16 +74,16 @@
       "last_notified_at": 0.0
     },
     "AXP": {
-      "state": "NORMAL",
-      "last_notified_at": 0.0
+      "state": "WATCHLIST_ENTRY_READY",
+      "last_notified_at": 1795796655.732522
     },
     "SPY": {
       "state": "WATCHLIST_ENTRY_READY",
       "last_notified_at": 1795796255.8763266
     },
     "DIA": {
-      "state": "NORMAL",
-      "last_notified_at": 0.0
+      "state": "WATCHLIST_ENTRY_READY",
+      "last_notified_at": 1795796655.732522
     },
     "IWM": {
       "state": "WATCHLIST_ENTRY_READY",
