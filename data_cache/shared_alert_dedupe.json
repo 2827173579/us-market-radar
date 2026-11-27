@@ -71,9 +71,13 @@
     "2026-11-27:DEFENSIVE_FLIGHT:blue:+0.3": {
       "device": "PC",
       "ts": 1795808692.608186
+    },
+    "2026-11-27:QCOM/DIA:5M_ENTRY": {
+      "device": "PC",
+      "ts": 1795808768.243553
     }
   },
   "device": "PC",
-  "last_heartbeat_ts": 1795808640.010335,
-  "updated_at": "2026-11-27T19:44:52.608259+00:00"
+  "last_heartbeat_ts": 1795808712.682033,
+  "updated_at": "2026-11-27T19:46:08.243598+00:00"
 }
