@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795784552.018,
-  "updated_at_et": "11-27 08:02 ET",
-  "updated_at_kst": "22:02 KST",
+  "updated_at_ts": 1795784658.864,
+  "updated_at_et": "11-27 08:04 ET",
+  "updated_at_kst": "22:04 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -902,6 +902,13 @@
     ],
     "NVDA": [
       {
+        "title": "Nvidia stock is still paying the price for the Jensen Huang CEO drama",
+        "url": "https://finance.yahoo.com/markets/stocks/article/nvidia-stock-is-still-paying-the-price-for-the-jensen-huang-ceo-drama-124902053.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-27 07:49 ET",
+        "pub_ts": 1795783742.0
+      },
+      {
         "title": "He was right about AI and still lost $35 billion",
         "url": "https://finance.yahoo.com/video/ai-still-lost-35-billion-120000023.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -909,32 +916,25 @@
         "pub_ts": 1795780800.0
       },
       {
-        "title": "3 Stocks I'd Love to Buy at Black Friday Sale Prices",
-        "url": "https://www.fool.com/investing/2026/11/27/3-stocks-i-d-love-to-buy-at-black-friday-sale-prices/?.tsrc=rss",
+        "title": "Nvidia Blackwell chips found in Shanghai data center tied to Alice Huang",
+        "url": "https://finance.yahoo.com/technology/ai/articles/nvidia-blackwell-chips-found-shanghai-124008621.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-27 07:35 ET",
-        "pub_ts": 1795782902.0
+        "time": "11-27 07:40 ET",
+        "pub_ts": 1795783208.0
       },
       {
-        "title": "President Donald Trump Just Floated the Idea of the U.S. Government Buying a Stake in Nvidia -- but It Wouldn't Fix the Company's Biggest Flaw",
-        "url": "https://www.fool.com/investing/2026/11/27/donald-trump-just-floated-idea-government-buy-stake-in-nvidia-wouldnt-fix-biggest-flaw/?.tsrc=rss",
+        "title": "Trump Wants a GDP Investigation Over the “Fake” Pre-Election Number",
+        "url": "https://247wallst.com/investing/2026/11/27/trump-wants-a-gdp-investigation-over-the-fake-pre-election-number/?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-27 07:26 ET",
-        "pub_ts": 1795782362.0
+        "time": "11-27 07:38 ET",
+        "pub_ts": 1795783135.0
       },
       {
-        "title": "Dell, Super Micro Under Pressure as Nvidia Halts Shipments to 4 Asian Countries",
-        "url": "https://247wallst.com/investing/2026/11/27/dell-super-micro-under-pressure-as-nvidia-halts-shipments-to-4-asian-countries/?.tsrc=rss",
+        "title": "Tech Sell-Off: 1 Unstoppable Stock-Split Stock to Buy Before It Joins Nvidia, Alphabet, Microsoft, and Apple in the $3 Trillion Club",
+        "url": "https://www.fool.com/investing/2026/11/27/tech-sell-off-1-unstoppable-stock-split-stock-buy-before-joins-nvidia-alphabet-microsoft-apple-usd3-trillion-club/?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-27 07:22 ET",
-        "pub_ts": 1795782123.0
-      },
-      {
-        "title": "Why A Big Nvidia Stake Can Delay Retirement Years",
-        "url": "https://www.trefis.com/stock/nvda/articles/629264/why-a-big-nvidia-stake-can-delay-retirement-years/2026-11-27?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-27 07:18 ET",
-        "pub_ts": 1795781890.0
+        "time": "11-27 07:37 ET",
+        "pub_ts": 1795783022.0
       }
     ],
     "AMD": [
@@ -3309,22 +3309,22 @@
     ]
   },
   "ticker_news_ts": {
-    "KORU": 1795783155.550618,
-    "SOXL": 1795783155.550618,
-    "SPY": 1795783155.550618,
-    "DIA": 1795783155.550618,
-    "SOXX": 1795783155.550618,
-    "QQQ": 1795783155.550618,
-    "SMH": 1795783155.550618,
-    "IWM": 1795783155.550618,
-    "IGV": 1795783155.550618,
-    "TLT": 1795783155.550618,
-    "GLD": 1795783155.550618,
-    "SQQQ": 1795783155.550618,
-    "TSM": 1795783155.550618,
-    "VIXY": 1795783155.550618,
-    "SOXS": 1795783155.550618,
-    "NVDA": 1795783155.550618,
+    "KORU": 1795784658.8640833,
+    "SOXL": 1795784658.8640833,
+    "SPY": 1795784658.8640833,
+    "DIA": 1795784658.8640833,
+    "SOXX": 1795784658.8640833,
+    "QQQ": 1795784658.8640833,
+    "SMH": 1795784658.8640833,
+    "IWM": 1795784658.8640833,
+    "IGV": 1795784658.8640833,
+    "TLT": 1795784658.8640833,
+    "GLD": 1795784658.8640833,
+    "SQQQ": 1795784658.8640833,
+    "TSM": 1795784658.8640833,
+    "VIXY": 1795784658.8640833,
+    "SOXS": 1795784658.8640833,
+    "NVDA": 1795784658.8640833,
     "AMD": 1795783263.141858,
     "ASML": 1795783263.141858,
     "QCOM": 1795783263.141858,
@@ -3389,7 +3389,7 @@
     "ANT": 1795784028.9098036,
     "XAUUSD": 1795784028.9098036,
     "KOSPI": 1795784028.9098036,
-    "KSTR": 1795783155.550618
+    "KSTR": 1795784658.8640833
   },
   "opex_shield": {
     "date": "2026-11-27",
