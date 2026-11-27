@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795780041.483,
-  "updated_at_et": "11-27 06:47 ET",
-  "updated_at_kst": "20:47 KST",
+  "updated_at_ts": 1795780094.216,
+  "updated_at_et": "11-27 06:48 ET",
+  "updated_at_kst": "20:48 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -420,6 +420,13 @@
     ],
     "SPY": [
       {
+        "title": "Should State Street SPDR S&P 500 ETF Trust (SPY) Be on Your Investing Radar?",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/state-street-spdr-p-500-102002352.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-27 05:20 ET",
+        "pub_ts": 1795774802.0
+      },
+      {
         "title": "Dave Ramsey Is 66 and Owns Zero Bonds. Should Retirees Follow Him?",
         "url": "https://247wallst.com/personal-finance/2026/11/26/dave-ramsey-is-66-and-owns-zero-bonds-should-retirees-follow-him/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -446,13 +453,6 @@
         "source": "Yahoo Finance",
         "time": "11-26 06:03 ET",
         "pub_ts": 1795691016.0
-      },
-      {
-        "title": "ETFs Are Net Sellers of Intuitive Surgical (ISRG) on Nov. 24",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/etfs-net-sellers-intuitive-surgical-110334735.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-26 06:03 ET",
-        "pub_ts": 1795691014.0
       }
     ],
     "DIA": [
@@ -494,6 +494,13 @@
     ],
     "SOXX": [
       {
+        "title": "ETFs Are Net Sellers of ON Semiconductor (ON) on Nov. 25",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/etfs-net-sellers-semiconductor-nov-110313250.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-27 06:03 ET",
+        "pub_ts": 1795777393.0
+      },
+      {
         "title": "What iShares PHLX SOX Semi (SOXX) Sold: AMD Leads on Nov. 24",
         "url": "https://finance.yahoo.com/markets/stocks/articles/ishares-phlx-sox-semi-soxx-110411069.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -520,16 +527,16 @@
         "source": "Yahoo Finance",
         "time": "11-25 06:01 ET",
         "pub_ts": 1795604518.0
-      },
-      {
-        "title": "ETFs Bought $75.2 Million of Qualcomm (QCOM) on Monday",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/etfs-bought-75-2-million-110142939.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 06:01 ET",
-        "pub_ts": 1795604502.0
       }
     ],
     "QQQ": [
+      {
+        "title": "What INVESCO QQQ Trust (QQQ) Bought: Apple Leads on Wednesday",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/invesco-qqq-trust-qqq-bought-110329959.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-27 06:03 ET",
+        "pub_ts": 1795777409.0
+      },
       {
         "title": "ETFs Are Buying Palantir (PLTR) on Wednesday",
         "url": "https://finance.yahoo.com/markets/stocks/articles/etfs-buying-palantir-pltr-wednesday-110139493.html?.tsrc=rss",
@@ -557,16 +564,16 @@
         "source": "Yahoo Finance",
         "time": "11-27 06:00 ET",
         "pub_ts": 1795777209.0
-      },
-      {
-        "title": "Invesco QQQ Trust (QQQ) Buys $187.4 Million More Apple on Tuesday",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/invesco-qqq-trust-qqq-buys-110402435.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-26 06:04 ET",
-        "pub_ts": 1795691042.0
       }
     ],
     "SMH": [
+      {
+        "title": "Renewed Tech Optimism Lifts Wall Street Pre-Bell; Asia, Europe Up",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/renewed-tech-optimism-lifts-wall-111258453.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-27 06:12 ET",
+        "pub_ts": 1795777978.0
+      },
       {
         "title": "Update: US Equity Indexes Mixed, Treasury Yields Drop as Investors Rotate Out of Chipmakers While Assessing Trade Tariffs",
         "url": "https://finance.yahoo.com/markets/stocks/articles/us-equity-indexes-mixed-treasury-213222387.html?.tsrc=rss",
@@ -594,13 +601,6 @@
         "source": "Yahoo Finance",
         "time": "11-25 20:19 ET",
         "pub_ts": 1795655993.0
-      },
-      {
-        "title": "The Semiconductor ETF Kept Falling After Nvidia Raised Its Forecast. Time to Buy?",
-        "url": "https://www.fool.com/investing/2026/11/24/the-semiconductor-etf-kept-falling-after-nvidia-raised-its-forecast-time-to-buy/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 23:57 ET",
-        "pub_ts": 1795582622.0
       }
     ],
     "IWM": [
@@ -610,6 +610,13 @@
         "source": "Yahoo Finance",
         "time": "11-26 04:04 ET",
         "pub_ts": 1795683880.0
+      },
+      {
+        "title": "iShares Russell 2000 (IWM) Adds Community Financial and Hope Bancorp on Nov. 25",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/ishares-russell-2000-iwm-adds-110405784.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-27 06:04 ET",
+        "pub_ts": 1795777445.0
       },
       {
         "title": "How to Turn Small-Cap Volatility Into a 14% Yield with Monthly Payouts",
@@ -631,13 +638,6 @@
         "source": "Yahoo Finance",
         "time": "11-25 17:18 ET",
         "pub_ts": 1795645095.0
-      },
-      {
-        "title": "iShares Russell 2000 (IWM) Buys $151.4 Million More Brookfield Infra on Monday",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/ishares-russell-2000-iwm-buys-110425391.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 06:04 ET",
-        "pub_ts": 1795604665.0
       }
     ],
     "IGV": [
@@ -790,6 +790,13 @@
     ],
     "TSM": [
       {
+        "title": "ETFs Sold $34.5 Million of Taiwan Semiconductor (TSM) on Nov. 25",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/etfs-sold-34-5-million-110229859.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-27 06:02 ET",
+        "pub_ts": 1795777349.0
+      },
+      {
         "title": "Taiwan Semiconductor Stocks Slip 1.96% as Taiwan's Market Sinks 4.8% in Chip Rout",
         "url": "https://finance.yahoo.com/markets/stocks/articles/taiwan-semiconductor-stocks-slip-1-190319001.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -816,13 +823,6 @@
         "source": "Yahoo Finance",
         "time": "11-26 06:10 ET",
         "pub_ts": 1795691454.0
-      },
-      {
-        "title": "ETFs Are Net Sellers of Taiwan Semiconductor (TSM) on Nov. 24",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/etfs-net-sellers-taiwan-semiconductor-110318756.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-26 06:03 ET",
-        "pub_ts": 1795690998.0
       }
     ],
     "VIXY": [
@@ -901,6 +901,20 @@
     ],
     "NVDA": [
       {
+        "title": "Nvidia Sellers Deliver a Stark Warning. These AI Stocks Could Feel the Pressure",
+        "url": "https://finance.yahoo.com/technology/ai/articles/nvidia-sellers-deliver-stark-warning-111929474.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-27 06:19 ET",
+        "pub_ts": 1795778369.0
+      },
+      {
+        "title": "President Trump Says 'Huang Is Happy to Return as Nvidia CEO'",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/president-trump-says-huang-happy-111035641.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-27 06:10 ET",
+        "pub_ts": 1795777835.0
+      },
+      {
         "title": "This Mindset Shift Helped Me Stop Dreading Market Sell-Offs. Now I Look Forward to Them.",
         "url": "https://www.fool.com/investing/2026/11/27/this-mindset-shift-helped-me-stop-dreading-market-sell-offs-now-i-look-forward-to-them/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -908,32 +922,18 @@
         "pub_ts": 1795777562.0
       },
       {
-        "title": "NVIDIA (NVDA) Sees $166.1 Million in Net ETF Buying on Nov. 25",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/nvidia-nvda-sees-166-1-110047656.html?.tsrc=rss",
+        "title": "iShares S&P 500 Growth (IVW) Adds Microsoft and Nvidia on Wednesday",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/ishares-p-500-growth-ivw-110506557.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-27 06:00 ET",
-        "pub_ts": 1795777247.0
+        "time": "11-27 06:05 ET",
+        "pub_ts": 1795777506.0
       },
       {
-        "title": "Nvidia Lost $1.7 Trillion This Fall. Who Won?",
-        "url": "https://www.trefis.com/stock/mrna/articles/629143/nvidia-lost-1-7-trillion-this-fall-moderna-and-walmart-won-why/2026-11-27?.tsrc=rss",
+        "title": "iShares Russell 1000 Growth (IWF) Buys $34.0 Million More NVIDIA on Wednesday",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/ishares-russell-1000-growth-iwf-110408142.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-27 06:00 ET",
-        "pub_ts": 1795777213.0
-      },
-      {
-        "title": "Singapore Reportedly In Talks With US To Retain Advanced AI Chip Access As Washington Tightens Export Restrictions",
-        "url": "https://stocktwits.com/news-articles/markets/equity/singapore-reportedly-in-talks-with-us-to-retain-advanced-ai-chip-access-as-washington-tightens-export-restrictions/cNbCpMoR9No?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-27 05:54 ET",
-        "pub_ts": 1795776854.0
-      },
-      {
-        "title": "Warren Buffett Wrote in February 2009 That He Buys Stocks Like Socks, When They're Marked Down. The S&P 500 Gained 50% During the Next Year.",
-        "url": "https://www.fool.com/investing/2026/11/27/warren-buffett-wrote-in-february-2009-that-he-buys-stocks-like-socks-when-they-re-marked-down-the-s-and-p-500-gained-50-over-the-next-year/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-27 05:50 ET",
-        "pub_ts": 1795776602.0
+        "time": "11-27 06:04 ET",
+        "pub_ts": 1795777448.0
       }
     ],
     "AMD": [
@@ -3308,22 +3308,22 @@
     ]
   },
   "ticker_news_ts": {
-    "KORU": 1795778570.8721757,
-    "SOXL": 1795778570.8721757,
-    "SPY": 1795778570.8721757,
-    "DIA": 1795778570.8721757,
-    "SOXX": 1795778570.8721757,
-    "QQQ": 1795778570.8721757,
-    "SMH": 1795778570.8721757,
-    "IWM": 1795778570.8721757,
-    "IGV": 1795778570.8721757,
-    "TLT": 1795778570.8721757,
-    "GLD": 1795778570.8721757,
-    "SQQQ": 1795778570.8721757,
-    "TSM": 1795778570.8721757,
-    "VIXY": 1795778570.8721757,
-    "SOXS": 1795778570.8721757,
-    "NVDA": 1795778570.8721757,
+    "KORU": 1795780094.2156043,
+    "SOXL": 1795780094.2156043,
+    "SPY": 1795780094.2156043,
+    "DIA": 1795780094.2156043,
+    "SOXX": 1795780094.2156043,
+    "QQQ": 1795780094.2156043,
+    "SMH": 1795780094.2156043,
+    "IWM": 1795780094.2156043,
+    "IGV": 1795780094.2156043,
+    "TLT": 1795780094.2156043,
+    "GLD": 1795780094.2156043,
+    "SQQQ": 1795780094.2156043,
+    "TSM": 1795780094.2156043,
+    "VIXY": 1795780094.2156043,
+    "SOXS": 1795780094.2156043,
+    "NVDA": 1795780094.2156043,
     "AMD": 1795778670.1948578,
     "ASML": 1795778670.1948578,
     "QCOM": 1795778670.1948578,
@@ -3388,7 +3388,7 @@
     "ANT": 1795779450.1332772,
     "XAUUSD": 1795779450.1332772,
     "KOSPI": 1795778834.3195145,
-    "KSTR": 1795778570.8721757
+    "KSTR": 1795780094.2156043
   },
   "opex_shield": {
     "date": "2026-11-27",
