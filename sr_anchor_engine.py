@@ -40,9 +40,14 @@ STATE_ALL_SUPPORT_BREACHED = "ALL_SUPPORT_BREACHED"
 STATE_R1_BROKEN = "R1_BROKEN"
 STATE_ALL_RESISTANCE_BROKEN = "ALL_RESISTANCE_BROKEN"
 
+SR_ANCHOR_ALGO_VERSION = 4
+
 _TIER1_LOW_VOL_TICKERS = frozenset({"XAUUSD", "GLD", "TLT"})
+_BROAD_INDEX_1X_ETFS = frozenset({"QQQ", "SPY", "DIA", "IWM", "VOO", "VTI", "TLT", "GLD"})
+_LEVERAGED_3X_ETFS = frozenset({"TQQQ", "SQQQ", "SOXL", "SOXS", "KORU", "VIXY"})
 _INVERSE_HEDGE_TICKERS = frozenset({"SOXS", "SQQQ", "VIXY"})
 _NON_US_TICKERS = frozenset({"KOSPI", "BTC-USD", "XAUUSD"})
+_THIN_EXTENDED_SESSIONS = frozenset({"OVERNIGHT", "PRE_MARKET", "POST_MARKET", "AFTER_HOURS"})
 _ALL_BREACH_STATES = (
     STATE_INTACT,
     STATE_S1_BREACHED,
@@ -52,34 +57,105 @@ _ALL_BREACH_STATES = (
 )
 
 
-def compute_sr_min_step_pct(atr_pct: float) -> float:
+def is_thin_extended_session(session_code: str = "") -> bool:
+    """判断是否为流动性较薄的美股盘外时段（夜盘 / 盘前 / 盘后），薄盘不计有效突破/有效击穿。"""
+    return str(session_code or "").strip().upper() in _THIN_EXTENDED_SESSIONS
+
+
+def compute_sr_min_step_pct(atr_pct: float, ticker: str = "") -> float:
     """
     ATR 自适应最小档位间距防扎堆：
-    min_step_pct = min(0.055, max(0.025, 0.45 * atr_f))
-    - 1x 低波标的 >= 2.5%
-    - 3x 高波杠杆标的约 4.0% ~ 5.5%
+    - 1x 宽基大盘 ETF (QQQ/SPY/DIA/IWM 等)：min(0.035, max(0.015, 0.55 * atr_f))，避免跳过近端 +2% 波段压力
+    - 常规 1x 标的：>= 2.5%
+    - 3x 高波杠杆标的：约 4.0% ~ 5.5%
     """
     raw = _opt_float(atr_pct)
     if raw is None or raw <= 0:
         atr_f = 0.025
     else:
         atr_f = (raw / 100.0) if raw > 1.0 else raw
+    tk_u = str(ticker or "").strip().upper()
+    if tk_u in _BROAD_INDEX_1X_ETFS:
+        return float(min(0.035, max(0.015, 0.55 * atr_f)))
     return float(min(0.055, max(0.025, 0.45 * atr_f)))
 
 
-def compute_sr_max_r2_step_pct(atr_pct: float) -> float:
+def compute_sr_max_r2_step_pct(atr_pct: float, ticker: str = "") -> float:
     """
-    真实候选 R2 相对 R1 的最大波段跨度上限（防中段筹码真空一脚飞到远期前高）：
-    max_r2_step_pct = min(0.22, max(0.10, 1.5 * atr_f))
-    - 低波 1x 标的 R2 距 R1 不超过 10%
-    - 高波 3x 杠杆不超过 18% ~ 22%
+    分层约束真实候选 R2 相对 R1 的最大波段跨度上限（杜绝跳过近端波段高点飞到远期老顶）：
+    - 1x 宽基大盘 ETF (QQQ/SPY/DIA/IWM 等)：硬封顶 6% (R1 * 1.06)
+    - 常规 1x 个股 / 行业 ETF：min(0.14, max(0.07, 1.5 * atr_f))
+    - 3x 杠杆 ETF：min(0.22, max(0.10, 1.5 * atr_f))
     """
     raw = _opt_float(atr_pct)
     if raw is None or raw <= 0:
         atr_f = 0.025
     else:
         atr_f = (raw / 100.0) if raw > 1.0 else raw
-    return float(min(0.22, max(0.10, 1.5 * atr_f)))
+    tk_u = str(ticker or "").strip().upper()
+    if tk_u in _BROAD_INDEX_1X_ETFS:
+        return 0.06
+    if tk_u in _LEVERAGED_3X_ETFS:
+        return float(min(0.22, max(0.10, 1.5 * atr_f)))
+    return float(min(0.14, max(0.07, 1.5 * atr_f)))
+
+
+def extract_near_20d_resistance_candidates(
+    df_history: Optional[pd.DataFrame],
+    base_px: float,
+    atr_dec: float = 0.025,
+) -> List[float]:
+    """
+    提取近 15~20 个交易日真实近端波段压力候选：
+    1. 局部波段高点 (Swing Highs: H[i] >= H[i-1] & H[i] >= H[i+1]) + 近 5/10/15 日高点；
+    2. 大阴线起跌高点（单日实体跌幅 >= max(1.0%, 0.70*ATR) 或收盘跌幅 >= max(1.2%, 0.80*ATR) 的当日最高价）。
+    """
+    if df_history is None or not isinstance(df_history, pd.DataFrame) or len(df_history) < 5 or "Close" not in df_history.columns:
+        return []
+    try:
+        sub20 = df_history.tail(20).copy()
+        closes = pd.to_numeric(sub20["Close"], errors="coerce").astype(float).values
+        opens = pd.to_numeric(sub20["Open"], errors="coerce").fillna(sub20["Close"]).astype(float).values if "Open" in sub20.columns else closes
+        highs = pd.to_numeric(sub20["High"], errors="coerce").fillna(sub20["Close"]).astype(float).values if "High" in sub20.columns else closes
+        n = min(len(closes), len(opens), len(highs))
+        if n < 3:
+            return []
+
+        cands: List[float] = []
+        # 1) 局部 Swing Highs（近 20 交易日）
+        for i in range(1, n - 1):
+            hi = float(highs[i])
+            if math.isfinite(hi) and hi >= float(highs[i - 1]) and hi >= float(highs[i + 1]) and hi > base_px * 1.004:
+                cands.append(round(hi, 2))
+        # 近 5 / 10 / 15 日波段高点（剔除最后 1 根若刚收尾）
+        h_prior = highs[:-1] if n >= 6 else highs
+        for w in (5, 10, 15):
+            if len(h_prior) >= w:
+                hw = float(np.nanmax(h_prior[-w:]))
+                if math.isfinite(hw) and hw > base_px * 1.004:
+                    cands.append(round(hw, 2))
+
+        # 2) 大阴线起跌高点（近 20 交易日显著抛压起点）
+        body_drop_th = max(0.010, 0.70 * float(atr_dec))
+        close_drop_th = max(0.012, 0.80 * float(atr_dec))
+        for i in range(n):
+            op = float(opens[i])
+            cl = float(closes[i])
+            hi = float(highs[i])
+            if not (math.isfinite(op) and math.isfinite(cl) and math.isfinite(hi) and op > 0):
+                continue
+            body_ret = (cl - op) / op
+            prev_c = float(closes[i - 1]) if i > 0 and math.isfinite(closes[i - 1]) and closes[i - 1] > 0 else op
+            day_ret = (cl - prev_c) / prev_c
+            if body_ret <= -body_drop_th or day_ret <= -close_drop_th:
+                if hi > base_px * 1.004:
+                    cands.append(round(hi, 2))
+                if op > base_px * 1.004:
+                    cands.append(round(op, 2))
+
+        return sorted({c for c in cands if base_px * 1.004 < c <= base_px * 1.45})
+    except Exception:
+        return []
 
 
 def _synthesize_bounded_r2(
@@ -337,13 +413,16 @@ def compute_static_sr_levels_with_sources(
     atr_dec = max(0.012, min(0.25, atr_dec))
     eff_atr = _compute_eff_atr(atr_dec * 100.0)
     is_tier1 = tk_u in _TIER1_LOW_VOL_TICKERS
+    is_broad_1x = tk_u in _BROAD_INDEX_1X_ETFS
+    is_lev_3x = tk_u in _LEVERAGED_3X_ETFS
     is_us_tk = tk_u not in _NON_US_TICKERS
     t1_mult = float(np.clip(0.50 * eff_atr, 0.008, 0.013)) if is_tier1 else 0.0
-    min_step_pct = compute_sr_min_step_pct(atr_dec)
+    min_step_pct = compute_sr_min_step_pct(atr_dec, ticker=tk_u)
     min_step_pct_eff = min_step_pct if not is_tier1 else max(0.015, min_step_pct * 0.6)
 
     support_real_cands: List[float] = []
     resist_real_cands: List[float] = []
+    near_20d_resist_cands: List[float] = []
 
     has_real_hist = df_history is not None and isinstance(df_history, pd.DataFrame) and len(df_history) >= 10 and "Close" in df_history.columns
     if has_real_hist:
@@ -380,11 +459,21 @@ def compute_static_sr_levels_with_sources(
                     support_real_cands.append(round(lv, 2))
                 elif lv > base_px * 1.004:
                     resist_real_cands.append(round(lv, 2))
+                    if lvl in (ema20, ma50, poc_20d):
+                        near_20d_resist_cands.append(round(lv, 2))
+
+        # 显式纳入近 15~20 个交易日局部波段高点 (Swing Highs) 与大阴线起跌高点
+        swing_20d_res = extract_near_20d_resistance_candidates(df_history, base_px=base_px, atr_dec=atr_dec)
+        if swing_20d_res:
+            near_20d_resist_cands.extend(swing_20d_res)
+            resist_real_cands.extend(swing_20d_res)
 
         for lvl in (high_20d, high_60d):
             lv = _opt_float(lvl)
             if lv is not None and lv > base_px * 1.004:
                 resist_real_cands.append(round(lv, 2))
+                if lvl == high_20d:
+                    near_20d_resist_cands.append(round(lv, 2))
 
         if low_60d is not None and high_60d is not None and high_60d > low_60d:
             rng = float(high_60d) - float(low_60d)
@@ -514,20 +603,34 @@ def compute_static_sr_levels_with_sources(
         r1 = round(base_px + min_step, 2)
         r1_source = SOURCE_ATR_ESTIMATE
 
-    # 规则 A（阻力对称防扎堆）+ 规则 C（远期离群 R2 上限收紧 · V5.3.2 防大涨误伤）：
-    # 离群上限以 max(active_price, R1) 为基准，且重算后的 R2 必须严格 > max(active_price, R1)
-    max_r2_step_pct = compute_sr_max_r2_step_pct(atr_dec)
+    # 规则 A（阻力对称防扎堆）+ 规则 C（V5.8 近端 R2 收口：优先最近近端波段高点/均线，禁止跳抓远期老顶）：
+    max_r2_step_pct = compute_sr_max_r2_step_pct(atr_dec, ticker=tk_u)
     r2_upper_anchor = max(r1, act_f) if (act_f is not None and act_f > 0) else r1
     r2_min_bound = r1 * (1.0 + min_step_pct_eff)
-    r2_max_bound = r2_upper_anchor * (1.0 + max_r2_step_pct)
+    atr_abs = base_px * atr_dec
+    if is_broad_1x:
+        # 1x 宽基大盘 ETF (QQQ/SPY/DIA/IWM 等) 硬约束：min(基准价 + 3.0*ATR14, R1 * 1.06)
+        r2_atr_cap = max(base_px, r2_upper_anchor) + 3.0 * atr_abs if (act_f is not None and act_f > r1) else (base_px + 3.0 * atr_abs)
+        r2_max_bound = min(r2_atr_cap, r2_upper_anchor * (1.0 + max_r2_step_pct))
+    elif is_lev_3x:
+        r2_max_bound = r2_upper_anchor * (1.0 + max_r2_step_pct)
+    else:
+        r2_max_bound = min(max(base_px, r2_upper_anchor) + 3.8 * atr_abs, r2_upper_anchor * (1.0 + max_r2_step_pct))
+    r2_max_bound = max(r2_max_bound, r2_min_bound)
+
+    near_20d_valid = sorted({round(x, 2) for x in near_20d_resist_cands if r2_min_bound <= x <= r2_max_bound})
     higher_res = [
         x for x in valid_res
         if r2_min_bound <= x <= r2_max_bound
     ]
     if act_f is not None and act_f > r1:
-        # 大涨越过静态 R1（如 SOXS 现价 $60.42 > R1 $50.00）：优先保留严格高于 active_price 的真实上压（如 $63.32）
-        above_act_res = [x for x in higher_res if x > act_f]
-        if above_act_res:
+        # 现价越过静态 R1：优先选择严格高于 active_price 且落在近端合理跨度内的最近阻力
+        above_act_near = [x for x in near_20d_valid if x > act_f * 1.003]
+        above_act_res = [x for x in higher_res if x > act_f * 1.003]
+        if above_act_near:
+            r2 = above_act_near[0]
+            r2_source = SOURCE_REAL_CHIPS
+        elif above_act_res:
             r2 = above_act_res[0]
             r2_source = SOURCE_REAL_CHIPS
         else:
@@ -539,8 +642,12 @@ def compute_static_sr_levels_with_sources(
                 min_abs_step=min_step,
             )
             r2_source = SOURCE_ATR_ESTIMATE
+    elif near_20d_valid:
+        # 优先选择距离 R1 最近的近 15~20 日真实结构压力（严禁再用 [-1] 跳过近端抓远期老顶）
+        r2 = near_20d_valid[0]
+        r2_source = SOURCE_REAL_CHIPS
     elif higher_res:
-        r2 = higher_res[-1] if len(higher_res) > 1 and higher_res[-1] <= upper_px_ref * 1.35 else higher_res[0]
+        r2 = higher_res[0]
         r2_source = SOURCE_REAL_CHIPS
     else:
         r2 = _synthesize_bounded_r2(
@@ -574,7 +681,9 @@ def compute_static_sr_levels_with_sources(
         "r2_source": r2_source,
         "min_step_pct": round(min_step_pct_eff, 4),
         "max_r2_step_pct": round(max_r2_step_pct, 4),
+        "algo_version": SR_ANCHOR_ALGO_VERSION,
         "r2_v532_guarded": True,
+        "r2_v58_near_guarded": True,
         "gap_pullback_candidates": gap_pullback_cands,
     }
 
@@ -630,8 +739,14 @@ def _anchor_valid_for_reuse(
     r2 = float(existing["anchor_r2"])
     if not (0 < s2 < s1 < r1 < r2):
         return False
-    # V5.3.2 防扎堆 + 远期离群 R2 校验（兼容现价大涨保护）：旧缓存缺少 r2_v532_guarded 时触发单次安全重建
-    if existing.get("min_step_pct") is None or existing.get("max_r2_step_pct") is None or not existing.get("r2_v532_guarded"):
+    # V5.8 近端 R2 收口校验：递增 algo_version 至 4，自动淘汰旧离群锚（如 QQQ $703.03），同日重建后继续盘中锁死不漂移
+    if (
+        existing.get("min_step_pct") is None
+        or existing.get("max_r2_step_pct") is None
+        or not existing.get("r2_v532_guarded")
+        or not existing.get("r2_v58_near_guarded")
+        or int(existing.get("algo_version") or 0) < SR_ANCHOR_ALGO_VERSION
+    ):
         return False
     ms = float(existing.get("min_step_pct") or 0.025)
     if ((s1 - s2) / max(s1, 0.01)) < (ms * 0.92) or ((r2 - r1) / max(r1, 0.01)) < (ms * 0.92):
@@ -665,7 +780,7 @@ def get_or_lock_daily_sr_anchor(
     d_key = str(date_et or resolve_trading_date_et())
     doc = load_daily_sr_anchors(anchors_path)
     if str(doc.get("date_et") or "") != d_key:
-        doc = {"version": 3, "date_et": d_key, "updated_at_utc": "", "anchors": {}}
+        doc = {"version": SR_ANCHOR_ALGO_VERSION, "date_et": d_key, "updated_at_utc": "", "anchors": {}}
     anchors = doc.setdefault("anchors", {})
     existing = anchors.get(tk_u)
 
@@ -711,7 +826,7 @@ def update_daily_sr_anchors_batch(
     doc = load_daily_sr_anchors(anchors_path)
     changed = False
     if str(doc.get("date_et") or "") != d_key:
-        doc = {"version": 3, "date_et": d_key, "updated_at_utc": "", "anchors": {}}
+        doc = {"version": SR_ANCHOR_ALGO_VERSION, "date_et": d_key, "updated_at_utc": "", "anchors": {}}
         changed = True
     anchors = doc.setdefault("anchors", {})
 
@@ -828,6 +943,7 @@ def evaluate_sr_breach_state(
     is_vix_backwardation: Optional[bool] = None,
     is_bear_dominant: Optional[bool] = None,
     is_inverse: Optional[bool] = None,
+    session_code: str = "",
 ) -> Dict[str, Any]:
     """
     对称五态顶底互换状态机 (S/R Flip) + 体制门禁 / 离群 R2 收口 / 止损一致性保护 + 按标的类别动态压制文案:
@@ -916,27 +1032,58 @@ def evaluate_sr_breach_state(
     )
 
     bear_suppressed_r1_break = False
+    sess_u = str(session_code or "").strip().upper()
+    thin_session = (not is_pts) and is_thin_extended_session(sess_u)
+    thin_sess_cn = "夜盘" if sess_u == "OVERNIGHT" else ("盘前" if sess_u == "PRE_MARKET" else "盘后")
+    thin_session_unconfirmed = False
 
     if s2 > 0 and px < s2:
         state = STATE_ALL_SUPPORT_BREACHED
-        badge = f"⚠️ 今日原定支撑全线跌穿 (原S1:{fp(s1)} / 原S2:{fp(s2)}) · 下方无真实支撑，别猜底"
-        script = (
-            f"{halt_prefix}【今日原定支撑全线跌穿 · 下方无真实支撑，别猜底】现价已跌破当日全部原定支撑 S1 ({fp(s1)}) / S2 ({fp(s2)})；"
-            f"原 S2 ({fp(s2)}) 已反转为上方第一压力（上方前压 R1 ({fp(r1)}) / R2 ({fp(r2)})）；"
-            f"严禁左侧猜底，仅认放量收回原 S2 或重夺 {vwap_str} 的右侧确认；防守止损位 {fp(eff_sl)}"
-        )
+        if thin_session:
+            thin_session_unconfirmed = True
+            badge = f"🌙 {thin_sess_cn}暂破原支撑 {fp(s1)}/{fp(s2)}（薄盘不计有效破位，待正规盘开盘确认）"
+            script = (
+                f"{halt_prefix}【{thin_sess_cn}薄盘暂破原定支撑带 · 待正规盘确认】{thin_sess_cn}报价暂破原支撑 S1 ({fp(s1)}) / S2 ({fp(s2)})，"
+                f"薄盘流动性较浅不计有效破位，严禁左侧猜底，等待正规盘开盘放量确认真实承接；防守止损位 {fp(eff_sl)}"
+            )
+        else:
+            badge = f"⚠️ 今日原定支撑全线跌穿 (原S1:{fp(s1)} / 原S2:{fp(s2)}) · 下方无真实支撑，别猜底"
+            script = (
+                f"{halt_prefix}【今日原定支撑全线跌穿 · 下方无真实支撑，别猜底】现价已跌破当日全部原定支撑 S1 ({fp(s1)}) / S2 ({fp(s2)})；"
+                f"原 S2 ({fp(s2)}) 已反转为上方第一压力（上方前压 R1 ({fp(r1)}) / R2 ({fp(r2)})）；"
+                f"严禁左侧猜底，仅认放量收回原 S2 或重夺 {vwap_str} 的右侧确认；防守止损位 {fp(eff_sl)}"
+            )
     elif s1 > 0 and px < s1:
         state = STATE_S1_BREACHED
-        badge = f"S1:{fp(s1)} 已击穿转压 ➔ 退守 S2:{fp(s2)}"
-        s2_lbl = "估算防线 S2" if s2_src == SOURCE_ATR_ESTIMATE else ("缺口回撤 S2" if s2_src == SOURCE_GAP_PULLBACK else "S2")
-        script = (
-            f"{halt_prefix}【S1击穿转压 · 退守下轨】原支撑 S1 ({fp(s1)}) 已有效击穿并转为反抽压力，"
-            f"半空严禁盲目接刀，退守 {s2_lbl} ({fp(s2)})；"
-            f"反抽优先测试原 S1 ({fp(s1)}) 与 R1 ({fp(r1)})（高阻 R2 ({fp(r2)})）；防守止损位 {fp(eff_sl)}"
-        )
+        if thin_session:
+            thin_session_unconfirmed = True
+            badge = f"🌙 {thin_sess_cn}暂破原支撑 {fp(s1)}（薄盘不计有效破位，待正规盘开盘确认）"
+            s2_lbl = "估算防线 S2" if s2_src == SOURCE_ATR_ESTIMATE else ("缺口回撤 S2" if s2_src == SOURCE_GAP_PULLBACK else "S2")
+            script = (
+                f"{halt_prefix}【{thin_sess_cn}薄盘暂破原支撑 · 待正规盘确认】{thin_sess_cn}报价暂破原支撑 S1 ({fp(s1)})，"
+                f"薄盘不计有效破位（暂不判定转为上方压力），下方退守观察 {s2_lbl} ({fp(s2)})；"
+                f"等待正规盘开盘确认真实承接；防守止损位 {fp(eff_sl)}"
+            )
+        else:
+            badge = f"S1:{fp(s1)} 已击穿转压 ➔ 退守 S2:{fp(s2)}"
+            s2_lbl = "估算防线 S2" if s2_src == SOURCE_ATR_ESTIMATE else ("缺口回撤 S2" if s2_src == SOURCE_GAP_PULLBACK else "S2")
+            script = (
+                f"{halt_prefix}【S1击穿转压 · 退守下轨】原支撑 S1 ({fp(s1)}) 已有效击穿并转为反抽压力，"
+                f"半空严禁盲目接刀，退守 {s2_lbl} ({fp(s2)})；"
+                f"反抽优先测试原 S1 ({fp(s1)}) 与 R1 ({fp(r1)})（高阻 R2 ({fp(r2)})）；防守止损位 {fp(eff_sl)}"
+            )
     elif r2 > 0 and px > r2:
         state = STATE_ALL_RESISTANCE_BROKEN
-        if offensive_veto:
+        if thin_session:
+            thin_session_unconfirmed = True
+            if offensive_veto:
+                bear_suppressed_r1_break = True
+            badge = f"🌙 {thin_sess_cn}暂越原阻力 {fp(r1)}/{fp(r2)}（薄盘不计有效突破，待正规盘放量站稳确认）"
+            script = (
+                f"【{thin_sess_cn}薄盘暂越原定阻力带 · 待正规盘确认】{thin_sess_cn}报价暂越原阻力 R1 ({fp(r1)}) / R2 ({fp(r2)})，"
+                f"薄盘流动性偏浅不计有效突破（不视为已转支撑/防守底线）；待正规盘开盘放量站稳后再确认趋势延续"
+            )
+        elif offensive_veto:
             bear_suppressed_r1_break = True
             badge = f"⚠️ 跳空越过旧R1/R2 (原R1:{fp(r1)} / 原R2:{fp(r2)}) · 仍受{sup_reason_short}压制"
             script = (
@@ -957,7 +1104,18 @@ def evaluate_sr_breach_state(
             )
     elif r1 > 0 and px > r1:
         state = STATE_R1_BROKEN
-        if offensive_veto:
+        if thin_session:
+            thin_session_unconfirmed = True
+            if offensive_veto:
+                bear_suppressed_r1_break = True
+            r2_near_v = r2_swing_cap if r2_is_far_historical else r2
+            badge = f"🌙 {thin_sess_cn}暂越原阻力 {fp(r1)}（薄盘不计有效突破，待正规盘放量站稳确认），上方近端观察 {fp(r2_near_v)}"
+            script = (
+                f"【{thin_sess_cn}薄盘暂越原阻力 · 待正规盘确认】{thin_sess_cn}报价暂越原阻力 R1 ({fp(r1)})，"
+                f"薄盘流动性偏浅不计有效突破（暂不视为已转支撑），上方近端观察 R2 ({fp(r2_near_v)})；"
+                f"待正规盘开盘放量站稳后再确认方向"
+            )
+        elif offensive_veto:
             bear_suppressed_r1_break = True
             r2_note = f"（远期前高参考 {fp(r2)}，非短线目标）" if r2_is_far_historical else ""
             badge = f"⚠️ 跳空越过旧R1:{fp(r1)} · 仍受{sup_reason_short}压制"
@@ -1098,6 +1256,7 @@ def evaluate_sr_breach_state(
         "sr_breach_state": state,
         "sr_status_badge": badge,
         "sr_anchor_locked": True,
+        "thin_session_unconfirmed": thin_session_unconfirmed,
         "bear_suppressed_r1_break": bear_suppressed_r1_break,
         "r2_is_far_historical": r2_is_far_historical,
         "r2_swing_cap": r2_swing_cap,

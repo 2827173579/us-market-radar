@@ -781,6 +781,32 @@ def build_check_embed_dict(
     r2_src = item.get("r2_source")
     sr_state = str(item.get("sr_breach_state") or "INTACT").upper()
 
+    # 预先计算均价线有效性与大盘/AI 阻挡原因，保证「一句话结论 / 怎么操作 / 通俗体检」100% 自洽不打架
+    vwap_val = _opt_float(item.get("vwap"))
+    vwap_diff = _opt_float(item.get("vwap_diff_pct"))
+    vwap_stale = bool(item.get("vwap_stale")) or (sess_code not in ("", "REGULAR"))
+    has_live_vwap = bool((not vwap_stale) and vwap_val and vwap_val > 0)
+    above_live_vwap = bool(has_live_vwap and price is not None and price > 0 and price >= vwap_val)
+    vr_snap = snapshot.get("vix_regime") if isinstance(snapshot.get("vix_regime"), dict) else {}
+    l_wr = _opt_float(item.get("ai_long_win_rate_pct"))
+    s_wr = _opt_float(item.get("ai_short_win_rate_pct"))
+    l_raw = _opt_float(item.get("ai_long_raw_pct"))
+    is_bear_env = (str(snapshot.get("market_regime") or "").upper() == "BEAR_DEFENSE") or bool(vr_snap.get("vix_hard_brake"))
+
+    block_reasons: List[str] = []
+    if is_bear_env and not is_inv:
+        block_reasons.append("大盘空头防守" if not vr_snap.get("vix_hard_brake") else "大盘空头防守且恐慌倒挂")
+    if l_wr is not None and l_wr < 55.0:
+        block_reasons.append("AI 胜率不足")
+    block_reason_txt = "、".join(block_reasons) if block_reasons else "尚未走出高胜率右侧买点"
+
+    # 薄盘夜盘/盘前/盘后判定（严禁把薄盘报价误判为有效突破/有效击穿）
+    is_thin_ext = (not is_pts_tk) and (
+        sess_code in ("OVERNIGHT", "PRE_MARKET", "POST_MARKET", "AFTER_HOURS")
+        or (not sess_code and sess_tag in ("夜盘", "盘前", "盘后"))
+    )
+    thin_sess_cn = "夜盘" if (sess_code == "OVERNIGHT" or sess_tag == "夜盘") else ("盘前" if (sess_code == "PRE_MARKET" or sess_tag == "盘前") else "盘后")
+
     if is_ipo:
         one_liner = "刚上市没几天，波动大、规律还没出来，先看少动。"
     elif is_crash:
@@ -788,7 +814,12 @@ def build_check_embed_dict(
     elif is_cooling:
         one_liner = "刚经历急跌，余震还没消，暂时别急着抄底。"
     elif is_bear:
-        one_liner = "趋势走弱还没止跌，千万别手痒抄底，等重新站稳均价线再看。"
+        if vwap_stale:
+            one_liner = "趋势走弱还没止跌，千万别手痒抄底，等正规盘开盘确认企稳再看。"
+        elif above_live_vwap:
+            one_liner = f"趋势仍偏弱，现价虽在均价线上方但受{block_reason_txt}压制，千万别手痒抄底。"
+        else:
+            one_liner = "趋势走弱还没止跌，千万别手痒抄底，等重新站稳均价线再看。"
     elif is_tp_mode:
         one_liner = "涨太高了别追，手里有货的记得分批落袋保护利润。"
     elif is_inv:
@@ -796,11 +827,16 @@ def build_check_embed_dict(
     elif is_pit_watch:
         one_liner = "快到低吸位置了，但板块或大盘还偏弱，先忍住别急着接刀。"
     elif is_deep_pb:
-        one_liner = "回撤比较深但还没完全止跌，等股价放量站回均价线上方再考虑。"
+        if vwap_stale:
+            one_liner = "回撤比较深且当前为非正规盘，等正规盘开盘确认止跌与新均价线承接再考虑。"
+        elif above_live_vwap:
+            one_liner = f"回撤较深，现价虽在均价线上方，但{block_reason_txt}，暂不追高、先观望。"
+        else:
+            one_liner = "回撤比较深但还没完全止跌，等股价放量站回均价线上方再考虑。"
     elif is_broken_reb:
         one_liner = "大趋势还偏弱，现在只是跌多了反抽一下，快进快出别贪心。"
     elif stance == "BULL":
-        if sr_state == "ALL_RESISTANCE_BROKEN":
+        if sr_state == "ALL_RESISTANCE_BROKEN" and not is_thin_ext:
             one_liner = "走势非常强，已冲破今天所有原定压力，拿稳筹码跟着均价线移动止盈、别追高。"
         elif is_pit:
             one_liner = "跌到了关键支撑区且开始止跌，可留意低吸机会并带好止损。"
@@ -810,7 +846,7 @@ def build_check_embed_dict(
         one_liner = "正在不上不下地晃悠，没有高把握买点，先观望最省心。"
 
     # 1. 💰 价格（严格区分盘后/休市薄盘 vs 正规盘收盘；KOSPI 显示韩国 KRX 时段与无$点数）
-    is_post_or_weekend = sess_code in ("POST_MARKET", "WEEKEND") or (not sess_code and sess_tag in ("休市", "盘后"))
+    is_post_or_weekend = sess_code in ("POST_MARKET", "WEEKEND", "HOLIDAY") or (not sess_code and sess_tag in ("休市", "盘后"))
     is_pre_or_night = sess_code in ("PRE_MARKET", "OVERNIGHT") or (not sess_code and sess_tag in ("盘前", "夜盘"))
     if is_pts_tk:
         krx_lbl = str(item.get("krx_session_label") or "韩国交易时段 09:00–15:30 KST").strip()
@@ -829,10 +865,7 @@ def build_check_embed_dict(
     else:
         price_text = f"现价 **{_fmt_price(price)}**（今日 {_fmt_pct(pct_rth if pct_rth is not None else eff_pct)} · 常规盘中）"
 
-    # 2. 🎯 怎么操作（彻底解决止盈/观望态还出“参考挂单”的自相矛盾）
-    vwap_val = _opt_float(item.get("vwap"))
-    vwap_diff = _opt_float(item.get("vwap_diff_pct"))
-    vwap_stale = bool(item.get("vwap_stale")) or (sess_code not in ("", "REGULAR"))
+    # 2. 🎯 怎么操作（非正规盘禁用旧 VWAP 当入场条件；正规盘严格校验价格与实时 VWAP 位置防自相矛盾）
     res_badge = str(item.get("resonance_badge_text") or item.get("four_h_div") or "").strip()
     res_suppressed = bool(item.get("resonance_suppressed"))
     opt_lim = item.get("optimal_limit")
@@ -842,11 +875,16 @@ def build_check_embed_dict(
     op_lines: List[str] = []
     if is_bear:
         op_lines.append("🚫 **别抄底 · 先管住手等右边走稳**")
-        vwap_cond = f"放量站稳均价线 {_fmt_price(vwap_val)}" if (vwap_val and vwap_val > 0) else "放量止跌转强"
-        if sr_state == "ALL_SUPPORT_BREACHED" and anc_s2:
-            op_lines.append(f"观察条件：至少等放量收回原支撑 {_fmt_price(anc_s2)} 或{vwap_cond}，别在下跌半途接刀。")
+        if vwap_stale:
+            op_lines.append("当前为非正规盘（昨日均价线仅供参考），等待正规盘开盘确认止跌、新均价线承接与放量转强再考虑。")
+        elif above_live_vwap:
+            op_lines.append(f"现价虽在均价线 {_fmt_price(vwap_val)} 上方，但受{block_reason_txt}压制，暂不追高、耐心等趋势转强。")
         else:
-            op_lines.append(f"观察条件：至少等{vwap_cond}、不再创新低，确认止跌了再考虑。")
+            vwap_cond = f"放量站稳均价线 {_fmt_price(vwap_val)}" if has_live_vwap else "放量止跌转强"
+            if sr_state == "ALL_SUPPORT_BREACHED" and anc_s2:
+                op_lines.append(f"观察条件：至少等放量收回原支撑 {_fmt_price(anc_s2)} 或{vwap_cond}，别在下跌半途接刀。")
+            else:
+                op_lines.append(f"观察条件：至少等{vwap_cond}、不再创新低，确认止跌了再考虑。")
         if res_suppressed and res_badge:
             badge_disp = res_badge if res_badge.startswith("⚠️") else f"⚠️ {res_badge}"
             op_lines.append(f"{badge_disp}（别把弱势超跌误当成见底买点）")
@@ -855,8 +893,10 @@ def build_check_embed_dict(
         prot_px = _pick_profit_protection_line(item, price)
         if prot_px:
             op_lines.append(f"🛡️ **利润保护线**：**{_fmt_price(prot_px)}**{_rel_pct_str(prot_px, price)}（跌破这里说明冲高结束，先落袋保护利润）")
-        else:
+        elif has_live_vwap:
             op_lines.append(f"🛡️ **利润保护线**：盯紧当日均价线 {_fmt_price(vwap_val)}，跌破及时落袋。")
+        else:
+            op_lines.append("🛡️ **利润保护线**：当前为非正规盘，等正规盘开盘盯紧新均价线，走弱及时落袋。")
         if is_inv:
             op_lines.append("⚠️ 反向杠杆损耗大、波动剧烈，见好就收别恋战；空仓现在绝对别追。")
         else:
@@ -868,25 +908,35 @@ def build_check_embed_dict(
             op_lines.append(f"🛡️ **利润保护线**：**{_fmt_price(prot_px)}**{_rel_pct_str(prot_px, price)}（走弱及时兑现，不长期拿着耗损净值）")
     elif stance != "BULL":
         op_lines.append("👀 **先观望 · 暂不急着买入**")
-        vwap_cond = f"站稳均价线 {_fmt_price(vwap_val)}" if (vwap_val and vwap_val > 0) else "走出明确强势"
-        if is_broken_reb and anc_r1:
-            op_lines.append(f"短线反抽到原压力 {_fmt_price(anc_r1)} 附近容易遇阻，{vwap_cond}前小仓短做或继续看戏。")
+        if vwap_stale:
+            if is_broken_reb and anc_r1:
+                op_lines.append(f"当前为非正规盘（昨日均价线仅供参考），反抽接近原压力 {_fmt_price(anc_r1)} 附近容易遇阻，等待正规盘开盘确认新均价线与高胜率信号再动手。")
+            else:
+                op_lines.append("当前为非正规盘（昨日均价线仅供参考），等待正规盘开盘确认新均价线与高胜率信号再动手。")
+        elif above_live_vwap:
+            op_lines.append(f"现价虽在均价线 {_fmt_price(vwap_val)} 上方，但{block_reason_txt}，暂不追高、继续观望。")
         else:
-            op_lines.append(f"等待股价{vwap_cond}并走出高胜率多头信号再动手。")
+            vwap_cond = f"站稳均价线 {_fmt_price(vwap_val)}" if has_live_vwap else "走出明确强势"
+            if is_broken_reb and anc_r1:
+                op_lines.append(f"短线反抽到原压力 {_fmt_price(anc_r1)} 附近容易遇阻，{vwap_cond}前小仓短做或继续看戏。")
+            else:
+                op_lines.append(f"等待股价{vwap_cond}并走出高胜率多头信号再动手。")
     else:
         if (_opt_float(opt_lim) or 0) > 0:
             op_lines.append(f"🟢 **参考关注价**：**{_fmt_price(opt_lim)}**{_rel_pct_str(opt_lim, price)}（回踩这附近企稳再考虑）")
-        else:
+        elif has_live_vwap:
             op_lines.append(f"🟢 **顺势低吸**：不追高，留意回踩均价线 {_fmt_price(vwap_val)} 附近企稳机会")
+        else:
+            op_lines.append("🟢 **顺势低吸**：不追高，等正规盘开盘回踩新均价线附近企稳机会")
         if (_opt_float(sl_px) or 0) > 0:
             op_lines.append(f"🛡️ **防守止损线**：**{_fmt_price(sl_px)}**{_rel_pct_str(sl_px, price)}（跌破先撤退保本金）")
         tp_use = tp_px if (_opt_float(tp_px) or 0) > 0 else anc_r1
         if (_opt_float(tp_use) or 0) > 0:
             op_lines.append(f"🏁 **上方目标参考**：**{_fmt_price(tp_use)}**{_rel_pct_str(tp_use, price)}")
-        if sr_state == "ALL_RESISTANCE_BROKEN":
+        if sr_state == "ALL_RESISTANCE_BROKEN" and not is_thin_ext:
             op_lines.append("🚀 今日原定压力已全破，不猜天花板，沿均价线移动止盈。")
 
-    # 3. 🧱 关键价位（大白话接管 V4.4 静态锚 + ATR 估算与缺口回撤标注）
+    # 3. 🧱 关键价位（薄盘夜盘/盘前/盘后严禁误判“已突破转支撑 / 已击穿转压”，统一降级为待正规盘确认）
     def _src_plain(src_val: Any) -> str:
         su = str(src_val or "").upper()
         if su == "ATR_ESTIMATE":
@@ -896,25 +946,49 @@ def build_check_embed_dict(
         return ""
 
     if sr_state == "ALL_SUPPORT_BREACHED":
-        levels_lines = [
-            f"⚠️ **今日原定支撑已全线跌穿**（原支撑一 {_fmt_price(anc_s1)} / 原支撑二 {_fmt_price(anc_s2)}），**下方无真实支撑，别猜底**",
-            f"上方先看压力：原支撑二 **{_fmt_price(anc_s2)}**{_src_plain(s2_src)} ➔ 原压力一 **{_fmt_price(anc_r1)}**{_src_plain(r1_src)}",
-        ]
+        if is_thin_ext:
+            levels_lines = [
+                f"🌙 **{thin_sess_cn}暂破原定支撑带（原支撑一 {_fmt_price(anc_s1)} / 原支撑二 {_fmt_price(anc_s2)}）**（薄盘不计有效破位，待正规盘开盘确认）",
+                f"薄盘波动放大，不急于左侧接刀；上方原压力参考 {_fmt_price(anc_r1)}{_src_plain(r1_src)}",
+            ]
+        else:
+            levels_lines = [
+                f"⚠️ **今日原定支撑已全线跌穿**（原支撑一 {_fmt_price(anc_s1)} / 原支撑二 {_fmt_price(anc_s2)}），**下方无真实支撑，别猜底**",
+                f"上方先看压力：原支撑二 **{_fmt_price(anc_s2)}**{_src_plain(s2_src)} ➔ 原压力一 **{_fmt_price(anc_r1)}**{_src_plain(r1_src)}",
+            ]
     elif sr_state == "S1_BREACHED":
-        levels_lines = [
-            f"📉 原支撑一 {_fmt_price(anc_s1)} 已跌穿（转为上方压力），半空别接刀",
-            f"下方退守支撑二：**{_fmt_price(anc_s2)}**{_src_plain(s2_src)}{_rel_pct_str(anc_s2, price)} ｜ 上方压力：{_fmt_price(anc_s1)} / {_fmt_price(anc_r1)}{_src_plain(r1_src)}",
-        ]
+        if is_thin_ext:
+            levels_lines = [
+                f"🌙 **{thin_sess_cn}暂破原支撑 {_fmt_price(anc_s1)}（薄盘不计有效破位，待正规盘开盘确认）**",
+                f"下方退守观察：**{_fmt_price(anc_s2)}**{_src_plain(s2_src)}{_rel_pct_str(anc_s2, price)} ｜ 上方原压力：{_fmt_price(anc_r1)}{_src_plain(r1_src)}",
+            ]
+        else:
+            levels_lines = [
+                f"📉 原支撑一 {_fmt_price(anc_s1)} 已跌穿（转为上方压力），半空别接刀",
+                f"下方退守支撑二：**{_fmt_price(anc_s2)}**{_src_plain(s2_src)}{_rel_pct_str(anc_s2, price)} ｜ 上方压力：{_fmt_price(anc_s1)} / {_fmt_price(anc_r1)}{_src_plain(r1_src)}",
+            ]
     elif sr_state == "ALL_RESISTANCE_BROKEN":
-        levels_lines = [
-            f"🚀 **已突破今日全部原定阻力**（原压力一 {_fmt_price(anc_r1)} / 原压力二 {_fmt_price(anc_r2)}），上方不硬猜天花板",
-            f"原压力二 **{_fmt_price(anc_r2)}** 现转为防守底线{_rel_pct_str(anc_r2, price)}，跌不破可继续拿着跟趋势",
-        ]
+        if is_thin_ext:
+            levels_lines = [
+                f"🌙 **{thin_sess_cn}暂越原阻力 {_fmt_price(anc_r1)} / {_fmt_price(anc_r2)}（薄盘不计有效突破，待正规盘放量站稳确认）**",
+                f"薄盘易出现虚拉回落，暂不判定为防守底线，等待正规盘真成交确认",
+            ]
+        else:
+            levels_lines = [
+                f"🚀 **已突破今日全部原定阻力**（原压力一 {_fmt_price(anc_r1)} / 原压力二 {_fmt_price(anc_r2)}），上方不硬猜天花板",
+                f"原压力二 **{_fmt_price(anc_r2)}** 现转为防守底线{_rel_pct_str(anc_r2, price)}，跌不破可继续拿着跟趋势",
+            ]
     elif sr_state == "R1_BROKEN":
-        levels_lines = [
-            f"📈 **已突破原阻力 {_fmt_price(anc_r1)}（现转为支撑）**{_rel_pct_str(anc_r1, price)}，上看 **{_fmt_price(anc_r2)}**{_src_plain(r2_src)}{_rel_pct_str(anc_r2, price)}",
-            f"不追冲高针，等回踩原阻力 {_fmt_price(anc_r1)} 或均价线站稳更稳妥",
-        ]
+        if is_thin_ext:
+            levels_lines = [
+                f"🌙 **{thin_sess_cn}暂越原阻力 {_fmt_price(anc_r1)}（薄盘不计有效突破，待正规盘放量站稳确认）**{_rel_pct_str(anc_r1, price)}，上方近端观察 **{_fmt_price(anc_r2)}**{_src_plain(r2_src)}{_rel_pct_str(anc_r2, price)}",
+                f"薄盘流动性偏浅，不追虚拉冲高，等正规盘开盘放量站稳 {_fmt_price(anc_r1)} 再确认",
+            ]
+        else:
+            levels_lines = [
+                f"📈 **已突破原阻力 {_fmt_price(anc_r1)}（现转为支撑）**{_rel_pct_str(anc_r1, price)}，上看 **{_fmt_price(anc_r2)}**{_src_plain(r2_src)}{_rel_pct_str(anc_r2, price)}",
+                f"不追冲高针，等回踩原阻力 {_fmt_price(anc_r1)} 或均价线站稳更稳妥",
+            ]
     else:
         sup_s = f"下方支撑：**{_fmt_price(anc_s1)}**{_src_plain(s1_src)}{_rel_pct_str(anc_s1, price)}"
         if anc_s2:
@@ -925,7 +999,6 @@ def build_check_embed_dict(
         levels_lines = [sup_s, res_s]
 
     # 4. 📊 通俗体检（把所有技术指标翻成 4 句大白话）
-    vr_snap = snapshot.get("vix_regime") if isinstance(snapshot.get("vix_regime"), dict) else {}
     if vwap_val and vwap_val > 0 and price:
         diff_v = vwap_diff if vwap_diff is not None else (((price - vwap_val) / vwap_val) * 100.0)
         pos_w = "上方" if diff_v >= 0 else "下方"
@@ -965,9 +1038,6 @@ def build_check_embed_dict(
         rs_desc = f"明显跑输大盘（近一月落后 {rs20:+.1f}%）"
     rs_line = f"• **近一月表现**：{rs_desc}"
 
-    l_wr = _opt_float(item.get("ai_long_win_rate_pct"))
-    s_wr = _opt_float(item.get("ai_short_win_rate_pct"))
-    l_raw = _opt_float(item.get("ai_long_raw_pct"))
     is_capped = (not is_inv) and (
         bool(item.get("ai_regime_capped"))
         or bool(

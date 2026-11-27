@@ -492,6 +492,103 @@ class TestDiscordRadarBot(unittest.TestCase):
         self.assertNotIn("discord.com/api/webhooks", bot_src)
         self.assertNotIn("MTU3Mzkz", bot_src)
 
+    def test_06_qqq_overnight_thin_breakout_and_vwap_consistency(self):
+        """回归验证 2026-11-26 23:37 ET QQQ 夜盘三项实盘问题：近端 R2、薄盘不计有效突破、非正规盘及站上均价线文案无自相矛盾。"""
+        base_qqq = {
+            "ticker": "QQQ",
+            "name": "纳指100ETF",
+            "cat": "大盘基准",
+            "last": 633.93,
+            "active_price": 650.07,
+            "pct_change": -0.65,
+            "ext_price": 650.07,
+            "ext_pct": 2.55,
+            "vwap": 620.08,
+            "rs_20d": 0.0,
+            "is_deep_pullback": True,
+            "ai_long_prob": 46.9,
+            "ai_raw_prob": 62.0,
+            "ai_win_rate_capped_by_vix": True,
+            "sr_breach_state": "R1_BROKEN",
+            "anchor_s1": 620.00,
+            "anchor_s2": 600.00,
+            "anchor_sl": 592.00,
+            "anchor_r1": 640.00,
+            "anchor_r2": 657.53,
+            "r1_source": "OPT_CALL_WALL",
+            "r2_source": "NEAR_SWING_HIGH",
+            "s1_source": "REAL_CHIPS",
+            "s2_source": "REAL_CHIPS",
+            "atr_pct": 0.0368,
+        }
+        vix_bear = {
+            "vix_spot": 31.8,
+            "vix_term_ratio": 1.12,
+            "vix_state": "BACKWARDATION_BRAKE",
+            "vix_hard_brake": True,
+        }
+        weather_bear = {"market_regime": "BEAR_DEFENSE", "weather": "暴雨空仓"}
+
+        # 场景 A：美股夜盘（OVERNIGHT）薄盘 $650.07 > R1 $640.00，昨日 VWAP $620.08
+        snap_overnight = radar.build_latest_radar_snapshot(
+            macro_data={"QQQ": dict(base_qqq)},
+            stocks_data=[],
+            weather_info=weather_bear,
+            vix_regime=vix_bear,
+            session_code="OVERNIGHT",
+            session_name="美股夜盘",
+            now_str="2026-11-26 23:37:23",
+            now_et=datetime(2026, 11, 26, 23, 37, 23, tzinfo=NY_TZ),
+            ai_predictions={"by_ticker": {"QQQ": {"calibrated_win_rate_pct": 46.9, "model_raw_prob_pct": 62.0}}},
+            intraday_forecasts={"by_ticker": {}},
+            daily_sr_anchors={
+                "QQQ": {
+                    "anchor_s1": 620.00,
+                    "anchor_s2": 600.00,
+                    "anchor_sl": 592.00,
+                    "anchor_r1": 640.00,
+                    "anchor_r2": 657.53,
+                    "r1_source": "OPT_CALL_WALL",
+                    "r2_source": "NEAR_SWING_HIGH",
+                    "s1_source": "REAL_CHIPS",
+                    "s2_source": "REAL_CHIPS",
+                }
+            },
+        )
+        emb_on = bot.build_check_embed_dict("QQQ", snap_overnight)
+        _assert_clean_embed(self, emb_on)
+        txt_on = json.dumps(emb_on, ensure_ascii=False)
+        self.assertIn("夜盘暂越原阻力 $640.00（薄盘不计有效突破，待正规盘放量站稳确认）", txt_on)
+        self.assertIn("上方近端观察 **$657.53**", txt_on)
+        self.assertNotIn("现转为支撑", txt_on)
+        self.assertNotIn("已突破原阻力", txt_on)
+        self.assertNotIn("等待股价站稳均价线", txt_on)
+        self.assertNotIn("等股价放量站回均价线上方", txt_on)
+        self.assertIn("当前为非正规盘（昨日均价线仅供参考）", txt_on)
+
+        # 场景 B：正规盘（REGULAR），现价 $650.07 >= 实时均价线 $640.00，但受空头防守/AI胜率不足限制
+        qqq_reg_above = dict(base_qqq)
+        qqq_reg_above.update({"last": 650.07, "active_price": 650.07, "vwap": 640.00})
+        snap_reg_above = dict(snap_overnight)
+        snap_reg_above.update({"session_code": "REGULAR", "session_name": "美股盘中", "tickers": {"QQQ": qqq_reg_above}})
+        emb_reg_above = bot.build_check_embed_dict("QQQ", snap_reg_above)
+        _assert_clean_embed(self, emb_reg_above)
+        txt_reg_above = json.dumps(emb_reg_above, ensure_ascii=False)
+        self.assertNotIn("等待股价站稳均价线", txt_reg_above)
+        self.assertNotIn("等股价放量站回均价线上方", txt_reg_above)
+        self.assertIn("现价虽在均价线 $640.00 上方", txt_reg_above)
+        self.assertIn("大盘空头防守", txt_reg_above)
+
+        # 场景 C：正规盘（REGULAR），现价 $630.00 < 实时均价线 $640.00 -> 允许正常提示等待站稳均价线
+        qqq_reg_below = dict(base_qqq)
+        qqq_reg_below.update({"last": 630.00, "active_price": 630.00, "vwap": 640.00, "sr_breach_state": "IN_RANGE"})
+        snap_reg_below = dict(snap_overnight)
+        snap_reg_below.update({"session_code": "REGULAR", "session_name": "美股盘中", "tickers": {"QQQ": qqq_reg_below}})
+        emb_reg_below = bot.build_check_embed_dict("QQQ", snap_reg_below)
+        _assert_clean_embed(self, emb_reg_below)
+        txt_reg_below = json.dumps(emb_reg_below, ensure_ascii=False)
+        self.assertIn("等待股价站稳均价线 $640.00", txt_reg_below)
+
 
 if __name__ == "__main__":
     unittest.main()

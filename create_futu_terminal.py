@@ -962,6 +962,7 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
                                     is_vix_backwardation=_vix_back_now,
                                     is_bear_dominant=bool(_short_dom or (not _is_inv_tk and _is_bear_regime)),
                                     is_inverse=_is_inv_tk,
+                                    session_code=session_code,
                                 )
                                 sc_map.update(_sr_eval)
                             else:
@@ -994,6 +995,7 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
                                     is_vix_backwardation=_vix_back_now,
                                     is_bear_dominant=bool(_short_dom or (not _is_inv_tk and _is_bear_regime)),
                                     is_inverse=_is_inv_tk,
+                                    session_code=session_code,
                                 )
                                 _sr_eval["sr_anchor_locked"] = False
                                 sc_map.update(_sr_eval)
@@ -7632,18 +7634,38 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
                     const supShortLbl = String(aiItem.suppression_short_tag || "").trim() || (isInvMulti ? "日线破位/反向衰减" : "空头/VIX倒挂");
                     const s1GapTag = (s1Src === "GAP_PULLBACK") ? " (缺口回撤)" : "";
                     const s2GapTag = (s2Src === "GAP_PULLBACK") ? " (缺口回撤)" : "";
+                    const isThinSessJs = (!isPtsCur && !isApacCur) && (
+                        SESSION_CODE === "OVERNIGHT"
+                        || SESSION_CODE === "PRE_MARKET"
+                        || SESSION_CODE === "POST_MARKET"
+                        || Boolean(aiItem.thin_session_unconfirmed)
+                    );
+                    const thinSessCnJs = SESSION_CODE === "OVERNIGHT" ? "夜盘" : (SESSION_CODE === "PRE_MARKET" ? "盘前" : "盘后");
 
                     if (srState === "ALL_SUPPORT_BREACHED") {
-                        leftHtml = `<span style="color:${pal.down}; font-weight:700;">⚠️ 今日原定支撑全线跌穿 (原S1:${s1v} / 原S2:${s2v}) · 下方无真实支撑，别猜底</span>`;
-                        rightHtml = `<span style="color:${pal.down};">上方前压 R1:${r1v} / R2:${r2v}</span>`;
+                        if (isThinSessJs) {
+                            leftHtml = `<span style="color:${pal.warn}; font-weight:700;">🌙 ${thinSessCnJs}暂破原支撑 ${s1v}/${s2v}（薄盘不计有效破位，待正规盘开盘确认）</span>`;
+                            rightHtml = `<span style="color:${pal.down};">上方原压 R1:${r1v} / R2:${r2v}</span>`;
+                        } else {
+                            leftHtml = `<span style="color:${pal.down}; font-weight:700;">⚠️ 今日原定支撑全线跌穿 (原S1:${s1v} / 原S2:${s2v}) · 下方无真实支撑，别猜底</span>`;
+                            rightHtml = `<span style="color:${pal.down};">上方前压 R1:${r1v} / R2:${r2v}</span>`;
+                        }
                     } else if (srState === "S1_BREACHED") {
                         const s2IsEst = (s2Src === "ATR_ESTIMATE");
                         const s2Clr = s2IsEst ? pal.warn : pal.up;
                         const s2Tag = s2IsEst ? `退守估算防线 S2:${s2v} (无真实筹码)` : `退守 S2:${s2v}${s2GapTag}`;
-                        leftHtml = `<span><s style="color:${pal.sub};">S1:${s1v}</s> <span style="color:${pal.warn}; font-weight:700;">已击穿转压 ➔ </span><span style="color:${s2Clr}; font-weight:700;">${s2Tag}</span></span>`;
-                        rightHtml = `<span style="color:${pal.down};">${r1Src === "ATR_ESTIMATE" ? "估算阻力" : "阻力"} R1:${r1v} / R2:${r2v}</span>`;
+                        if (isThinSessJs) {
+                            leftHtml = `<span style="color:${pal.warn}; font-weight:700;">🌙 ${thinSessCnJs}暂破原支撑 ${s1v}（薄盘不计有效破位，待正规盘确认） · ${s2Tag}</span>`;
+                            rightHtml = `<span style="color:${pal.down};">${r1Src === "ATR_ESTIMATE" ? "估算阻力" : "阻力"} R1:${r1v} / R2:${r2v}</span>`;
+                        } else {
+                            leftHtml = `<span><s style="color:${pal.sub};">S1:${s1v}</s> <span style="color:${pal.warn}; font-weight:700;">已击穿转压 ➔ </span><span style="color:${s2Clr}; font-weight:700;">${s2Tag}</span></span>`;
+                            rightHtml = `<span style="color:${pal.down};">${r1Src === "ATR_ESTIMATE" ? "估算阻力" : "阻力"} R1:${r1v} / R2:${r2v}</span>`;
+                        }
                     } else if (srState === "ALL_RESISTANCE_BROKEN") {
-                        if (aiItem.bear_suppressed_r1_break) {
+                        if (isThinSessJs) {
+                            leftHtml = `<span style="color:${pal.warn}; font-weight:700;">🌙 ${thinSessCnJs}暂越原阻力 ${r1v}/${r2v}（薄盘不计有效突破，待正规盘放量站稳确认）</span>`;
+                            rightHtml = `<span style="color:${pal.sub}; font-weight:600;">薄盘流动性较浅 · 暂不判定为防守底线</span>`;
+                        } else if (aiItem.bear_suppressed_r1_break) {
                             leftHtml = `<span style="color:${pal.warn}; font-weight:700;">⚠️ 原R1:${r1v} / R2:${r2v} (跳空越过 · ${escapeNewsHtml(supShortLbl)}压制)</span>`;
                             rightHtml = `<span style="color:${pal.sub}; font-weight:600;">短线以 VWAP 为界 · 暂不追高</span>`;
                         } else {
@@ -7653,7 +7675,11 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
                     } else if (srState === "R1_BROKEN") {
                         const isFarR2 = Boolean(aiItem.r2_is_far_historical);
                         const r2CapNum = Number(aiItem.r2_swing_cap || 0);
-                        if (aiItem.bear_suppressed_r1_break) {
+                        if (isThinSessJs) {
+                            leftHtml = `<span style="color:${pal.warn}; font-weight:700;">🌙 ${thinSessCnJs}暂越原阻力 ${r1v}（薄盘不计有效突破，待正规盘放量站稳确认）</span>`;
+                            const r2NearDisp = (isFarR2 && r2CapNum > 0) ? fpCur(r2CapNum) : r2v;
+                            rightHtml = `<span style="color:${pal.sub}; font-weight:600;">上方近端观察 ${r2NearDisp}</span>`;
+                        } else if (aiItem.bear_suppressed_r1_break) {
                             leftHtml = `<span style="color:${pal.warn}; font-weight:700;">⚠️ 旧R1:${r1v} (跳空越过 · ${escapeNewsHtml(supShortLbl)}压制)</span>`;
                             const r2RefStr = isFarR2 ? `远期前高参考 ${r2v}（非短线目标）` : `上方前压 R2:${r2v}`;
                             rightHtml = `<span style="color:${pal.sub}; font-weight:600;">${r2RefStr}</span>`;

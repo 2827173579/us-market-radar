@@ -496,6 +496,150 @@ class TestV44SrAnchorAndPlainBot(unittest.TestCase):
             src = f.read()
         self.assertIn("已越旧R1 · 上移至动态压力", src)
 
+    def test_08_qqq_near_r2_cap_and_overnight_thin_breakout_guard(self):
+        """验证 QQQ 近端 R2 收口（不跳过 11 月波段高点抓取远期 $703）、旧版本离群锚自动重算、以及夜盘/盘前/盘后薄盘不计有效突破或破位。"""
+        import numpy as np
+        import pandas as pd
+        import sr_anchor_engine as sre
+
+        # 构造模拟 QQQ 60 个交易日日线：早期（40天前）存在 $726/$703 远期平台，
+        # 近 20 日存在三道近端真实波段压力：$695.57（12天前）、$676.49（7天前大阴起跌）、$657.53（3天前局部波段高点），
+        # 最新收盘 $633.93，ATR14 约 $20~$23。
+        dates = pd.bdate_range("2026-09-04", periods=60)
+        closes = np.linspace(722.0, 703.0, 40).tolist() + [
+            692.0, 688.0, 690.0, 686.0, 680.0,  # idx 40-44
+            682.0, 685.0, 689.0, 691.0, 678.0,  # idx 45-49 (48: peak ~695.57)
+            670.0, 666.0, 672.0, 650.0, 646.0,  # idx 50-54 (53: big red candle open 675 -> close 650, high 676.49)
+            648.0, 652.0, 645.0, 638.0, 633.93, # idx 55-59 (56: local swing high 657.53)
+        ]
+        opens = [c + 1.0 for c in closes]
+        highs = [c + 6.0 for c in closes]
+        lows = [c - 6.0 for c in closes]
+        vols = [45_000_000] * 60
+        # 远期 40 天前高量平台 $703.03
+        for idx in range(18, 28):
+            closes[idx] = 703.03
+            opens[idx] = 702.50
+            highs[idx] = 706.00
+            lows[idx] = 699.50
+            vols[idx] = 180_000_000
+        # 近 20 日结构高点：
+        highs[48] = 695.57
+        opens[53] = 674.00
+        highs[53] = 676.49
+        closes[53] = 648.00
+        lows[53] = 645.00
+        highs[56] = 657.53
+        highs[55] = 651.00
+        highs[57] = 649.00
+        df = pd.DataFrame(
+            {"Open": opens, "High": highs, "Low": lows, "Close": closes, "Volume": vols},
+            index=dates,
+        )
+
+        # 1) 计算静态支撑压力：R1=$640.00，宽基 1x ETF 的 R2 必须锁定近端 $657.53（严禁跳过近端高点去抓 $703.03）
+        res = sre.compute_static_sr_levels_with_sources(
+            ticker="QQQ",
+            ref_price=633.93,
+            atr_pct=3.68,
+            df_history=df,
+            put_wall=620.0,
+            call_wall=640.0,
+            extra_resist_cands=[703.03],
+        )
+        self.assertAlmostEqual(res["anchor_r1"], 640.0, delta=0.5)
+        self.assertGreaterEqual(res["anchor_r2"], 650.0)
+        self.assertLessEqual(res["anchor_r2"], 640.0 * 1.06 + 0.05)
+        self.assertLess(res["anchor_r2"], 680.0, f"QQQ R2 should not jump to distant Oct platform $703: got {res['anchor_r2']}")
+        self.assertAlmostEqual(res["anchor_r2"], 657.53, delta=1.5)
+        self.assertTrue(res["r2_v58_near_guarded"])
+
+        # 2) 旧版 algo_version=3 离群锚（$703.03）落盘在 daily_sr_anchors.json 时必须自动重算，重算后当日保持不可变锁定
+        with tempfile.TemporaryDirectory() as tmpdir:
+            anchor_path = os.path.join(tmpdir, "daily_sr_anchors.json")
+            stale_doc = {
+                "version": 3,
+                "date_et": "2026-11-26",
+                "anchors": {
+                    "QQQ": {
+                        "ticker": "QQQ",
+                        "date_et": "2026-11-26",
+                        "algo_version": 3,
+                        "r2_v532_guarded": True,
+                        "min_step_pct": 0.025,
+                        "max_r2_step_pct": 0.10,
+                        "prev_close": 633.93,
+                        "anchor_s1": 620.0,
+                        "anchor_s2": 600.0,
+                        "anchor_sl": 592.0,
+                        "anchor_r1": 640.0,
+                        "anchor_r2": 703.03,
+                        "r1_source": "OPT_CALL_WALL",
+                        "r2_source": "REAL_CHIPS",
+                        "s1_source": "REAL_CHIPS",
+                        "s2_source": "REAL_CHIPS",
+                    }
+                },
+            }
+            with open(anchor_path, "w", encoding="utf-8") as f:
+                json.dump(stale_doc, f)
+
+            rebuilt = sre.get_or_lock_daily_sr_anchor(
+                ticker="QQQ",
+                date_et="2026-11-26",
+                prev_close=633.93,
+                atr_pct=3.68,
+                df_history=df,
+                put_wall=620.0,
+                call_wall=640.0,
+                anchors_path=anchor_path,
+            )
+            self.assertEqual(rebuilt["algo_version"], sre.SR_ANCHOR_ALGO_VERSION)
+            self.assertTrue(rebuilt["r2_v58_near_guarded"])
+            self.assertLess(rebuilt["anchor_r2"], 678.5)
+            # 同日二次读取严格命中锁死锚点，绝不盘中漂移
+            locked_again = sre.get_or_lock_daily_sr_anchor(
+                ticker="QQQ",
+                date_et="2026-11-26",
+                prev_close=633.93,
+                atr_pct=3.68,
+                df_history=df,
+                put_wall=625.0,
+                call_wall=660.0,
+                active_price=650.07,
+                anchors_path=anchor_path,
+            )
+            self.assertEqual(locked_again["anchor_r2"], rebuilt["anchor_r2"])
+            self.assertEqual(locked_again["anchor_r1"], rebuilt["anchor_r1"])
+
+        # 3) 薄盘时段（OVERNIGHT / PRE_MARKET / POST_MARKET）严禁把越过 R1/R2 判为有效突破转支撑，或把跌破 S1/S2 判为有效破位转压
+        for sess in ("OVERNIGHT", "PRE_MARKET", "POST_MARKET"):
+            ev_up = sre.evaluate_sr_breach_state(
+                price=650.07,
+                anchor=rebuilt,
+                vwap=620.08,
+                bear_suppressed=True,
+                atr_pct=0.0368,
+                session_code=sess,
+            )
+            self.assertTrue(ev_up["thin_session_unconfirmed"])
+            self.assertIn("不计有效突破", ev_up["scenario_script"])
+            self.assertNotIn("现转为支撑", ev_up["scenario_script"])
+            self.assertNotIn("顺势看高", ev_up["scenario_script"])
+
+            ev_dn = sre.evaluate_sr_breach_state(
+                price=595.00,
+                anchor=rebuilt,
+                vwap=620.08,
+                bear_suppressed=True,
+                atr_pct=0.0368,
+                session_code=sess,
+            )
+            self.assertTrue(ev_dn["thin_session_unconfirmed"])
+            self.assertIn("不计有效破位", ev_dn["scenario_script"])
+            self.assertNotIn("已击穿转压", ev_dn["scenario_script"])
+            self.assertNotIn("转为上方压力", ev_dn["scenario_script"])
+
 
 if __name__ == "__main__":
     unittest.main()
