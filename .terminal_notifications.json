@@ -2,22 +2,22 @@
   {
     "id": "TP_VIXY_2026-11-27",
     "date_et": "2026-11-27",
-    "time": "11-27 16:55",
+    "time": "11-27 16:56",
     "category": "take_profit",
     "cat_label": "🟣 冲顶减仓",
     "level": "purple",
     "ticker": "VIXY",
     "name": "短期恐慌指数",
     "cat": "黑天鹅对冲",
-    "price": 20.54,
+    "price": 20.71,
     "pct_change": -7.774919759041573,
     "title": "🟣 VIXY (短期恐慌指数) 极度超买，触发高位减仓指令",
-    "desc": "偏离 MA50 +13.4%，RSI 54.5，进入极端冲顶兑现区，建议分批减半锁定利润！"
+    "desc": "偏离 MA50 +14.3%，RSI 54.5，进入极端冲顶兑现区，建议分批减半锁定利润！"
   },
   {
     "id": "TP_SQQQ_2026-11-27",
     "date_et": "2026-11-27",
-    "time": "11-27 16:55",
+    "time": "11-27 16:56",
     "category": "take_profit",
     "cat_label": "🟣 冲顶减仓",
     "level": "purple",
@@ -32,7 +32,7 @@
   {
     "id": "TP_SOXS_2026-11-27",
     "date_et": "2026-11-27",
-    "time": "11-27 16:55",
+    "time": "11-27 16:56",
     "category": "take_profit",
     "cat_label": "🟣 冲顶减仓",
     "level": "purple",
@@ -47,7 +47,7 @@
   {
     "id": "WEATHER_暴雨空仓_2026-11-27",
     "date_et": "2026-11-27",
-    "time": "11-27 16:55",
+    "time": "11-27 16:56",
     "category": "macro_weather",
     "cat_label": "⛅ 宏观气象",
     "level": "info",
