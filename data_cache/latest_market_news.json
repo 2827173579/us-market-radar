@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795777279.701,
-  "updated_at_et": "11-27 06:01 ET",
-  "updated_at_kst": "20:01 KST",
+  "updated_at_ts": 1795777329.26,
+  "updated_at_et": "11-27 06:02 ET",
+  "updated_at_kst": "20:02 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -2603,6 +2603,27 @@
     ],
     "BTC-USD": [
       {
+        "title": "One asset is 51% off this Black Friday",
+        "url": "https://www.thestreet.com/crypto/markets/one-asset-is-51-off-this-black-friday?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-27 05:49 ET",
+        "pub_ts": 1795776584.0
+      },
+      {
+        "title": "Bitcoin News Today: BTC Rebounds 8% – Is The Worst Over for Bitcoin Holders?",
+        "url": "https://www.coinspeaker.com/bitcoin-news-today-thanksgiving-holiday-pattern/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-27 05:44 ET",
+        "pub_ts": 1795776250.0
+      },
+      {
+        "title": "Swiss Bitcoin ETF: Bitcoin Wasn’t the Problem, Institutional Rules Were – BIT CEO",
+        "url": "https://cryptonews.com/news/swiss-bitcoin-etf-bit-ceo-exclusive/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-27 05:15 ET",
+        "pub_ts": 1795774548.0
+      },
+      {
         "title": "KuCoin Drops Monero Monday; Its Pairs Carried Over Half of Tracked XMR Volume",
         "url": "https://unchainedcrypto.com/kucoin-drops-monero-monday-its-pairs-carried-over-half-of-tracked-xmr-volume/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2615,27 +2636,6 @@
         "source": "Yahoo Finance",
         "time": "11-27 02:18 ET",
         "pub_ts": 1795763914.0
-      },
-      {
-        "title": "Bitcoin recovers to $61.5k; set for first positive week in 8",
-        "url": "https://finance.yahoo.com/markets/crypto/articles/bitcoin-recovers-61-5k-set-062257549.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-27 01:22 ET",
-        "pub_ts": 1795760577.0
-      },
-      {
-        "title": "How a 35-cent attack could expose Bitcoin wallet IP addresses",
-        "url": "http://videos.coindesk.com/previews/lUGLwF4n?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-26 23:17 ET",
-        "pub_ts": 1795753038.0
-      },
-      {
-        "title": "A 30% Bitcoin crash hasn't shaken this asset manager's $1.6 million call",
-        "url": "https://www.thestreet.com/crypto/markets/a-30-bitcoin-crash-hasnt-shaken-this-asset-managers-1-6-million-call-?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-26 17:00 ET",
-        "pub_ts": 1795730400.0
       }
     ],
     "CRWD": [
@@ -3360,23 +3360,23 @@
     "VRT": 1795777279.7014213,
     "HPE": 1795777279.7014213,
     "DELL": 1795777279.7014213,
-    "OKLO": 1795775812.034933,
-    "CEG": 1795775812.034933,
-    "FPS": 1795775812.034933,
-    "MU": 1795775812.034933,
-    "SKHY": 1795775812.034933,
-    "WDC": 1795775812.034933,
-    "STX": 1795775812.034933,
-    "MSTR": 1795775812.034933,
-    "SNDK": 1795775812.034933,
-    "BTC-USD": 1795775812.034933,
-    "CRWD": 1795775812.034933,
-    "ORCL": 1795775812.034933,
-    "COIN": 1795775812.034933,
-    "LLY": 1795775812.034933,
-    "MRNA": 1795775812.034933,
-    "NKE": 1795775812.034933,
-    "MCD": 1795775812.034933,
+    "OKLO": 1795777329.2599885,
+    "CEG": 1795777329.2599885,
+    "FPS": 1795777329.2599885,
+    "MU": 1795777329.2599885,
+    "SKHY": 1795777329.2599885,
+    "WDC": 1795777329.2599885,
+    "STX": 1795777329.2599885,
+    "MSTR": 1795777329.2599885,
+    "SNDK": 1795777329.2599885,
+    "BTC-USD": 1795777329.2599885,
+    "CRWD": 1795777329.2599885,
+    "ORCL": 1795777329.2599885,
+    "COIN": 1795777329.2599885,
+    "LLY": 1795777329.2599885,
+    "MRNA": 1795777329.2599885,
+    "NKE": 1795777329.2599885,
+    "MCD": 1795777329.2599885,
     "PEP": 1795775920.3715477,
     "XOM": 1795775920.3715477,
     "JPM": 1795775920.3715477,
