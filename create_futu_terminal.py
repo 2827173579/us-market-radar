@@ -4821,7 +4821,8 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
                     bubblePill.innerText = `🔥 泡沫 ${mb}/${ib}`;
                     const clr = (Number(mt.macro_bubble_score) >= 65 || Number(mt.intraday_bubble_score) >= 75) ? pal.down : ((Number(mt.macro_bubble_score) >= 50 || Number(mt.intraday_bubble_score) >= 60) ? pal.warn : pal.sub);
                     bubblePill.style.color = clr;
-                    bubblePill.title = `大盘泡沫 ${mt.macro_bubble_score} (${mt.macro_bubble_tier || ''}) | 日内泡沫 ${mt.intraday_bubble_score} (${mt.intraday_bubble_tier || ''})`;
+                    const ibNote = mt.intraday_bubble_note ? ` · ${mt.intraday_bubble_note}` : "";
+                    bubblePill.title = `大盘泡沫 ${mt.macro_bubble_score} (${mt.macro_bubble_tier || ''}) | 日内泡沫 ${mt.intraday_bubble_score} (${mt.intraday_bubble_tier || ''}${ibNote})`;
                 } else {
                     bubblePill.innerText = "🔥 泡沫 --/--";
                 }
@@ -4855,9 +4856,12 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
                     const es = futs["ES=F"] || {};
                     const fmtP = (v) => (v !== null && v !== undefined && !Number.isNaN(Number(v))) ? Number(v).toLocaleString("en-US", { minimumFractionDigits: 2, maximumFractionDigits: 2 }) : "--";
                     const fmtPct = (v) => (v !== null && v !== undefined && !Number.isNaN(Number(v))) ? `${Number(v) >= 0 ? "+" : ""}${Number(v).toFixed(2)}%` : "--";
+                    const ibTierDisplay = mt.intraday_bubble_note
+                        ? `${mt.intraday_bubble_tier || ""}（${mt.intraday_bubble_note}）`
+                        : (mt.intraday_bubble_tier || "");
                     const rows = [
                         { lbl: "🔥 大盘整体泡沫", sc: Number(mt.macro_bubble_score || 0), tier: mt.macro_bubble_tier || "", clr: _scoreColor(mt.macro_bubble_color) },
-                        { lbl: `⚡ 日内泡沫 (${mt.source_tag || "期货实时"})`, sc: Number(mt.intraday_bubble_score || 0), tier: mt.intraday_bubble_tier || "", clr: _scoreColor(mt.intraday_bubble_color) },
+                        { lbl: `⚡ 日内泡沫 (${mt.source_tag || "期货实时"})`, sc: Number(mt.intraday_bubble_score || 0), tier: ibTierDisplay, clr: _scoreColor(mt.intraday_bubble_color) },
                         { lbl: "🧲 大盘整体抄底", sc: Number(mt.macro_bottom_score || 0), tier: mt.macro_bottom_tier || "", clr: _scoreColor(mt.macro_bottom_color) },
                         { lbl: `🎯 日内抄底 (${mt.source_tag || "期货实时"})`, sc: Number(mt.intraday_bottom_score || 0), tier: mt.intraday_bottom_tier || "", clr: _scoreColor(mt.intraday_bottom_color) },
                     ];

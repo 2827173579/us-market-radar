@@ -385,6 +385,195 @@ class TestV50FuturesAndTemperature(unittest.TestCase):
         cmd_names = {c.name for c in client.tree.get_commands()}
         self.assertTrue({"check", "vix", "top5", "ledger", "temp"}.issubset(cmd_names))
 
+    def test_08_down_day_hard_cap_and_session_vwap_reset(self):
+        """回归实盘 2026-11-27 误报：NQ=-1.56%、ES=-1.10% 叠加滞后正向 VWAP 偏离时日内泡沫必须 <= 5.0；微跌盘 <= 10.0；期货会话 VWAP 于 18:00 ET 重置。"""
+        # 1) 双双下跌且均值 <= -0.5%，即便残留滞后正向 VWAP (+3.10%/+1.97%) 与偏高 RSI(63) 也必须 <= 5.0
+        fut_down = {
+            "degraded": False,
+            "symbols": {
+                "NQ=F": {"symbol": "NQ=F", "available": True, "weekend_closed": False, "last": 26350.0, "pct_chg": -1.56, "vwap_diff_pct": 3.10, "rsi_5m": 63.4, "atr_20d_pct": 2.2, "status_tag": "24H 期货实时"},
+                "ES=F": {"symbol": "ES=F", "available": True, "weekend_closed": False, "last": 7245.0, "pct_chg": -1.10, "vwap_diff_pct": 1.97, "rsi_5m": 61.0, "atr_20d_pct": 1.6, "status_tag": "24H 期货实时"},
+            },
+        }
+        res_down = mte.compute_market_temperature(
+            macro_data={"QQQ": {"last": 633.93, "pct_chg": -0.65, "bias": -4.0}, "SPY": {"last": 716.7, "pct_chg": -0.29, "bias": -2.0}},
+            vix_regime={"vix_spot": 26.8, "vix_pct": 4.2, "vix_term_ratio": 1.02, "vix_state": "BACKWARDATION_BRAKE"},
+            futures_snapshot=fut_down,
+            session_code="OVERNIGHT",
+        )
+        self.assertLessEqual(res_down["intraday_bubble_score"], 5.0)
+        self.assertTrue(res_down["intraday_bubble_components"]["down_day_capped"])
+        self.assertEqual(res_down["intraday_bubble_components"]["vwap_pos_atr"], 0.0)
+        self.assertIn("下跌盘归零纠偏", res_down["intraday_bubble_note"])
+
+        # 2) 微跌区间 (-0.5%, 0%] 封顶 <= 10.0
+        fut_mild_down = {
+            "degraded": False,
+            "symbols": {
+                "NQ=F": {"symbol": "NQ=F", "available": True, "weekend_closed": False, "last": 26600.0, "pct_chg": -0.35, "vwap_diff_pct": 1.80, "rsi_5m": 76.0, "atr_20d_pct": 1.8, "status_tag": "24H 期货实时"},
+                "ES=F": {"symbol": "ES=F", "available": True, "weekend_closed": False, "last": 7290.0, "pct_chg": -0.15, "vwap_diff_pct": 1.20, "rsi_5m": 75.0, "atr_20d_pct": 1.4, "status_tag": "24H 期货实时"},
+            },
+        }
+        res_mild = mte.compute_market_temperature(futures_snapshot=fut_mild_down, session_code="OVERNIGHT")
+        self.assertLessEqual(res_mild["intraday_bubble_score"], 10.0)
+        self.assertTrue(res_mild["intraday_bubble_components"]["down_day_capped"])
+
+        # 3) 验证 18:00 ET 期货会话 VWAP 重置：昨日低位巨量 (25000) 不应把今日 18:00 ET 后 (26400 跌至 26350) 的会话 VWAP 偏离拉成 +3%
+        et_tz = timezone(timedelta(hours=-5))
+        t_prev = [datetime(2026, 11, 26, 14, 0, tzinfo=et_tz) + timedelta(minutes=5 * i) for i in range(20)]
+        t_curr = [datetime(2026, 11, 26, 18, 0, tzinfo=et_tz) + timedelta(minutes=5 * i) for i in range(20)]
+        idx = pd.DatetimeIndex(t_prev + t_curr)
+        closes = [25000.0] * 20 + [26400.0 - 2.5 * i for i in range(20)]
+        df_nq = pd.DataFrame(
+            {
+                "Open": [c + 1.0 for c in closes],
+                "High": [c + 5.0 for c in closes],
+                "Low": [c - 5.0 for c in closes],
+                "Close": closes,
+                "Volume": [50000.0] * 20 + [1200.0] * 20,
+            },
+            index=idx,
+        )
+        df_daily = _build_mock_daily_df(26750.0, n_days=30)
+        fut_item = mte._build_single_future_item("NQ=F", df_nq, df_daily, now_et=datetime(2026, 11, 26, 20, 0, tzinfo=et_tz), session_code="OVERNIGHT")
+        # 24H 跨日 VWAP 会因为昨日 25000 巨量被拉歪到 +4% 以上，但会话重置后 vwap_diff_pct 必须反映当前会话下跌 (< 0%)
+        self.assertGreater(fut_item["vwap_24h_diff_pct"], 2.0)
+        self.assertLessEqual(fut_item["vwap_diff_pct"], 0.0)
+
+    def test_09_true_bubble_vs_high_vol_short_squeeze_and_vix_breadth_divergence(self):
+        """相同涨幅与 RSI 下：缩量长上影 + VIX 反涨 + 美股广度 <40% 显著高于 放量实体阳线 + VIX 下跌 + 普涨广度 >75%。"""
+        # 构造相同涨幅 (+1.20%)、相同 VWAP 正偏离 (+0.80%)、相同 5m RSI (68.0) 的两组常规盘标的
+        macro_fake_push = {
+            "QQQ": {
+                "last": 506.0, "pct_chg": 1.30, "bias": 2.0, "vwap_diff_pct": 0.85, "rsi_5m": 69.0, "atr": 7.0,
+                "rvol_5m": 0.62, "upper_wick_ratio": 0.52, "upper_wick_avg_3b": 0.45,
+                "near_intraday_high": True, "rising_lows_above_vwap": False,
+            },
+            "SPY": {
+                "last": 597.0, "pct_chg": 1.10, "bias": 2.0, "vwap_diff_pct": 0.75, "rsi_5m": 67.0, "atr": 6.0,
+                "rvol_5m": 0.68, "upper_wick_ratio": 0.48, "upper_wick_avg_3b": 0.42,
+                "near_intraday_high": True, "rising_lows_above_vwap": False,
+            },
+        }
+        macro_true_squeeze = {
+            "QQQ": {
+                "last": 506.0, "pct_chg": 1.30, "bias": 2.0, "vwap_diff_pct": 0.85, "rsi_5m": 69.0, "atr": 7.0,
+                "rvol_5m": 1.80, "upper_wick_ratio": 0.09, "upper_wick_avg_3b": 0.08,
+                "near_intraday_high": True, "rising_lows_above_vwap": True,
+            },
+            "SPY": {
+                "last": 597.0, "pct_chg": 1.10, "bias": 2.0, "vwap_diff_pct": 0.75, "rsi_5m": 67.0, "atr": 6.0,
+                "rvol_5m": 1.70, "upper_wick_ratio": 0.11, "upper_wick_avg_3b": 0.10,
+                "near_intraday_high": True, "rising_lows_above_vwap": True,
+            },
+        }
+        # 广度 < 40%（仅 3/10 上涨）vs 广度 > 75%（8/10 上涨）
+        weak_stocks = _sample_pure_stocks(10, above_ma20_ratio=0.5, rsi_val=55.0)
+        for idx, s in enumerate(weak_stocks):
+            s["pct_change"] = 1.2 if idx < 3 else -0.8
+        strong_stocks = _sample_pure_stocks(10, above_ma20_ratio=0.7, rsi_val=60.0)
+        for idx, s in enumerate(strong_stocks):
+            s["pct_change"] = 1.8 if idx < 8 else -0.3
+
+        vr_div = {"vix_spot": 22.0, "vix_pct": 3.8, "vix_term_ratio": 1.02, "vix_state": "BACKWARDATION_BRAKE"}
+        vr_healthy = {"vix_spot": 16.5, "vix_pct": -5.2, "vix_term_ratio": 0.88, "vix_state": "CALM"}
+
+        res_fake = mte.compute_market_temperature(
+            macro_data=macro_fake_push,
+            stocks_data=weak_stocks,
+            vix_regime=vr_div,
+            session_code="REGULAR",
+        )
+        res_squeeze = mte.compute_market_temperature(
+            macro_data=macro_true_squeeze,
+            stocks_data=strong_stocks,
+            vix_regime=vr_healthy,
+            session_code="REGULAR",
+        )
+
+        # 真泡沫触发 >=75 高热警戒，放量真逼空触发 0.75~0.85 趋势打折且显著更低
+        self.assertGreaterEqual(res_fake["intraday_bubble_score"], 75.0)
+        self.assertGreater(res_fake["intraday_bubble_components"]["vp_stagnation_add"], 0.0)
+        self.assertGreater(res_fake["intraday_bubble_components"]["vix_divergence_add"], 0.0)
+        self.assertGreater(res_fake["intraday_bubble_components"]["breadth_divergence_add"], 0.0)
+        self.assertIn("缩量插针", res_fake["intraday_bubble_note"])
+        self.assertIn("恐慌背离", res_fake["intraday_bubble_note"])
+
+        self.assertTrue(res_squeeze["intraday_bubble_components"]["trend_discount_active"])
+        self.assertGreaterEqual(res_squeeze["intraday_bubble_components"]["trend_discount_mult"], 0.75)
+        self.assertLessEqual(res_squeeze["intraday_bubble_components"]["trend_discount_mult"], 0.85)
+        self.assertLess(res_squeeze["intraday_bubble_score"], 70.0)
+        self.assertGreater(res_fake["intraday_bubble_score"] - res_squeeze["intraday_bubble_score"], 25.0)
+        self.assertIn("放量逼空已打折", res_squeeze["intraday_bubble_note"])
+        self.assertIn("放量趋势打折", res_squeeze["intraday_bubble_tier"])
+
+        # 夜盘无有效个股广度时，breadth_divergence_add 必须优雅归 0
+        fut_up = {
+            "degraded": False,
+            "symbols": {
+                "NQ=F": {"symbol": "NQ=F", "available": True, "weekend_closed": False, "last": 21000.0, "pct_chg": 1.1, "vwap_diff_pct": 0.6, "rsi_5m": 64.0, "atr_20d_pct": 1.5, "status_tag": "24H 期货实时"},
+                "ES=F": {"symbol": "ES=F", "available": True, "weekend_closed": False, "last": 6000.0, "pct_chg": 0.9, "vwap_diff_pct": 0.5, "rsi_5m": 62.0, "atr_20d_pct": 1.2, "status_tag": "24H 期货实时"},
+            },
+        }
+        res_ov = mte.compute_market_temperature(
+            macro_data=macro_fake_push,
+            stocks_data=weak_stocks,
+            vix_regime=vr_healthy,
+            futures_snapshot=fut_up,
+            session_code="OVERNIGHT",
+        )
+        self.assertEqual(res_ov["intraday_bubble_components"]["breadth_divergence_add"], 0.0)
+        self.assertIsNone(res_ov["intraday_bubble_components"]["pure_us_advancing_pct"])
+
+    def test_10_apac_kospi_btc_extreme_shock_zero_impact_and_temp_note_hygiene(self):
+        """注入 BTC-USD、KOSPI、亚太指数与 A 股 ETF ±50% 极端涨跌，4 项温度计分值变化严格为 0.0，且 /temp 展示无英文黑话。"""
+        base_macro = {
+            "QQQ": {"last": 506.0, "pct_chg": 0.9, "bias": 3.0, "bias20": 2.0, "vwap_diff_pct": 0.4, "rsi_5m": 60.0, "atr": 7.0},
+            "SPY": {"last": 596.0, "pct_chg": 0.8, "bias": 2.5, "bias20": 1.6, "vwap_diff_pct": 0.3, "rsi_5m": 58.0, "atr": 6.0},
+        }
+        pure_stocks = _sample_pure_stocks(10, above_ma20_ratio=0.6, rsi_val=56.0)
+        for idx, s in enumerate(pure_stocks):
+            s["pct_change"] = 0.8 if idx < 4 else -0.5
+
+        vr = {"vix_spot": 18.0, "vix_pct": 1.5, "vix_term_ratio": 0.92, "vix_state": "CALM"}
+        res_base = mte.compute_market_temperature(
+            macro_data=base_macro,
+            stocks_data=pure_stocks,
+            vix_regime=vr,
+            session_code="REGULAR",
+        )
+
+        # 注入 BTC-USD / KOSPI / 亚太指数 / A 股 ETF ±50% 极端冲击
+        for shock_pct, mult in ((50.0, 1.5), (-50.0, 0.5)):
+            polluted = list(pure_stocks) + [
+                {"ticker": "BTC-USD", "cat": "数字资产", "last": 60000.0 * mult, "ma20": 60000.0, "pct_change": shock_pct, "rsi": 95.0 if shock_pct > 0 else 5.0},
+                {"ticker": "KOSPI", "cat": "亚太指数", "last": 4800.0 * mult, "ma20": 4800.0, "pct_change": shock_pct, "rsi": 95.0 if shock_pct > 0 else 5.0},
+                {"ticker": "HSTECH", "cat": "亚太指数", "last": 3500.0 * mult, "ma20": 3500.0, "pct_change": shock_pct, "rsi": 95.0 if shock_pct > 0 else 5.0},
+                {"ticker": "588200", "cat": "A股ETF", "last": 0.87 * mult, "ma20": 0.87, "pct_change": shock_pct, "rsi": 95.0 if shock_pct > 0 else 5.0},
+                {"ticker": "510300", "cat": "A股宽基", "last": 4.20 * mult, "ma20": 4.20, "pct_change": shock_pct, "rsi": 95.0 if shock_pct > 0 else 5.0},
+                {"ticker": "000688", "cat": "亚太指数", "last": 1290.0 * mult, "ma20": 1290.0, "pct_change": shock_pct, "rsi": 95.0 if shock_pct > 0 else 5.0},
+            ]
+            res_poll = mte.compute_market_temperature(
+                macro_data=base_macro,
+                stocks_data=polluted,
+                vix_regime=vr,
+                session_code="REGULAR",
+            )
+            for k in ("macro_bubble_score", "intraday_bubble_score", "macro_bottom_score", "intraday_bottom_score"):
+                self.assertEqual(res_poll[k] - res_base[k], 0.0, f"Polluted non-US ticker shifted {k}")
+            self.assertEqual(res_poll["pure_us_equity_count"], 10)
+            self.assertEqual(
+                res_poll["intraday_bubble_components"]["pure_us_advancing_pct"],
+                res_base["intraday_bubble_components"]["pure_us_advancing_pct"],
+            )
+
+        # 验证 /temp 卡片展示 intraday_bubble_note 且零禁用黑话
+        emb = bot.build_temp_embed_dict({"market_temperature": res_base, "futures": {}, "session_code": "REGULAR", "updated_at_et": "2026-11-27 10:15:00 ET"})
+        txt = "\n".join([emb["title"], emb["description"]] + [f["value"] for f in emb.get("fields", [])])
+        self.assertIn(res_base["intraday_bubble_note"], txt)
+        for bad in ("BEAR_DEFENSE", "RVOL", "VWAP", "RSI", "VIX_BACKWARDATION"):
+            self.assertNotIn(bad, res_base["intraday_bubble_note"])
+
 
 if __name__ == "__main__":
     unittest.main()

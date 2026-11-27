@@ -1351,9 +1351,11 @@ def build_temp_embed_dict(snapshot: Optional[Dict[str, Any]]) -> Dict[str, Any]:
         _fmt_fut_line("标普500期货 (ES=F)", es),
     ]
 
+    ib_note = str(mt.get("intraday_bubble_note") or "").strip()
+    ib_note_suffix = f"（{ib_note}）" if ib_note else ""
     bubble_lines = [
         f"• **大盘整体泡沫**：**{_fmt_num(mb, 1)} / 100** — {mt.get('macro_bubble_tier') or '正常健康'}",
-        f"• **日内泡沫（{src_tag}）**：**{_fmt_num(ib, 1)} / 100** — {mt.get('intraday_bubble_tier') or '日内无追高泡沫'}",
+        f"• **日内泡沫（{src_tag}）**：**{_fmt_num(ib, 1)} / 100** — {mt.get('intraday_bubble_tier') or '日内无追高泡沫'}{ib_note_suffix}",
     ]
 
     lock_tag_m = " 🔒（倒挂/阴跌硬接刀锁生效，封顶 ≤50）" if macro_locked else ""

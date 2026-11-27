@@ -36,6 +36,7 @@ except Exception:
 SCRATCH_DIR = os.path.dirname(os.path.abspath(__file__))
 DEFAULT_FUTURES_TEMP_CACHE_PATH = os.path.join(SCRATCH_DIR, "data_cache", "futures_temp_cache.json")
 DEFAULT_CACHE_TTL_SECONDS = 180
+FUTURES_CACHE_SCHEMA_VERSION = 2
 
 FUTURES_SYMBOLS: Tuple[str, ...] = ("NQ=F", "ES=F")
 FUTURES_META: Dict[str, Dict[str, str]] = {
@@ -147,21 +148,25 @@ def _linear_score(val: Optional[float], low: float, high: float, max_pts: float)
 
 
 def is_pure_us_equity(ticker: str, item: Optional[Dict[str, Any]] = None) -> bool:
-    """判断标的是否属于纯美股权益统计口径（严格排除加密、商品、美债、反向与波动率 ETF）。"""
+    """判断标的是否属于纯美股权益统计口径（严格排除加密、商品、美债、反向与波动率 ETF、亚太与 A 股标的）。"""
     tk = str(ticker or "").strip().upper()
     if not tk or tk in EXCLUDED_TEMPERATURE_TICKERS:
         return False
     if tk.endswith("-USD") or tk.endswith("=X") or tk.startswith("^"):
         return False
+    if tk.endswith(".SS") or tk.endswith(".SZ") or tk.endswith(".HK") or tk.endswith(".KS") or tk.endswith(".T") or tk.endswith(".TW"):
+        return False
+    if tk.isdigit() and len(tk) == 6:
+        return False
     if isinstance(item, dict):
         cat = str(item.get("cat") or item.get("category") or "").strip()
         if cat in EXCLUDED_TEMPERATURE_CATS:
             return False
-        for kw in ("反向", "做空", "加密", "数字资产", "黄金", "大宗", "美债", "恐慌"):
+        for kw in ("反向", "做空", "加密", "数字资产", "黄金", "大宗", "美债", "恐慌", "亚太", "A股", "港股", "日股", "台股", "韩国"):
             if kw in cat:
                 return False
         name = str(item.get("name") or "")
-        for kw in ("反向", "做空", "比特币", "黄金", "美债", "恐慌"):
+        for kw in ("反向", "做空", "比特币", "黄金", "美债", "恐慌", "恒生", "科创", "创业板", "沪深", "日经", "韩国综指", "台湾加权"):
             if kw in name:
                 return False
         lev = _safe_float(item.get("leverage"))
@@ -286,6 +291,111 @@ def _is_futures_weekend_closed(now_et: Optional[datetime] = None, session_code: 
     return False
 
 
+def _to_et_timestamp(ts: Any) -> Optional[datetime]:
+    """将 pandas Timestamp / datetime 安全转为美东时区 datetime。"""
+    try:
+        dt = ts.to_pydatetime() if hasattr(ts, "to_pydatetime") else ts
+        if not isinstance(dt, datetime):
+            return None
+        if dt.tzinfo is None:
+            dt = dt.replace(tzinfo=timezone.utc)
+        return dt.astimezone(_ET_TZ)
+    except Exception:
+        return None
+
+
+def _compute_cumulative_vwap_series(
+    highs: Sequence[float],
+    lows: Sequence[float],
+    closes: Sequence[float],
+    vols: Sequence[float],
+) -> List[float]:
+    cum_pv = 0.0
+    cum_v = 0.0
+    tp_sum = 0.0
+    out: List[float] = []
+    for i in range(len(closes)):
+        tp = (float(highs[i]) + float(lows[i]) + float(closes[i])) / 3.0
+        tp_sum += tp
+        v = max(0.0, float(vols[i])) if i < len(vols) else 0.0
+        if v > 0.0:
+            cum_pv += tp * v
+            cum_v += v
+        if cum_v > 0.0:
+            out.append(cum_pv / cum_v)
+        else:
+            out.append(tp_sum / (i + 1))
+    return out
+
+
+def _extract_5m_vol_price_features(
+    opens: Sequence[float],
+    highs: Sequence[float],
+    lows: Sequence[float],
+    closes: Sequence[float],
+    vols: Sequence[float],
+    vwap_ref: Optional[float] = None,
+) -> Dict[str, Any]:
+    """基于内存中已有最近 3~6 根 5m K 线提取量能比、长上影滞涨与放量抬高低点特征（零未来函数）。"""
+    n = min(len(opens), len(highs), len(lows), len(closes))
+    if n < 3:
+        return {
+            "rvol_5m": None,
+            "upper_wick_ratio": None,
+            "upper_wick_avg_3b": None,
+            "near_intraday_high": False,
+            "rising_lows_above_vwap": False,
+        }
+
+    # 1) 相对量能 RVOL：近 3 根均量 / 前序基准均量（最多取前 20 根有效非零量）
+    rvol_5m: Optional[float] = None
+    if len(vols) >= n:
+        recent_vols = [max(0.0, float(v)) for v in vols[n - 3 : n]]
+        prev_vols = [max(0.0, float(v)) for v in vols[max(0, n - 23) : n - 3] if float(v) > 0.0]
+        if len(prev_vols) >= 3:
+            base_v = sum(prev_vols) / len(prev_vols)
+            rec_v = sum(recent_vols) / len(recent_vols)
+            if base_v > 0.0 and rec_v > 0.0:
+                rvol_5m = round(rec_v / base_v, 3)
+
+    # 2) 近 3 根 5m 上影线占比（单根最大 + 3 根均值）
+    wick_ratios: List[float] = []
+    for i in range(n - 3, n):
+        rng = float(highs[i]) - float(lows[i])
+        if rng > 1e-6:
+            uw = max(0.0, float(highs[i]) - max(float(opens[i]), float(closes[i])))
+            wick_ratios.append(_clamp(uw / rng, 0.0, 1.0))
+        else:
+            wick_ratios.append(0.0)
+    uw_max = round(max(wick_ratios), 3) if wick_ratios else 0.0
+    uw_avg = round(sum(wick_ratios) / len(wick_ratios), 3) if wick_ratios else 0.0
+
+    # 3) 是否刷新或贴近日内高点
+    hi_all = max(float(x) for x in highs[:n])
+    lo_all = min(float(x) for x in lows[:n])
+    last_c = float(closes[n - 1])
+    last_h = max(float(highs[n - 1]), float(highs[n - 2]), float(highs[n - 3]))
+    pos_rng = (last_c - lo_all) / max(hi_all - lo_all, 1e-6)
+    near_high = bool(last_h >= hi_all * 0.9985 or pos_rng >= 0.80)
+
+    # 4) 连续抬高低点 + 站稳 VWAP + 实体推升（区分放量真逼空）
+    l3, l2, l1 = float(lows[n - 3]), float(lows[n - 2]), float(lows[n - 1])
+    c3, c1 = float(closes[n - 3]), float(closes[n - 1])
+    rising_lows = bool(l1 >= l2 * 0.9995 and l2 >= l3 * 0.9995 and l1 > l3 and c1 >= c3)
+    vwap_ok = True
+    if vwap_ref is not None and vwap_ref > 0.0:
+        vwap_ok = bool(min(float(closes[n - 3]), float(closes[n - 2]), float(closes[n - 1])) >= float(vwap_ref) * 0.9995)
+    rising_above_vwap = bool(rising_lows and vwap_ok)
+
+    return {
+        "rvol_5m": rvol_5m,
+        "upper_wick_ratio": uw_max,
+        "upper_wick_avg_3b": uw_avg,
+        "near_intraday_high": near_high,
+        "rising_lows_above_vwap": rising_above_vwap,
+    }
+
+
 def _build_single_future_item(
     symbol: str,
     df_intra: Any,
@@ -310,10 +420,17 @@ def _build_single_future_item(
         "high_24h": None,
         "low_24h": None,
         "vwap_24h": None,
+        "vwap_session": None,
         "vwap_diff_pct": None,
+        "vwap_24h_diff_pct": None,
         "rsi_5m": None,
         "atr_20d_pct": None,
         "close_vs_ema9_pct": None,
+        "rvol_5m": None,
+        "upper_wick_ratio": None,
+        "upper_wick_avg_3b": None,
+        "near_intraday_high": False,
+        "rising_lows_above_vwap": False,
         "near_intraday_low": False,
         "intraday_stabilized": False,
         "reclaim_ema9": False,
@@ -378,25 +495,43 @@ def _build_single_future_item(
                 hi_24 = max(highs_24h)
                 lo_24 = min(lows_24h)
 
-                # 24H 累积 VWAP（若期货某段无量则回退等权典型价均值）
-                cum_pv = 0.0
-                cum_v = 0.0
-                vwap_series: List[float] = []
-                tp_sum = 0.0
-                for i in range(len(closes_24h)):
-                    tp = (highs_24h[i] + lows_24h[i] + closes_24h[i]) / 3.0
-                    tp_sum += tp
-                    v = vols_24h[i]
-                    if v > 0:
-                        cum_pv += tp * v
-                        cum_v += v
-                    if cum_v > 0:
-                        vwap_series.append(cum_pv / cum_v)
-                    else:
-                        vwap_series.append(tp_sum / (i + 1))
+                # 24H 累积 VWAP（供 24H 曲线绘制）
+                vwap_series = _compute_cumulative_vwap_series(highs_24h, lows_24h, closes_24h, vols_24h)
+                vwap_24h_last = vwap_series[-1] if vwap_series else last_px
+                vwap_24h_diff_pct = ((last_px - vwap_24h_last) / vwap_24h_last * 100.0) if vwap_24h_last > 0 else 0.0
 
-                vwap_last = vwap_series[-1] if vwap_series else last_px
+                # 当日 CME 期货交易日会话 VWAP（18:00 ET 开盘重置），避免跨日旧低点拉歪夜盘/亚欧盘偏离率
+                vwap_session_last = vwap_24h_last
+                try:
+                    last_et_dt = _to_et_timestamp(sub_24h.index[-1])
+                    if last_et_dt is not None:
+                        if last_et_dt.hour >= 18:
+                            sess_start_et = last_et_dt.replace(hour=18, minute=0, second=0, microsecond=0)
+                        else:
+                            prev_d = last_et_dt.date() - timedelta(days=1)
+                            sess_start_et = datetime(prev_d.year, prev_d.month, prev_d.day, 18, 0, 0, tzinfo=_ET_TZ)
+                        sess_mask = []
+                        for ts_raw in sub_24h.index:
+                            ts_et = _to_et_timestamp(ts_raw)
+                            sess_mask.append(bool(ts_et is not None and ts_et >= sess_start_et))
+                        if sum(sess_mask) >= 2:
+                            s_h = [highs_24h[i] for i, m in enumerate(sess_mask) if m]
+                            s_l = [lows_24h[i] for i, m in enumerate(sess_mask) if m]
+                            s_c = [closes_24h[i] for i, m in enumerate(sess_mask) if m]
+                            s_v = [vols_24h[i] for i, m in enumerate(sess_mask) if m]
+                            s_vwap = _compute_cumulative_vwap_series(s_h, s_l, s_c, s_v)
+                            if s_vwap:
+                                vwap_session_last = s_vwap[-1]
+                except Exception:
+                    vwap_session_last = vwap_24h_last
+
+                vwap_last = vwap_session_last
                 vwap_diff_pct = ((last_px - vwap_last) / vwap_last * 100.0) if vwap_last > 0 else 0.0
+
+                # 提取最近 3~6 根 5m K 线量价特征（供日内泡沫缩量插针 vs 放量逼空区分，0 额外请求）
+                vp_feats = _extract_5m_vol_price_features(
+                    opens_24h, highs_24h, lows_24h, closes_24h, vols_24h, vwap_ref=vwap_last
+                )
 
                 # 相对前结算价涨跌幅：优先用日线倒数第二根（若最新日线即今日），否则倒数第一根
                 prev_close = None
@@ -482,10 +617,17 @@ def _build_single_future_item(
                         "pct_chg": round(pct_chg, 2),
                         "high_24h": round(hi_24, 2),
                         "low_24h": round(lo_24, 2),
-                        "vwap_24h": round(vwap_last, 2),
+                        "vwap_24h": round(vwap_24h_last, 2),
+                        "vwap_session": round(vwap_session_last, 2),
                         "vwap_diff_pct": round(vwap_diff_pct, 2),
+                        "vwap_24h_diff_pct": round(vwap_24h_diff_pct, 2),
                         "rsi_5m": round(rsi_5m, 1),
                         "close_vs_ema9_pct": round(close_vs_ema9_pct, 3),
+                        "rvol_5m": vp_feats.get("rvol_5m"),
+                        "upper_wick_ratio": vp_feats.get("upper_wick_ratio"),
+                        "upper_wick_avg_3b": vp_feats.get("upper_wick_avg_3b"),
+                        "near_intraday_high": bool(vp_feats.get("near_intraday_high", False)),
+                        "rising_lows_above_vwap": bool(vp_feats.get("rising_lows_above_vwap", False)),
                         "near_intraday_low": near_low,
                         "intraday_stabilized": stabilized,
                         "reclaim_ema9": reclaim_ema9,
@@ -525,13 +667,19 @@ def _build_single_future_item(
     return item
 
 
-def _read_cache_if_fresh(cache_path: str, ttl_seconds: int) -> Optional[Dict[str, Any]]:
+def _read_cache_if_fresh(
+    cache_path: str,
+    ttl_seconds: int,
+    min_schema_version: int = 0,
+) -> Optional[Dict[str, Any]]:
     if not cache_path or not os.path.exists(cache_path):
         return None
     try:
         with open(cache_path, "r", encoding="utf-8") as f:
             doc = json.load(f)
         if not isinstance(doc, dict):
+            return None
+        if min_schema_version > 0 and int(doc.get("schema_version_num") or 0) < min_schema_version:
             return None
         ts = _safe_float(doc.get("cached_at_ts"))
         if ts is None:
@@ -565,7 +713,11 @@ def fetch_futures_snapshot(
 ) -> Dict[str, Any]:
     """独立抓取并缓存 NQ=F 与 ES=F 期货快照（单标的异常隔离，永不阻塞主雷达）。"""
     if not force_refresh:
-        cached = _read_cache_if_fresh(cache_path, ttl_seconds)
+        cached = _read_cache_if_fresh(
+            cache_path,
+            ttl_seconds,
+            min_schema_version=(FUTURES_CACHE_SCHEMA_VERSION if allow_network else 0),
+        )
         if isinstance(cached, dict) and isinstance(cached.get("symbols"), dict):
             # 动态刷新 status_tag 防止跨周末缓存文案陈旧
             wk = _is_futures_weekend_closed(now_et=now_et, session_code=session_code)
@@ -659,6 +811,7 @@ def fetch_futures_snapshot(
         symbols_out[sym] = item
 
     payload = {
+        "schema_version_num": FUTURES_CACHE_SCHEMA_VERSION,
         "degraded": avail_count == 0,
         "from_cache": False,
         "cached_at_ts": time.time(),
@@ -678,15 +831,19 @@ def _extract_spot_intraday_metrics(
     macro_data: Dict[str, Any],
     intraday_map: Optional[Dict[str, Any]] = None,
 ) -> Optional[Dict[str, Any]]:
-    """提取盘中现货 (QQQ/SPY) 的 VWAP 偏离、5m RSI、涨跌幅与 5m 右侧企稳信号。"""
+    """提取盘中现货 (QQQ/SPY) 的当日 09:30 ET 会话 VWAP 偏离、5m RSI、涨跌幅、5m 量价特征与右侧企稳信号。"""
     m_item = (macro_data or {}).get(ticker) if isinstance(macro_data, dict) else None
     if not isinstance(m_item, dict):
         return None
     last = _safe_float(m_item.get("last"))
     if last is None or last <= 0:
         return None
-    pct = _safe_float(m_item.get("pct_chg"), 0.0) or 0.0
-    vwap_val = _safe_float(m_item.get("vwap"))
+    pct = _safe_float(m_item.get("pct_chg"))
+    if pct is None:
+        pct = _safe_float(m_item.get("pct_change"), 0.0) or 0.0
+    vwap_val = _safe_float(m_item.get("vwap_rth"))
+    if vwap_val is None or vwap_val <= 0:
+        vwap_val = _safe_float(m_item.get("vwap"))
     vwap_diff = _safe_float(m_item.get("vwap_diff_pct"))
     if vwap_diff is None and vwap_val and vwap_val > 0:
         vwap_diff = ((last - vwap_val) / vwap_val) * 100.0
@@ -705,12 +862,35 @@ def _extract_spot_intraday_metrics(
     reclaim_vwap = False
     green_rev = False
     rsi_bull_div = False
+    rvol_5m = _safe_float(m_item.get("rvol_5m"))
+    if rvol_5m is None:
+        rvol_5m = _safe_float(m_item.get("rvol"))
+    upper_wick_ratio = _safe_float(m_item.get("upper_wick_ratio"))
+    upper_wick_avg_3b = _safe_float(m_item.get("upper_wick_avg_3b"))
+    near_high = bool(m_item.get("near_intraday_high", False))
+    rising_lows_above_vwap = bool(m_item.get("rising_lows_above_vwap", False))
 
-    # 若传入 intraday_map[ticker] (5m DataFrame)，基于最近 3~6 根 5m K 线精准检测右侧企稳
+    # 若传入 intraday_map[ticker] (5m DataFrame)，基于当日 09:30 ET 会话重置 VWAP 并精准提取 5m 量价与企稳特征
     df_5m = (intraday_map or {}).get(ticker) if isinstance(intraday_map, dict) else None
     if df_5m is not None and not getattr(df_5m, "empty", True) and "Close" in df_5m.columns:
         try:
-            sub = df_5m.dropna(subset=["Close"]).tail(78)
+            sub_raw = df_5m.dropna(subset=["Close"])
+            # 优先截取最新美东交易日 >= 09:30 ET 的常规盘会话 K 线，避免跨日旧低点拉歪 VWAP
+            sub = sub_raw.tail(78)
+            try:
+                last_et = _to_et_timestamp(sub_raw.index[-1])
+                if last_et is not None:
+                    rth_start = datetime(last_et.year, last_et.month, last_et.day, 9, 30, 0, tzinfo=_ET_TZ)
+                    rth_mask = []
+                    for ts_raw in sub_raw.index:
+                        ts_et = _to_et_timestamp(ts_raw)
+                        rth_mask.append(bool(ts_et is not None and ts_et >= rth_start))
+                    if sum(rth_mask) >= 2:
+                        sub_rth = sub_raw.loc[rth_mask]
+                        sub = sub_rth.tail(78)
+            except Exception:
+                pass
+
             closes = [float(x) for x in sub["Close"].tolist()]
             opens = [float(x) for x in sub["Open"].tolist()] if "Open" in sub.columns else closes
             highs = [float(x) for x in sub["High"].tolist()] if "High" in sub.columns else closes
@@ -720,6 +900,21 @@ def _extract_spot_intraday_metrics(
                 if "Volume" in sub.columns
                 else [0.0] * len(closes)
             )
+            if len(closes) >= 2:
+                rth_vwap_seq = _compute_cumulative_vwap_series(highs, lows, closes, vols)
+                if rth_vwap_seq and rth_vwap_seq[-1] > 0:
+                    vwap_val = rth_vwap_seq[-1]
+                    vwap_diff = ((closes[-1] - vwap_val) / vwap_val) * 100.0
+            if len(closes) >= 3:
+                vp = _extract_5m_vol_price_features(opens, highs, lows, closes, vols, vwap_ref=vwap_val)
+                if vp.get("rvol_5m") is not None:
+                    rvol_5m = vp["rvol_5m"]
+                if vp.get("upper_wick_ratio") is not None:
+                    upper_wick_ratio = vp["upper_wick_ratio"]
+                if vp.get("upper_wick_avg_3b") is not None:
+                    upper_wick_avg_3b = vp["upper_wick_avg_3b"]
+                near_high = bool(vp.get("near_intraday_high", near_high))
+                rising_lows_above_vwap = bool(vp.get("rising_lows_above_vwap", rising_lows_above_vwap))
             if len(closes) >= 6:
                 rsi_seq = _compute_rsi_series(closes, period=14)
                 if rsi_seq:
@@ -767,6 +962,11 @@ def _extract_spot_intraday_metrics(
         "vwap_diff_pct": vwap_diff,
         "rsi_5m": rsi_5m,
         "atr_20d_pct": atr_pct,
+        "rvol_5m": rvol_5m,
+        "upper_wick_ratio": upper_wick_ratio,
+        "upper_wick_avg_3b": upper_wick_avg_3b if upper_wick_avg_3b is not None else upper_wick_ratio,
+        "near_intraday_high": near_high,
+        "rising_lows_above_vwap": rising_lows_above_vwap,
         "near_intraday_low": near_low,
         "intraday_stabilized": stabilized,
         "reclaim_ema9": reclaim_ema9,
@@ -777,13 +977,22 @@ def _extract_spot_intraday_metrics(
 
 
 def _compute_pure_us_breadth(stocks_data: Optional[Sequence[Dict[str, Any]]]) -> Dict[str, Any]:
-    """仅统计纯美股权益标的池的 MA20 宽度与 RSI14>=70 过热占比（严格零加密/商品/反向污染）。"""
+    """仅统计纯美股权益标的池的 MA20 宽度、RSI14 极值占比与当日上涨家数占比（严格零加密/商品/亚太/A股/反向污染）。"""
     if not stocks_data:
-        return {"count": 0, "pct_above_ma20": 50.0, "pct_rsi_overbought": 15.0, "pct_rsi_oversold": 15.0}
+        return {
+            "count": 0,
+            "pct_above_ma20": 50.0,
+            "pct_rsi_overbought": 15.0,
+            "pct_rsi_oversold": 15.0,
+            "pct_advancing": None,
+            "advancing_valid_count": 0,
+        }
     total = 0
     above_ma20 = 0
     rsi_ob = 0
     rsi_os = 0
+    adv_valid = 0
+    adv_up = 0
     for item in stocks_data:
         if not isinstance(item, dict):
             continue
@@ -810,14 +1019,30 @@ def _compute_pure_us_breadth(stocks_data: Optional[Sequence[Dict[str, Any]]]) ->
                 rsi_ob += 1
             elif rsi14 <= 32.0:
                 rsi_os += 1
+        pct_i = _safe_float(item.get("pct_chg"))
+        if pct_i is None:
+            pct_i = _safe_float(item.get("pct_change"))
+        if pct_i is not None:
+            adv_valid += 1
+            if pct_i > 0.0:
+                adv_up += 1
 
     if total == 0:
-        return {"count": 0, "pct_above_ma20": 50.0, "pct_rsi_overbought": 15.0, "pct_rsi_oversold": 15.0}
+        return {
+            "count": 0,
+            "pct_above_ma20": 50.0,
+            "pct_rsi_overbought": 15.0,
+            "pct_rsi_oversold": 15.0,
+            "pct_advancing": None,
+            "advancing_valid_count": 0,
+        }
     return {
         "count": total,
         "pct_above_ma20": round((above_ma20 / total) * 100.0, 2),
         "pct_rsi_overbought": round((rsi_ob / total) * 100.0, 2),
         "pct_rsi_oversold": round((rsi_os / total) * 100.0, 2),
+        "pct_advancing": round((adv_up / adv_valid) * 100.0, 2) if adv_valid >= 5 else None,
+        "advancing_valid_count": adv_valid,
     }
 
 
@@ -973,32 +1198,163 @@ def compute_market_temperature(
         intra_stabilized = False
 
     # =====================================================================
-    # 3. 日内泡沫评分 (intraday_bubble_score, 0~100)
+    # 3. 日内泡沫评分 (intraday_bubble_score, 0~100) — V5.9 量价+VIX+广度多维版
     # =====================================================================
-    # 权重：VWAP 正偏离 ATR 倍数 45% + 5m RSI 超买 30% + 日内涨幅/ATR 25%
+    leg_pcts = [float(_safe_float(x.get("pct_chg"), 0.0) or 0.0) for x in active_legs]
+    all_legs_down = bool(leg_pcts) and all(p < 0.0 for p in leg_pcts)
+
+    rvol_vals = [float(v) for x in active_legs if (v := _safe_float(x.get("rvol_5m"))) is not None and v > 0.0]
+    intra_rvol_5m = round(sum(rvol_vals) / len(rvol_vals), 3) if rvol_vals else None
+    uw_vals = [float(v) for x in active_legs if (v := _safe_float(x.get("upper_wick_ratio"))) is not None]
+    intra_upper_wick = round(max(uw_vals), 3) if uw_vals else None
+    uw_avg_vals = [
+        float(v)
+        for x in active_legs
+        if (v := _safe_float(x.get("upper_wick_avg_3b"))) is not None
+        or (v := _safe_float(x.get("upper_wick_ratio"))) is not None
+    ]
+    intra_upper_wick_avg = round(sum(uw_avg_vals) / len(uw_avg_vals), 3) if uw_avg_vals else None
+    intra_near_high = any(bool(x.get("near_intraday_high")) for x in active_legs)
+    intra_rising_above_vwap = any(bool(x.get("rising_lows_above_vwap")) for x in active_legs)
+
+    vix_pct = _safe_float(vr.get("vix_pct"))
+    vix_backwardation_pre = bool(
+        (vix_ratio is not None and vix_ratio >= 1.00) or vix_state == "BACKWARDATION_BRAKE"
+    )
+    pure_us_adv_pct = breadth.get("pct_advancing")
+
+    # 基础价格拉伸项：VWAP 正偏离 ATR 倍数 45% + 5m RSI 超买 30% + 日内涨幅/ATR 25%
     pos_vwap_atr = max(0.0, intra_vwap_diff) / max(intra_atr_pct, 0.4)
     pos_gain_atr = max(0.0, intra_pct) / max(intra_atr_pct, 0.4)
     ib_vwap = _linear_score(pos_vwap_atr, 0.0, 0.90, 45.0)
     ib_rsi = _linear_score(intra_rsi5m, 52.0, 78.0, 30.0)
     ib_stretch = _linear_score(pos_gain_atr, 0.0, 1.25, 25.0)
-    raw_intra_bubble = ib_vwap + ib_rsi + ib_stretch
-    # 当日内涨幅 <= 0 或现价低于 VWAP 时自动收敛至 <= 25
-    if intra_pct <= 0.0 or intra_vwap_diff < 0.0:
-        raw_intra_bubble = min(raw_intra_bubble, 25.0)
-    intraday_bubble_score = round(_clamp(raw_intra_bubble, 0.0, 100.0), 1)
+    base_price_bubble = ib_vwap + ib_rsi + ib_stretch
+
+    vp_stagnation_pts = 0.0
+    low_vol_push_pts = 0.0
+    upper_wick_pts = 0.0
+    vix_div_pts = 0.0
+    breadth_div_pts = 0.0
+    trend_discount_mult = 1.0
+    trend_discount_active = False
+    down_day_capped = False
+
+    if intra_pct <= 0.0:
+        # 1) 下跌盘硬纠偏闸门：正向 VWAP 泡沫项强制归零，避免跨日滞后 VWAP 给出 20~30+ 失真分
+        ib_vwap = 0.0
+        ib_stretch = 0.0
+        down_day_capped = True
+        down_cap = 5.0 if (all_legs_down and intra_pct <= -0.5) else 10.0
+        raw_intra_bubble = min(ib_rsi * 0.20, down_cap)
+        intraday_bubble_score = round(_clamp(raw_intra_bubble, 0.0, 100.0), 1)
+        intraday_bubble_note = "下跌盘归零纠偏" if down_cap <= 5.0 else "微跌盘收敛无泡沫"
+    elif intra_vwap_diff < 0.0:
+        # 微涨但仍在均价线下方：无追高泡沫，温和封顶 <= 20
+        ib_vwap = 0.0
+        raw_intra_bubble = min(ib_rsi * 0.5 + ib_stretch * 0.5, 20.0)
+        intraday_bubble_score = round(_clamp(raw_intra_bubble, 0.0, 100.0), 1)
+        intraday_bubble_note = "现价仍在均价线下方，无追高泡沫"
+    else:
+        # 2) 上涨盘且站上均价线：量价滞涨 (+0~+18) vs 放量逼空打折 (0.75~0.85)
+        if intra_pct > 0.3 and intra_vwap_diff > 0.0:
+            if intra_near_high and intra_rvol_5m is not None and intra_rvol_5m < 0.85:
+                low_vol_push_pts = 3.0 + _linear_score(intra_rvol_5m, 0.85, 0.45, 7.0)
+            if intra_upper_wick is not None and intra_upper_wick >= 0.40:
+                upper_wick_pts = 3.0 + _linear_score(intra_upper_wick, 0.40, 0.65, 5.0)
+            vp_stagnation_pts = _clamp(low_vol_push_pts + upper_wick_pts, 0.0, 18.0)
+
+            if (
+                vp_stagnation_pts == 0.0
+                and intra_rvol_5m is not None
+                and intra_rvol_5m >= 1.35
+                and (intra_upper_wick_avg is None or intra_upper_wick_avg < 0.20)
+                and (intra_upper_wick is None or intra_upper_wick < 0.25)
+                and intra_rising_above_vwap
+            ):
+                trend_discount_mult = round(0.85 - _linear_score(intra_rvol_5m, 1.35, 2.00, 0.10), 3)
+                trend_discount_mult = _clamp(trend_discount_mult, 0.75, 0.85)
+                trend_discount_active = True
+
+        # 3) ^VIX 恐慌背离加分 (+0~+10，仅在指数/期货上涨 >= +0.4% 时生效)
+        if intra_pct >= 0.4:
+            v_rise_pts = (2.5 + _linear_score(vix_pct, 0.0, 6.0, 4.5)) if (vix_pct is not None and vix_pct > 0.0) else 0.0
+            v_inv_pts = (
+                (2.0 + _linear_score(vix_ratio if vix_ratio is not None else 1.00, 1.00, 1.12, 3.0))
+                if vix_backwardation_pre
+                else 0.0
+            )
+            vix_div_pts = _clamp(v_rise_pts + v_inv_pts, 0.0, 10.0)
+
+        # 4) 纯美股广度背离加分 (+0~+10，仅在美股常规盘/有效个股报价时段且上涨 >= +0.5% 生效)
+        if sess == "REGULAR" and source_tag == "盘中现货" and intra_pct >= 0.5 and pure_us_adv_pct is not None:
+            if pure_us_adv_pct < 45.0:
+                breadth_div_pts = _clamp(2.5 + _linear_score(pure_us_adv_pct, 45.0, 20.0, 7.5), 0.0, 10.0)
+
+        raw_intra_bubble = (
+            base_price_bubble * trend_discount_mult
+            + vp_stagnation_pts
+            + vix_div_pts
+            + breadth_div_pts
+        )
+        intraday_bubble_score = round(_clamp(raw_intra_bubble, 0.0, 100.0), 1)
+
+        # 大白话归因短句（零英文黑话）
+        reason_tags: List[str] = []
+        if low_vol_push_pts > 0.0 and upper_wick_pts > 0.0:
+            reason_tags.append("缩量插针")
+        elif low_vol_push_pts > 0.0:
+            reason_tags.append("缩量虚拉")
+        elif upper_wick_pts > 0.0:
+            reason_tags.append("长上影滞涨")
+        if vix_div_pts > 0.0:
+            reason_tags.append("恐慌背离")
+        if breadth_div_pts > 0.0:
+            reason_tags.append("少数权重虚拉")
+
+        if trend_discount_active and not reason_tags:
+            intraday_bubble_note = "放量逼空已打折"
+        elif reason_tags:
+            joined = "+".join(reason_tags)
+            intraday_bubble_note = f"{joined}偏高" if intraday_bubble_score >= 60.0 else f"{joined}需防回吐"
+        elif intraday_bubble_score >= 60.0:
+            intraday_bubble_note = "短线急拉偏热"
+        else:
+            intraday_bubble_note = "量价节奏正常"
 
     if intraday_bubble_score >= 75.0:
-        ib_tier = "日内急拉透支 · 严禁追高，等回踩 VWAP"
+        ib_tier = "日内急拉透支 · 严禁追高，等回踩均价线"
         ib_color = "down"
     elif intraday_bubble_score >= 60.0:
         ib_tier = "日内偏热 · 不宜追高"
         ib_color = "warn"
     elif intraday_bubble_score >= 30.0:
-        ib_tier = "日内节奏健康"
+        ib_tier = "日内节奏健康 · 放量趋势打折" if trend_discount_active else "日内节奏健康"
         ib_color = "neutral"
     else:
         ib_tier = "日内无追高泡沫"
         ib_color = "up"
+    if trend_discount_active and "放量趋势打折" not in ib_tier and intraday_bubble_score < 75.0:
+        ib_tier = f"{ib_tier}（放量趋势打折）"
+
+    intraday_bubble_components: Dict[str, Any] = {
+        "price_stretch_base": round(base_price_bubble, 1),
+        "vwap_pos_atr": round(ib_vwap, 1),
+        "rsi5m_ob": round(ib_rsi, 1),
+        "gain_atr_stretch": round(ib_stretch, 1),
+        "vp_stagnation_add": round(vp_stagnation_pts, 1),
+        "low_vol_push_add": round(low_vol_push_pts, 1),
+        "upper_wick_add": round(upper_wick_pts, 1),
+        "vix_divergence_add": round(vix_div_pts, 1),
+        "breadth_divergence_add": round(breadth_div_pts, 1),
+        "trend_discount_mult": round(trend_discount_mult, 3),
+        "trend_discount_active": trend_discount_active,
+        "down_day_capped": down_day_capped,
+        "rvol_5m": intra_rvol_5m,
+        "upper_wick_ratio": intra_upper_wick,
+        "pure_us_advancing_pct": pure_us_adv_pct if (sess == "REGULAR" and source_tag == "盘中现货") else None,
+        "vix_pct": round(vix_pct, 2) if vix_pct is not None else None,
+    }
 
     # =====================================================================
     # 4. 大盘整体抄底指数 (macro_bottom_score, 0~100 + 硬接刀锁)
@@ -1136,6 +1492,8 @@ def compute_market_temperature(
         "intraday_bubble_score": intraday_bubble_score,
         "intraday_bubble_tier": ib_tier,
         "intraday_bubble_color": ib_color,
+        "intraday_bubble_note": intraday_bubble_note,
+        "intraday_bubble_components": intraday_bubble_components,
         "intraday_bubble_breakdown": {
             "vwap_pos_atr": round(ib_vwap, 1),
             "rsi5m_ob": round(ib_rsi, 1),
@@ -1143,6 +1501,10 @@ def compute_market_temperature(
             "intra_pct": round(intra_pct, 2),
             "intra_vwap_diff_pct": round(intra_vwap_diff, 2),
             "intra_rsi_5m": round(intra_rsi5m, 1),
+            "vp_stagnation_add": round(vp_stagnation_pts, 1),
+            "vix_divergence_add": round(vix_div_pts, 1),
+            "breadth_divergence_add": round(breadth_div_pts, 1),
+            "trend_discount_mult": round(trend_discount_mult, 3),
         },
         "macro_bottom_score": macro_bottom_score,
         "raw_macro_bottom_score": raw_macro_bottom_score,
@@ -1302,7 +1664,9 @@ def render_macro_futures_and_temperature_html(temp_payload: Optional[Dict[str, A
             ib_score,
             str(tp.get("intraday_bubble_tier") or "日内无追高泡沫"),
             _color_var(str(tp.get("intraday_bubble_color") or "neutral")),
-            f"偏离VWAP {ib_bd.get('intra_vwap_diff_pct', 0):+.2f}% · 5m RSI {ib_bd.get('intra_rsi_5m', 50)} · 日内涨跌 {ib_bd.get('intra_pct', 0):+.2f}%",
+            (
+                f"归因：{tp.get('intraday_bubble_note')} · " if tp.get("intraday_bubble_note") else ""
+            ) + f"偏离VWAP {ib_bd.get('intra_vwap_diff_pct', 0):+.2f}% · 5m RSI {ib_bd.get('intra_rsi_5m', 50)} · 日内涨跌 {ib_bd.get('intra_pct', 0):+.2f}%",
             "",
         ),
         (
