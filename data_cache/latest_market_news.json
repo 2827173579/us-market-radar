@@ -1,9 +1,22 @@
 {
-  "updated_at_ts": 1795765513.068,
-  "updated_at_et": "11-27 02:45 ET",
-  "updated_at_kst": "16:45 KST",
+  "updated_at_ts": 1795765575.635,
+  "updated_at_et": "11-27 02:46 ET",
+  "updated_at_kst": "16:46 KST",
   "macro_calendar": [],
   "macro_flashes": [
+    {
+      "id": "20261127154612804800",
+      "title": "法国11月CPI月率初值 -0.7%，预期-0.4%，前值0.40%。",
+      "summary": "法国11月CPI月率初值 -0.7%，预期-0.4%，前值0.40%。",
+      "keywords": [
+        "CPI"
+      ],
+      "pub_ts": 1795765572.0,
+      "time_et": "11-27 02:46 ET",
+      "time_bj": "15:46 BJ",
+      "time_kst": "16:46 KST",
+      "time_display": "02:46 ET / 15:46 BJ"
+    },
     {
       "id": "20261127154220841800",
       "title": "顶级能源机构：补库需求或重塑未来两年油市",
@@ -317,19 +330,6 @@
       "time_bj": "13:04 BJ",
       "time_kst": "14:04 KST",
       "time_display": "00:04 ET / 13:04 BJ"
-    },
-    {
-      "id": "20261127130347835800",
-      "title": "科创50指数涨超9%，半导体产业链全线走强；成分股中，中科飞测20cm涨停。",
-      "summary": "科创50指数涨超9%，半导体产业链全线走强；成分股中，中科飞测20cm涨停。",
-      "keywords": [
-        "半导体"
-      ],
-      "pub_ts": 1795755827.0,
-      "time_et": "11-27 00:03 ET",
-      "time_bj": "13:03 BJ",
-      "time_kst": "14:03 KST",
-      "time_display": "00:03 ET / 13:03 BJ"
     }
   ],
   "ticker_news": {
@@ -3396,7 +3396,7 @@
   "calendar_banner": {
     "level": "idle_with_flash",
     "headline": "📡 宏观消息面监控中 · 今日暂无美股五星级经济数据大考",
-    "detail": "⚡ 最新核心快讯 (02:42 ET / 15:42 BJ) [中东]：2027年全球石油供应预计将过剩120万桶/日，但中东战事造成的大规模库存消耗，以及各国重建库存的需求，可能缓解油价下行压力。点击查看…",
+    "detail": "⚡ 最新核心快讯 (02:46 ET / 15:46 BJ) [CPI]：法国11月CPI月率初值 -0.7%，预期-0.4%，前值0.40%。",
     "event_name": "",
     "minutes_left": 0,
     "opex_shield": {
