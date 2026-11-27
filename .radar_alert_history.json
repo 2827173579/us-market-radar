@@ -34,8 +34,8 @@
       "last_notified_at": 0.0
     },
     "QCOM": {
-      "state": "WATCHLIST_ENTRY_READY",
-      "last_notified_at": 1795789972.8973253
+      "state": "NORMAL",
+      "last_notified_at": 0.0
     },
     "LUNR": {
       "state": "NORMAL",
@@ -86,8 +86,8 @@
       "last_notified_at": 1795789583.202877
     },
     "IWM": {
-      "state": "NORMAL",
-      "last_notified_at": 0.0
+      "state": "WATCHLIST_ENTRY_READY",
+      "last_notified_at": 1795790029.5195386
     },
     "IGV": {
       "state": "NORMAL",
