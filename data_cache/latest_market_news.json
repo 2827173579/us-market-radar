@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795753891.655,
-  "updated_at_et": "11-26 23:31 ET",
-  "updated_at_kst": "13:31 KST",
+  "updated_at_ts": 1795753961.144,
+  "updated_at_et": "11-26 23:32 ET",
+  "updated_at_kst": "13:32 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -2596,6 +2596,13 @@
     ],
     "BTC-USD": [
       {
+        "title": "How a 35-Cent Attack Could Expose Bitcoin Wallet IP Addresses",
+        "url": "http://videos.coindesk.com/previews/lUGLwF4n?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-26 23:17 ET",
+        "pub_ts": 1795753038.0
+      },
+      {
         "title": "A 30% Bitcoin crash hasn't shaken this asset manager's $1.6 million call",
         "url": "https://www.thestreet.com/crypto/markets/a-30-bitcoin-crash-hasnt-shaken-this-asset-managers-1-6-million-call-?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2622,13 +2629,6 @@
         "source": "Yahoo Finance",
         "time": "11-26 14:44 ET",
         "pub_ts": 1795722296.0
-      },
-      {
-        "title": "Bitcoin Holds Above $60K as Death Cross Clouds Thanksgiving Recovery",
-        "url": "https://decrypt.co/384079/bitcoin-holds-above-60k-as-death-cross-clouds-thanksgiving-recovery?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-26 13:15 ET",
-        "pub_ts": 1795716929.0
       }
     ],
     "CRWD": [
@@ -3191,8 +3191,8 @@
         "title": "Dow Jones Futures Rise; Look For This Bullish Market Signal On Black Friday",
         "url": "https://finance.yahoo.com/m/158e82fc-b889-34b6-8704-99a49e9a83ae/dow-jones-futures-rise%3B-look.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-26 22:56 ET",
-        "pub_ts": 1795751783.0
+        "time": "11-26 23:19 ET",
+        "pub_ts": 1795753169.0
       },
       {
         "title": "Is DXC Technology (DXC) Fully Valued On Its New AI Security Push?",
@@ -3357,28 +3357,28 @@
     "CEG": 1795753891.6554036,
     "FPS": 1795753891.6554036,
     "MU": 1795753891.6554036,
-    "SKHY": 1795752332.029581,
+    "SKHY": 1795753961.143889,
     "WDC": 1795753891.6554036,
     "STX": 1795753891.6554036,
-    "MSTR": 1795752332.029581,
+    "MSTR": 1795753961.143889,
     "SNDK": 1795753891.6554036,
-    "BTC-USD": 1795752332.029581,
-    "CRWD": 1795752332.029581,
-    "ORCL": 1795752332.029581,
-    "COIN": 1795752332.029581,
-    "LLY": 1795752332.029581,
-    "MRNA": 1795752332.029581,
-    "NKE": 1795752332.029581,
-    "MCD": 1795752332.029581,
-    "PEP": 1795752332.029581,
-    "XOM": 1795752332.029581,
-    "JPM": 1795752332.029581,
-    "WMT": 1795752332.029581,
-    "V": 1795752332.029581,
-    "CAT": 1795752332.029581,
+    "BTC-USD": 1795753961.143889,
+    "CRWD": 1795753961.143889,
+    "ORCL": 1795753961.143889,
+    "COIN": 1795753961.143889,
+    "LLY": 1795753961.143889,
+    "MRNA": 1795753961.143889,
+    "NKE": 1795753961.143889,
+    "MCD": 1795753961.143889,
+    "PEP": 1795753961.143889,
+    "XOM": 1795753961.143889,
+    "JPM": 1795753961.143889,
+    "WMT": 1795753961.143889,
+    "V": 1795753961.143889,
+    "CAT": 1795753961.143889,
     "FN": 1795753891.6554036,
     "GLW": 1795753389.3312013,
-    "ANT": 1795752384.388433,
+    "ANT": 1795753961.143889,
     "XAUUSD": 1795752384.388433,
     "KOSPI": 1795753891.6554036,
     "KSTR": 1795753339.059503
