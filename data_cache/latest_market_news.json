@@ -1,5 +1,5 @@
 {
-  "updated_at_ts": 1795800735.203,
+  "updated_at_ts": 1795800778.308,
   "updated_at_et": "11-27 12:32 ET",
   "updated_at_kst": "02:32 KST",
   "macro_calendar": [],
@@ -1351,6 +1351,20 @@
     ],
     "AMZN": [
       {
+        "title": "Sector Update: Tech Stocks Gain Friday Afternoon",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/sector-tech-stocks-gain-friday-172702126.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-27 12:27 ET",
+        "pub_ts": 1795800422.0
+      },
+      {
+        "title": "Sector Update: Consumer Stocks Advance Friday Afternoon",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/sector-consumer-stocks-advance-friday-171212418.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-27 12:12 ET",
+        "pub_ts": 1795799532.0
+      },
+      {
         "title": "Amazon.com (AMZN) Is Negotiating Muse AI Access To Its Shopping Platform",
         "url": "https://finance.yahoo.com/technology/ai/articles/amazon-com-amzn-negotiating-muse-161256193.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1370,20 +1384,6 @@
         "source": "Yahoo Finance",
         "time": "11-27 10:54 ET",
         "pub_ts": 1795794868.0
-      },
-      {
-        "title": "Anthropic, Meta and Microsoft Join AI Data Center Talks in Japan",
-        "url": "https://finance.yahoo.com/technology/ai/articles/anthropic-meta-microsoft-join-ai-143801446.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-27 09:38 ET",
-        "pub_ts": 1795790281.0
-      },
-      {
-        "title": "Market Chatter: Hackers Breach US Air Force Cloud Platform Powered by Microsoft, Amazon, Oracle, Alphabet",
-        "url": "https://finance.yahoo.com/technology/articles/market-chatter-hackers-breach-us-122132707.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-27 07:21 ET",
-        "pub_ts": 1795782092.0
       }
     ],
     "CRWV": [
@@ -1393,6 +1393,20 @@
         "source": "Yahoo Finance",
         "time": "11-27 07:00 ET",
         "pub_ts": 1795780800.0
+      },
+      {
+        "title": "Nvidia, CoreWeave Face New U.S. Restrictions on China AI Chip Access",
+        "url": "https://finance.yahoo.com/technology/ai/articles/nvidia-coreweave-face-u-restrictions-172327378.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-27 12:23 ET",
+        "pub_ts": 1795800207.0
+      },
+      {
+        "title": "CoreWeave Default Insurance Costs Hit Record 15.34% Amid AI Debt Fears",
+        "url": "https://finance.yahoo.com/technology/ai/articles/coreweave-default-insurance-costs-hit-171055522.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-27 12:10 ET",
+        "pub_ts": 1795799455.0
       },
       {
         "title": "Wells Fargo Doubles Down on CoreWeave Stock Amid Selloff",
@@ -1407,20 +1421,6 @@
         "source": "Yahoo Finance",
         "time": "11-26 11:31 ET",
         "pub_ts": 1795710702.0
-      },
-      {
-        "title": "CoreWeave Can Now Borrow at 7% With Meta’s Name on the Loan",
-        "url": "https://247wallst.com/investing/2026/11/26/coreweave-can-now-borrow-at-7-with-metas-name-on-the-loan/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-26 10:48 ET",
-        "pub_ts": 1795708100.0
-      },
-      {
-        "title": "CoreWeave Has the Backlog Lead, Nebius Has the Leverage Edge: Who Wins the Next $100B?",
-        "url": "https://247wallst.com/investing/2026/11/26/coreweave-has-the-backlog-lead-nebius-has-the-leverage-edge-who-wins-the-next-100b/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-26 10:45 ET",
-        "pub_ts": 1795707923.0
       }
     ],
     "NBIS": [
@@ -1684,6 +1684,13 @@
     ],
     "LITE": [
       {
+        "title": "Coherent Jumps 12% as Optical Stocks Rebound From Wednesday’s AI Selloff; Applied Optoelectronics and Lumentum Rise 7%",
+        "url": "https://247wallst.com/investing/2026/11/27/coherent-jumps-12-as-optical-stocks-rebound-from-wednesdays-ai-selloff-applied-optoelectronics-and-lumentum-rise-7/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-27 12:06 ET",
+        "pub_ts": 1795799198.0
+      },
+      {
         "title": "Lumentum Surges 55% in a Year: Should You Buy, Sell, or Hold the Stock?",
         "url": "https://finance.yahoo.com/markets/stocks/articles/lumentum-surges-55-buy-sell-162000564.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1710,16 +1717,16 @@
         "source": "Yahoo Finance",
         "time": "11-25 10:28 ET",
         "pub_ts": 1795620532.0
-      },
-      {
-        "title": "Oppenheimer Cut Its Marvell Target by $100. It Still Sees 147% Upside",
-        "url": "https://www.tikr.com/blog/oppenheimer-cut-its-marvell-target-by-100-it-still-sees-147-upside?ref=yahoofinance&tlnk=yf-261125-h25pvm3g&.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 05:49 ET",
-        "pub_ts": 1795603771.0
       }
     ],
     "AAOI": [
+      {
+        "title": "Coherent Jumps 12% as Optical Stocks Rebound From Wednesday’s AI Selloff; Applied Optoelectronics and Lumentum Rise 7%",
+        "url": "https://247wallst.com/investing/2026/11/27/coherent-jumps-12-as-optical-stocks-rebound-from-wednesdays-ai-selloff-applied-optoelectronics-and-lumentum-rise-7/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-27 12:06 ET",
+        "pub_ts": 1795799198.0
+      },
       {
         "title": "Applied Optoelectronics (AAOI) Has the Orders. Does It Have the Parts?",
         "url": "https://finance.yahoo.com/technology/ai/articles/applied-optoelectronics-aaoi-orders-does-144805709.html?.tsrc=rss",
@@ -1747,13 +1754,6 @@
         "source": "Yahoo Finance",
         "time": "11-24 11:36 ET",
         "pub_ts": 1795538160.0
-      },
-      {
-        "title": "Applied Optoelectronics Climbs 5% on $2.2 Billion Hyperscaler Supply Deal; Lumentum and Coherent Drop 6%",
-        "url": "https://247wallst.com/investing/2026/11/24/applied-optoelectronics-climbs-5-on-2-2-billion-hyperscaler-supply-deal-lumentum-and-coherent-drop-6/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 09:58 ET",
-        "pub_ts": 1795532304.0
       }
     ],
     "SPCX": [
@@ -1906,6 +1906,13 @@
     ],
     "LUNR": [
       {
+        "title": "Intuitive Machines (LUNR) Joined NASA’s New Lunar Infrastructure Contractor Group",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/intuitive-machines-lunr-joined-nasa-171637431.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-27 12:16 ET",
+        "pub_ts": 1795799797.0
+      },
+      {
         "title": "Will Space Nuclear Power Milestone Change Intuitive Machines Stock Narrative",
         "url": "https://finance.yahoo.com/markets/stocks/articles/space-nuclear-power-milestone-change-161338450.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1932,13 +1939,6 @@
         "source": "Yahoo Finance",
         "time": "11-23 22:47 ET",
         "pub_ts": 1795492022.0
-      },
-      {
-        "title": "Intuitive Machines Advances Space Nuclear Systems to Enable Lunar Night Survival",
-        "url": "https://finance.yahoo.com/technology/articles/intuitive-machines-advances-space-nuclear-224800596.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 17:48 ET",
-        "pub_ts": 1795474080.0
       }
     ],
     "TSLA": [
@@ -3339,29 +3339,29 @@
     "GOOGL": 1795800148.5943143,
     "MSFT": 1795800148.5943143,
     "AAPL": 1795800148.5943143,
-    "PLTR": 1795799235.776624,
-    "NOW": 1795799235.776624,
-    "AMZN": 1795799235.776624,
-    "CRWV": 1795799235.776624,
-    "NBIS": 1795799235.776624,
-    "APLD": 1795799235.776624,
+    "PLTR": 1795800778.307954,
+    "NOW": 1795800778.307954,
+    "AMZN": 1795800778.307954,
+    "CRWV": 1795800778.307954,
+    "NBIS": 1795800778.307954,
+    "APLD": 1795800778.307954,
     "VST": 1795800148.5943143,
     "BE": 1795800148.5943143,
     "CRDO": 1795800148.5943143,
     "COHR": 1795800148.5943143,
-    "MRVL": 1795799235.776624,
-    "LITE": 1795799235.776624,
-    "AAOI": 1795799235.776624,
+    "MRVL": 1795800778.307954,
+    "LITE": 1795800778.307954,
+    "AAOI": 1795800778.307954,
     "SPCX": 1795800148.5943143,
-    "ASTS": 1795799235.776624,
-    "AXTI": 1795799235.776624,
+    "ASTS": 1795800778.307954,
+    "AXTI": 1795800778.307954,
     "NASA": 1795799235.776624,
-    "LUNR": 1795799235.776624,
+    "LUNR": 1795800778.307954,
     "TSLA": 1795799235.776624,
     "AXP": 1795799235.776624,
-    "RKLB": 1795799235.776624,
+    "RKLB": 1795800778.307954,
     "KO": 1795799235.776624,
-    "FLY": 1795799235.776624,
+    "FLY": 1795800778.307954,
     "INTC": 1795799235.776624,
     "VRT": 1795799235.776624,
     "HPE": 1795799235.776624,
@@ -3389,8 +3389,8 @@
     "WMT": 1795799339.1630125,
     "V": 1795799339.1630125,
     "CAT": 1795799339.1630125,
-    "FN": 1795799235.776624,
-    "GLW": 1795799235.776624,
+    "FN": 1795800778.307954,
+    "GLW": 1795800778.307954,
     "ANT": 1795799339.1630125,
     "XAUUSD": 1795799339.1630125,
     "KOSPI": 1795799339.1630125,
