@@ -1,9 +1,22 @@
 {
-  "updated_at_ts": 1795772507.206,
-  "updated_at_et": "11-27 04:41 ET",
-  "updated_at_kst": "18:41 KST",
+  "updated_at_ts": 1795772564.55,
+  "updated_at_et": "11-27 04:42 ET",
+  "updated_at_kst": "18:42 KST",
   "macro_calendar": [],
   "macro_flashes": [
+    {
+      "id": "20261127174153084800",
+      "title": "据国际文传电讯社：俄罗斯考虑对来自“不友好国家”的海产品进口征收关税。",
+      "summary": "据国际文传电讯社：俄罗斯考虑对来自“不友好国家”的海产品进口征收关税。",
+      "keywords": [
+        "关税"
+      ],
+      "pub_ts": 1795772513.0,
+      "time_et": "11-27 04:41 ET",
+      "time_bj": "17:41 BJ",
+      "time_kst": "18:41 KST",
+      "time_display": "04:41 ET / 17:41 BJ"
+    },
     {
       "id": "20261127173815340800",
       "title": "【下周财报日历】财报季接近尾声，蔚来汽车(NIO.N)、迈威尔科技(MRVL.O)、霸王…",
@@ -327,19 +340,6 @@
       "time_bj": "14:10 BJ",
       "time_kst": "15:10 KST",
       "time_display": "01:10 ET / 14:10 BJ"
-    },
-    {
-      "id": "20261127135042816800",
-      "title": "【上证指数收复3600点】 11月27日讯，上证指数涨超3.5%，收复3600点关口；半…",
-      "summary": "【上证指数收复3600点】 11月27日讯，上证指数涨超3.5%，收复3600点关口；半导体、光刻机、CPO、软件开发、激光雷达、算力板块涨幅居前；沪深京三市超5400股上涨。",
-      "keywords": [
-        "半导体"
-      ],
-      "pub_ts": 1795758642.0,
-      "time_et": "11-27 00:50 ET",
-      "time_bj": "13:50 BJ",
-      "time_kst": "14:50 KST",
-      "time_display": "00:50 ET / 13:50 BJ"
     }
   ],
   "ticker_news": {
@@ -1196,6 +1196,13 @@
     ],
     "MSFT": [
       {
+        "title": "Is Microsoft (MSFT) Fully Valued Following Its Atos Sovereign Cloud Deal?",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/microsoft-msft-fully-valued-following-090939545.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-27 04:09 ET",
+        "pub_ts": 1795770579.0
+      },
+      {
         "title": "Miles Masterclass Launches the World's First AI Labs for Accountants at the World Congress of Accountants in Seoul",
         "url": "https://finance.yahoo.com/technology/ai/articles/miles-masterclass-launches-worlds-first-063400104.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1222,13 +1229,6 @@
         "source": "Yahoo Finance",
         "time": "11-26 13:14 ET",
         "pub_ts": 1795716860.0
-      },
-      {
-        "title": "PhonePe resumes IPO plans with $15bn valuation target- report",
-        "url": "https://www.electronicpaymentsinternational.com/news/phonepe-resumes-ipo-plans-with-15bn-valuation-target-report/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-27 02:40 ET",
-        "pub_ts": 1795765236.0
       }
     ],
     "AAPL": [
@@ -1751,6 +1751,13 @@
     ],
     "SPCX": [
       {
+        "title": "Gwynne Shotwell Joins Musk’s SpaceX Gift to Trump Accounts, Now an $18 Billion Share Donation",
+        "url": "https://www.tikr.com/blog/gwynne-shotwell-joins-musks-spacex-gift-to-trump-accounts-now-an-18-billion-share-donation?ref=yahoofinance&tlnk=yf-261127-jm758hgr&.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-27 01:27 ET",
+        "pub_ts": 1795760859.0
+      },
+      {
         "title": "SpaceX (SPCX) Balances Starlink Growth With Its AI Funding Needs",
         "url": "https://finance.yahoo.com/technology/ai/articles/spacex-spcx-balances-starlink-growth-035503007.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1777,13 +1784,6 @@
         "source": "Yahoo Finance",
         "time": "11-26 19:30 ET",
         "pub_ts": 1795739400.0
-      },
-      {
-        "title": "Musk says he will donate another SpaceX share to American kids annually",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/musk-says-donate-another-spacex-000147660.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-26 19:01 ET",
-        "pub_ts": 1795737707.0
       }
     ],
     "ASTS": [
@@ -3323,29 +3323,29 @@
     "VIXY": 1795772507.2061296,
     "SOXS": 1795772507.2061296,
     "NVDA": 1795772507.2061296,
-    "AMD": 1795770992.7575557,
-    "ASML": 1795770992.7575557,
-    "QCOM": 1795770992.7575557,
-    "AVGO": 1795770992.7575557,
-    "AMAT": 1795770992.7575557,
-    "META": 1795770992.7575557,
-    "GOOGL": 1795770992.7575557,
-    "MSFT": 1795770992.7575557,
-    "AAPL": 1795770992.7575557,
+    "AMD": 1795772564.5498898,
+    "ASML": 1795772564.5498898,
+    "QCOM": 1795772564.5498898,
+    "AVGO": 1795772564.5498898,
+    "AMAT": 1795772564.5498898,
+    "META": 1795772564.5498898,
+    "GOOGL": 1795772564.5498898,
+    "MSFT": 1795772564.5498898,
+    "AAPL": 1795772564.5498898,
     "PLTR": 1795771048.8676846,
     "NOW": 1795771048.8676846,
     "AMZN": 1795771048.8676846,
     "CRWV": 1795771048.8676846,
     "NBIS": 1795771048.8676846,
     "APLD": 1795771048.8676846,
-    "VST": 1795770992.7575557,
-    "BE": 1795770992.7575557,
-    "CRDO": 1795770992.7575557,
-    "COHR": 1795770992.7575557,
+    "VST": 1795772564.5498898,
+    "BE": 1795772564.5498898,
+    "CRDO": 1795772564.5498898,
+    "COHR": 1795772564.5498898,
     "MRVL": 1795771048.8676846,
     "LITE": 1795771107.0841792,
-    "AAOI": 1795770992.7575557,
-    "SPCX": 1795770992.7575557,
+    "AAOI": 1795772564.5498898,
+    "SPCX": 1795772564.5498898,
     "ASTS": 1795771048.8676846,
     "AXTI": 1795771107.0841792,
     "NASA": 1795771048.8676846,
@@ -3383,7 +3383,7 @@
     "V": 1795771322.3570619,
     "CAT": 1795771322.3570619,
     "FN": 1795771107.0841792,
-    "GLW": 1795770992.7575557,
+    "GLW": 1795772564.5498898,
     "ANT": 1795771322.3570619,
     "XAUUSD": 1795771322.3570619,
     "KOSPI": 1795771107.0841792,
@@ -3406,7 +3406,7 @@
   "calendar_banner": {
     "level": "idle_with_flash",
     "headline": "📡 宏观消息面监控中 · 今日暂无美股五星级经济数据大考",
-    "detail": "⚡ 最新核心快讯 (04:38 ET / 17:38 BJ) [非农]：【下周财报日历】财报季接近尾声，蔚来汽车(NIO.N)、迈威尔科技(MRVL.O)、霸王茶姬(CHA.O)等个股将于下周放榜。经济数据方面，关注中国11月官方制造业PMI；美国非农、小非农、",
+    "detail": "⚡ 最新核心快讯 (04:41 ET / 17:41 BJ) [关税]：据国际文传电讯社：俄罗斯考虑对来自“不友好国家”的海产品进口征收关税。",
     "event_name": "",
     "minutes_left": 0,
     "opex_shield": {
