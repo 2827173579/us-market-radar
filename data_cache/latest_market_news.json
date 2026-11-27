@@ -1,9 +1,22 @@
 {
-  "updated_at_ts": 1795755599.299,
-  "updated_at_et": "11-26 23:59 ET",
-  "updated_at_kst": "13:59 KST",
+  "updated_at_ts": 1795755645.132,
+  "updated_at_et": "11-27 00:00 ET",
+  "updated_at_kst": "14:00 KST",
   "macro_calendar": [],
   "macro_flashes": [
+    {
+      "id": "20261127130040609800",
+      "title": "创业板指涨超5%，半导体产业链全线走强；国务院常务会议提出，持续完善资本市场稳市机制，实…",
+      "summary": "创业板指涨超5%，半导体产业链全线走强；国务院常务会议提出，持续完善资本市场稳市机制，实施好存量政策，谋划出台增量政策，促进资本市场平稳健康发展。",
+      "keywords": [
+        "半导体"
+      ],
+      "pub_ts": 1795755640.0,
+      "time_et": "11-27 00:00 ET",
+      "time_bj": "13:00 BJ",
+      "time_kst": "14:00 KST",
+      "time_display": "00:00 ET / 13:00 BJ"
+    },
     {
       "id": "20261127125508115800",
       "title": "伊朗前谈判顾问指控乌克兰在中东策划“假旗行动”，只为引起特朗普注意",
@@ -322,19 +335,6 @@
       "time_bj": "09:33 BJ",
       "time_kst": "10:33 KST",
       "time_display": "20:33 ET / 09:33 BJ"
-    },
-    {
-      "id": "20261127092532761800",
-      "title": "A股开盘，沪指开涨0.16%，深证成指开涨0.37%，创业板指开涨0.59%；算力、半导…",
-      "summary": "A股开盘，沪指开涨0.16%，深证成指开涨0.37%，创业板指开涨0.59%；算力、半导体、水产等板块走强。",
-      "keywords": [
-        "半导体"
-      ],
-      "pub_ts": 1795742732.0,
-      "time_et": "11-26 20:25 ET",
-      "time_bj": "09:25 BJ",
-      "time_kst": "10:25 KST",
-      "time_display": "20:25 ET / 09:25 BJ"
     }
   ],
   "ticker_news": {
@@ -3385,7 +3385,7 @@
     "KSTR": 1795755123.3736885
   },
   "opex_shield": {
-    "date": "2026-11-26",
+    "date": "2026-11-27",
     "active": false,
     "timing": "NONE",
     "kind": "NONE",
@@ -3393,7 +3393,7 @@
     "opex_date": "2026-11-20",
     "next_opex_date": "2026-12-18",
     "next_is_quad_witching": true,
-    "days_to_opex": 22,
+    "days_to_opex": 21,
     "badge": "",
     "headline": "",
     "detail": ""
@@ -3401,11 +3401,11 @@
   "calendar_banner": {
     "level": "idle_with_flash",
     "headline": "📡 宏观消息面监控中 · 今日暂无美股五星级经济数据大考",
-    "detail": "⚡ 最新核心快讯 (23:55 ET / 12:55 BJ) [特朗普] [中东]：科威特一处军事设施遭无人机袭击，但伊朗否认参与其中，其前核谈判顾问指控此次袭击是由乌克兰策划，目的就是引起特朗普的关注。点击查看…",
+    "detail": "⚡ 最新核心快讯 (00:00 ET / 13:00 BJ) [半导体]：创业板指涨超5%，半导体产业链全线走强；国务院常务会议提出，持续完善资本市场稳市机制，实施好存量政策，谋划出台增量政策，促进资本市场平稳健康发展。",
     "event_name": "",
     "minutes_left": 0,
     "opex_shield": {
-      "date": "2026-11-26",
+      "date": "2026-11-27",
       "active": false,
       "timing": "NONE",
       "kind": "NONE",
@@ -3413,7 +3413,7 @@
       "opex_date": "2026-11-20",
       "next_opex_date": "2026-12-18",
       "next_is_quad_witching": true,
-      "days_to_opex": 22,
+      "days_to_opex": 21,
       "badge": "",
       "headline": "",
       "detail": ""
