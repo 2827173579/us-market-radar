@@ -8283,9 +8283,17 @@
     "2026-11-27:DEFENSIVE_FLIGHT:blue:-1.0": {
       "device": "PC",
       "ts": 1795791147.0954645
+    },
+    "2026-11-27:FLY/AMZN/AXP:5M_ENTRY": {
+      "device": "PC",
+      "ts": 1795791372.201821
+    },
+    "2026-11-27:DEFENSIVE_FLIGHT:green:-1.9": {
+      "device": "PC",
+      "ts": 1795791373.842558
     }
   },
   "device": "PC",
-  "last_heartbeat_ts": 1795791302.7461731,
-  "updated_at": "2026-11-27T14:55:02.746697+00:00"
+  "last_heartbeat_ts": 1795791345.3863323,
+  "updated_at": "2026-11-27T14:56:13.843104+00:00"
 }
