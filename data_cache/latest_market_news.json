@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795744139.933,
-  "updated_at_et": "11-26 20:48 ET",
-  "updated_at_kst": "10:48 KST",
+  "updated_at_ts": 1795744176.978,
+  "updated_at_et": "11-26 20:49 ET",
+  "updated_at_kst": "10:49 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -1569,6 +1569,13 @@
     ],
     "CRDO": [
       {
+        "title": "Credo Technology Group Holding (CRDO) Could Be 50% Below Fair Value After Marvell Settlement",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/credo-technology-group-holding-crdo-012531407.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-26 20:25 ET",
+        "pub_ts": 1795742731.0
+      },
+      {
         "title": "Before Credo Reports, Watch Cash, Not Sales",
         "url": "https://www.trefis.com/stock/crdo/articles/629189/before-credo-reports-watch-cash-not-sales/2026-11-26?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1595,13 +1602,6 @@
         "source": "Yahoo Finance",
         "time": "11-25 16:13 ET",
         "pub_ts": 1795641212.0
-      },
-      {
-        "title": "Credo Technology Crashed 27% Over a Month: This Wall Street Desk Now Expects 190% Returns",
-        "url": "https://247wallst.com/investing/2026/11/25/credo-technology-crashed-27-over-a-month-this-wall-street-desk-now-expects-190-returns/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 12:45 ET",
-        "pub_ts": 1795628759.0
       }
     ],
     "COHR": [
@@ -3310,23 +3310,23 @@
     ]
   },
   "ticker_news_ts": {
-    "KORU": 1795742675.1466813,
-    "SOXL": 1795742675.1466813,
-    "SPY": 1795742675.1466813,
-    "DIA": 1795742675.1466813,
-    "SOXX": 1795742675.1466813,
-    "QQQ": 1795742675.1466813,
-    "SMH": 1795742675.1466813,
-    "IWM": 1795742675.1466813,
-    "IGV": 1795742675.1466813,
-    "TLT": 1795742675.1466813,
-    "GLD": 1795742675.1466813,
-    "SQQQ": 1795742675.1466813,
+    "KORU": 1795744176.9782598,
+    "SOXL": 1795744176.9782598,
+    "SPY": 1795744176.9782598,
+    "DIA": 1795744176.9782598,
+    "SOXX": 1795744176.9782598,
+    "QQQ": 1795744176.9782598,
+    "SMH": 1795744176.9782598,
+    "IWM": 1795744176.9782598,
+    "IGV": 1795744176.9782598,
+    "TLT": 1795744176.9782598,
+    "GLD": 1795744176.9782598,
+    "SQQQ": 1795744176.9782598,
     "TSM": 1795742832.580942,
-    "VIXY": 1795742675.1466813,
-    "SOXS": 1795742675.1466813,
-    "NVDA": 1795742675.1466813,
-    "AMD": 1795742675.1466813,
+    "VIXY": 1795744176.9782598,
+    "SOXS": 1795744176.9782598,
+    "NVDA": 1795744176.9782598,
+    "AMD": 1795744176.9782598,
     "ASML": 1795742832.580942,
     "QCOM": 1795742832.580942,
     "AVGO": 1795742832.580942,
@@ -3341,15 +3341,15 @@
     "CRWV": 1795742885.5688972,
     "NBIS": 1795742885.5688972,
     "APLD": 1795742885.5688972,
-    "VST": 1795742675.1466813,
-    "BE": 1795742675.1466813,
-    "CRDO": 1795742675.1466813,
-    "COHR": 1795742675.1466813,
+    "VST": 1795744176.9782598,
+    "BE": 1795744176.9782598,
+    "CRDO": 1795744176.9782598,
+    "COHR": 1795744176.9782598,
     "MRVL": 1795742885.5688972,
     "LITE": 1795742885.5688972,
-    "AAOI": 1795742675.1466813,
-    "SPCX": 1795742675.1466813,
-    "ASTS": 1795742675.1466813,
+    "AAOI": 1795744176.9782598,
+    "SPCX": 1795744176.9782598,
+    "ASTS": 1795744176.9782598,
     "AXTI": 1795742885.5688972,
     "NASA": 1795742832.580942,
     "LUNR": 1795742832.580942,
@@ -3386,11 +3386,11 @@
     "V": 1795742885.5688972,
     "CAT": 1795742927.454232,
     "FN": 1795742885.5688972,
-    "GLW": 1795742675.1466813,
+    "GLW": 1795744176.9782598,
     "ANT": 1795742927.454232,
     "XAUUSD": 1795742927.454232,
     "KOSPI": 1795742885.5688972,
-    "KSTR": 1795742675.1466813
+    "KSTR": 1795744176.9782598
   },
   "opex_shield": {
     "date": "2026-11-26",
