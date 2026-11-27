@@ -10,8 +10,8 @@
       "last_notified_at": 0.0
     },
     "QCOM": {
-      "state": "NORMAL",
-      "last_notified_at": 0.0
+      "state": "WATCHLIST_ENTRY_READY",
+      "last_notified_at": 1795813327.9028091
     },
     "AMZN": {
       "state": "NORMAL",
@@ -26,12 +26,12 @@
       "last_notified_at": 1795811673.0726717
     },
     "FLY": {
-      "state": "WATCHLIST_ENTRY_READY",
-      "last_notified_at": 1795812118.2834373
+      "state": "NORMAL",
+      "last_notified_at": 0.0
     },
     "IWM": {
-      "state": "WATCHLIST_ENTRY_READY",
-      "last_notified_at": 1795813168.769338
+      "state": "NORMAL",
+      "last_notified_at": 0.0
     }
   },
   "position_peaks": {}
