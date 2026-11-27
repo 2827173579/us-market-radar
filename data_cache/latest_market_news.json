@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795790691.306,
-  "updated_at_et": "11-27 09:44 ET",
-  "updated_at_kst": "23:44 KST",
+  "updated_at_ts": 1795790741.483,
+  "updated_at_et": "11-27 09:45 ET",
+  "updated_at_kst": "23:45 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -795,6 +795,13 @@
     ],
     "TSM": [
       {
+        "title": "Is TSMC (TSM) a Buy as Wall Street Analysts Look Optimistic?",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/tsmc-tsm-buy-wall-street-133004462.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-27 08:30 ET",
+        "pub_ts": 1795786204.0
+      },
+      {
         "title": "ETFs Sold $34.5 Million of Taiwan Semiconductor (TSM) on Nov. 25",
         "url": "https://finance.yahoo.com/markets/stocks/articles/etfs-sold-34-5-million-110229859.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -821,13 +828,6 @@
         "source": "Yahoo Finance",
         "time": "11-26 11:00 ET",
         "pub_ts": 1795708804.0
-      },
-      {
-        "title": "Taiwan Semiconductor Manufacturing (TSM) May Make Its $22.6 Billion Texas Plant Conditional",
-        "url": "https://finance.yahoo.com/technology/articles/taiwan-semiconductor-manufacturing-tsm-may-111054914.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-26 06:10 ET",
-        "pub_ts": 1795691454.0
       }
     ],
     "VIXY": [
@@ -906,6 +906,13 @@
     ],
     "NVDA": [
       {
+        "title": "How Leopold Aschenbrenner made a $225 million bet on AI infrastructure",
+        "url": "https://finance.yahoo.com/video/leopold-aschenbrenner-made-225-million-143000764.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-27 09:30 ET",
+        "pub_ts": 1795789800.0
+      },
+      {
         "title": "Nvidia freezing chip orders to four Southeast Asian countries",
         "url": "https://finance.yahoo.com/video/nvidia-freezing-chip-orders-to-four-southeast-asian-countries-140011925.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -913,32 +920,25 @@
         "pub_ts": 1795788011.0
       },
       {
-        "title": "Nvidia stock is still paying the price for the Jensen Huang CEO drama",
-        "url": "https://finance.yahoo.com/markets/stocks/article/nvidia-stock-is-still-paying-the-price-for-the-jensen-huang-ceo-drama-124902053.html?.tsrc=rss",
+        "title": "Jensen Huang Said Blackwell Racks Wouldn't Fit In A 'Pocket Or Backpack' But One Has Reportedly Turned Up in Shanghai",
+        "url": "https://stocktwits.com/news-articles/markets/equity/jensen-huang-said-blackwell-racks-wouldn-t-fit-in-a-pocket-or-backpack-but-one-has-reportedly-turned-up-in-shanghai/cNbCwmzR9Vb?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-27 07:49 ET",
-        "pub_ts": 1795783742.0
+        "time": "11-27 09:29 ET",
+        "pub_ts": 1795789781.0
       },
       {
-        "title": "Stock Market Today: Dow Futures Jump 650 Points As Nvidia Rebounds; Anthropic, SpaceX, Tesla Rally (Live Coverage)",
-        "url": "https://finance.yahoo.com/m/86a4597f-ee47-3048-ae92-1a56fa4711e5/stock-market-today%3A-dow.html?.tsrc=rss",
+        "title": "Kioxia Stock Has Soared 21% in Two Days After an Nvidia SSD Test",
+        "url": "https://247wallst.com/investing/2026/11/27/kioxia-stock-has-soared-21-in-two-days-after-an-nvidia-ssd-test/?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-27 09:00 ET",
-        "pub_ts": 1795788002.0
+        "time": "11-27 09:28 ET",
+        "pub_ts": 1795789708.0
       },
       {
-        "title": "AI Needs More Than Nvidia Chips. This Stock Could Benefit",
-        "url": "https://247wallst.com/investing/2026/11/27/ai-needs-more-than-nvidia-chips-this-stock-could-benefit/?.tsrc=rss",
+        "title": "AI in Medical Devices Global Market Opportunities and Strategies to 2035 | Capitalize on $118.8B Cloud Diagnostics with Medtronic, GE HealthCare, Siemens Healthineers and NVIDIA",
+        "url": "https://finance.yahoo.com/healthcare/articles/ai-medical-devices-global-market-142500832.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-27 08:47 ET",
-        "pub_ts": 1795787250.0
-      },
-      {
-        "title": "Is Nvidia a Screaming Buy or a Value Trap?",
-        "url": "https://www.fool.com/investing/2026/11/27/is-nvidia-a-screaming-buy-or-a-value-trap/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-27 08:25 ET",
-        "pub_ts": 1795785902.0
+        "time": "11-27 09:25 ET",
+        "pub_ts": 1795789500.0
       }
     ],
     "AMD": [
@@ -3313,22 +3313,22 @@
     ]
   },
   "ticker_news_ts": {
-    "KORU": 1795789237.135359,
-    "SOXL": 1795789237.135359,
-    "SPY": 1795789237.135359,
-    "DIA": 1795789237.135359,
-    "SOXX": 1795789237.135359,
-    "QQQ": 1795789237.135359,
-    "SMH": 1795789237.135359,
-    "IWM": 1795789237.135359,
-    "IGV": 1795789237.135359,
-    "TLT": 1795789237.135359,
-    "GLD": 1795789237.135359,
-    "SQQQ": 1795789237.135359,
-    "TSM": 1795789237.135359,
-    "VIXY": 1795789237.135359,
-    "SOXS": 1795789237.135359,
-    "NVDA": 1795789237.135359,
+    "KORU": 1795790741.4834795,
+    "SOXL": 1795790741.4834795,
+    "SPY": 1795790741.4834795,
+    "DIA": 1795790741.4834795,
+    "SOXX": 1795790741.4834795,
+    "QQQ": 1795790741.4834795,
+    "SMH": 1795790741.4834795,
+    "IWM": 1795790741.4834795,
+    "IGV": 1795790741.4834795,
+    "TLT": 1795790741.4834795,
+    "GLD": 1795790741.4834795,
+    "SQQQ": 1795790741.4834795,
+    "TSM": 1795790741.4834795,
+    "VIXY": 1795790741.4834795,
+    "SOXS": 1795790741.4834795,
+    "NVDA": 1795790741.4834795,
     "AMD": 1795789383.414314,
     "ASML": 1795789383.414314,
     "QCOM": 1795789383.414314,
@@ -3393,7 +3393,7 @@
     "ANT": 1795790113.2909374,
     "XAUUSD": 1795790113.2909374,
     "KOSPI": 1795790113.2909374,
-    "KSTR": 1795789237.135359
+    "KSTR": 1795790741.4834795
   },
   "opex_shield": {
     "date": "2026-11-27",

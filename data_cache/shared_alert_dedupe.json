@@ -8243,9 +8243,25 @@
     "JIN10_FLASH:20261127224231663800": {
       "device": "PC",
       "ts": 1795790616.1927984
+    },
+    "KOL_OPEN:2026-11-27:KOL_SOXL_SHORT_2026-11-27_1": {
+      "device": "PC",
+      "ts": 1795790751.7808385
+    },
+    "KOL_OPEN:2026-11-27:KOL_QQQ_SHORT_2026-11-27_2": {
+      "device": "PC",
+      "ts": 1795790752.7312756
+    },
+    "2026-11-27:DEFENSIVE_FLIGHT:green:-1.5": {
+      "device": "PC",
+      "ts": 1795790754.6318738
+    },
+    "2026-11-27:INTRADAY_CORRIDOR:SPY:BELOW_P25": {
+      "device": "PC",
+      "ts": 1795790756.300832
     }
   },
   "device": "PC",
-  "last_heartbeat_ts": 1795790673.5880625,
-  "updated_at": "2026-11-27T14:44:33.588662+00:00"
+  "last_heartbeat_ts": 1795790718.3507898,
+  "updated_at": "2026-11-27T14:45:56.301387+00:00"
 }
