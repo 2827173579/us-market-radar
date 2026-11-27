@@ -7795,9 +7795,17 @@
     "JIN10_FLASH:20261127125508115800": {
       "device": "PC",
       "ts": 1795755396.9041944
+    },
+    "2026-11-27:VIX_REGIME:BACKWARDATION_BRAKE": {
+      "device": "PC",
+      "ts": 1795755608.1606905
+    },
+    "2026-11-27:VXN_TECH_DELEVERAGING": {
+      "device": "PC",
+      "ts": 1795755610.8378782
     }
   },
   "device": "PC",
-  "last_heartbeat_ts": 1795755516.305639,
-  "updated_at": "2026-11-27T04:58:36.306103+00:00"
+  "last_heartbeat_ts": 1795755582.0778897,
+  "updated_at": "2026-11-27T05:00:10.838388+00:00"
 }
