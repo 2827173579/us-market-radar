@@ -1,9 +1,22 @@
 {
-  "updated_at_ts": 1795747243.967,
-  "updated_at_et": "11-26 21:40 ET",
-  "updated_at_kst": "11:40 KST",
+  "updated_at_ts": 1795747287.68,
+  "updated_at_et": "11-26 21:41 ET",
+  "updated_at_kst": "11:41 KST",
   "macro_calendar": [],
   "macro_flashes": [
+    {
+      "id": "20261127104002496800",
+      "title": "科创50指数涨超3%，半导体板块全线走强；成分股中，中科飞测涨超11%。",
+      "summary": "科创50指数涨超3%，半导体板块全线走强；成分股中，中科飞测涨超11%。",
+      "keywords": [
+        "半导体"
+      ],
+      "pub_ts": 1795747202.0,
+      "time_et": "11-26 21:40 ET",
+      "time_bj": "10:40 BJ",
+      "time_kst": "11:40 KST",
+      "time_display": "21:40 ET / 10:40 BJ"
+    },
     {
       "id": "20261127103804477800",
       "title": "恒生科技指数涨超3%，光通信、芯片、PCB板块涨幅居前；成分股中，MINIMAX-W(0…",
@@ -325,19 +338,6 @@
       "time_bj": "23:46 BJ",
       "time_kst": "00:46 KST",
       "time_display": "10:46 ET / 23:46 BJ"
-    },
-    {
-      "id": "20261126231128755800",
-      "title": "美联储褐皮书显美消费动能减弱，欧央行新帅或为法德交易结果 | Plus日报",
-      "summary": "美联储褐皮书显美消费动能减弱；欧洲天然气库存跌至2011年来同期新低，寒潮下提取承压；SpaceX获批建太空数据中心，马斯克称将向美儿童赠股。",
-      "keywords": [
-        "美联储"
-      ],
-      "pub_ts": 1795705888.0,
-      "time_et": "11-26 10:11 ET",
-      "time_bj": "23:11 BJ",
-      "time_kst": "00:11 KST",
-      "time_display": "10:11 ET / 23:11 BJ"
     }
   ],
   "ticker_news": {
@@ -3404,7 +3404,7 @@
   "calendar_banner": {
     "level": "idle_with_flash",
     "headline": "📡 宏观消息面监控中 · 今日暂无美股五星级经济数据大考",
-    "detail": "⚡ 最新核心快讯 (21:38 ET / 10:38 BJ) [芯片]：恒生科技指数涨超3%，光通信、芯片、PCB板块涨幅居前；成分股中，MINIMAX-W(00100.HK)涨超8%。",
+    "detail": "⚡ 最新核心快讯 (21:40 ET / 10:40 BJ) [半导体]：科创50指数涨超3%，半导体板块全线走强；成分股中，中科飞测涨超11%。",
     "event_name": "",
     "minutes_left": 0,
     "opex_shield": {
