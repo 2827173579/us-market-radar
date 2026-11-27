@@ -1359,10 +1359,12 @@ def build_temp_embed_dict(snapshot: Optional[Dict[str, Any]]) -> Dict[str, Any]:
     ]
 
     lock_tag_m = " 🔒（倒挂/阴跌硬接刀锁生效，封顶 ≤50）" if macro_locked else ""
-    lock_tag_i = " 🔒（日内单边阴跌接刀锁生效，封顶 ≤50）" if intra_locked else ""
+    lock_tag_i = " 🔒（硬接刀锁生效，封顶 ≤50）" if intra_locked else ""
+    id_note = str(mt.get("intraday_dip_note") or "").strip()
+    id_note_suffix = f"（{id_note}）" if id_note else ""
     bottom_lines = [
         f"• **大盘整体抄底**：**{_fmt_num(mbt, 1)} / 100** — {mt.get('macro_bottom_tier') or '未到抄底区'}{lock_tag_m}",
-        f"• **日内抄底（{src_tag}）**：**{_fmt_num(ibt, 1)} / 100** — {mt.get('intraday_bottom_tier') or '日内未见超卖抄底点'}{lock_tag_i}",
+        f"• **日内抄底（{src_tag}）**：**{_fmt_num(ibt, 1)} / 100** — {mt.get('intraday_bottom_tier') or '日内未见超卖抄底点'}{id_note_suffix}{lock_tag_i}",
     ]
 
     return {

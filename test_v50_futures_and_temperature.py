@@ -213,7 +213,7 @@ class TestV50FuturesAndTemperature(unittest.TestCase):
         self.assertIn("右侧恐慌出清", res_unlocked["macro_bottom_tier"])
 
     def test_03_intraday_bottom_knife_catch_lock_and_unlock(self):
-        """日内单边阴跌锁定 <= 50 并叠加倒挂期轻仓提示；5m 右侧企稳后解锁 >= 65。"""
+        """日内单边阴跌或 VIX 倒挂期严格锁定 <= 50；解除倒挂且 5m 右侧企稳后解锁 >= 65。"""
         vr_back = {"vix_spot": 32.0, "vix_term_ratio": 1.08, "vix_state": "BACKWARDATION_BRAKE", "vix_bottom_signal": False}
         macro_selloff = {
             "QQQ": {"last": 460.0, "pct_chg": -1.9, "bias": -5.0, "vwap_diff_pct": -1.35, "rsi_5m": 24.0, "atr": 7.0, "near_intraday_low": True, "intraday_stabilized": False},
@@ -221,17 +221,27 @@ class TestV50FuturesAndTemperature(unittest.TestCase):
         }
         res_lock = mte.compute_market_temperature(macro_data=macro_selloff, vix_regime=vr_back, session_code="REGULAR")
         self.assertTrue(res_lock["intraday_knife_catch_locked"])
+        self.assertTrue(res_lock["capped_by_guard"])
         self.assertLessEqual(res_lock["intraday_bottom_score"], 50.0)
         self.assertIn("大盘倒挂期仅限轻仓反抽", res_lock["intraday_bottom_tier"])
 
         macro_stab = {
-            "QQQ": {"last": 462.0, "pct_chg": -1.5, "bias": -5.0, "vwap_diff_pct": -1.1, "rsi_5m": 28.0, "atr": 7.0, "near_intraday_low": False, "intraday_stabilized": True},
-            "SPY": {"last": 552.0, "pct_chg": -1.2, "bias": -4.0, "vwap_diff_pct": -0.9, "rsi_5m": 29.0, "atr": 6.0, "near_intraday_low": False, "intraday_stabilized": True},
+            "QQQ": {"last": 462.0, "pct_chg": -1.5, "bias": -5.0, "vwap_diff_pct": -1.1, "rsi_5m": 28.0, "atr": 7.0, "near_intraday_low": False, "intraday_stabilized": True, "reclaim_ema9": True},
+            "SPY": {"last": 552.0, "pct_chg": -1.2, "bias": -4.0, "vwap_diff_pct": -0.9, "rsi_5m": 29.0, "atr": 6.0, "near_intraday_low": False, "intraday_stabilized": True, "reclaim_ema9": True},
         }
-        res_ok = mte.compute_market_temperature(macro_data=macro_stab, vix_regime=vr_back, session_code="REGULAR")
+        # VIX 仍倒挂时即使 5m 企稳也绝不放行 >50
+        res_still_locked = mte.compute_market_temperature(macro_data=macro_stab, vix_regime=vr_back, session_code="REGULAR")
+        self.assertTrue(res_still_locked["intraday_knife_catch_locked"])
+        self.assertTrue(res_still_locked["capped_by_guard"])
+        self.assertLessEqual(res_still_locked["intraday_bottom_score"], 50.0)
+
+        # VIX 解除倒挂且回落后，5m 右侧企稳正式解锁 >= 65
+        vr_contango = {"vix_spot": 23.0, "vix_pct": -3.2, "vix_term_ratio": 0.94, "vix_state": "ELEVATED_CAUTION", "vix_bottom_signal": False}
+        res_ok = mte.compute_market_temperature(macro_data=macro_stab, vix_regime=vr_contango, session_code="REGULAR")
         self.assertFalse(res_ok["intraday_knife_catch_locked"])
+        self.assertFalse(res_ok["capped_by_guard"])
         self.assertGreaterEqual(res_ok["intraday_bottom_score"], 65.0)
-        self.assertIn("大盘倒挂期仅限轻仓反抽", res_ok["intraday_bottom_tier"])
+        self.assertEqual(res_ok["intraday_dip_score"], res_ok["intraday_bottom_score"])
 
     def test_04_bounds_finite_and_premarket_futures_fallback(self):
         """验证 4 项分数严格有限且在 [0, 100]，负涨幅收敛 <= 25，盘前/夜盘自动切期货实时数据源。"""
@@ -573,6 +583,196 @@ class TestV50FuturesAndTemperature(unittest.TestCase):
         self.assertIn(res_base["intraday_bubble_note"], txt)
         for bad in ("BEAR_DEFENSE", "RVOL", "VWAP", "RSI", "VIX_BACKWARDATION"):
             self.assertNotIn(bad, res_base["intraday_bubble_note"])
+
+    def test_11_up_day_dip_hard_cap_and_mild_up_cap(self):
+        """上涨盘封顶保护：QQQ=+1.2%/SPY=+0.9% 或 NQ=+1.0%/ES=+0.8% 必须封顶 intraday_dip_score <= 5.0；微涨站稳均价线 <= 10.0。"""
+        # 1) 美股常规盘明显上涨，即使模拟短线小回踩较低 RSI 也必须 <= 5.0
+        macro_up = {
+            "QQQ": {"last": 510.0, "pct_chg": 1.2, "bias": 4.0, "vwap_diff_pct": -0.2, "rsi_5m": 28.0, "atr": 7.0},
+            "SPY": {"last": 600.0, "pct_chg": 0.9, "bias": 3.0, "vwap_diff_pct": -0.1, "rsi_5m": 30.0, "atr": 6.0},
+        }
+        res_rth_up = mte.compute_market_temperature(
+            macro_data=macro_up,
+            vix_regime={"vix_spot": 16.0, "vix_pct": -3.0, "vix_term_ratio": 0.88, "vix_state": "CALM"},
+            session_code="REGULAR",
+        )
+        self.assertLessEqual(res_rth_up["intraday_dip_score"], 5.0)
+        self.assertEqual(res_rth_up["intraday_dip_score"], res_rth_up["intraday_bottom_score"])
+        self.assertTrue(res_rth_up["intraday_dip_components"]["up_day_capped"])
+        self.assertIn("上涨盘归零封顶", res_rth_up["intraday_dip_note"])
+
+        # 2) 期货盘明显上涨 (NQ=+1.0%, ES=+0.8%) -> <= 5.0
+        fut_up = {
+            "degraded": False,
+            "symbols": {
+                "NQ=F": {"symbol": "NQ=F", "available": True, "weekend_closed": False, "last": 21200.0, "pct_chg": 1.0, "vwap_diff_pct": -0.15, "rsi_5m": 26.0, "atr_20d_pct": 1.5, "status_tag": "24H 期货实时"},
+                "ES=F": {"symbol": "ES=F", "available": True, "weekend_closed": False, "last": 6050.0, "pct_chg": 0.8, "vwap_diff_pct": -0.10, "rsi_5m": 29.0, "atr_20d_pct": 1.2, "status_tag": "24H 期货实时"},
+            },
+        }
+        res_fut_up = mte.compute_market_temperature(
+            futures_snapshot=fut_up,
+            vix_regime={"vix_spot": 17.0, "vix_pct": -2.0, "vix_term_ratio": 0.90, "vix_state": "CALM"},
+            session_code="OVERNIGHT",
+        )
+        self.assertLessEqual(res_fut_up["intraday_dip_score"], 5.0)
+        self.assertTrue(res_fut_up["intraday_dip_components"]["up_day_capped"])
+
+        # 3) 微涨 (0%, +0.5%) 且未跌破当日 VWAP -> <= 10.0
+        macro_mild = {
+            "QQQ": {"last": 502.0, "pct_chg": 0.30, "bias": 2.0, "vwap_diff_pct": 0.12, "rsi_5m": 25.0, "atr": 7.0},
+            "SPY": {"last": 592.0, "pct_chg": 0.20, "bias": 1.5, "vwap_diff_pct": 0.08, "rsi_5m": 26.0, "atr": 6.0},
+        }
+        res_mild = mte.compute_market_temperature(
+            macro_data=macro_mild,
+            vix_regime={"vix_spot": 17.5, "vix_pct": -1.5, "vix_term_ratio": 0.91, "vix_state": "CALM"},
+            session_code="REGULAR",
+        )
+        self.assertLessEqual(res_mild["intraday_dip_score"], 10.0)
+        self.assertTrue(res_mild["intraday_dip_components"]["up_day_capped"])
+
+    def test_12_washout_bottom_vs_dead_cat_bounce_and_unbypassable_vix_guard(self):
+        """同跌幅同超卖下：放量长下影洗盘+VIX回落突破 65+，缩量死猫跳强打折压制 < 58；VIX 倒挂 1.05 铁律强制 <= 50 且 capped_by_guard=True。"""
+        macro_washout = {
+            "QQQ": {
+                "last": 485.0, "pct_chg": -1.65, "bias": -3.0, "vwap_diff_pct": -0.95, "rsi_5m": 27.0, "atr": 7.0,
+                "rvol_5m": 1.80, "lower_wick_ratio": 0.54, "body_ratio_3b": 0.36,
+                "rising_lows": True, "reclaim_ema9": True, "intraday_stabilized": True, "near_intraday_low": False,
+            },
+            "SPY": {
+                "last": 578.0, "pct_chg": -1.35, "bias": -2.5, "vwap_diff_pct": -0.80, "rsi_5m": 29.0, "atr": 6.0,
+                "rvol_5m": 1.65, "lower_wick_ratio": 0.48, "body_ratio_3b": 0.35,
+                "rising_lows": True, "reclaim_ema9": True, "intraday_stabilized": True, "near_intraday_low": False,
+            },
+        }
+        macro_dead_cat = {
+            "QQQ": {
+                "last": 485.0, "pct_chg": -1.65, "bias": -3.0, "vwap_diff_pct": -0.95, "rsi_5m": 27.0, "atr": 7.0,
+                "rvol_5m": 0.58, "lower_wick_ratio": 0.12, "body_ratio_3b": 0.16,
+                "rising_lows": False, "reclaim_ema9": False, "reclaim_vwap": False, "intraday_stabilized": True, "near_intraday_low": False,
+            },
+            "SPY": {
+                "last": 578.0, "pct_chg": -1.35, "bias": -2.5, "vwap_diff_pct": -0.80, "rsi_5m": 29.0, "atr": 6.0,
+                "rvol_5m": 0.62, "lower_wick_ratio": 0.14, "body_ratio_3b": 0.18,
+                "rising_lows": False, "reclaim_ema9": False, "reclaim_vwap": False, "intraday_stabilized": True, "near_intraday_low": False,
+            },
+        }
+
+        # 广度：4/10 回暖 vs 仅 2/10 极弱
+        recover_stocks = _sample_pure_stocks(10, above_ma20_ratio=0.4, rsi_val=38.0)
+        for idx, s in enumerate(recover_stocks):
+            s["pct_change"] = 0.6 if idx < 4 else -1.1
+        weak_stocks = _sample_pure_stocks(10, above_ma20_ratio=0.2, rsi_val=32.0)
+        for idx, s in enumerate(weak_stocks):
+            s["pct_change"] = 0.2 if idx < 2 else -1.5
+
+        vr_pullback = {"vix_spot": 21.5, "vix_pct": -3.6, "vix_term_ratio": 0.93, "vix_state": "ELEVATED_CAUTION", "vix_drawdown_from_peak_pct": 8.0}
+        vr_elevated = {"vix_spot": 23.0, "vix_pct": 2.4, "vix_term_ratio": 0.96, "vix_state": "ELEVATED_CAUTION", "vix_drawdown_from_peak_pct": 0.5}
+        vr_inverted = {"vix_spot": 30.0, "vix_pct": -2.0, "vix_term_ratio": 1.05, "vix_state": "BACKWARDATION_BRAKE", "vix_drawdown_from_peak_pct": 5.0}
+
+        res_wash = mte.compute_market_temperature(
+            macro_data=macro_washout,
+            stocks_data=recover_stocks,
+            vix_regime=vr_pullback,
+            session_code="REGULAR",
+        )
+        res_dead = mte.compute_market_temperature(
+            macro_data=macro_dead_cat,
+            stocks_data=weak_stocks,
+            vix_regime=vr_elevated,
+            session_code="REGULAR",
+        )
+        res_guard = mte.compute_market_temperature(
+            macro_data=macro_washout,
+            stocks_data=recover_stocks,
+            vix_regime=vr_inverted,
+            session_code="REGULAR",
+        )
+
+        # 1) 放量洗盘底 + VIX 回落 -> 突破 65+
+        self.assertGreaterEqual(res_wash["intraday_dip_score"], 65.0)
+        self.assertFalse(res_wash["capped_by_guard"])
+        self.assertGreater(res_wash["intraday_dip_components"]["washout_vol_bonus"], 0.0)
+        self.assertGreater(res_wash["intraday_dip_components"]["vix_pullback_bonus"], 0.0)
+        self.assertIn("放量下影洗盘", res_wash["intraday_dip_note"])
+        self.assertIn("恐慌回落确认", res_wash["intraday_dip_note"])
+
+        # 2) 缩量死猫跳 -> 强打折 0.4~0.5，总分严格压制 < 58，显著低于放量洗盘底
+        self.assertTrue(res_dead["intraday_dip_components"]["dead_cat_discounted"])
+        self.assertGreaterEqual(res_dead["intraday_dip_components"]["dead_cat_mult"], 0.40)
+        self.assertLessEqual(res_dead["intraday_dip_components"]["dead_cat_mult"], 0.50)
+        self.assertLess(res_dead["intraday_dip_score"], 58.0)
+        self.assertGreater(res_wash["intraday_dip_score"] - res_dead["intraday_dip_score"], 20.0)
+        self.assertIn("缩量弱反抽已打折", res_dead["intraday_dip_note"])
+
+        # 3) VIX 倒挂 1.05 即使出现放量长下影 -> 依然铁律封顶 <= 50.0 且 confirm_layer2 == 0.0
+        self.assertTrue(res_guard["capped_by_guard"])
+        self.assertTrue(res_guard["intraday_dip_components"]["capped_by_guard"])
+        self.assertTrue(res_guard["intraday_knife_catch_locked"])
+        self.assertEqual(res_guard["intraday_dip_components"]["confirm_layer2"], 0.0)
+        self.assertLessEqual(res_guard["intraday_dip_score"], 50.0)
+        self.assertIn("封顶50分禁接刀", res_guard["intraday_dip_note"])
+
+    def test_13_dip_excluded_assets_zero_impact_and_temp_dip_note_hygiene(self):
+        """验证纯美股冰点广度辅助对 BTC/KOSPI/亚太/A股ETF ±50% 极端波动严格零扰动，且夜盘广度归 0、/temp 归因零英文黑话。"""
+        base_macro = {
+            "QQQ": {"last": 485.0, "pct_chg": -1.4, "bias": -3.0, "bias20": -2.5, "vwap_diff_pct": -0.8, "rsi_5m": 29.0, "atr": 7.0, "rvol_5m": 1.6, "lower_wick_ratio": 0.48, "rising_lows": True, "reclaim_ema9": True, "intraday_stabilized": True},
+            "SPY": {"last": 578.0, "pct_chg": -1.1, "bias": -2.2, "bias20": -1.8, "vwap_diff_pct": -0.6, "rsi_5m": 31.0, "atr": 6.0, "rvol_5m": 1.5, "lower_wick_ratio": 0.45, "rising_lows": True, "reclaim_ema9": True, "intraday_stabilized": True},
+        }
+        # 仅 1/10 上涨（10% < 20% 极端冰点）
+        ice_stocks = _sample_pure_stocks(10, above_ma20_ratio=0.2, rsi_val=30.0)
+        for idx, s in enumerate(ice_stocks):
+            s["pct_change"] = 0.5 if idx == 0 else -1.8
+
+        vr = {"vix_spot": 21.0, "vix_pct": -2.5, "vix_term_ratio": 0.94, "vix_state": "ELEVATED_CAUTION"}
+        res_base = mte.compute_market_temperature(
+            macro_data=base_macro,
+            stocks_data=ice_stocks,
+            vix_regime=vr,
+            session_code="REGULAR",
+        )
+        self.assertGreater(res_base["intraday_dip_components"]["breadth_oversold_add"], 0.0)
+
+        for shock_pct, mult in ((50.0, 1.5), (-50.0, 0.5)):
+            polluted = list(ice_stocks) + [
+                {"ticker": "BTC-USD", "cat": "数字资产", "last": 60000.0 * mult, "ma20": 60000.0, "pct_change": shock_pct, "rsi": 95.0 if shock_pct > 0 else 5.0},
+                {"ticker": "KOSPI", "cat": "亚太指数", "last": 4800.0 * mult, "ma20": 4800.0, "pct_change": shock_pct, "rsi": 95.0 if shock_pct > 0 else 5.0},
+                {"ticker": "588200", "cat": "A股ETF", "last": 0.87 * mult, "ma20": 0.87, "pct_change": shock_pct, "rsi": 95.0 if shock_pct > 0 else 5.0},
+                {"ticker": "SOXS", "cat": "反向做空", "last": 50.0 * mult, "ma20": 50.0, "pct_change": shock_pct, "rsi": 95.0 if shock_pct > 0 else 5.0},
+            ]
+            res_poll = mte.compute_market_temperature(
+                macro_data=base_macro,
+                stocks_data=polluted,
+                vix_regime=vr,
+                session_code="REGULAR",
+            )
+            for k in ("macro_bubble_score", "intraday_bubble_score", "macro_bottom_score", "intraday_bottom_score", "intraday_dip_score"):
+                self.assertEqual(res_poll[k] - res_base[k], 0.0, f"Excluded asset shock perturbed {k}")
+            self.assertEqual(res_poll["intraday_dip_components"]["breadth_oversold_add"], res_base["intraday_dip_components"]["breadth_oversold_add"])
+
+        # 夜盘无有效个股广度时 breadth_oversold_add 与 breadth_confirm_bonus 必须优雅归 0
+        fut_dn = {
+            "degraded": False,
+            "symbols": {
+                "NQ=F": {"symbol": "NQ=F", "available": True, "weekend_closed": False, "last": 20500.0, "pct_chg": -1.4, "vwap_diff_pct": -0.7, "rsi_5m": 30.0, "atr_20d_pct": 1.5, "status_tag": "24H 期货实时"},
+                "ES=F": {"symbol": "ES=F", "available": True, "weekend_closed": False, "last": 5850.0, "pct_chg": -1.1, "vwap_diff_pct": -0.6, "rsi_5m": 32.0, "atr_20d_pct": 1.2, "status_tag": "24H 期货实时"},
+            },
+        }
+        res_ov = mte.compute_market_temperature(
+            macro_data=base_macro,
+            stocks_data=ice_stocks,
+            vix_regime=vr,
+            futures_snapshot=fut_dn,
+            session_code="OVERNIGHT",
+        )
+        self.assertEqual(res_ov["intraday_dip_components"]["breadth_oversold_add"], 0.0)
+        self.assertEqual(res_ov["intraday_dip_components"]["breadth_confirm_bonus"], 0.0)
+
+        # 验证 /temp 卡片展示 intraday_dip_note 且零禁用英文黑话
+        emb = bot.build_temp_embed_dict({"market_temperature": res_base, "futures": {}, "session_code": "REGULAR", "updated_at_et": "2026-11-27 10:20:00 ET"})
+        txt = "\n".join([emb["title"], emb["description"]] + [f["value"] for f in emb.get("fields", [])])
+        self.assertIn(res_base["intraday_dip_note"], txt)
+        for bad in ("BEAR_DEFENSE", "RVOL", "VWAP", "RSI", "VIX", "EMA9"):
+            self.assertNotIn(bad, res_base["intraday_dip_note"])
 
 
 if __name__ == "__main__":

@@ -4835,7 +4835,8 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
                     bottomPill.innerText = `🧲 抄底 ${mbt}/${ibt}${lockIcon}`;
                     const clr = mt.knife_catch_locked ? pal.down : ((Number(mt.macro_bottom_score) >= 65 || Number(mt.intraday_bottom_score) >= 65) ? pal.up : pal.sub);
                     bottomPill.style.color = clr;
-                    bottomPill.title = `大盘抄底 ${mt.macro_bottom_score} (${mt.macro_bottom_tier || ''}) | 日内抄底 ${mt.intraday_bottom_score} (${mt.intraday_bottom_tier || ''})`;
+                    const idNote = mt.intraday_dip_note ? ` · ${mt.intraday_dip_note}` : "";
+                    bottomPill.title = `大盘抄底 ${mt.macro_bottom_score} (${mt.macro_bottom_tier || ''}) | 日内抄底 ${mt.intraday_bottom_score} (${mt.intraday_bottom_tier || ''}${idNote})`;
                 } else {
                     bottomPill.innerText = "🧲 抄底 --/--";
                 }
@@ -4859,11 +4860,14 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
                     const ibTierDisplay = mt.intraday_bubble_note
                         ? `${mt.intraday_bubble_tier || ""}（${mt.intraday_bubble_note}）`
                         : (mt.intraday_bubble_tier || "");
+                    const idTierDisplay = mt.intraday_dip_note
+                        ? `${mt.intraday_bottom_tier || ""}（${mt.intraday_dip_note}）`
+                        : (mt.intraday_bottom_tier || "");
                     const rows = [
                         { lbl: "🔥 大盘整体泡沫", sc: Number(mt.macro_bubble_score || 0), tier: mt.macro_bubble_tier || "", clr: _scoreColor(mt.macro_bubble_color) },
                         { lbl: `⚡ 日内泡沫 (${mt.source_tag || "期货实时"})`, sc: Number(mt.intraday_bubble_score || 0), tier: ibTierDisplay, clr: _scoreColor(mt.intraday_bubble_color) },
                         { lbl: "🧲 大盘整体抄底", sc: Number(mt.macro_bottom_score || 0), tier: mt.macro_bottom_tier || "", clr: _scoreColor(mt.macro_bottom_color) },
-                        { lbl: `🎯 日内抄底 (${mt.source_tag || "期货实时"})`, sc: Number(mt.intraday_bottom_score || 0), tier: mt.intraday_bottom_tier || "", clr: _scoreColor(mt.intraday_bottom_color) },
+                        { lbl: `🎯 日内抄底 (${mt.source_tag || "期货实时"})`, sc: Number(mt.intraday_bottom_score || 0), tier: idTierDisplay, clr: _scoreColor(mt.intraday_bottom_color) },
                     ];
                     const gridHtml = rows.map(r => `
                         <div class="vix-pop-cell">

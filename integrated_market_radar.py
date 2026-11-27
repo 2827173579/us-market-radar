@@ -8631,8 +8631,8 @@ def run_radar_cycle(is_first_run=False, round_idx=1):
             f"[+] 🌡️ V5.0 期货与温度计: NQ={_nq_i.get('last', '--')} ({_nq_i.get('pct_chg', '--')}%) | "
             f"ES={_es_i.get('last', '--')} ({_es_i.get('pct_chg', '--')}%) | "
             f"泡沫 {_market_temperature.get('macro_bubble_score')}/{_market_temperature.get('intraday_bubble_score')} ({_market_temperature.get('intraday_bubble_note', '--')}) | "
-            f"抄底 {_market_temperature.get('macro_bottom_score')}/{_market_temperature.get('intraday_bottom_score')} "
-            f"[锁定={_market_temperature.get('knife_catch_locked')}]"
+            f"抄底 {_market_temperature.get('macro_bottom_score')}/{_market_temperature.get('intraday_bottom_score')} ({_market_temperature.get('intraday_dip_note', '--')}) "
+            f"[锁定={_market_temperature.get('knife_catch_locked')}/{_market_temperature.get('intraday_knife_catch_locked')}]"
         )
     except Exception as _mte_err:
         print(f"  [!] 🌡️ V5.0 期货与温度计静默降级: {_mte_err}")

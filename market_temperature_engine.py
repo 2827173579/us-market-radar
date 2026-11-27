@@ -36,7 +36,7 @@ except Exception:
 SCRATCH_DIR = os.path.dirname(os.path.abspath(__file__))
 DEFAULT_FUTURES_TEMP_CACHE_PATH = os.path.join(SCRATCH_DIR, "data_cache", "futures_temp_cache.json")
 DEFAULT_CACHE_TTL_SECONDS = 180
-FUTURES_CACHE_SCHEMA_VERSION = 2
+FUTURES_CACHE_SCHEMA_VERSION = 3
 
 FUTURES_SYMBOLS: Tuple[str, ...] = ("NQ=F", "ES=F")
 FUTURES_META: Dict[str, Dict[str, str]] = {
@@ -336,14 +336,17 @@ def _extract_5m_vol_price_features(
     vols: Sequence[float],
     vwap_ref: Optional[float] = None,
 ) -> Dict[str, Any]:
-    """基于内存中已有最近 3~6 根 5m K 线提取量能比、长上影滞涨与放量抬高低点特征（零未来函数）。"""
+    """基于内存中已有最近 3~6 根 5m K 线提取量能比、上下影线、实体占比与抬高低点特征（零未来函数）。"""
     n = min(len(opens), len(highs), len(lows), len(closes))
     if n < 3:
         return {
             "rvol_5m": None,
             "upper_wick_ratio": None,
             "upper_wick_avg_3b": None,
+            "lower_wick_ratio": None,
+            "body_ratio_3b": None,
             "near_intraday_high": False,
+            "rising_lows": False,
             "rising_lows_above_vwap": False,
         }
 
@@ -358,17 +361,27 @@ def _extract_5m_vol_price_features(
             if base_v > 0.0 and rec_v > 0.0:
                 rvol_5m = round(rec_v / base_v, 3)
 
-    # 2) 近 3 根 5m 上影线占比（单根最大 + 3 根均值）
+    # 2) 近 3 根 5m 上影线占比、下影线占比与实体占比
     wick_ratios: List[float] = []
+    lower_wick_ratios: List[float] = []
+    body_ratios: List[float] = []
     for i in range(n - 3, n):
         rng = float(highs[i]) - float(lows[i])
         if rng > 1e-6:
             uw = max(0.0, float(highs[i]) - max(float(opens[i]), float(closes[i])))
+            lw = max(0.0, min(float(opens[i]), float(closes[i])) - float(lows[i]))
+            bd = abs(float(closes[i]) - float(opens[i]))
             wick_ratios.append(_clamp(uw / rng, 0.0, 1.0))
+            lower_wick_ratios.append(_clamp(lw / rng, 0.0, 1.0))
+            body_ratios.append(_clamp(bd / rng, 0.0, 1.0))
         else:
             wick_ratios.append(0.0)
+            lower_wick_ratios.append(0.0)
+            body_ratios.append(0.0)
     uw_max = round(max(wick_ratios), 3) if wick_ratios else 0.0
     uw_avg = round(sum(wick_ratios) / len(wick_ratios), 3) if wick_ratios else 0.0
+    lw_max = round(max(lower_wick_ratios), 3) if lower_wick_ratios else 0.0
+    bd_avg = round(sum(body_ratios) / len(body_ratios), 3) if body_ratios else 0.0
 
     # 3) 是否刷新或贴近日内高点
     hi_all = max(float(x) for x in highs[:n])
@@ -378,7 +391,7 @@ def _extract_5m_vol_price_features(
     pos_rng = (last_c - lo_all) / max(hi_all - lo_all, 1e-6)
     near_high = bool(last_h >= hi_all * 0.9985 or pos_rng >= 0.80)
 
-    # 4) 连续抬高低点 + 站稳 VWAP + 实体推升（区分放量真逼空）
+    # 4) 连续抬高低点 + 站稳 VWAP + 实体推升（区分放量真逼空与低位企稳抬低）
     l3, l2, l1 = float(lows[n - 3]), float(lows[n - 2]), float(lows[n - 1])
     c3, c1 = float(closes[n - 3]), float(closes[n - 1])
     rising_lows = bool(l1 >= l2 * 0.9995 and l2 >= l3 * 0.9995 and l1 > l3 and c1 >= c3)
@@ -391,7 +404,10 @@ def _extract_5m_vol_price_features(
         "rvol_5m": rvol_5m,
         "upper_wick_ratio": uw_max,
         "upper_wick_avg_3b": uw_avg,
+        "lower_wick_ratio": lw_max,
+        "body_ratio_3b": bd_avg,
         "near_intraday_high": near_high,
+        "rising_lows": rising_lows,
         "rising_lows_above_vwap": rising_above_vwap,
     }
 
@@ -429,7 +445,10 @@ def _build_single_future_item(
         "rvol_5m": None,
         "upper_wick_ratio": None,
         "upper_wick_avg_3b": None,
+        "lower_wick_ratio": None,
+        "body_ratio_3b": None,
         "near_intraday_high": False,
+        "rising_lows": False,
         "rising_lows_above_vwap": False,
         "near_intraday_low": False,
         "intraday_stabilized": False,
@@ -626,7 +645,10 @@ def _build_single_future_item(
                         "rvol_5m": vp_feats.get("rvol_5m"),
                         "upper_wick_ratio": vp_feats.get("upper_wick_ratio"),
                         "upper_wick_avg_3b": vp_feats.get("upper_wick_avg_3b"),
+                        "lower_wick_ratio": vp_feats.get("lower_wick_ratio"),
+                        "body_ratio_3b": vp_feats.get("body_ratio_3b"),
                         "near_intraday_high": bool(vp_feats.get("near_intraday_high", False)),
+                        "rising_lows": bool(vp_feats.get("rising_lows", False)),
                         "rising_lows_above_vwap": bool(vp_feats.get("rising_lows_above_vwap", False)),
                         "near_intraday_low": near_low,
                         "intraday_stabilized": stabilized,
@@ -858,16 +880,19 @@ def _extract_spot_intraday_metrics(
 
     near_low = False
     stabilized = False
-    reclaim_ema9 = False
-    reclaim_vwap = False
-    green_rev = False
-    rsi_bull_div = False
+    reclaim_ema9 = bool(m_item.get("reclaim_ema9", False))
+    reclaim_vwap = bool(m_item.get("reclaim_vwap", False))
+    green_rev = bool(m_item.get("green_reversal_bar", False))
+    rsi_bull_div = bool(m_item.get("rsi_bull_div", False))
     rvol_5m = _safe_float(m_item.get("rvol_5m"))
     if rvol_5m is None:
         rvol_5m = _safe_float(m_item.get("rvol"))
     upper_wick_ratio = _safe_float(m_item.get("upper_wick_ratio"))
     upper_wick_avg_3b = _safe_float(m_item.get("upper_wick_avg_3b"))
+    lower_wick_ratio = _safe_float(m_item.get("lower_wick_ratio"))
+    body_ratio_3b = _safe_float(m_item.get("body_ratio_3b"))
     near_high = bool(m_item.get("near_intraday_high", False))
+    rising_lows = bool(m_item.get("rising_lows", False))
     rising_lows_above_vwap = bool(m_item.get("rising_lows_above_vwap", False))
 
     # 若传入 intraday_map[ticker] (5m DataFrame)，基于当日 09:30 ET 会话重置 VWAP 并精准提取 5m 量价与企稳特征
@@ -913,7 +938,12 @@ def _extract_spot_intraday_metrics(
                     upper_wick_ratio = vp["upper_wick_ratio"]
                 if vp.get("upper_wick_avg_3b") is not None:
                     upper_wick_avg_3b = vp["upper_wick_avg_3b"]
+                if vp.get("lower_wick_ratio") is not None:
+                    lower_wick_ratio = vp["lower_wick_ratio"]
+                if vp.get("body_ratio_3b") is not None:
+                    body_ratio_3b = vp["body_ratio_3b"]
                 near_high = bool(vp.get("near_intraday_high", near_high))
+                rising_lows = bool(vp.get("rising_lows", rising_lows))
                 rising_lows_above_vwap = bool(vp.get("rising_lows_above_vwap", rising_lows_above_vwap))
             if len(closes) >= 6:
                 rsi_seq = _compute_rsi_series(closes, period=14)
@@ -965,7 +995,10 @@ def _extract_spot_intraday_metrics(
         "rvol_5m": rvol_5m,
         "upper_wick_ratio": upper_wick_ratio,
         "upper_wick_avg_3b": upper_wick_avg_3b if upper_wick_avg_3b is not None else upper_wick_ratio,
+        "lower_wick_ratio": lower_wick_ratio,
+        "body_ratio_3b": body_ratio_3b,
         "near_intraday_high": near_high,
+        "rising_lows": rising_lows,
         "rising_lows_above_vwap": rising_lows_above_vwap,
         "near_intraday_low": near_low,
         "intraday_stabilized": stabilized,
@@ -1411,53 +1444,223 @@ def compute_market_temperature(
             mbt_color = "neutral"
 
     # =====================================================================
-    # 5. 日内抄底指数 (intraday_bottom_score, 0~100 + 硬接刀锁)
+    # 5. 日内抄底指数 (intraday_bottom_score / intraday_dip_score, 0~100 + 硬接刀锁) — V5.9 对称多维版
     # =====================================================================
-    # 第一层：日内超卖深度（上限 60）
+    lw_vals = [float(v) for x in active_legs if (v := _safe_float(x.get("lower_wick_ratio"))) is not None]
+    intra_lower_wick = round(max(lw_vals), 3) if lw_vals else None
+    bd_vals = [float(v) for x in active_legs if (v := _safe_float(x.get("body_ratio_3b"))) is not None]
+    intra_body_ratio = round(sum(bd_vals) / len(bd_vals), 3) if bd_vals else None
+    intra_rising_lows = any(bool(x.get("rising_lows")) or bool(x.get("rising_lows_above_vwap")) for x in active_legs)
+    any_reclaim_vwap = any(bool(x.get("reclaim_vwap")) for x in active_legs)
+    any_reclaim_ema9 = any(bool(x.get("reclaim_ema9")) for x in active_legs)
+    any_rsi_bull_div = any(bool(x.get("rsi_bull_div")) for x in active_legs)
+
+    # 第一层：日内超卖深度（上限 60，复用会话级 VWAP + 纯美股广度冰点辅助）
     neg_vwap_atr = max(0.0, -intra_vwap_diff) / max(intra_atr_pct, 0.4)
     neg_drop_atr = max(0.0, -intra_pct) / max(intra_atr_pct, 0.4)
-    ibt_vwap = _linear_score(neg_vwap_atr, 0.10, 0.95, 26.0)
+    ibt_vwap = _linear_score(neg_vwap_atr, 0.05, 0.90, 26.0)
     ibt_rsi = _linear_score(intra_rsi5m, 42.0, 22.0, 18.0)
-    ibt_drop = _linear_score(neg_drop_atr, 0.20, 1.15, 16.0)
-    intra_layer1 = _clamp(ibt_vwap + ibt_rsi + ibt_drop, 0.0, 60.0)
+    ibt_drop = _linear_score(neg_drop_atr, 0.15, 1.15, 16.0)
 
-    # 第二层：日内右侧企稳（上限 40）
+    breadth_oversold_add = 0.0
+    if sess == "REGULAR" and source_tag == "盘中现货" and pure_us_adv_pct is not None and pure_us_adv_pct < 20.0:
+        breadth_oversold_add = _clamp(3.0 + _linear_score(pure_us_adv_pct, 20.0, 5.0, 5.0), 0.0, 8.0)
+    intra_layer1 = _clamp(ibt_vwap + ibt_rsi + ibt_drop + breadth_oversold_add, 0.0, 60.0)
+
+    # 第二层与硬护栏状态变量
     one_way_selloff = bool(
         (intra_near_low or (intra_pct <= -0.6 and intra_vwap_diff <= -0.25))
         and not intra_stabilized
     )
-    intraday_knife_locked = bool(one_way_selloff)
+    vix_surging = bool(vix_pct is not None and vix_pct >= 5.0 and vix_dd_peak < 3.0)
+    vix_intraday_pullback = bool(
+        (not vix_backwardation)
+        and (not vix_surging)
+        and (
+            (vix_pct is not None and vix_pct <= -1.0)
+            or (vix_dd_peak >= 4.0 and (vix_pct is None or vix_pct <= 1.0))
+            or bool(vr.get("vix_intraday_pullback", False))
+            or vix_bottom_signal
+        )
+    )
+
+    up_day_capped = False
+    capped_by_guard = False
+    guard_reason = ""
+    base_confirm = 0.0
+    washout_vol_bonus = 0.0
+    vix_pullback_bonus = 0.0
+    breadth_confirm_bonus = 0.0
+    dead_cat_mult = 1.0
+    dead_cat_discounted = False
+    intra_layer2 = 0.0
 
     back_suffix = "（大盘倒挂期仅限轻仓反抽）" if vix_backwardation else ""
 
-    if intraday_knife_locked:
+    if intra_pct >= 0.5:
+        # 1) 上涨盘硬封顶保护：明显上涨 (>= +0.5%) 封顶 <= 5.0
+        up_day_capped = True
+        intraday_knife_locked = False
+        ibt_vwap = 0.0
+        ibt_drop = 0.0
+        breadth_oversold_add = 0.0
+        intra_layer1 = _clamp(ibt_rsi * 0.15, 0.0, 5.0)
         intra_layer2 = 0.0
-        intraday_bottom_score = round(min(50.0, intra_layer1), 1)
-        ibt_tier = f"⛔ 日内阴跌寻底 · 禁左侧接刀{back_suffix}"
-        ibt_color = "down"
+        intraday_bottom_score = round(min(5.0, intra_layer1), 1)
+        intraday_dip_note = "上涨盘归零封顶"
+        ibt_tier = f"⚪ 日内未见超卖抄底点{back_suffix}"
+        ibt_color = "neutral"
+    elif intra_pct > 0.0 and intra_vwap_diff >= 0.0:
+        # 2) 微涨盘且未跌破当日会话 VWAP：封顶 <= 10.0
+        up_day_capped = True
+        intraday_knife_locked = False
+        intra_layer2 = 0.0
+        intraday_bottom_score = round(min(10.0, intra_layer1 * 0.35), 1)
+        intraday_dip_note = "微涨盘无超卖抄底"
+        ibt_tier = f"⚪ 日内未见超卖抄底点{back_suffix}"
+        ibt_color = "neutral"
     else:
-        il2 = 0.0
-        if intra_stabilized:
-            il2 += 28.0
-            if any(bool(x.get("reclaim_vwap")) for x in active_legs):
-                il2 += 10.0
-            elif any(bool(x.get("reclaim_ema9")) for x in active_legs):
-                il2 += 8.0
-            if any(bool(x.get("rsi_bull_div")) for x in active_legs):
-                il2 += 6.0
-        elif intra_vwap_diff >= 0.0 and intra_pct > -0.3:
-            il2 += 6.0
-        intra_layer2 = _clamp(il2, 0.0, 40.0)
-        intraday_bottom_score = round(_clamp(intra_layer1 + intra_layer2, 0.0, 100.0), 1)
-        if intraday_bottom_score >= 65.0:
-            ibt_tier = f"🟢 日内右侧企稳 · 可轻仓低吸{back_suffix}"
-            ibt_color = "up"
-        elif intraday_bottom_score >= 40.0:
-            ibt_tier = f"🟡 日内回踩观察 · 等企稳确认{back_suffix}"
-            ibt_color = "warn"
+        # 3) 铁律硬接刀锁：VIX 倒挂未解 / VIX 仍在高位飙升 / 盘中单边破低无企稳 -> confirm_pts = 0 且 <= 50.0
+        intraday_knife_locked = bool(vix_backwardation or vix_surging or one_way_selloff)
+        if intraday_knife_locked:
+            capped_by_guard = True
+            intra_layer2 = 0.0
+            intraday_bottom_score = round(min(50.0, intra_layer1), 1)
+            if vix_backwardation:
+                guard_reason = "vix_backwardation"
+                intraday_dip_note = "恐慌倒挂未解·封顶50分禁接刀"
+                ibt_tier = f"⛔ 恐慌倒挂未解 · 禁左侧接刀{back_suffix}"
+            elif vix_surging:
+                guard_reason = "vix_surging"
+                intraday_dip_note = "恐慌仍在飙升·封顶50分禁接刀"
+                ibt_tier = f"⛔ 日内恐慌飙升 · 禁左侧接刀{back_suffix}"
+            else:
+                guard_reason = "one_way_selloff"
+                intraday_dip_note = "单边阴跌破低·封顶50分禁接刀"
+                ibt_tier = f"⛔ 日内阴跌寻底 · 禁左侧接刀{back_suffix}"
+            ibt_color = "down"
         else:
-            ibt_tier = f"⚪ 日内未见超卖抄底点{back_suffix}"
-            ibt_color = "neutral"
+            # 4) 企稳确认分（0~40）：区分「放量洗盘出清」vs「缩量死猫跳」+ VIX 回落 + 纯美股广度回暖
+            if intra_stabilized:
+                base_confirm = 20.0
+                if any_reclaim_vwap:
+                    base_confirm += 8.0
+                elif any_reclaim_ema9:
+                    base_confirm += 6.0
+                if any_rsi_bull_div:
+                    base_confirm += 4.0
+            elif intra_vwap_diff >= 0.0 and intra_pct > -0.3:
+                base_confirm = 4.0
+
+            # 放量洗盘下影线加分（RVOL >= 1.35 + 长下影 >= 40% + 抬高低点/收复均线）
+            if (
+                intra_rvol_5m is not None
+                and intra_rvol_5m >= 1.35
+                and intra_lower_wick is not None
+                and intra_lower_wick >= 0.40
+                and (intra_rising_lows or any_reclaim_ema9 or any_reclaim_vwap or intra_stabilized)
+            ):
+                washout_vol_bonus = _clamp(
+                    5.0
+                    + _linear_score(intra_rvol_5m, 1.35, 2.00, 3.0)
+                    + _linear_score(intra_lower_wick, 0.40, 0.65, 2.0),
+                    0.0,
+                    10.0,
+                )
+
+            # 缩量死猫跳强打折（RVOL < 0.85 且受压于 VWAP 下方，乘数 0.40~0.50 并封顶确认分）
+            if (
+                washout_vol_bonus == 0.0
+                and intra_rvol_5m is not None
+                and intra_rvol_5m < 0.85
+                and intra_vwap_diff < 0.0
+                and (intra_body_ratio is None or intra_body_ratio < 0.35 or not any_reclaim_vwap)
+            ):
+                dead_cat_mult = round(0.50 - _linear_score(intra_rvol_5m, 0.85, 0.45, 0.10), 3)
+                dead_cat_mult = _clamp(dead_cat_mult, 0.40, 0.50)
+                dead_cat_discounted = True
+
+            # VIX 盘中见顶回落共振加分 (+0~+8)
+            if vix_intraday_pullback:
+                if vix_pct is not None and vix_pct <= -1.0:
+                    vix_pullback_bonus = _clamp(4.0 + _linear_score(-vix_pct, 1.0, 6.0, 4.0), 0.0, 8.0)
+                else:
+                    vix_pullback_bonus = _clamp(_linear_score(vix_dd_peak, 4.0, 12.0, 6.0), 0.0, 8.0)
+
+            # 纯美股广度同步回暖确认加分 (+0~+5，仅美股常规盘生效)
+            if (
+                sess == "REGULAR"
+                and source_tag == "盘中现货"
+                and intra_stabilized
+                and not dead_cat_discounted
+                and pure_us_adv_pct is not None
+                and pure_us_adv_pct >= 35.0
+            ):
+                breadth_confirm_bonus = _clamp(_linear_score(pure_us_adv_pct, 35.0, 60.0, 5.0), 0.0, 5.0)
+
+            if dead_cat_discounted:
+                raw_l2 = min((base_confirm + vix_pullback_bonus) * dead_cat_mult, 14.0)
+                intra_layer2 = _clamp(raw_l2, 0.0, 14.0)
+                intraday_bottom_score = round(_clamp(min(intra_layer1 + intra_layer2, 55.0), 0.0, 100.0), 1)
+            else:
+                raw_l2 = base_confirm + washout_vol_bonus + vix_pullback_bonus + breadth_confirm_bonus
+                intra_layer2 = _clamp(raw_l2, 0.0, 40.0)
+                intraday_bottom_score = round(_clamp(intra_layer1 + intra_layer2, 0.0, 100.0), 1)
+
+            # 纯中文大白话归因短句（零英文黑话）
+            if dead_cat_discounted:
+                intraday_dip_note = "缩量弱反抽已打折"
+            else:
+                dip_tags: List[str] = []
+                if washout_vol_bonus > 0.0:
+                    dip_tags.append("放量下影洗盘")
+                elif intra_stabilized:
+                    dip_tags.append("短线右侧企稳")
+                if vix_pullback_bonus > 0.0:
+                    dip_tags.append("恐慌回落确认")
+                if breadth_oversold_add > 0.0:
+                    dip_tags.append("个股冰点超卖")
+                elif breadth_confirm_bonus > 0.0:
+                    dip_tags.append("广度同步回暖")
+                if dip_tags:
+                    intraday_dip_note = "+".join(dip_tags)
+                elif intra_layer1 >= 25.0:
+                    intraday_dip_note = "已有超卖等待企稳"
+                else:
+                    intraday_dip_note = "日内未达超卖区间"
+
+            if intraday_bottom_score >= 65.0:
+                ibt_tier = f"🟢 日内右侧企稳 · 可轻仓低吸{back_suffix}"
+                ibt_color = "up"
+            elif intraday_bottom_score >= 40.0:
+                ibt_tier = f"🟡 日内回踩观察 · 等企稳确认{back_suffix}"
+                ibt_color = "warn"
+            else:
+                ibt_tier = f"⚪ 日内未见超卖抄底点{back_suffix}"
+                ibt_color = "neutral"
+
+    intraday_dip_components: Dict[str, Any] = {
+        "oversold_layer1": round(intra_layer1, 1),
+        "confirm_layer2": round(intra_layer2, 1),
+        "vwap_neg_atr": round(ibt_vwap, 1),
+        "rsi5m_os": round(ibt_rsi, 1),
+        "drop_atr": round(ibt_drop, 1),
+        "breadth_oversold_add": round(breadth_oversold_add, 1),
+        "base_confirm": round(base_confirm, 1),
+        "washout_vol_bonus": round(washout_vol_bonus, 1),
+        "vix_pullback_bonus": round(vix_pullback_bonus, 1),
+        "breadth_confirm_bonus": round(breadth_confirm_bonus, 1),
+        "dead_cat_mult": round(dead_cat_mult, 3),
+        "dead_cat_discounted": dead_cat_discounted,
+        "up_day_capped": up_day_capped,
+        "capped_by_guard": capped_by_guard,
+        "guard_reason": guard_reason,
+        "rvol_5m": intra_rvol_5m,
+        "lower_wick_ratio": intra_lower_wick,
+        "body_ratio_3b": intra_body_ratio,
+        "pure_us_advancing_pct": pure_us_adv_pct if (sess == "REGULAR" and source_tag == "盘中现货") else None,
+        "vix_pct": round(vix_pct, 2) if vix_pct is not None else None,
+    }
 
     # 一句话通俗总览
     if macro_knife_locked or intraday_knife_locked:
@@ -1521,15 +1724,23 @@ def compute_market_temperature(
             "credit_drawdown": round(bt_credit, 1),
         },
         "intraday_bottom_score": intraday_bottom_score,
+        "intraday_dip_score": intraday_bottom_score,
         "intraday_bottom_tier": ibt_tier,
         "intraday_bottom_color": ibt_color,
+        "intraday_dip_note": intraday_dip_note,
+        "intraday_dip_components": intraday_dip_components,
         "intraday_knife_catch_locked": intraday_knife_locked,
+        "capped_by_guard": capped_by_guard,
         "intraday_bottom_breakdown": {
             "layer1_oversold": round(intra_layer1, 1),
             "layer2_right_side": round(intra_layer2, 1),
             "vwap_neg_atr": round(ibt_vwap, 1),
             "rsi5m_os": round(ibt_rsi, 1),
             "drop_atr": round(ibt_drop, 1),
+            "breadth_oversold_add": round(breadth_oversold_add, 1),
+            "washout_vol_bonus": round(washout_vol_bonus, 1),
+            "vix_pullback_bonus": round(vix_pullback_bonus, 1),
+            "dead_cat_mult": round(dead_cat_mult, 3),
             "intra_stabilized": intra_stabilized,
         },
         "futures": {
@@ -1687,7 +1898,9 @@ def render_macro_futures_and_temperature_html(temp_payload: Optional[Dict[str, A
             ibt_score,
             str(tp.get("intraday_bottom_tier") or "日内未见超卖抄底点"),
             _color_var(str(tp.get("intraday_bottom_color") or "neutral")),
-            f"日内超卖 {ibt_bd.get('layer1_oversold', 0)}/60 · 5m企稳 {ibt_bd.get('layer2_right_side', 0)}/40",
+            (
+                f"归因：{tp.get('intraday_dip_note')} · " if tp.get("intraday_dip_note") else ""
+            ) + f"日内超卖 {ibt_bd.get('layer1_oversold', 0)}/60 · 5m企稳 {ibt_bd.get('layer2_right_side', 0)}/40",
             '<span class="v50-lock-badge">🔒 日内接刀锁生效 (≤50)</span>' if tp.get("intraday_knife_catch_locked") else "",
         ),
     ]
