@@ -1,75 +1,23 @@
 {
-  "weather": "暴雨空仓",
+  "weather": "",
   "targets": {
-    "PORT_INTC": {
-      "state": "INTC_CRITICAL_STOP",
-      "last_notified_at": 1794529648.8460343
-    },
-    "NBIS": {
-      "state": "STOP_LOSS",
-      "last_notified_at": 1795568545.5093307
-    },
-    "NVDA": {
-      "state": "STOP_LOSS",
-      "last_notified_at": 1795568545.5093307
-    },
-    "META": {
+    "PLTR": {
       "state": "NORMAL",
       "last_notified_at": 0.0
     },
-    "MRNA": {
-      "state": "NORMAL",
-      "last_notified_at": 0.0
-    },
-    "CRWV": {
-      "state": "STOP_LOSS",
-      "last_notified_at": 1794532572.3751588
-    },
-    "QQQ": {
-      "state": "NORMAL",
-      "last_notified_at": 0.0
-    },
-    "SOXX": {
+    "SPY": {
       "state": "NORMAL",
       "last_notified_at": 0.0
     },
     "QCOM": {
-      "state": "WATCHLIST_ENTRY_READY",
-      "last_notified_at": 1795805936.6516752
-    },
-    "LUNR": {
       "state": "NORMAL",
       "last_notified_at": 0.0
     },
-    "SPCX": {
+    "AMZN": {
       "state": "NORMAL",
       "last_notified_at": 0.0
     },
-    "TSM": {
-      "state": "NORMAL",
-      "last_notified_at": 0.0
-    },
-    "FLY": {
-      "state": "NORMAL",
-      "last_notified_at": 0.0
-    },
-    "LLY": {
-      "state": "NORMAL",
-      "last_notified_at": 0.0
-    },
-    "MCD": {
-      "state": "NORMAL",
-      "last_notified_at": 0.0
-    },
-    "V": {
-      "state": "NORMAL",
-      "last_notified_at": 0.0
-    },
-    "KO": {
-      "state": "NORMAL",
-      "last_notified_at": 0.0
-    },
-    "VST": {
+    "DIA": {
       "state": "NORMAL",
       "last_notified_at": 0.0
     },
@@ -77,120 +25,10 @@
       "state": "NORMAL",
       "last_notified_at": 0.0
     },
-    "SPY": {
+    "FLY": {
       "state": "WATCHLIST_ENTRY_READY",
-      "last_notified_at": 1795806328.0517466
-    },
-    "DIA": {
-      "state": "NORMAL",
-      "last_notified_at": 0.0
-    },
-    "IWM": {
-      "state": "NORMAL",
-      "last_notified_at": 0.0
-    },
-    "IGV": {
-      "state": "NORMAL",
-      "last_notified_at": 0.0
-    },
-    "CEG": {
-      "state": "NORMAL",
-      "last_notified_at": 0.0
-    },
-    "TLT": {
-      "state": "NORMAL",
-      "last_notified_at": 0.0
-    },
-    "COHR": {
-      "state": "NORMAL",
-      "last_notified_at": 0.0
-    },
-    "AMD": {
-      "state": "STOP_LOSS",
-      "last_notified_at": 1795482111.35759
-    },
-    "CRWD": {
-      "state": "NORMAL",
-      "last_notified_at": 0.0
-    },
-    "TSLA": {
-      "state": "NORMAL",
-      "last_notified_at": 0.0
-    },
-    "BTC-USD": {
-      "state": "STOP_LOSS",
-      "last_notified_at": 1795232018.810751
-    },
-    "MSTR": {
-      "state": "STOP_LOSS",
-      "last_notified_at": 1795482111.35759
-    },
-    "MU": {
-      "state": "STOP_LOSS",
-      "last_notified_at": 1795482111.35759
-    },
-    "ASML": {
-      "state": "STOP_LOSS",
-      "last_notified_at": 1795484898.0580606
-    },
-    "APLD": {
-      "state": "STOP_LOSS",
-      "last_notified_at": 1795568545.5093307
-    },
-    "CRDO": {
-      "state": "STOP_LOSS",
-      "last_notified_at": 1795482111.35759
-    },
-    "SKHY": {
-      "state": "STOP_LOSS",
-      "last_notified_at": 1795482111.35759
-    },
-    "AMAT": {
-      "state": "STOP_LOSS",
-      "last_notified_at": 1795482111.35759
-    },
-    "DELL": {
-      "state": "STOP_LOSS",
-      "last_notified_at": 1795785745.8054469
-    },
-    "BE": {
-      "state": "STOP_LOSS",
-      "last_notified_at": 1795482111.35759
-    },
-    "COIN": {
-      "state": "STOP_LOSS",
-      "last_notified_at": 1795482111.35759
-    },
-    "AMZN": {
-      "state": "NORMAL",
-      "last_notified_at": 0.0
-    },
-    "MSFT": {
-      "state": "NORMAL",
-      "last_notified_at": 0.0
-    },
-    "NKE": {
-      "state": "NORMAL",
-      "last_notified_at": 0.0
-    },
-    "HPE": {
-      "state": "STOP_LOSS",
-      "last_notified_at": 1795615946.2530591
-    },
-    "PLTR": {
-      "state": "WATCHLIST_ENTRY_READY",
-      "last_notified_at": 1795806175.7684474
-    },
-    "AVGO": {
-      "state": "NORMAL",
-      "last_notified_at": 0.0
-    },
-    "KSTR": {
-      "state": "NORMAL",
-      "last_notified_at": 0.0
+      "last_notified_at": 1795807850.9795744
     }
   },
-  "position_peaks": {
-    "INTC": 62.71
-  }
+  "position_peaks": {}
 }
