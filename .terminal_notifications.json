@@ -2,7 +2,7 @@
   {
     "id": "TP_VIXY_2026-11-27",
     "date_et": "2026-11-27",
-    "time": "11-27 15:30",
+    "time": "11-27 15:31",
     "category": "take_profit",
     "cat_label": "🟣 冲顶减仓",
     "level": "purple",
@@ -17,7 +17,7 @@
   {
     "id": "TP_SQQQ_2026-11-27",
     "date_et": "2026-11-27",
-    "time": "11-27 15:30",
+    "time": "11-27 15:31",
     "category": "take_profit",
     "cat_label": "🟣 冲顶减仓",
     "level": "purple",
@@ -32,14 +32,14 @@
   {
     "id": "TP_SOXS_2026-11-27",
     "date_et": "2026-11-27",
-    "time": "11-27 15:30",
+    "time": "11-27 15:31",
     "category": "take_profit",
     "cat_label": "🟣 冲顶减仓",
     "level": "purple",
     "ticker": "SOXS",
     "name": "3倍做空半导体",
     "cat": "反向对冲",
-    "price": 54.12,
+    "price": 54.13,
     "pct_change": -14.791569746362851,
     "title": "🟣 SOXS (3倍做空半导体) 极度超买，触发高位减仓指令",
     "desc": "偏离 MA50 +16.2%，RSI 48.9，进入极端冲顶兑现区，建议分批减半锁定利润！"
@@ -47,7 +47,7 @@
   {
     "id": "WEATHER_暴雨空仓_2026-11-27",
     "date_et": "2026-11-27",
-    "time": "11-27 15:30",
+    "time": "11-27 15:31",
     "category": "macro_weather",
     "cat_label": "⛅ 宏观气象",
     "level": "info",
