@@ -2564,13 +2564,275 @@ def send_discord_claw_alert(title, markdown_content, webhook_url=None, dedupe_ke
         return False
 
 
-def send_discord_defensive_flight_alert(df_alert, live_lookup=None, update_time_str=None, webhook_url=None):
+_DEF_BASKET_SYMBOLS = ("KO", "PEP", "MCD", "LLY", "MRNA", "TLT", "GLD", "VIXY")
+_OFF_BASKET_SYMBOLS = ("SOXL", "SMH", "NVDA", "QQQ")
+_DEF_LAMP_RULER = "📏 变灯线：🟢≤-1.5%｜🔵-1.5~+1.0%｜🟡≥+1.0%或回撤+2.5%｜🔴≥+1.8%或回撤+4.0%"
+
+
+def _is_macro_risk_locked_for_flight(weather_info=None) -> bool:
+    """判定当前大盘宏观是否处于暴雨空仓/空头防守/硬风控锁生效期，避免绿灯文案与大盘风控打架。"""
+    if not isinstance(weather_info, dict):
+        return False
+    w_txt = str(weather_info.get("weather") or "")
+    if "暴雨" in w_txt:
+        return True
+    if str(weather_info.get("market_regime") or "").strip().upper() == "BEAR_DEFENSE":
+        return True
+    vr = weather_info.get("vix_regime") if isinstance(weather_info.get("vix_regime"), dict) else {}
+    if bool(vr.get("vix_hard_brake", False)):
+        return True
+    try:
+        v_ratio = float(vr.get("vix_term_ratio")) if vr.get("vix_term_ratio") is not None else 0.0
+        if v_ratio >= 1.0:
+            return True
+    except Exception:
+        pass
+    mt = weather_info.get("market_temperature") if isinstance(weather_info.get("market_temperature"), dict) else {}
+    if bool(mt.get("knife_catch_locked", False)) or bool(mt.get("intraday_knife_catch_locked", False)):
+        return True
+    return False
+
+
+def _session_suffix_for_flight(session_code: str) -> str:
+    s = str(session_code or "REGULAR").strip().upper()
+    if s in ("REGULAR", "RTH", "INTRADAY"):
+        return ""
+    if s in ("PRE_MARKET", "PRE", "PREMARKET"):
+        return " (盘前参考)"
+    if s in ("POST_MARKET", "AFTER_HOURS", "POST", "AFTERHOURS"):
+        return " (盘后参考)"
+    if s == "OVERNIGHT":
+        return " (夜盘参考)"
+    return " (休市参考)"
+
+
+def _update_rth_flight_tracker(state: dict, score: float, session_code: str, date_et: str) -> dict:
     """
-    通过专属 Webhook 向【防御因子背离百分比】频道实时推送纯粹、聚焦的防御/科技背离因子战报。
-    每次雷达刷新均精准播报，包含背离差值、防御/科技各自均值、各成分股涨跌幅细分及大白话操盘指引。
+    维护当日正规盘 (REGULAR, 09:30~16:00 ET) 防高开低走基准：
+    - rth_open_score：当日正规盘首次有效分；
+    - rth_min_score：当日正规盘最低分（科技最强低谷）；
+    - 跨日或从盘前切入正规盘时自动重置，盘前/夜盘/盘后不污染正规盘基准。
+    """
+    sess_u = str(session_code or "REGULAR").strip().upper()
+    is_regular = sess_u in ("REGULAR", "RTH", "INTRADAY")
+    tracker = dict((state or {}).get("rth_tracker") or {})
+    cur_d = str(date_et or now_et_str("%Y-%m-%d"))[:10]
+
+    if is_regular:
+        if (
+            tracker.get("date_et") != cur_d
+            or tracker.get("rth_open_score") is None
+            or tracker.get("rth_min_score") is None
+        ):
+            tracker = {
+                "date_et": cur_d,
+                "rth_open_score": round(float(score), 4),
+                "rth_min_score": round(float(score), 4),
+            }
+        else:
+            tracker["rth_min_score"] = round(min(float(tracker["rth_min_score"]), float(score)), 4)
+        return tracker
+
+    # 非正规盘：跨日清理昨日旧基准，且盘前/夜盘不保留旧正规盘基准
+    if tracker.get("date_et") and tracker.get("date_et") != cur_d:
+        return {}
+    if sess_u in ("PRE_MARKET", "PRE", "PREMARKET", "OVERNIGHT"):
+        return {}
+    return tracker
+
+
+def evaluate_defensive_flight_v2(
+    df_alert: dict,
+    live_lookup=None,
+    session_code: str = "REGULAR",
+    weather_info=None,
+    state=None,
+    date_et: str = None,
+) -> dict:
+    """
+    防御因子背离哨 V2 四色变灯与防高开低走评估（纯计算零新增网络请求）：
+    - 🔴 红 (0xEF4444): score >= +1.8% (>= +2.2% 标注重度踩踏) 或 正规盘 rth_min_score <= -1.0% 且回升 >= +4.0%
+    - 🟡 黄 (0xF59E0B): +1.0% <= score < +1.8% 或 正规盘 rth_min_score <= -1.0% 且回升 >= +2.5%
+    - 🔵 蓝 (0x3B82F6): -1.5% < score < +1.0% 且未触发黄/红偏移
+    - 🟢 绿 (0x10B981): score <= -1.5% 且未触发黄/红偏移
+    """
+    score = round(float((df_alert or {}).get("flight_score", 0.0)), 2)
+    def_mean = round(float((df_alert or {}).get("def_mean_chg", 0.0)), 2)
+    off_mean = round(float((df_alert or {}).get("off_mean_chg", 0.0)), 2)
+    sess_u = str(session_code or (df_alert or {}).get("session") or "REGULAR").strip().upper()
+    is_regular = sess_u in ("REGULAR", "RTH", "INTRADAY")
+    cur_d = str(date_et or now_et_str("%Y-%m-%d"))[:10]
+
+    tracker = _update_rth_flight_tracker(state or {}, score, sess_u, cur_d)
+    rth_open_score = float(tracker["rth_open_score"]) if (is_regular and tracker.get("rth_open_score") is not None) else None
+    rth_min_score = float(tracker["rth_min_score"]) if (is_regular and tracker.get("rth_min_score") is not None) else None
+    rebound_from_low = round(score - rth_min_score, 2) if (is_regular and rth_min_score is not None) else 0.0
+
+    is_fade_red = bool(is_regular and rth_min_score is not None and rth_min_score <= -1.0 and rebound_from_low >= 4.0)
+    is_fade_yellow = bool(is_regular and rth_min_score is not None and rth_min_score <= -1.0 and rebound_from_low >= 2.5)
+    macro_locked = _is_macro_risk_locked_for_flight(weather_info)
+    sess_suffix = _session_suffix_for_flight(sess_u)
+
+    if score >= 1.8 or is_fade_red:
+        lamp_level = "red"
+        lamp_emoji = "🔴"
+        color = 0xEF4444
+        if score >= 2.2:
+            status_label = "重度避险踩踏"
+            advice = "防御避险重度起飞、科技遭机构急促去杠杆踩踏，严禁左侧接刀，持仓注意上移保本止损。"
+        elif is_fade_red:
+            status_label = "高开低走剧烈抽血"
+            advice = "科技高开后遭剧烈抽血、防御大幅逆袭，切忌追高接刀，持仓立即收紧止损保护。"
+        else:
+            status_label = "避险起飞"
+            advice = "避险资金明显走强、科技承压抽离，短线切忌盲目抄底，先守防守线再看。"
+    elif (1.0 <= score < 1.8) or is_fade_yellow:
+        lamp_level = "yellow"
+        lamp_emoji = "🟡"
+        color = 0xF59E0B
+        if is_fade_yellow and score < 1.0:
+            status_label = "警觉·疑似高开低走"
+            advice = "虽总分仍偏科技，但盘中已从低点明显回撤，警惕高开低走诱多，勿再追高并做好止盈保护。"
+        else:
+            status_label = "警觉·避险升温"
+            advice = "防御因子相对走强、科技进攻动能收敛，持仓设好移动止盈，新开多单宜克制。"
+    elif score <= -1.5:
+        lamp_level = "green"
+        lamp_emoji = "🟢"
+        color = 0x10B981
+        status_label = "进攻顺风"
+        if macro_locked:
+            if is_regular:
+                advice = "资金明显偏向科技，但大盘仍处风控防守期，切忌盲目满仓追高，严守止损分批应对。"
+            else:
+                advice = "资金明显偏向科技，但大盘仍处风控防守期，盘前切忌盲目追高，等开盘确认不回落再看。"
+        else:
+            advice = "科技成长显著领跑防御资产，市场风险偏好健康，按纪律持有并留意盘中偏移。"
+    else:
+        lamp_level = "blue"
+        lamp_emoji = "🔵"
+        color = 0x3B82F6
+        status_label = "多空拉锯"
+        advice = "攻防资金处于拉锯均衡区间，机构未见系统性去杠杆调仓，按关键支撑阻力节奏操作。"
+
+    return {
+        "score": score,
+        "def_mean": def_mean,
+        "off_mean": off_mean,
+        "session_code": sess_u,
+        "session_suffix": sess_suffix,
+        "is_regular": is_regular,
+        "date_et": cur_d,
+        "rth_tracker": tracker,
+        "rth_open_score": rth_open_score,
+        "rth_min_score": rth_min_score,
+        "rebound_from_low": rebound_from_low,
+        "is_fade_yellow": is_fade_yellow,
+        "is_fade_red": is_fade_red,
+        "lamp_level": lamp_level,
+        "lamp_emoji": lamp_emoji,
+        "color": color,
+        "status_label": status_label,
+        "macro_risk_locked": macro_locked,
+        "advice": advice,
+        "is_alert": lamp_level == "red",
+    }
+
+
+def build_defensive_flight_discord_payload(
+    df_alert: dict,
+    live_lookup=None,
+    update_time_str=None,
+    session_code: str = "REGULAR",
+    weather_info=None,
+    state=None,
+    date_et: str = None,
+) -> tuple:
+    """构造新版精简 5 段式防御因子背离哨 Discord Webhook Payload 与评估结果。"""
+    ev = evaluate_defensive_flight_v2(
+        df_alert=df_alert,
+        live_lookup=live_lookup,
+        session_code=session_code,
+        weather_info=weather_info,
+        state=state,
+        date_et=date_et,
+    )
+    live_lookup = live_lookup or {}
+    _is_futures = ((df_alert or {}).get("score_source") == "futures_proxy")
+
+    def_pairs = []
+    off_pairs = []
+    if _is_futures:
+        _comps = (df_alert or {}).get("components", {}) or {}
+        for _s in ("ZB=F", "GC=F"):
+            if _s in _comps:
+                def_pairs.append((_s, float(_comps[_s].get("pct", 0.0))))
+        if "NQ=F" in _comps:
+            off_pairs.append(("NQ=F", float(_comps["NQ=F"].get("pct", 0.0))))
+    else:
+        for s in _DEF_BASKET_SYMBOLS:
+            if s in live_lookup:
+                def_pairs.append((s, _defensive_component_pct(live_lookup[s])))
+        # 防御篮子 8 只按绝对波动幅度从大到小精简展示前 4 只代表
+        def_pairs.sort(key=lambda kv: abs(kv[1]), reverse=True)
+        def_pairs = def_pairs[:4]
+        for s in _OFF_BASKET_SYMBOLS:
+            if s in live_lookup:
+                off_pairs.append((s, _defensive_component_pct(live_lookup[s])))
+
+    off_str = " · ".join(f"{s} `{p:+.1f}%`" for s, p in off_pairs) if off_pairs else "暂无明细"
+    def_str = " · ".join(f"{s} `{p:+.1f}%`" for s, p in def_pairs) if def_pairs else "暂无明细"
+
+    line1 = f"{ev['lamp_emoji']} **防御/科技背离：{ev['score']:+.2f}% ｜ {ev['status_label']}{ev['session_suffix']}**"
+    if ev["is_regular"] and ev["rth_min_score"] is not None:
+        if ev["is_fade_red"] or ev["is_fade_yellow"]:
+            line2 = f"⚠️ **盘中偏移**：较日内低点(`{ev['rth_min_score']:+.2f}%`) 回升 **`{ev['rebound_from_low']:+.2f}%`**（高开低走预警）"
+        else:
+            line2 = f"📈 **盘中偏移**：较日内低点(`{ev['rth_min_score']:+.2f}%`) 回升 `{ev['rebound_from_low']:+.2f}%`"
+    elif ev["session_code"] in ("PRE_MARKET", "PRE", "PREMARKET"):
+        line2 = "📈 **盘中偏移**：待 09:30 ET 开盘锁定基准"
+    else:
+        line2 = "📈 **盘中偏移**：非正规盘时段（待 09:30 ET 开盘锁定基准）"
+
+    line3 = f"⚔️ **进攻 `{ev['off_mean']:+.2f}%`**：{off_str}\n🛡️ **防御 `{ev['def_mean']:+.2f}%`**：{def_str}"
+    line4 = f"💡 **结论**：{ev['advice']}"
+    line5 = _DEF_LAMP_RULER
+
+    desc = "\n".join([line1, line2, line3, line4, line5])
+    now_t = update_time_str or now_et_str("%Y-%m-%d %H:%M:%S")
+    embed = {
+        "description": desc,
+        "color": ev["color"],
+        "timestamp": datetime.now(timezone.utc).isoformat(),
+        "footer": {
+            "text": f"美股全周期量化雷达 · 实时监测 | {now_t}"
+        },
+    }
+    payload = {
+        "username": "小豆泥·防御因子背离哨",
+        "embeds": [embed],
+    }
+    return payload, ev
+
+
+def send_discord_defensive_flight_alert(
+    df_alert,
+    live_lookup=None,
+    update_time_str=None,
+    webhook_url=None,
+    session_code="REGULAR",
+    weather_info=None,
+):
+    """
+    通过专属 Webhook 向【防御因子背离百分比】频道推送精简 5 段式四色变灯卡片。
     """
     if _external_alerts_disabled():
         print("  [*] [Dry-Run Guard] 已屏蔽防御因子 Discord 推送")
+        return False
+    if not df_alert:
+        return False
+    if df_alert.get("skip_reason"):
+        print(f"  [*] 防御因子跳过推送: {df_alert.get('skip_reason')}")
         return False
 
     url = webhook_url or get_defensive_webhook_url()
@@ -2587,95 +2849,24 @@ def send_discord_defensive_flight_alert(df_alert, live_lookup=None, update_time_
         print("[!] 防御因子频道未配置 DISCORD_DEFENSIVE_FLIGHT_WEBHOOK_URL，本轮跳过，避免串台。")
         return False
 
-    is_alert = bool(df_alert.get("is_alert", False))
-    score = float(df_alert.get("flight_score", 0.0))
-    def_mean = float(df_alert.get("def_mean_chg", 0.0))
-    off_mean = float(df_alert.get("off_mean_chg", 0.0))
+    state = _load_defensive_flight_state()
+    payload, ev = build_defensive_flight_discord_payload(
+        df_alert=df_alert,
+        live_lookup=live_lookup,
+        update_time_str=update_time_str,
+        session_code=session_code,
+        weather_info=weather_info,
+        state=state,
+    )
+    score = ev["score"]
+    lamp_level = ev["lamp_level"]
+    is_alert = ev["is_alert"]
 
     _score_bucket = f"{round(score, 1):+.1f}"
-    _def_key = "" if webhook_url else f"{shared_alert_state.et_day()}:DEFENSIVE_FLIGHT:{_score_bucket}" if _SHARED_ALERTS else ""
+    _def_key = "" if webhook_url else f"{shared_alert_state.et_day()}:DEFENSIVE_FLIGHT:{lamp_level}:{_score_bucket}" if _SHARED_ALERTS else ""
     if _def_key and shared_alert_state.is_sent(_def_key):
         print(f"  [*] 跨设备去重跳过重复防御因子告警 ({_def_key})")
         return False
-
-    live_lookup = live_lookup or {}
-    _is_futures = (df_alert.get("score_source") == "futures_proxy")
-    def_items = []
-    off_items = []
-    if _is_futures:
-        _comps = df_alert.get("components", {}) or {}
-        for _s in ("ZB=F", "GC=F"):
-            if _s in _comps:
-                def_items.append(f"{_s} `{float(_comps[_s].get('pct', 0.0)):+.2f}%`")
-        if "NQ=F" in _comps:
-            off_items.append(f"NQ=F `{float(_comps['NQ=F'].get('pct', 0.0)):+.2f}%`")
-    else:
-        for s in ["KO", "PEP", "MCD", "LLY", "MRNA", "TLT", "GLD", "VIXY"]:
-            if s in live_lookup:
-                lv = live_lookup[s]
-                pct = float(lv.get("ext_pct") if lv.get("ext_price", 0) > 0 else lv.get("pct_change", lv.get("change_pct", 0.0)))
-                def_items.append(f"{s} `{pct:+.2f}%`")
-        for s in ["SMH", "SOXL", "NVDA", "QQQ"]:
-            if s in live_lookup:
-                lv = live_lookup[s]
-                pct = float(lv.get("ext_pct") if lv.get("ext_price", 0) > 0 else lv.get("pct_change", lv.get("change_pct", 0.0)))
-                off_items.append(f"{s} `{pct:+.2f}%`")
-
-    if is_alert:
-        color = 0xF85149  # 警示红
-        status_tag = f"🚨 **【防御因子起飞 · 警惕机构盘中去杠杆踩踏】**"
-        advice = "⚠️ **操盘警示**：防御避险资产超额走强，科技成长股正被机构急促抽离资金！短线多头切勿盲目抄底接飞刀，实盘注意上移保本止损，防范盘中踩踏！"
-    elif score >= 1.5:
-        color = 0xFF944D  # 警觉橙
-        status_tag = f"⚠️ **【避险情绪升温 · 防御因子走强】**"
-        advice = "👀 **盘面观察**：防御因子相对科技出现温和背离，机构资金偏向保守防御，多头进攻动能有所收敛，持仓宜设移动止盈保护。"
-    elif score <= -1.0:
-        color = 0x00E676  # 顺风绿
-        status_tag = f"🚀 **【进攻科技占优 · 市场风险偏好高昂】**"
-        advice = "🟢 **多头顺风**：进攻型科技成长股显著领跑防御资产，市场风险偏好健康，多头仓位顺势拿稳。"
-    else:
-        color = 0x58A6FF  # 平稳蓝
-        status_tag = f"🛡️ **【因子表现均衡 · 机构仓位平稳】**"
-        advice = "✅ **常规格局**：防御因子与进攻科技相对强弱处于正常均衡区间，机构未见系统性去杠杆调仓。"
-
-    def_str = " ｜ ".join(def_items) if def_items else "暂无分项明细"
-    off_str = " ｜ ".join(off_items) if off_items else "暂无分项明细"
-    if _is_futures:
-        if is_alert:
-            status_tag = "🚨 **【夜盘·期货代理】防御因子起飞 · 期货代理显示机构去杠杆方向**"
-            advice = "⚠️ **期货代理提示**：数据来自 NQ=F(进攻) / ZB=F、GC=F(防御) 期货，不是现货篮子；阈值仍为 2.2 / 1.8。"
-        else:
-            status_tag = "🛡️ **【夜盘·期货代理】防御因子平稳 · 期货代理非现货篮子**"
-            advice = "✅ **期货代理**：NQ=F / ZB=F / GC=F 夜盘期货方向；这不是现货篮子分数，不改变白天现货计算。"
-    print(f"  [+] 防御因子真实成分: 防御 {len(def_items)} 只 / 进攻 {len(off_items)} 只")
-    now_t = update_time_str or now_et_str("%Y-%m-%d %H:%M:%S")
-
-    desc = f"""### {status_tag}
-
-> ⚖️ **防御/科技超额背离 (Flight Score)**：**`{score:+.2f}%`** {("🚨" if is_alert else "")}
-> 
-> 🛡️ **防御避险篮子** (平均 `{def_mean:+.2f}%`)：
-> {def_str}
-> 
-> ⚔️ **进攻科技成长** (平均 `{off_mean:+.2f}%`)：
-> {off_str}
-
-{advice}"""
-
-    embed = {
-        "title": f"🚨【机构避险】防御/科技背离因子 · 实时追踪" if is_alert else f"🛡️【机构仓位】防御/科技背离因子 · 实时追踪",
-        "description": desc,
-        "color": color,
-        "timestamp": datetime.now(timezone.utc).isoformat(),
-        "footer": {
-            "text": f"美股全周期量化雷达 · 每次刷新实时监测 | {now_t}"
-        }
-    }
-
-    payload = {
-        "username": "小豆泥·防御因子背离哨",
-        "embeds": [embed]
-    }
 
     try:
         req = urllib.request.Request(
@@ -2685,7 +2876,7 @@ def send_discord_defensive_flight_alert(df_alert, live_lookup=None, update_time_
         )
         with urllib.request.urlopen(req, timeout=10) as resp:
             if resp.status in (200, 204):
-                print(f"  [+] 💬 Discord 防御因子背离专属频道推送成功: {score:+.2f}% (is_alert={is_alert})")
+                print(f"  [+] 💬 Discord 防御因子背离专属频道推送成功: {score:+.2f}% (lamp={lamp_level}, is_alert={is_alert})")
                 if _def_key:
                     shared_alert_state.mark(_def_key, _shared_device_tag())
                 return True
@@ -3478,8 +3669,8 @@ def _defensive_flight_current_components(df_alert, live_lookup):
     return {s: _defensive_component_pct(live_lookup.get(s, {})) for s in _DEFENSIVE_FLIGHT_CORE_SYMBOLS if s in (live_lookup or {})}
 
 
-def should_send_defensive_flight_alert(df_alert, live_lookup, session_code="REGULAR"):
-    """防刷屏：Score 变化 >=0.10%p 或核心成分变化 >=0.5%；夜盘/白天状态分离。"""
+def should_send_defensive_flight_alert(df_alert, live_lookup, session_code="REGULAR", weather_info=None, date_et=None):
+    """防刷屏：灯色等级切换无条件推送；否则 Score 变化 >=0.10%p 或核心成分变化 >=0.5%；夜盘/白天状态分离。"""
     try:
         if df_alert.get("skip_reason"):
             return False
@@ -3487,8 +3678,26 @@ def should_send_defensive_flight_alert(df_alert, live_lookup, session_code="REGU
         comps = _defensive_flight_current_components(df_alert, live_lookup)
         key = "overnight" if session_code == "OVERNIGHT" else "day"
         state = _load_defensive_flight_state()
+        ev = evaluate_defensive_flight_v2(
+            df_alert=df_alert,
+            live_lookup=live_lookup,
+            session_code=session_code,
+            weather_info=weather_info,
+            state=state,
+            date_et=date_et,
+        )
+        # 无论本轮是否推送，都持久化当日正规盘 rth_tracker 以便准确捕捉日内最低分
+        if not _external_alerts_disabled() and ev.get("rth_tracker") != state.get("rth_tracker"):
+            try:
+                state["rth_tracker"] = ev.get("rth_tracker") or {}
+                json.dump(state, open(_DEFENSIVE_FLIGHT_PUSH_STATE, "w", encoding="utf-8"), ensure_ascii=False, indent=2)
+            except Exception:
+                pass
         prev = state.get(key) or {}
         if prev.get("last_score") is None:
+            return True
+        # 灯色等级切换（如 绿->黄 / 黄->红）无条件推送，绝不漏报变盘
+        if prev.get("last_lamp_level") and prev.get("last_lamp_level") != ev.get("lamp_level"):
             return True
         if abs(score - float(prev.get("last_score", 0.0))) >= 0.10:
             return True
@@ -3501,13 +3710,27 @@ def should_send_defensive_flight_alert(df_alert, live_lookup, session_code="REGU
         return True
 
 
-def record_defensive_flight_sent(df_alert, live_lookup, session_code="REGULAR"):
+def record_defensive_flight_sent(df_alert, live_lookup, session_code="REGULAR", weather_info=None, date_et=None):
     try:
         comps = {s: round(float(p), 4) for s, p in _defensive_flight_current_components(df_alert, live_lookup).items()}
         key = "overnight" if session_code == "OVERNIGHT" else "day"
         state = _load_defensive_flight_state()
-        state[key] = {"last_score": round(float(df_alert.get("flight_score", 0.0)), 4), "components": comps,
-                      "session": session_code, "sent_at": now_et_str("%Y-%m-%d %H:%M:%S")}
+        ev = evaluate_defensive_flight_v2(
+            df_alert=df_alert,
+            live_lookup=live_lookup,
+            session_code=session_code,
+            weather_info=weather_info,
+            state=state,
+            date_et=date_et,
+        )
+        state["rth_tracker"] = ev.get("rth_tracker") or {}
+        state[key] = {
+            "last_score": round(float(df_alert.get("flight_score", 0.0)), 4),
+            "last_lamp_level": ev.get("lamp_level"),
+            "components": comps,
+            "session": session_code,
+            "sent_at": now_et_str("%Y-%m-%d %H:%M:%S"),
+        }
         json.dump(state, open(_DEFENSIVE_FLIGHT_PUSH_STATE, "w", encoding="utf-8"), ensure_ascii=False, indent=2)
     except Exception:
         pass
@@ -4310,15 +4533,36 @@ def dispatch_jin10_sentinel_async():
     except Exception as e:
         print(f"[!] ⚠️ Jin10 News Sentinel async launch failed: {e}")
 
+def _extract_notif_date_et(notif: dict, fallback_year: str = "") -> str:
+    """从通知对象的 date_et / id / time 提取美东交易日 YYYY-MM-DD（兼容旧格式）。"""
+    if not isinstance(notif, dict):
+        return ""
+    d_et = str(notif.get("date_et") or "").strip()
+    if len(d_et) >= 10 and d_et[4:5] == "-" and d_et[7:8] == "-":
+        return d_et[:10]
+    nid = str(notif.get("id") or "")
+    m_id = re.search(r"(\d{4}-\d{2}-\d{2})", nid)
+    if m_id:
+        return m_id.group(1)
+    t_str = str(notif.get("time") or "").strip()
+    m_tm = re.match(r"^(\d{2}-\d{2})\b", t_str)
+    if m_tm and fallback_year:
+        return f"{fallback_year}-{m_tm.group(1)}"
+    return ""
+
+
 def generate_and_sync_notifications(macro_data, stocks_data, weather_info, now_str, session_code="REGULAR"):
     """
     生成与微信通知 100% 同步的结构化分类消息中心数据，并持久化到 .terminal_notifications.json
-    采用【日期+类型+标的+子状态】作为唯一 ID，同日同状态原地更新最新价格，杜绝每3分钟重复堆叠与误报响铃。
+    采用【日期+类型+标的+子状态】作为唯一 ID，严格落实正规盘门禁（非 REGULAR 禁止 5m买点/全池破位误报）与跨日自动清理。
     """
     target_watchlist = load_target_watchlist()
     existing_notifs = load_terminal_notifications()
     new_notifs = []
     date_tag = now_str[:10]
+    year_tag = date_tag[:4]
+    sess_u = str(session_code or "REGULAR").strip().upper()
+    is_regular_session = sess_u in ("REGULAR", "RTH", "INTRADAY")
 
     # 0. 🚨 防御因子起飞与机构去杠杆踩踏警报 (Defensive Flight Alert)
     try:
@@ -4334,6 +4578,7 @@ def generate_and_sync_notifications(macro_data, stocks_data, weather_info, now_s
             flight_score = df_alert.get("flight_score", 0.0)
             new_notifs.append({
                 "id": f"DEF_FLIGHT_{date_tag}",
+                "date_et": date_tag,
                 "time": now_str[5:16],
                 "category": "defensive_flight",
                 "cat_label": "🚨 防御起飞",
@@ -4366,10 +4611,11 @@ def generate_and_sync_notifications(macro_data, stocks_data, weather_info, now_s
         is_tp = s.get("is_take_profit", False) and (not is_obs_only)
         shares = s.get("shares", 0.0)
 
-        # 1. 🎯 5m 买点通知 (全池开放推送，与 Discord WATCHLIST_ENTRY_READY 同步，低波传统/行业基准观察池不弹窗)
-        if intraday_ready and not is_stop and not is_obs_only:
+        # 1. 🎯 5m 买点通知：严格正规盘门禁（非 REGULAR 禁止拿上日残留 5m 数据误弹窗）
+        if is_regular_session and intraday_ready and s.get("has_5m_intraday", True) and not is_stop and not is_obs_only:
             new_notifs.append({
                 "id": f"5M_{ticker}_{date_tag}",
+                "date_et": date_tag,
                 "time": now_str[5:16],
                 "category": "5m_entry",
                 "cat_label": "🎯 5m买点",
@@ -4551,6 +4797,7 @@ def generate_and_sync_notifications(macro_data, stocks_data, weather_info, now_s
 
             new_notifs.append({
                 "id": f"PORT_{ticker}_{p_substate}_{date_tag}",
+                "date_et": date_tag,
                 "time": now_str[5:16],
                 "category": "portfolio",
                 "cat_label": "💼 持仓风控",
@@ -4573,6 +4820,7 @@ def generate_and_sync_notifications(macro_data, stocks_data, weather_info, now_s
         if is_pit and not is_stop and not s.get("is_crash_halt") and not s.get("is_cooling_halt"):
             new_notifs.append({
                 "id": f"PIT_{ticker}_{date_tag}",
+                "date_et": date_tag,
                 "time": now_str[5:16],
                 "category": "golden_pit",
                 "cat_label": "🟢 黄金坑",
@@ -4589,10 +4837,11 @@ def generate_and_sync_notifications(macro_data, stocks_data, weather_info, now_s
                 "batch1_shares": round(s.get("fractional_shares", 0.0) * 0.30, 2)
             })
 
-        # 4. 🔴 破位止损通知
-        if is_stop and not ticker.endswith("ETF") and not should_suppress_stop_loss_alert(s):
+        # 4. 🔴 破位止损通知：严格正规盘门禁（非 REGULAR 禁止盘前/夜盘批量灌入几十条旧破位刷屏）
+        if is_regular_session and is_stop and not ticker.endswith("ETF") and not should_suppress_stop_loss_alert(s):
             new_notifs.append({
                 "id": f"STOP_{ticker}_{date_tag}",
+                "date_et": date_tag,
                 "time": now_str[5:16],
                 "category": "stop_loss",
                 "cat_label": "🔴 破位止损",
@@ -4610,6 +4859,7 @@ def generate_and_sync_notifications(macro_data, stocks_data, weather_info, now_s
         if is_tp:
             new_notifs.append({
                 "id": f"TP_{ticker}_{date_tag}",
+                "date_et": date_tag,
                 "time": now_str[5:16],
                 "category": "take_profit",
                 "cat_label": "🟣 冲顶减仓",
@@ -4627,6 +4877,7 @@ def generate_and_sync_notifications(macro_data, stocks_data, weather_info, now_s
     cur_weather = weather_info.get("weather", "阴天防守")
     new_notifs.append({
         "id": f"WEATHER_{cur_weather}_{date_tag}",
+        "date_et": date_tag,
         "time": now_str[5:16],
         "category": "macro_weather",
         "cat_label": "⛅ 宏观气象",
@@ -4640,7 +4891,7 @@ def generate_and_sync_notifications(macro_data, stocks_data, weather_info, now_s
         "desc": f"{weather_info.get('desc', '')} ｜ 操盘军规：{weather_info.get('tactics', '')}"
     })
 
-    # 合并去重：以 (category, ticker) 作为当天的实时状态主键，自动清理历史旧分钟产生的重复卡片
+    # 合并去重 + 跨美东交易日自动清理（严格剔除前序交易日残余旧告警，非正规盘不保留 5m买点/批量破位）
     combined = []
     seen_keys = set()
     for n in new_notifs:
@@ -4648,12 +4899,23 @@ def generate_and_sync_notifications(macro_data, stocks_data, weather_info, now_s
         combined.append(n)
         seen_keys.add(key)
     for n in existing_notifs:
-        key = (n.get("category"), n.get("ticker"))
-        if n.get("category") == "portfolio":
+        if not isinstance(n, dict):
             continue
+        cat_old = n.get("category")
+        if cat_old == "portfolio":
+            continue
+        if (not is_regular_session) and cat_old in ("5m_entry", "stop_loss"):
+            continue
+        old_d = _extract_notif_date_et(n, fallback_year=year_tag)
+        if old_d and old_d < date_tag:
+            continue
+        if not old_d:
+            continue
+        key = (cat_old, n.get("ticker"))
         if key not in seen_keys:
-            # 过滤掉早于今天的旧分钟格式残留重复项
-            combined.append(n)
+            n_copy = dict(n)
+            n_copy["date_et"] = old_d
+            combined.append(n_copy)
             seen_keys.add(key)
 
     save_terminal_notifications(combined)
@@ -8976,12 +9238,12 @@ def run_radar_cycle(is_first_run=False, round_idx=1):
             if not df_alert_push:
                 import ml_predictor_5y
                 df_alert_push = ml_predictor_5y.compute_defensive_flight_alert(live_lookup=live_lookup_df, session_code=session_code)
-            # 夜盘防刷屏：仅 Score 变动 >=0.10%p 或核心成分变动 >=0.5% 才发送
-            if should_send_defensive_flight_alert(df_alert_push, live_lookup_df, session_code=session_code):
-                if send_discord_defensive_flight_alert(df_alert_push, live_lookup_df, now_str):
-                    record_defensive_flight_sent(df_alert_push, live_lookup_df, session_code=session_code)
+            # 防刷屏：灯色切换无条件推送，或 Score 变动 >=0.10%p 或核心成分变动 >=0.5%
+            if should_send_defensive_flight_alert(df_alert_push, live_lookup_df, session_code=session_code, weather_info=weather_info):
+                if send_discord_defensive_flight_alert(df_alert_push, live_lookup_df, now_str, session_code=session_code, weather_info=weather_info):
+                    record_defensive_flight_sent(df_alert_push, live_lookup_df, session_code=session_code, weather_info=weather_info)
             else:
-                print("  [*] 防御因子无显著变化（<0.10%p 且核心成分<0.5%），跳过 Discord 推送")
+                print("  [*] 防御因子无显著变化（灯色未变且 <0.10%p / 核心成分 <0.5%），跳过 Discord 推送")
         except Exception as df_err:
             print(f"  [!] 💬 防御因子背离推送启动异常: {df_err}")
 

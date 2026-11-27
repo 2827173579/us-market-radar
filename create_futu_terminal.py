@@ -4488,6 +4488,7 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
         const INITIAL_MARKET_NEWS = __PY_TPL_MARKET_NEWS_JSON__;
         const INTRADAY_PATH_FORECASTS = __PY_TPL_INTRADAY_PATH_JSON__;
         const SESSION_CODE = "__PY_TPL_SESSION_CODE__";
+        const CURRENT_ET_DATE = "__PY_TPL_ET_DATE__";
         const RESILIENT_LEADERS_INIT = __PY_TPL_LEADERS_JSON__;
         const APAC_ASHARE_DATA = __PY_TPL_APAC_JSON__;
         const APAC_ML_PREDICTIONS = __PY_TPL_APAC_ML_JSON__;
@@ -5153,8 +5154,45 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
             }));
         }
 
+        function extractNotifDateEt(n) {
+            if (!n || typeof n !== "object") return "";
+            if (typeof n.date_et === "string" && /^\d{4}-\d{2}-\d{2}/.test(n.date_et)) {
+                return n.date_et.slice(0, 10);
+            }
+            const idStr = String(n.id || "");
+            const mId = idStr.match(/(\d{4}-\d{2}-\d{2})/);
+            if (mId) return mId[1];
+            const tmStr = String(n.time || "").trim();
+            const mTm = tmStr.match(/^(\d{2}-\d{2})\b/);
+            if (mTm && CURRENT_ET_DATE && CURRENT_ET_DATE.length >= 4) {
+                return `${CURRENT_ET_DATE.slice(0, 4)}-${mTm[1]}`;
+            }
+            return "";
+        }
+
+        function filterNotificationsForSessionAndDay(tradingList, sessionCode, currentEtDate) {
+            const arr = Array.isArray(tradingList) ? tradingList : [];
+            const sessU = String(sessionCode || "REGULAR").toUpperCase();
+            const isRegular = (sessU === "REGULAR" || sessU === "RTH" || sessU === "INTRADAY");
+            const curD = String(currentEtDate || "").slice(0, 10);
+            return arr.filter(n => {
+                if (!n || typeof n !== "object") return false;
+                const cat = String(n.category || "");
+                // 非美股正规盘门禁：禁止 5m买点 与 全池批量破位预警 误弹刷屏
+                if (!isRegular && (cat === "5m_entry" || cat === "stop_loss")) {
+                    return false;
+                }
+                // 跨美东交易日自动清理旧日通知（如昨日 11-26 残余告警）
+                if (curD && cat !== "macro_flash") {
+                    const nd = extractNotifDateEt(n);
+                    if (nd && nd < curD) return false;
+                }
+                return true;
+            });
+        }
+
         function mergeNotificationsWithFlashes(tradingList, newsObj) {
-            const tArr = Array.isArray(tradingList) ? tradingList : [];
+            const tArr = filterNotificationsForSessionAndDay(tradingList, SESSION_CODE, CURRENT_ET_DATE);
             const fArr = buildMacroFlashNotifs(newsObj);
             return [...tArr, ...fArr];
         }
@@ -8537,7 +8575,17 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
 
         let knownNotifIds = new Set();
         let isFirstEverVisit = false;
+        let isNewTradingDayNotifReset = false;
         try {
+            const savedNotifDateEt = localStorage.getItem("terminalNotifDateEt") || "";
+            if (CURRENT_ET_DATE && savedNotifDateEt && savedNotifDateEt < CURRENT_ET_DATE) {
+                // 跨美东交易日自动清空前序交易日已读集合，避免昨日残余红标误导
+                localStorage.removeItem("terminalKnownNotifIds");
+                isNewTradingDayNotifReset = true;
+            }
+            if (CURRENT_ET_DATE) {
+                localStorage.setItem("terminalNotifDateEt", CURRENT_ET_DATE);
+            }
             const rawSaved = localStorage.getItem("terminalKnownNotifIds");
             if (rawSaved === null) {
                 isFirstEverVisit = true;
@@ -8554,21 +8602,26 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
             } catch(e) {}
         }
 
-        if (isFirstEverVisit) {
+        // 首次访问或新交易日首轮加载：静默建立基线，绝不把存量标的当新警报狂弹 60+ 条
+        if (isFirstEverVisit || isNewTradingDayNotifReset) {
             terminalNotifications.forEach(n => { if (n && n.id) knownNotifIds.add(n.id); });
             persistKnownNotifIds();
         } else {
             const initialFresh = [];
+            const isRegularInit = ["REGULAR", "RTH", "INTRADAY"].includes(String(SESSION_CODE || "").toUpperCase());
             terminalNotifications.forEach(n => {
                 if (n && n.id && !knownNotifIds.has(n.id)) {
                     knownNotifIds.add(n.id);
-                    if (n.category !== "macro_flash") initialFresh.push(n);
+                    if (n.category === "macro_flash") return;
+                    if (!isRegularInit && (n.category === "5m_entry" || n.category === "stop_loss")) return;
+                    initialFresh.push(n);
                 }
             });
-            if (initialFresh.length > 0) {
-                persistKnownNotifIds();
+            persistKnownNotifIds();
+            // 仅对明确少量新增跃迁（<= 5 条）弹窗提示，批量存量不轰炸
+            if (initialFresh.length > 0 && initialFresh.length <= 5) {
                 setTimeout(() => {
-                    initialFresh.slice(0, 6).forEach(item => queueAlertSound(item.category || "5m_entry"));
+                    initialFresh.slice(0, 3).forEach(item => queueAlertSound(item.category || "5m_entry"));
                     showToast(`🔔 收到 ${initialFresh.length} 条全新实盘量化预警！`);
                 }, 800);
             }
@@ -8576,21 +8629,26 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
 
         function handleIncomingNotifications(newNotifs) {
             if (!Array.isArray(newNotifs)) return;
-            rawTradingNotifications = newNotifs;
+            rawTradingNotifications = filterNotificationsForSessionAndDay(newNotifs, SESSION_CODE, CURRENT_ET_DATE);
             const merged = mergeNotificationsWithFlashes(rawTradingNotifications, latestMarketNews);
+            const isRegularNow = ["REGULAR", "RTH", "INTRADAY"].includes(String(SESSION_CODE || "").toUpperCase());
             let freshItems = [];
             merged.forEach(n => {
                 if (n && n.id && !knownNotifIds.has(n.id)) {
                     knownNotifIds.add(n.id);
-                    if (n.category !== "macro_flash") freshItems.push(n);
+                    if (n.category === "macro_flash") return;
+                    if (!isRegularNow && (n.category === "5m_entry" || n.category === "stop_loss")) return;
+                    freshItems.push(n);
                 }
             });
             terminalNotifications = merged;
             renderNotifList(currentNotifCat);
             if (freshItems.length > 0) {
                 persistKnownNotifIds();
-                freshItems.slice(0, 6).forEach(item => queueAlertSound(item.category || "5m_entry"));
-                showToast(`🔔 收到 ${freshItems.length} 条全新量化预警...`);
+                if (freshItems.length <= 5) {
+                    freshItems.slice(0, 3).forEach(item => queueAlertSound(item.category || "5m_entry"));
+                    showToast(`🔔 收到 ${freshItems.length} 条全新量化预警...`);
+                }
             }
         }
 
@@ -9205,6 +9263,7 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
         "__PY_TPL_MARKET_NEWS_JSON__": market_news_json,
         "__PY_TPL_INTRADAY_PATH_JSON__": intraday_path_json,
         "__PY_TPL_SESSION_CODE__": str(session_code or "REGULAR"),
+        "__PY_TPL_ET_DATE__": str(update_time_str or "")[:10],
         "__PY_TPL_LEADERS_JSON__": leaders_json,
         "__PY_TPL_APAC_JSON__": apac_json,
         "__PY_TPL_APAC_ML_JSON__": apac_ml_json,
