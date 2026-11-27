@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795799138.358,
-  "updated_at_et": "11-27 12:05 ET",
-  "updated_at_kst": "02:05 KST",
+  "updated_at_ts": 1795799235.777,
+  "updated_at_et": "11-27 12:07 ET",
+  "updated_at_kst": "02:07 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -1314,11 +1314,25 @@
     ],
     "NOW": [
       {
+        "title": "Baron Fund Reestablishes Position in ServiceNow (NOW) Following Attractive Valuation Pullback",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/baron-fund-reestablishes-position-servicenow-164101736.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-27 11:41 ET",
+        "pub_ts": 1795797661.0
+      },
+      {
         "title": "ServiceNow vs. Synopsys: Which Technology Stock Is a Better Buy for 2027?",
         "url": "https://www.fool.com/coverage/better-buy/2026/11/27/servicenow-vs-synopsys-which-technology-stock-is-a-better-buy-for-2027/?.tsrc=rss",
         "source": "Yahoo Finance",
         "time": "11-27 10:56 ET",
         "pub_ts": 1795794964.0
+      },
+      {
+        "title": "ServiceNow (NOW) Down 16% Since Last Earnings Report: Can It Rebound?",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/servicenow-now-down-16-since-153017193.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-27 10:30 ET",
+        "pub_ts": 1795793417.0
       },
       {
         "title": "ServiceNow (NOW) Stock May Be Fully Priced As AI Risks Hit Software",
@@ -1333,20 +1347,6 @@
         "source": "Yahoo Finance",
         "time": "11-25 09:27 ET",
         "pub_ts": 1795616820.0
-      },
-      {
-        "title": "Anthropic falls below IPO price as Nvidia gives back gains",
-        "url": "https://finance.yahoo.com/video/anthropic-falls-below-ipo-price-as-nvidia-gives-back-gains-214558309.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 16:45 ET",
-        "pub_ts": 1795556758.0
-      },
-      {
-        "title": "Global Workflow Market Size, Trends, and Forecast Report 2026 | Capitalize on 22.5% CAGR as IBM, Oracle, SAP, ServiceNow, and Appian Accelerate AI and Cloud Automation Through 2030",
-        "url": "https://finance.yahoo.com/technology/articles/global-workflow-market-size-trends-143400424.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-24 09:34 ET",
-        "pub_ts": 1795530840.0
       }
     ],
     "AMZN": [
@@ -2165,6 +2165,13 @@
     ],
     "VRT": [
       {
+        "title": "Vertiv Stock Has Fallen Hard. Buy Now Or Wait?",
+        "url": "https://www.trefis.com/stock/vrt/articles/629407/vertiv-stock-has-fallen-hard-buy-now-or-wait/2026-11-27?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-27 11:45 ET",
+        "pub_ts": 1795797920.0
+      },
+      {
         "title": "Vertiv (VRT) Down 29.5% Since Last Earnings Report: Can It Rebound?",
         "url": "https://finance.yahoo.com/markets/stocks/articles/vertiv-vrt-down-29-5-153020649.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2191,16 +2198,16 @@
         "source": "Yahoo Finance",
         "time": "11-25 12:18 ET",
         "pub_ts": 1795627133.0
-      },
-      {
-        "title": "Vertiv Just Raised Its Dividend 60%, but the AI Stock Still Yields Only 0.23%",
-        "url": "https://247wallst.com/investing/2026/11/25/vertiv-just-raised-its-dividend-60-but-the-ai-stock-still-yields-only-0-23/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 07:47 ET",
-        "pub_ts": 1795610821.0
       }
     ],
     "HPE": [
+      {
+        "title": "HPE vs. AMD: Which Stock Should Value Investors Buy Now?",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/hpe-vs-amd-stock-value-154003186.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-27 10:40 ET",
+        "pub_ts": 1795794003.0
+      },
       {
         "title": "Network Hardware - Global Strategic Business Report 2026: Capitalize on the $33.1 Billion Revenue Surge to 2032 with Benchmarks on Cisco, Huawei, HPE, Nokia, and Ericsson",
         "url": "https://finance.yahoo.com/technology/articles/network-hardware-global-strategic-business-150100167.html?.tsrc=rss",
@@ -2228,16 +2235,23 @@
         "source": "Yahoo Finance",
         "time": "11-26 06:13 ET",
         "pub_ts": 1795691593.0
-      },
-      {
-        "title": "Ensign InfoSecurity partners with HPE to help enterprises deploy AI with greater control and security",
-        "url": "https://finance.yahoo.com/technology/ai/articles/ensign-infosecurity-partners-hpe-help-000000295.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 19:00 ET",
-        "pub_ts": 1795651200.0
       }
     ],
     "DELL": [
+      {
+        "title": "Dell delivers record results, but Wall Street sees a catch",
+        "url": "https://www.thestreet.com/investing/dell-delivers-record-results-but-wall-street-sees-a-catch?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-27 12:03 ET",
+        "pub_ts": 1795798980.0
+      },
+      {
+        "title": "Dell price target cut by UBS as AI spending concerns mount",
+        "url": "https://www.proactiveinvestors.com/companies/news/1102596/dell-price-target-cut-by-ubs-as-ai-spending-concerns-mount-1102596.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-27 11:44 ET",
+        "pub_ts": 1795797840.0
+      },
       {
         "title": "Jensen Huang Said Blackwell Racks Wouldn't Fit In A 'Pocket Or Backpack' But One Has Reportedly Turned Up in Shanghai",
         "url": "https://stocktwits.com/news-articles/markets/equity/jensen-huang-said-blackwell-racks-wouldn-t-fit-in-a-pocket-or-backpack-but-one-has-reportedly-turned-up-in-shanghai/cNbCwmzR9Vb?.tsrc=rss",
@@ -2258,20 +2272,6 @@
         "source": "Yahoo Finance",
         "time": "11-27 01:59 ET",
         "pub_ts": 1795762783.0
-      },
-      {
-        "title": "1 Incredibly Cheap Artificial Intelligence (AI) Stock to Buy Before It Doubles in 2027",
-        "url": "https://www.fool.com/investing/2026/11/26/1-incredibly-cheap-artificial-intelligence-ai-stock-to-buy-before-it-doubles-in-2027/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-26 19:28 ET",
-        "pub_ts": 1795739282.0
-      },
-      {
-        "title": "BofA resets Dell stock price target by $100 after record earnings",
-        "url": "https://www.thestreet.com/investing/stocks/dell-dell-technologies-bank-of-america-resets-dell-stock-price-target-by-100-after-record-q3-earnings?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-26 14:03 ET",
-        "pub_ts": 1795719780.0
       }
     ],
     "OKLO": [
@@ -3339,33 +3339,33 @@
     "GOOGL": 1795798610.5376043,
     "MSFT": 1795798610.5376043,
     "AAPL": 1795798610.5376043,
-    "PLTR": 1795797639.8958993,
-    "NOW": 1795797639.8958993,
-    "AMZN": 1795797639.8958993,
-    "CRWV": 1795797639.8958993,
-    "NBIS": 1795797639.8958993,
-    "APLD": 1795797639.8958993,
+    "PLTR": 1795799235.776624,
+    "NOW": 1795799235.776624,
+    "AMZN": 1795799235.776624,
+    "CRWV": 1795799235.776624,
+    "NBIS": 1795799235.776624,
+    "APLD": 1795799235.776624,
     "VST": 1795798610.5376043,
     "BE": 1795798610.5376043,
     "CRDO": 1795798610.5376043,
     "COHR": 1795798610.5376043,
-    "MRVL": 1795797639.8958993,
-    "LITE": 1795797639.8958993,
-    "AAOI": 1795797639.8958993,
+    "MRVL": 1795799235.776624,
+    "LITE": 1795799235.776624,
+    "AAOI": 1795799235.776624,
     "SPCX": 1795798610.5376043,
-    "ASTS": 1795797639.8958993,
-    "AXTI": 1795797639.8958993,
-    "NASA": 1795797639.8958993,
-    "LUNR": 1795797639.8958993,
-    "TSLA": 1795797704.2352204,
-    "AXP": 1795797639.8958993,
-    "RKLB": 1795797639.8958993,
-    "KO": 1795797639.8958993,
-    "FLY": 1795797639.8958993,
-    "INTC": 1795797704.2352204,
-    "VRT": 1795797704.2352204,
-    "HPE": 1795797704.2352204,
-    "DELL": 1795797704.2352204,
+    "ASTS": 1795799235.776624,
+    "AXTI": 1795799235.776624,
+    "NASA": 1795799235.776624,
+    "LUNR": 1795799235.776624,
+    "TSLA": 1795799235.776624,
+    "AXP": 1795799235.776624,
+    "RKLB": 1795799235.776624,
+    "KO": 1795799235.776624,
+    "FLY": 1795799235.776624,
+    "INTC": 1795799235.776624,
+    "VRT": 1795799235.776624,
+    "HPE": 1795799235.776624,
+    "DELL": 1795799235.776624,
     "OKLO": 1795797704.2352204,
     "CEG": 1795797704.2352204,
     "FPS": 1795797704.2352204,
@@ -3389,8 +3389,8 @@
     "WMT": 1795797755.8115625,
     "V": 1795797755.8115625,
     "CAT": 1795797755.8115625,
-    "FN": 1795797639.8958993,
-    "GLW": 1795797639.8958993,
+    "FN": 1795799235.776624,
+    "GLW": 1795799235.776624,
     "ANT": 1795797755.8115625,
     "XAUUSD": 1795797755.8115625,
     "KOSPI": 1795797755.8115625,
