@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795775532.512,
-  "updated_at_et": "11-27 05:32 ET",
-  "updated_at_kst": "19:32 KST",
+  "updated_at_ts": 1795775649.214,
+  "updated_at_et": "11-27 05:34 ET",
+  "updated_at_kst": "19:34 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -1233,6 +1233,13 @@
     ],
     "AAPL": [
       {
+        "title": "Airbnb CEO Brian Chesky says staff call him a ‘control freak’—but that he learned it from Apple’s Steve Jobs",
+        "url": "https://finance.yahoo.com/small-business/articles/airbnb-ceo-brian-chesky-says-080100881.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-27 03:01 ET",
+        "pub_ts": 1795766460.0
+      },
+      {
         "title": "Apple (AAPL) Has Found a New AI Opportunity That Has Little to Do With the iPhone",
         "url": "https://finance.yahoo.com/technology/ai/articles/apple-aapl-found-ai-opportunity-031905510.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1259,13 +1266,6 @@
         "source": "Yahoo Finance",
         "time": "11-26 14:00 ET",
         "pub_ts": 1795719638.0
-      },
-      {
-        "title": "Apple Removes Talkie From App Store After Reports of Inappropriate AI Messages",
-        "url": "https://finance.yahoo.com/technology/ai/articles/apple-removes-talkie-app-store-180937483.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-26 13:09 ET",
-        "pub_ts": 1795716577.0
       }
     ],
     "PLTR": [
@@ -1758,6 +1758,13 @@
         "pub_ts": 1795760859.0
       },
       {
+        "title": "Musk Says SpaceX Leads the World “by an Order of Magnitude.” Here’s What That Means for Orbital Compute",
+        "url": "https://www.tikr.com/blog/musk-says-spacex-leads-the-world-by-an-order-of-magnitude-heres-what-that-means-for-orbital-compute?ref=yahoofinance&tlnk=yf-261127-c8w2pxr8&.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-26 23:25 ET",
+        "pub_ts": 1795753506.0
+      },
+      {
         "title": "SpaceX (SPCX) Balances Starlink Growth With Its AI Funding Needs",
         "url": "https://finance.yahoo.com/technology/ai/articles/spacex-spcx-balances-starlink-growth-035503007.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1777,13 +1784,6 @@
         "source": "Yahoo Finance",
         "time": "11-26 22:22 ET",
         "pub_ts": 1795749723.0
-      },
-      {
-        "title": "What Could Tesla (TSLA) Merger Talks Mean For Its Stock?",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/could-tesla-tsla-merger-talks-013007632.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-26 20:30 ET",
-        "pub_ts": 1795743007.0
       }
     ],
     "ASTS": [
@@ -3323,29 +3323,29 @@
     "VIXY": 1795775532.5117595,
     "SOXS": 1795775532.5117595,
     "NVDA": 1795775532.5117595,
-    "AMD": 1795774073.9378898,
-    "ASML": 1795774073.9378898,
-    "QCOM": 1795774073.9378898,
-    "AVGO": 1795774073.9378898,
-    "AMAT": 1795774073.9378898,
-    "META": 1795774073.9378898,
-    "GOOGL": 1795774073.9378898,
-    "MSFT": 1795774073.9378898,
-    "AAPL": 1795774073.9378898,
+    "AMD": 1795775649.2141895,
+    "ASML": 1795775649.2141895,
+    "QCOM": 1795775649.2141895,
+    "AVGO": 1795775649.2141895,
+    "AMAT": 1795775649.2141895,
+    "META": 1795775649.2141895,
+    "GOOGL": 1795775649.2141895,
+    "MSFT": 1795775649.2141895,
+    "AAPL": 1795775649.2141895,
     "PLTR": 1795774127.7409463,
     "NOW": 1795774127.7409463,
     "AMZN": 1795774127.7409463,
     "CRWV": 1795774127.7409463,
     "NBIS": 1795774127.7409463,
     "APLD": 1795774127.7409463,
-    "VST": 1795774073.9378898,
-    "BE": 1795774073.9378898,
-    "CRDO": 1795774073.9378898,
-    "COHR": 1795774073.9378898,
+    "VST": 1795775649.2141895,
+    "BE": 1795775649.2141895,
+    "CRDO": 1795775649.2141895,
+    "COHR": 1795775649.2141895,
     "MRVL": 1795774127.7409463,
     "LITE": 1795774182.56816,
-    "AAOI": 1795774073.9378898,
-    "SPCX": 1795774073.9378898,
+    "AAOI": 1795775649.2141895,
+    "SPCX": 1795775649.2141895,
     "ASTS": 1795774127.7409463,
     "AXTI": 1795774182.56816,
     "NASA": 1795774127.7409463,
@@ -3383,7 +3383,7 @@
     "V": 1795774402.7485998,
     "CAT": 1795774402.7485998,
     "FN": 1795774182.56816,
-    "GLW": 1795774073.9378898,
+    "GLW": 1795775649.2141895,
     "ANT": 1795774402.7485998,
     "XAUUSD": 1795774402.7485998,
     "KOSPI": 1795774182.56816,
