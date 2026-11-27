@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795756564.25,
-  "updated_at_et": "11-27 00:16 ET",
-  "updated_at_kst": "14:16 KST",
+  "updated_at_ts": 1795756627.569,
+  "updated_at_et": "11-27 00:17 ET",
+  "updated_at_kst": "14:17 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -907,6 +907,13 @@
         "pub_ts": 1795752859.0
       },
       {
+        "title": "Neoclouds Told To Choose: Nvidia Chips Or Chinese Customers",
+        "url": "https://finance.yahoo.com/technology/articles/neoclouds-told-choose-nvidia-chips-041120920.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-26 23:11 ET",
+        "pub_ts": 1795752680.0
+      },
+      {
         "title": "Nvidia Is Down 35% From Its All-Time High, Tied for Its Biggest Drop Since the AI Boom Began. Is It a Buy?",
         "url": "https://www.fool.com/investing/2026/11/26/nvidia-is-down-35-from-its-all-time-high-tied-for-its-biggest-drop-since-the-ai-boom-began-is-it-a-buy/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -919,13 +926,6 @@
         "source": "Yahoo Finance",
         "time": "11-26 21:20 ET",
         "pub_ts": 1795746000.0
-      },
-      {
-        "title": "Trump Says Huang Is Excited About His ‘Second Term’ at Nvidia",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/trump-says-huang-excited-second-003925008.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-26 19:39 ET",
-        "pub_ts": 1795739965.0
       }
     ],
     "AMD": [
@@ -3300,23 +3300,23 @@
     ]
   },
   "ticker_news_ts": {
-    "KORU": 1795755123.3736885,
-    "SOXL": 1795755123.3736885,
-    "SPY": 1795755123.3736885,
-    "DIA": 1795755123.3736885,
-    "SOXX": 1795755123.3736885,
-    "QQQ": 1795755123.3736885,
-    "SMH": 1795755123.3736885,
-    "IWM": 1795755123.3736885,
-    "IGV": 1795755123.3736885,
-    "TLT": 1795755123.3736885,
-    "GLD": 1795755123.3736885,
-    "SQQQ": 1795755123.3736885,
+    "KORU": 1795756627.5689814,
+    "SOXL": 1795756627.5689814,
+    "SPY": 1795756627.5689814,
+    "DIA": 1795756627.5689814,
+    "SOXX": 1795756627.5689814,
+    "QQQ": 1795756627.5689814,
+    "SMH": 1795756627.5689814,
+    "IWM": 1795756627.5689814,
+    "IGV": 1795756627.5689814,
+    "TLT": 1795756627.5689814,
+    "GLD": 1795756627.5689814,
+    "SQQQ": 1795756627.5689814,
     "TSM": 1795755318.9433403,
-    "VIXY": 1795755123.3736885,
-    "SOXS": 1795755123.3736885,
-    "NVDA": 1795755123.3736885,
-    "AMD": 1795755123.3736885,
+    "VIXY": 1795756627.5689814,
+    "SOXS": 1795756627.5689814,
+    "NVDA": 1795756627.5689814,
+    "AMD": 1795756627.5689814,
     "ASML": 1795755318.9433403,
     "QCOM": 1795755318.9433403,
     "AVGO": 1795755318.9433403,
@@ -3331,9 +3331,9 @@
     "CRWV": 1795755434.7754054,
     "NBIS": 1795755434.7754054,
     "APLD": 1795755434.7754054,
-    "VST": 1795755123.3736885,
-    "BE": 1795755123.3736885,
-    "CRDO": 1795755123.3736885,
+    "VST": 1795756627.5689814,
+    "BE": 1795756627.5689814,
+    "CRDO": 1795756627.5689814,
     "COHR": 1795755123.3736885,
     "MRVL": 1795755434.7754054,
     "LITE": 1795755434.7754054,
@@ -3380,7 +3380,7 @@
     "ANT": 1795755483.4556623,
     "XAUUSD": 1795755535.9277248,
     "KOSPI": 1795755434.7754054,
-    "KSTR": 1795755123.3736885
+    "KSTR": 1795756627.5689814
   },
   "opex_shield": {
     "date": "2026-11-27",
