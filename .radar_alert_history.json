@@ -32,6 +32,10 @@
     "IWM": {
       "state": "WATCHLIST_ENTRY_READY",
       "last_notified_at": 1795814057.0953717
+    },
+    "AVGO": {
+      "state": "WATCHLIST_ENTRY_READY",
+      "last_notified_at": 1795814213.8829916
     }
   },
   "position_peaks": {}
