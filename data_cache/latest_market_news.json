@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795789187.446,
-  "updated_at_et": "11-27 09:19 ET",
-  "updated_at_kst": "23:19 KST",
+  "updated_at_ts": 1795789237.135,
+  "updated_at_et": "11-27 09:20 ET",
+  "updated_at_kst": "23:20 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -444,18 +444,18 @@
         "pub_ts": 1795691037.0
       },
       {
+        "title": "Exchange-Traded Funds, Equity Futures Higher Pre-Bell Friday Amid Technology Stock Rebound",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/exchange-traded-funds-equity-futures-140653942.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-27 09:06 ET",
+        "pub_ts": 1795788413.0
+      },
+      {
         "title": "JEPI Gets the Attention. JPMorgan’s 0.12% Quality ETF Has Quietly Grown Past $9 Billion",
         "url": "https://247wallst.com/investing/etf/2026/11/27/jepi-gets-the-attention-jpmorgans-0-12-quality-etf-has-quietly-grown-past-9-billion/?.tsrc=rss",
         "source": "Yahoo Finance",
         "time": "11-27 08:03 ET",
         "pub_ts": 1795784638.0
-      },
-      {
-        "title": "Own Palo Alto Stock? Watch Its Deferred Revenue",
-        "url": "https://www.trefis.com/stock/panw/articles/629187/own-palo-alto-stock-watch-its-deferred-revenue/2026-11-26?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-26 06:15 ET",
-        "pub_ts": 1795691719.0
       }
     ],
     "DIA": [
@@ -534,6 +534,13 @@
     ],
     "QQQ": [
       {
+        "title": "Exchange-Traded Funds, Equity Futures Higher Pre-Bell Friday Amid Technology Stock Rebound",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/exchange-traded-funds-equity-futures-140653942.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-27 09:06 ET",
+        "pub_ts": 1795788413.0
+      },
+      {
         "title": "What INVESCO QQQ Trust (QQQ) Bought: Apple Leads on Wednesday",
         "url": "https://finance.yahoo.com/markets/stocks/articles/invesco-qqq-trust-qqq-bought-110329959.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -560,13 +567,6 @@
         "source": "Yahoo Finance",
         "time": "11-27 06:00 ET",
         "pub_ts": 1795777232.0
-      },
-      {
-        "title": "ETF Activity: QQQ Leads With $2.88 Billion Inflow on Nov. 25",
-        "url": "https://finance.yahoo.com/markets/options/articles/etf-activity-qqq-leads-2-110009300.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-27 06:00 ET",
-        "pub_ts": 1795777209.0
       }
     ],
     "SMH": [
@@ -904,11 +904,25 @@
     ],
     "NVDA": [
       {
+        "title": "Nvidia freezing chip orders to four Southeast Asian countries",
+        "url": "https://finance.yahoo.com/video/nvidia-freezing-chip-orders-to-four-southeast-asian-countries-140011925.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-27 09:00 ET",
+        "pub_ts": 1795788011.0
+      },
+      {
         "title": "Nvidia stock is still paying the price for the Jensen Huang CEO drama",
         "url": "https://finance.yahoo.com/markets/stocks/article/nvidia-stock-is-still-paying-the-price-for-the-jensen-huang-ceo-drama-124902053.html?.tsrc=rss",
         "source": "Yahoo Finance",
         "time": "11-27 07:49 ET",
         "pub_ts": 1795783742.0
+      },
+      {
+        "title": "Stock Market Today: Dow Futures Jump 650 Points As Nvidia Rebounds; Anthropic, SpaceX, Tesla Rally (Live Coverage)",
+        "url": "https://finance.yahoo.com/m/86a4597f-ee47-3048-ae92-1a56fa4711e5/stock-market-today%3A-dow.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-27 09:00 ET",
+        "pub_ts": 1795788002.0
       },
       {
         "title": "AI Needs More Than Nvidia Chips. This Stock Could Benefit",
@@ -923,20 +937,6 @@
         "source": "Yahoo Finance",
         "time": "11-27 08:25 ET",
         "pub_ts": 1795785902.0
-      },
-      {
-        "title": "Stock Market Today: Dow Jumps 715 Points As Nvidia Rebounds; Anthropic, SpaceX, Tesla Rally (Live Coverage)",
-        "url": "https://finance.yahoo.com/m/86a4597f-ee47-3048-ae92-1a56fa4711e5/stock-market-today%3A-dow-jumps.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-27 08:07 ET",
-        "pub_ts": 1795784837.0
-      },
-      {
-        "title": "Nvidia Blackwell Chips Turn Up at China Site Tied to Alice Huang",
-        "url": "https://finance.yahoo.com/video/nvidia-blackwell-chips-turn-china-124506631.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-27 07:45 ET",
-        "pub_ts": 1795783506.0
       }
     ],
     "AMD": [
@@ -3311,22 +3311,22 @@
     ]
   },
   "ticker_news_ts": {
-    "KORU": 1795787707.2289057,
-    "SOXL": 1795787707.2289057,
-    "SPY": 1795787707.2289057,
-    "DIA": 1795787707.2289057,
-    "SOXX": 1795787707.2289057,
-    "QQQ": 1795787707.2289057,
-    "SMH": 1795787707.2289057,
-    "IWM": 1795787707.2289057,
-    "IGV": 1795787707.2289057,
-    "TLT": 1795787707.2289057,
-    "GLD": 1795787707.2289057,
-    "SQQQ": 1795787707.2289057,
-    "TSM": 1795787707.2289057,
-    "VIXY": 1795787707.2289057,
-    "SOXS": 1795787707.2289057,
-    "NVDA": 1795787707.2289057,
+    "KORU": 1795789237.135359,
+    "SOXL": 1795789237.135359,
+    "SPY": 1795789237.135359,
+    "DIA": 1795789237.135359,
+    "SOXX": 1795789237.135359,
+    "QQQ": 1795789237.135359,
+    "SMH": 1795789237.135359,
+    "IWM": 1795789237.135359,
+    "IGV": 1795789237.135359,
+    "TLT": 1795789237.135359,
+    "GLD": 1795789237.135359,
+    "SQQQ": 1795789237.135359,
+    "TSM": 1795789237.135359,
+    "VIXY": 1795789237.135359,
+    "SOXS": 1795789237.135359,
+    "NVDA": 1795789237.135359,
     "AMD": 1795787862.226685,
     "ASML": 1795787862.226685,
     "QCOM": 1795787862.226685,
@@ -3391,7 +3391,7 @@
     "ANT": 1795788600.488416,
     "XAUUSD": 1795788600.488416,
     "KOSPI": 1795788600.488416,
-    "KSTR": 1795787707.2289057
+    "KSTR": 1795789237.135359
   },
   "opex_shield": {
     "date": "2026-11-27",
