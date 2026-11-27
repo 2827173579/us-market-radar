@@ -1,5 +1,5 @@
 {
-  "updated_at_ts": 1795791362.915,
+  "updated_at_ts": 1795791412.601,
   "updated_at_et": "11-27 09:56 ET",
   "updated_at_kst": "23:56 KST",
   "macro_calendar": [],
@@ -1794,6 +1794,13 @@
     ],
     "ASTS": [
       {
+        "title": "HubSpot, AST SpaceMobile downgraded: Wall Street's top analyst calls",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/hubspot-ast-spacemobile-downgraded-wall-143518350.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-27 09:35 ET",
+        "pub_ts": 1795790118.0
+      },
+      {
         "title": "AST SpaceMobile Gains 2% Despite Berenberg’s Price Target Cut to $30, Rocket Lab Climbs 5% After Electron Launch; Cathie Wood-Backed SpaceX Rises 3%",
         "url": "https://247wallst.com/investing/2026/11/27/ast-spacemobile-gains-2-despite-berenbergs-price-target-cut-to-30-rocket-lab-climbs-5-after-electron-launch-cathie-wood-backed-spacex-rises-3/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1820,13 +1827,6 @@
         "source": "Yahoo Finance",
         "time": "11-27 07:34 ET",
         "pub_ts": 1795782899.0
-      },
-      {
-        "title": "Starlink Mobile Reached 3M+ Kazakh Users in “Cellular Dead Zones” in Under Two Months. Bad News for AST SpaceMobile",
-        "url": "https://www.tikr.com/blog/starlink-mobile-reached-3m-kazakh-users-in-cellular-dead-zones-in-under-two-months-bad-news-for-ast-spacemobile?ref=yahoofinance&tlnk=yf-261127-hqwmchmc&.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-27 01:46 ET",
-        "pub_ts": 1795761965.0
       }
     ],
     "AXTI": [
@@ -2053,6 +2053,20 @@
     ],
     "KO": [
       {
+        "title": "Coca-Cola Completes Major $2.6 Billion Africa Deal",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/coca-cola-completes-major-2-142729812.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-27 09:27 ET",
+        "pub_ts": 1795789649.0
+      },
+      {
+        "title": "S&P 500 Investors Make Surprising Shift as Tech Stocks Sink",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/p-500-investors-surprising-shift-142353935.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-27 09:23 ET",
+        "pub_ts": 1795789433.0
+      },
+      {
         "title": "If This Dividend King Doubles, Here’s What $10,000 Could Become",
         "url": "https://247wallst.com/investing/2026/11/27/if-this-dividend-king-doubles-heres-what-10000-could-become/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2072,20 +2086,6 @@
         "source": "Yahoo Finance",
         "time": "11-27 02:51 ET",
         "pub_ts": 1795765860.0
-      },
-      {
-        "title": "Coca-Cola (KO) Up 6.4% Since Last Earnings Report: Can It Continue?",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/coca-cola-ko-6-4-153014132.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-26 10:30 ET",
-        "pub_ts": 1795707014.0
-      },
-      {
-        "title": "Investing $500 a Month in Coca-Cola, Realty Income, and Altria Could Generate Over $1,000 in Monthly Dividend Income by 2046",
-        "url": "https://www.fool.com/investing/2026/11/26/investing-usd500-a-month-in-coca-cola-realty-income-and-altria-could-generate-over-usd1-000-in-monthly-dividend-income-by-2046/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-26 09:51 ET",
-        "pub_ts": 1795704662.0
       }
     ],
     "FLY": [
@@ -3163,6 +3163,13 @@
     ],
     "GLW": [
       {
+        "title": "Wall Street Analysts See Corning (GLW) as a Buy: Should You Invest?",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/wall-street-analysts-see-corning-133003621.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-27 08:30 ET",
+        "pub_ts": 1795786203.0
+      },
+      {
         "title": "Corning’s 80-Million-Mile Fiber Deal Puts Its 2027 Expansion to the Test",
         "url": "https://finance.yahoo.com/technology/articles/corning-80-million-mile-fiber-041319616.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -3189,13 +3196,6 @@
         "source": "Yahoo Finance",
         "time": "11-25 10:12 ET",
         "pub_ts": 1795619529.0
-      },
-      {
-        "title": "Is Most-Watched Stock Owens Corning Inc (OC) Worth Betting on Now?",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/most-watched-stock-owens-corning-130004945.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 08:00 ET",
-        "pub_ts": 1795611604.0
       }
     ],
     "ANT": [
@@ -3338,29 +3338,29 @@
     "GOOGL": 1795790887.5960093,
     "MSFT": 1795790887.5960093,
     "AAPL": 1795790887.5960093,
-    "PLTR": 1795789906.8144388,
-    "NOW": 1795789906.8144388,
-    "AMZN": 1795789906.8144388,
-    "CRWV": 1795789906.8144388,
-    "NBIS": 1795789906.8144388,
-    "APLD": 1795789906.8144388,
+    "PLTR": 1795791412.6008842,
+    "NOW": 1795791412.6008842,
+    "AMZN": 1795791412.6008842,
+    "CRWV": 1795791412.6008842,
+    "NBIS": 1795791412.6008842,
+    "APLD": 1795791412.6008842,
     "VST": 1795790887.5960093,
     "BE": 1795790887.5960093,
     "CRDO": 1795790887.5960093,
     "COHR": 1795790887.5960093,
-    "MRVL": 1795789906.8144388,
-    "LITE": 1795789906.8144388,
-    "AAOI": 1795789906.8144388,
+    "MRVL": 1795791412.6008842,
+    "LITE": 1795791412.6008842,
+    "AAOI": 1795791412.6008842,
     "SPCX": 1795790887.5960093,
-    "ASTS": 1795789906.8144388,
-    "AXTI": 1795789906.8144388,
-    "NASA": 1795789906.8144388,
-    "LUNR": 1795789906.8144388,
+    "ASTS": 1795791412.6008842,
+    "AXTI": 1795791412.6008842,
+    "NASA": 1795791412.6008842,
+    "LUNR": 1795791412.6008842,
     "TSLA": 1795790015.5004666,
-    "AXP": 1795789906.8144388,
-    "RKLB": 1795789906.8144388,
-    "KO": 1795789906.8144388,
-    "FLY": 1795789906.8144388,
+    "AXP": 1795791412.6008842,
+    "RKLB": 1795791412.6008842,
+    "KO": 1795791412.6008842,
+    "FLY": 1795791412.6008842,
     "INTC": 1795790015.5004666,
     "VRT": 1795790015.5004666,
     "HPE": 1795790015.5004666,
@@ -3388,8 +3388,8 @@
     "WMT": 1795790113.2909374,
     "V": 1795790113.2909374,
     "CAT": 1795790113.2909374,
-    "FN": 1795789906.8144388,
-    "GLW": 1795789906.8144388,
+    "FN": 1795791412.6008842,
+    "GLW": 1795791412.6008842,
     "ANT": 1795790113.2909374,
     "XAUUSD": 1795790113.2909374,
     "KOSPI": 1795790113.2909374,
