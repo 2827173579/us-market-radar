@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795752332.03,
-  "updated_at_et": "11-26 23:05 ET",
-  "updated_at_kst": "13:05 KST",
+  "updated_at_ts": 1795752384.388,
+  "updated_at_et": "11-26 23:06 ET",
+  "updated_at_kst": "13:06 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -3188,6 +3188,13 @@
     ],
     "ANT": [
       {
+        "title": "Dow Jones Futures Rise; Look For This Bullish Market Signal On Black Friday",
+        "url": "https://finance.yahoo.com/m/158e82fc-b889-34b6-8704-99a49e9a83ae/dow-jones-futures-rise%3B-look.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-26 22:56 ET",
+        "pub_ts": 1795751783.0
+      },
+      {
         "title": "Is DXC Technology (DXC) Fully Valued On Its New AI Security Push?",
         "url": "https://finance.yahoo.com/technology/ai/articles/dxc-technology-dxc-fully-valued-021346564.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -3200,13 +3207,6 @@
         "source": "Yahoo Finance",
         "time": "11-26 20:35 ET",
         "pub_ts": 1795743302.0
-      },
-      {
-        "title": "Dow Jones Futures Rise; Look For This Bullish Market Signal On Black Friday",
-        "url": "https://finance.yahoo.com/m/158e82fc-b889-34b6-8704-99a49e9a83ae/dow-jones-futures-rise%3B-look.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-26 20:34 ET",
-        "pub_ts": 1795743275.0
       },
       {
         "title": "Anthropic Stock (ANT) Forecast – Analysts See 60%+ Upside Despite Ongoing AI Trade Concerns",
@@ -3378,8 +3378,8 @@
     "CAT": 1795752332.029581,
     "FN": 1795752332.029581,
     "GLW": 1795751860.5515761,
-    "ANT": 1795750873.4204469,
-    "XAUUSD": 1795750873.4204469,
+    "ANT": 1795752384.388433,
+    "XAUUSD": 1795752384.388433,
     "KOSPI": 1795752280.8999395,
     "KSTR": 1795751805.189166
   },
