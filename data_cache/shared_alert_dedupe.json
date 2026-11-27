@@ -8459,9 +8459,13 @@
     "2026-11-27:AVGO/AXP:5M_ENTRY": {
       "device": "PC",
       "ts": 1795800065.3501182
+    },
+    "2026-11-27:DEFENSIVE_FLIGHT:green:-4.2": {
+      "device": "PC",
+      "ts": 1795800215.3010364
     }
   },
   "device": "PC",
-  "last_heartbeat_ts": 1795800131.5849035,
-  "updated_at": "2026-11-27T17:22:11.585567+00:00"
+  "last_heartbeat_ts": 1795800191.0041146,
+  "updated_at": "2026-11-27T17:23:35.301573+00:00"
 }
