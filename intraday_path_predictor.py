@@ -1422,9 +1422,10 @@ def _extract_krx_day_features_for_target(
 
         tgt_krx = sub[(sub["_date"] == target_date) & (sub["_min"] >= 9 * 60) & (sub["_min"] <= 15 * 60 + 35)].sort_values("Datetime")
         if not tgt_krx.empty:
-            anchor_open = float(tgt_krx["Open"].iloc[0])
-            if anchor_open <= 0 or not math.isfinite(anchor_open):
-                anchor_open = float(tgt_krx["Close"].iloc[0])
+            if int(tgt_krx["_min"].iloc[0]) == 9 * 60:
+                anchor_open = float(tgt_krx["Open"].iloc[0])
+                if anchor_open <= 0 or not math.isfinite(anchor_open):
+                    anchor_open = float(tgt_krx["Close"].iloc[0])
             for dt_val, c_val in zip(tgt_krx["Datetime"], tgt_krx["Close"]):
                 if math.isfinite(float(c_val)) and float(c_val) > 0:
                     c_min = int(dt_val.hour) * 60 + int(dt_val.minute)
@@ -1480,6 +1481,15 @@ def _extract_krx_day_features_for_target(
 
     if anchor_open <= 0:
         anchor_open = _safe_float(rq_dict.get("open"), 0.0) or live_px or prev_close
+
+    # 若开盘首根 09:00 KST 5m 暂缺、但当日已有后续实盘 5m 数据且 anchor_open 有效，仅锚定第 0 槽起点，绝不伪造中间缺柱
+    if (
+        len(actual_prices) > 1
+        and (actual_prices[0] is None or _safe_float(actual_prices[0], 0.0) <= 0)
+        and anchor_open > 0
+        and any(v is not None and _safe_float(v, 0.0) > 0 for v in actual_prices[1:])
+    ):
+        actual_prices[0] = round(float(anchor_open), 2)
 
     return prev_close, anchor_open, actual_prices
 
@@ -2111,8 +2121,15 @@ def update_intraday_path_forecasts(
             if krx_already_locked:
                 item_k = dict(prev_item)
                 merged_actual_k = _merge_actual_prices(item_k.get("actual_prices"), new_actual_k)
-                item_k["actual_prices"] = merged_actual_k
                 ao_k_locked = _safe_float(item_k.get("anchor_open"), 0.0)
+                if (
+                    len(merged_actual_k) > 1
+                    and (merged_actual_k[0] is None or _safe_float(merged_actual_k[0], 0.0) <= 0)
+                    and ao_k_locked > 0
+                    and any(v is not None and _safe_float(v, 0.0) > 0 for v in merged_actual_k[1:])
+                ):
+                    merged_actual_k[0] = round(float(ao_k_locked), 2)
+                item_k["actual_prices"] = merged_actual_k
                 if ao_k_locked > 0:
                     item_k["actual_pcts"] = [
                         round(((float(v) - ao_k_locked) / ao_k_locked) * 100.0, 2)

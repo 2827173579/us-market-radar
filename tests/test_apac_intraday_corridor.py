@@ -92,8 +92,11 @@ class TestApacIntradayCorridor(unittest.TestCase):
         self.assertNotIn("2026-10-26", res1["matched_dates"])
         self.assertNotIn("2026-10-27", res1["matched_dates"])
 
-        # 第二次盘中轮询：传入更晚的实盘价格（突破上沿）-> P25/P50/P75 必须保持锁死不变，仅橙线与背离更新
-        live_rows = [[slots[i], 1.18, 1.25, 1.18, round(1.18 + i * 0.015, 3), 2e6] for i in range(12)]
+        # 第二次盘中轮询：保留同一真实 09:30 Open，传入更晚的实盘价格（突破上沿）-> P25/P50/P75 必须保持锁死不变，仅橙线与背离更新
+        live_rows = [
+            [slots[i], res1["anchor_open"] if i == 0 else 1.18, 1.25, res1["anchor_open"] if i == 0 else 1.18, round(1.18 + i * 0.015, 3), 2e6]
+            for i in range(12)
+        ]
         res2 = aip.build_single_ticker_corridor(
             ticker="159530",
             day_slot_maps=dmaps_run1,
@@ -241,6 +244,161 @@ class TestApacIntradayCorridor(unittest.TestCase):
         self.assertEqual(res["latest_slot"], 1)
         self.assertEqual(sum(1 for x in res["actual_prices"] if x is not None), 2)
         self.assertIsNone(res["actual_prices"][2])
+
+    def test_07_ashare_midday_lock_strictly_uses_0930_open_and_autoheals_drifted_anchor(self):
+        """验证盘中 11:00 锁锚严格取 09:30 首根 5m Open、偏离 >0.3% 存量歪锚自动自愈、对齐后严守锁定不变性。"""
+        cn_slots = aip.get_market_spec("CN")["slots"]
+        meta = aaf.APAC_ASHARE_BY_TICKER["159530"]
+        dmaps = {
+            f"2026-10-{i:02d}": _make_day_slot_map(cn_slots, base_px=1.120 + i * 0.002, trend_pct=0.4, decimals=3)
+            for i in range(1, 25)
+        }
+        # 构造 2026-11-27 截至 11:00 的 5m 实盘：09:30 Open=1.131，11:00 已拉升到 1.170
+        live_rows = []
+        for idx in range(19):  # 09:30 .. 11:00
+            sl = cn_slots[idx]
+            px = round(1.131 + (1.170 - 1.131) * (idx / 18.0), 3)
+            op = 1.131 if idx == 0 else px
+            live_rows.append([sl, op, round(px + 0.003, 3), round(px - 0.002, 3), px, 500000.0])
+
+        # 1) 盘中 11:00 首次计算：必须严锁 09:30 Open=1.131，绝非 11:00 的 1.170
+        fresh = aip.build_single_ticker_corridor(
+            ticker="159530",
+            day_slot_maps=dmaps,
+            meta=meta,
+            forecast_date="2026-11-27",
+            live_5m_rows=live_rows,
+            spot_open=1.131,
+            spot_prev_close=1.123,
+        )
+        self.assertEqual(fresh["status"], "ok")
+        self.assertAlmostEqual(fresh["anchor_open"], 1.131, places=3)
+        self.assertEqual(fresh["open_anchor_source"], "first_5m_open")
+        self.assertTrue(fresh["snapshot_locked"])
+        self.assertAlmostEqual(fresh["gap_pct"], round((1.131 / fresh["prev_close"] - 1.0) * 100.0, 2), places=2)
+
+        # 2) 存量歪锚（旧锁 1.170，与真实 09:30 Open=1.131 偏离 3.45% > 0.3%）：触发一次自愈重算
+        drifted_prev = dict(fresh)
+        drifted_prev["anchor_open"] = 1.170
+        drifted_prev["gap_pct"] = 4.19
+        drifted_prev["open_anchor_source"] = "legacy"
+        drifted_prev["p50_prices"] = [9.999] * 48
+        healed = aip.build_single_ticker_corridor(
+            ticker="159530",
+            day_slot_maps=dmaps,
+            meta=meta,
+            forecast_date="2026-11-27",
+            live_5m_rows=live_rows,
+            prev_locked_item=drifted_prev,
+            spot_open=1.131,
+            spot_prev_close=1.123,
+        )
+        self.assertAlmostEqual(healed["anchor_open"], 1.131, places=3)
+        self.assertEqual(healed["open_anchor_source"], "first_5m_open")
+        self.assertTrue(healed["snapshot_locked"])
+        self.assertNotEqual(healed["p50_prices"][0], 9.999)
+
+        # 3) 已对齐快照（open_anchor_source="first_5m_open" 且偏离 <= 0.3%）：严格保持锁定，禁止重绘走廊
+        aligned_prev = dict(healed)
+        sentinel_p50 = [1.234] * 48
+        aligned_prev["p50_prices"] = sentinel_p50
+        kept = aip.build_single_ticker_corridor(
+            ticker="159530",
+            day_slot_maps=dmaps,
+            meta=meta,
+            forecast_date="2026-11-27",
+            live_5m_rows=live_rows,
+            prev_locked_item=aligned_prev,
+            spot_open=1.131,
+            spot_prev_close=1.123,
+        )
+        self.assertTrue(kept["snapshot_locked"])
+        self.assertEqual(kept["p50_prices"], sentinel_p50)
+
+    def test_08_kospi_slot0_anchor_without_fabricating_missing_slots(self):
+        """验证 KOSPI 仅在 09:00 槽缺失且后续有实盘时锚定 slot 0，绝不伪造 09:05/09:10/09:15 中间缺失槽。"""
+        from datetime import date
+        import pandas as pd
+        import intraday_path_predictor as ipp
+
+        kst = ZoneInfo("Asia/Seoul")
+        df_5m = pd.DataFrame(
+            {
+                "Datetime": [
+                    datetime(2026, 11, 27, 9, 20, tzinfo=kst),
+                    datetime(2026, 11, 27, 9, 25, tzinfo=kst),
+                ],
+                "Open": [4750.0, 4731.0],
+                "High": [4755.0, 4735.0],
+                "Low": [4745.0, 4725.0],
+                "Close": [4750.17, 4731.06],
+                "Volume": [3000.0, 2800.0],
+            }
+        )
+        prev_close, anchor_open, ap = ipp._extract_krx_day_features_for_target(
+            df_tk=df_5m,
+            target_date=date(2026, 11, 27),
+            intraday_info=None,
+            history_df=None,
+            rq={"open": 4728.80, "prev_close": 4740.20, "price": 4731.06},
+            cur_kst=datetime(2026, 11, 27, 9, 30, tzinfo=kst),
+        )
+        self.assertAlmostEqual(anchor_open, 4728.80, places=2)
+        self.assertAlmostEqual(prev_close, 4740.20, places=2)
+        self.assertAlmostEqual(ap[0], 4728.80, places=2)
+        self.assertIsNone(ap[1])
+        self.assertIsNone(ap[2])
+        self.assertIsNone(ap[3])
+        self.assertAlmostEqual(ap[4], 4750.17, places=2)
+        self.assertAlmostEqual(ap[5], 4731.06, places=2)
+
+    def test_09_frontend_tooltip_distinguishes_missing_source_vs_future_slot(self):
+        """验证前端推演图悬停浮窗逻辑按 lastActualIdx 区分「数据源缺失」与「未到时段」。"""
+        stocks = [{"ticker": "NVDA", "name": "英伟达", "price": 180.0, "change_pct": 1.0, "sector": "AI", "volume": 100}]
+        macro = {"NQ=F": {"price": 25000.0, "change_pct": 0.5}}
+        html = cft.build_futu_terminal_html(
+            stocks_data=stocks,
+            macro_data=macro,
+            weather_info={"weather": "晴"},
+            session_code="HOLIDAY",
+        )
+        self.assertIn("lastActualIdx", html)
+        self.assertIn("—（数据源缺失）", html)
+        self.assertIn("—（未到时段）", html)
+
+    def test_10_ml_predictor_deduplicates_duplicate_tickers_in_json_and_html(self):
+        """验证 ml_predictor_5y 导出 JSON 时严格按 ticker 去重，杜绝 MSFT/KOSPI 重复行。"""
+        import os
+        import tempfile
+        import ml_predictor_5y as mp
+
+        sample_rows = [
+            {"ticker": "BTC-USD", "short_rank": 1, "rank": 10, "calibrated_win_rate_pct": 40.0, "short_calibrated_win_rate_pct": 56.3, "latest_price": 61678.63, "sector_cn": "加密货币代理"},
+            {"ticker": "MSFT", "short_rank": 2, "rank": 11, "calibrated_win_rate_pct": 42.0, "short_calibrated_win_rate_pct": 53.5, "latest_price": 499.92, "sector_cn": "企业软件"},
+            {"ticker": "MSFT", "short_rank": 3, "rank": 12, "calibrated_win_rate_pct": 42.0, "short_calibrated_win_rate_pct": 53.5, "latest_price": 499.92, "sector_cn": "企业软件"},
+            {"ticker": "KOSPI", "short_rank": 4, "rank": 13, "calibrated_win_rate_pct": 41.0, "short_calibrated_win_rate_pct": 53.1, "latest_price": 4910.15, "sector_cn": "亚太指数"},
+            {"ticker": "KOSPI", "short_rank": 5, "rank": 14, "calibrated_win_rate_pct": 41.0, "short_calibrated_win_rate_pct": 53.1, "latest_price": 4910.15, "sector_cn": "亚太指数"},
+            {"ticker": "QQQ", "short_rank": 6, "rank": 15, "calibrated_win_rate_pct": 44.0, "short_calibrated_win_rate_pct": 51.0, "latest_price": 505.0, "sector_cn": "宽基ETF"},
+            {"ticker": "CAT", "short_rank": 7, "rank": 16, "calibrated_win_rate_pct": 45.0, "short_calibrated_win_rate_pct": 50.2, "latest_price": 380.0, "sector_cn": "工业基建"},
+        ]
+        tables_data = {
+            "kpi": {},
+            "macro_weather": {},
+            "all_live_predictions": sample_rows,
+            "top_long": sample_rows,
+            "top_short": sample_rows,
+            "table4": sample_rows,
+        }
+        with tempfile.TemporaryDirectory() as td:
+            out_json = os.path.join(td, "latest_ai_predictions.json")
+            mp.export_latest_ai_predictions_json(tables_data, json_path=out_json)
+            with open(out_json, "r", encoding="utf-8") as f:
+                doc = json.load(f)
+            all_tks = [r["ticker"] for r in doc["all_predictions"]]
+            short_tks = [r["ticker"] for r in doc["top_short"]]
+            self.assertEqual(all_tks, ["BTC-USD", "MSFT", "KOSPI", "QQQ", "CAT"])
+            self.assertEqual(short_tks, ["BTC-USD", "MSFT", "KOSPI", "QQQ", "CAT"])
+            self.assertEqual([r["short_rank"] for r in doc["top_short"]], [1, 2, 3, 4, 5])
 
 
 if __name__ == "__main__":

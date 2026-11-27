@@ -627,10 +627,14 @@ def _fill_day_close_curve(
     if open_0 is None or last_valid_idx < 0:
         return None, [None] * n, 0.0, 0.0
 
-    # 对内部偶发 1~2 根缺失做前向填充
+    # 对内部偶发 1~2 根缺失做前向填充；当日实盘 (`fill_tail=False`) 不往前倒填首根真实成交之前的缺失槽位
+    first_valid_idx = next((i for i, v in enumerate(raw_closes) if v is not None), -1)
+    if first_valid_idx < 0:
+        return None, [None] * n, 0.0, 0.0
+    start_idx = 0 if fill_tail else first_valid_idx
     limit_idx = (n - 1) if fill_tail else last_valid_idx
-    last_seen = open_0
-    for i in range(limit_idx + 1):
+    last_seen = float(raw_closes[first_valid_idx]) if not fill_tail else float(open_0)
+    for i in range(start_idx, limit_idx + 1):
         if raw_closes[i] is not None:
             last_seen = float(raw_closes[i])
         else:
@@ -697,6 +701,7 @@ def build_single_ticker_corridor(
     live_5m_rows: Optional[List[List[Any]]] = None,
     prev_locked_item: Optional[Dict[str, Any]] = None,
     spot_prev_close: Optional[float] = None,
+    spot_open: Optional[float] = None,
     now_dt: Optional[datetime] = None,
 ) -> Dict[str, Any]:
     """
@@ -763,11 +768,24 @@ def build_single_ticker_corridor(
     valid_hist_dates = sorted(day_stats.keys())
     n_hist = len(valid_hist_dates)
 
-    # 当日实际 5m 轨迹与开盘锚
-    today_open, today_closes, _, _ = _fill_day_close_curve(today_map, slots, fill_tail=False)
+    # 当日实际 5m 轨迹与严格真实开盘锚（绝不拿盘中任意后续柱或实时价顶替开盘锚）
+    _, today_closes, _, _ = _fill_day_close_curve(today_map, slots, fill_tail=False)
     prev_close = float(prev_c_running) if (prev_c_running and prev_c_running > 0) else (_safe_float(spot_prev_close) or 0.0)
-    if today_open is None or today_open <= 0:
+
+    first_slot_key = slots[0]
+    first_slot_bar = today_map.get(first_slot_key)
+    first_slot_open = float(first_slot_bar[0]) if (isinstance(first_slot_bar, (list, tuple)) and len(first_slot_bar) >= 1 and _safe_float(first_slot_bar[0], 0.0) and float(first_slot_bar[0]) > 0) else 0.0
+    official_open_val = _safe_float(spot_open, 0.0) or 0.0
+
+    if first_slot_open > 0:
+        today_open = first_slot_open
+        open_anchor_source = "first_5m_open"
+    elif official_open_val > 0:
+        today_open = official_open_val
+        open_anchor_source = "official_open"
+    else:
         today_open = prev_close if prev_close > 0 else 0.0
+        open_anchor_source = "prev_close_fallback"
 
     target_gap = 0.0
     if prev_close > 0 and today_open > 0:
@@ -776,15 +794,28 @@ def build_single_ticker_corridor(
             target_gap = round(raw_tgap, 2)
     target_vol5 = float(np.mean(range_hist[-5:])) if range_hist else 1.5
 
-    # 校验是否已锁定同日走廊（锁定后绝不重绘 P25/P50/P75，仅增量追加实盘橙线与背离徽章）
-    if (
+    # 校验是否已锁定同日走廊（含存量歪锚自愈：缺少 open_anchor_source="first_5m_open" 或与当日首根 5m Open 偏差 > 0.3% 时自动重算一次并重新锁死）
+    can_reuse_locked = bool(
         isinstance(prev_locked_item, dict)
         and prev_locked_item.get("status") == "ok"
         and prev_locked_item.get("snapshot_locked") is True
         and str(prev_locked_item.get("forecast_date") or "") == forecast_date
         and isinstance(prev_locked_item.get("p50_prices"), list)
         and len(prev_locked_item["p50_prices"]) == n_slots
-    ):
+    )
+    if can_reuse_locked:
+        prev_src = str(prev_locked_item.get("open_anchor_source") or "")
+        prev_anc = _safe_float(prev_locked_item.get("anchor_open"), 0.0) or 0.0
+        if first_slot_open > 0:
+            drift_pct = (abs(prev_anc - first_slot_open) / first_slot_open * 100.0) if prev_anc > 0 else 999.0
+            if prev_src != "first_5m_open" or drift_pct > 0.3:
+                can_reuse_locked = False
+        elif official_open_val > 0:
+            drift_pct = (abs(prev_anc - official_open_val) / official_open_val * 100.0) if prev_anc > 0 else 999.0
+            if prev_src not in ("first_5m_open", "official_open") and drift_pct > 0.3:
+                can_reuse_locked = False
+
+    if can_reuse_locked:
         locked = dict(prev_locked_item)
         anc_open = float(locked.get("anchor_open") or today_open or 1.0)
         act_prices = [round(float(c), dec) if (c is not None and c > 0) else None for c in today_closes]
@@ -890,7 +921,8 @@ def build_single_ticker_corridor(
     summary_text = f"历史匹配 {k_used} 个相似{spec['market_cn']}开盘日 ({gap_word})：{pattern_cn}"
 
     has_live_open = any(v is not None and v > 0 for v in act_prices)
-    anchor_label = f"{spec['open_label']} 开盘已锁定" if has_live_open else f"{spec['open_label']} 开盘参考"
+    has_true_open = open_anchor_source in ("first_5m_open", "official_open")
+    anchor_label = f"{spec['open_label']} 开盘已锁定" if (has_live_open and has_true_open) else f"{spec['open_label']} 开盘参考"
 
     return {
         "ticker": tk,
@@ -909,11 +941,12 @@ def build_single_ticker_corridor(
         "summary_text": summary_text,
         "anchor_label": anchor_label,
         "anchor_open": round(today_open, dec),
+        "open_anchor_source": open_anchor_source,
         "prev_close": round(prev_close, dec) if prev_close > 0 else round(today_open, dec),
         "gap_pct": target_gap,
         "pmh": None,
         "pml": None,
-        "snapshot_locked": bool(has_live_open),
+        "snapshot_locked": bool(has_live_open and has_true_open),
         "history_days_count": n_hist,
         "matched_count": k_used,
         "matched_dates": matched_dates,
@@ -1079,6 +1112,10 @@ def get_or_update_apac_intraday_forecasts(
         snap_item = apac_items.get(tk) if isinstance(apac_items, dict) else None
         live_rows = (snap_item.get("intraday_5m") if isinstance(snap_item, dict) else None) or None
         spot_prev_c = _safe_float(snap_item.get("prev_close")) if isinstance(snap_item, dict) else None
+        spot_open_v = (
+            _safe_float(snap_item.get("open"))
+            or _safe_float(snap_item.get("open_price"))
+        ) if isinstance(snap_item, dict) else None
 
         # 本地市场当前日期与是否已开盘判定
         loc_now = cst_now.astimezone(spec["tz"])
@@ -1110,6 +1147,7 @@ def get_or_update_apac_intraday_forecasts(
             live_5m_rows=live_rows if (market_opened_today and live_rows) else None,
             prev_locked_item=prev_by_tk.get(tk),
             spot_prev_close=spot_prev_c,
+            spot_open=spot_open_v,
             now_dt=now_dt,
         )
         by_ticker[tk] = item

@@ -6269,10 +6269,19 @@ def build_futu_terminal_html(stocks_data, macro_data, weather_info, update_time_
                         const vwDiff = (pxV !== null && vwV !== null && vwV > 0) ? ` (${((pxV - vwV) / vwV * 100 >= 0 ? "+" : "")}${((pxV - vwV) / vwV * 100).toFixed(2)}%)` : "";
                         tipEl.innerHTML = `<b>${escapeNewsHtml(ticker)} · ${escapeNewsHtml(tStr)}</b><br>24H 价格: <b style="color:${pal.svgActual};">${f(pxV)}</b><br>实时 VWAP: <b style="color:${pal.accent};">${f(vwV)}${vwDiff}</b><br>24H 波动带 [P25~P75]: <span style="color:${pal.accent};">${f(p25[si])} ~ ${f(p75[si])}</span><br>中位参考 P50: <b style="color:${pal.svgP50};">${f(p50[si])}</b>`;
                     } else {
+                        let lastActualIdx = -1;
+                        for (let k = act.length - 1; k >= 0; k--) {
+                            const kv = act[k];
+                            if (kv !== null && kv !== undefined && Number.isFinite(kv) && kv > 0) {
+                                lastActualIdx = k;
+                                break;
+                            }
+                        }
                         const actVal = act[si];
+                        const missingLabel = (lastActualIdx >= 0 && si < lastActualIdx) ? "—（数据源缺失）" : "—（未到时段）";
                         const actDisp = (actVal !== null && Number.isFinite(actVal) && actVal > 0)
                             ? `<b style="color:${pal.svgActual};">${f(actVal)}</b>`
-                            : `<span style="color:${pal.sub};">—（未到时段）</span>`;
+                            : `<span style="color:${pal.sub};">${missingLabel}</span>`;
                         const tzLbl = isApacPathTk ? (item.session_tz || "CST") : (isKrxPath ? "KST" : "ET");
                         tipEl.innerHTML = `<b>${escapeNewsHtml(ticker)} · ${timeSlots[si] || ""} ${tzLbl}</b><br>实际 5m: ${actDisp}<br>P50 预期: <b style="color:${pal.svgP50};">${f(p50[si])}</b><br>走廊 [P25~P75]: <span style="color:${pal.accent};">${f(p25[si])} ~ ${f(p75[si])}</span>`;
                     }

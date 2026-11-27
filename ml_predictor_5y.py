@@ -5761,6 +5761,8 @@ def generate_report_tables(
     top_short_stocks = []
     all_live_rows = []
     latest_df = latest_features_df.copy()
+    if 'Ticker' in latest_df.columns and not latest_df.empty:
+        latest_df = latest_df.drop_duplicates(subset=['Ticker'], keep='first').reset_index(drop=True)
 
     # 建立多头与空头赛道历史 OOS 高置信胜率、期望盈亏比与星级映射表
     sector_oos_wr_map = {r['sector_key']: r['high_conviction_win_rate_pct'] for r in table2_rows}
@@ -6369,6 +6371,16 @@ def generate_report_tables(
                 _mr['trend_temperature_tone'] = _tt
         except Exception:
             pass
+
+        # 严格按 ticker 去重（防同一标的在双向 Top 5 或全景截面中出现重复行）
+        _seen_live_tks = set()
+        _deduped_live_rows = []
+        for _r_dup in all_live_rows:
+            _tk_k = str(_r_dup.get('ticker') or '').strip().upper()
+            if _tk_k and _tk_k not in _seen_live_tks:
+                _seen_live_tks.add(_tk_k)
+                _deduped_live_rows.append(_r_dup)
+        all_live_rows = _deduped_live_rows
 
         # 多头精选榜 Top 10 (正股优先，严格按 calibrated_win_rate_pct 降序，与空头榜排序口径一致)
         long_candidates = [r.copy() for r in all_live_rows if not r.get('is_etf', False)]
@@ -7299,7 +7311,16 @@ def render_html_dashboard(tables_data: Dict, output_path: str = 'predict_radar_5
     t2 = tables_data.get('table2', [])
     t3 = tables_data.get('table3', [])
     t4 = tables_data.get('table4', [])
-    all_live = tables_data.get('all_live_predictions', t4) or t4
+    _raw_all_live = tables_data.get('all_live_predictions', t4) or t4
+    _seen_html_tks = set()
+    all_live = []
+    for _row_l in _raw_all_live:
+        if not isinstance(_row_l, dict):
+            continue
+        _tk_h = str(_row_l.get('ticker') or '').strip().upper()
+        if _tk_h and _tk_h not in _seen_html_tks:
+            _seen_html_tks.add(_tk_h)
+            all_live.append(_row_l)
 
     _regime_code = str(weather.get('market_regime', 'NEUTRAL_CHOP'))
     _is_bear_defense = (_regime_code == 'BEAR_DEFENSE')
@@ -7656,12 +7677,30 @@ def render_html_dashboard(tables_data: Dict, output_path: str = 'predict_radar_5
         )
     )
     for idx_s, item in enumerate(short_sorted, 1):
-        if 'short_rank' not in item or not item['short_rank']:
-            item['short_rank'] = idx_s
+        item['short_rank'] = idx_s
 
-    top_short = tables_data.get('top_short', [])
-    if not top_short:
-        top_short = [r for r in short_sorted if not (r.get('is_crash_halt') or r.get('is_cooling_halt'))][:5] or short_sorted[:5]
+    _raw_top_short = tables_data.get('top_short', []) or []
+    _seen_ts = set()
+    top_short = []
+    for _rs in _raw_top_short:
+        if not isinstance(_rs, dict):
+            continue
+        _tk_s = str(_rs.get('ticker') or '').strip().upper()
+        if _tk_s and _tk_s not in _seen_ts:
+            _seen_ts.add(_tk_s)
+            top_short.append(_rs)
+    if len(top_short) < 5:
+        for _rs in short_sorted:
+            if _rs.get('is_crash_halt') or _rs.get('is_cooling_halt'):
+                continue
+            _tk_s = str(_rs.get('ticker') or '').strip().upper()
+            if _tk_s and _tk_s not in _seen_ts:
+                _seen_ts.add(_tk_s)
+                top_short.append(_rs)
+            if len(top_short) >= 5:
+                break
+    for _rk_i, _rs in enumerate(top_short, 1):
+        _rs['short_rank'] = _rk_i
 
     # 生成 Table 4-B 空头排行榜 HTML (9 列: 排名/代码/赛道/现价ATR/做空胜率/空头止盈/空头止损/期权PCR/做空指令)
     t4_short_rows_html = ""
@@ -11065,11 +11104,27 @@ def export_latest_ai_predictions_json(tables_data: Dict, json_path: str = 'data_
     full_json_path = _resolve_cache_path(json_path) if not os.path.isabs(json_path) else json_path
     os.makedirs(os.path.dirname(full_json_path), exist_ok=True)
 
-    all_preds = tables_data.get('all_live_predictions') or tables_data.get('table4', [])
+    def _dedupe_rows(rows_in):
+        seen = set()
+        out = []
+        for it in (rows_in or []):
+            if not isinstance(it, dict):
+                continue
+            tk_u = str(it.get('ticker') or '').strip().upper()
+            if tk_u and tk_u not in seen:
+                seen.add(tk_u)
+                out.append(it)
+        return out
+
+    all_preds = _dedupe_rows(tables_data.get('all_live_predictions') or tables_data.get('table4', []))
     by_ticker = {item['ticker']: item for item in all_preds}
 
-    top_long = tables_data.get('top_long') or tables_data.get('table4', [])
-    top_short = tables_data.get('top_short', [])
+    top_long = _dedupe_rows(tables_data.get('top_long') or tables_data.get('table4', []))
+    top_short = _dedupe_rows(tables_data.get('top_short', []))
+    for _i_l, _it_l in enumerate(top_long, 1):
+        _it_l['rank'] = _i_l
+    for _i_s, _it_s in enumerate(top_short, 1):
+        _it_s['short_rank'] = _i_s
 
     # 规范化宏观气象键别名对齐
     mw = dict(tables_data.get('macro_weather', {}))
