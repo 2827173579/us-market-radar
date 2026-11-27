@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795793725.781,
-  "updated_at_et": "11-27 10:35 ET",
-  "updated_at_kst": "00:35 KST",
+  "updated_at_ts": 1795793776.036,
+  "updated_at_et": "11-27 10:36 ET",
+  "updated_at_kst": "00:36 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -440,13 +440,6 @@
         "pub_ts": 1795734431.0
       },
       {
-        "title": "SPDR S&P 500 ETF (SPY) Sells $400.1 Million of Apple on Nov. 24",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/spdr-p-500-etf-spy-110357521.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-26 06:03 ET",
-        "pub_ts": 1795691037.0
-      },
-      {
         "title": "Exchange-Traded Funds, Equity Futures Higher Pre-Bell Friday Amid Technology Stock Rebound",
         "url": "https://finance.yahoo.com/markets/stocks/articles/exchange-traded-funds-equity-futures-140653942.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -459,6 +452,13 @@
         "source": "Yahoo Finance",
         "time": "11-27 08:03 ET",
         "pub_ts": 1795784638.0
+      },
+      {
+        "title": "Stock Market Today: Markets Off to a Strong Black Friday Start",
+        "url": "https://247wallst.com/investing/2026/11/27/stock-market-today-markets-off-to-a-strong-black-friday-start/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-27 10:03 ET",
+        "pub_ts": 1795791793.0
       }
     ],
     "DIA": [
@@ -491,11 +491,11 @@
         "pub_ts": 1795187510.0
       },
       {
-        "title": "ETFs Are Net Sellers of American Express (AXP) on Monday",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/etfs-net-sellers-american-express-110338144.html?.tsrc=rss",
+        "title": "Pre-Markets Up Ahead of Shortened Trading Session",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/pre-markets-ahead-shortened-trading-141400040.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-18 06:03 ET",
-        "pub_ts": 1794999818.0
+        "time": "11-27 09:14 ET",
+        "pub_ts": 1795788840.0
       }
     ],
     "SOXX": [
@@ -618,6 +618,13 @@
         "pub_ts": 1795683880.0
       },
       {
+        "title": "Stock Market Today: Markets Off to a Strong Black Friday Start",
+        "url": "https://247wallst.com/investing/2026/11/27/stock-market-today-markets-off-to-a-strong-black-friday-start/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-27 10:03 ET",
+        "pub_ts": 1795791793.0
+      },
+      {
         "title": "iShares Russell 2000 (IWM) Adds Community Financial and Hope Bancorp on Nov. 25",
         "url": "https://finance.yahoo.com/markets/stocks/articles/ishares-russell-2000-iwm-adds-110405784.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -637,13 +644,6 @@
         "source": "Yahoo Finance",
         "time": "11-26 06:04 ET",
         "pub_ts": 1795691065.0
-      },
-      {
-        "title": "The Average Stock Shrugged Off the Tech Slide. History Is Split",
-        "url": "https://www.trefis.com/stock/spx/articles/628711/the-average-stock-shrugged-off-the-tech-slide-history-is-split/2026-11-25?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 17:18 ET",
-        "pub_ts": 1795645095.0
       }
     ],
     "IGV": [
@@ -907,6 +907,27 @@
     ],
     "NVDA": [
       {
+        "title": "Can AI earn a spot in the creative world? Ja Rule think so.",
+        "url": "https://finance.yahoo.com/video/can-ai-earn-a-spot-in-the-creative-world-ja-rule-think-so-152828382.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-27 10:28 ET",
+        "pub_ts": 1795793308.0
+      },
+      {
+        "title": "All these Nvidia headlines are just noise: Why you should keep watching AI spending",
+        "url": "https://finance.yahoo.com/video/all-these-nvidia-headlines-are-just-noise-why-you-should-keep-watching-ai-spending-152236102.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-27 10:22 ET",
+        "pub_ts": 1795792956.0
+      },
+      {
+        "title": "Stocks snap from a $6 trillion washout to a $3 trillion surge as Nvidia, Micron, and SpaceX bounce back",
+        "url": "https://finance.yahoo.com/markets/article/stocks-snap-from-a-6-trillion-washout-to-a-3-trillion-surge-as-nvidia-micron-and-spacex-bounce-back-151218930.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-27 10:12 ET",
+        "pub_ts": 1795792338.0
+      },
+      {
         "title": "SpaceX, Tesla have had a bumpy 2026 thus far: What to know",
         "url": "https://finance.yahoo.com/video/spacex-tesla-have-had-a-bumpy-2026-thus-far-what-to-know-145849441.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -919,27 +940,6 @@
         "source": "Yahoo Finance",
         "time": "11-27 09:57 ET",
         "pub_ts": 1795791447.0
-      },
-      {
-        "title": "How Leopold Aschenbrenner made a $225 million bet on AI infrastructure",
-        "url": "https://finance.yahoo.com/video/leopold-aschenbrenner-made-225-million-143000764.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-27 09:30 ET",
-        "pub_ts": 1795789800.0
-      },
-      {
-        "title": "Nvidia freezing chip orders to four Southeast Asian countries",
-        "url": "https://finance.yahoo.com/video/nvidia-freezing-chip-orders-to-four-southeast-asian-countries-140011925.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-27 09:00 ET",
-        "pub_ts": 1795788011.0
-      },
-      {
-        "title": "Stock Market Today: Dow Jumps 500 Points While Nvidia Wavers; Anthropic, Tesla, SpaceX Rally (Live Coverage)",
-        "url": "https://finance.yahoo.com/m/86a4597f-ee47-3048-ae92-1a56fa4711e5/stock-market-today%3A-dow-jumps.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-27 09:51 ET",
-        "pub_ts": 1795791085.0
       }
     ],
     "AMD": [
@@ -3314,22 +3314,22 @@
     ]
   },
   "ticker_news_ts": {
-    "KORU": 1795792266.234951,
-    "SOXL": 1795792266.234951,
-    "SPY": 1795792266.234951,
-    "DIA": 1795792266.234951,
-    "SOXX": 1795792266.234951,
-    "QQQ": 1795792266.234951,
-    "SMH": 1795792266.234951,
-    "IWM": 1795792266.234951,
-    "IGV": 1795792266.234951,
-    "TLT": 1795792266.234951,
-    "GLD": 1795792266.234951,
-    "SQQQ": 1795792266.234951,
-    "TSM": 1795792266.234951,
-    "VIXY": 1795792266.234951,
-    "SOXS": 1795792266.234951,
-    "NVDA": 1795792266.234951,
+    "KORU": 1795793776.035602,
+    "SOXL": 1795793776.035602,
+    "SPY": 1795793776.035602,
+    "DIA": 1795793776.035602,
+    "SOXX": 1795793776.035602,
+    "QQQ": 1795793776.035602,
+    "SMH": 1795793776.035602,
+    "IWM": 1795793776.035602,
+    "IGV": 1795793776.035602,
+    "TLT": 1795793776.035602,
+    "GLD": 1795793776.035602,
+    "SQQQ": 1795793776.035602,
+    "TSM": 1795793776.035602,
+    "VIXY": 1795793776.035602,
+    "SOXS": 1795793776.035602,
+    "NVDA": 1795793776.035602,
     "AMD": 1795792412.3455942,
     "ASML": 1795792412.3455942,
     "QCOM": 1795792412.3455942,
@@ -3394,7 +3394,7 @@
     "ANT": 1795793159.6453369,
     "XAUUSD": 1795793159.6453369,
     "KOSPI": 1795793159.6453369,
-    "KSTR": 1795792266.234951
+    "KSTR": 1795793776.035602
   },
   "opex_shield": {
     "date": "2026-11-27",
