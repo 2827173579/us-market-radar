@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795739610.927,
-  "updated_at_et": "11-26 19:33 ET",
-  "updated_at_kst": "09:33 KST",
+  "updated_at_ts": 1795739656.099,
+  "updated_at_et": "11-26 19:34 ET",
+  "updated_at_kst": "09:34 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -910,6 +910,13 @@
     ],
     "NVDA": [
       {
+        "title": "These 2 AI Chip Stocks Are Down 36% to 39% From Their Highs. Here’s What History Says Happens Next.",
+        "url": "https://www.fool.com/investing/2026/11/26/these-2-ai-chip-stocks-are-down-36-to-39-from-their-highs-here-s-what-history-says-happens-next/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-26 19:20 ET",
+        "pub_ts": 1795738802.0
+      },
+      {
         "title": "Not Nvidia. Not Micron. If I Could Buy and Hold Only 1 Artificial Intelligence (AI) Semiconductor Stock Through 2030, This Would Be It.",
         "url": "https://www.fool.com/investing/2026/11/26/not-nvidia-not-micron-if-i-could-buy-and-hold-only-1-artificial-intelligence-ai-semiconductor-stock-through-2030-this-would-be-it/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -936,13 +943,6 @@
         "source": "Yahoo Finance",
         "time": "11-26 17:28 ET",
         "pub_ts": 1795732083.0
-      },
-      {
-        "title": "Jensen Huang’s Return Doesn’t Make Nvidia Stock (NVDA) a Buy",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/jensen-huang-return-doesn-t-212200380.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-26 16:22 ET",
-        "pub_ts": 1795728120.0
       }
     ],
     "AMD": [
@@ -3317,23 +3317,23 @@
     ]
   },
   "ticker_news_ts": {
-    "KORU": 1795738118.289032,
-    "SOXL": 1795738118.289032,
-    "SPY": 1795738118.289032,
-    "DIA": 1795738118.289032,
-    "SOXX": 1795738118.289032,
-    "QQQ": 1795738118.289032,
-    "SMH": 1795738118.289032,
-    "IWM": 1795738118.289032,
-    "IGV": 1795738118.289032,
-    "TLT": 1795738118.289032,
-    "GLD": 1795738118.289032,
-    "SQQQ": 1795738118.289032,
+    "KORU": 1795739656.0990326,
+    "SOXL": 1795739656.0990326,
+    "SPY": 1795739656.0990326,
+    "DIA": 1795739656.0990326,
+    "SOXX": 1795739656.0990326,
+    "QQQ": 1795739656.0990326,
+    "SMH": 1795739656.0990326,
+    "IWM": 1795739656.0990326,
+    "IGV": 1795739656.0990326,
+    "TLT": 1795739656.0990326,
+    "GLD": 1795739656.0990326,
+    "SQQQ": 1795739656.0990326,
     "TSM": 1795738197.004122,
-    "VIXY": 1795738118.289032,
-    "SOXS": 1795738118.289032,
-    "NVDA": 1795738118.289032,
-    "AMD": 1795738118.289032,
+    "VIXY": 1795739656.0990326,
+    "SOXS": 1795739656.0990326,
+    "NVDA": 1795739656.0990326,
+    "AMD": 1795739656.0990326,
     "ASML": 1795738197.004122,
     "QCOM": 1795738197.004122,
     "AVGO": 1795738197.004122,
@@ -3348,15 +3348,15 @@
     "CRWV": 1795738321.415931,
     "NBIS": 1795738321.415931,
     "APLD": 1795738321.415931,
-    "VST": 1795738118.289032,
-    "BE": 1795738118.289032,
-    "CRDO": 1795738118.289032,
-    "COHR": 1795738118.289032,
+    "VST": 1795739656.0990326,
+    "BE": 1795739656.0990326,
+    "CRDO": 1795739656.0990326,
+    "COHR": 1795739656.0990326,
     "MRVL": 1795738321.415931,
     "LITE": 1795738321.415931,
-    "AAOI": 1795738118.289032,
-    "SPCX": 1795738118.289032,
-    "ASTS": 1795738118.289032,
+    "AAOI": 1795739656.0990326,
+    "SPCX": 1795739656.0990326,
+    "ASTS": 1795739656.0990326,
     "AXTI": 1795738321.415931,
     "NASA": 1795738197.004122,
     "LUNR": 1795738197.004122,
@@ -3393,11 +3393,11 @@
     "V": 1795738321.415931,
     "CAT": 1795738363.4850469,
     "FN": 1795738321.415931,
-    "GLW": 1795738118.289032,
+    "GLW": 1795739656.0990326,
     "ANT": 1795738363.4850469,
     "XAUUSD": 1795738363.4850469,
     "KOSPI": 1795738321.415931,
-    "KSTR": 1795738118.289032
+    "KSTR": 1795739656.0990326
   },
   "opex_shield": {
     "date": "2026-11-26",
