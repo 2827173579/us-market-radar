@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795800778.308,
-  "updated_at_et": "11-27 12:32 ET",
-  "updated_at_kst": "02:32 KST",
+  "updated_at_ts": 1795800831.415,
+  "updated_at_et": "11-27 12:33 ET",
+  "updated_at_kst": "02:33 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -1950,6 +1950,20 @@
         "pub_ts": 1795791529.0
       },
       {
+        "title": "Sector Update: Consumer Stocks Advance Friday Afternoon",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/sector-consumer-stocks-advance-friday-171212418.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-27 12:12 ET",
+        "pub_ts": 1795799532.0
+      },
+      {
+        "title": "Tesla Rallies 5% Amid SpaceX Merger Speculation; Rivian and SpaceX Rise 3%: Is Tesla’s 439x P/E a Warning Sign?",
+        "url": "https://247wallst.com/investing/2026/11/27/tesla-rallies-5-amid-spacex-merger-speculation-rivian-and-spacex-rise-3-is-teslas-439x-p-e-a-warning-sign/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-27 12:04 ET",
+        "pub_ts": 1795799056.0
+      },
+      {
         "title": "What ARK Autonomous Technology & Robotics ETF (ARKQ) Sold: Tesla Leads on Nov. 25",
         "url": "https://finance.yahoo.com/markets/stocks/articles/ark-autonomous-technology-robotics-etf-110448164.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1962,23 +1976,16 @@
         "source": "Yahoo Finance",
         "time": "11-27 06:04 ET",
         "pub_ts": 1795777460.0
-      },
-      {
-        "title": "What INVESCO QQQ Trust (QQQ) Bought: Apple Leads on Wednesday",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/invesco-qqq-trust-qqq-bought-110329959.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-27 06:03 ET",
-        "pub_ts": 1795777409.0
-      },
-      {
-        "title": "ETFs Are Buying Tesla (TSLA) on Wednesday",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/etfs-buying-tesla-tsla-wednesday-110102240.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-27 06:01 ET",
-        "pub_ts": 1795777262.0
       }
     ],
     "AXP": [
+      {
+        "title": "American Express Expects Another Year of 10% Revenue Growth. Prediction: The Stock Hits $400 in 2028.",
+        "url": "https://www.fool.com/investing/2026/11/27/american-express-expects-another-year-of-10-revenue-growth-prediction-the-stock-hits-usd400-in-2028/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-27 12:05 ET",
+        "pub_ts": 1795799102.0
+      },
       {
         "title": "Can American Express Deliver Mid-Teens EPS Growth in 2027?",
         "url": "https://finance.yahoo.com/markets/stocks/articles/american-express-deliver-mid-teens-125400353.html?.tsrc=rss",
@@ -2006,13 +2013,6 @@
         "source": "Yahoo Finance",
         "time": "11-26 06:15 ET",
         "pub_ts": 1795691700.0
-      },
-      {
-        "title": "Tariffs are back as Anthropic sinks further below its IPO price",
-        "url": "https://finance.yahoo.com/video/tariffs-are-back-as-anthropic-sinks-further-below-its-ipo-price-160524926.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 11:05 ET",
-        "pub_ts": 1795622724.0
       }
     ],
     "RKLB": [
@@ -2135,6 +2135,13 @@
         "pub_ts": 1795794312.0
       },
       {
+        "title": "BC-Most Active Stocks",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/bc-most-active-stocks-153017329.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-27 10:30 ET",
+        "pub_ts": 1795793417.0
+      },
+      {
         "title": "How Much More Could You Lose In Intel Stock?",
         "url": "https://www.trefis.com/stock/intc/articles/629327/how-much-more-could-you-lose-in-intel-stock/2026-11-27?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2154,13 +2161,6 @@
         "source": "Yahoo Finance",
         "time": "11-26 22:14 ET",
         "pub_ts": 1795749256.0
-      },
-      {
-        "title": "Nvidia Cut Its Intel Stake and Bought More SpaceX. Cathie Wood Is Buying Too. Why SPCX Stock Faces a Big Test on December 8.",
-        "url": "https://www.barchart.com/story/news/9022928/nvidia-cut-its-intel-stake-and-bought-more-spacex-cathie-wood-is-buying-too-why-spcx-stock-faces-a-big-test-on-december-8?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-26 14:30 ET",
-        "pub_ts": 1795721403.0
       }
     ],
     "VRT": [
@@ -2239,6 +2239,13 @@
     ],
     "DELL": [
       {
+        "title": "Dell Faces AI Server Shipment Halt as Nvidia Tightens Asia Restrictions",
+        "url": "https://finance.yahoo.com/technology/ai/articles/dell-faces-ai-server-shipment-171229537.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-27 12:12 ET",
+        "pub_ts": 1795799549.0
+      },
+      {
         "title": "Dell delivers record results, but Wall Street sees a catch",
         "url": "https://www.thestreet.com/investing/dell-delivers-record-results-but-wall-street-sees-a-catch?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2265,13 +2272,6 @@
         "source": "Yahoo Finance",
         "time": "11-27 07:22 ET",
         "pub_ts": 1795782123.0
-      },
-      {
-        "title": "Dell’s Operating Costs Fell to “the Lowest in Our Company’s 42-Year History.” The Stock Fell Anyway",
-        "url": "https://www.tikr.com/blog/dells-operating-costs-fell-to-the-lowest-in-our-companys-42-year-history-the-stock-fell-anyway?ref=yahoofinance&tlnk=yf-261127-vmg337f6&.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-27 01:59 ET",
-        "pub_ts": 1795762783.0
       }
     ],
     "OKLO": [
@@ -2394,11 +2394,25 @@
         "pub_ts": 1795792338.0
       },
       {
-        "title": "He was right about AI and still lost $35 billion",
-        "url": "https://finance.yahoo.com/video/ai-still-lost-35-billion-120000023.html?.tsrc=rss",
+        "title": "Micron Faces New AI Memory Threat as Huawei Develops HBM Chip",
+        "url": "https://finance.yahoo.com/technology/ai/articles/micron-faces-ai-memory-threat-171328560.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-27 07:00 ET",
-        "pub_ts": 1795780800.0
+        "time": "11-27 12:13 ET",
+        "pub_ts": 1795799608.0
+      },
+      {
+        "title": "Why Micron Investors Are Giving Thanks After Thanksgiving",
+        "url": "https://www.fool.com/investing/2026/11/27/why-micron-investors-are-giving-thanks-after-thanksgiving/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-27 12:05 ET",
+        "pub_ts": 1795799135.0
+      },
+      {
+        "title": "Micron Stock Jumps Despite GF Securities Slashes DRAM Price Estimates",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/micron-stock-jumps-despite-gf-170306292.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-27 12:03 ET",
+        "pub_ts": 1795798986.0
       },
       {
         "title": "Down 50%, is Micron stock a bargain buy or a value trap?",
@@ -2406,20 +2420,6 @@
         "source": "Yahoo Finance",
         "time": "11-27 10:37 ET",
         "pub_ts": 1795793820.0
-      },
-      {
-        "title": "Micron Stock Is Jumping but There’s Bad News on Memory Prices",
-        "url": "https://finance.yahoo.com/m/ece1bfa4-65fd-3b15-bd9c-6a0f690f08e4/micron-stock-is-jumping-but.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-27 09:58 ET",
-        "pub_ts": 1795791480.0
-      },
-      {
-        "title": "SanDisk Jumps 10% as Investors Return to Beaten-Down Memory Stocks; Micron and SK Hynix Rise 6% Despite TrendForce DRAM Warning",
-        "url": "https://247wallst.com/investing/2026/11/27/sandisk-jumps-10-as-investors-return-to-beaten-down-memory-stocks-micron-and-sk-hynix-rise-6-despite-trendforce-dram-warning/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-27 08:58 ET",
-        "pub_ts": 1795787920.0
       }
     ],
     "SKHY": [
@@ -2586,6 +2586,13 @@
         "pub_ts": 1795798119.0
       },
       {
+        "title": "BC-Most Active Stocks",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/bc-most-active-stocks-153017329.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-27 10:30 ET",
+        "pub_ts": 1795793417.0
+      },
+      {
         "title": "Sandisk, Bloom, Marvell, AMD, Nvidia, HP, and More Stocks That Explain Today’s Market",
         "url": "https://finance.yahoo.com/m/977de44c-fcf5-3369-bcdd-0c3ddc7cfec9/sandisk%2C-bloom%2C-marvell%2C-amd%2C.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2598,13 +2605,6 @@
         "source": "Yahoo Finance",
         "time": "11-27 08:58 ET",
         "pub_ts": 1795787920.0
-      },
-      {
-        "title": "Why SanDisk’s Path to $170 in 2027 Hinges on One Test of Its Multi-Year Contracts",
-        "url": "https://247wallst.com/investing/2026/11/27/why-sandisks-path-to-170-in-2027-hinges-on-one-test-of-its-multi-year-contracts/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-27 08:45 ET",
-        "pub_ts": 1795787122.0
       }
     ],
     "BTC-USD": [
@@ -3355,26 +3355,26 @@
     "SPCX": 1795800148.5943143,
     "ASTS": 1795800778.307954,
     "AXTI": 1795800778.307954,
-    "NASA": 1795799235.776624,
+    "NASA": 1795800831.414948,
     "LUNR": 1795800778.307954,
-    "TSLA": 1795799235.776624,
-    "AXP": 1795799235.776624,
+    "TSLA": 1795800831.414948,
+    "AXP": 1795800831.414948,
     "RKLB": 1795800778.307954,
-    "KO": 1795799235.776624,
+    "KO": 1795800831.414948,
     "FLY": 1795800778.307954,
-    "INTC": 1795799235.776624,
-    "VRT": 1795799235.776624,
-    "HPE": 1795799235.776624,
-    "DELL": 1795799235.776624,
-    "OKLO": 1795799288.606808,
-    "CEG": 1795799288.606808,
-    "FPS": 1795799288.606808,
-    "MU": 1795799288.606808,
-    "SKHY": 1795799288.606808,
-    "WDC": 1795799288.606808,
-    "STX": 1795799288.606808,
+    "INTC": 1795800831.414948,
+    "VRT": 1795800831.414948,
+    "HPE": 1795800831.414948,
+    "DELL": 1795800831.414948,
+    "OKLO": 1795800831.414948,
+    "CEG": 1795800831.414948,
+    "FPS": 1795800831.414948,
+    "MU": 1795800831.414948,
+    "SKHY": 1795800831.414948,
+    "WDC": 1795800831.414948,
+    "STX": 1795800831.414948,
     "MSTR": 1795799288.606808,
-    "SNDK": 1795799288.606808,
+    "SNDK": 1795800831.414948,
     "BTC-USD": 1795799288.606808,
     "CRWD": 1795799288.606808,
     "ORCL": 1795799288.606808,
