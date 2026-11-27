@@ -1,9 +1,23 @@
 {
-  "updated_at_ts": 1795786224.88,
-  "updated_at_et": "11-27 08:30 ET",
-  "updated_at_kst": "22:30 KST",
+  "updated_at_ts": 1795786307.861,
+  "updated_at_et": "11-27 08:31 ET",
+  "updated_at_kst": "22:31 KST",
   "macro_calendar": [],
   "macro_flashes": [
+    {
+      "id": "20261127213056212800",
+      "title": "一周热榜精选：全球AI资产经历情绪过山车！贵金属深跌后能否稳住？",
+      "summary": "黄仁勋复职也救不了AI行情？韩国政府紧急扩容救市基金。美通胀仍火热，特朗普再挥关税大棒！欧佩克+成员国争抢生产配额，胡塞扩大对沙特打击…本周你错过哪些刺激行情？",
+      "keywords": [
+        "关税",
+        "特朗普"
+      ],
+      "pub_ts": 1795786256.0,
+      "time_et": "11-27 08:30 ET",
+      "time_bj": "21:30 BJ",
+      "time_kst": "22:30 KST",
+      "time_display": "08:30 ET / 21:30 BJ"
+    },
     {
       "id": "20261127203948109800",
       "title": "高通胀考验美联储公信力，12月加息50个基点呼声再起",
@@ -329,19 +343,6 @@
       "time_bj": "15:06 BJ",
       "time_kst": "16:06 KST",
       "time_display": "02:06 ET / 15:06 BJ"
-    },
-    {
-      "id": "20261127150034484800",
-      "title": "创业板指收涨11.61%，创2024.10.08以来最大单日涨幅",
-      "summary": "A股收盘，创业板指收涨11.61%，创2024年10月8日以来最大单日涨幅，科创50指数收涨15.07%，北证50指数收涨13.20%，上证指数收涨3.73%；半导体、CPO、光刻机、算力等科技板块全线爆发；沪深京三市近5400股上涨，超400股涨停。",
-      "keywords": [
-        "半导体"
-      ],
-      "pub_ts": 1795762834.0,
-      "time_et": "11-27 02:00 ET",
-      "time_bj": "15:00 BJ",
-      "time_kst": "16:00 KST",
-      "time_display": "02:00 ET / 15:00 BJ"
     }
   ],
   "ticker_news": {
@@ -939,6 +940,20 @@
     ],
     "AMD": [
       {
+        "title": "Advanced Micro Devices (AMD) After AI Data Center Wins Looks Cheap Or Already Priced In",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/advanced-micro-devices-amd-ai-130859777.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-27 08:08 ET",
+        "pub_ts": 1795784939.0
+      },
+      {
+        "title": "Is Buying AMD Stock Now Too Early?",
+        "url": "https://www.trefis.com/stock/amd/articles/629402/is-buying-amd-stock-now-too-early/2026-11-27?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-27 08:02 ET",
+        "pub_ts": 1795784539.0
+      },
+      {
         "title": "Broadcom Makes More AI Money Than AMD—So Why Is AMD’s Stock Crushing It?",
         "url": "https://247wallst.com/investing/2026/11/27/broadcom-makes-more-ai-money-than-amd-so-why-is-amds-stock-crushing-it/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -958,20 +973,6 @@
         "source": "Yahoo Finance",
         "time": "11-27 06:37 ET",
         "pub_ts": 1795779460.0
-      },
-      {
-        "title": "What JPMorgan U.S. Tech Leaders ETF (JTEK) Bought: Synopsys Leads on Nov. 25",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/jpmorgan-u-tech-leaders-etf-110516067.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-27 06:05 ET",
-        "pub_ts": 1795777516.0
-      },
-      {
-        "title": "iShares A.I. Innovation and Tech Active ETF (BAI) Sells Broadcom and AMD on Wednesday",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/ishares-innovation-tech-active-etf-110424675.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-27 06:04 ET",
-        "pub_ts": 1795777464.0
       }
     ],
     "ASML": [
@@ -1013,6 +1014,13 @@
     ],
     "QCOM": [
       {
+        "title": "Does Qualcomm Stock Have A Future?",
+        "url": "https://www.trefis.com/stock/qcom/articles/629363/does-qualcomm-stock-have-a-future/2026-11-27?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-27 07:45 ET",
+        "pub_ts": 1795783529.0
+      },
+      {
         "title": "Why Is Qualcomm Stock Rallying Today?",
         "url": "https://investorshub.advfn.com/market-news/article/40788/why-is-qualcomm-stock-rallying-today?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1039,13 +1047,6 @@
         "source": "Yahoo Finance",
         "time": "11-25 15:23 ET",
         "pub_ts": 1795638210.0
-      },
-      {
-        "title": "Billionaire Brad Gerstner’s Altimeter Opened a $680 Million Tesla Stake and Exited Qualcomm and Applied Materials",
-        "url": "https://247wallst.com/investing/2026/11/25/billionaire-brad-gerstners-altimeter-opened-a-680-million-tesla-stake-and-exited-qualcomm-and-applied-materials/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 15:22 ET",
-        "pub_ts": 1795638121.0
       }
     ],
     "AVGO": [
@@ -1161,6 +1162,20 @@
     ],
     "GOOGL": [
       {
+        "title": "Man accused of ‘trapping’ Waymos and pelting them with eggs",
+        "url": "https://www.independent.co.uk/tech/waymo-trap-denver-protest-egg-robotaxi-b3092659.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-27 08:18 ET",
+        "pub_ts": 1795785491.0
+      },
+      {
+        "title": "Can Microsoft Stock Sustain Margins as AI Data Center Spending Climbs?",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/microsoft-stock-sustain-margins-ai-120300650.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-27 07:03 ET",
+        "pub_ts": 1795780980.0
+      },
+      {
         "title": "Latest News In Cloud AI - Cloudera Advances Data Control With Digital Sovereignty Solution",
         "url": "https://finance.yahoo.com/technology/ai/articles/latest-news-cloud-ai-cloudera-123749135.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1180,20 +1195,6 @@
         "source": "Yahoo Finance",
         "time": "11-27 07:21 ET",
         "pub_ts": 1795782092.0
-      },
-      {
-        "title": "The Next Phase of AI Spending Could Put This Overlooked Stock in the Spotlight",
-        "url": "https://247wallst.com/investing/2026/11/27/the-next-phase-of-ai-spending-could-put-this-overlooked-stock-in-the-spotlight/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-27 07:17 ET",
-        "pub_ts": 1795781869.0
-      },
-      {
-        "title": "Broadcom’s 2027 Bull Case: AI Revenue Doubles to $115B and $230B—Here’s What Finally Unlocks the Stock",
-        "url": "https://247wallst.com/investing/2026/11/27/broadcoms-2027-bull-case-ai-revenue-doubles-to-115b-and-230b-heres-what-finally-unlocks-the-stock/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-27 07:15 ET",
-        "pub_ts": 1795781725.0
       }
     ],
     "MSFT": [
@@ -1212,6 +1213,13 @@
         "pub_ts": 1795782092.0
       },
       {
+        "title": "Can Microsoft Stock Sustain Margins as AI Data Center Spending Climbs?",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/microsoft-stock-sustain-margins-ai-120300650.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-27 07:03 ET",
+        "pub_ts": 1795780980.0
+      },
+      {
         "title": "Fed Blames High Stock Prices Partly on “Enthusiasm for Super Intelligence.” Microsoft Has More to Lose Than Nvidia",
         "url": "https://www.tikr.com/blog/fed-blames-high-stock-prices-partly-on-enthusiasm-for-super-intelligence-microsoft-has-more-to-lose-than-nvidia?ref=yahoofinance&tlnk=yf-261127-26phjg2m&.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1224,22 +1232,29 @@
         "source": "Yahoo Finance",
         "time": "11-27 06:05 ET",
         "pub_ts": 1795777513.0
-      },
-      {
-        "title": "iShares S&P 500 Growth (IVW) Adds Microsoft and Nvidia on Wednesday",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/ishares-p-500-growth-ivw-110506557.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-27 06:05 ET",
-        "pub_ts": 1795777506.0
       }
     ],
     "AAPL": [
+      {
+        "title": "Why Should Apple Stock Holders Watch The December Quarter?",
+        "url": "https://www.trefis.com/stock/aapl/articles/629378/why-should-apple-stock-holders-watch-the-december-quarter/2026-11-27?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-27 07:58 ET",
+        "pub_ts": 1795784287.0
+      },
       {
         "title": "Tech Sell-Off: 1 Unstoppable Stock-Split Stock to Buy Before It Joins Nvidia, Alphabet, Microsoft, and Apple in the $3 Trillion Club",
         "url": "https://www.fool.com/investing/2026/11/27/tech-sell-off-1-unstoppable-stock-split-stock-buy-before-joins-nvidia-alphabet-microsoft-apple-usd3-trillion-club/?.tsrc=rss",
         "source": "Yahoo Finance",
         "time": "11-27 07:37 ET",
         "pub_ts": 1795783022.0
+      },
+      {
+        "title": "Will Rising AI Capex Alter the Free Cash Flow Outlook for Apple Stock?",
+        "url": "https://finance.yahoo.com/technology/ai/articles/rising-ai-capex-alter-free-121600152.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-27 07:16 ET",
+        "pub_ts": 1795781760.0
       },
       {
         "title": "Railtown AI Introduces Model Evaluation Technology to Help Reduce Inference Costs and Expand Model Choice",
@@ -1254,20 +1269,6 @@
         "source": "Yahoo Finance",
         "time": "11-27 06:05 ET",
         "pub_ts": 1795777513.0
-      },
-      {
-        "title": "iShares Paris-Aligned Climate (PABU) Buys $9.4 Million More Apple on Wednesday",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/ishares-paris-aligned-climate-pabu-110455750.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-27 06:04 ET",
-        "pub_ts": 1795777495.0
-      },
-      {
-        "title": "What iShares Russell 1000 ETF (IWB) Bought: Apple Leads on Wednesday",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/ishares-russell-1000-etf-iwb-110439377.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-27 06:04 ET",
-        "pub_ts": 1795777479.0
       }
     ],
     "PLTR": [
@@ -1753,6 +1754,20 @@
     ],
     "SPCX": [
       {
+        "title": "Stock Market Today: Dow Jumps 715 Points As Nvidia Rebounds; Anthropic, SpaceX, Tesla Rally (Live Coverage)",
+        "url": "https://finance.yahoo.com/m/86a4597f-ee47-3048-ae92-1a56fa4711e5/stock-market-today%3A-dow-jumps.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-27 08:07 ET",
+        "pub_ts": 1795784837.0
+      },
+      {
+        "title": "SpaceX Stock Jumps Thanks to AI Rally. Why It Should Be Rising Even More.",
+        "url": "https://finance.yahoo.com/m/4d380fe9-e29b-3b6c-8f18-28ee89ad558e/spacex-stock-jumps-thanks-to.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-27 07:18 ET",
+        "pub_ts": 1795781880.0
+      },
+      {
         "title": "SpaceX Cratered 13.5% This Month: Near 300% Returns to Materialize at Today’s Price According to this Pro Analyst",
         "url": "https://247wallst.com/investing/2026/11/27/spacex-cratered-13-5-this-month-near-300-returns-to-materialize-at-todays-price-according-to-this-pro-analyst/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1772,20 +1787,6 @@
         "source": "Yahoo Finance",
         "time": "11-27 06:30 ET",
         "pub_ts": 1795779008.0
-      },
-      {
-        "title": "Prediction: These Will Be Anthropic’s and SpaceX’s Stock Prices by the End of 2027 (Hint: Both Are Buys)",
-        "url": "https://www.fool.com/investing/2026/11/27/prediction-these-will-be-anthropic-s-and-spacex-s-stock-prices-by-the-end-of-2027-hint-both-are-buys/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-27 06:20 ET",
-        "pub_ts": 1795778402.0
-      },
-      {
-        "title": "ETFs Bought $76.1 Million of SpaceX (SPCX) on Nov. 25",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/etfs-bought-76-1-million-110130440.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-27 06:01 ET",
-        "pub_ts": 1795777290.0
       }
     ],
     "ASTS": [
@@ -3325,29 +3326,29 @@
     "VIXY": 1795786173.3539343,
     "SOXS": 1795786173.3539343,
     "NVDA": 1795786173.3539343,
-    "AMD": 1795784807.8045876,
-    "ASML": 1795784807.8045876,
-    "QCOM": 1795784807.8045876,
-    "AVGO": 1795784807.8045876,
-    "AMAT": 1795784807.8045876,
-    "META": 1795784807.8045876,
-    "GOOGL": 1795784807.8045876,
-    "MSFT": 1795784807.8045876,
-    "AAPL": 1795784807.8045876,
+    "AMD": 1795786307.8609195,
+    "ASML": 1795786307.8609195,
+    "QCOM": 1795786307.8609195,
+    "AVGO": 1795786307.8609195,
+    "AMAT": 1795786307.8609195,
+    "META": 1795786307.8609195,
+    "GOOGL": 1795786307.8609195,
+    "MSFT": 1795786307.8609195,
+    "AAPL": 1795786307.8609195,
     "PLTR": 1795785296.7063906,
     "NOW": 1795785296.7063906,
     "AMZN": 1795785296.7063906,
     "CRWV": 1795785296.7063906,
     "NBIS": 1795785296.7063906,
     "APLD": 1795785296.7063906,
-    "VST": 1795784807.8045876,
-    "BE": 1795784807.8045876,
-    "CRDO": 1795784807.8045876,
-    "COHR": 1795784807.8045876,
+    "VST": 1795786307.8609195,
+    "BE": 1795786307.8609195,
+    "CRDO": 1795786307.8609195,
+    "COHR": 1795786307.8609195,
     "MRVL": 1795785296.7063906,
     "LITE": 1795785296.7063906,
     "AAOI": 1795785296.7063906,
-    "SPCX": 1795784807.8045876,
+    "SPCX": 1795786307.8609195,
     "ASTS": 1795785296.7063906,
     "AXTI": 1795785296.7063906,
     "NASA": 1795785296.7063906,
@@ -3408,7 +3409,7 @@
   "calendar_banner": {
     "level": "idle_with_flash",
     "headline": "📡 宏观消息面监控中 · 今日暂无美股五星级经济数据大考",
-    "detail": "⚡ 最新核心快讯 (07:39 ET / 20:39 BJ) [美联储] [加息]：美国通胀持续偏离2%的政策目标，市场已充分计入12月加息25个基点。分析师认为，为维护货币政策公信力，美联储应考虑加息50个基点。点击查看…",
+    "detail": "⚡ 最新核心快讯 (08:30 ET / 21:30 BJ) [关税] [特朗普]：黄仁勋复职也救不了AI行情？韩国政府紧急扩容救市基金。美通胀仍火热，特朗普再挥关税大棒！欧佩克+成员国争抢生产配额，胡塞扩大对沙特打击…本周你错过哪些刺激行情？",
     "event_name": "",
     "minutes_left": 0,
     "opex_shield": {
