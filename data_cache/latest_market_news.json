@@ -1,9 +1,23 @@
 {
-  "updated_at_ts": 1795789823.459,
-  "updated_at_et": "11-27 09:30 ET",
-  "updated_at_kst": "23:30 KST",
+  "updated_at_ts": 1795789906.814,
+  "updated_at_et": "11-27 09:31 ET",
+  "updated_at_kst": "23:31 KST",
   "macro_calendar": [],
   "macro_flashes": [
+    {
+      "id": "20261127223027483800",
+      "title": "【美股三大股指高开 大型科技股普涨】 11月27日讯，美股开盘，三大股指高开，道指涨0.…",
+      "summary": "【美股三大股指高开 大型科技股普涨】 11月27日讯，美股开盘，三大股指高开，道指涨0.93%，标普500指数涨1.18%，纳指涨1.58%。大型科技股普遍上涨，英伟达(NVDA.O)涨1.6%，Anthropic(ANT.O)涨超2%。",
+      "keywords": [
+        "英伟达",
+        "标普"
+      ],
+      "pub_ts": 1795789827.0,
+      "time_et": "11-27 09:30 ET",
+      "time_bj": "22:30 BJ",
+      "time_kst": "23:30 KST",
+      "time_display": "09:30 ET / 22:30 BJ"
+    },
     {
       "id": "20261127214454398800",
       "title": "整理：每日美股市场要闻速递（2026-11-27）",
@@ -331,19 +345,6 @@
       "time_bj": "15:42 BJ",
       "time_kst": "16:42 KST",
       "time_display": "02:42 ET / 15:42 BJ"
-    },
-    {
-      "id": "20261127153500001800",
-      "title": "法国第三季度GDP年率终值、11月CPI月率初值将于十分钟后公布。",
-      "summary": "法国第三季度GDP年率终值、11月CPI月率初值将于十分钟后公布。",
-      "keywords": [
-        "CPI"
-      ],
-      "pub_ts": 1795764900.0,
-      "time_et": "11-27 02:35 ET",
-      "time_bj": "15:35 BJ",
-      "time_kst": "16:35 KST",
-      "time_display": "02:35 ET / 15:35 BJ"
     }
   ],
   "ticker_news": {
@@ -1792,6 +1793,13 @@
     ],
     "ASTS": [
       {
+        "title": "AST SpaceMobile Gains 2% Despite Berenberg’s Price Target Cut to $30, Rocket Lab Climbs 5% After Electron Launch; Cathie Wood-Backed SpaceX Rises 3%",
+        "url": "https://247wallst.com/investing/2026/11/27/ast-spacemobile-gains-2-despite-berenbergs-price-target-cut-to-30-rocket-lab-climbs-5-after-electron-launch-cathie-wood-backed-spacex-rises-3/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-27 09:04 ET",
+        "pub_ts": 1795788292.0
+      },
+      {
         "title": "ASTS Stock’s New Target By Berenberg Shows A 67% Cut – Analyst Says Satellite Launch Delays Hurt Revenue Ramp",
         "url": "https://stocktwits.com/news-articles/markets/equity/asts-stock-new-target-by-berenberg-shows-a-67-cut-analyst-says-satellite-launch-delays-hurt-revenue-ramp/cNbCHQXR9N6?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1818,13 +1826,6 @@
         "source": "Yahoo Finance",
         "time": "11-27 01:46 ET",
         "pub_ts": 1795761965.0
-      },
-      {
-        "title": "AST SpaceMobile Is Still Down 64% in 2026. Can Insider Buying and a B. Riley Upgrade Get ASTS Stock Back to $40?",
-        "url": "https://247wallst.com/investing/2026/11/26/ast-spacemobile-is-still-down-64-in-2026-can-insider-buying-and-a-b-riley-upgrade-get-asts-stock-back-to-40/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-26 10:04 ET",
-        "pub_ts": 1795705486.0
       }
     ],
     "AXTI": [
@@ -2014,6 +2015,13 @@
     ],
     "RKLB": [
       {
+        "title": "AST SpaceMobile Gains 2% Despite Berenberg’s Price Target Cut to $30, Rocket Lab Climbs 5% After Electron Launch; Cathie Wood-Backed SpaceX Rises 3%",
+        "url": "https://247wallst.com/investing/2026/11/27/ast-spacemobile-gains-2-despite-berenbergs-price-target-cut-to-30-rocket-lab-climbs-5-after-electron-launch-cathie-wood-backed-spacex-rises-3/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-27 09:04 ET",
+        "pub_ts": 1795788292.0
+      },
+      {
         "title": "Rocket Lab Secures $515 Million in Neutron Launch Orders Ahead of 2027 Debut",
         "url": "https://finance.yahoo.com/technology/articles/rocket-lab-secures-515-million-113935296.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2040,16 +2048,23 @@
         "source": "Yahoo Finance",
         "time": "11-26 10:43 ET",
         "pub_ts": 1795707782.0
-      },
-      {
-        "title": "AST SpaceMobile Is Still Down 64% in 2026. Can Insider Buying and a B. Riley Upgrade Get ASTS Stock Back to $40?",
-        "url": "https://247wallst.com/investing/2026/11/26/ast-spacemobile-is-still-down-64-in-2026-can-insider-buying-and-a-b-riley-upgrade-get-asts-stock-back-to-40/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-26 10:04 ET",
-        "pub_ts": 1795705486.0
       }
     ],
     "KO": [
+      {
+        "title": "If This Dividend King Doubles, Here’s What $10,000 Could Become",
+        "url": "https://247wallst.com/investing/2026/11/27/if-this-dividend-king-doubles-heres-what-10000-could-become/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-27 09:04 ET",
+        "pub_ts": 1795788245.0
+      },
+      {
+        "title": "Is Coca-Cola Stock Outperforming the Dow?",
+        "url": "https://www.barchart.com/story/news/9028491/is-coca-cola-stock-outperforming-the-dow?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-27 03:17 ET",
+        "pub_ts": 1795767478.0
+      },
       {
         "title": "The Coca-Cola Company and Gutsche Family Investments Close on Sale of Controlling Interest in Coca-Cola Beverages Africa to Coca-Cola HBC AG",
         "url": "https://finance.yahoo.com/markets/stocks/articles/coca-cola-company-gutsche-family-075100177.html?.tsrc=rss",
@@ -2070,20 +2085,6 @@
         "source": "Yahoo Finance",
         "time": "11-26 09:51 ET",
         "pub_ts": 1795704662.0
-      },
-      {
-        "title": "Coca-Cola vs. Keurig Dr Pepper: Which Beverage Stock Looks Stronger?",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/coca-cola-vs-keurig-dr-135000666.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-26 08:50 ET",
-        "pub_ts": 1795701000.0
-      },
-      {
-        "title": "3 Dividend Kings Retirees Can Own for the Rest of Their Lives",
-        "url": "https://247wallst.com/investing/2026/11/26/3-dividend-kings-retirees-can-own-for-the-rest-of-their-lives/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-26 08:32 ET",
-        "pub_ts": 1795699976.0
       }
     ],
     "FLY": [
@@ -3336,29 +3337,29 @@
     "GOOGL": 1795789383.414314,
     "MSFT": 1795789383.414314,
     "AAPL": 1795789383.414314,
-    "PLTR": 1795788344.7845988,
-    "NOW": 1795788344.7845988,
-    "AMZN": 1795788344.7845988,
-    "CRWV": 1795788344.7845988,
-    "NBIS": 1795788344.7845988,
-    "APLD": 1795788344.7845988,
+    "PLTR": 1795789906.8144388,
+    "NOW": 1795789906.8144388,
+    "AMZN": 1795789906.8144388,
+    "CRWV": 1795789906.8144388,
+    "NBIS": 1795789906.8144388,
+    "APLD": 1795789906.8144388,
     "VST": 1795789383.414314,
     "BE": 1795789383.414314,
     "CRDO": 1795789383.414314,
     "COHR": 1795789383.414314,
-    "MRVL": 1795788344.7845988,
-    "LITE": 1795788344.7845988,
-    "AAOI": 1795788344.7845988,
+    "MRVL": 1795789906.8144388,
+    "LITE": 1795789906.8144388,
+    "AAOI": 1795789906.8144388,
     "SPCX": 1795789383.414314,
-    "ASTS": 1795788344.7845988,
-    "AXTI": 1795788344.7845988,
-    "NASA": 1795788344.7845988,
-    "LUNR": 1795788344.7845988,
+    "ASTS": 1795789906.8144388,
+    "AXTI": 1795789906.8144388,
+    "NASA": 1795789906.8144388,
+    "LUNR": 1795789906.8144388,
     "TSLA": 1795788500.8149033,
-    "AXP": 1795788344.7845988,
-    "RKLB": 1795788344.7845988,
-    "KO": 1795788344.7845988,
-    "FLY": 1795788344.7845988,
+    "AXP": 1795789906.8144388,
+    "RKLB": 1795789906.8144388,
+    "KO": 1795789906.8144388,
+    "FLY": 1795789906.8144388,
     "INTC": 1795788500.8149033,
     "VRT": 1795788500.8149033,
     "HPE": 1795788500.8149033,
@@ -3386,8 +3387,8 @@
     "WMT": 1795788600.488416,
     "V": 1795788600.488416,
     "CAT": 1795788600.488416,
-    "FN": 1795788344.7845988,
-    "GLW": 1795788344.7845988,
+    "FN": 1795789906.8144388,
+    "GLW": 1795789906.8144388,
     "ANT": 1795788600.488416,
     "XAUUSD": 1795788600.488416,
     "KOSPI": 1795788600.488416,
@@ -3410,7 +3411,7 @@
   "calendar_banner": {
     "level": "idle_with_flash",
     "headline": "📡 宏观消息面监控中 · 今日暂无美股五星级经济数据大考",
-    "detail": "⚡ 最新核心快讯 (08:44 ET / 21:44 BJ) [芯片] [英伟达] [苹果]：重要新闻 1. 美国感恩节翌日(11月27日)，美国股市将提前于北京时间28日02:00休市。 个股新闻 1. 据Barchart数据，市场对英伟达(NVDA.O)信用违约风险定价已达到历史",
+    "detail": "⚡ 最新核心快讯 (09:30 ET / 22:30 BJ) [英伟达] [标普]：【美股三大股指高开 大型科技股普涨】 11月27日讯，美股开盘，三大股指高开，道指涨0.93%，标普500指数涨1.18%，纳指涨1.58%。大型科技股普遍上涨，英伟达(NVDA.O)涨1.",
     "event_name": "",
     "minutes_left": 0,
     "opex_shield": {
