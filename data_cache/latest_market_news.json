@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795786124.834,
-  "updated_at_et": "11-27 08:28 ET",
-  "updated_at_kst": "22:28 KST",
+  "updated_at_ts": 1795786173.354,
+  "updated_at_et": "11-27 08:29 ET",
+  "updated_at_kst": "22:29 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -442,18 +442,18 @@
         "pub_ts": 1795691037.0
       },
       {
+        "title": "JEPI Gets the Attention. JPMorgan’s 0.12% Quality ETF Has Quietly Grown Past $9 Billion",
+        "url": "https://247wallst.com/investing/etf/2026/11/27/jepi-gets-the-attention-jpmorgans-0-12-quality-etf-has-quietly-grown-past-9-billion/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-27 08:03 ET",
+        "pub_ts": 1795784638.0
+      },
+      {
         "title": "Own Palo Alto Stock? Watch Its Deferred Revenue",
         "url": "https://www.trefis.com/stock/panw/articles/629187/own-palo-alto-stock-watch-its-deferred-revenue/2026-11-26?.tsrc=rss",
         "source": "Yahoo Finance",
         "time": "11-26 06:15 ET",
         "pub_ts": 1795691719.0
-      },
-      {
-        "title": "ETFs Are Net Sellers of Thermo Fisher (TMO) on Nov. 24",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/etfs-net-sellers-thermo-fisher-110336584.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-26 06:03 ET",
-        "pub_ts": 1795691016.0
       }
     ],
     "DIA": [
@@ -909,11 +909,25 @@
         "pub_ts": 1795783742.0
       },
       {
-        "title": "He was right about AI and still lost $35 billion",
-        "url": "https://finance.yahoo.com/video/ai-still-lost-35-billion-120000023.html?.tsrc=rss",
+        "title": "Stock Market Today: Dow Jumps 715 Points As Nvidia Rebounds; Anthropic, SpaceX, Tesla Rally (Live Coverage)",
+        "url": "https://finance.yahoo.com/m/86a4597f-ee47-3048-ae92-1a56fa4711e5/stock-market-today%3A-dow-jumps.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-27 07:00 ET",
-        "pub_ts": 1795780800.0
+        "time": "11-27 08:07 ET",
+        "pub_ts": 1795784837.0
+      },
+      {
+        "title": "Nvidia Blackwell Chips Turn Up at China Site Tied to Alice Huang",
+        "url": "https://finance.yahoo.com/video/nvidia-blackwell-chips-turn-china-124506631.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-27 07:45 ET",
+        "pub_ts": 1795783506.0
+      },
+      {
+        "title": "Nvidia Chips Turn Up at China Site Linked to Alice Huang",
+        "url": "https://finance.yahoo.com/video/nvidia-chips-turn-china-linked-124500841.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-27 07:45 ET",
+        "pub_ts": 1795783500.0
       },
       {
         "title": "Nvidia Blackwell chips found in Shanghai data center tied to Alice Huang",
@@ -921,20 +935,6 @@
         "source": "Yahoo Finance",
         "time": "11-27 07:40 ET",
         "pub_ts": 1795783208.0
-      },
-      {
-        "title": "Trump Wants a GDP Investigation Over the “Fake” Pre-Election Number",
-        "url": "https://247wallst.com/investing/2026/11/27/trump-wants-a-gdp-investigation-over-the-fake-pre-election-number/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-27 07:38 ET",
-        "pub_ts": 1795783135.0
-      },
-      {
-        "title": "Tech Sell-Off: 1 Unstoppable Stock-Split Stock to Buy Before It Joins Nvidia, Alphabet, Microsoft, and Apple in the $3 Trillion Club",
-        "url": "https://www.fool.com/investing/2026/11/27/tech-sell-off-1-unstoppable-stock-split-stock-buy-before-joins-nvidia-alphabet-microsoft-apple-usd3-trillion-club/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-27 07:37 ET",
-        "pub_ts": 1795783022.0
       }
     ],
     "AMD": [
@@ -3309,22 +3309,22 @@
     ]
   },
   "ticker_news_ts": {
-    "KORU": 1795784658.8640833,
-    "SOXL": 1795784658.8640833,
-    "SPY": 1795784658.8640833,
-    "DIA": 1795784658.8640833,
-    "SOXX": 1795784658.8640833,
-    "QQQ": 1795784658.8640833,
-    "SMH": 1795784658.8640833,
-    "IWM": 1795784658.8640833,
-    "IGV": 1795784658.8640833,
-    "TLT": 1795784658.8640833,
-    "GLD": 1795784658.8640833,
-    "SQQQ": 1795784658.8640833,
-    "TSM": 1795784658.8640833,
-    "VIXY": 1795784658.8640833,
-    "SOXS": 1795784658.8640833,
-    "NVDA": 1795784658.8640833,
+    "KORU": 1795786173.3539343,
+    "SOXL": 1795786173.3539343,
+    "SPY": 1795786173.3539343,
+    "DIA": 1795786173.3539343,
+    "SOXX": 1795786173.3539343,
+    "QQQ": 1795786173.3539343,
+    "SMH": 1795786173.3539343,
+    "IWM": 1795786173.3539343,
+    "IGV": 1795786173.3539343,
+    "TLT": 1795786173.3539343,
+    "GLD": 1795786173.3539343,
+    "SQQQ": 1795786173.3539343,
+    "TSM": 1795786173.3539343,
+    "VIXY": 1795786173.3539343,
+    "SOXS": 1795786173.3539343,
+    "NVDA": 1795786173.3539343,
     "AMD": 1795784807.8045876,
     "ASML": 1795784807.8045876,
     "QCOM": 1795784807.8045876,
@@ -3389,7 +3389,7 @@
     "ANT": 1795785547.890979,
     "XAUUSD": 1795785547.890979,
     "KOSPI": 1795785547.890979,
-    "KSTR": 1795784658.8640833
+    "KSTR": 1795786173.3539343
   },
   "opex_shield": {
     "date": "2026-11-27",
