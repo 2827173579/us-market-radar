@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795777116.672,
-  "updated_at_et": "11-27 05:58 ET",
-  "updated_at_kst": "19:58 KST",
+  "updated_at_ts": 1795777168.925,
+  "updated_at_et": "11-27 05:59 ET",
+  "updated_at_kst": "19:59 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -1160,6 +1160,20 @@
     ],
     "GOOGL": [
       {
+        "title": "SpaceX's AI Business Is Now Nearly Half of Revenue. Here's What Happens to the Stock if Google and Anthropic Both Renew.",
+        "url": "https://www.fool.com/investing/2026/11/27/spacexs-ai-business-is-now-nearly-half-of-revenue/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-27 05:26 ET",
+        "pub_ts": 1795775160.0
+      },
+      {
+        "title": "Tesla’s Robotaxi Promises “More Cars, Less $” as Its Dallas Zone Grows 83.5%",
+        "url": "https://www.tikr.com/blog/teslas-robotaxi-promises-more-cars-less-as-its-dallas-zone-grows-83-5?ref=yahoofinance&tlnk=yf-261127-v78qcfqp&.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-27 04:35 ET",
+        "pub_ts": 1795772131.0
+      },
+      {
         "title": "Cold Water for Grok: Musk Says SpaceX Is “Not Yet Even on the Podium” in AI",
         "url": "https://www.tikr.com/blog/cold-water-for-grok-musk-says-spacex-is-not-yet-even-on-the-podium-in-ai?ref=yahoofinance&tlnk=yf-261127-vwccc637&.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1179,20 +1193,6 @@
         "source": "Yahoo Finance",
         "time": "11-26 22:08 ET",
         "pub_ts": 1795748936.0
-      },
-      {
-        "title": "‘How Can TSLA Compete With Waymo?’ Gary Black Questions Tesla’s Robotaxi Strategy, Predicts Waymo Will Lead in Miles and Trips",
-        "url": "https://finance.yahoo.com/technology/articles/tsla-compete-waymo-gary-black-013007370.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-26 20:30 ET",
-        "pub_ts": 1795743007.0
-      },
-      {
-        "title": "Jim Lebenthal Says This Is “a Correction, Not Something Worse.” Why He’s Buying More Alphabet",
-        "url": "https://247wallst.com/investing/2026/11/26/jim-lebenthal-says-this-is-a-correction-not-something-worse-why-hes-buying-more-alphabet/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-26 17:07 ET",
-        "pub_ts": 1795730875.0
       }
     ],
     "MSFT": [
@@ -1752,6 +1752,13 @@
     ],
     "SPCX": [
       {
+        "title": "SpaceX's AI Business Is Now Nearly Half of Revenue. Here's What Happens to the Stock if Google and Anthropic Both Renew.",
+        "url": "https://www.fool.com/investing/2026/11/27/spacexs-ai-business-is-now-nearly-half-of-revenue/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-27 05:26 ET",
+        "pub_ts": 1795775160.0
+      },
+      {
         "title": "Gwynne Shotwell Joins Musk’s SpaceX Gift to Trump Accounts, Now an $18 Billion Share Donation",
         "url": "https://www.tikr.com/blog/gwynne-shotwell-joins-musks-spacex-gift-to-trump-accounts-now-an-18-billion-share-donation?ref=yahoofinance&tlnk=yf-261127-jm758hgr&.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1778,13 +1785,6 @@
         "source": "Yahoo Finance",
         "time": "11-26 22:53 ET",
         "pub_ts": 1795751582.0
-      },
-      {
-        "title": "Cold Water for Grok: Musk Says SpaceX Is “Not Yet Even on the Podium” in AI",
-        "url": "https://www.tikr.com/blog/cold-water-for-grok-musk-says-spacex-is-not-yet-even-on-the-podium-in-ai?ref=yahoofinance&tlnk=yf-261127-vwccc637&.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-26 22:22 ET",
-        "pub_ts": 1795749723.0
       }
     ],
     "ASTS": [
@@ -3324,29 +3324,29 @@
     "VIXY": 1795777060.5641994,
     "SOXS": 1795777060.5641994,
     "NVDA": 1795777060.5641994,
-    "AMD": 1795775649.2141895,
-    "ASML": 1795775649.2141895,
-    "QCOM": 1795775649.2141895,
-    "AVGO": 1795775649.2141895,
-    "AMAT": 1795775649.2141895,
-    "META": 1795775649.2141895,
-    "GOOGL": 1795775649.2141895,
-    "MSFT": 1795775649.2141895,
-    "AAPL": 1795775649.2141895,
+    "AMD": 1795777168.9245915,
+    "ASML": 1795777168.9245915,
+    "QCOM": 1795777168.9245915,
+    "AVGO": 1795777168.9245915,
+    "AMAT": 1795777168.9245915,
+    "META": 1795777168.9245915,
+    "GOOGL": 1795777168.9245915,
+    "MSFT": 1795777168.9245915,
+    "AAPL": 1795777168.9245915,
     "PLTR": 1795775704.3863518,
     "NOW": 1795775704.3863518,
     "AMZN": 1795775704.3863518,
     "CRWV": 1795775704.3863518,
     "NBIS": 1795775704.3863518,
     "APLD": 1795775704.3863518,
-    "VST": 1795775649.2141895,
-    "BE": 1795775649.2141895,
-    "CRDO": 1795775649.2141895,
-    "COHR": 1795775649.2141895,
+    "VST": 1795777168.9245915,
+    "BE": 1795777168.9245915,
+    "CRDO": 1795777168.9245915,
+    "COHR": 1795777168.9245915,
     "MRVL": 1795775704.3863518,
     "LITE": 1795775759.5065196,
-    "AAOI": 1795775649.2141895,
-    "SPCX": 1795775649.2141895,
+    "AAOI": 1795777168.9245915,
+    "SPCX": 1795777168.9245915,
     "ASTS": 1795775704.3863518,
     "AXTI": 1795775759.5065196,
     "NASA": 1795775704.3863518,
@@ -3384,7 +3384,7 @@
     "V": 1795775920.3715477,
     "CAT": 1795775920.3715477,
     "FN": 1795775759.5065196,
-    "GLW": 1795775649.2141895,
+    "GLW": 1795777168.9245915,
     "ANT": 1795775920.3715477,
     "XAUUSD": 1795775920.3715477,
     "KOSPI": 1795775759.5065196,
