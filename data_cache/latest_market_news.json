@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795752166.284,
-  "updated_at_et": "11-26 23:02 ET",
-  "updated_at_kst": "13:02 KST",
+  "updated_at_ts": 1795752229.76,
+  "updated_at_et": "11-26 23:03 ET",
+  "updated_at_kst": "13:03 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -1042,6 +1042,13 @@
     ],
     "AVGO": [
       {
+        "title": "Why Redburn Downgraded Broadcom (AVGO) Despite Surging AI Revenue",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/why-redburn-downgraded-broadcom-avgo-035057918.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-26 22:50 ET",
+        "pub_ts": 1795751457.0
+      },
+      {
         "title": "Broadcom (AVGO) Could Be the Biggest Winner From the Shift to Custom AI Chips",
         "url": "https://finance.yahoo.com/technology/ai/articles/broadcom-avgo-could-biggest-winner-031533044.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1068,16 +1075,16 @@
         "source": "Yahoo Finance",
         "time": "11-26 09:03 ET",
         "pub_ts": 1795701821.0
-      },
-      {
-        "title": "Heading Into FY27: How to Trade Broadcom’s ~$115B AI Target Against Nvidia’s Multiple Reset",
-        "url": "https://247wallst.com/investing/2026/11/26/heading-into-fy27-how-to-trade-broadcoms-115b-ai-target-against-nvidias-multiple-reset/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-26 08:45 ET",
-        "pub_ts": 1795700733.0
       }
     ],
     "AMAT": [
+      {
+        "title": "Why Summit Insights Downgraded Applied Materials (AMAT) After Record Results",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/why-summit-insights-downgraded-applied-034833923.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-26 22:48 ET",
+        "pub_ts": 1795751313.0
+      },
       {
         "title": "Applied Materials Stocks Fall 3.89% as UBS Trims Target and China Curbs Loom",
         "url": "https://finance.yahoo.com/markets/stocks/articles/applied-materials-stocks-fall-3-183452125.html?.tsrc=rss",
@@ -1105,13 +1112,6 @@
         "source": "Yahoo Finance",
         "time": "11-25 19:53 ET",
         "pub_ts": 1795654402.0
-      },
-      {
-        "title": "Applied Materials (AMAT) Falls In Chip Selloff, Is It 44% Undervalued?",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/applied-materials-amat-falls-chip-003412379.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 19:34 ET",
-        "pub_ts": 1795653252.0
       }
     ],
     "META": [
@@ -3313,19 +3313,19 @@
     "TLT": 1795751805.189166,
     "GLD": 1795751805.189166,
     "SQQQ": 1795751805.189166,
-    "TSM": 1795750696.6901546,
+    "TSM": 1795752229.7597258,
     "VIXY": 1795751805.189166,
     "SOXS": 1795751805.189166,
     "NVDA": 1795751805.189166,
     "AMD": 1795751860.5515761,
-    "ASML": 1795750696.6901546,
-    "QCOM": 1795750696.6901546,
-    "AVGO": 1795750696.6901546,
-    "AMAT": 1795750696.6901546,
-    "META": 1795750696.6901546,
-    "GOOGL": 1795750696.6901546,
-    "MSFT": 1795750696.6901546,
-    "AAPL": 1795750696.6901546,
+    "ASML": 1795752229.7597258,
+    "QCOM": 1795752229.7597258,
+    "AVGO": 1795752229.7597258,
+    "AMAT": 1795752229.7597258,
+    "META": 1795752229.7597258,
+    "GOOGL": 1795752229.7597258,
+    "MSFT": 1795752229.7597258,
+    "AAPL": 1795752229.7597258,
     "PLTR": 1795750768.502769,
     "NOW": 1795750768.502769,
     "AMZN": 1795750768.502769,
@@ -3342,14 +3342,14 @@
     "SPCX": 1795751860.5515761,
     "ASTS": 1795751860.5515761,
     "AXTI": 1795750768.502769,
-    "NASA": 1795750696.6901546,
-    "LUNR": 1795750696.6901546,
-    "TSLA": 1795750696.6901546,
-    "AXP": 1795750696.6901546,
-    "RKLB": 1795750696.6901546,
-    "KO": 1795750696.6901546,
-    "FLY": 1795750696.6901546,
-    "INTC": 1795750696.6901546,
+    "NASA": 1795752229.7597258,
+    "LUNR": 1795752229.7597258,
+    "TSLA": 1795752229.7597258,
+    "AXP": 1795752229.7597258,
+    "RKLB": 1795752229.7597258,
+    "KO": 1795752229.7597258,
+    "FLY": 1795752229.7597258,
+    "INTC": 1795752229.7597258,
     "VRT": 1795750768.502769,
     "HPE": 1795750768.502769,
     "DELL": 1795750768.502769,
