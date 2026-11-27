@@ -50,8 +50,8 @@
       "last_notified_at": 0.0
     },
     "FLY": {
-      "state": "WATCHLIST_ENTRY_READY",
-      "last_notified_at": 1795801631.196411
+      "state": "NORMAL",
+      "last_notified_at": 0.0
     },
     "LLY": {
       "state": "NORMAL",
@@ -178,8 +178,8 @@
       "last_notified_at": 1795615946.2530591
     },
     "PLTR": {
-      "state": "NORMAL",
-      "last_notified_at": 0.0
+      "state": "WATCHLIST_ENTRY_READY",
+      "last_notified_at": 1795801768.9512691
     },
     "AVGO": {
       "state": "NORMAL",
