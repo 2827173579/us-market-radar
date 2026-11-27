@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795741130.892,
-  "updated_at_et": "11-26 19:58 ET",
-  "updated_at_kst": "09:58 KST",
+  "updated_at_ts": 1795741166.964,
+  "updated_at_et": "11-26 19:59 ET",
+  "updated_at_kst": "09:59 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -946,6 +946,13 @@
     ],
     "AMD": [
       {
+        "title": "KHC, PINS, AMD: 3 Bets I’d Consider Waging From Thanksgiving Eve’s Top 25 Unusually Active Options",
+        "url": "https://www.barchart.com/story/news/9022595/khc-pins-amd-3-bets-id-consider-waging-from-thanksgiving-eves-top-25-unusually-active-options?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-26 13:30 ET",
+        "pub_ts": 1795717804.0
+      },
+      {
         "title": "AMD Stocks Slip 1.75% After Filing Registers 337 Million Shares for Resale",
         "url": "https://finance.yahoo.com/markets/stocks/articles/amd-stocks-slip-1-75-182928246.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -972,13 +979,6 @@
         "source": "Yahoo Finance",
         "time": "11-26 06:23 ET",
         "pub_ts": 1795692219.0
-      },
-      {
-        "title": "Cathie Wood and Philippe Laffont Are on Opposite Sides of AMD Stock. Here's Who I Think Is Right.",
-        "url": "https://www.fool.com/investing/2026/11/26/cathie-wood-and-philippe-laffont-are-on-opposite-sides-of-amd-stock-here-s-who-i-think-is-right/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-26 06:13 ET",
-        "pub_ts": 1795691582.0
       }
     ],
     "ASML": [
@@ -1760,6 +1760,13 @@
     ],
     "SPCX": [
       {
+        "title": "Mexico wants a say in where SpaceX flies — says harmful rocket debris keeps washing up on its shores",
+        "url": "https://finance.yahoo.com/economy/policy/articles/mexico-wants-where-spacex-flies-003000153.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-26 19:30 ET",
+        "pub_ts": 1795739400.0
+      },
+      {
         "title": "Musk says he will donate another SpaceX share to American kids annually",
         "url": "https://finance.yahoo.com/markets/stocks/articles/musk-says-donate-another-spacex-000147660.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1786,13 +1793,6 @@
         "source": "Yahoo Finance",
         "time": "11-26 15:56 ET",
         "pub_ts": 1795726562.0
-      },
-      {
-        "title": "SpaceX gets approval to deploy 1 million satellites for data centers in space",
-        "url": "https://www.independent.co.uk/tech/elon-musk-spacex-data-centre-satellites-b3092444.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-26 15:37 ET",
-        "pub_ts": 1795725435.0
       }
     ],
     "ASTS": [
@@ -3316,23 +3316,23 @@
     ]
   },
   "ticker_news_ts": {
-    "KORU": 1795739656.0990326,
-    "SOXL": 1795739656.0990326,
-    "SPY": 1795739656.0990326,
-    "DIA": 1795739656.0990326,
-    "SOXX": 1795739656.0990326,
-    "QQQ": 1795739656.0990326,
-    "SMH": 1795739656.0990326,
-    "IWM": 1795739656.0990326,
-    "IGV": 1795739656.0990326,
-    "TLT": 1795739656.0990326,
-    "GLD": 1795739656.0990326,
-    "SQQQ": 1795739656.0990326,
+    "KORU": 1795741166.9640534,
+    "SOXL": 1795741166.9640534,
+    "SPY": 1795741166.9640534,
+    "DIA": 1795741166.9640534,
+    "SOXX": 1795741166.9640534,
+    "QQQ": 1795741166.9640534,
+    "SMH": 1795741166.9640534,
+    "IWM": 1795741166.9640534,
+    "IGV": 1795741166.9640534,
+    "TLT": 1795741166.9640534,
+    "GLD": 1795741166.9640534,
+    "SQQQ": 1795741166.9640534,
     "TSM": 1795739748.4284892,
-    "VIXY": 1795739656.0990326,
-    "SOXS": 1795739656.0990326,
-    "NVDA": 1795739656.0990326,
-    "AMD": 1795739656.0990326,
+    "VIXY": 1795741166.9640534,
+    "SOXS": 1795741166.9640534,
+    "NVDA": 1795741166.9640534,
+    "AMD": 1795741166.9640534,
     "ASML": 1795739748.4284892,
     "QCOM": 1795739748.4284892,
     "AVGO": 1795739748.4284892,
@@ -3347,15 +3347,15 @@
     "CRWV": 1795739836.9129636,
     "NBIS": 1795739836.9129636,
     "APLD": 1795739836.9129636,
-    "VST": 1795739656.0990326,
-    "BE": 1795739656.0990326,
-    "CRDO": 1795739656.0990326,
-    "COHR": 1795739656.0990326,
+    "VST": 1795741166.9640534,
+    "BE": 1795741166.9640534,
+    "CRDO": 1795741166.9640534,
+    "COHR": 1795741166.9640534,
     "MRVL": 1795739836.9129636,
     "LITE": 1795739836.9129636,
-    "AAOI": 1795739656.0990326,
-    "SPCX": 1795739656.0990326,
-    "ASTS": 1795739656.0990326,
+    "AAOI": 1795741166.9640534,
+    "SPCX": 1795741166.9640534,
+    "ASTS": 1795741166.9640534,
     "AXTI": 1795739836.9129636,
     "NASA": 1795739748.4284892,
     "LUNR": 1795739748.4284892,
@@ -3392,11 +3392,11 @@
     "V": 1795739836.9129636,
     "CAT": 1795739878.2041078,
     "FN": 1795739836.9129636,
-    "GLW": 1795739656.0990326,
+    "GLW": 1795741166.9640534,
     "ANT": 1795739878.2041078,
     "XAUUSD": 1795739878.2041078,
     "KOSPI": 1795739836.9129636,
-    "KSTR": 1795739656.0990326
+    "KSTR": 1795741166.9640534
   },
   "opex_shield": {
     "date": "2026-11-26",
