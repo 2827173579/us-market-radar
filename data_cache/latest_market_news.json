@@ -1,5 +1,5 @@
 {
-  "updated_at_ts": 1795801391.838,
+  "updated_at_ts": 1795801437.694,
   "updated_at_et": "11-27 12:43 ET",
   "updated_at_kst": "02:43 KST",
   "macro_calendar": [],
@@ -537,6 +537,13 @@
     ],
     "QQQ": [
       {
+        "title": "Exchange-Traded Funds Higher as US Equities Advance in Friday Trading",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/exchange-traded-funds-higher-us-172712881.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-27 12:27 ET",
+        "pub_ts": 1795800432.0
+      },
+      {
         "title": "The Nasdaq Needs Two Huge Days to Dodge Its Worst November Since 2008",
         "url": "https://247wallst.com/investing/2026/11/27/the-nasdaq-needs-two-huge-days-to-dodge-its-worst-november-since-2008/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -563,13 +570,6 @@
         "source": "Yahoo Finance",
         "time": "11-27 06:01 ET",
         "pub_ts": 1795777299.0
-      },
-      {
-        "title": "50 ETFs Add to Cisco (CSCO) Holdings on Nov. 25",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/50-etfs-add-cisco-csco-110123778.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-27 06:01 ET",
-        "pub_ts": 1795777283.0
       }
     ],
     "SMH": [
@@ -907,11 +907,32 @@
     ],
     "NVDA": [
       {
-        "title": "Why this portfolio manager says investors should 'avoid the neoclouds'",
-        "url": "https://finance.yahoo.com/video/why-this-portfolio-manager-says-investors-should-avoid-the-neoclouds-160003179.html?.tsrc=rss",
+        "title": "Stock Market Midday, Nov. 27: Tech Stocks Recover and Amazon Posts Black Friday Gains",
+        "url": "https://www.fool.com/coverage/stock-market-today/2026/11/27/stock-market-midday-nov-27-tech-stocks-recover-and-amazon-posts-black-friday-gains/?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-27 11:00 ET",
-        "pub_ts": 1795795203.0
+        "time": "11-27 12:31 ET",
+        "pub_ts": 1795800677.0
+      },
+      {
+        "title": "Nvidia, CoreWeave Face New U.S. Restrictions on China AI Chip Access",
+        "url": "https://finance.yahoo.com/technology/ai/articles/nvidia-coreweave-face-u-restrictions-172327378.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-27 12:23 ET",
+        "pub_ts": 1795800207.0
+      },
+      {
+        "title": "Dell Faces AI Server Shipment Halt as Nvidia Tightens Asia Restrictions",
+        "url": "https://finance.yahoo.com/technology/ai/articles/dell-faces-ai-server-shipment-171229537.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-27 12:12 ET",
+        "pub_ts": 1795799549.0
+      },
+      {
+        "title": "Trump Says Market Selloff Briefly Worried Him as He Defends Nvidia CEO Jensen Huang",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/trump-says-market-selloff-briefly-170723440.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-27 12:07 ET",
+        "pub_ts": 1795799243.0
       },
       {
         "title": "Stocks gain as tech rebound holds, but Nvidia dips",
@@ -919,27 +940,6 @@
         "source": "Yahoo Finance",
         "time": "11-27 12:05 ET",
         "pub_ts": 1795799152.0
-      },
-      {
-        "title": "One Magnificent Seven Stock Could Be a Much Bigger Winner by 2030",
-        "url": "https://247wallst.com/investing/2026/11/27/one-magnificent-seven-stock-could-be-a-much-bigger-winner-by-2030/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-27 12:03 ET",
-        "pub_ts": 1795799018.0
-      },
-      {
-        "title": "Nvidia fans just got worrying news from China",
-        "url": "https://finance.yahoo.com/technology/articles/nvidia-fans-just-got-worrying-165257509.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-27 11:52 ET",
-        "pub_ts": 1795798377.0
-      },
-      {
-        "title": "Top Midday Stories: US October Advance Trade Gap Widens; Nvidia Chips Found Installed at Chinese Data Center Tied to Megaspeed",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/top-midday-stories-us-october-164220958.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-27 11:42 ET",
-        "pub_ts": 1795797740.0
       }
     ],
     "AMD": [
@@ -3314,22 +3314,22 @@
     ]
   },
   "ticker_news_ts": {
-    "KORU": 1795799914.7634335,
-    "SOXL": 1795799914.7634335,
-    "SPY": 1795799914.7634335,
-    "DIA": 1795799914.7634335,
-    "SOXX": 1795799914.7634335,
-    "QQQ": 1795799914.7634335,
-    "SMH": 1795799914.7634335,
-    "IWM": 1795799914.7634335,
-    "IGV": 1795799914.7634335,
+    "KORU": 1795801437.6941788,
+    "SOXL": 1795801437.6941788,
+    "SPY": 1795801437.6941788,
+    "DIA": 1795801437.6941788,
+    "SOXX": 1795801437.6941788,
+    "QQQ": 1795801437.6941788,
+    "SMH": 1795801437.6941788,
+    "IWM": 1795801437.6941788,
+    "IGV": 1795801437.6941788,
     "TLT": 1795799967.2168646,
-    "GLD": 1795799914.7634335,
-    "SQQQ": 1795799914.7634335,
-    "TSM": 1795799914.7634335,
-    "VIXY": 1795799914.7634335,
-    "SOXS": 1795799914.7634335,
-    "NVDA": 1795799914.7634335,
+    "GLD": 1795801437.6941788,
+    "SQQQ": 1795801437.6941788,
+    "TSM": 1795801437.6941788,
+    "VIXY": 1795801437.6941788,
+    "SOXS": 1795801437.6941788,
+    "NVDA": 1795801437.6941788,
     "AMD": 1795800148.5943143,
     "ASML": 1795800148.5943143,
     "QCOM": 1795800148.5943143,
@@ -3394,7 +3394,7 @@
     "ANT": 1795800883.3016748,
     "XAUUSD": 1795800931.6190078,
     "KOSPI": 1795800883.3016748,
-    "KSTR": 1795799914.7634335
+    "KSTR": 1795801437.6941788
   },
   "opex_shield": {
     "date": "2026-11-27",
