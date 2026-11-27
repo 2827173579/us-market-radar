@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795750594.258,
-  "updated_at_et": "11-26 22:36 ET",
-  "updated_at_kst": "12:36 KST",
+  "updated_at_ts": 1795750696.69,
+  "updated_at_et": "11-26 22:38 ET",
+  "updated_at_kst": "12:38 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -1044,6 +1044,13 @@
     ],
     "AVGO": [
       {
+        "title": "Broadcom (AVGO) Could Be the Biggest Winner From the Shift to Custom AI Chips",
+        "url": "https://finance.yahoo.com/technology/ai/articles/broadcom-avgo-could-biggest-winner-031533044.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-26 22:15 ET",
+        "pub_ts": 1795749333.0
+      },
+      {
         "title": "Goldman Sachs resets Broadcom's 12-month price target before earnings",
         "url": "https://www.thestreet.com/investing/stocks/avgo-broadcom-stock-goldman-sachs-resets-avgo-stock-12-month-price-target-before-earnings?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1070,13 +1077,6 @@
         "source": "Yahoo Finance",
         "time": "11-26 08:45 ET",
         "pub_ts": 1795700733.0
-      },
-      {
-        "title": "Tepper Trims Alphabet by ~46% and Dumps Broadcom & AMD While Backing Micron and Oracle",
-        "url": "https://247wallst.com/investing/2026/11/26/tepper-trims-alphabet-by-46-and-dumps-broadcom-amd-while-backing-micron-and-oracle/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-26 07:15 ET",
-        "pub_ts": 1795695305.0
       }
     ],
     "AMAT": [
@@ -1155,6 +1155,20 @@
     ],
     "GOOGL": [
       {
+        "title": "5 Best Quantum Computing Stocks To Buy for 2027",
+        "url": "https://finance.yahoo.com/technology/articles/5-best-quantum-computing-stocks-032149616.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-26 22:21 ET",
+        "pub_ts": 1795749709.0
+      },
+      {
+        "title": "5 Best Tech Stocks to Buy for 2027 According to Hedge Funds",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/5-best-tech-stocks-buy-030856400.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-26 22:08 ET",
+        "pub_ts": 1795748936.0
+      },
+      {
         "title": "‘How Can TSLA Compete With Waymo?’ Gary Black Questions Tesla’s Robotaxi Strategy, Predicts Waymo Will Lead in Miles and Trips",
         "url": "https://finance.yahoo.com/technology/articles/tsla-compete-waymo-gary-black-013007370.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1174,20 +1188,6 @@
         "source": "Yahoo Finance",
         "time": "11-26 16:22 ET",
         "pub_ts": 1795728120.0
-      },
-      {
-        "title": "Broadcom Stocks Edge Lower After Rebounding From an Intraday Low of $278",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/broadcom-stocks-edge-lower-rebounding-183041028.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-26 13:30 ET",
-        "pub_ts": 1795717841.0
-      },
-      {
-        "title": "Alphabet Stocks Slip 2.13% as Credit Swaps Hit Record Amid $9.1 Billion Cash Burn",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/alphabet-stocks-slip-2-13-182601811.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-26 13:26 ET",
-        "pub_ts": 1795717561.0
       }
     ],
     "MSFT": [
@@ -1229,6 +1229,20 @@
     ],
     "AAPL": [
       {
+        "title": "Apple (AAPL) Has Found a New AI Opportunity That Has Little to Do With the iPhone",
+        "url": "https://finance.yahoo.com/technology/ai/articles/apple-aapl-found-ai-opportunity-031905510.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-26 22:19 ET",
+        "pub_ts": 1795749545.0
+      },
+      {
+        "title": "Target cut its Apple Black Friday discount in half",
+        "url": "https://www.thestreet.com/retail/target-cut-its-apple-black-friday-discount-in-half?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-26 22:17 ET",
+        "pub_ts": 1795749420.0
+      },
+      {
         "title": "Apple Enters the AI Agent Race as It Takes on OpenAI, Anthropic, and Meta. What That Means for AAPL Stock.",
         "url": "https://www.barchart.com/story/news/9022924/apple-enters-the-ai-agent-race-as-it-takes-on-openai-anthropic-and-meta-what-that-means-for-aapl-stock?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1248,20 +1262,6 @@
         "source": "Yahoo Finance",
         "time": "11-26 13:09 ET",
         "pub_ts": 1795716577.0
-      },
-      {
-        "title": "Apple, Exxon and Lowe’s Are Rewarding Shareholders Beyond Their Regular Dividends",
-        "url": "https://247wallst.com/investing/2026/11/26/apple-exxon-and-lowes-are-rewarding-shareholders-beyond-their-regular-dividends/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-26 12:07 ET",
-        "pub_ts": 1795712854.0
-      },
-      {
-        "title": "If You Invest $1,000 in Apple Today, Here’s What It Could Be Worth by 2029",
-        "url": "https://247wallst.com/investing/2026/11/26/if-you-invest-1000-in-apple-today-heres-what-it-could-be-worth-by-2029/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-26 10:03 ET",
-        "pub_ts": 1795705418.0
       }
     ],
     "PLTR": [
@@ -1969,6 +1969,13 @@
     ],
     "AXP": [
       {
+        "title": "American Express (AXP) Names Sarah Dodds Brown As Legal Chief After Laureen Seeger Retirement",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/american-express-axp-names-sarah-031418742.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-26 22:14 ET",
+        "pub_ts": 1795749258.0
+      },
+      {
         "title": "California business owner thought he was getting $750K — instead he got a 'long nightmare' that cost him thousands",
         "url": "https://finance.yahoo.com/small-business/articles/california-business-owner-thought-getting-111500893.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1995,13 +2002,6 @@
         "source": "Yahoo Finance",
         "time": "11-25 08:20 ET",
         "pub_ts": 1795612802.0
-      },
-      {
-        "title": "American Express Stock Lost Nearly Half Its Value in the 2020 Crash. It Recovered in Just 11 Months.",
-        "url": "https://www.fool.com/investing/2026/11/25/american-express-stock-lost-nearly-half-its-value-in-the-2020-crash-it-was-back-to-its-pre-crash-high-11-months-later/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 05:50 ET",
-        "pub_ts": 1795603802.0
       }
     ],
     "RKLB": [
@@ -2117,6 +2117,13 @@
     ],
     "INTC": [
       {
+        "title": "Intel’s (INTC) AI Opportunity Is Growing, But There’s One Big Problem Holding It Back",
+        "url": "https://finance.yahoo.com/technology/ai/articles/intel-intc-ai-opportunity-growing-031416634.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-26 22:14 ET",
+        "pub_ts": 1795749256.0
+      },
+      {
         "title": "Nvidia Cut Its Intel Stake and Bought More SpaceX. Cathie Wood Is Buying Too. Why SPCX Stock Faces a Big Test on December 8.",
         "url": "https://www.barchart.com/story/news/9022928/nvidia-cut-its-intel-stake-and-bought-more-spacex-cathie-wood-is-buying-too-why-spcx-stock-faces-a-big-test-on-december-8?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2143,13 +2150,6 @@
         "source": "Yahoo Finance",
         "time": "11-26 11:30 ET",
         "pub_ts": 1795710603.0
-      },
-      {
-        "title": "Here’s Why $35 Is The Price to Buy Intel, and No Higher",
-        "url": "https://247wallst.com/investing/2026/11/26/heres-why-35-is-the-price-to-buy-intel-and-no-higher/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-26 07:15 ET",
-        "pub_ts": 1795695326.0
       }
     ],
     "VRT": [
@@ -3315,19 +3315,19 @@
     "TLT": 1795750270.7294471,
     "GLD": 1795750270.7294471,
     "SQQQ": 1795750270.7294471,
-    "TSM": 1795749108.784422,
+    "TSM": 1795750696.6901546,
     "VIXY": 1795750270.7294471,
     "SOXS": 1795750270.7294471,
     "NVDA": 1795750270.7294471,
     "AMD": 1795750340.4859746,
-    "ASML": 1795749108.784422,
-    "QCOM": 1795749108.784422,
-    "AVGO": 1795749108.784422,
-    "AMAT": 1795749108.784422,
-    "META": 1795749108.784422,
-    "GOOGL": 1795749108.784422,
-    "MSFT": 1795749108.784422,
-    "AAPL": 1795749108.784422,
+    "ASML": 1795750696.6901546,
+    "QCOM": 1795750696.6901546,
+    "AVGO": 1795750696.6901546,
+    "AMAT": 1795750696.6901546,
+    "META": 1795750696.6901546,
+    "GOOGL": 1795750696.6901546,
+    "MSFT": 1795750696.6901546,
+    "AAPL": 1795750696.6901546,
     "PLTR": 1795749208.3127716,
     "NOW": 1795749208.3127716,
     "AMZN": 1795749208.3127716,
@@ -3344,14 +3344,14 @@
     "SPCX": 1795750340.4859746,
     "ASTS": 1795750340.4859746,
     "AXTI": 1795749208.3127716,
-    "NASA": 1795749108.784422,
-    "LUNR": 1795749108.784422,
-    "TSLA": 1795749108.784422,
-    "AXP": 1795749108.784422,
-    "RKLB": 1795749108.784422,
-    "KO": 1795749108.784422,
-    "FLY": 1795749108.784422,
-    "INTC": 1795749108.784422,
+    "NASA": 1795750696.6901546,
+    "LUNR": 1795750696.6901546,
+    "TSLA": 1795750696.6901546,
+    "AXP": 1795750696.6901546,
+    "RKLB": 1795750696.6901546,
+    "KO": 1795750696.6901546,
+    "FLY": 1795750696.6901546,
+    "INTC": 1795750696.6901546,
     "VRT": 1795749108.784422,
     "HPE": 1795749108.784422,
     "DELL": 1795749108.784422,
