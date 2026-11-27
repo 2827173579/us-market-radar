@@ -1,9 +1,22 @@
 {
-  "updated_at_ts": 1795765365.6,
-  "updated_at_et": "11-27 02:42 ET",
-  "updated_at_kst": "16:42 KST",
+  "updated_at_ts": 1795765410.686,
+  "updated_at_et": "11-27 02:43 ET",
+  "updated_at_kst": "16:43 KST",
   "macro_calendar": [],
   "macro_flashes": [
+    {
+      "id": "20261127154220841800",
+      "title": "顶级能源机构：补库需求或重塑未来两年油市",
+      "summary": "2027年全球石油供应预计将过剩120万桶/日，但中东战事造成的大规模库存消耗，以及各国重建库存的需求，可能缓解油价下行压力。点击查看…",
+      "keywords": [
+        "中东"
+      ],
+      "pub_ts": 1795765340.0,
+      "time_et": "11-27 02:42 ET",
+      "time_bj": "15:42 BJ",
+      "time_kst": "16:42 KST",
+      "time_display": "02:42 ET / 15:42 BJ"
+    },
     {
       "id": "20261127153500001800",
       "title": "法国第三季度GDP年率终值、11月CPI月率初值将于十分钟后公布。",
@@ -317,19 +330,6 @@
       "time_bj": "13:03 BJ",
       "time_kst": "14:03 KST",
       "time_display": "00:03 ET / 13:03 BJ"
-    },
-    {
-      "id": "20261127130224306800",
-      "title": "创业板指涨超6%，光刻机、半导体、CPO板块涨幅居前。",
-      "summary": "创业板指涨超6%，光刻机、半导体、CPO板块涨幅居前。",
-      "keywords": [
-        "半导体"
-      ],
-      "pub_ts": 1795755744.0,
-      "time_et": "11-27 00:02 ET",
-      "time_bj": "13:02 BJ",
-      "time_kst": "14:02 KST",
-      "time_display": "00:02 ET / 13:02 BJ"
     }
   ],
   "ticker_news": {
@@ -3396,7 +3396,7 @@
   "calendar_banner": {
     "level": "idle_with_flash",
     "headline": "📡 宏观消息面监控中 · 今日暂无美股五星级经济数据大考",
-    "detail": "⚡ 最新核心快讯 (02:35 ET / 15:35 BJ) [CPI]：法国第三季度GDP年率终值、11月CPI月率初值将于十分钟后公布。",
+    "detail": "⚡ 最新核心快讯 (02:42 ET / 15:42 BJ) [中东]：2027年全球石油供应预计将过剩120万桶/日，但中东战事造成的大规模库存消耗，以及各国重建库存的需求，可能缓解油价下行压力。点击查看…",
     "event_name": "",
     "minutes_left": 0,
     "opex_shield": {
