@@ -59,9 +59,13 @@
     "2026-11-27:DEFENSIVE_FLIGHT:blue:+0.2": {
       "device": "PC",
       "ts": 1795807855.8130655
+    },
+    "2026-11-27:PLTR/AXP:5M_ENTRY": {
+      "device": "PC",
+      "ts": 1795807989.3145542
     }
   },
   "device": "PC",
-  "last_heartbeat_ts": 1795807782.2048647,
-  "updated_at": "2026-11-27T19:30:55.813114+00:00"
+  "last_heartbeat_ts": 1795807920.1729486,
+  "updated_at": "2026-11-27T19:33:09.314607+00:00"
 }

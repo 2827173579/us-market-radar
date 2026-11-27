@@ -2,8 +2,8 @@
   "weather": "",
   "targets": {
     "PLTR": {
-      "state": "NORMAL",
-      "last_notified_at": 0.0
+      "state": "WATCHLIST_ENTRY_READY",
+      "last_notified_at": 1795807987.2709
     },
     "SPY": {
       "state": "NORMAL",
@@ -22,12 +22,12 @@
       "last_notified_at": 0.0
     },
     "AXP": {
-      "state": "NORMAL",
-      "last_notified_at": 0.0
+      "state": "WATCHLIST_ENTRY_READY",
+      "last_notified_at": 1795807987.2709
     },
     "FLY": {
-      "state": "WATCHLIST_ENTRY_READY",
-      "last_notified_at": 1795807850.9795744
+      "state": "NORMAL",
+      "last_notified_at": 0.0
     }
   },
   "position_peaks": {}
