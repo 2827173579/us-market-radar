@@ -57,6 +57,15 @@ MIRROR_GROUPS: Tuple[Tuple[str, frozenset], ...] = (
     ("KRX_MIRROR", frozenset({"KOSPI", "KORU"})),
 )
 
+# V5.4 同源底层资产互斥分组（仅拦新开仓重复敞口，不强平既有历史持仓）
+SAME_UNDERLYING_GROUPS: Dict[str, frozenset] = {
+    "GOLD": frozenset({"GLD", "XAUUSD"}),
+    "SP500": frozenset({"SPY", "VOO"}),
+    "NASDAQ100": frozenset({"QQQ", "QQQM", "SQQQ", "TQQQ"}),
+    "SEMI_INDEX": frozenset({"SMH", "SOXX", "SOXL", "SOXS"}),
+    "BTC": frozenset({"BTC-USD", "IBIT"}),
+}
+
 SAFE_HAVEN_LONG_EXEMPT = frozenset({"GLD", "TLT", "XAUUSD", "SOXS", "SQQQ", "VIXY"})
 INVERSE_ETFS = frozenset({"SOXS", "SQQQ", "VIXY"})
 NON_SHORTABLE_TICKERS = frozenset({"KOSPI", "BTC-USD", "XAUUSD"})
@@ -104,6 +113,17 @@ def count_remaining_trading_days(from_date: date, expiry_date: date) -> int:
 def get_mirror_group(ticker: str) -> Optional[str]:
     tk = str(ticker or "").strip().upper()
     for gname, members in MIRROR_GROUPS:
+        if tk in members:
+            return gname
+    return None
+
+
+def get_same_underlying_group(ticker: str) -> Optional[str]:
+    """返回标的所属的同源底层资产互斥组名（大写归一化匹配），不属于任何组时返回 None。"""
+    tk = str(ticker or "").strip().upper()
+    if not tk:
+        return None
+    for gname, members in SAME_UNDERLYING_GROUPS.items():
         if tk in members:
             return gname
     return None
@@ -350,11 +370,12 @@ def screen_copy_trade_candidates(
     market_regime: str = "",
     vix_regime: Optional[Dict[str, Any]] = None,
     max_slots: int = MAX_POSITIONS,
+    rejected_log: Optional[List[Dict[str, Any]]] = None,
 ) -> List[Dict[str, Any]]:
     """
     严格对齐 live_prediction_scorecard.json 门禁筛选多空双轨模拟跟单候选：
     - 最多填满剩余空槽位（至多 4 笔）
-    - 同标的防重 + 杠杆镜像组互斥去重
+    - 同标的防重 + 杠杆镜像组 & 同源底层资产互斥组 (SAME_UNDERLYING_GROUPS) 互斥去重
     - 相对前收同向跳空 > 4% 跳过防追单
     """
     free_slots = max(0, int(max_slots) - len(open_positions))
@@ -373,6 +394,7 @@ def screen_copy_trade_candidates(
 
     held_tickers = {str(p.get("ticker") or "").strip().upper() for p in open_positions}
     held_groups = {get_mirror_group(tk) for tk in held_tickers if get_mirror_group(tk)}
+    held_underlying_groups = {get_same_underlying_group(tk) for tk in held_tickers if get_same_underlying_group(tk)}
 
     raw_cands: List[Dict[str, Any]] = []
     for tk_raw, ai_item in by_ticker.items():
@@ -380,6 +402,11 @@ def screen_copy_trade_candidates(
             continue
         tk = str(tk_raw or ai_item.get("ticker") or "").strip().upper()
         if not tk or tk in NON_TRADABLE_DIRECT_TICKERS or tk in held_tickers:
+            continue
+        ugrp = get_same_underlying_group(tk)
+        if ugrp and ugrp in held_underlying_groups:
+            if rejected_log is not None:
+                rejected_log.append({"ticker": tk, "reason": f"SAME_UNDERLYING_MUTEX:{ugrp}"})
             continue
         mgrp = get_mirror_group(tk)
         if mgrp and mgrp in held_groups:
@@ -430,6 +457,7 @@ def screen_copy_trade_candidates(
                 "sl_price": sl_px,
                 "gap_pct": round(gap_pct, 2),
                 "mirror_group": mgrp,
+                "same_underlying_group": ugrp,
             })
 
         # 2) SHORT 通道检查
@@ -453,19 +481,26 @@ def screen_copy_trade_candidates(
                 "sl_price": sl_px,
                 "gap_pct": round(gap_pct, 2),
                 "mirror_group": mgrp,
+                "same_underlying_group": ugrp,
             })
 
-    # 按校准胜率降序、多空差降序、代码升序挑选，同时做同标的与镜像组互斥去重
+    # 按校准胜率降序、多空差降序、代码升序挑选，同时做同标的、镜像组与同源底层资产互斥去重
     raw_cands.sort(key=lambda c: (-c["calibrated_prob_pct"], -c["prob_spread_pct"], c["ticker"]))
     selected: List[Dict[str, Any]] = []
     used_tickers = set(held_tickers)
     used_groups = set(held_groups)
+    used_underlying_groups = set(held_underlying_groups)
     for c in raw_cands:
         if len(selected) >= free_slots:
             break
         tk = c["ticker"]
         mg = c["mirror_group"]
+        ug = c.get("same_underlying_group")
         if tk in used_tickers:
+            continue
+        if ug and ug in used_underlying_groups:
+            if rejected_log is not None:
+                rejected_log.append({"ticker": tk, "reason": f"SAME_UNDERLYING_MUTEX:{ug}"})
             continue
         if mg and mg in used_groups:
             continue
@@ -473,6 +508,8 @@ def screen_copy_trade_candidates(
         used_tickers.add(tk)
         if mg:
             used_groups.add(mg)
+        if ug:
+            used_underlying_groups.add(ug)
 
     return selected
 
@@ -632,6 +669,7 @@ def run_copy_trade_cycle(
 
     closed_now: List[Dict[str, Any]] = []
     opened_now: List[Dict[str, Any]] = []
+    blocked_now: List[Dict[str, Any]] = []
     alerts_sent: List[Dict[str, str]] = []
     dedupe_set = set(ledger.get("alert_dedupe_keys") or [])
 
@@ -724,6 +762,7 @@ def run_copy_trade_cycle(
             market_regime=market_regime,
             vix_regime=vix_regime,
             max_slots=int(ledger.get("max_positions") or MAX_POSITIONS),
+            rejected_log=blocked_now,
         )
         expiry_str = add_us_trading_days(today_d, HOLD_TRADING_DAYS).isoformat()
         for c in cands:
@@ -800,6 +839,7 @@ def run_copy_trade_cycle(
         "ledger": ledger,
         "opened": opened_now,
         "closed": closed_now,
+        "blocked_entries": blocked_now,
         "alerts_sent": alerts_sent,
         "dry_run": eff_dry_run,
         "persisted": persisted,

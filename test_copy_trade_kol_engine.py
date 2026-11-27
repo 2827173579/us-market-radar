@@ -55,7 +55,8 @@ class TestCopyTradeKolEngineV551(unittest.TestCase):
                 "QQQ": {"active_price": 500.0, "pct_change": -0.5},
                 "NVDA": {
                     "active_price": 100.0, "prev_close": 99.5, "pct_change": 0.5,
-                    "day_low": 96.5, "vwap": 99.8, "vwap_diff_pct": 0.2,
+                    "day_low": 96.5, "open_5m": 99.2, "low_5m": 98.4, "is_5m_green": True,
+                    "vwap": 99.8, "vwap_diff_pct": 0.2,
                     "rsi_5m": 55.0, "rvol_5m": 1.6,
                 },
             }
@@ -405,12 +406,12 @@ class TestCopyTradeKolEngineV551(unittest.TestCase):
             emb = kol.build_dual_track_copy_embed_dict(steady_path=sp, kol_path=lp)
             emb_s = str(emb)
             self.assertIn("V5.4 稳健轨", emb_s)
-            self.assertIn("V5.7 精简 KOL 轨", emb_s)
+            self.assertIn("V5.8 KOL 狙击轨", emb_s)
             self.assertNotIn("建议股数", emb_s)
             self.assertNotIn("\U0001fa99", emb_s)
 
             drawer = kol.render_dual_track_copy_drawer_html(steady_path=sp, kol_path=lp, drawer_id="dualDrawerTest")
-            self.assertIn("V5.7 精简 KOL 狙击轨", drawer)
+            self.assertIn("V5.8 KOL 狙击轨", drawer)
             self.assertIn("V5.4 稳健基准轨", drawer)
             self.assertIn("<svg", drawer)
             self.assertNotIn("建议股数", drawer)
@@ -493,13 +494,13 @@ class TestCopyTradeKolEngineV551(unittest.TestCase):
         # 结构止损应锚定 rth_low=99.6 / pml=99.5 外侧 0.6% -> ~99.00 (约 -2.94%，落在 [2%, 4.5%])
         self.assertAlmostEqual(c_break[0]["sl_price"], round(99.6 * (1.0 - 0.006), 2), places=2)
 
-        # 2) rth_low 扫穿 pml 后收回触发 SWEEP_RECLAIM_LONG（无 S1 靠近）
+        # 2) rth_low 扫穿 pml 后 5m 收阳收回触发 SWEEP_RECLAIM_LONG（无 S1 靠近）
         q_sweep = {
             "QQQ": {"active_price": 500.0, "pct_change": -0.3},
             "NVDA": {
                 "active_price": 100.2, "prev_close": 100.0, "pct_change": 0.2,
                 "vwap": 100.1, "vwap_diff_pct": 0.10, "rsi_5m": 48.0, "rvol_5m": 1.4,
-                "rth_low": 99.2,
+                "rth_low": 99.2, "open_5m": 99.6, "is_5m_green": True,
             },
         }
         ip_pml = {"by_ticker": {"NVDA": {"divergence": {"status": "IN_CORRIDOR"}, "pml": 99.5}}}
