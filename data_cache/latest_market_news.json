@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795792221.466,
-  "updated_at_et": "11-27 10:10 ET",
-  "updated_at_kst": "00:10 KST",
+  "updated_at_ts": 1795792266.235,
+  "updated_at_et": "11-27 10:11 ET",
+  "updated_at_kst": "00:11 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -538,6 +538,13 @@
     ],
     "QQQ": [
       {
+        "title": "The Nasdaq Needs Two Huge Days to Dodge Its Worst November Since 2008",
+        "url": "https://247wallst.com/investing/2026/11/27/the-nasdaq-needs-two-huge-days-to-dodge-its-worst-november-since-2008/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-27 09:52 ET",
+        "pub_ts": 1795791153.0
+      },
+      {
         "title": "Exchange-Traded Funds, Equity Futures Higher Pre-Bell Friday Amid Technology Stock Rebound",
         "url": "https://finance.yahoo.com/markets/stocks/articles/exchange-traded-funds-equity-futures-140653942.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -564,13 +571,6 @@
         "source": "Yahoo Finance",
         "time": "11-27 06:01 ET",
         "pub_ts": 1795777283.0
-      },
-      {
-        "title": "Apple (AAPL) Sees $437.3 Million in Net ETF Buying on Nov. 25",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/apple-aapl-sees-437-3-110032009.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-27 06:00 ET",
-        "pub_ts": 1795777232.0
       }
     ],
     "SMH": [
@@ -797,6 +797,13 @@
     ],
     "TSM": [
       {
+        "title": "Trump’s New Tariffs Hit Taiwan but Spare Its Chips. That’s Good News for TSMC and Apple",
+        "url": "https://www.tikr.com/blog/trumps-new-tariffs-hit-taiwan-but-spare-its-chips-thats-good-news-for-tsmc-and-apple?ref=yahoofinance&tlnk=yf-261127-wff3mmwm&.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-27 08:40 ET",
+        "pub_ts": 1795786836.0
+      },
+      {
         "title": "Is TSMC (TSM) a Buy as Wall Street Analysts Look Optimistic?",
         "url": "https://finance.yahoo.com/markets/stocks/articles/tsmc-tsm-buy-wall-street-133004462.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -823,13 +830,6 @@
         "source": "Yahoo Finance",
         "time": "11-26 14:00 ET",
         "pub_ts": 1795719600.0
-      },
-      {
-        "title": "TSMC (TSM) Upgraded to Strong Buy: Here's Why",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/tsmc-tsm-upgraded-strong-buy-160004326.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-26 11:00 ET",
-        "pub_ts": 1795708804.0
       }
     ],
     "VIXY": [
@@ -908,6 +908,20 @@
     ],
     "NVDA": [
       {
+        "title": "SpaceX, Tesla have had a bumpy 2026 thus far: What to know",
+        "url": "https://finance.yahoo.com/video/spacex-tesla-have-had-a-bumpy-2026-thus-far-what-to-know-145849441.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-27 09:58 ET",
+        "pub_ts": 1795791529.0
+      },
+      {
+        "title": "Chip stocks lead a Black Friday rally, but Nvidia misses out: AlphaCheck",
+        "url": "https://finance.yahoo.com/markets/article/chip-stocks-lead-a-black-friday-rally-but-nvidia-misses-out-alphacheck-145727185.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-27 09:57 ET",
+        "pub_ts": 1795791447.0
+      },
+      {
         "title": "How Leopold Aschenbrenner made a $225 million bet on AI infrastructure",
         "url": "https://finance.yahoo.com/video/leopold-aschenbrenner-made-225-million-143000764.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -922,25 +936,11 @@
         "pub_ts": 1795788011.0
       },
       {
-        "title": "Jensen Huang Said Blackwell Racks Wouldn't Fit In A 'Pocket Or Backpack' But One Has Reportedly Turned Up in Shanghai",
-        "url": "https://stocktwits.com/news-articles/markets/equity/jensen-huang-said-blackwell-racks-wouldn-t-fit-in-a-pocket-or-backpack-but-one-has-reportedly-turned-up-in-shanghai/cNbCwmzR9Vb?.tsrc=rss",
+        "title": "Stock Market Today: Dow Jumps 500 Points While Nvidia Wavers; Anthropic, Tesla, SpaceX Rally (Live Coverage)",
+        "url": "https://finance.yahoo.com/m/86a4597f-ee47-3048-ae92-1a56fa4711e5/stock-market-today%3A-dow-jumps.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-27 09:29 ET",
-        "pub_ts": 1795789781.0
-      },
-      {
-        "title": "Kioxia Stock Has Soared 21% in Two Days After an Nvidia SSD Test",
-        "url": "https://247wallst.com/investing/2026/11/27/kioxia-stock-has-soared-21-in-two-days-after-an-nvidia-ssd-test/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-27 09:28 ET",
-        "pub_ts": 1795789708.0
-      },
-      {
-        "title": "AI in Medical Devices Global Market Opportunities and Strategies to 2035 | Capitalize on $118.8B Cloud Diagnostics with Medtronic, GE HealthCare, Siemens Healthineers and NVIDIA",
-        "url": "https://finance.yahoo.com/healthcare/articles/ai-medical-devices-global-market-142500832.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-27 09:25 ET",
-        "pub_ts": 1795789500.0
+        "time": "11-27 09:51 ET",
+        "pub_ts": 1795791085.0
       }
     ],
     "AMD": [
@@ -3315,22 +3315,22 @@
     ]
   },
   "ticker_news_ts": {
-    "KORU": 1795790741.4834795,
-    "SOXL": 1795790741.4834795,
-    "SPY": 1795790741.4834795,
-    "DIA": 1795790741.4834795,
-    "SOXX": 1795790741.4834795,
-    "QQQ": 1795790741.4834795,
-    "SMH": 1795790741.4834795,
-    "IWM": 1795790741.4834795,
-    "IGV": 1795790741.4834795,
-    "TLT": 1795790741.4834795,
-    "GLD": 1795790741.4834795,
-    "SQQQ": 1795790741.4834795,
-    "TSM": 1795790741.4834795,
-    "VIXY": 1795790741.4834795,
-    "SOXS": 1795790741.4834795,
-    "NVDA": 1795790741.4834795,
+    "KORU": 1795792266.234951,
+    "SOXL": 1795792266.234951,
+    "SPY": 1795792266.234951,
+    "DIA": 1795792266.234951,
+    "SOXX": 1795792266.234951,
+    "QQQ": 1795792266.234951,
+    "SMH": 1795792266.234951,
+    "IWM": 1795792266.234951,
+    "IGV": 1795792266.234951,
+    "TLT": 1795792266.234951,
+    "GLD": 1795792266.234951,
+    "SQQQ": 1795792266.234951,
+    "TSM": 1795792266.234951,
+    "VIXY": 1795792266.234951,
+    "SOXS": 1795792266.234951,
+    "NVDA": 1795792266.234951,
     "AMD": 1795790887.5960093,
     "ASML": 1795790887.5960093,
     "QCOM": 1795790887.5960093,
@@ -3395,7 +3395,7 @@
     "ANT": 1795791621.6380503,
     "XAUUSD": 1795791621.6380503,
     "KOSPI": 1795791621.6380503,
-    "KSTR": 1795790741.4834795
+    "KSTR": 1795792266.234951
   },
   "opex_shield": {
     "date": "2026-11-27",
