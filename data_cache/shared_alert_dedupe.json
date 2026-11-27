@@ -8155,9 +8155,13 @@
     "2026-11-27:DEFENSIVE_FLIGHT:green:-5.2": {
       "device": "PC",
       "ts": 1795781960.4859214
+    },
+    "2026-11-27:DEFENSIVE_FLIGHT:green:-5.3": {
+      "device": "PC",
+      "ts": 1795782061.675475
     }
   },
   "device": "PC",
-  "last_heartbeat_ts": 1795781981.055904,
-  "updated_at": "2026-11-27T12:19:41.056486+00:00"
+  "last_heartbeat_ts": 1795782032.63831,
+  "updated_at": "2026-11-27T12:21:01.675997+00:00"
 }
