@@ -72,6 +72,7 @@ MARKET_SESSION_SPECS: Dict[str, Dict[str, Any]] = {
         "tz": CST_TZ,
         "tz_label": "CST",
         "market_cn": "A股",
+        "open_min": 9 * 60 + 30,
         "slots": _gen_slots((9, 30), (11, 25)) + _gen_slots((13, 0), (14, 55)),  # 24 + 24 = 48 bars
         "open_label": "09:30 CST",
         "early_window_slot": 3,
@@ -83,6 +84,7 @@ MARKET_SESSION_SPECS: Dict[str, Dict[str, Any]] = {
         "tz": HKT_TZ,
         "tz_label": "HKT",
         "market_cn": "港股",
+        "open_min": 9 * 60 + 30,
         "slots": _gen_slots((9, 30), (11, 55)) + _gen_slots((13, 0), (15, 55)),  # 30 + 36 = 66 bars
         "open_label": "09:30 HKT",
         "early_window_slot": 3,
@@ -94,6 +96,7 @@ MARKET_SESSION_SPECS: Dict[str, Dict[str, Any]] = {
         "tz": JST_TZ,
         "tz_label": "JST",
         "market_cn": "日股",
+        "open_min": 9 * 60,
         "slots": _gen_slots((9, 0), (11, 25)) + _gen_slots((12, 30), (15, 25)),  # 30 + 36 = 66 bars
         "open_label": "09:00 JST",
         "early_window_slot": 3,
@@ -105,6 +108,7 @@ MARKET_SESSION_SPECS: Dict[str, Dict[str, Any]] = {
         "tz": TWT_TZ,
         "tz_label": "CST",
         "market_cn": "台股",
+        "open_min": 9 * 60,
         "slots": _gen_slots((9, 0), (13, 25)),  # 54 bars (continuous, no lunch break)
         "open_label": "09:00 CST",
         "early_window_slot": 3,
@@ -228,6 +232,179 @@ def _normalize_day_bars_to_canonical_slots(
         elif t == "13:30" and market == "TW" and "13:25" not in slot_map:
             slot_map["13:25"] = [float(r[1]), float(r[2]), float(r[3]), float(r[4]), float(r[5])]
     return slot_map
+
+
+def _aggregate_tencent_1m_to_5m(
+    raw_min_lines: List[str],
+    decimals: int = 2,
+) -> List[List[Any]]:
+    """
+    将腾讯实时分时 1m 序列（如 ['0930 3433.380 74258 ...', '0931 3457.990 ...']）
+    无损聚合为标准 5m OHLCV 柱列表 [[HH:MM, open, high, low, close, volume], ...]。
+    """
+    buckets: Dict[str, List[Tuple[float, float]]] = {}
+    bucket_order: List[str] = []
+    prev_cum_vol: Optional[float] = None
+
+    for line in raw_min_lines or []:
+        parts = str(line or "").strip().split()
+        if len(parts) < 2:
+            continue
+        hhmm_raw = parts[0]
+        if len(hhmm_raw) != 4 or not hhmm_raw.isdigit():
+            continue
+        hh, mm = int(hhmm_raw[:2]), int(hhmm_raw[2:])
+        px = _safe_float(parts[1])
+        if px is None or px <= 0:
+            continue
+        cum_v = _safe_float(parts[2], 0.0) if len(parts) > 2 else 0.0
+        if cum_v is not None and cum_v >= 0:
+            v_delta = max(0.0, cum_v - prev_cum_vol) if (prev_cum_vol is not None and cum_v >= prev_cum_vol) else cum_v
+            prev_cum_vol = cum_v
+        else:
+            v_delta = 0.0
+
+        b_mm = (mm // 5) * 5
+        slot = f"{hh:02d}:{b_mm:02d}"
+        if slot not in buckets:
+            buckets[slot] = []
+            bucket_order.append(slot)
+        buckets[slot].append((float(px), float(v_delta)))
+
+    rows: List[List[Any]] = []
+    for slot in bucket_order:
+        pts = buckets[slot]
+        if not pts:
+            continue
+        prices = [p for p, _ in pts]
+        vol_sum = sum(v for _, v in pts)
+        rows.append([
+            slot,
+            round(prices[0], decimals),
+            round(max(prices), decimals),
+            round(min(prices), decimals),
+            round(prices[-1], decimals),
+            round(max(0.0, vol_sum), 2),
+        ])
+    return rows
+
+
+def _fetch_tencent_live_minute_5m(
+    qt_sym: str,
+    expected_date: Optional[str] = None,
+    decimals: int = 2,
+    timeout: float = 6.0,
+) -> Tuple[List[List[Any]], str]:
+    """
+    拉取腾讯免费实时分时接口 (`web.ifzq.gtimg.cn/appstock/app/minute/query`) 并聚合成当日 5m 柱。
+    实测对 `hkHSTECH` / `hkHSI` 零延迟、免 Key、零限流，彻底解决 HSTECH 盘中 5m 断更问题。
+    返回: (rows_5m, date_yyyy_mm_dd)
+    """
+    if not qt_sym:
+        return [], ""
+    try:
+        url = f"https://web.ifzq.gtimg.cn/appstock/app/minute/query?code={qt_sym}"
+        r = requests.get(url, headers={"User-Agent": "Mozilla/5.0"}, timeout=timeout)
+        if r.status_code != 200:
+            return [], ""
+        jd = r.json()
+        node = ((jd or {}).get("data") or {}).get(qt_sym) or {}
+        d_node = node.get("data") or {}
+        d_raw = str(d_node.get("date") or "").strip()
+        d_fmt = f"{d_raw[0:4]}-{d_raw[4:6]}-{d_raw[6:8]}" if len(d_raw) == 8 and d_raw.isdigit() else ""
+        if expected_date and d_fmt and d_fmt != expected_date:
+            return [], d_fmt
+        raw_lines = d_node.get("data") or []
+        if not raw_lines:
+            return [], d_fmt
+        return _aggregate_tencent_1m_to_5m(raw_lines, decimals=decimals), d_fmt
+    except Exception:
+        return [], ""
+
+
+def _fetch_yf_live_day_5m(
+    yf_sym: str,
+    market: str,
+    expected_date: str,
+    decimals: int = 2,
+) -> List[List[Any]]:
+    """单票回退拉取 yfinance 近 2 日 5m，严格筛选指定市场时区的 expected_date 当日柱。"""
+    if not yf_sym:
+        return []
+    try:
+        import yfinance as yf
+
+        df = yf.download(yf_sym, period="2d", interval="5m", progress=False)
+        if df is None or getattr(df, "empty", True):
+            return []
+        if isinstance(df.columns, pd.MultiIndex):
+            lvl0 = set(df.columns.get_level_values(0))
+            if "Close" in lvl0 and yf_sym in df["Close"].columns:
+                df = pd.DataFrame({
+                    "Open": df["Open"][yf_sym],
+                    "High": df["High"][yf_sym],
+                    "Low": df["Low"][yf_sym],
+                    "Close": df["Close"][yf_sym],
+                    "Volume": df["Volume"][yf_sym] if "Volume" in lvl0 else 0.0,
+                }).dropna(subset=["Close"])
+            else:
+                return []
+        spec = get_market_spec(market)
+        tz_obj = spec["tz"]
+        idx = pd.to_datetime(df.index)
+        idx_local = idx.tz_convert(tz_obj) if idx.tz is not None else idx.tz_localize(tz_obj)
+        rows: List[List[Any]] = []
+        for ts_loc, (_, r) in zip(idx_local, df.iterrows()):
+            if ts_loc.strftime("%Y-%m-%d") != expected_date:
+                continue
+            op = _safe_float(r.get("Open"))
+            hi = _safe_float(r.get("High"))
+            lo = _safe_float(r.get("Low"))
+            cl = _safe_float(r.get("Close"))
+            vo = _safe_float(r.get("Volume"), 0.0) or 0.0
+            if op and hi and lo and cl and cl > 0:
+                rows.append([
+                    ts_loc.strftime("%H:%M"),
+                    round(op, decimals),
+                    round(hi, decimals),
+                    round(lo, decimals),
+                    round(cl, decimals),
+                    round(max(0.0, vo), 2),
+                ])
+        return rows
+    except Exception:
+        return []
+
+
+def fetch_live_intraday_5m_for_ticker(
+    meta: Dict[str, Any],
+    expected_date: str,
+) -> Tuple[List[List[Any]], int, str]:
+    """
+    当主缓存 `apac_doc` 中某只亚太标的缺少当日实时 5m 切片（例如 `HSTECH`）时，
+    按「腾讯实时分时 1m→5m（零延迟、免 Key）➔ yfinance 2d 5m」自动回退补齐当日 5m 柱。
+    返回: (rows_5m, http_calls_used, source_tag)
+    """
+    tk = str(meta.get("ticker") or "").upper()
+    mkt = str(meta.get("market") or "CN").upper()
+    dec = int(meta.get("decimals") or 2)
+    qsym = str(meta.get("qt_symbol") or "")
+    yfsym = APAC_5M_YF_SYMBOL_OVERRIDE.get(tk) or str(meta.get("yf_symbol") or "")
+    calls = 0
+
+    if qsym:
+        rows_t, d_t = _fetch_tencent_live_minute_5m(qsym, expected_date=expected_date, decimals=dec)
+        calls += 1
+        if rows_t and (not d_t or d_t == expected_date):
+            return rows_t, calls, "tencent:minute_5m"
+
+    if yfsym:
+        rows_y = _fetch_yf_live_day_5m(yfsym, market=mkt, expected_date=expected_date, decimals=dec)
+        calls += 1
+        if rows_y:
+            return rows_y, calls, "yfinance:2d_5m"
+
+    return [], calls, "none"
 
 
 def _fetch_tencent_5m_fallback(qt_sym: str, market: str, decimals: int = 3) -> List[Tuple[str, str, float, float, float, float, float]]:
@@ -897,16 +1074,32 @@ def get_or_update_apac_intraday_forecasts(
     for meta in aaf.ALL_APAC_ASHARE_TARGETS:
         tk = str(meta["ticker"]).upper()
         mkt = str(meta.get("market") or "CN").upper()
+        spec = get_market_spec(mkt)
         dmaps = nested.get(tk) or {}
         snap_item = apac_items.get(tk) if isinstance(apac_items, dict) else None
         live_rows = (snap_item.get("intraday_5m") if isinstance(snap_item, dict) else None) or None
         spot_prev_c = _safe_float(snap_item.get("prev_close")) if isinstance(snap_item, dict) else None
 
-        # 目标日：若处于亚盘盘中且有今日 live_rows 用今日，否则锚定底模最新已完成交易日（如 2026-11-26）
-        if mode == "INTRADAY_LIVE_UPDATE" and live_rows:
-            tgt_date = today_cst
+        # 本地市场当前日期与是否已开盘判定
+        loc_now = cst_now.astimezone(spec["tz"])
+        loc_today = loc_now.strftime("%Y-%m-%d")
+        loc_min = loc_now.hour * 60 + loc_now.minute
+        market_opened_today = (loc_now.weekday() < 5) and (loc_min >= int(spec.get("open_min", 9 * 60 + 30)))
+
+        # 盘中实时补齐：若 apac_doc 缺少该标的当日 5m（典型如 HSTECH）或尚无今日实盘柱，走免费实时分时/5m 回退链
+        if mode in ("INTRADAY_LIVE_UPDATE", "FORCE_FULL", "COLD_START_FULL") and market_opened_today:
+            has_today_in_parquet = bool(dmaps.get(loc_today))
+            if (not live_rows) and (not has_today_in_parquet or tk == "HSTECH"):
+                fb_rows, fb_calls, _fb_src = fetch_live_intraday_5m_for_ticker(meta, expected_date=loc_today)
+                http_calls += fb_calls
+                if fb_rows:
+                    live_rows = fb_rows
+
+        # 目标日：若处于亚盘盘中/已开盘且拿到今日 live_rows 用今日，否则锚定底模最新已完成交易日
+        if market_opened_today and live_rows:
+            tgt_date = loc_today
         else:
-            tgt_date = max(dmaps.keys()) if dmaps else today_cst
+            tgt_date = max(dmaps.keys()) if dmaps else loc_today
 
         item = build_single_ticker_corridor(
             ticker=tk,
@@ -914,7 +1107,7 @@ def get_or_update_apac_intraday_forecasts(
             meta=meta,
             forecast_date=tgt_date,
             bench_gap_by_date=bench_gaps.get(mkt),
-            live_5m_rows=live_rows if (mode == "INTRADAY_LIVE_UPDATE" or not dmaps.get(tgt_date)) else None,
+            live_5m_rows=live_rows if (market_opened_today and live_rows) else None,
             prev_locked_item=prev_by_tk.get(tk),
             spot_prev_close=spot_prev_c,
             now_dt=now_dt,

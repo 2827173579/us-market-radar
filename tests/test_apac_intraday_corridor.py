@@ -196,6 +196,52 @@ class TestApacIntradayCorridor(unittest.TestCase):
         self.assertNotIn("$", json.dumps(parsed["by_ticker"]["159530"], ensure_ascii=False))
         self.assertIn("亚太/A股独立推演底模同步中", html)
 
+    def test_06_hstech_tencent_1m_to_5m_aggregation_and_lunch_strip(self):
+        """验证 HSTECH 腾讯实时 1m→5m 无损聚合、港股 12:00~13:00 午休剔除及当日实盘进度截取。"""
+        raw_lines = [
+            "0930 3433.380 74258 742577333.000",
+            "0931 3457.990 155549 1555487409.000",
+            "0932 3452.100 200000 2000000000.000",
+            "0933 3460.000 250000 2500000000.000",
+            "0934 3455.500 300000 3000000000.000",
+            "0935 3458.000 340000 3400000000.000",
+            "0936 3470.200 390000 3900000000.000",
+            "1205 3470.200 390000 3900000000.000",  # 港股午休噪声必须被剔除
+            "1230 3470.200 390000 3900000000.000",  # 港股午休噪声必须被剔除
+        ]
+        agg = aip._aggregate_tencent_1m_to_5m(raw_lines, decimals=2)
+        self.assertEqual(agg[0][0], "09:30")
+        self.assertAlmostEqual(agg[0][1], 3433.38, places=2)  # open
+        self.assertAlmostEqual(agg[0][2], 3460.00, places=2)  # high
+        self.assertAlmostEqual(agg[0][3], 3433.38, places=2)  # low
+        self.assertAlmostEqual(agg[0][4], 3455.50, places=2)  # close
+        self.assertEqual(agg[1][0], "09:35")
+        self.assertAlmostEqual(agg[1][4], 3470.20, places=2)
+
+        smap = aip._normalize_day_bars_to_canonical_slots(agg, market="HK", decimals=2)
+        self.assertIn("09:30", smap)
+        self.assertIn("09:35", smap)
+        self.assertNotIn("12:05", smap)
+        self.assertNotIn("12:30", smap)
+
+        # 用 HSTECH 历史底模 + 仅 09:30~09:35 两根当日柱，验证切到 2026-11-27 且橙线仅画到 slot 1
+        hk_slots = aip.get_market_spec("HK")["slots"]
+        meta = aaf.APAC_ASHARE_BY_TICKER["HSTECH"]
+        dmaps = {f"2026-10-{i:02d}": _make_day_slot_map(hk_slots, base_px=3400.0 + i, trend_pct=0.3, decimals=2) for i in range(1, 25)}
+        res = aip.build_single_ticker_corridor(
+            ticker="HSTECH",
+            day_slot_maps=dmaps,
+            meta=meta,
+            forecast_date="2026-11-27",
+            live_5m_rows=agg,
+        )
+        self.assertEqual(res["status"], "ok")
+        self.assertEqual(res["forecast_date"], "2026-11-27")
+        self.assertAlmostEqual(res["anchor_open"], 3433.38, places=2)
+        self.assertEqual(res["latest_slot"], 1)
+        self.assertEqual(sum(1 for x in res["actual_prices"] if x is not None), 2)
+        self.assertIsNone(res["actual_prices"][2])
+
 
 if __name__ == "__main__":
     unittest.main()
