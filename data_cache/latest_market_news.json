@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795779399.863,
-  "updated_at_et": "11-27 06:36 ET",
-  "updated_at_kst": "20:36 KST",
+  "updated_at_ts": 1795779450.133,
+  "updated_at_et": "11-27 06:37 ET",
+  "updated_at_kst": "20:37 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -3010,6 +3010,13 @@
     ],
     "WMT": [
       {
+        "title": "Direxion NASDAQ-100 Equal Weighted (QQQE) Adds IDEXX and Walmart on Nov. 25",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/direxion-nasdaq-100-equal-weighted-110509309.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-27 06:05 ET",
+        "pub_ts": 1795777509.0
+      },
+      {
         "title": "35 ETFs Add to Walmart (WMT) Holdings on Nov. 25",
         "url": "https://finance.yahoo.com/markets/stocks/articles/35-etfs-add-walmart-wmt-110112455.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -3036,13 +3043,6 @@
         "source": "Yahoo Finance",
         "time": "11-26 21:15 ET",
         "pub_ts": 1795745742.0
-      },
-      {
-        "title": "When Walmart, Target, Costco, and other major retailers open on Black Friday",
-        "url": "https://www.thestreet.com/retail/when-walmart-target-costco-and-other-major-retailers-open-on-black-friday?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-26 19:37 ET",
-        "pub_ts": 1795739820.0
       }
     ],
     "V": [
@@ -3195,6 +3195,20 @@
     ],
     "ANT": [
       {
+        "title": "Dow Jones Futures Rise; Look For This Bullish Market Signal On Black Friday",
+        "url": "https://finance.yahoo.com/m/158e82fc-b889-34b6-8704-99a49e9a83ae/dow-jones-futures-rise%3B-look.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-27 06:27 ET",
+        "pub_ts": 1795778847.0
+      },
+      {
+        "title": "Prediction: These Will Be Anthropic’s and SpaceX’s Stock Prices by the End of 2027 (Hint: Both Are Buys)",
+        "url": "https://www.fool.com/investing/2026/11/27/prediction-these-will-be-anthropic-s-and-spacex-s-stock-prices-by-the-end-of-2027-hint-both-are-buys/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-27 06:20 ET",
+        "pub_ts": 1795778402.0
+      },
+      {
         "title": "Anthropic’s Lock-Up Expirations Start Dec. 15. Here’s What Investors Should Know Before Then.",
         "url": "https://www.fool.com/investing/2026/11/27/anthropic-s-lock-up-expirations-start-dec-15-here-s-what-investors-should-know-before-then/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -3214,20 +3228,6 @@
         "source": "Yahoo Finance",
         "time": "11-27 05:04 ET",
         "pub_ts": 1795773842.0
-      },
-      {
-        "title": "Prediction: This Will Be Anthropic’s Stock Price by the End of 2026",
-        "url": "https://www.fool.com/investing/2026/11/27/prediction-this-will-be-anthropic-s-stock-price-by-the-end-of-2026/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-27 02:23 ET",
-        "pub_ts": 1795764182.0
-      },
-      {
-        "title": "Dow Jones Futures Rise; Look For This Bullish Market Signal On Black Friday",
-        "url": "https://finance.yahoo.com/m/158e82fc-b889-34b6-8704-99a49e9a83ae/dow-jones-futures-rise%3B-look.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-26 23:23 ET",
-        "pub_ts": 1795753438.0
       }
     ],
     "XAUUSD": [
@@ -3377,16 +3377,16 @@
     "MRNA": 1795778890.471393,
     "NKE": 1795778890.471393,
     "MCD": 1795778890.471393,
-    "PEP": 1795777939.328296,
-    "XOM": 1795777939.328296,
-    "JPM": 1795777939.328296,
-    "WMT": 1795777939.328296,
-    "V": 1795777939.328296,
-    "CAT": 1795777939.328296,
+    "PEP": 1795779450.1332772,
+    "XOM": 1795779450.1332772,
+    "JPM": 1795779450.1332772,
+    "WMT": 1795779450.1332772,
+    "V": 1795779450.1332772,
+    "CAT": 1795779450.1332772,
     "FN": 1795778834.3195145,
     "GLW": 1795778778.4592373,
-    "ANT": 1795777939.328296,
-    "XAUUSD": 1795777939.328296,
+    "ANT": 1795779450.1332772,
+    "XAUUSD": 1795779450.1332772,
     "KOSPI": 1795778834.3195145,
     "KSTR": 1795778570.8721757
   },
