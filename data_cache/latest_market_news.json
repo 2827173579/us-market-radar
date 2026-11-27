@@ -1,5 +1,5 @@
 {
-  "updated_at_ts": 1795783740.374,
+  "updated_at_ts": 1795783793.781,
   "updated_at_et": "11-27 07:49 ET",
   "updated_at_kst": "21:49 KST",
   "macro_calendar": [],
@@ -1346,6 +1346,13 @@
     ],
     "AMZN": [
       {
+        "title": "Market Chatter: Hackers Breach US Air Force Cloud Platform Powered by Microsoft, Amazon, Oracle, Alphabet",
+        "url": "https://finance.yahoo.com/technology/articles/market-chatter-hackers-breach-us-122132707.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-27 07:21 ET",
+        "pub_ts": 1795782092.0
+      },
+      {
         "title": "Amazon Blocked Meta’s Muse Two Months Ago. Now It’s in Talks to Let It Shop, and Walmart Already Did",
         "url": "https://www.tikr.com/blog/amazon-blocked-metas-muse-two-months-ago-now-its-in-talks-to-let-it-shop-and-walmart-already-did?ref=yahoofinance&tlnk=yf-261127-c9m256qx&.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1372,13 +1379,6 @@
         "source": "Yahoo Finance",
         "time": "11-27 06:04 ET",
         "pub_ts": 1795777455.0
-      },
-      {
-        "title": "Amazon Lost 40 Satellites on a Boeing-Lockheed Rocket in November. SpaceX Is the Only Company That Can Fix Amazon’s Problem. Is the Stock a Buy Near $130?",
-        "url": "https://www.fool.com/investing/2026/11/26/amazon-lost-40-satellites-on-a-boeing-lockheed-rocket-in-november-spacex-is-the-only-company-that-can-fix-amazon-s-problem-is-the-stock-a-buy-near-usd130/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-26 22:53 ET",
-        "pub_ts": 1795751582.0
       }
     ],
     "CRWV": [
@@ -1790,6 +1790,13 @@
     ],
     "ASTS": [
       {
+        "title": "What Is Going On With AST SpaceMobile Stock Now?",
+        "url": "https://www.trefis.com/stock/asts/articles/629353/what-is-going-on-with-ast-spacemobile-stock-now/2026-11-27?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-27 07:34 ET",
+        "pub_ts": 1795782899.0
+      },
+      {
         "title": "AST SpaceMobile Is Still Down 64% in 2026. Can Insider Buying and a B. Riley Upgrade Get ASTS Stock Back to $40?",
         "url": "https://247wallst.com/investing/2026/11/26/ast-spacemobile-is-still-down-64-in-2026-can-insider-buying-and-a-b-riley-upgrade-get-asts-stock-back-to-40/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1816,13 +1823,6 @@
         "source": "Yahoo Finance",
         "time": "11-26 01:01 ET",
         "pub_ts": 1795672884.0
-      },
-      {
-        "title": "SpaceX Slides 5% as Gary Black Warns a Tesla Bid Could Push It Below $100; Rocket Lab and AST SpaceMobile Drop 4%",
-        "url": "https://247wallst.com/investing/2026/11/25/spacex-slides-5-as-gary-black-warns-a-tesla-bid-could-push-it-below-100-rocket-lab-and-ast-spacemobile-drop-4/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 09:17 ET",
-        "pub_ts": 1795616238.0
       }
     ],
     "AXTI": [
@@ -3334,29 +3334,29 @@
     "GOOGL": 1795783263.141858,
     "MSFT": 1795783263.141858,
     "AAPL": 1795783263.141858,
-    "PLTR": 1795782261.580684,
-    "NOW": 1795782261.580684,
-    "AMZN": 1795782261.580684,
-    "CRWV": 1795782261.580684,
-    "NBIS": 1795782261.580684,
-    "APLD": 1795782261.580684,
+    "PLTR": 1795783793.7810085,
+    "NOW": 1795783793.7810085,
+    "AMZN": 1795783793.7810085,
+    "CRWV": 1795783793.7810085,
+    "NBIS": 1795783793.7810085,
+    "APLD": 1795783793.7810085,
     "VST": 1795783263.141858,
     "BE": 1795783263.141858,
     "CRDO": 1795783263.141858,
     "COHR": 1795783263.141858,
-    "MRVL": 1795782261.580684,
-    "LITE": 1795782261.580684,
-    "AAOI": 1795782261.580684,
+    "MRVL": 1795783793.7810085,
+    "LITE": 1795783793.7810085,
+    "AAOI": 1795783793.7810085,
     "SPCX": 1795783263.141858,
-    "ASTS": 1795782261.580684,
-    "AXTI": 1795782261.580684,
-    "NASA": 1795782261.580684,
-    "LUNR": 1795782261.580684,
+    "ASTS": 1795783793.7810085,
+    "AXTI": 1795783793.7810085,
+    "NASA": 1795783793.7810085,
+    "LUNR": 1795783793.7810085,
     "TSLA": 1795782324.785103,
-    "AXP": 1795782261.580684,
-    "RKLB": 1795782261.580684,
-    "KO": 1795782261.580684,
-    "FLY": 1795782261.580684,
+    "AXP": 1795783793.7810085,
+    "RKLB": 1795783793.7810085,
+    "KO": 1795783793.7810085,
+    "FLY": 1795783793.7810085,
     "INTC": 1795782324.785103,
     "VRT": 1795782324.785103,
     "HPE": 1795782324.785103,
@@ -3384,8 +3384,8 @@
     "WMT": 1795782480.7987573,
     "V": 1795782480.7987573,
     "CAT": 1795782480.7987573,
-    "FN": 1795782261.580684,
-    "GLW": 1795782261.580684,
+    "FN": 1795783793.7810085,
+    "GLW": 1795783793.7810085,
     "ANT": 1795782480.7987573,
     "XAUUSD": 1795782480.7987573,
     "KOSPI": 1795782431.335721,
