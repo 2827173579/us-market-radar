@@ -8327,9 +8327,17 @@
     "2026-11-27:FLY/NKE:5M_ENTRY": {
       "device": "PC",
       "ts": 1795792097.0702765
+    },
+    "2026-11-27:morning_settle": {
+      "device": "PC",
+      "ts": 1795792555.3514895
+    },
+    "2026-11-27:INTRADAY_CORRIDOR:SOXL:ABOVE_P75": {
+      "device": "PC",
+      "ts": 1795792590.179167
     }
   },
   "device": "PC",
-  "last_heartbeat_ts": 1795792395.190653,
-  "updated_at": "2026-11-27T15:13:15.191206+00:00"
+  "last_heartbeat_ts": 1795792557.3782752,
+  "updated_at": "2026-11-27T15:16:30.179651+00:00"
 }
