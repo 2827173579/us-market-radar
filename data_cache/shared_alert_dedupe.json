@@ -8371,9 +8371,13 @@
     "2026-11-27:AMZN/DIA/IWM:5M_ENTRY": {
       "device": "PC",
       "ts": 1795793120.7289863
+    },
+    "2026-11-27:PLTR/SPY/IWM:5M_ENTRY": {
+      "device": "PC",
+      "ts": 1795793475.3785877
     }
   },
   "device": "PC",
-  "last_heartbeat_ts": 1795793407.4149568,
-  "updated_at": "2026-11-27T15:30:07.415568+00:00"
+  "last_heartbeat_ts": 1795793452.8565714,
+  "updated_at": "2026-11-27T15:31:15.379113+00:00"
 }
