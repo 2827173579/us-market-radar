@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795778670.195,
-  "updated_at_et": "11-27 06:24 ET",
-  "updated_at_kst": "20:24 KST",
+  "updated_at_ts": 1795778778.459,
+  "updated_at_et": "11-27 06:26 ET",
+  "updated_at_kst": "20:26 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -1271,6 +1271,13 @@
     ],
     "PLTR": [
       {
+        "title": "ETFs Are Buying Palantir (PLTR) on Wednesday",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/etfs-buying-palantir-pltr-wednesday-110139493.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-27 06:01 ET",
+        "pub_ts": 1795777299.0
+      },
+      {
         "title": "A Palantir Co-Founder Bought $122 Million of the Stock on Nov. 20. Here's What I Think of Palantir Stock Now.",
         "url": "https://www.fool.com/investing/2026/11/27/a-palantir-co-founder-bought-usd122-million-of-the-stock-on-nov-20-here-s-what-i-think-of-palantir-stock-now/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1297,13 +1304,6 @@
         "source": "Yahoo Finance",
         "time": "11-26 06:22 ET",
         "pub_ts": 1795692149.0
-      },
-      {
-        "title": "Palantir (PLTR) Sees $45.5 Million in Net ETF Buying on Nov. 24",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/palantir-pltr-sees-45-5-110110910.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-26 06:01 ET",
-        "pub_ts": 1795690870.0
       }
     ],
     "NOW": [
@@ -1345,6 +1345,20 @@
     ],
     "AMZN": [
       {
+        "title": "What iShares Russell 1000 Value (IWD) Bought: Apple Leads on Nov. 25",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/ishares-russell-1000-value-iwd-110429616.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-27 06:04 ET",
+        "pub_ts": 1795777469.0
+      },
+      {
+        "title": "What JPMorgan Active Growth ETF (JGRO) Bought: Amazon Leads on Nov. 25",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/jpmorgan-active-growth-etf-jgro-110415983.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-27 06:04 ET",
+        "pub_ts": 1795777455.0
+      },
+      {
         "title": "Amazon Lost 40 Satellites on a Boeing-Lockheed Rocket in November. SpaceX Is the Only Company That Can Fix Amazon’s Problem. Is the Stock a Buy Near $130?",
         "url": "https://www.fool.com/investing/2026/11/26/amazon-lost-40-satellites-on-a-boeing-lockheed-rocket-in-november-spacex-is-the-only-company-that-can-fix-amazon-s-problem-is-the-stock-a-buy-near-usd130/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1364,20 +1378,6 @@
         "source": "Yahoo Finance",
         "time": "11-26 18:30 ET",
         "pub_ts": 1795735800.0
-      },
-      {
-        "title": "Stanley Druckenmiller, Bill Ackman and 7 Other Famous Investors Own Amazon. Here’s Who Bought and Sold Recently",
-        "url": "https://www.tikr.com/blog/stanley-druckenmiller-bill-ackman-and-7-other-famous-investors-own-amazon-heres-who-bought-and-sold-recently?ref=yahoofinance&tlnk=yf-261126-2mffj2wm&.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-26 13:11 ET",
-        "pub_ts": 1795716673.0
-      },
-      {
-        "title": "Amazon , Walmart Battle for $124 Billion Holiday Shopping Market",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/amazon-walmart-battle-124-billion-175223253.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-26 12:52 ET",
-        "pub_ts": 1795715543.0
       }
     ],
     "CRWV": [
@@ -1974,6 +1974,13 @@
     ],
     "AXP": [
       {
+        "title": "Black Friday is live at InvestorsHub: up to 35% off real-time data",
+        "url": "https://investorshub.advfn.com/market-news/article/40516/black-friday-is-live-at-investorshub-up-to-35-off-real-time-data?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-27 06:00 ET",
+        "pub_ts": 1795777200.0
+      },
+      {
         "title": "American Express (AXP) Names Sarah Dodds Brown As Legal Chief After Laureen Seeger Retirement",
         "url": "https://finance.yahoo.com/markets/stocks/articles/american-express-axp-names-sarah-031418742.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1986,13 +1993,6 @@
         "source": "Yahoo Finance",
         "time": "11-26 06:15 ET",
         "pub_ts": 1795691700.0
-      },
-      {
-        "title": "Black Friday shopping: Check this credit card perk first",
-        "url": "https://finance.yahoo.com/personal-finance/credit-cards/article/black-friday-shopping-check-this-credit-card-perk-first-195924850.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-23 14:59 ET",
-        "pub_ts": 1795463964.0
       },
       {
         "title": "Tariffs are back as Anthropic sinks further below its IPO price",
@@ -3333,30 +3333,30 @@
     "GOOGL": 1795778670.1948578,
     "MSFT": 1795778670.1948578,
     "AAPL": 1795778670.1948578,
-    "PLTR": 1795777224.2801063,
-    "NOW": 1795777224.2801063,
-    "AMZN": 1795777224.2801063,
-    "CRWV": 1795777224.2801063,
-    "NBIS": 1795777224.2801063,
-    "APLD": 1795777224.2801063,
+    "PLTR": 1795778778.4592373,
+    "NOW": 1795778778.4592373,
+    "AMZN": 1795778778.4592373,
+    "CRWV": 1795778778.4592373,
+    "NBIS": 1795778778.4592373,
+    "APLD": 1795778778.4592373,
     "VST": 1795778670.1948578,
     "BE": 1795778670.1948578,
     "CRDO": 1795778670.1948578,
     "COHR": 1795778670.1948578,
-    "MRVL": 1795777224.2801063,
+    "MRVL": 1795778778.4592373,
     "LITE": 1795777279.7014213,
-    "AAOI": 1795777168.9245915,
+    "AAOI": 1795778778.4592373,
     "SPCX": 1795778670.1948578,
-    "ASTS": 1795777224.2801063,
+    "ASTS": 1795778778.4592373,
     "AXTI": 1795777279.7014213,
-    "NASA": 1795777224.2801063,
-    "LUNR": 1795777224.2801063,
+    "NASA": 1795778778.4592373,
+    "LUNR": 1795778778.4592373,
     "TSLA": 1795777279.7014213,
-    "AXP": 1795777224.2801063,
-    "RKLB": 1795777224.2801063,
-    "KO": 1795777224.2801063,
-    "FLY": 1795777224.2801063,
-    "INTC": 1795777224.2801063,
+    "AXP": 1795778778.4592373,
+    "RKLB": 1795778778.4592373,
+    "KO": 1795778778.4592373,
+    "FLY": 1795778778.4592373,
+    "INTC": 1795778778.4592373,
     "VRT": 1795777279.7014213,
     "HPE": 1795777279.7014213,
     "DELL": 1795777279.7014213,
@@ -3384,7 +3384,7 @@
     "V": 1795777939.328296,
     "CAT": 1795777939.328296,
     "FN": 1795777279.7014213,
-    "GLW": 1795777168.9245915,
+    "GLW": 1795778778.4592373,
     "ANT": 1795777939.328296,
     "XAUUSD": 1795777939.328296,
     "KOSPI": 1795777279.7014213,
