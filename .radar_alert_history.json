@@ -50,8 +50,8 @@
       "last_notified_at": 0.0
     },
     "FLY": {
-      "state": "NORMAL",
-      "last_notified_at": 0.0
+      "state": "WATCHLIST_ENTRY_READY",
+      "last_notified_at": 1795790128.5626652
     },
     "LLY": {
       "state": "NORMAL",
@@ -86,8 +86,8 @@
       "last_notified_at": 1795789583.202877
     },
     "IWM": {
-      "state": "WATCHLIST_ENTRY_READY",
-      "last_notified_at": 1795790029.5195386
+      "state": "NORMAL",
+      "last_notified_at": 0.0
     },
     "IGV": {
       "state": "NORMAL",
