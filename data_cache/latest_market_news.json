@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795806087.833,
-  "updated_at_et": "11-27 14:01 ET",
-  "updated_at_kst": "04:01 KST",
+  "updated_at_ts": 1795806128.577,
+  "updated_at_et": "11-27 14:02 ET",
+  "updated_at_kst": "04:02 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -797,6 +797,13 @@
     ],
     "TSM": [
       {
+        "title": "Stanley Druckenmiller, David Tepper and 5 Other Famous Investors Own Taiwan Semiconductor. Here’s Who Sold Recently",
+        "url": "https://www.tikr.com/blog/stanley-druckenmiller-david-tepper-and-5-other-famous-investors-own-taiwan-semiconductor-heres-who-sold-recently?ref=yahoofinance&tlnk=yf-261127-678h6x89&.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-27 13:28 ET",
+        "pub_ts": 1795804099.0
+      },
+      {
         "title": "Trump Is Heading to Arizona to Break Ground on TSMC’s Newest Chip Plant",
         "url": "https://247wallst.com/investing/2026/11/27/trump-is-heading-to-arizona-to-break-ground-on-tsmcs-newest-chip-plant/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -823,13 +830,6 @@
         "source": "Yahoo Finance",
         "time": "11-27 08:30 ET",
         "pub_ts": 1795786204.0
-      },
-      {
-        "title": "ETFs Sold $34.5 Million of Taiwan Semiconductor (TSM) on Nov. 25",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/etfs-sold-34-5-million-110229859.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-27 06:02 ET",
-        "pub_ts": 1795777349.0
       }
     ],
     "VIXY": [
@@ -908,39 +908,39 @@
     ],
     "NVDA": [
       {
+        "title": "Dow Jones Futures: Stock Market Makes Bullish Move, Tesla Leads 7 New Buys; Nvidia's Jensen Huang Heads To Capitol Hill",
+        "url": "https://finance.yahoo.com/m/5b917298-e5b5-3d87-b1fa-f7cad345af64/dow-jones-futures%3A-stock.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-27 13:48 ET",
+        "pub_ts": 1795805323.0
+      },
+      {
+        "title": "US Equity Indexes Rise as Jensen Huang's Return to Nvidia Guardrails AI Trade While Investors Slice Growth Exposure This Week",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/us-equity-indexes-rise-jensen-183902792.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-27 13:39 ET",
+        "pub_ts": 1795804742.0
+      },
+      {
+        "title": "For a Little While, Nvidia Faced a Future Without Jensen Huang",
+        "url": "https://www.fool.com/investing/2026/11/27/for-a-little-while-nvidia-faced-a-future-without-jensen-huang/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-27 13:31 ET",
+        "pub_ts": 1795804262.0
+      },
+      {
+        "title": "Investing.com’s stocks of the week",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/investing-com-stocks-week-182910314.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-27 13:29 ET",
+        "pub_ts": 1795804150.0
+      },
+      {
         "title": "SanDisk Stocks Jump 12.85% After Kioxia and Nvidia Stretch GPU Memory With SSDs",
         "url": "https://finance.yahoo.com/markets/stocks/articles/sandisk-stocks-jump-12-85-181316890.html?.tsrc=rss",
         "source": "Yahoo Finance",
         "time": "11-27 13:13 ET",
         "pub_ts": 1795803196.0
-      },
-      {
-        "title": "Kioxia Stocks Jump 8.86% as Nvidia SSD Test and Index Buying Lift Shares",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/kioxia-stocks-jump-8-86-181157042.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-27 13:11 ET",
-        "pub_ts": 1795803117.0
-      },
-      {
-        "title": "Nvidia’s Key Man Problem",
-        "url": "https://www.fool.com/investing/2026/11/27/nvidias-key-man-problem/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-27 13:01 ET",
-        "pub_ts": 1795802462.0
-      },
-      {
-        "title": "Stock Market Today: Dow, Nasdaq Pop In Post-Holiday Trade; Nvidia Falls, Sandisk Vaults Higher (Live Coverage)",
-        "url": "https://finance.yahoo.com/m/86a4597f-ee47-3048-ae92-1a56fa4711e5/stock-market-today%3A-dow%2C.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-27 12:47 ET",
-        "pub_ts": 1795801677.0
-      },
-      {
-        "title": "Not AMD. This Is the 1 Company Nvidia Should Worry About Most.",
-        "url": "https://www.fool.com/investing/2026/11/27/not-amd-this-is-the-1-company-nvidia-should-worry-about-most/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-27 12:35 ET",
-        "pub_ts": 1795800902.0
       }
     ],
     "AMD": [
@@ -3316,21 +3316,21 @@
   },
   "ticker_news_ts": {
     "KORU": 1795804763.7409952,
-    "SOXL": 1795804621.7671812,
-    "SPY": 1795804621.7671812,
-    "DIA": 1795804621.7671812,
-    "SOXX": 1795804621.7671812,
-    "QQQ": 1795804621.7671812,
-    "SMH": 1795804621.7671812,
-    "IWM": 1795804621.7671812,
-    "IGV": 1795804621.7671812,
-    "TLT": 1795804621.7671812,
-    "GLD": 1795804621.7671812,
-    "SQQQ": 1795804621.7671812,
-    "TSM": 1795804621.7671812,
-    "VIXY": 1795804621.7671812,
-    "SOXS": 1795804621.7671812,
-    "NVDA": 1795804621.7671812,
+    "SOXL": 1795806128.5772362,
+    "SPY": 1795806128.5772362,
+    "DIA": 1795806128.5772362,
+    "SOXX": 1795806128.5772362,
+    "QQQ": 1795806128.5772362,
+    "SMH": 1795806128.5772362,
+    "IWM": 1795806128.5772362,
+    "IGV": 1795806128.5772362,
+    "TLT": 1795806128.5772362,
+    "GLD": 1795806128.5772362,
+    "SQQQ": 1795806128.5772362,
+    "TSM": 1795806128.5772362,
+    "VIXY": 1795806128.5772362,
+    "SOXS": 1795806128.5772362,
+    "NVDA": 1795806128.5772362,
     "AMD": 1795804763.7409952,
     "ASML": 1795804763.7409952,
     "QCOM": 1795804763.7409952,
@@ -3395,7 +3395,7 @@
     "ANT": 1795805549.2043717,
     "XAUUSD": 1795805549.2043717,
     "KOSPI": 1795805457.9580562,
-    "KSTR": 1795804621.7671812
+    "KSTR": 1795806128.5772362
   },
   "opex_shield": {
     "date": "2026-11-27",
