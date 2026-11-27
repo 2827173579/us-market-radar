@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795802420.801,
-  "updated_at_et": "11-27 13:00 ET",
-  "updated_at_kst": "03:00 KST",
+  "updated_at_ts": 1795802479.932,
+  "updated_at_et": "11-27 13:01 ET",
+  "updated_at_kst": "03:01 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -3023,6 +3023,13 @@
         "pub_ts": 1795794488.0
       },
       {
+        "title": "Stock Market Midday, Nov. 27: Tech Stocks Recover and Amazon Posts Black Friday Gains",
+        "url": "https://www.fool.com/coverage/stock-market-today/2026/11/27/stock-market-midday-nov-27-tech-stocks-recover-and-amazon-posts-black-friday-gains/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-27 12:31 ET",
+        "pub_ts": 1795800677.0
+      },
+      {
         "title": "7 Highest Paying Retail Jobs for 2027",
         "url": "https://moneylion.com/trending/money/highest-paying-retail-jobs-2027?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -3042,13 +3049,6 @@
         "source": "Yahoo Finance",
         "time": "11-27 10:42 ET",
         "pub_ts": 1795794140.0
-      },
-      {
-        "title": "Walmart (WMT) Could Be 15% Undervalued Following Defensive Rotation And Holiday Momentum",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/walmart-wmt-could-15-undervalued-151004257.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-27 10:10 ET",
-        "pub_ts": 1795792204.0
       }
     ],
     "V": [
@@ -3201,11 +3201,18 @@
     ],
     "ANT": [
       {
-        "title": "Anthropic's Dario and Daniela Amodei may have just made a $560 million misstep",
-        "url": "https://finance.yahoo.com/markets/article/anthropics-dario-and-daniela-amodei-may-have-just-made-a-560-million-misstep-141338993.html?.tsrc=rss",
+        "title": "Anthropic Jumps Back Above Its IPO Price As AI Stocks Rebound",
+        "url": "https://finance.yahoo.com/m/dbedc11e-6aeb-3d91-9dd5-1e1027e44b33/anthropic-jumps-back-above.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-27 09:13 ET",
-        "pub_ts": 1795788818.0
+        "time": "11-27 12:49 ET",
+        "pub_ts": 1795801778.0
+      },
+      {
+        "title": "Anthropic Stock Investors Face Major December Test",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/anthropic-stock-investors-face-major-173652408.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-27 12:36 ET",
+        "pub_ts": 1795801012.0
       },
       {
         "title": "Anthropic short interest climbs as IPO lockup expiry nears",
@@ -3222,18 +3229,11 @@
         "pub_ts": 1795799389.0
       },
       {
-        "title": "Frank Talk: Jensen Huang’s return and Anthropic’s shaky debut prove AI is now a national security trade",
-        "url": "https://www.proactiveinvestors.com/companies/news/1102593/frank-talk-jensen-huang-s-return-and-anthropic-s-shaky-debut-prove-ai-is-now-a-national-security-trade-1102593.html?.tsrc=rss",
+        "title": "Anthropic Shares Jump After Volatile First Week Since IPO",
+        "url": "https://finance.yahoo.com/technology/ai/articles/anthropic-shares-jump-volatile-first-170808947.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-27 11:24 ET",
-        "pub_ts": 1795796640.0
-      },
-      {
-        "title": "Anthropic Just Hit an $81 Billion Run Rate—Why Wall Street’s Post-IPO Jitters Are a Gift",
-        "url": "https://247wallst.com/investing/2026/11/27/anthropic-just-hit-an-81-billion-run-rate-why-wall-streets-post-ipo-jitters-are-a-gift/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-27 10:45 ET",
-        "pub_ts": 1795794329.0
+        "time": "11-27 12:08 ET",
+        "pub_ts": 1795799288.0
       }
     ],
     "XAUUSD": [
@@ -3383,16 +3383,16 @@
     "MRNA": 1795802420.8009427,
     "NKE": 1795802420.8009427,
     "MCD": 1795802420.8009427,
-    "PEP": 1795800883.3016748,
-    "XOM": 1795800883.3016748,
-    "JPM": 1795800883.3016748,
-    "WMT": 1795800883.3016748,
-    "V": 1795800883.3016748,
-    "CAT": 1795800883.3016748,
+    "PEP": 1795802479.9323592,
+    "XOM": 1795802479.9323592,
+    "JPM": 1795802479.9323592,
+    "WMT": 1795802479.9323592,
+    "V": 1795802479.9323592,
+    "CAT": 1795802479.9323592,
     "FN": 1795802368.1384478,
     "GLW": 1795802368.1384478,
-    "ANT": 1795800883.3016748,
-    "XAUUSD": 1795800931.6190078,
+    "ANT": 1795802479.9323592,
+    "XAUUSD": 1795802479.9323592,
     "KOSPI": 1795802420.8009427,
     "KSTR": 1795801437.6941788
   },
