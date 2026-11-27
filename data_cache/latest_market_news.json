@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795777224.28,
-  "updated_at_et": "11-27 06:00 ET",
-  "updated_at_kst": "20:00 KST",
+  "updated_at_ts": 1795777279.701,
+  "updated_at_et": "11-27 06:01 ET",
+  "updated_at_kst": "20:01 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -1937,6 +1937,13 @@
     ],
     "TSLA": [
       {
+        "title": "Tesla’s Robotaxi Promises “More Cars, Less $” as Its Dallas Zone Grows 83.5%",
+        "url": "https://www.tikr.com/blog/teslas-robotaxi-promises-more-cars-less-as-its-dallas-zone-grows-83-5?ref=yahoofinance&tlnk=yf-261127-v78qcfqp&.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-27 04:35 ET",
+        "pub_ts": 1795772131.0
+      },
+      {
         "title": "Elon Musk Offers Samsung Long-Term Chip Deals and Factory Funding, Gets Brushed Off: 'Everyone Else Was Offering That'",
         "url": "https://finance.yahoo.com/technology/articles/elon-musk-offers-samsung-long-064455133.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1963,13 +1970,6 @@
         "source": "Yahoo Finance",
         "time": "11-26 17:35 ET",
         "pub_ts": 1795732502.0
-      },
-      {
-        "title": "Tesla Stocks Slip 1.18% as EU Delays Self-Driving Vote to December 15",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/tesla-stocks-slip-1-18-190357031.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-26 14:03 ET",
-        "pub_ts": 1795719837.0
       }
     ],
     "AXP": [
@@ -3344,22 +3344,22 @@
     "CRDO": 1795777168.9245915,
     "COHR": 1795777168.9245915,
     "MRVL": 1795777224.2801063,
-    "LITE": 1795775759.5065196,
+    "LITE": 1795777279.7014213,
     "AAOI": 1795777168.9245915,
     "SPCX": 1795777168.9245915,
     "ASTS": 1795777224.2801063,
-    "AXTI": 1795775759.5065196,
+    "AXTI": 1795777279.7014213,
     "NASA": 1795777224.2801063,
     "LUNR": 1795777224.2801063,
-    "TSLA": 1795775759.5065196,
+    "TSLA": 1795777279.7014213,
     "AXP": 1795777224.2801063,
     "RKLB": 1795777224.2801063,
     "KO": 1795777224.2801063,
     "FLY": 1795777224.2801063,
     "INTC": 1795777224.2801063,
-    "VRT": 1795775759.5065196,
-    "HPE": 1795775759.5065196,
-    "DELL": 1795775759.5065196,
+    "VRT": 1795777279.7014213,
+    "HPE": 1795777279.7014213,
+    "DELL": 1795777279.7014213,
     "OKLO": 1795775812.034933,
     "CEG": 1795775812.034933,
     "FPS": 1795775812.034933,
@@ -3383,11 +3383,11 @@
     "WMT": 1795775920.3715477,
     "V": 1795775920.3715477,
     "CAT": 1795775920.3715477,
-    "FN": 1795775759.5065196,
+    "FN": 1795777279.7014213,
     "GLW": 1795777168.9245915,
     "ANT": 1795775920.3715477,
     "XAUUSD": 1795775920.3715477,
-    "KOSPI": 1795775759.5065196,
+    "KOSPI": 1795777279.7014213,
     "KSTR": 1795777060.5641994
   },
   "opex_shield": {
