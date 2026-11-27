@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795793048.797,
-  "updated_at_et": "11-27 10:24 ET",
-  "updated_at_kst": "00:24 KST",
+  "updated_at_ts": 1795793108.571,
+  "updated_at_et": "11-27 10:25 ET",
+  "updated_at_kst": "00:25 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -1943,11 +1943,18 @@
     ],
     "TSLA": [
       {
-        "title": "Stock Market Today: Dow Futures Jump 650 Points As Nvidia Rebounds; Anthropic, SpaceX, Tesla Rally (Live Coverage)",
-        "url": "https://finance.yahoo.com/m/86a4597f-ee47-3048-ae92-1a56fa4711e5/stock-market-today%3A-dow.html?.tsrc=rss",
+        "title": "SpaceX, Tesla have had a bumpy 2026 thus far: What to know",
+        "url": "https://finance.yahoo.com/video/spacex-tesla-have-had-a-bumpy-2026-thus-far-what-to-know-145849441.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-27 09:00 ET",
-        "pub_ts": 1795788002.0
+        "time": "11-27 09:58 ET",
+        "pub_ts": 1795791529.0
+      },
+      {
+        "title": "Stock Market Today: Dow Jumps 500 Points While Nvidia Wavers; Anthropic, Tesla, SpaceX Rally (Live Coverage)",
+        "url": "https://finance.yahoo.com/m/86a4597f-ee47-3048-ae92-1a56fa4711e5/stock-market-today%3A-dow-jumps.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-27 09:51 ET",
+        "pub_ts": 1795791085.0
       },
       {
         "title": "What ARK Autonomous Technology & Robotics ETF (ARKQ) Sold: Tesla Leads on Nov. 25",
@@ -1969,13 +1976,6 @@
         "source": "Yahoo Finance",
         "time": "11-27 06:03 ET",
         "pub_ts": 1795777409.0
-      },
-      {
-        "title": "ETFs Are Buying Tesla (TSLA) on Wednesday",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/etfs-buying-tesla-tsla-wednesday-110102240.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-27 06:01 ET",
-        "pub_ts": 1795777262.0
       }
     ],
     "AXP": [
@@ -2202,6 +2202,13 @@
     ],
     "HPE": [
       {
+        "title": "Network Hardware - Global Strategic Business Report 2026: Capitalize on the $33.1 Billion Revenue Surge to 2032 with Benchmarks on Cisco, Huawei, HPE, Nokia, and Ericsson",
+        "url": "https://finance.yahoo.com/technology/articles/network-hardware-global-strategic-business-150100167.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-27 10:01 ET",
+        "pub_ts": 1795791660.0
+      },
+      {
         "title": "Is Micron Stock a Buy After HPE Said Memory Will Stay Scarce Into 2028?",
         "url": "https://www.fool.com/investing/2026/11/26/is-micron-stock-a-buy-after-hpe-said-memory-will-stay-scarce-into-2028/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2228,13 +2235,6 @@
         "source": "Yahoo Finance",
         "time": "11-25 19:00 ET",
         "pub_ts": 1795651200.0
-      },
-      {
-        "title": "HPE stock plunges after record quarter as a hidden catch emerges",
-        "url": "https://www.thestreet.com/investing/hpe-stock-plunges-record-quarter-hidden-catch?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 18:17 ET",
-        "pub_ts": 1795648620.0
       }
     ],
     "DELL": [
@@ -2387,11 +2387,25 @@
     ],
     "MU": [
       {
+        "title": "Stocks snap from a $6 trillion washout to a $3 trillion surge as Nvidia, Micron, and SpaceX bounce back",
+        "url": "https://finance.yahoo.com/markets/article/stocks-snap-from-a-6-trillion-washout-to-a-3-trillion-surge-as-nvidia-micron-and-spacex-bounce-back-151218930.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-27 10:12 ET",
+        "pub_ts": 1795792338.0
+      },
+      {
         "title": "He was right about AI and still lost $35 billion",
         "url": "https://finance.yahoo.com/video/ai-still-lost-35-billion-120000023.html?.tsrc=rss",
         "source": "Yahoo Finance",
         "time": "11-27 07:00 ET",
         "pub_ts": 1795780800.0
+      },
+      {
+        "title": "Micron Stock Is Jumping but There’s Bad News on Memory Prices",
+        "url": "https://finance.yahoo.com/m/ece1bfa4-65fd-3b15-bd9c-6a0f690f08e4/micron-stock-is-jumping-but.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-27 09:58 ET",
+        "pub_ts": 1795791480.0
       },
       {
         "title": "SanDisk Jumps 10% as Investors Return to Beaten-Down Memory Stocks; Micron and SK Hynix Rise 6% Despite TrendForce DRAM Warning",
@@ -2406,20 +2420,6 @@
         "source": "Yahoo Finance",
         "time": "11-27 08:19 ET",
         "pub_ts": 1795785561.0
-      },
-      {
-        "title": "David Tepper, George Soros and 2 Other Famous Investors Own Micron. Here’s Who Bought and Sold Recently",
-        "url": "https://www.tikr.com/blog/micron-stock-david-tepper-george-soros-investors?ref=yahoofinance&tlnk=yf-261127-3fj98j3p&.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-27 07:25 ET",
-        "pub_ts": 1795782349.0
-      },
-      {
-        "title": "MARKETS LIVE: US stock futures jump ahead of shortened Black Friday trading session",
-        "url": "https://www.proactiveinvestors.com/companies/news/1102556/markets-live-us-stock-futures-jump-ahead-of-shortened-black-friday-trading-session-1102556.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-27 06:57 ET",
-        "pub_ts": 1795780620.0
       }
     ],
     "SKHY": [
@@ -2579,6 +2579,13 @@
         "pub_ts": 1795789800.0
       },
       {
+        "title": "Sandisk, Bloom, Marvell, AMD, Nvidia, HP, and More Stocks That Explain Today’s Market",
+        "url": "https://finance.yahoo.com/m/977de44c-fcf5-3369-bcdd-0c3ddc7cfec9/sandisk%2C-bloom%2C-marvell%2C-amd%2C.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-27 09:56 ET",
+        "pub_ts": 1795791360.0
+      },
+      {
         "title": "SanDisk Jumps 10% as Investors Return to Beaten-Down Memory Stocks; Micron and SK Hynix Rise 6% Despite TrendForce DRAM Warning",
         "url": "https://247wallst.com/investing/2026/11/27/sandisk-jumps-10-as-investors-return-to-beaten-down-memory-stocks-micron-and-sk-hynix-rise-6-despite-trendforce-dram-warning/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2598,50 +2605,43 @@
         "source": "Yahoo Finance",
         "time": "11-27 06:18 ET",
         "pub_ts": 1795778295.0
-      },
-      {
-        "title": "Sandisk, Bloom, Marvell, AMD, Nvidia, HP, and More Stocks That Explain Today’s Market",
-        "url": "https://finance.yahoo.com/m/977de44c-fcf5-3369-bcdd-0c3ddc7cfec9/sandisk%2C-bloom%2C-marvell%2C-amd%2C.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-27 05:22 ET",
-        "pub_ts": 1795774920.0
       }
     ],
     "BTC-USD": [
+      {
+        "title": "Tether Buys $10 Million Worth of Bitdeer Stock",
+        "url": "https://www.cryptoprowl.com/releases/tether-buys-10-million-worth-of-bitdeer-stock-8099?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-27 10:06 ET",
+        "pub_ts": 1795791960.0
+      },
+      {
+        "title": "JPMorgan Says Bitcoin ‘Capitulation’ Has Been Reached",
+        "url": "https://www.cryptoprowl.com/releases/jpmorgan-says-bitcoin-capitulation-has-been-reached-8098?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-27 10:01 ET",
+        "pub_ts": 1795791660.0
+      },
+      {
+        "title": "Signal House Publishes Record-Based Explainer on Bitcoin Latinum Lawsuit",
+        "url": "https://finance.yahoo.com/markets/crypto/articles/signal-house-publishes-record-based-150000418.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-27 10:00 ET",
+        "pub_ts": 1795791600.0
+      },
+      {
+        "title": "Stock Market Today: Dow Jumps 500 Points While Nvidia Wavers; Anthropic, Tesla, SpaceX Rally (Live Coverage)",
+        "url": "https://finance.yahoo.com/m/86a4597f-ee47-3048-ae92-1a56fa4711e5/stock-market-today%3A-dow-jumps.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-27 09:51 ET",
+        "pub_ts": 1795791085.0
+      },
       {
         "title": "Analyst Warns of $38,000 Bitcoin Crash as Trump Proposes Tariffs on 14 Trading Partners",
         "url": "https://www.ccn.com/news/crypto/bitcoin-38k-analyst-downside-trump-14-trading-partners/?.tsrc=rss",
         "source": "Yahoo Finance",
         "time": "11-27 09:07 ET",
         "pub_ts": 1795788436.0
-      },
-      {
-        "title": "Exchange-Traded Funds, Equity Futures Higher Pre-Bell Friday Amid Technology Stock Rebound",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/exchange-traded-funds-equity-futures-140653942.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-27 09:06 ET",
-        "pub_ts": 1795788413.0
-      },
-      {
-        "title": "Strategy Just Bought Bitcoin for the 4th Straight Week. So Why Aren't Crypto Investors Bullish on MSTR Stock?",
-        "url": "https://www.fool.com/investing/2026/11/27/strategy-just-bought-bitcoin-for-the-4th-straight-week-so-why-aren-t-crypto-investors-bullish-on-mstr-stock/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-27 09:03 ET",
-        "pub_ts": 1795788192.0
-      },
-      {
-        "title": "Stock Market Today: Dow Futures Jump 650 Points As Nvidia Rebounds; Anthropic, SpaceX, Tesla Rally (Live Coverage)",
-        "url": "https://finance.yahoo.com/m/86a4597f-ee47-3048-ae92-1a56fa4711e5/stock-market-today%3A-dow.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-27 09:00 ET",
-        "pub_ts": 1795788002.0
-      },
-      {
-        "title": "IREN vs. Core Scientific: Which AI Stock Is the Better Investment Now?",
-        "url": "https://finance.yahoo.com/technology/ai/articles/iren-vs-core-scientific-ai-121400735.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-27 07:14 ET",
-        "pub_ts": 1795781640.0
       }
     ],
     "CRWD": [
@@ -3357,32 +3357,32 @@
     "AXTI": 1795792997.8306353,
     "NASA": 1795792997.8306353,
     "LUNR": 1795792997.8306353,
-    "TSLA": 1795791552.0591507,
+    "TSLA": 1795793108.5706723,
     "AXP": 1795792997.8306353,
     "RKLB": 1795792997.8306353,
     "KO": 1795792997.8306353,
     "FLY": 1795792997.8306353,
-    "INTC": 1795791552.0591507,
-    "VRT": 1795791552.0591507,
-    "HPE": 1795791552.0591507,
-    "DELL": 1795791552.0591507,
-    "OKLO": 1795791552.0591507,
-    "CEG": 1795791552.0591507,
-    "FPS": 1795791552.0591507,
-    "MU": 1795791552.0591507,
-    "SKHY": 1795791552.0591507,
-    "WDC": 1795791552.0591507,
-    "STX": 1795791552.0591507,
-    "MSTR": 1795791552.0591507,
-    "SNDK": 1795791552.0591507,
-    "BTC-USD": 1795791552.0591507,
-    "CRWD": 1795791552.0591507,
-    "ORCL": 1795791552.0591507,
-    "COIN": 1795791552.0591507,
-    "LLY": 1795791552.0591507,
-    "MRNA": 1795791552.0591507,
-    "NKE": 1795791552.0591507,
-    "MCD": 1795791552.0591507,
+    "INTC": 1795793108.5706723,
+    "VRT": 1795793108.5706723,
+    "HPE": 1795793108.5706723,
+    "DELL": 1795793108.5706723,
+    "OKLO": 1795793108.5706723,
+    "CEG": 1795793108.5706723,
+    "FPS": 1795793108.5706723,
+    "MU": 1795793108.5706723,
+    "SKHY": 1795793108.5706723,
+    "WDC": 1795793108.5706723,
+    "STX": 1795793108.5706723,
+    "MSTR": 1795793108.5706723,
+    "SNDK": 1795793108.5706723,
+    "BTC-USD": 1795793108.5706723,
+    "CRWD": 1795793108.5706723,
+    "ORCL": 1795793108.5706723,
+    "COIN": 1795793108.5706723,
+    "LLY": 1795793108.5706723,
+    "MRNA": 1795793108.5706723,
+    "NKE": 1795793108.5706723,
+    "MCD": 1795793108.5706723,
     "PEP": 1795791621.6380503,
     "XOM": 1795791621.6380503,
     "JPM": 1795791621.6380503,
