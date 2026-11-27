@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795808520.606,
-  "updated_at_et": "11-27 14:42 ET",
-  "updated_at_kst": "04:42 KST",
+  "updated_at_ts": 1795808601.385,
+  "updated_at_et": "11-27 14:43 ET",
+  "updated_at_kst": "04:43 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -1880,11 +1880,25 @@
     ],
     "INTC": [
       {
+        "title": "Intel Stocks Climb 2.86% as Court Filings Detail Washington's 10% Stake Push",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/intel-stocks-climb-2-86-192124489.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-27 14:21 ET",
+        "pub_ts": 1795807284.0
+      },
+      {
         "title": "No Threat to TSMC Before 2028: Intel’s Foundry Gap Is Still Huge",
         "url": "https://247wallst.com/investing/2026/11/27/no-threat-to-tsmc-before-2028-intels-foundry-gap-is-still-huge/?.tsrc=rss",
         "source": "Yahoo Finance",
         "time": "11-27 10:45 ET",
         "pub_ts": 1795794312.0
+      },
+      {
+        "title": "BC-Most Active Stocks",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/bc-most-active-stocks-153017329.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-27 10:30 ET",
+        "pub_ts": 1795793417.0
       },
       {
         "title": "How Much More Could You Lose In Intel Stock?",
@@ -1899,20 +1913,6 @@
         "source": "Yahoo Finance",
         "time": "11-27 06:54 ET",
         "pub_ts": 1795780448.0
-      },
-      {
-        "title": "Intel’s (INTC) AI Opportunity Is Growing, But There’s One Big Problem Holding It Back",
-        "url": "https://finance.yahoo.com/technology/ai/articles/intel-intc-ai-opportunity-growing-031416634.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-26 22:14 ET",
-        "pub_ts": 1795749256.0
-      },
-      {
-        "title": "AMD Rises 4% Despite Erste Group Downgrade on Valuation; Marvell Climbs 6%, Intel Gains 5%",
-        "url": "https://247wallst.com/investing/2026/11/27/amd-rises-4-despite-erste-group-downgrade-on-valuation-marvell-climbs-6-intel-gains-5/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-27 09:02 ET",
-        "pub_ts": 1795788175.0
       }
     ],
     "AXP": [
@@ -2405,6 +2405,13 @@
         "pub_ts": 1795789800.0
       },
       {
+        "title": "Stock Market Today: Indexes Log Best Thanksgiving Week In 18 Years",
+        "url": "https://finance.yahoo.com/m/86a4597f-ee47-3048-ae92-1a56fa4711e5/stock-market-today%3A-indexes.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-27 14:19 ET",
+        "pub_ts": 1795807162.0
+      },
+      {
         "title": "SanDisk Stocks Jump 12.85% After Kioxia and Nvidia Stretch GPU Memory With SSDs",
         "url": "https://finance.yahoo.com/markets/stocks/articles/sandisk-stocks-jump-12-85-181316890.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2424,13 +2431,6 @@
         "source": "Yahoo Finance",
         "time": "11-27 13:03 ET",
         "pub_ts": 1795802584.0
-      },
-      {
-        "title": "Stock Market Today: Dow, Nasdaq Pop In Post-Holiday Trade; Nvidia Falls, Sandisk Vaults Higher (Live Coverage)",
-        "url": "https://finance.yahoo.com/m/86a4597f-ee47-3048-ae92-1a56fa4711e5/stock-market-today%3A-dow%2C.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-27 12:47 ET",
-        "pub_ts": 1795801677.0
       }
     ],
     "CRWD": [
@@ -3049,34 +3049,34 @@
     "LUNR": 1795808520.605874,
     "NASA": 1795808520.605874,
     "KO": 1795808520.605874,
-    "INTC": 1795806898.9647121,
-    "AXP": 1795806898.9647121,
-    "VRT": 1795806898.9647121,
-    "DELL": 1795806898.9647121,
-    "CEG": 1795806898.9647121,
-    "TSLA": 1795806898.9647121,
-    "HPE": 1795806898.9647121,
-    "OKLO": 1795806898.9647121,
-    "FPS": 1795806898.9647121,
-    "MU": 1795806898.9647121,
-    "SKHY": 1795806898.9647121,
-    "WDC": 1795806898.9647121,
-    "STX": 1795806898.9647121,
-    "MSTR": 1795806898.9647121,
-    "SNDK": 1795806898.9647121,
-    "CRWD": 1795806898.9647121,
-    "BTC-USD": 1795806898.9647121,
-    "COIN": 1795806898.9647121,
-    "LLY": 1795806898.9647121,
-    "ORCL": 1795806898.9647121,
-    "MRNA": 1795806898.9647121,
-    "MCD": 1795806898.9647121,
-    "NKE": 1795806898.9647121,
-    "V": 1795806898.9647121,
+    "INTC": 1795808601.384806,
+    "AXP": 1795808601.384806,
+    "VRT": 1795808601.384806,
+    "DELL": 1795808601.384806,
+    "CEG": 1795808601.384806,
+    "TSLA": 1795808601.384806,
+    "HPE": 1795808601.384806,
+    "OKLO": 1795808601.384806,
+    "FPS": 1795808601.384806,
+    "MU": 1795808601.384806,
+    "SKHY": 1795808601.384806,
+    "WDC": 1795808601.384806,
+    "STX": 1795808601.384806,
+    "MSTR": 1795808601.384806,
+    "SNDK": 1795808601.384806,
+    "CRWD": 1795808601.384806,
+    "BTC-USD": 1795808601.384806,
+    "COIN": 1795808601.384806,
+    "LLY": 1795808601.384806,
+    "ORCL": 1795808601.384806,
+    "MRNA": 1795808601.384806,
+    "MCD": 1795808601.384806,
+    "NKE": 1795808601.384806,
+    "V": 1795808601.384806,
     "JPM": 1795806898.9647121,
     "WMT": 1795806898.9647121,
     "XOM": 1795806898.9647121,
-    "PEP": 1795806898.9647121,
+    "PEP": 1795808601.384806,
     "CAT": 1795806898.9647121,
     "ANT": 1795806898.9647121,
     "XAUUSD": 1795806898.9647121
