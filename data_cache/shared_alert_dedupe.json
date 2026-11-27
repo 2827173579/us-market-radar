@@ -8271,9 +8271,13 @@
     "2026-11-27:INTRADAY_CORRIDOR:SOXL:BELOW_P25": {
       "device": "PC",
       "ts": 1795790802.6393843
+    },
+    "KOL_ADDON:2026-11-27:KOL_SOXL_SHORT_2026-11-27_1": {
+      "device": "PC",
+      "ts": 1795790846.7501068
     }
   },
   "device": "PC",
-  "last_heartbeat_ts": 1795790777.5435092,
-  "updated_at": "2026-11-27T14:46:42.639891+00:00"
+  "last_heartbeat_ts": 1795790823.6043923,
+  "updated_at": "2026-11-27T14:47:26.750643+00:00"
 }
