@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795775482.989,
-  "updated_at_et": "11-27 05:31 ET",
-  "updated_at_kst": "19:31 KST",
+  "updated_at_ts": 1795775532.512,
+  "updated_at_et": "11-27 05:32 ET",
+  "updated_at_kst": "19:32 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -900,6 +900,20 @@
     ],
     "NVDA": [
       {
+        "title": "Market Chatter: Nvidia Stops Southeast Asia Chip Sales Following Proposed US Restrictions",
+        "url": "https://finance.yahoo.com/technology/ai/articles/market-chatter-nvidia-stops-southeast-102254508.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-27 05:22 ET",
+        "pub_ts": 1795774974.0
+      },
+      {
+        "title": "Nvidia Forecast $130 Billion in Revenue and Added $150 Billion to Its Buyback. Should You Buy the Stock?",
+        "url": "https://www.fool.com/investing/2026/11/27/nvidia-forecast-usd130-billion-in-revenue-and-added-usd150-billion-to-its-buyback-should-you-buy-the-stock/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-27 05:20 ET",
+        "pub_ts": 1795774802.0
+      },
+      {
         "title": "Nvidia, AI Fears Jolt Markets: Market Snapshot",
         "url": "https://finance.yahoo.com/video/nvidia-ai-fears-jolt-markets-082748065.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -907,32 +921,18 @@
         "pub_ts": 1795768068.0
       },
       {
-        "title": "Former SEC Chair Gensler: Nvidia Has “a Disclosure Vulnerability.” The White House’s Huang Assurances May Have to Be Filed",
-        "url": "https://www.tikr.com/blog/former-sec-chair-gensler-nvidia-has-a-disclosure-vulnerability-the-white-houses-huang-assurances-may-have-to-be-filed?ref=yahoofinance&tlnk=yf-261127-h7247f3q&.tsrc=rss",
+        "title": "1 No-Brainer Stock to Buy and Hold for 10 Years",
+        "url": "https://www.fool.com/investing/2026/11/27/1-no-brainer-stock-to-buy-on-the-dip-and-hold-for-10-years/?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-27 01:54 ET",
-        "pub_ts": 1795762458.0
+        "time": "11-27 05:13 ET",
+        "pub_ts": 1795774382.0
       },
       {
-        "title": "Michael Burry Shares Stark Warning About AI Boom, as Nvidia, Oracle and Meta Face Surging Debt Insurance Costs",
-        "url": "https://finance.yahoo.com/technology/ai/articles/michael-burry-shares-stark-warning-063128312.html?.tsrc=rss",
+        "title": "Yikes! Anthropic Stock Is Down 28%, but Wall Street says This Will Happen Next.",
+        "url": "https://www.fool.com/investing/2026/11/27/anthropic-stock-down-28-wall-street-this-happens-next/?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-27 01:31 ET",
-        "pub_ts": 1795761088.0
-      },
-      {
-        "title": "A Palantir Co-Founder Bought $122 Million of the Stock on Nov. 20. Here's What I Think of Palantir Stock Now.",
-        "url": "https://www.fool.com/investing/2026/11/27/a-palantir-co-founder-bought-usd122-million-of-the-stock-on-nov-20-here-s-what-i-think-of-palantir-stock-now/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-27 04:07 ET",
-        "pub_ts": 1795770422.0
-      },
-      {
-        "title": "Berkshire Cut Chevron By About a Third This Year and Kept Occidental. What Does That Say About Oil Prices?",
-        "url": "https://www.fool.com/investing/2026/11/27/berkshire-cut-chevron-by-about-a-third-this-year-a/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-27 03:50 ET",
-        "pub_ts": 1795769400.0
+        "time": "11-27 05:04 ET",
+        "pub_ts": 1795773842.0
       }
     ],
     "AMD": [
@@ -3307,22 +3307,22 @@
     ]
   },
   "ticker_news_ts": {
-    "KORU": 1795774018.9992092,
-    "SOXL": 1795774018.9992092,
-    "SPY": 1795774018.9992092,
-    "DIA": 1795774018.9992092,
-    "SOXX": 1795774018.9992092,
-    "QQQ": 1795774018.9992092,
-    "SMH": 1795774018.9992092,
-    "IWM": 1795774018.9992092,
-    "IGV": 1795774018.9992092,
-    "TLT": 1795774018.9992092,
-    "GLD": 1795774018.9992092,
-    "SQQQ": 1795774018.9992092,
-    "TSM": 1795774018.9992092,
-    "VIXY": 1795774018.9992092,
-    "SOXS": 1795774018.9992092,
-    "NVDA": 1795774018.9992092,
+    "KORU": 1795775532.5117595,
+    "SOXL": 1795775532.5117595,
+    "SPY": 1795775532.5117595,
+    "DIA": 1795775532.5117595,
+    "SOXX": 1795775532.5117595,
+    "QQQ": 1795775532.5117595,
+    "SMH": 1795775532.5117595,
+    "IWM": 1795775532.5117595,
+    "IGV": 1795775532.5117595,
+    "TLT": 1795775532.5117595,
+    "GLD": 1795775532.5117595,
+    "SQQQ": 1795775532.5117595,
+    "TSM": 1795775532.5117595,
+    "VIXY": 1795775532.5117595,
+    "SOXS": 1795775532.5117595,
+    "NVDA": 1795775532.5117595,
     "AMD": 1795774073.9378898,
     "ASML": 1795774073.9378898,
     "QCOM": 1795774073.9378898,
@@ -3387,7 +3387,7 @@
     "ANT": 1795774402.7485998,
     "XAUUSD": 1795774402.7485998,
     "KOSPI": 1795774182.56816,
-    "KSTR": 1795774018.9992092
+    "KSTR": 1795775532.5117595
   },
   "opex_shield": {
     "date": "2026-11-27",
