@@ -8407,9 +8407,13 @@
     "2026-11-27:DEFENSIVE_FLIGHT:green:-3.6": {
       "device": "PC",
       "ts": 1795795115.698439
+    },
+    "2026-11-27:FLY/IWM:5M_ENTRY": {
+      "device": "PC",
+      "ts": 1795796183.1553102
     }
   },
   "device": "PC",
-  "last_heartbeat_ts": 1795796043.1936464,
-  "updated_at": "2026-11-27T16:14:03.194216+00:00"
+  "last_heartbeat_ts": 1795796150.21092,
+  "updated_at": "2026-11-27T16:16:23.155821+00:00"
 }

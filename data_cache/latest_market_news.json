@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795796116.613,
-  "updated_at_et": "11-27 11:15 ET",
-  "updated_at_kst": "01:15 KST",
+  "updated_at_ts": 1795796167.43,
+  "updated_at_et": "11-27 11:16 ET",
+  "updated_at_kst": "01:16 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -2128,6 +2128,13 @@
     ],
     "INTC": [
       {
+        "title": "No Threat to TSMC Before 2028: Intel’s Foundry Gap Is Still Huge",
+        "url": "https://247wallst.com/investing/2026/11/27/no-threat-to-tsmc-before-2028-intels-foundry-gap-is-still-huge/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-27 10:45 ET",
+        "pub_ts": 1795794312.0
+      },
+      {
         "title": "How Much More Could You Lose In Intel Stock?",
         "url": "https://www.trefis.com/stock/intc/articles/629327/how-much-more-could-you-lose-in-intel-stock/2026-11-27?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2154,13 +2161,6 @@
         "source": "Yahoo Finance",
         "time": "11-26 14:30 ET",
         "pub_ts": 1795721403.0
-      },
-      {
-        "title": "Intel Stocks Slip After Erasing a 10.3% Plunge Below $50",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/intel-stocks-slip-erasing-10-184536612.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-26 13:45 ET",
-        "pub_ts": 1795718736.0
       }
     ],
     "VRT": [
@@ -2535,6 +2535,13 @@
     ],
     "MSTR": [
       {
+        "title": "Before the bell: Wall Street goes Black Friday shopping. Is Bitcoin on the list?",
+        "url": "https://www.thestreet.com/crypto/markets/before-the-bell-wall-street-goes-black-friday-shopping-is-bitcoin-on-the-list?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-27 11:00 ET",
+        "pub_ts": 1795795200.0
+      },
+      {
         "title": "Strategy Just Bought Bitcoin for the 4th Straight Week. So Why Aren't Crypto Investors Bullish on MSTR Stock?",
         "url": "https://www.fool.com/investing/2026/11/27/strategy-just-bought-bitcoin-for-the-4th-straight-week-so-why-aren-t-crypto-investors-bullish-on-mstr-stock/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2561,13 +2568,6 @@
         "source": "Yahoo Finance",
         "time": "11-25 17:10 ET",
         "pub_ts": 1795644642.0
-      },
-      {
-        "title": "With bitcoin crashing, is Strategy (MSTR) in trouble?",
-        "url": "https://blockspace.media/short/with-bitcoin-crashing-is-strategy-mstr-in-trouble/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 15:28 ET",
-        "pub_ts": 1795638489.0
       }
     ],
     "SNDK": [
@@ -2609,39 +2609,39 @@
     ],
     "BTC-USD": [
       {
+        "title": "Why the Strategic Bitcoin Reserve bill might not pass the House floor",
+        "url": "https://finance.yahoo.com/video/why-the-strategic-bitcoin-reserve-bill-might-not-pass-the-house-floor-161350411.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-27 11:13 ET",
+        "pub_ts": 1795796030.0
+      },
+      {
+        "title": "Another $453 million exits bitcoin ETFs as November outflows stack up",
+        "url": "https://finance.yahoo.com/video/another-453-million-exits-bitcoin-161000343.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-27 11:10 ET",
+        "pub_ts": 1795795800.0
+      },
+      {
+        "title": "Before the bell: Wall Street goes Black Friday shopping. Is Bitcoin on the list?",
+        "url": "https://www.thestreet.com/crypto/markets/before-the-bell-wall-street-goes-black-friday-shopping-is-bitcoin-on-the-list?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-27 11:00 ET",
+        "pub_ts": 1795795200.0
+      },
+      {
+        "title": "Coinbase CEO Says Bitcoin Investors Would Return After IPO Frenzy Fades",
+        "url": "https://www.cryptoprowl.com/releases/coinbase-ceo-says-bitcoin-investors-would-return-after-ipo-frenzy-fades-8101?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-27 10:57 ET",
+        "pub_ts": 1795795020.0
+      },
+      {
         "title": "BC-Most Active Stocks",
         "url": "https://finance.yahoo.com/markets/stocks/articles/bc-most-active-stocks-153017329.html?.tsrc=rss",
         "source": "Yahoo Finance",
         "time": "11-27 10:30 ET",
         "pub_ts": 1795793417.0
-      },
-      {
-        "title": "Bitcoin Reserve bill advances; ETF outflows top $5.3B",
-        "url": "https://finance.yahoo.com/video/bitcoin-reserve-bill-advances-etf-outflows-top-53b-151524584.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-27 10:15 ET",
-        "pub_ts": 1795792524.0
-      },
-      {
-        "title": "Tether Buys $10 Million Worth of Bitdeer Stock",
-        "url": "https://www.cryptoprowl.com/releases/tether-buys-10-million-worth-of-bitdeer-stock-8099?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-27 10:06 ET",
-        "pub_ts": 1795791960.0
-      },
-      {
-        "title": "JPMorgan Says Bitcoin ‘Capitulation’ Has Been Reached",
-        "url": "https://www.cryptoprowl.com/releases/jpmorgan-says-bitcoin-capitulation-has-been-reached-8098?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-27 10:01 ET",
-        "pub_ts": 1795791660.0
-      },
-      {
-        "title": "Signal House Publishes Record-Based Explainer on Bitcoin Latinum Lawsuit",
-        "url": "https://finance.yahoo.com/markets/crypto/articles/signal-house-publishes-record-based-150000418.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-27 10:00 ET",
-        "pub_ts": 1795791600.0
       }
     ],
     "CRWD": [
@@ -2720,6 +2720,13 @@
     ],
     "COIN": [
       {
+        "title": "Coinbase CEO Says Bitcoin Investors Would Return After IPO Frenzy Fades",
+        "url": "https://www.cryptoprowl.com/releases/coinbase-ceo-says-bitcoin-investors-would-return-after-ipo-frenzy-fades-8101?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-27 10:57 ET",
+        "pub_ts": 1795795020.0
+      },
+      {
         "title": "Brian Armstrong Says Coinbase Uses AI to Scan Every Line of Code Amid Rising Cyber Threats: ‘Trust Matters More Now Than Ever’",
         "url": "https://finance.yahoo.com/markets/crypto/articles/brian-armstrong-says-coinbase-uses-114505264.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2746,13 +2753,6 @@
         "source": "Yahoo Finance",
         "time": "11-25 21:10 ET",
         "pub_ts": 1795659004.0
-      },
-      {
-        "title": "What Sent Coinbase Stock Lower?",
-        "url": "https://www.trefis.com/stock/coin/articles/629018/what-sent-coinbase-stock-lower/2026-11-25?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 18:13 ET",
-        "pub_ts": 1795648397.0
       }
     ],
     "LLY": [
@@ -3357,31 +3357,31 @@
     "AXTI": 1795796116.6133018,
     "NASA": 1795796116.6133018,
     "LUNR": 1795796116.6133018,
-    "TSLA": 1795794654.6965606,
+    "TSLA": 1795796167.4298697,
     "AXP": 1795796116.6133018,
     "RKLB": 1795796116.6133018,
     "KO": 1795796116.6133018,
     "FLY": 1795796116.6133018,
-    "INTC": 1795794654.6965606,
-    "VRT": 1795794654.6965606,
-    "HPE": 1795794654.6965606,
-    "DELL": 1795794654.6965606,
-    "OKLO": 1795794654.6965606,
-    "CEG": 1795794654.6965606,
-    "FPS": 1795794654.6965606,
-    "MU": 1795794654.6965606,
-    "SKHY": 1795794654.6965606,
-    "WDC": 1795794654.6965606,
-    "STX": 1795794654.6965606,
-    "MSTR": 1795794654.6965606,
-    "SNDK": 1795794654.6965606,
-    "BTC-USD": 1795794654.6965606,
-    "CRWD": 1795794654.6965606,
-    "ORCL": 1795794654.6965606,
-    "COIN": 1795794654.6965606,
-    "LLY": 1795794654.6965606,
-    "MRNA": 1795794654.6965606,
-    "NKE": 1795794654.6965606,
+    "INTC": 1795796167.4298697,
+    "VRT": 1795796167.4298697,
+    "HPE": 1795796167.4298697,
+    "DELL": 1795796167.4298697,
+    "OKLO": 1795796167.4298697,
+    "CEG": 1795796167.4298697,
+    "FPS": 1795796167.4298697,
+    "MU": 1795796167.4298697,
+    "SKHY": 1795796167.4298697,
+    "WDC": 1795796167.4298697,
+    "STX": 1795796167.4298697,
+    "MSTR": 1795796167.4298697,
+    "SNDK": 1795796167.4298697,
+    "BTC-USD": 1795796167.4298697,
+    "CRWD": 1795796167.4298697,
+    "ORCL": 1795796167.4298697,
+    "COIN": 1795796167.4298697,
+    "LLY": 1795796167.4298697,
+    "MRNA": 1795796167.4298697,
+    "NKE": 1795796167.4298697,
     "MCD": 1795794654.6965606,
     "PEP": 1795794706.2981498,
     "XOM": 1795794706.2981498,
