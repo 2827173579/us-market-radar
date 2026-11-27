@@ -10,8 +10,8 @@
       "last_notified_at": 0.0
     },
     "QCOM": {
-      "state": "WATCHLIST_ENTRY_READY",
-      "last_notified_at": 1795813327.9028091
+      "state": "NORMAL",
+      "last_notified_at": 0.0
     },
     "AMZN": {
       "state": "NORMAL",
@@ -30,8 +30,8 @@
       "last_notified_at": 0.0
     },
     "IWM": {
-      "state": "NORMAL",
-      "last_notified_at": 0.0
+      "state": "WATCHLIST_ENTRY_READY",
+      "last_notified_at": 1795813404.702897
     }
   },
   "position_peaks": {}
