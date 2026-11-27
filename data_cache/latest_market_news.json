@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795778778.459,
-  "updated_at_et": "11-27 06:26 ET",
-  "updated_at_kst": "20:26 KST",
+  "updated_at_ts": 1795778834.32,
+  "updated_at_et": "11-27 06:27 ET",
+  "updated_at_kst": "20:27 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -1937,6 +1937,27 @@
     ],
     "TSLA": [
       {
+        "title": "What Invesco NASDAQ 100 ETF (QQQM) Bought: Apple Leads on Wednesday",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/invesco-nasdaq-100-etf-qqqm-110420784.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-27 06:04 ET",
+        "pub_ts": 1795777460.0
+      },
+      {
+        "title": "What INVESCO QQQ Trust (QQQ) Bought: Apple Leads on Wednesday",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/invesco-qqq-trust-qqq-bought-110329959.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-27 06:03 ET",
+        "pub_ts": 1795777409.0
+      },
+      {
+        "title": "ETFs Are Buying Tesla (TSLA) on Wednesday",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/etfs-buying-tesla-tsla-wednesday-110102240.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-27 06:01 ET",
+        "pub_ts": 1795777262.0
+      },
+      {
         "title": "Tesla’s Robotaxi Promises “More Cars, Less $” as Its Dallas Zone Grows 83.5%",
         "url": "https://www.tikr.com/blog/teslas-robotaxi-promises-more-cars-less-as-its-dallas-zone-grows-83-5?ref=yahoofinance&tlnk=yf-261127-v78qcfqp&.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1949,27 +1970,6 @@
         "source": "Yahoo Finance",
         "time": "11-27 01:44 ET",
         "pub_ts": 1795761895.0
-      },
-      {
-        "title": "‘How Can TSLA Compete With Waymo?’ Gary Black Questions Tesla’s Robotaxi Strategy, Predicts Waymo Will Lead in Miles and Trips",
-        "url": "https://finance.yahoo.com/technology/articles/tsla-compete-waymo-gary-black-013007370.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-26 20:30 ET",
-        "pub_ts": 1795743007.0
-      },
-      {
-        "title": "What Could Tesla (TSLA) Merger Talks Mean For Its Stock?",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/could-tesla-tsla-merger-talks-013007632.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-26 20:30 ET",
-        "pub_ts": 1795743007.0
-      },
-      {
-        "title": "Should You Buy Tesla Stock Before December?",
-        "url": "https://www.fool.com/investing/2026/11/26/should-you-buy-tesla-stock-before-december/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-26 17:35 ET",
-        "pub_ts": 1795732502.0
       }
     ],
     "AXP": [
@@ -2328,18 +2328,18 @@
         "pub_ts": 1795673707.0
       },
       {
+        "title": "67% Upside for Constellation Energy? Morgan Stanley Thinks So, and Here’s How",
+        "url": "https://www.tikr.com/blog/61-upside-for-constellation-energy-morgan-stanley-thinks-so-and-heres-how?ref=yahoofinance&tlnk=yf-261127-gg393jw6&.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 18:08 ET",
+        "pub_ts": 1795648086.0
+      },
+      {
         "title": "LS Power Completes Acquisition of 4.4 GW Natural Gas Generation Assets from Constellation",
         "url": "https://finance.yahoo.com/energy/articles/ls-power-completes-acquisition-4-213800844.html?.tsrc=rss",
         "source": "Yahoo Finance",
         "time": "11-25 16:38 ET",
         "pub_ts": 1795642680.0
-      },
-      {
-        "title": "Constellation Completes Divestiture of Legacy Calpine PJM Generation Assets to LS Power",
-        "url": "https://finance.yahoo.com/energy/articles/constellation-completes-divestiture-legacy-calpine-213000879.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 16:30 ET",
-        "pub_ts": 1795642200.0
       }
     ],
     "FPS": [
@@ -2381,6 +2381,27 @@
     ],
     "MU": [
       {
+        "title": "Micron vs. SanDisk: Which Is the Better AI Stock to Buy for 2027?",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/micron-vs-sandisk-better-ai-111815853.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-27 06:18 ET",
+        "pub_ts": 1795778295.0
+      },
+      {
+        "title": "Micron Technology Has a New Threat -- Huawei Is Coming for the AI Memory Market",
+        "url": "https://finance.yahoo.com/technology/ai/articles/micron-technology-threat-huawei-coming-111412741.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-27 06:14 ET",
+        "pub_ts": 1795778052.0
+      },
+      {
+        "title": "48 ETFs Add to Micron (MU) Holdings on Wednesday",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/48-etfs-add-micron-mu-110127248.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-27 06:01 ET",
+        "pub_ts": 1795777287.0
+      },
+      {
         "title": "How Chinese Cloud Order Cuts At Micron Stock Has Changed Its Investment Story",
         "url": "https://finance.yahoo.com/markets/stocks/articles/chinese-cloud-order-cuts-micron-090948480.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2393,30 +2414,16 @@
         "source": "Yahoo Finance",
         "time": "11-26 22:12 ET",
         "pub_ts": 1795749169.0
-      },
-      {
-        "title": "Not Nvidia. Not Micron. If I Could Buy and Hold Only 1 Artificial Intelligence (AI) Semiconductor Stock Through 2030, This Would Be It.",
-        "url": "https://www.fool.com/investing/2026/11/26/not-nvidia-not-micron-if-i-could-buy-and-hold-only-1-artificial-intelligence-ai-semiconductor-stock-through-2030-this-would-be-it/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-26 18:14 ET",
-        "pub_ts": 1795734884.0
-      },
-      {
-        "title": "Why It’s Hard to Write Off Micron (MU) Even with a Memory Peak in Sight",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/why-hard-write-off-micron-210000375.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-26 16:00 ET",
-        "pub_ts": 1795726800.0
-      },
-      {
-        "title": "Micron Stock Faces Surprising New Threat From Huawei",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/micron-stock-faces-surprising-threat-180348513.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-26 13:03 ET",
-        "pub_ts": 1795716228.0
       }
     ],
     "SKHY": [
+      {
+        "title": "Micron Technology Has a New Threat -- Huawei Is Coming for the AI Memory Market",
+        "url": "https://finance.yahoo.com/technology/ai/articles/micron-technology-threat-huawei-coming-111412741.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-27 06:14 ET",
+        "pub_ts": 1795778052.0
+      },
       {
         "title": "Asian stocks mostly rise as markets calm after tech rout",
         "url": "https://finance.yahoo.com/markets/world-indices/articles/asian-stocks-mostly-rise-markets-025702679.html?.tsrc=rss",
@@ -2444,13 +2451,6 @@
         "source": "Yahoo Finance",
         "time": "11-26 11:44 ET",
         "pub_ts": 1795711465.0
-      },
-      {
-        "title": "SK hynix Just Hit a New 52-Week Low After Sinking 9% in a Week. Is the Selling Overdone?",
-        "url": "https://www.tikr.com/blog/sk-hynix-just-hit-a-new-52-week-low-after-sinking-9-in-a-week-is-the-selling-overdone?ref=yahoofinance&tlnk=yf-261126-ww3x89g9&.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-26 04:14 ET",
-        "pub_ts": 1795684451.0
       }
     ],
     "WDC": [
@@ -2566,6 +2566,13 @@
     ],
     "SNDK": [
       {
+        "title": "Micron vs. SanDisk: Which Is the Better AI Stock to Buy for 2027?",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/micron-vs-sandisk-better-ai-111815853.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-27 06:18 ET",
+        "pub_ts": 1795778295.0
+      },
+      {
         "title": "Sandisk’s 8-for-1 Split Is Done. Here’s What Investors Should Do Next.",
         "url": "https://www.fool.com/investing/2026/11/26/sandisks-8-for-1-split-is-done-heres-what-investors-should-do-next/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2592,13 +2599,6 @@
         "source": "Yahoo Finance",
         "time": "11-26 06:02 ET",
         "pub_ts": 1795690923.0
-      },
-      {
-        "title": "4 Memory and Storage Stocks Cut by More Than 30% That I'd Buy Now and Hold for the Next Decade",
-        "url": "https://www.fool.com/investing/2026/11/26/4-memory-and-storage-stocks-cut-by-more-than-30-that-i-d-buy-now-and-hold-for-the-next-decade/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-26 05:01 ET",
-        "pub_ts": 1795687262.0
       }
     ],
     "BTC-USD": [
@@ -3241,6 +3241,13 @@
     ],
     "KOSPI": [
       {
+        "title": "The AI Trade Is Back On as Tech Stocks Surge",
+        "url": "https://finance.yahoo.com/m/ddb8323f-d469-376b-abad-98b6c10ceabb/the-ai-trade-is-back-on-as.html",
+        "source": "Barrons.com",
+        "time": "11-27 04:42 ET",
+        "pub_ts": 1795772561.0
+      },
+      {
         "title": "Global markets rebound as tech shares recover and tariff fears ease",
         "url": "https://finance.yahoo.com/markets/world-indices/articles/global-markets-rebound-tech-shares-042539373.html",
         "source": "Euronews",
@@ -3267,13 +3274,6 @@
         "source": "MT Newswires",
         "time": "11-25 05:42 ET",
         "pub_ts": 1795603346.0
-      },
-      {
-        "title": "Nvidia Bulls Rule on Asian Stock Markets",
-        "url": "https://finance.yahoo.com/markets/world-indices/articles/nvidia-bulls-rule-asian-stock-103642321.html",
-        "source": "MT Newswires",
-        "time": "11-24 05:36 ET",
-        "pub_ts": 1795516602.0
       }
     ],
     "KSTR": [
@@ -3344,31 +3344,31 @@
     "CRDO": 1795778670.1948578,
     "COHR": 1795778670.1948578,
     "MRVL": 1795778778.4592373,
-    "LITE": 1795777279.7014213,
+    "LITE": 1795778834.3195145,
     "AAOI": 1795778778.4592373,
     "SPCX": 1795778670.1948578,
     "ASTS": 1795778778.4592373,
-    "AXTI": 1795777279.7014213,
+    "AXTI": 1795778834.3195145,
     "NASA": 1795778778.4592373,
     "LUNR": 1795778778.4592373,
-    "TSLA": 1795777279.7014213,
+    "TSLA": 1795778834.3195145,
     "AXP": 1795778778.4592373,
     "RKLB": 1795778778.4592373,
     "KO": 1795778778.4592373,
     "FLY": 1795778778.4592373,
     "INTC": 1795778778.4592373,
-    "VRT": 1795777279.7014213,
-    "HPE": 1795777279.7014213,
-    "DELL": 1795777279.7014213,
-    "OKLO": 1795777329.2599885,
-    "CEG": 1795777329.2599885,
-    "FPS": 1795777329.2599885,
-    "MU": 1795777329.2599885,
-    "SKHY": 1795777329.2599885,
-    "WDC": 1795777329.2599885,
+    "VRT": 1795778834.3195145,
+    "HPE": 1795778834.3195145,
+    "DELL": 1795778834.3195145,
+    "OKLO": 1795778834.3195145,
+    "CEG": 1795778834.3195145,
+    "FPS": 1795778834.3195145,
+    "MU": 1795778834.3195145,
+    "SKHY": 1795778834.3195145,
+    "WDC": 1795778834.3195145,
     "STX": 1795777329.2599885,
     "MSTR": 1795777329.2599885,
-    "SNDK": 1795777329.2599885,
+    "SNDK": 1795778834.3195145,
     "BTC-USD": 1795777329.2599885,
     "CRWD": 1795777329.2599885,
     "ORCL": 1795777329.2599885,
@@ -3383,11 +3383,11 @@
     "WMT": 1795777939.328296,
     "V": 1795777939.328296,
     "CAT": 1795777939.328296,
-    "FN": 1795777279.7014213,
+    "FN": 1795778834.3195145,
     "GLW": 1795778778.4592373,
     "ANT": 1795777939.328296,
     "XAUUSD": 1795777939.328296,
-    "KOSPI": 1795777279.7014213,
+    "KOSPI": 1795778834.3195145,
     "KSTR": 1795778570.8721757
   },
   "opex_shield": {
