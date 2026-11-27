@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795795242.849,
-  "updated_at_et": "11-27 11:00 ET",
-  "updated_at_kst": "01:00 KST",
+  "updated_at_ts": 1795795294.469,
+  "updated_at_et": "11-27 11:01 ET",
+  "updated_at_kst": "01:01 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -426,6 +426,13 @@
     ],
     "SPY": [
       {
+        "title": "SoFi’s 500-Stock ETF Doesn’t Weight Strictly by Size. SFY Tilts America’s Biggest Companies Toward Growth",
+        "url": "https://247wallst.com/investing/etf/2026/11/27/sofis-500-stock-etf-doesnt-weight-strictly-by-size-sfy-tilts-americas-biggest-companies-toward-growth/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-27 10:32 ET",
+        "pub_ts": 1795793560.0
+      },
+      {
         "title": "Should State Street SPDR S&P 500 ETF Trust (SPY) Be on Your Investing Radar?",
         "url": "https://finance.yahoo.com/markets/stocks/articles/state-street-spdr-p-500-102002352.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -452,13 +459,6 @@
         "source": "Yahoo Finance",
         "time": "11-27 08:03 ET",
         "pub_ts": 1795784638.0
-      },
-      {
-        "title": "Stock Market Today: Markets Off to a Strong Black Friday Start",
-        "url": "https://247wallst.com/investing/2026/11/27/stock-market-today-markets-off-to-a-strong-black-friday-start/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-27 10:03 ET",
-        "pub_ts": 1795791793.0
       }
     ],
     "DIA": [
@@ -796,6 +796,20 @@
     ],
     "TSM": [
       {
+        "title": "Trump Is Heading to Arizona to Break Ground on TSMC’s Newest Chip Plant",
+        "url": "https://247wallst.com/investing/2026/11/27/trump-is-heading-to-arizona-to-break-ground-on-tsmcs-newest-chip-plant/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-27 10:48 ET",
+        "pub_ts": 1795794515.0
+      },
+      {
+        "title": "No Threat to TSMC Before 2028: Intel’s Foundry Gap Is Still Huge",
+        "url": "https://247wallst.com/investing/2026/11/27/no-threat-to-tsmc-before-2028-intels-foundry-gap-is-still-huge/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-27 10:45 ET",
+        "pub_ts": 1795794312.0
+      },
+      {
         "title": "Trump’s New Tariffs Hit Taiwan but Spare Its Chips. That’s Good News for TSMC and Apple",
         "url": "https://www.tikr.com/blog/trumps-new-tariffs-hit-taiwan-but-spare-its-chips-thats-good-news-for-tsmc-and-apple?ref=yahoofinance&tlnk=yf-261127-wff3mmwm&.tsrc=rss",
         "source": "Yahoo Finance",
@@ -815,20 +829,6 @@
         "source": "Yahoo Finance",
         "time": "11-27 06:02 ET",
         "pub_ts": 1795777349.0
-      },
-      {
-        "title": "Taiwan Semiconductor Stocks Slip 1.96% as Taiwan's Market Sinks 4.8% in Chip Rout",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/taiwan-semiconductor-stocks-slip-1-190319001.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-26 14:03 ET",
-        "pub_ts": 1795719799.0
-      },
-      {
-        "title": "3 Top Stocks to Buy Before 2027 as Quantum Enters AI Data Centers",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/3-top-stocks-buy-2027-190000024.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-26 14:00 ET",
-        "pub_ts": 1795719600.0
       }
     ],
     "VIXY": [
@@ -928,18 +928,18 @@
         "pub_ts": 1795792338.0
       },
       {
-        "title": "SpaceX, Tesla have had a bumpy 2026 thus far: What to know",
-        "url": "https://finance.yahoo.com/video/spacex-tesla-have-had-a-bumpy-2026-thus-far-what-to-know-145849441.html?.tsrc=rss",
+        "title": "Nvidia halts sales to SE Asia, SpaceX surges on Musk's share promise",
+        "url": "https://finance.yahoo.com/video/nvidia-halts-sales-to-se-asia-spacex-surges-on-musks-share-promise-151001061.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-27 09:58 ET",
-        "pub_ts": 1795791529.0
+        "time": "11-27 10:10 ET",
+        "pub_ts": 1795792201.0
       },
       {
-        "title": "Chip stocks lead a Black Friday rally, but Nvidia misses out: AlphaCheck",
-        "url": "https://finance.yahoo.com/markets/article/chip-stocks-lead-a-black-friday-rally-but-nvidia-misses-out-alphacheck-145727185.html?.tsrc=rss",
+        "title": "Jensen Huang Said Nvidia’s Blackwell Chips Were Too Big to Smuggle. Bloomberg Just Found Them in China.",
+        "url": "https://247wallst.com/investing/2026/11/27/jensen-huang-said-nvidias-blackwell-chips-were-too-big-to-smuggle-bloomberg-just-found-them-in-china/?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-27 09:57 ET",
-        "pub_ts": 1795791447.0
+        "time": "11-27 10:50 ET",
+        "pub_ts": 1795794622.0
       }
     ],
     "AMD": [
@@ -3314,22 +3314,22 @@
     ]
   },
   "ticker_news_ts": {
-    "KORU": 1795793776.035602,
-    "SOXL": 1795793776.035602,
-    "SPY": 1795793776.035602,
-    "DIA": 1795793776.035602,
-    "SOXX": 1795793776.035602,
-    "QQQ": 1795793776.035602,
-    "SMH": 1795793776.035602,
-    "IWM": 1795793776.035602,
-    "IGV": 1795793776.035602,
-    "TLT": 1795793776.035602,
-    "GLD": 1795793776.035602,
-    "SQQQ": 1795793776.035602,
-    "TSM": 1795793776.035602,
-    "VIXY": 1795793776.035602,
-    "SOXS": 1795793776.035602,
-    "NVDA": 1795793776.035602,
+    "KORU": 1795795294.4694958,
+    "SOXL": 1795795294.4694958,
+    "SPY": 1795795294.4694958,
+    "DIA": 1795795294.4694958,
+    "SOXX": 1795795294.4694958,
+    "QQQ": 1795795294.4694958,
+    "SMH": 1795795294.4694958,
+    "IWM": 1795795294.4694958,
+    "IGV": 1795795294.4694958,
+    "TLT": 1795795294.4694958,
+    "GLD": 1795795294.4694958,
+    "SQQQ": 1795795294.4694958,
+    "TSM": 1795795294.4694958,
+    "VIXY": 1795795294.4694958,
+    "SOXS": 1795795294.4694958,
+    "NVDA": 1795795294.4694958,
     "AMD": 1795793916.4457018,
     "ASML": 1795793916.4457018,
     "QCOM": 1795793916.4457018,
@@ -3394,7 +3394,7 @@
     "ANT": 1795794706.2981498,
     "XAUUSD": 1795794706.2981498,
     "KOSPI": 1795794706.2981498,
-    "KSTR": 1795793776.035602
+    "KSTR": 1795795294.4694958
   },
   "opex_shield": {
     "date": "2026-11-27",
