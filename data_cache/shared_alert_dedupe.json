@@ -8423,9 +8423,13 @@
     "2026-11-27:DEFENSIVE_FLIGHT:green:-4.1": {
       "device": "PC",
       "ts": 1795797073.6061022
+    },
+    "2026-11-27:META/AMZN/SPY/DIA:5M_ENTRY": {
+      "device": "PC",
+      "ts": 1795797716.389338
     }
   },
   "device": "PC",
-  "last_heartbeat_ts": 1795797626.210099,
-  "updated_at": "2026-11-27T16:40:26.210412+00:00"
+  "last_heartbeat_ts": 1795797687.4191346,
+  "updated_at": "2026-11-27T16:41:56.389891+00:00"
 }
