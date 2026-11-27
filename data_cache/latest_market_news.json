@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795800104.097,
-  "updated_at_et": "11-27 12:21 ET",
-  "updated_at_kst": "02:21 KST",
+  "updated_at_ts": 1795800148.594,
+  "updated_at_et": "11-27 12:22 ET",
+  "updated_at_kst": "02:22 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -1180,6 +1180,13 @@
         "pub_ts": 1795780980.0
       },
       {
+        "title": "How much GOOGL stock does Alphabet CEO Sundar Pichai own?",
+        "url": "https://www.thestreet.com/personalities/how-much-alphabet-googl-stock-does-sundar-pichai-own?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-27 11:57 ET",
+        "pub_ts": 1795798620.0
+      },
+      {
         "title": "This Semiconductor Stock Could Have Its Biggest Year Yet in 2027",
         "url": "https://247wallst.com/investing/2026/11/27/this-semiconductor-stock-could-have-its-biggest-year-yet-in-2027/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1192,13 +1199,6 @@
         "source": "Yahoo Finance",
         "time": "11-27 10:45 ET",
         "pub_ts": 1795794329.0
-      },
-      {
-        "title": "Is Alphabet No Longer Telling You Something?",
-        "url": "https://www.trefis.com/stock/googl/articles/629385/is-alphabet-no-longer-telling-you-something/2026-11-27?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-27 10:36 ET",
-        "pub_ts": 1795793761.0
       }
     ],
     "MSFT": [
@@ -1610,6 +1610,13 @@
     ],
     "COHR": [
       {
+        "title": "Coherent Jumps 12% as Optical Stocks Rebound From Wednesday’s AI Selloff; Applied Optoelectronics and Lumentum Rise 7%",
+        "url": "https://247wallst.com/investing/2026/11/27/coherent-jumps-12-as-optical-stocks-rebound-from-wednesdays-ai-selloff-applied-optoelectronics-and-lumentum-rise-7/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-27 12:06 ET",
+        "pub_ts": 1795799198.0
+      },
+      {
         "title": "Coherent Targets $250 Million in Quarterly PhotonLink Sales. Can Capacity Keep Up?",
         "url": "https://finance.yahoo.com/technology/articles/coherent-targets-250-million-quarterly-040735182.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1636,13 +1643,6 @@
         "source": "Yahoo Finance",
         "time": "11-25 10:28 ET",
         "pub_ts": 1795620532.0
-      },
-      {
-        "title": "Coherent Director Stephen Pagliuca Just Bought $15.2 Million of Stock at Less Than Half Its June High",
-        "url": "https://www.tikr.com/blog/coherent-director-stephen-pagliuca-just-bought-15-2-million-of-stock-at-less-than-half-its-june-high?ref=yahoofinance&tlnk=yf-261125-3vm638gr&.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 04:03 ET",
-        "pub_ts": 1795597389.0
       }
     ],
     "MRVL": [
@@ -1786,11 +1786,11 @@
         "pub_ts": 1795788295.0
       },
       {
-        "title": "Anthropic vs. SpaceX: Which Is the Better Giant IPO Buy?",
-        "url": "https://www.fool.com/investing/2026/11/27/anthropic-vs-spacex-which-is-the-better-giant-ipo-buy/?.tsrc=rss",
+        "title": "Tesla Rallies 5% Amid SpaceX Merger Speculation; Rivian and SpaceX Rise 3%: Is Tesla’s 439x P/E a Warning Sign?",
+        "url": "https://247wallst.com/investing/2026/11/27/tesla-rallies-5-amid-spacex-merger-speculation-rivian-and-spacex-rise-3-is-teslas-439x-p-e-a-warning-sign/?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-27 10:25 ET",
-        "pub_ts": 1795793101.0
+        "time": "11-27 12:04 ET",
+        "pub_ts": 1795799056.0
       }
     ],
     "ASTS": [
@@ -3330,29 +3330,29 @@
     "VIXY": 1795799914.7634335,
     "SOXS": 1795799914.7634335,
     "NVDA": 1795799914.7634335,
-    "AMD": 1795798610.5376043,
-    "ASML": 1795798610.5376043,
-    "QCOM": 1795798610.5376043,
-    "AVGO": 1795798610.5376043,
-    "AMAT": 1795798610.5376043,
-    "META": 1795798610.5376043,
-    "GOOGL": 1795798610.5376043,
-    "MSFT": 1795798610.5376043,
-    "AAPL": 1795798610.5376043,
+    "AMD": 1795800148.5943143,
+    "ASML": 1795800148.5943143,
+    "QCOM": 1795800148.5943143,
+    "AVGO": 1795800148.5943143,
+    "AMAT": 1795800148.5943143,
+    "META": 1795800148.5943143,
+    "GOOGL": 1795800148.5943143,
+    "MSFT": 1795800148.5943143,
+    "AAPL": 1795800148.5943143,
     "PLTR": 1795799235.776624,
     "NOW": 1795799235.776624,
     "AMZN": 1795799235.776624,
     "CRWV": 1795799235.776624,
     "NBIS": 1795799235.776624,
     "APLD": 1795799235.776624,
-    "VST": 1795798610.5376043,
-    "BE": 1795798610.5376043,
-    "CRDO": 1795798610.5376043,
-    "COHR": 1795798610.5376043,
+    "VST": 1795800148.5943143,
+    "BE": 1795800148.5943143,
+    "CRDO": 1795800148.5943143,
+    "COHR": 1795800148.5943143,
     "MRVL": 1795799235.776624,
     "LITE": 1795799235.776624,
     "AAOI": 1795799235.776624,
-    "SPCX": 1795798610.5376043,
+    "SPCX": 1795800148.5943143,
     "ASTS": 1795799235.776624,
     "AXTI": 1795799235.776624,
     "NASA": 1795799235.776624,
