@@ -78,8 +78,8 @@
       "last_notified_at": 0.0
     },
     "SPY": {
-      "state": "WATCHLIST_ENTRY_READY",
-      "last_notified_at": 1795797715.271073
+      "state": "NORMAL",
+      "last_notified_at": 0.0
     },
     "DIA": {
       "state": "NORMAL",
@@ -180,6 +180,10 @@
     "PLTR": {
       "state": "NORMAL",
       "last_notified_at": 0.0
+    },
+    "AVGO": {
+      "state": "WATCHLIST_ENTRY_READY",
+      "last_notified_at": 1795798319.8267276
     }
   },
   "position_peaks": {
