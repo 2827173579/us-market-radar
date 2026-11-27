@@ -2,16 +2,16 @@
   "weather": "",
   "targets": {
     "PLTR": {
-      "state": "WATCHLIST_ENTRY_READY",
-      "last_notified_at": 1795815546.3783393
+      "state": "NORMAL",
+      "last_notified_at": 0.0
     },
     "SPY": {
       "state": "NORMAL",
       "last_notified_at": 0.0
     },
     "QCOM": {
-      "state": "NORMAL",
-      "last_notified_at": 0.0
+      "state": "WATCHLIST_ENTRY_READY",
+      "last_notified_at": 1795817671.5642357
     },
     "AMZN": {
       "state": "NORMAL",
@@ -26,14 +26,18 @@
       "last_notified_at": 0.0
     },
     "FLY": {
-      "state": "WATCHLIST_ENTRY_READY",
-      "last_notified_at": 1795815695.9782426
+      "state": "NORMAL",
+      "last_notified_at": 0.0
     },
     "IWM": {
-      "state": "WATCHLIST_ENTRY_READY",
-      "last_notified_at": 1795815905.6967561
+      "state": "NORMAL",
+      "last_notified_at": 0.0
     },
     "AVGO": {
+      "state": "NORMAL",
+      "last_notified_at": 0.0
+    },
+    "KSTR": {
       "state": "NORMAL",
       "last_notified_at": 0.0
     }
