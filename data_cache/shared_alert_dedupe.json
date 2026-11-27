@@ -8379,9 +8379,13 @@
     "2026-11-27:SPY/IWM:5M_ENTRY": {
       "device": "PC",
       "ts": 1795793736.3969429
+    },
+    "2026-11-27:DEFENSIVE_FLIGHT:green:-2.8": {
+      "device": "PC",
+      "ts": 1795793836.9633956
     }
   },
   "device": "PC",
-  "last_heartbeat_ts": 1795793759.415712,
-  "updated_at": "2026-11-27T15:35:59.416342+00:00"
+  "last_heartbeat_ts": 1795793810.495729,
+  "updated_at": "2026-11-27T15:37:16.964012+00:00"
 }
