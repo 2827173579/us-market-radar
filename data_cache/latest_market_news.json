@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795802368.138,
-  "updated_at_et": "11-27 12:59 ET",
-  "updated_at_kst": "02:59 KST",
+  "updated_at_ts": 1795802420.801,
+  "updated_at_et": "11-27 13:00 ET",
+  "updated_at_kst": "03:00 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -2579,6 +2579,20 @@
         "pub_ts": 1795789800.0
       },
       {
+        "title": "Stock Market Today: Dow, Nasdaq Pop In Post-Holiday Trade; Nvidia Falls, Sandisk Vaults Higher (Live Coverage)",
+        "url": "https://finance.yahoo.com/m/86a4597f-ee47-3048-ae92-1a56fa4711e5/stock-market-today%3A-dow%2C.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-27 12:47 ET",
+        "pub_ts": 1795801677.0
+      },
+      {
+        "title": "Stock Market Midday, Nov. 27: Tech Stocks Recover and Amazon Posts Black Friday Gains",
+        "url": "https://www.fool.com/coverage/stock-market-today/2026/11/27/stock-market-midday-nov-27-tech-stocks-recover-and-amazon-posts-black-friday-gains/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-27 12:31 ET",
+        "pub_ts": 1795800677.0
+      },
+      {
         "title": "Why Sandisk Investors Are Giving Thanks After Thanksgiving",
         "url": "https://www.fool.com/investing/2026/11/27/why-sandisk-investors-are-giving-thanks-after-thanksgiving/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2591,20 +2605,6 @@
         "source": "Yahoo Finance",
         "time": "11-27 10:30 ET",
         "pub_ts": 1795793417.0
-      },
-      {
-        "title": "Sandisk, Bloom, Marvell, AMD, Nvidia, HP, and More Stocks That Explain Today’s Market",
-        "url": "https://finance.yahoo.com/m/977de44c-fcf5-3369-bcdd-0c3ddc7cfec9/sandisk%2C-bloom%2C-marvell%2C-amd%2C.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-27 09:56 ET",
-        "pub_ts": 1795791360.0
-      },
-      {
-        "title": "SanDisk Jumps 10% as Investors Return to Beaten-Down Memory Stocks; Micron and SK Hynix Rise 6% Despite TrendForce DRAM Warning",
-        "url": "https://247wallst.com/investing/2026/11/27/sandisk-jumps-10-as-investors-return-to-beaten-down-memory-stocks-micron-and-sk-hynix-rise-6-despite-trendforce-dram-warning/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-27 08:58 ET",
-        "pub_ts": 1795787920.0
       }
     ],
     "BTC-USD": [
@@ -2683,6 +2683,13 @@
     ],
     "ORCL": [
       {
+        "title": "Oracle Has Frustrated Me, but Even With Zero AI Revenue the Stock Is Worth $133—So I’m Buying at $104",
+        "url": "https://247wallst.com/investing/2026/11/27/oracle-has-frustrated-me-but-even-with-zero-ai-revenue-the-stock-is-worth-133-so-im-buying-at-104/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-27 12:45 ET",
+        "pub_ts": 1795801551.0
+      },
+      {
         "title": "Privacy-Enhancing Computation Market to Reach $16.49 Billion by 2030 as Data Protection Demand Accelerates - Microsoft, IBM, Cisco, and Oracle Accelerate AI, FHE, and Cloud Security",
         "url": "https://finance.yahoo.com/technology/ai/articles/privacy-enhancing-computation-market-reach-143600579.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2709,13 +2716,6 @@
         "source": "Yahoo Finance",
         "time": "11-27 09:29 ET",
         "pub_ts": 1795789740.0
-      },
-      {
-        "title": "Near-Equal ~$664B–$678B Backlogs: Why Oracle’s AI Concentration Risk Differs From Microsoft’s",
-        "url": "https://247wallst.com/investing/2026/11/27/near-equal-664b-678b-backlogs-why-oracles-ai-concentration-risk-differs-from-microsofts/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-27 08:45 ET",
-        "pub_ts": 1795787137.0
       }
     ],
     "COIN": [
@@ -2725,6 +2725,13 @@
         "source": "Yahoo Finance",
         "time": "11-27 12:18 ET",
         "pub_ts": 1795799915.0
+      },
+      {
+        "title": "Blockaid CEO Ido Ben-Natan at Money2020 Cybercrime Becoming ‘Extremely Quick’",
+        "url": "https://finance.yahoo.com/video/blockaid-ceo-ido-ben-natan-162317516.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-27 11:23 ET",
+        "pub_ts": 1795796597.0
       },
       {
         "title": "Coinbase CEO Says Bitcoin Investors Would Return After IPO Frenzy Fades",
@@ -2746,13 +2753,6 @@
         "source": "Yahoo Finance",
         "time": "11-26 20:25 ET",
         "pub_ts": 1795742724.0
-      },
-      {
-        "title": "Polygon Brings Its Cross-Border Payments Stack to Coinbase’s Base",
-        "url": "https://decrypt.co/384023/polygon-cross-border-payments-stack-coinbase-base?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-26 09:01 ET",
-        "pub_ts": 1795701662.0
       }
     ],
     "LLY": [
@@ -3358,7 +3358,7 @@
     "NASA": 1795802368.1384478,
     "LUNR": 1795802368.1384478,
     "TSLA": 1795802368.1384478,
-    "AXP": 1795800831.414948,
+    "AXP": 1795802420.8009427,
     "RKLB": 1795802368.1384478,
     "KO": 1795802368.1384478,
     "FLY": 1795802368.1384478,
@@ -3366,23 +3366,23 @@
     "VRT": 1795802368.1384478,
     "HPE": 1795802368.1384478,
     "DELL": 1795802368.1384478,
-    "OKLO": 1795800831.414948,
-    "CEG": 1795800831.414948,
-    "FPS": 1795800831.414948,
-    "MU": 1795800831.414948,
-    "SKHY": 1795800831.414948,
-    "WDC": 1795800831.414948,
-    "STX": 1795800831.414948,
-    "MSTR": 1795800883.3016748,
-    "SNDK": 1795800831.414948,
-    "BTC-USD": 1795800883.3016748,
-    "CRWD": 1795800883.3016748,
-    "ORCL": 1795800883.3016748,
-    "COIN": 1795800883.3016748,
-    "LLY": 1795800883.3016748,
-    "MRNA": 1795800883.3016748,
-    "NKE": 1795800883.3016748,
-    "MCD": 1795800883.3016748,
+    "OKLO": 1795802420.8009427,
+    "CEG": 1795802420.8009427,
+    "FPS": 1795802420.8009427,
+    "MU": 1795802420.8009427,
+    "SKHY": 1795802420.8009427,
+    "WDC": 1795802420.8009427,
+    "STX": 1795802420.8009427,
+    "MSTR": 1795802420.8009427,
+    "SNDK": 1795802420.8009427,
+    "BTC-USD": 1795802420.8009427,
+    "CRWD": 1795802420.8009427,
+    "ORCL": 1795802420.8009427,
+    "COIN": 1795802420.8009427,
+    "LLY": 1795802420.8009427,
+    "MRNA": 1795802420.8009427,
+    "NKE": 1795802420.8009427,
+    "MCD": 1795802420.8009427,
     "PEP": 1795800883.3016748,
     "XOM": 1795800883.3016748,
     "JPM": 1795800883.3016748,
@@ -3393,7 +3393,7 @@
     "GLW": 1795802368.1384478,
     "ANT": 1795800883.3016748,
     "XAUUSD": 1795800931.6190078,
-    "KOSPI": 1795800883.3016748,
+    "KOSPI": 1795802420.8009427,
     "KSTR": 1795801437.6941788
   },
   "opex_shield": {
