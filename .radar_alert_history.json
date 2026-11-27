@@ -14,8 +14,8 @@
       "last_notified_at": 0.0
     },
     "AMZN": {
-      "state": "WATCHLIST_ENTRY_READY",
-      "last_notified_at": 1795808613.1743321
+      "state": "NORMAL",
+      "last_notified_at": 0.0
     },
     "DIA": {
       "state": "NORMAL",
@@ -26,8 +26,8 @@
       "last_notified_at": 1795807987.2709
     },
     "FLY": {
-      "state": "NORMAL",
-      "last_notified_at": 0.0
+      "state": "WATCHLIST_ENTRY_READY",
+      "last_notified_at": 1795808688.2631302
     }
   },
   "position_peaks": {}
