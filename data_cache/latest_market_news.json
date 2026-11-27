@@ -1,9 +1,22 @@
 {
-  "updated_at_ts": 1795747326.772,
-  "updated_at_et": "11-26 21:42 ET",
-  "updated_at_kst": "11:42 KST",
+  "updated_at_ts": 1795747601.933,
+  "updated_at_et": "11-26 21:46 ET",
+  "updated_at_kst": "11:46 KST",
   "macro_calendar": [],
   "macro_flashes": [
+    {
+      "id": "20261127104609961800",
+      "title": "纳指期货涨幅扩大至2%，标普500指数期货上涨1.4%。",
+      "summary": "纳指期货涨幅扩大至2%，标普500指数期货上涨1.4%。",
+      "keywords": [
+        "标普"
+      ],
+      "pub_ts": 1795747569.0,
+      "time_et": "11-26 21:46 ET",
+      "time_bj": "10:46 BJ",
+      "time_kst": "11:46 KST",
+      "time_display": "21:46 ET / 10:46 BJ"
+    },
     {
       "id": "20261127104002496800",
       "title": "科创50指数涨超3%，半导体板块全线走强；成分股中，中科飞测涨超11%。",
@@ -324,20 +337,6 @@
       "time_bj": "06:30 BJ",
       "time_kst": "07:30 KST",
       "time_display": "17:30 ET / 06:30 BJ"
-    },
-    {
-      "id": "20261126234609883800",
-      "title": "整理：欧盘美盘重要新闻汇总（2026-11-26）",
-      "summary": "国内新闻 1. 外交部：关税战、贸易战不符合任何一方利益，所谓“产能过剩”是伪命题。 2. 商务部：中方将密切关注欧方混动汽车保障措施后续调查进展。 3. 商务部：坚决反对美对中国等经济体加征301关税。 4. 国家发改委：自11月26日24时起，国内汽、柴油（标准品）价格每吨分别下调440元、425元。 5. 商务部新闻发言人就欧方将玉沙集团有限公司移出欧盟涉俄出口管制制裁清单事答记者问。 6. 商务部等8部门印发《服务贸易发展“十五五”规划》的通知。 7. 国家数据局综合司向社会公开征求《关于完善数据规则 赋能人工智能创新发展的若干意见》(公开征求意见稿)意见。 8. 四大商业银行已与上市公司签订股票回购增持贷款合同超6000亿元。 国际新闻 1. 马斯克：美国每个孩子都将获得两股SpaceX股票。建议继续持有spaceX股票。 2. 韩国金融委员会下周将召开股市稳定紧急检查会议。 3. 软银五年期信用违约互换利差连续第二日扩大。 4. 特朗普质疑GDP数据为什么不在大选前上修，将展开调查。 5. 据路透：两位消息人士称，欧佩克+在周日会议上很可能将石油产量目标至少延续至2027年第一季度。 6. 德科斯料成为下一任欧洲央行行长。",
-      "keywords": [
-        "关税",
-        "特朗普"
-      ],
-      "pub_ts": 1795707969.0,
-      "time_et": "11-26 10:46 ET",
-      "time_bj": "23:46 BJ",
-      "time_kst": "00:46 KST",
-      "time_display": "10:46 ET / 23:46 BJ"
     }
   ],
   "ticker_news": {
@@ -1157,11 +1156,11 @@
     ],
     "GOOGL": [
       {
-        "title": "Tesla's Self-Driving Expansion in Europe Faces a Crucial Test",
-        "url": "https://finance.yahoo.com/technology/ai/articles/teslas-self-driving-expansion-europe-134400727.html?.tsrc=rss",
+        "title": "‘How Can TSLA Compete With Waymo?’ Gary Black Questions Tesla’s Robotaxi Strategy, Predicts Waymo Will Lead in Miles and Trips",
+        "url": "https://finance.yahoo.com/technology/articles/tsla-compete-waymo-gary-black-013007370.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-26 08:44 ET",
-        "pub_ts": 1795700640.0
+        "time": "11-26 20:30 ET",
+        "pub_ts": 1795743007.0
       },
       {
         "title": "Jim Lebenthal Says This Is “a Correction, Not Something Worse.” Why He’s Buying More Alphabet",
@@ -1934,6 +1933,13 @@
     ],
     "TSLA": [
       {
+        "title": "‘How Can TSLA Compete With Waymo?’ Gary Black Questions Tesla’s Robotaxi Strategy, Predicts Waymo Will Lead in Miles and Trips",
+        "url": "https://finance.yahoo.com/technology/articles/tsla-compete-waymo-gary-black-013007370.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-26 20:30 ET",
+        "pub_ts": 1795743007.0
+      },
+      {
         "title": "What Could Tesla (TSLA) Merger Talks Mean For Its Stock?",
         "url": "https://finance.yahoo.com/markets/stocks/articles/could-tesla-tsla-merger-talks-013007632.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1960,13 +1966,6 @@
         "source": "Yahoo Finance",
         "time": "11-26 13:30 ET",
         "pub_ts": 1795717803.0
-      },
-      {
-        "title": "Tesla: A SpaceX Merger Could Turn $5,000 Into $10,000",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/tesla-spacex-merger-could-turn-174606474.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-26 12:46 ET",
-        "pub_ts": 1795715166.0
       }
     ],
     "AXP": [
@@ -3317,19 +3316,19 @@
     "TLT": 1795747243.9669685,
     "GLD": 1795747243.9669685,
     "SQQQ": 1795747243.9669685,
-    "TSM": 1795745931.6981282,
+    "TSM": 1795747601.9329839,
     "VIXY": 1795747243.9669685,
     "SOXS": 1795747243.9669685,
     "NVDA": 1795747243.9669685,
     "AMD": 1795747243.9669685,
-    "ASML": 1795745931.6981282,
-    "QCOM": 1795745931.6981282,
-    "AVGO": 1795745931.6981282,
-    "AMAT": 1795745931.6981282,
-    "META": 1795745931.6981282,
-    "GOOGL": 1795745931.6981282,
-    "MSFT": 1795745931.6981282,
-    "AAPL": 1795745931.6981282,
+    "ASML": 1795747601.9329839,
+    "QCOM": 1795747601.9329839,
+    "AVGO": 1795747601.9329839,
+    "AMAT": 1795747601.9329839,
+    "META": 1795747601.9329839,
+    "GOOGL": 1795747601.9329839,
+    "MSFT": 1795747601.9329839,
+    "AAPL": 1795747601.9329839,
     "PLTR": 1795745975.1278615,
     "NOW": 1795745975.1278615,
     "AMZN": 1795745975.1278615,
@@ -3346,26 +3345,26 @@
     "SPCX": 1795747243.9669685,
     "ASTS": 1795747243.9669685,
     "AXTI": 1795745975.1278615,
-    "NASA": 1795745931.6981282,
-    "LUNR": 1795745931.6981282,
-    "TSLA": 1795745931.6981282,
-    "AXP": 1795745931.6981282,
-    "RKLB": 1795745931.6981282,
-    "KO": 1795745931.6981282,
-    "FLY": 1795745931.6981282,
-    "INTC": 1795745931.6981282,
-    "VRT": 1795745931.6981282,
-    "HPE": 1795745931.6981282,
-    "DELL": 1795745931.6981282,
-    "OKLO": 1795745931.6981282,
-    "CEG": 1795745931.6981282,
-    "FPS": 1795745931.6981282,
+    "NASA": 1795747601.9329839,
+    "LUNR": 1795747601.9329839,
+    "TSLA": 1795747601.9329839,
+    "AXP": 1795747601.9329839,
+    "RKLB": 1795747601.9329839,
+    "KO": 1795747601.9329839,
+    "FLY": 1795747601.9329839,
+    "INTC": 1795747601.9329839,
+    "VRT": 1795747601.9329839,
+    "HPE": 1795747601.9329839,
+    "DELL": 1795747601.9329839,
+    "OKLO": 1795747601.9329839,
+    "CEG": 1795747601.9329839,
+    "FPS": 1795747601.9329839,
     "MU": 1795745975.1278615,
     "SKHY": 1795745975.1278615,
     "WDC": 1795745975.1278615,
     "STX": 1795745975.1278615,
     "MSTR": 1795745975.1278615,
-    "SNDK": 1795745931.6981282,
+    "SNDK": 1795747601.9329839,
     "BTC-USD": 1795745975.1278615,
     "CRWD": 1795745975.1278615,
     "ORCL": 1795745975.1278615,
@@ -3404,7 +3403,7 @@
   "calendar_banner": {
     "level": "idle_with_flash",
     "headline": "📡 宏观消息面监控中 · 今日暂无美股五星级经济数据大考",
-    "detail": "⚡ 最新核心快讯 (21:40 ET / 10:40 BJ) [半导体]：科创50指数涨超3%，半导体板块全线走强；成分股中，中科飞测涨超11%。",
+    "detail": "⚡ 最新核心快讯 (21:46 ET / 10:46 BJ) [标普]：纳指期货涨幅扩大至2%，标普500指数期货上涨1.4%。",
     "event_name": "",
     "minutes_left": 0,
     "opex_shield": {
