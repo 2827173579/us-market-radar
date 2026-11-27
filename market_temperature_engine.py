@@ -36,7 +36,7 @@ except Exception:
 SCRATCH_DIR = os.path.dirname(os.path.abspath(__file__))
 DEFAULT_FUTURES_TEMP_CACHE_PATH = os.path.join(SCRATCH_DIR, "data_cache", "futures_temp_cache.json")
 DEFAULT_CACHE_TTL_SECONDS = 180
-FUTURES_CACHE_SCHEMA_VERSION = 3
+FUTURES_CACHE_SCHEMA_VERSION = 4
 
 FUTURES_SYMBOLS: Tuple[str, ...] = ("NQ=F", "ES=F")
 FUTURES_META: Dict[str, Dict[str, str]] = {
@@ -430,6 +430,7 @@ def _build_single_future_item(
         "available": False,
         "status_tag": status_tag,
         "weekend_closed": weekend_closed,
+        "daily_calibrated": False,
         "last": None,
         "prev_close": None,
         "pct_chg": None,
@@ -464,19 +465,75 @@ def _build_single_future_item(
         atr_20d_pct = 1.65 if symbol == "NQ=F" else 1.20
     item["atr_20d_pct"] = round(float(atr_20d_pct), 3)
 
-    daily_closes: List[float] = []
-    if df_daily is not None and not getattr(df_daily, "empty", True):
+    daily_rows: List[Dict[str, Any]] = []
+    if df_daily is not None and not getattr(df_daily, "empty", True) and "Close" in df_daily.columns:
         try:
-            daily_closes = [float(x) for x in df_daily["Close"].dropna().tolist() if _safe_float(x) is not None]
+            sub_d = df_daily.dropna(subset=["Close"])
+            for ts_d, row_d in sub_d.iterrows():
+                c_val = _safe_float(row_d.get("Close"))
+                if c_val is None or c_val <= 0:
+                    continue
+                try:
+                    d_obj = ts_d.date() if hasattr(ts_d, "date") else datetime.strptime(str(ts_d)[:10], "%Y-%m-%d").date()
+                except Exception:
+                    d_obj = None
+                o_val = _safe_float(row_d.get("Open"), c_val) or c_val
+                h_val = _safe_float(row_d.get("High"), c_val) or c_val
+                l_val = _safe_float(row_d.get("Low"), c_val) or c_val
+                daily_rows.append(
+                    {
+                        "date": d_obj,
+                        "open": float(o_val),
+                        "high": float(h_val),
+                        "low": float(l_val),
+                        "close": float(c_val),
+                    }
+                )
         except Exception:
-            daily_closes = []
+            daily_rows = []
+    daily_closes: List[float] = [r["close"] for r in daily_rows]
+
+    def _resolve_strict_prev_close(cur_bar_date: Any, fallback_open: Optional[float] = None) -> Optional[float]:
+        """严格取交易日 < cur_bar_date 的上一根 df_daily 收盘价，杜绝把当日实时 1d 柱误当昨收。"""
+        if cur_bar_date is not None and daily_rows:
+            prior = [r["close"] for r in daily_rows if r["date"] is not None and r["date"] < cur_bar_date]
+            if prior:
+                return prior[-1]
+        if len(daily_closes) >= 2:
+            return daily_closes[-2]
+        if len(daily_closes) == 1:
+            return daily_closes[0]
+        return fallback_open
 
     intra_ok = df_intra is not None and not getattr(df_intra, "empty", True)
     if intra_ok:
         try:
             sub = df_intra.dropna(subset=["Close"]).copy()
             if len(sub) > 0:
-                # 仅截取最近 24 小时内的有效 K 线（若周末停盘则以最后一根 K 线往前推 24 小时）
+                # 计算 5m 最新柱所属 CME 交易日（>= 18:00 ET 归属下一自然日），对比 df_daily 最新日期检测节假日 5m 断更
+                last_et_dt_raw = _to_et_timestamp(sub.index[-1])
+                if last_et_dt_raw is not None:
+                    intra_cme_date = (
+                        last_et_dt_raw.date() + timedelta(days=1)
+                        if last_et_dt_raw.hour >= 18
+                        else last_et_dt_raw.date()
+                    )
+                else:
+                    try:
+                        intra_cme_date = sub.index[-1].date() if hasattr(sub.index[-1], "date") else None
+                    except Exception:
+                        intra_cme_date = None
+
+                daily_last_row = daily_rows[-1] if daily_rows else None
+                daily_last_date = daily_last_row["date"] if daily_last_row else None
+                daily_is_newer = bool(
+                    daily_last_row is not None
+                    and daily_last_date is not None
+                    and intra_cme_date is not None
+                    and daily_last_date > intra_cme_date
+                )
+
+                # 仅截取最近 24 小时内的有效 K 线（供 24H 迷你图展示；若触发日线校准则严禁拿旧 5m 喂指标）
                 idx = sub.index
                 try:
                     last_ts = idx[-1]
@@ -510,12 +567,79 @@ def _build_single_future_item(
                     else [0.0] * len(closes_24h)
                 )
 
+                # 24H 累积 VWAP（供 24H 曲线绘制）
+                vwap_series = _compute_cumulative_vwap_series(highs_24h, lows_24h, closes_24h, vols_24h)
+
+                # 下采样 24H 轻量曲线（最多 60 点供 SVG 渲染）
+                n_pts = len(closes_24h)
+                step = max(1, math.ceil(n_pts / 60))
+                pick_idx = list(range(0, n_pts, step))
+                if pick_idx[-1] != n_pts - 1:
+                    pick_idx.append(n_pts - 1)
+                t_labels: List[str] = []
+                for k in pick_idx:
+                    try:
+                        ts = sub_24h.index[k]
+                        t_labels.append(ts.strftime("%H:%M"))
+                    except Exception:
+                        t_labels.append(str(k))
+
+                if daily_is_newer and daily_last_row is not None:
+                    # 节假日/切日 5m 断更保护：以最新 1d 实时柱校准现价，严禁喂入卡死的旧 5m 量价与 RSI 因子
+                    last_px = daily_last_row["close"]
+                    prev_close = _resolve_strict_prev_close(daily_last_date, fallback_open=daily_last_row["open"])
+                    pct_chg = ((last_px - prev_close) / prev_close * 100.0) if (prev_close and prev_close > 0) else 0.0
+                    est_vwap = (
+                        daily_last_row["open"]
+                        + daily_last_row["high"]
+                        + daily_last_row["low"]
+                        + daily_last_row["close"]
+                    ) / 4.0
+                    vwap_diff_pct = ((last_px - est_vwap) / est_vwap * 100.0) if est_vwap > 0 else 0.0
+                    cal_tag = "周末休市·最近24H参考" if weekend_closed else "24H 期货实时(日线校准)"
+                    item.update(
+                        {
+                            "available": True,
+                            "status_tag": cal_tag,
+                            "daily_calibrated": True,
+                            "last": round(last_px, 2),
+                            "prev_close": round(prev_close, 2) if prev_close is not None else None,
+                            "pct_chg": round(pct_chg, 2),
+                            "high_24h": round(daily_last_row["high"], 2),
+                            "low_24h": round(daily_last_row["low"], 2),
+                            "vwap_24h": round(est_vwap, 2),
+                            "vwap_session": round(est_vwap, 2),
+                            "vwap_diff_pct": round(vwap_diff_pct, 2),
+                            "vwap_24h_diff_pct": round(vwap_diff_pct, 2),
+                            "rsi_5m": 50.0,
+                            "close_vs_ema9_pct": 0.0,
+                            "rvol_5m": None,
+                            "upper_wick_ratio": None,
+                            "upper_wick_avg_3b": None,
+                            "lower_wick_ratio": None,
+                            "body_ratio_3b": None,
+                            "near_intraday_high": False,
+                            "rising_lows": False,
+                            "rising_lows_above_vwap": False,
+                            "near_intraday_low": False,
+                            "intraday_stabilized": False,
+                            "reclaim_ema9": False,
+                            "reclaim_vwap": False,
+                            "green_reversal_bar": False,
+                            "rsi_bull_div": False,
+                            "series_24h": {
+                                "time_labels": t_labels,
+                                "prices": [round(closes_24h[k], 2) for k in pick_idx],
+                                "vwap_prices": [round(vwap_series[k], 2) for k in pick_idx],
+                            },
+                        }
+                    )
+                    return item
+
                 last_px = closes_24h[-1]
                 hi_24 = max(highs_24h)
                 lo_24 = min(lows_24h)
 
-                # 24H 累积 VWAP（供 24H 曲线绘制）
-                vwap_series = _compute_cumulative_vwap_series(highs_24h, lows_24h, closes_24h, vols_24h)
                 vwap_24h_last = vwap_series[-1] if vwap_series else last_px
                 vwap_24h_diff_pct = ((last_px - vwap_24h_last) / vwap_24h_last * 100.0) if vwap_24h_last > 0 else 0.0
 
@@ -552,19 +676,8 @@ def _build_single_future_item(
                     opens_24h, highs_24h, lows_24h, closes_24h, vols_24h, vwap_ref=vwap_last
                 )
 
-                # 相对前结算价涨跌幅：优先用日线倒数第二根（若最新日线即今日），否则倒数第一根
-                prev_close = None
-                if len(daily_closes) >= 2:
-                    # 若最新日线收盘与当前期货价极接近（同日），则前结算为 daily_closes[-2]
-                    if abs(daily_closes[-1] - last_px) / max(last_px, 1e-6) < 0.002:
-                        prev_close = daily_closes[-2]
-                    else:
-                        prev_close = daily_closes[-1]
-                elif len(daily_closes) == 1:
-                    prev_close = daily_closes[0]
-                else:
-                    prev_close = closes_24h[0]
-
+                # 严格日期对齐昨收：只取交易日 < intra_cme_date 的上一根 df_daily 收盘价，杜绝把当日实时 1d 柱误当昨收
+                prev_close = _resolve_strict_prev_close(intra_cme_date, fallback_open=closes_24h[0])
                 pct_chg = ((last_px - prev_close) / prev_close * 100.0) if (prev_close and prev_close > 0) else 0.0
 
                 # 5m RSI(14) 与 EMA9 及右侧企稳信号检测（最近 3~6 根 5m K 线）
@@ -614,20 +727,6 @@ def _build_single_future_item(
                 near_low = bool(pos_in_24h <= 0.22 and last_px < ema9_last)
                 stabilized = bool(reclaim_ema9 or reclaim_vwap or green_rev or rsi_bull_div)
 
-                # 下采样 24H 轻量曲线（最多 60 点供 SVG 渲染）
-                n_pts = len(closes_24h)
-                step = max(1, math.ceil(n_pts / 60))
-                pick_idx = list(range(0, n_pts, step))
-                if pick_idx[-1] != n_pts - 1:
-                    pick_idx.append(n_pts - 1)
-                t_labels: List[str] = []
-                for k in pick_idx:
-                    try:
-                        ts = sub_24h.index[k]
-                        t_labels.append(ts.strftime("%H:%M"))
-                    except Exception:
-                        t_labels.append(str(k))
-
                 item.update(
                     {
                         "available": True,
@@ -668,21 +767,26 @@ def _build_single_future_item(
             pass
 
     # 若日内 5m 缺失但 60d 日线可用，静默降级至日线参考
-    if len(daily_closes) >= 2:
-        last_px = daily_closes[-1]
-        prev_close = daily_closes[-2]
-        pct_chg = ((last_px - prev_close) / prev_close * 100.0) if prev_close > 0 else 0.0
+    if len(daily_rows) >= 2:
+        last_row = daily_rows[-1]
+        last_px = last_row["close"]
+        prev_close = _resolve_strict_prev_close(last_row["date"], fallback_open=last_row["open"])
+        pct_chg = ((last_px - prev_close) / prev_close * 100.0) if (prev_close and prev_close > 0) else 0.0
+        est_vwap = (last_row["open"] + last_row["high"] + last_row["low"] + last_row["close"]) / 4.0
+        vwap_diff_pct = ((last_px - est_vwap) / est_vwap * 100.0) if est_vwap > 0 else 0.0
         item.update(
             {
                 "available": True,
                 "status_tag": "上日收盘参考",
+                "daily_calibrated": True,
                 "last": round(last_px, 2),
-                "prev_close": round(prev_close, 2),
+                "prev_close": round(prev_close, 2) if prev_close is not None else None,
                 "pct_chg": round(pct_chg, 2),
-                "high_24h": round(last_px, 2),
-                "low_24h": round(last_px, 2),
-                "vwap_24h": round(last_px, 2),
-                "vwap_diff_pct": 0.0,
+                "high_24h": round(last_row["high"], 2),
+                "low_24h": round(last_row["low"], 2),
+                "vwap_24h": round(est_vwap, 2),
+                "vwap_session": round(est_vwap, 2),
+                "vwap_diff_pct": round(vwap_diff_pct, 2),
                 "rsi_5m": 50.0,
             }
         )
@@ -747,7 +851,10 @@ def fetch_futures_snapshot(
                 if isinstance(obj, dict) and obj.get("available"):
                     obj["weekend_closed"] = wk
                     if obj.get("status_tag") != "上日收盘参考":
-                        obj["status_tag"] = "周末休市·最近24H参考" if wk else "24H 期货实时"
+                        if wk:
+                            obj["status_tag"] = "周末休市·最近24H参考"
+                        else:
+                            obj["status_tag"] = "24H 期货实时(日线校准)" if obj.get("daily_calibrated") else "24H 期货实时"
             cached["from_cache"] = True
             return cached
 
@@ -1256,12 +1363,19 @@ def compute_market_temperature(
     )
     pure_us_adv_pct = breadth.get("pct_advancing")
 
-    # 基础价格拉伸项：VWAP 正偏离 ATR 倍数 45% + 5m RSI 超买 30% + 日内涨幅/ATR 25%
+    # 基础价格拉伸项：常规模式 VWAP 45% + 5m RSI 30% + 涨幅/ATR 25%；
+    # 若 5m 断更切入日线校准模式，严格禁用过期 5m RSI (=0.0) 并将有效 1d 项等比归一化至 60% / 40%
+    all_daily_calibrated = bool(active_legs) and all(bool(x.get("daily_calibrated")) for x in active_legs)
     pos_vwap_atr = max(0.0, intra_vwap_diff) / max(intra_atr_pct, 0.4)
     pos_gain_atr = max(0.0, intra_pct) / max(intra_atr_pct, 0.4)
-    ib_vwap = _linear_score(pos_vwap_atr, 0.0, 0.90, 45.0)
-    ib_rsi = _linear_score(intra_rsi5m, 52.0, 78.0, 30.0)
-    ib_stretch = _linear_score(pos_gain_atr, 0.0, 1.25, 25.0)
+    if all_daily_calibrated:
+        ib_vwap = _linear_score(pos_vwap_atr, 0.0, 0.90, 60.0)
+        ib_rsi = 0.0
+        ib_stretch = _linear_score(pos_gain_atr, 0.0, 1.25, 40.0)
+    else:
+        ib_vwap = _linear_score(pos_vwap_atr, 0.0, 0.90, 45.0)
+        ib_rsi = _linear_score(intra_rsi5m, 52.0, 78.0, 30.0)
+        ib_stretch = _linear_score(pos_gain_atr, 0.0, 1.25, 25.0)
     base_price_bubble = ib_vwap + ib_rsi + ib_stretch
 
     vp_stagnation_pts = 0.0

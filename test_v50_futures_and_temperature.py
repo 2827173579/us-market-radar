@@ -774,6 +774,101 @@ class TestV50FuturesAndTemperature(unittest.TestCase):
         for bad in ("BEAR_DEFENSE", "RVOL", "VWAP", "RSI", "VIX", "EMA9"):
             self.assertNotIn(bad, res_base["intraday_dip_note"])
 
+    def test_14_holiday_stale_5m_daily_calibration_and_strict_prev_close(self):
+        """回归 2026-11-27 感恩节后 Yahoo 5m 卡死 11-25 而 1d 实时暴涨的场景：严禁把当日 1d 误当昨收、严禁喂入过期 5m 因子。"""
+        et_tz = timezone(timedelta(hours=-5))
+        # 1) 构造 5m 停留在 2026-11-25 23:55 ET（旧价 26389.75，故意带极端缩量长上影与高 RSI），而 1d 已更新到 2026-11-27 暴涨 26848.50 (+2.87%)
+        idx_5m = pd.DatetimeIndex([datetime(2026, 11, 25, 22, 0, tzinfo=et_tz) + timedelta(minutes=5 * i) for i in range(24)])
+        c_5m = [26150.0 + 10.4 * i for i in range(24)]
+        c_5m[-1] = 26389.75
+        df_nq_5m = pd.DataFrame(
+            {
+                "Open": [c - 5.0 for c in c_5m],
+                "High": [c + 60.0 for c in c_5m],  # 故意制造过期 5m 极端长上影
+                "Low": [c - 10.0 for c in c_5m],
+                "Close": c_5m,
+                "Volume": [5000.0] * 21 + [300.0, 280.0, 260.0],  # 故意制造过期 5m 极端缩量
+            },
+            index=idx_5m,
+        )
+        prev_dates = pd.bdate_range("2026-10-30", periods=15).strftime("%Y-%m-%d").tolist()
+        df_nq_1d = pd.DataFrame(
+            {
+                "Open": [26000.0] * 15 + [26600.0, 25561.5, 26888.0, 26279.5, 26068.5],
+                "High": [26200.0] * 15 + [26603.5, 27137.0, 27036.0, 26350.75, 26865.75],
+                "Low": [25850.0] * 15 + [24976.5, 25426.75, 25998.0, 25027.5, 25997.5],
+                "Close": [26050.0] * 15 + [25126.5, 26808.0, 26275.75, 26100.25, 26848.50],
+                "Volume": [100000.0] * 20,
+            },
+            index=pd.DatetimeIndex(prev_dates + ["2026-11-20", "2026-11-23", "2026-11-24", "2026-11-25", "2026-11-27"]),
+        )
+
+        df_es_5m = pd.DataFrame(
+            {
+                "Open": [7240.0] * 24,
+                "High": [7270.0] * 24,
+                "Low": [7235.0] * 24,
+                "Close": [7247.75] * 24,
+                "Volume": [4000.0] * 21 + [250.0, 240.0, 230.0],
+            },
+            index=idx_5m,
+        )
+        df_es_1d = pd.DataFrame(
+            {
+                "Open": [7150.0] * 15 + [7192.75, 7023.0, 7272.0, 7212.5, 7190.5],
+                "High": [7190.0] * 15 + [7216.75, 7313.25, 7298.25, 7224.0, 7334.0],
+                "Low": [7110.0] * 15 + [6898.0, 6992.0, 7144.75, 6982.5, 7187.0],
+                "Close": [7160.0] * 15 + [6935.0, 7254.5, 7217.5, 7195.75, 7324.25],
+                "Volume": [100000.0] * 20,
+            },
+            index=pd.DatetimeIndex(prev_dates + ["2026-11-20", "2026-11-23", "2026-11-24", "2026-11-25", "2026-11-27"]),
+        )
+
+        now_et = datetime(2026, 11, 27, 1, 0, tzinfo=et_tz)
+        nq_item = mte._build_single_future_item("NQ=F", df_nq_5m, df_nq_1d, now_et=now_et, session_code="OVERNIGHT")
+        es_item = mte._build_single_future_item("ES=F", df_es_5m, df_es_1d, now_et=now_et, session_code="OVERNIGHT")
+
+        # 断言 1：切入日线校准模式，现价与昨收严格日期对齐（NQ +2.87%, ES +1.79%），绝不再倒挂为负数
+        self.assertTrue(nq_item["daily_calibrated"])
+        self.assertEqual(nq_item["status_tag"], "24H 期货实时(日线校准)")
+        self.assertAlmostEqual(nq_item["last"], 26848.50, places=2)
+        self.assertAlmostEqual(nq_item["prev_close"], 26100.25, places=2)
+        self.assertAlmostEqual(nq_item["pct_chg"], 2.87, delta=0.05)
+        self.assertAlmostEqual(es_item["last"], 7324.25, places=2)
+        self.assertAlmostEqual(es_item["prev_close"], 7195.75, places=2)
+        self.assertAlmostEqual(es_item["pct_chg"], 1.79, delta=0.05)
+
+        # 断言 2：日线校准模式下禁用过期 5m 因子（RSI 归中性 50.0，量价/影线归 None）
+        self.assertEqual(nq_item["rsi_5m"], 50.0)
+        self.assertIsNone(nq_item["rvol_5m"])
+        self.assertIsNone(nq_item["upper_wick_ratio"])
+        self.assertIsNone(nq_item["lower_wick_ratio"])
+        self.assertGreater(nq_item["vwap_diff_pct"], 1.0)
+
+        # 断言 3：送入温度计引擎 -> 日内泡沫真实抬升且无过期 5m 滞涨加分，日内抄底触发上涨盘归零封顶 <= 5.0
+        fut_snap = {"degraded": False, "symbols": {"NQ=F": nq_item, "ES=F": es_item}}
+        res = mte.compute_market_temperature(
+            vix_regime={"vix_spot": 26.8, "vix_pct": -5.27, "vix_term_ratio": 1.019, "vix_state": "BACKWARDATION_BRAKE"},
+            futures_snapshot=fut_snap,
+            session_code="OVERNIGHT",
+        )
+        self.assertGreaterEqual(res["intraday_bubble_score"], 45.0)
+        self.assertEqual(res["intraday_bubble_components"]["rsi5m_ob"], 0.0)
+        self.assertEqual(res["intraday_bubble_components"]["vp_stagnation_add"], 0.0)
+        self.assertLessEqual(res["intraday_dip_score"], 5.0)
+        self.assertEqual(res["intraday_dip_note"], "上涨盘归零封顶")
+
+        # 断言 4：正常 5m 鲜活（同日 2026-11-27）时，prev_close 也必须严格取 < 2026-11-27 的 2026-11-25 收盘价，绝不把当日 1d 实时价误当昨收
+        idx_live = pd.DatetimeIndex([datetime(2026, 11, 27, 0, 0, tzinfo=et_tz) + timedelta(minutes=5 * i) for i in range(12)])
+        df_nq_live = pd.DataFrame(
+            {"Open": [26800.0] * 12, "High": [26860.0] * 12, "Low": [26790.0] * 12, "Close": [26820.0 + i * 2.0 for i in range(12)], "Volume": [1000.0] * 12},
+            index=idx_live,
+        )
+        nq_live = mte._build_single_future_item("NQ=F", df_nq_live, df_nq_1d, now_et=now_et, session_code="OVERNIGHT")
+        self.assertFalse(nq_live["daily_calibrated"])
+        self.assertAlmostEqual(nq_live["prev_close"], 26100.25, places=2)
+        self.assertGreater(nq_live["pct_chg"], 2.5)
+
 
 if __name__ == "__main__":
     unittest.main()
