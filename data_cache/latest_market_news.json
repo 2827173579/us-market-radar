@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795789335.618,
-  "updated_at_et": "11-27 09:22 ET",
-  "updated_at_kst": "23:22 KST",
+  "updated_at_ts": 1795789383.414,
+  "updated_at_et": "11-27 09:23 ET",
+  "updated_at_kst": "23:23 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -941,6 +941,13 @@
     ],
     "AMD": [
       {
+        "title": "AMD Rises 4% Despite Erste Group Downgrade on Valuation; Marvell Climbs 6%, Intel Gains 5%",
+        "url": "https://247wallst.com/investing/2026/11/27/amd-rises-4-despite-erste-group-downgrade-on-valuation-marvell-climbs-6-intel-gains-5/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-27 09:02 ET",
+        "pub_ts": 1795788175.0
+      },
+      {
         "title": "Advanced Micro Devices (AMD) After AI Data Center Wins Looks Cheap Or Already Priced In",
         "url": "https://finance.yahoo.com/markets/stocks/articles/advanced-micro-devices-amd-ai-130859777.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -967,13 +974,6 @@
         "source": "Yahoo Finance",
         "time": "11-27 06:58 ET",
         "pub_ts": 1795780729.0
-      },
-      {
-        "title": "AMD Stock Gets A Downgrade From Erste Group – Analyst Flags Valuation Concerns, Low Potential For Share Gains",
-        "url": "https://stocktwits.com/news-articles/markets/equity/amd-stock-gets-a-downgrade-from-erste-group-analyst-flags-valuation-concerns-low-potential-for-share-gains/cNbCACCR9Nr?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-27 06:37 ET",
-        "pub_ts": 1795779460.0
       }
     ],
     "ASML": [
@@ -1089,6 +1089,13 @@
     ],
     "AMAT": [
       {
+        "title": "Investors Heavily Search Applied Materials, Inc. (AMAT): Here is What You Need to Know",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/investors-heavily-search-applied-materials-130003962.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-27 08:00 ET",
+        "pub_ts": 1795784403.0
+      },
+      {
         "title": "Why Summit Insights Downgraded Applied Materials (AMAT) After Record Results",
         "url": "https://finance.yahoo.com/markets/stocks/articles/why-summit-insights-downgraded-applied-034833923.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1115,13 +1122,6 @@
         "source": "Yahoo Finance",
         "time": "11-26 03:28 ET",
         "pub_ts": 1795681730.0
-      },
-      {
-        "title": "Applied Materials (AMAT) Supplies Almost Every Fab. Is That Enough?",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/applied-materials-amat-supplies-almost-005322656.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 19:53 ET",
-        "pub_ts": 1795654402.0
       }
     ],
     "META": [
@@ -1177,6 +1177,13 @@
         "pub_ts": 1795780980.0
       },
       {
+        "title": "AI Search Optimization for SaaS and Financial-Services Companies as All Organic Search Moves to AI",
+        "url": "https://finance.yahoo.com/technology/ai/articles/ai-search-optimization-saas-financial-140000805.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-27 09:00 ET",
+        "pub_ts": 1795788000.0
+      },
+      {
         "title": "Latest News In Cloud AI - Cloudera Advances Data Control With Digital Sovereignty Solution",
         "url": "https://finance.yahoo.com/technology/ai/articles/latest-news-cloud-ai-cloudera-123749135.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1189,13 +1196,6 @@
         "source": "Yahoo Finance",
         "time": "11-27 07:37 ET",
         "pub_ts": 1795783022.0
-      },
-      {
-        "title": "Market Chatter: Hackers Breach US Air Force Cloud Platform Powered by Microsoft, Amazon, Oracle, Alphabet",
-        "url": "https://finance.yahoo.com/technology/articles/market-chatter-hackers-breach-us-122132707.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-27 07:21 ET",
-        "pub_ts": 1795782092.0
       }
     ],
     "MSFT": [
@@ -1755,11 +1755,32 @@
     ],
     "SPCX": [
       {
-        "title": "Stock Market Today: Dow Jumps 715 Points As Nvidia Rebounds; Anthropic, SpaceX, Tesla Rally (Live Coverage)",
-        "url": "https://finance.yahoo.com/m/86a4597f-ee47-3048-ae92-1a56fa4711e5/stock-market-today%3A-dow-jumps.html?.tsrc=rss",
+        "title": "SpaceX stock rises after Musk pledges annual share giveaway for kids",
+        "url": "https://finance.yahoo.com/technology/article/spacex-stock-rises-after-musk-pledges-annual-share-giveaway-for-kids-140708762.html?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-27 08:07 ET",
-        "pub_ts": 1795784837.0
+        "time": "11-27 09:04 ET",
+        "pub_ts": 1795788295.0
+      },
+      {
+        "title": "Stock Market Today: Dow Futures Jump 650 Points As Nvidia Rebounds; Anthropic, SpaceX, Tesla Rally (Live Coverage)",
+        "url": "https://finance.yahoo.com/m/86a4597f-ee47-3048-ae92-1a56fa4711e5/stock-market-today%3A-dow.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-27 09:00 ET",
+        "pub_ts": 1795788002.0
+      },
+      {
+        "title": "SpaceX Wants AI Data Centers in Space. What Happens if They Go Bankrupt?",
+        "url": "https://www.benzinga.com/markets/prediction-markets/26/11/63669138/spacex-orbital-data-center-bankruptcy?utm_source=yahooFinance&utm_campaign=partner_feed&utm_medium=referral&.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-27 08:54 ET",
+        "pub_ts": 1795787656.0
+      },
+      {
+        "title": "Elon Musk Says All American Kids Will Get Another SpaceX Share Every Year",
+        "url": "https://247wallst.com/investing/2026/11/27/elon-musk-says-all-american-kids-will-get-another-spacex-share-every-year/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-27 08:53 ET",
+        "pub_ts": 1795787581.0
       },
       {
         "title": "SpaceX Stock Jumps Thanks to AI Rally. Why It Should Be Rising Even More.",
@@ -1767,27 +1788,6 @@
         "source": "Yahoo Finance",
         "time": "11-27 07:18 ET",
         "pub_ts": 1795781880.0
-      },
-      {
-        "title": "SpaceX Cratered 13.5% This Month: Near 300% Returns to Materialize at Today’s Price According to this Pro Analyst",
-        "url": "https://247wallst.com/investing/2026/11/27/spacex-cratered-13-5-this-month-near-300-returns-to-materialize-at-todays-price-according-to-this-pro-analyst/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-27 07:15 ET",
-        "pub_ts": 1795781702.0
-      },
-      {
-        "title": "What happens now after the US authorizes data centers in space",
-        "url": "https://www.cnn.com/2026/11/27/business/video/fcc-authorizes-spacex-data-centers-in-space?cid=external-feeds_iluminar_yahoo&.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-27 06:33 ET",
-        "pub_ts": 1795779192.0
-      },
-      {
-        "title": "SpaceX Stock Jumps 7.47% as Musk Expands Share Donation Pledge",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/spacex-stock-jumps-7-47-113008534.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-27 06:30 ET",
-        "pub_ts": 1795779008.0
       }
     ],
     "ASTS": [
@@ -3327,29 +3327,29 @@
     "VIXY": 1795789237.135359,
     "SOXS": 1795789237.135359,
     "NVDA": 1795789237.135359,
-    "AMD": 1795787862.226685,
-    "ASML": 1795787862.226685,
-    "QCOM": 1795787862.226685,
-    "AVGO": 1795787862.226685,
-    "AMAT": 1795787862.226685,
-    "META": 1795787862.226685,
-    "GOOGL": 1795787862.226685,
-    "MSFT": 1795787862.226685,
-    "AAPL": 1795787862.226685,
+    "AMD": 1795789383.414314,
+    "ASML": 1795789383.414314,
+    "QCOM": 1795789383.414314,
+    "AVGO": 1795789383.414314,
+    "AMAT": 1795789383.414314,
+    "META": 1795789383.414314,
+    "GOOGL": 1795789383.414314,
+    "MSFT": 1795789383.414314,
+    "AAPL": 1795789383.414314,
     "PLTR": 1795788344.7845988,
     "NOW": 1795788344.7845988,
     "AMZN": 1795788344.7845988,
     "CRWV": 1795788344.7845988,
     "NBIS": 1795788344.7845988,
     "APLD": 1795788344.7845988,
-    "VST": 1795787862.226685,
-    "BE": 1795787862.226685,
-    "CRDO": 1795787862.226685,
-    "COHR": 1795787862.226685,
+    "VST": 1795789383.414314,
+    "BE": 1795789383.414314,
+    "CRDO": 1795789383.414314,
+    "COHR": 1795789383.414314,
     "MRVL": 1795788344.7845988,
     "LITE": 1795788344.7845988,
     "AAOI": 1795788344.7845988,
-    "SPCX": 1795787862.226685,
+    "SPCX": 1795789383.414314,
     "ASTS": 1795788344.7845988,
     "AXTI": 1795788344.7845988,
     "NASA": 1795788344.7845988,
