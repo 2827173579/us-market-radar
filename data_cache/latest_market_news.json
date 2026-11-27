@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795766214.85,
-  "updated_at_et": "11-27 02:56 ET",
-  "updated_at_kst": "16:56 KST",
+  "updated_at_ts": 1795766324.006,
+  "updated_at_et": "11-27 02:58 ET",
+  "updated_at_kst": "16:58 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -890,6 +890,13 @@
     ],
     "NVDA": [
       {
+        "title": "Michael Burry Shares Stark Warning About AI Boom, as Nvidia, Oracle and Meta Face Surging Debt Insurance Costs",
+        "url": "https://finance.yahoo.com/technology/ai/articles/michael-burry-shares-stark-warning-063128312.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-27 01:31 ET",
+        "pub_ts": 1795761088.0
+      },
+      {
         "title": "Learn Why The Bull Case For Nvidia Stock Could Change Following CEO Reinstatement",
         "url": "https://finance.yahoo.com/markets/stocks/articles/learn-why-bull-case-nvidia-051409281.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -916,13 +923,6 @@
         "source": "Yahoo Finance",
         "time": "11-26 23:11 ET",
         "pub_ts": 1795752680.0
-      },
-      {
-        "title": "Nvidia Is Down 35% From Its All-Time High, Tied for Its Biggest Drop Since the AI Boom Began. Is It a Buy?",
-        "url": "https://www.fool.com/investing/2026/11/26/nvidia-is-down-35-from-its-all-time-high-tied-for-its-biggest-drop-since-the-ai-boom-began-is-it-a-buy/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-26 22:20 ET",
-        "pub_ts": 1795749602.0
       }
     ],
     "AMD": [
@@ -3297,22 +3297,22 @@
     ]
   },
   "ticker_news_ts": {
-    "KORU": 1795764801.5013754,
-    "SOXL": 1795764801.5013754,
-    "SPY": 1795764801.5013754,
-    "DIA": 1795764801.5013754,
-    "SOXX": 1795764801.5013754,
-    "QQQ": 1795764801.5013754,
-    "SMH": 1795764801.5013754,
-    "IWM": 1795764801.5013754,
-    "IGV": 1795764801.5013754,
-    "TLT": 1795764801.5013754,
-    "GLD": 1795764801.5013754,
-    "SQQQ": 1795764801.5013754,
+    "KORU": 1795766324.0058007,
+    "SOXL": 1795766324.0058007,
+    "SPY": 1795766324.0058007,
+    "DIA": 1795766324.0058007,
+    "SOXX": 1795766324.0058007,
+    "QQQ": 1795766324.0058007,
+    "SMH": 1795766324.0058007,
+    "IWM": 1795766324.0058007,
+    "IGV": 1795766324.0058007,
+    "TLT": 1795766324.0058007,
+    "GLD": 1795766324.0058007,
+    "SQQQ": 1795766324.0058007,
     "TSM": 1795764852.1757023,
-    "VIXY": 1795764801.5013754,
-    "SOXS": 1795764801.5013754,
-    "NVDA": 1795764801.5013754,
+    "VIXY": 1795766324.0058007,
+    "SOXS": 1795766324.0058007,
+    "NVDA": 1795766324.0058007,
     "AMD": 1795764852.1757023,
     "ASML": 1795764852.1757023,
     "QCOM": 1795764852.1757023,
@@ -3377,7 +3377,7 @@
     "ANT": 1795765138.6395876,
     "XAUUSD": 1795765138.6395876,
     "KOSPI": 1795764966.6982048,
-    "KSTR": 1795764801.5013754
+    "KSTR": 1795766324.0058007
   },
   "opex_shield": {
     "date": "2026-11-27",
