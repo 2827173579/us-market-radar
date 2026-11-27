@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795809917.004,
-  "updated_at_et": "11-27 15:05 ET",
-  "updated_at_kst": "05:05 KST",
+  "updated_at_ts": 1795809981.792,
+  "updated_at_et": "11-27 15:06 ET",
+  "updated_at_kst": "05:06 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -585,6 +585,27 @@
     ],
     "NVDA": [
       {
+        "title": "Dow Jones Futures: Stock Market Makes Bullish Move, Tesla Leads 7 New Buys; Nvidia's Jensen Huang Heads To Capitol Hill",
+        "url": "https://finance.yahoo.com/m/5b917298-e5b5-3d87-b1fa-f7cad345af64/dow-jones-futures%3A-stock.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-27 14:54 ET",
+        "pub_ts": 1795809269.0
+      },
+      {
+        "title": "Should You Buy Nvidia Stock Before CEO Jensen Huang Testifies in Front of Congress on Dec. 1 and Dec. 3?",
+        "url": "https://www.fool.com/investing/2026/11/27/should-you-buy-nvidia-stock-before-ceo-jensen-huang-testifies-in-front-of-congress-on-dec-1-and-dec-3/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-27 14:48 ET",
+        "pub_ts": 1795808889.0
+      },
+      {
+        "title": "Sports Betting and the Way We Make Money",
+        "url": "https://www.fool.com/investing/2026/11/27/sports-betting-and-the-way-we-make-money/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-27 14:44 ET",
+        "pub_ts": 1795808663.0
+      },
+      {
         "title": "Stock Market Today: Indexes Log Best Thanksgiving Week In 18 Years",
         "url": "https://finance.yahoo.com/m/86a4597f-ee47-3048-ae92-1a56fa4711e5/stock-market-today%3A-indexes.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -597,27 +618,6 @@
         "source": "Yahoo Finance",
         "time": "11-27 13:53 ET",
         "pub_ts": 1795805583.0
-      },
-      {
-        "title": "Dow Jones Futures: Stock Market Makes Bullish Move, Tesla Leads 7 New Buys; Nvidia's Jensen Huang Heads To Capitol Hill",
-        "url": "https://finance.yahoo.com/m/5b917298-e5b5-3d87-b1fa-f7cad345af64/dow-jones-futures%3A-stock.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-27 13:48 ET",
-        "pub_ts": 1795805323.0
-      },
-      {
-        "title": "US Equity Indexes Rise as Jensen Huang's Return to Nvidia Guardrails AI Trade While Investors Slice Growth Exposure This Week",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/us-equity-indexes-rise-jensen-183902792.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-27 13:39 ET",
-        "pub_ts": 1795804742.0
-      },
-      {
-        "title": "For a Little While, Nvidia Faced a Future Without Jensen Huang",
-        "url": "https://www.fool.com/investing/2026/11/27/for-a-little-while-nvidia-faced-a-future-without-jensen-huang/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-27 13:31 ET",
-        "pub_ts": 1795804262.0
       }
     ],
     "TSM": [
@@ -865,18 +865,18 @@
         "pub_ts": 1795805361.0
       },
       {
+        "title": "Top Stock Reports for Alphabet, Meta & Bank of America",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/top-stock-reports-alphabet-meta-184100991.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-27 13:41 ET",
+        "pub_ts": 1795804860.0
+      },
+      {
         "title": "AppLovin vs. Magnite: Which Technology Stock Is a Better Buy for 2027?",
         "url": "https://www.fool.com/coverage/better-buy/2026/11/27/applovin-vs-magnite-which-technology-stock-is-a-better-buy-for-2027/?.tsrc=rss",
         "source": "Yahoo Finance",
         "time": "11-27 13:16 ET",
         "pub_ts": 1795803374.0
-      },
-      {
-        "title": "What Does Alphabet (GOOGL) Need To Prove After The Air Force Cloud Breach?",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/does-alphabet-googl-prove-air-181025421.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-27 13:10 ET",
-        "pub_ts": 1795803025.0
       }
     ],
     "ASML": [
@@ -2999,31 +2999,31 @@
     ]
   },
   "ticker_news_ts": {
-    "DIA": 1795808432.9606965,
-    "IWM": 1795808432.9606965,
-    "SOXX": 1795808432.9606965,
-    "SPY": 1795808432.9606965,
-    "QQQ": 1795808432.9606965,
-    "KORU": 1795808432.9606965,
-    "SOXL": 1795808432.9606965,
-    "SMH": 1795808432.9606965,
-    "KSTR": 1795808432.9606965,
-    "TLT": 1795808432.9606965,
-    "SQQQ": 1795808432.9606965,
-    "GLD": 1795808432.9606965,
-    "IGV": 1795808432.9606965,
-    "SOXS": 1795808432.9606965,
-    "VIXY": 1795808432.9606965,
-    "NVDA": 1795808432.9606965,
-    "TSM": 1795808432.9606965,
-    "AMD": 1795808432.9606965,
-    "AVGO": 1795808432.9606965,
-    "AMAT": 1795808432.9606965,
-    "QCOM": 1795808432.9606965,
-    "MSFT": 1795808432.9606965,
-    "GOOGL": 1795808432.9606965,
-    "ASML": 1795808432.9606965,
-    "KOSPI": 1795808432.9606965,
+    "DIA": 1795809981.7923043,
+    "IWM": 1795809981.7923043,
+    "SOXX": 1795809981.7923043,
+    "SPY": 1795809981.7923043,
+    "QQQ": 1795809981.7923043,
+    "KORU": 1795809981.7923043,
+    "SOXL": 1795809981.7923043,
+    "SMH": 1795809981.7923043,
+    "KSTR": 1795809981.7923043,
+    "TLT": 1795809981.7923043,
+    "SQQQ": 1795809981.7923043,
+    "GLD": 1795809981.7923043,
+    "IGV": 1795809981.7923043,
+    "SOXS": 1795809981.7923043,
+    "VIXY": 1795809981.7923043,
+    "NVDA": 1795809981.7923043,
+    "TSM": 1795809981.7923043,
+    "AMD": 1795809981.7923043,
+    "AVGO": 1795809981.7923043,
+    "AMAT": 1795809981.7923043,
+    "QCOM": 1795809981.7923043,
+    "MSFT": 1795809981.7923043,
+    "GOOGL": 1795809981.7923043,
+    "ASML": 1795809981.7923043,
+    "KOSPI": 1795809981.7923043,
     "META": 1795808520.605874,
     "AAPL": 1795808520.605874,
     "AMZN": 1795808520.605874,
