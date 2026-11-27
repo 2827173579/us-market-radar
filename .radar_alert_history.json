@@ -86,8 +86,8 @@
       "last_notified_at": 1795799246.6881135
     },
     "IWM": {
-      "state": "NORMAL",
-      "last_notified_at": 0.0
+      "state": "WATCHLIST_ENTRY_READY",
+      "last_notified_at": 1795799299.8828967
     },
     "IGV": {
       "state": "NORMAL",
@@ -162,8 +162,8 @@
       "last_notified_at": 1795482111.35759
     },
     "AMZN": {
-      "state": "NORMAL",
-      "last_notified_at": 0.0
+      "state": "WATCHLIST_ENTRY_READY",
+      "last_notified_at": 1795799299.8828967
     },
     "MSFT": {
       "state": "NORMAL",
@@ -186,8 +186,8 @@
       "last_notified_at": 0.0
     },
     "KSTR": {
-      "state": "NORMAL",
-      "last_notified_at": 0.0
+      "state": "WATCHLIST_ENTRY_READY",
+      "last_notified_at": 1795799299.8828967
     }
   },
   "position_peaks": {

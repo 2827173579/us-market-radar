@@ -8443,9 +8443,13 @@
     "2026-11-27:DEFENSIVE_FLIGHT:green:-3.5": {
       "device": "PC",
       "ts": 1795799054.5122452
+    },
+    "2026-11-27:AMZN/IWM/KSTR:5M_ENTRY": {
+      "device": "PC",
+      "ts": 1795799300.8148625
     }
   },
   "device": "PC",
-  "last_heartbeat_ts": 1795799163.9561164,
-  "updated_at": "2026-11-27T17:07:27.622872+00:00"
+  "last_heartbeat_ts": 1795799270.9035609,
+  "updated_at": "2026-11-27T17:08:20.815354+00:00"
 }
