@@ -127,7 +127,7 @@ class TestDefensiveFlightV2AndAlerts(unittest.TestCase):
         self.assertIn("待 09:30 ET 开盘锁定基准", desc)
         self.assertNotIn("多头仓位顺势拿稳", desc)
         self.assertIn("风控防守期", desc)
-        self.assertIn("📏 变灯线：🟢≤-1.5%｜🔵-1.5~+1.0%｜🟡≥+1.0%或回撤+2.5%｜🔴≥+1.8%或回撤+4.0%", desc)
+        self.assertIn("📏 变灯：🟢≤-1.5｜🔵-1.5~+1｜🟡≥+1/回撤+2.5｜🔴≥+1.8/回撤+4.0%", desc)
         # 防御篮子 8 只按波动绝对值精简 Top-4：VIXY(-6.1%) / MRNA(+3.3%) / GLD(+2.7%) / KO(-0.6%)
         def_line = [ln for ln in desc.splitlines() if ln.startswith("🛡️")][0]
         for top4_sym in ("VIXY", "MRNA", "GLD", "KO"):
@@ -135,26 +135,123 @@ class TestDefensiveFlightV2AndAlerts(unittest.TestCase):
         for dropped_sym in ("TLT", "PEP", "LLY"):
             self.assertNotIn(dropped_sym, def_line)
 
-        # 灯色等级切换（即使 Score 变动 < 0.10%p）无条件触发推送
+    def test_03b_two_tier_cooldown_anti_spam_and_zero_cooldown_breakthrough(self):
+        """验证两档防抖冷却：同色 5 分钟内 VIXY 跳动 2% & Δscore=0.38%p 拦截；满 30m/15m 且 Δ>=0.50%p 放行；变灯或 Δ>=1.0%p 0 冷却穿透。"""
+        base_ts = 1795770000.0
         with tempfile.TemporaryDirectory() as td:
             st_file = os.path.join(td, "df_state.json")
+            init_state = {
+                "day": {
+                    "last_score": -5.03,
+                    "last_lamp_level": "green",
+                    "last_fade_active": False,
+                    "last_date_et": "2026-11-27",
+                    "last_push_ts": base_ts,
+                    "session": "PRE_MARKET",
+                    "components": {"VIXY": -3.9, "SOXL": 12.0},
+                },
+                "rth_tracker": {},
+            }
             with open(st_file, "w", encoding="utf-8") as f:
-                json.dump(
-                    {
-                        "day": {"last_score": 0.98, "last_lamp_level": "blue", "components": {}},
-                        "rth_tracker": {"date_et": "2026-11-27", "rth_open_score": 0.98, "rth_min_score": 0.98},
-                    },
-                    f,
-                )
+                json.dump(init_state, f)
+
             with patch.object(imr, "_DEFENSIVE_FLIGHT_PUSH_STATE", st_file):
-                should_push = imr.should_send_defensive_flight_alert(
-                    df_alert={"flight_score": 1.02, "def_mean_chg": 1.02, "off_mean_chg": 0.0},
-                    live_lookup={},
-                    session_code="REGULAR",
-                    weather_info={"weather": "晴"},
-                    date_et="2026-11-27",
+                # 1) 同为绿灯、盘前 5 分钟内 VIXY 跳动 2.0% 且 Δscore = 0.38%p -> 严格拦截跳过
+                live_vixy_jump = _make_live_lookup()
+                live_vixy_jump["VIXY"] = {"effective_pct": -5.9}
+                self.assertFalse(
+                    imr.should_send_defensive_flight_alert(
+                        df_alert={"flight_score": -5.41, "def_mean_chg": -0.2, "off_mean_chg": 5.21},
+                        live_lookup=live_vixy_jump,
+                        session_code="PRE_MARKET",
+                        weather_info={"weather": "暴雨空仓"},
+                        date_et="2026-11-27",
+                        now_ts=base_ts + 5 * 60,
+                    )
                 )
-                self.assertTrue(should_push)
+
+                # 2) 同为绿灯、盘前满 30 分钟但 Δscore 仅 0.38%p (< 0.50%p) -> 仍拦截
+                self.assertFalse(
+                    imr.should_send_defensive_flight_alert(
+                        df_alert={"flight_score": -5.41, "def_mean_chg": -0.2, "off_mean_chg": 5.21},
+                        live_lookup=live_vixy_jump,
+                        session_code="PRE_MARKET",
+                        weather_info={"weather": "暴雨空仓"},
+                        date_et="2026-11-27",
+                        now_ts=base_ts + 31 * 60,
+                    )
+                )
+
+                # 3) 同为绿灯、盘前满 30 分钟且 Δscore = 0.55%p (>= 0.50%p) -> 允许推送
+                self.assertTrue(
+                    imr.should_send_defensive_flight_alert(
+                        df_alert={"flight_score": -5.58, "def_mean_chg": -0.2, "off_mean_chg": 5.38},
+                        live_lookup=live_vixy_jump,
+                        session_code="PRE_MARKET",
+                        weather_info={"weather": "暴雨空仓"},
+                        date_et="2026-11-27",
+                        now_ts=base_ts + 30 * 60,
+                    )
+                )
+
+                # 4) 仅隔 2 分钟但单次剧烈异动 |Δscore| = 1.05%p (>= 1.00%p) -> 0 冷却即时穿透
+                self.assertTrue(
+                    imr.should_send_defensive_flight_alert(
+                        df_alert={"flight_score": -6.08, "def_mean_chg": -0.2, "off_mean_chg": 5.88},
+                        live_lookup=live_vixy_jump,
+                        session_code="PRE_MARKET",
+                        weather_info={"weather": "暴雨空仓"},
+                        date_et="2026-11-27",
+                        now_ts=base_ts + 2 * 60,
+                    )
+                )
+
+                # 5) 正规盘同色冷却：10 分钟拦截，满 15 分钟且 Δ >= 0.50%p 放行；仅隔 2 分钟但 green -> yellow 0 冷却穿透
+                rth_state = {
+                    "day": {
+                        "last_score": -5.00,
+                        "last_lamp_level": "green",
+                        "last_fade_active": False,
+                        "last_date_et": "2026-11-27",
+                        "last_push_ts": base_ts,
+                        "session": "REGULAR",
+                        "components": {},
+                    },
+                    "rth_tracker": {"date_et": "2026-11-27", "rth_open_score": -5.00, "rth_min_score": -5.00},
+                }
+                with open(st_file, "w", encoding="utf-8") as f:
+                    json.dump(rth_state, f)
+                self.assertFalse(
+                    imr.should_send_defensive_flight_alert(
+                        df_alert={"flight_score": -5.60, "def_mean_chg": 0.0, "off_mean_chg": 5.60},
+                        live_lookup={},
+                        session_code="REGULAR",
+                        weather_info={"weather": "晴"},
+                        date_et="2026-11-27",
+                        now_ts=base_ts + 10 * 60,
+                    )
+                )
+                self.assertTrue(
+                    imr.should_send_defensive_flight_alert(
+                        df_alert={"flight_score": -5.60, "def_mean_chg": 0.0, "off_mean_chg": 5.60},
+                        live_lookup={},
+                        session_code="REGULAR",
+                        weather_info={"weather": "晴"},
+                        date_et="2026-11-27",
+                        now_ts=base_ts + 15 * 60,
+                    )
+                )
+                # 仅隔 2 分钟但由 green -> yellow（高开低走回升 +2.60%）-> 0 冷却穿透
+                self.assertTrue(
+                    imr.should_send_defensive_flight_alert(
+                        df_alert={"flight_score": -2.40, "def_mean_chg": 0.0, "off_mean_chg": 2.40},
+                        live_lookup={},
+                        session_code="REGULAR",
+                        weather_info={"weather": "晴"},
+                        date_et="2026-11-27",
+                        now_ts=base_ts + 2 * 60,
+                    )
+                )
 
     def test_04_notification_center_rth_gate_and_cross_day_cleanup(self):
         """验证后端与前端预警中心正规盘门禁（非 REGULAR 屏蔽 5m买点与批量破位）及跨日清理旧通知。"""

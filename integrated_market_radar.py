@@ -2566,7 +2566,7 @@ def send_discord_claw_alert(title, markdown_content, webhook_url=None, dedupe_ke
 
 _DEF_BASKET_SYMBOLS = ("KO", "PEP", "MCD", "LLY", "MRNA", "TLT", "GLD", "VIXY")
 _OFF_BASKET_SYMBOLS = ("SOXL", "SMH", "NVDA", "QQQ")
-_DEF_LAMP_RULER = "📏 变灯线：🟢≤-1.5%｜🔵-1.5~+1.0%｜🟡≥+1.0%或回撤+2.5%｜🔴≥+1.8%或回撤+4.0%"
+_DEF_LAMP_RULER = "📏 变灯：🟢≤-1.5｜🔵-1.5~+1｜🟡≥+1/回撤+2.5｜🔴≥+1.8/回撤+4.0%"
 
 
 def _is_macro_risk_locked_for_flight(weather_info=None) -> bool:
@@ -3669,22 +3669,30 @@ def _defensive_flight_current_components(df_alert, live_lookup):
     return {s: _defensive_component_pct(live_lookup.get(s, {})) for s in _DEFENSIVE_FLIGHT_CORE_SYMBOLS if s in (live_lookup or {})}
 
 
-def should_send_defensive_flight_alert(df_alert, live_lookup, session_code="REGULAR", weather_info=None, date_et=None):
-    """防刷屏：灯色等级切换无条件推送；否则 Score 变化 >=0.10%p 或核心成分变化 >=0.5%；夜盘/白天状态分离。"""
+def should_send_defensive_flight_alert(df_alert, live_lookup, session_code="REGULAR", weather_info=None, date_et=None, now_ts=None):
+    """
+    严格两档防抖冷却（彻底移除单只成分 >= 0.5% 触发，根治盘前/3x ETF 正常抖动刷屏）：
+    1. 即时穿透（0 冷却）：首次推送 / 跨美东交易日 / 切入新时段 / 四色灯级切换 / 高开低走警报翻转 / |Δscore| >= 1.00%p；
+    2. 同色冷却：必须同时满足 (REGULAR >= 15分钟 或 非正规盘 >= 30分钟) 且 |Δscore| >= 0.50%p。
+    """
     try:
         if df_alert.get("skip_reason"):
             return False
         score = float(df_alert.get("flight_score", 0.0))
-        comps = _defensive_flight_current_components(df_alert, live_lookup)
-        key = "overnight" if session_code == "OVERNIGHT" else "day"
+        sess_u = str(session_code or "REGULAR").strip().upper()
+        is_regular = sess_u in ("REGULAR", "RTH", "INTRADAY")
+        cur_date_et = str(date_et or now_et_str("%Y-%m-%d"))[:10]
+        cur_ts = float(now_ts) if now_ts is not None else time.time()
+
+        key = "overnight" if sess_u == "OVERNIGHT" else "day"
         state = _load_defensive_flight_state()
         ev = evaluate_defensive_flight_v2(
             df_alert=df_alert,
             live_lookup=live_lookup,
-            session_code=session_code,
+            session_code=sess_u,
             weather_info=weather_info,
             state=state,
-            date_et=date_et,
+            date_et=cur_date_et,
         )
         # 无论本轮是否推送，都持久化当日正规盘 rth_tracker 以便准确捕捉日内最低分
         if not _external_alerts_disabled() and ev.get("rth_tracker") != state.get("rth_tracker"):
@@ -3693,42 +3701,76 @@ def should_send_defensive_flight_alert(df_alert, live_lookup, session_code="REGU
                 json.dump(state, open(_DEFENSIVE_FLIGHT_PUSH_STATE, "w", encoding="utf-8"), ensure_ascii=False, indent=2)
             except Exception:
                 pass
+
         prev = state.get(key) or {}
         if prev.get("last_score") is None:
             return True
-        # 灯色等级切换（如 绿->黄 / 黄->红）无条件推送，绝不漏报变盘
-        if prev.get("last_lamp_level") and prev.get("last_lamp_level") != ev.get("lamp_level"):
+
+        # --- 即时穿透（0 冷却） ---
+        prev_date_et = str(prev.get("last_date_et") or str(prev.get("sent_at") or "")[:10]).strip()
+        if prev_date_et and prev_date_et != cur_date_et:
             return True
-        if abs(score - float(prev.get("last_score", 0.0))) >= 0.10:
+        prev_sess = str(prev.get("session") or "").strip().upper()
+        if prev_sess and prev_sess != sess_u:
             return True
-        prev_comps = prev.get("components", {}) or {}
-        for s, p in comps.items():
-            if abs(p - float(prev_comps.get(s, 0.0))) >= 0.50:
-                return True
-        return False
+        prev_lamp = str(prev.get("last_lamp_level") or "").strip().lower()
+        cur_lamp = str(ev.get("lamp_level") or "").strip().lower()
+        if prev_lamp and cur_lamp and prev_lamp != cur_lamp:
+            return True
+        prev_fade = bool(prev.get("last_fade_active", False))
+        cur_fade = bool(ev.get("is_fade_yellow", False) or ev.get("is_fade_red", False))
+        if (not prev_fade) and cur_fade:
+            return True
+
+        delta_score = abs(score - float(prev.get("last_score", 0.0)))
+        if delta_score >= 1.00:
+            return True
+
+        # --- 同色防刷屏冷却：必须同时满足时间冷却 + |Δscore| >= 0.50%p ---
+        cooldown_sec = 15 * 60.0 if is_regular else 30 * 60.0
+        last_push_ts = prev.get("last_push_ts")
+        if last_push_ts is None:
+            sent_s = str(prev.get("sent_at") or "").strip()
+            if sent_s:
+                try:
+                    dt_naive = datetime.strptime(sent_s[:19], "%Y-%m-%d %H:%M:%S")
+                    dt_et = dt_naive.replace(tzinfo=ZoneInfo("America/New_York"))
+                    last_push_ts = dt_et.timestamp()
+                except Exception:
+                    last_push_ts = 0.0
+            else:
+                last_push_ts = 0.0
+        elapsed_sec = max(0.0, cur_ts - float(last_push_ts))
+        return bool(elapsed_sec >= cooldown_sec and delta_score >= 0.50)
     except Exception:
         return True
 
 
-def record_defensive_flight_sent(df_alert, live_lookup, session_code="REGULAR", weather_info=None, date_et=None):
+def record_defensive_flight_sent(df_alert, live_lookup, session_code="REGULAR", weather_info=None, date_et=None, now_ts=None):
     try:
         comps = {s: round(float(p), 4) for s, p in _defensive_flight_current_components(df_alert, live_lookup).items()}
-        key = "overnight" if session_code == "OVERNIGHT" else "day"
+        sess_u = str(session_code or "REGULAR").strip().upper()
+        cur_date_et = str(date_et or now_et_str("%Y-%m-%d"))[:10]
+        cur_ts = float(now_ts) if now_ts is not None else time.time()
+        key = "overnight" if sess_u == "OVERNIGHT" else "day"
         state = _load_defensive_flight_state()
         ev = evaluate_defensive_flight_v2(
             df_alert=df_alert,
             live_lookup=live_lookup,
-            session_code=session_code,
+            session_code=sess_u,
             weather_info=weather_info,
             state=state,
-            date_et=date_et,
+            date_et=cur_date_et,
         )
         state["rth_tracker"] = ev.get("rth_tracker") or {}
         state[key] = {
             "last_score": round(float(df_alert.get("flight_score", 0.0)), 4),
             "last_lamp_level": ev.get("lamp_level"),
+            "last_fade_active": bool(ev.get("is_fade_yellow", False) or ev.get("is_fade_red", False)),
+            "last_date_et": cur_date_et,
+            "last_push_ts": round(cur_ts, 2),
             "components": comps,
-            "session": session_code,
+            "session": sess_u,
             "sent_at": now_et_str("%Y-%m-%d %H:%M:%S"),
         }
         json.dump(state, open(_DEFENSIVE_FLIGHT_PUSH_STATE, "w", encoding="utf-8"), ensure_ascii=False, indent=2)
@@ -9238,12 +9280,12 @@ def run_radar_cycle(is_first_run=False, round_idx=1):
             if not df_alert_push:
                 import ml_predictor_5y
                 df_alert_push = ml_predictor_5y.compute_defensive_flight_alert(live_lookup=live_lookup_df, session_code=session_code)
-            # 防刷屏：灯色切换无条件推送，或 Score 变动 >=0.10%p 或核心成分变动 >=0.5%
+            # 两档防抖冷却：灯色切换/高开低走翻转/|Δscore|>=1.0%p 0 冷却穿透；同色需满冷却(盘中15m/盘外30m)且|Δscore|>=0.50%p
             if should_send_defensive_flight_alert(df_alert_push, live_lookup_df, session_code=session_code, weather_info=weather_info):
                 if send_discord_defensive_flight_alert(df_alert_push, live_lookup_df, now_str, session_code=session_code, weather_info=weather_info):
                     record_defensive_flight_sent(df_alert_push, live_lookup_df, session_code=session_code, weather_info=weather_info)
             else:
-                print("  [*] 防御因子无显著变化（灯色未变且 <0.10%p / 核心成分 <0.5%），跳过 Discord 推送")
+                print("  [*] 防御因子处于同色冷却期或幅度不足（<0.50%p），跳过 Discord 推送")
         except Exception as df_err:
             print(f"  [!] 💬 防御因子背离推送启动异常: {df_err}")
 
