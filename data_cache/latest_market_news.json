@@ -1,9 +1,22 @@
 {
-  "updated_at_ts": 1795747116.543,
-  "updated_at_et": "11-26 21:38 ET",
-  "updated_at_kst": "11:38 KST",
+  "updated_at_ts": 1795747154.488,
+  "updated_at_et": "11-26 21:39 ET",
+  "updated_at_kst": "11:39 KST",
   "macro_calendar": [],
   "macro_flashes": [
+    {
+      "id": "20261127103804477800",
+      "title": "恒生科技指数涨超3%，光通信、芯片、PCB板块涨幅居前；成分股中，MINIMAX-W(0…",
+      "summary": "恒生科技指数涨超3%，光通信、芯片、PCB板块涨幅居前；成分股中，MINIMAX-W(00100.HK)涨超8%。",
+      "keywords": [
+        "芯片"
+      ],
+      "pub_ts": 1795747084.0,
+      "time_et": "11-26 21:38 ET",
+      "time_bj": "10:38 BJ",
+      "time_kst": "11:38 KST",
+      "time_display": "21:38 ET / 10:38 BJ"
+    },
     {
       "id": "20261127103605007800",
       "title": "创业板指涨超2%，算力、半导体、光刻机板块涨幅居前。",
@@ -325,19 +338,6 @@
       "time_bj": "23:11 BJ",
       "time_kst": "00:11 KST",
       "time_display": "10:11 ET / 23:11 BJ"
-    },
-    {
-      "id": "20261126225544721800",
-      "title": "美国总统特朗普：乌克兰与俄罗斯很有可能迅速达成协议。",
-      "summary": "美国总统特朗普：乌克兰与俄罗斯很有可能迅速达成协议。",
-      "keywords": [
-        "特朗普"
-      ],
-      "pub_ts": 1795704944.0,
-      "time_et": "11-26 09:55 ET",
-      "time_bj": "22:55 BJ",
-      "time_kst": "23:55 KST",
-      "time_display": "09:55 ET / 22:55 BJ"
     }
   ],
   "ticker_news": {
@@ -3404,7 +3404,7 @@
   "calendar_banner": {
     "level": "idle_with_flash",
     "headline": "📡 宏观消息面监控中 · 今日暂无美股五星级经济数据大考",
-    "detail": "⚡ 最新核心快讯 (21:36 ET / 10:36 BJ) [半导体]：创业板指涨超2%，算力、半导体、光刻机板块涨幅居前。",
+    "detail": "⚡ 最新核心快讯 (21:38 ET / 10:38 BJ) [芯片]：恒生科技指数涨超3%，光通信、芯片、PCB板块涨幅居前；成分股中，MINIMAX-W(00100.HK)涨超8%。",
     "event_name": "",
     "minutes_left": 0,
     "opex_shield": {
