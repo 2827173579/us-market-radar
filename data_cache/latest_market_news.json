@@ -1,9 +1,35 @@
 {
-  "updated_at_ts": 1795755848.877,
-  "updated_at_et": "11-27 00:04 ET",
-  "updated_at_kst": "14:04 KST",
+  "updated_at_ts": 1795755949.483,
+  "updated_at_et": "11-27 00:05 ET",
+  "updated_at_kst": "14:05 KST",
   "macro_calendar": [],
   "macro_flashes": [
+    {
+      "id": "20261127130427318800",
+      "title": "创业板指涨超7%，半导体、光刻机、CPO板块涨幅居前。",
+      "summary": "创业板指涨超7%，半导体、光刻机、CPO板块涨幅居前。",
+      "keywords": [
+        "半导体"
+      ],
+      "pub_ts": 1795755867.0,
+      "time_et": "11-27 00:04 ET",
+      "time_bj": "13:04 BJ",
+      "time_kst": "14:04 KST",
+      "time_display": "00:04 ET / 13:04 BJ"
+    },
+    {
+      "id": "20261127130347835800",
+      "title": "科创50指数涨超9%，半导体产业链全线走强；成分股中，中科飞测20cm涨停。",
+      "summary": "科创50指数涨超9%，半导体产业链全线走强；成分股中，中科飞测20cm涨停。",
+      "keywords": [
+        "半导体"
+      ],
+      "pub_ts": 1795755827.0,
+      "time_et": "11-27 00:03 ET",
+      "time_bj": "13:03 BJ",
+      "time_kst": "14:03 KST",
+      "time_display": "00:03 ET / 13:03 BJ"
+    },
     {
       "id": "20261127130224306800",
       "title": "创业板指涨超6%，光刻机、半导体、CPO板块涨幅居前。",
@@ -308,32 +334,6 @@
       "time_bj": "10:12 BJ",
       "time_kst": "11:12 KST",
       "time_display": "21:12 ET / 10:12 BJ"
-    },
-    {
-      "id": "20261127095950444800",
-      "title": "恒生科技指数涨超2%，光通信、物理AI、芯片等板块涨幅居前。",
-      "summary": "恒生科技指数涨超2%，光通信、物理AI、芯片等板块涨幅居前。",
-      "keywords": [
-        "芯片"
-      ],
-      "pub_ts": 1795744790.0,
-      "time_et": "11-26 20:59 ET",
-      "time_bj": "09:59 BJ",
-      "time_kst": "10:59 KST",
-      "time_display": "20:59 ET / 09:59 BJ"
-    },
-    {
-      "id": "20261127094702524800",
-      "title": "科创50指数涨超2%，算力、光刻机、半导体等板块涨幅居前。",
-      "summary": "科创50指数涨超2%，算力、光刻机、半导体等板块涨幅居前。",
-      "keywords": [
-        "半导体"
-      ],
-      "pub_ts": 1795744022.0,
-      "time_et": "11-26 20:47 ET",
-      "time_bj": "09:47 BJ",
-      "time_kst": "10:47 KST",
-      "time_display": "20:47 ET / 09:47 BJ"
     }
   ],
   "ticker_news": {
@@ -3400,7 +3400,7 @@
   "calendar_banner": {
     "level": "idle_with_flash",
     "headline": "📡 宏观消息面监控中 · 今日暂无美股五星级经济数据大考",
-    "detail": "⚡ 最新核心快讯 (00:02 ET / 13:02 BJ) [半导体]：创业板指涨超6%，光刻机、半导体、CPO板块涨幅居前。",
+    "detail": "⚡ 最新核心快讯 (00:04 ET / 13:04 BJ) [半导体]：创业板指涨超7%，半导体、光刻机、CPO板块涨幅居前。",
     "event_name": "",
     "minutes_left": 0,
     "opex_shield": {
