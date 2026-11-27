@@ -90,8 +90,8 @@
       "last_notified_at": 0.0
     },
     "IGV": {
-      "state": "NORMAL",
-      "last_notified_at": 0.0
+      "state": "WATCHLIST_ENTRY_READY",
+      "last_notified_at": 1795796437.6032376
     },
     "CEG": {
       "state": "NORMAL",
@@ -162,8 +162,8 @@
       "last_notified_at": 1795482111.35759
     },
     "AMZN": {
-      "state": "WATCHLIST_ENTRY_READY",
-      "last_notified_at": 1795796362.7038603
+      "state": "NORMAL",
+      "last_notified_at": 0.0
     },
     "MSFT": {
       "state": "NORMAL",
