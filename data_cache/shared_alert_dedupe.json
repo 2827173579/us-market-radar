@@ -8475,9 +8475,13 @@
     "2026-11-27:PLTR/QCOM:5M_ENTRY": {
       "device": "PC",
       "ts": 1795800980.2963748
+    },
+    "2026-11-27:DEFENSIVE_FLIGHT:green:-3.3": {
+      "device": "PC",
+      "ts": 1795801258.3181632
     }
   },
   "device": "PC",
-  "last_heartbeat_ts": 1795801188.0584435,
-  "updated_at": "2026-11-27T17:39:48.059001+00:00"
+  "last_heartbeat_ts": 1795801234.103501,
+  "updated_at": "2026-11-27T17:40:58.318700+00:00"
 }
