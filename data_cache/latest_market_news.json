@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795824293.78,
-  "updated_at_et": "11-27 19:04 ET",
-  "updated_at_kst": "09:04 KST",
+  "updated_at_ts": 1795826119.362,
+  "updated_at_et": "11-27 19:35 ET",
+  "updated_at_kst": "09:35 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -64,18 +64,18 @@
         "pub_ts": 1795086273.0
       },
       {
-        "title": "Spdr Dow Jones (DIA) Sells Goldman Sachs and Caterpillar on Nov. 16",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/spdr-dow-jones-dia-sells-110421013.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-18 06:04 ET",
-        "pub_ts": 1794999861.0
-      },
-      {
         "title": "American Express (AXP) Could Be 30% Undervalued As Trust Questions Meet ETF Outflows",
         "url": "https://finance.yahoo.com/markets/stocks/articles/american-express-axp-could-30-151150319.html?.tsrc=rss",
         "source": "Yahoo Finance",
         "time": "11-20 10:11 ET",
         "pub_ts": 1795187510.0
+      },
+      {
+        "title": "S&P 500, Nasdaq End Best Week In Over A Year As AI Optimism Makes Comeback — VZ, ANT, ADBE, TSLA In Focus",
+        "url": "https://stocktwits.com/news-articles/markets/equity/s-and-p-500-nasdaq-end-best-week-in-over-a-year-as-ai-optimism-makes-comeback/cNb6EtcR9VK?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-27 16:29 ET",
+        "pub_ts": 1795814986.0
       },
       {
         "title": "Pre-Markets Up Ahead of Shortened Trading Session",
@@ -598,6 +598,13 @@
     ],
     "NVDA": [
       {
+        "title": "Billionaire Chase Coleman’s Tiger Global Raised Its Cerebras Stake 48% to $790 Million",
+        "url": "https://247wallst.com/investing/2026/11/27/billionaire-chase-colemans-tiger-global-raised-its-cerebras-stake-48-to-790-million/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-27 16:37 ET",
+        "pub_ts": 1795815477.0
+      },
+      {
         "title": "Dow Jones Futures: Stock Market Makes Bullish Move, Tesla Leads 7 New Buys; Nvidia's Jensen Huang Heads To Capitol Hill",
         "url": "https://finance.yahoo.com/m/5b917298-e5b5-3d87-b1fa-f7cad345af64/dow-jones-futures%3A-stock.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -624,13 +631,6 @@
         "source": "Yahoo Finance",
         "time": "11-27 14:10 ET",
         "pub_ts": 1795806643.0
-      },
-      {
-        "title": "'Big Short' Investor Michael Burry Thinks This Chinese Stock Is Worth About 60% More Than Its Price. Should You Buy?",
-        "url": "https://www.fool.com/investing/2026/11/27/big-short-investor-michael-burry-thinks-this-chinese-stock-is-worth-about-60-more-than-its-price-should-you-buy/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-27 13:53 ET",
-        "pub_ts": 1795805583.0
       }
     ],
     "TSM": [
@@ -1012,6 +1012,13 @@
         "pub_ts": 1795786884.0
       },
       {
+        "title": "OpenAI Reportedly Fires Back At Apple Over Trade Secrets And Hardware Suppliers",
+        "url": "https://stocktwits.com/news-articles/markets/equity/open-ai-reportedly-fires-back-at-apple-over-trade-secrets-and-hardware-suppliers/cNb65s2R9Vi?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-27 15:13 ET",
+        "pub_ts": 1795810433.0
+      },
+      {
         "title": "New $799 smart glasses challenge Apple, but with a major catch",
         "url": "https://www.thestreet.com/technology/new-orrorin-799-smart-glasses-challenge-apple-but-dont-offer-all-features?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1031,13 +1038,6 @@
         "source": "Yahoo Finance",
         "time": "11-27 08:43 ET",
         "pub_ts": 1795786980.0
-      },
-      {
-        "title": "Trump’s New Tariffs Hit Taiwan but Spare Its Chips. That’s Good News for TSMC and Apple",
-        "url": "https://www.tikr.com/blog/trumps-new-tariffs-hit-taiwan-but-spare-its-chips-thats-good-news-for-tsmc-and-apple?ref=yahoofinance&tlnk=yf-261127-wff3mmwm&.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-27 08:40 ET",
-        "pub_ts": 1795786836.0
       }
     ],
     "AMZN": [
@@ -2085,6 +2085,20 @@
         "pub_ts": 1795791529.0
       },
       {
+        "title": "Zero To Sixty: Tesla Cybercab Fleet Tops 1,000 In Texas, Lucid Starts Fully Driverless Tests And Chinese EV Maker Posts Stronger Margins",
+        "url": "https://stocktwits.com/news-articles/markets/equity/zero-to-sixty-tesla-cybercab-fleet-tops-1-000-in-texas-lucid-starts-fully-driverless-tests-and-chinese-ev-maker-posts-stronger-margins/cNRRKv9R9Vl?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-27 19:12 ET",
+        "pub_ts": 1795824747.0
+      },
+      {
+        "title": "S&P 500, Nasdaq End Best Week In Over A Year As AI Optimism Makes Comeback — VZ, ANT, ADBE, TSLA In Focus",
+        "url": "https://stocktwits.com/news-articles/markets/equity/s-and-p-500-nasdaq-end-best-week-in-over-a-year-as-ai-optimism-makes-comeback/cNb6EtcR9VK?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-27 16:29 ET",
+        "pub_ts": 1795814986.0
+      },
+      {
         "title": "TSLA Stock Clocks Best Week In 18 Months: Tesla Reportedly Eyes Buying German Toolmaker Amid Cybercab, Optimus Scaling Plans",
         "url": "https://stocktwits.com/news-articles/markets/equity/tsla-stock-clocks-best-week-in-18-months-tesla-reportedly-eyes-buying-german-toolmaker-amid-cybercab-optimus-scaling-plans/cNb6PBlR9VL?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2097,20 +2111,6 @@
         "source": "Yahoo Finance",
         "time": "11-27 14:54 ET",
         "pub_ts": 1795809269.0
-      },
-      {
-        "title": "Tesla Takes 1.2M SF at Houston’s Cedar Port Industrial Park",
-        "url": "https://www.credaily.com/briefs/tesla-takes-1-2m-sf-at-houstons-cedar-port-industrial-park/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-27 13:11 ET",
-        "pub_ts": 1795803114.0
-      },
-      {
-        "title": "Sector Update: Consumer Stocks Advance Friday Afternoon",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/sector-consumer-stocks-advance-friday-171212418.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-27 12:12 ET",
-        "pub_ts": 1795799532.0
       }
     ],
     "HPE": [
@@ -2263,6 +2263,13 @@
     ],
     "SKHY": [
       {
+        "title": "This Beaten-Down AI Stock Looks Dirt Cheap at 4 Times Earnings With 130% Upside",
+        "url": "https://www.barchart.com/story/news/9034648/this-beaten-down-ai-stock-looks-dirt-cheap-at-4-times-earnings-with-130-upside?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-27 11:30 ET",
+        "pub_ts": 1795797004.0
+      },
+      {
         "title": "SanDisk Jumps 10% as Investors Return to Beaten-Down Memory Stocks; Micron and SK Hynix Rise 6% Despite TrendForce DRAM Warning",
         "url": "https://247wallst.com/investing/2026/11/27/sandisk-jumps-10-as-investors-return-to-beaten-down-memory-stocks-micron-and-sk-hynix-rise-6-despite-trendforce-dram-warning/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2289,13 +2296,6 @@
         "source": "Yahoo Finance",
         "time": "11-26 14:11 ET",
         "pub_ts": 1795720280.0
-      },
-      {
-        "title": "SK Hynix Just Revealed the Next Generation of DRAM. Can It Beat Micron in the Next Memory Supercycle?",
-        "url": "https://247wallst.com/investing/2026/11/26/sk-hynix-just-revealed-the-next-generation-of-dram-can-it-beat-micron-in-the-next-memory-supercycle/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-26 11:44 ET",
-        "pub_ts": 1795711465.0
       }
     ],
     "WDC": [
@@ -2485,6 +2485,20 @@
     ],
     "BTC-USD": [
       {
+        "title": "Analyst flags December correction before January breakout",
+        "url": "https://www.thestreet.com/crypto/markets/analyst-flags-december-correction-before-january-breakout?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-27 19:00 ET",
+        "pub_ts": 1795824000.0
+      },
+      {
+        "title": "Bitcoin took Thanksgiving off, going 98 minutes without a block",
+        "url": "https://www.thestreet.com/crypto/markets/bitcoin-took-thanksgiving-off-going-98-minutes-without-a-block?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-27 19:00 ET",
+        "pub_ts": 1795824000.0
+      },
+      {
         "title": "4 Scary Bitcoin Charts That Suggest This Bear Market Is Different",
         "url": "https://decrypt.co/384177/bitcoin-4-scary-charts-crypto-winter-bear-market?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2504,20 +2518,6 @@
         "source": "Yahoo Finance",
         "time": "11-27 13:14 ET",
         "pub_ts": 1795803286.0
-      },
-      {
-        "title": "Sector Update: Financial Stocks Higher Friday Afternoon",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/sector-financial-stocks-higher-friday-175851334.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-27 12:58 ET",
-        "pub_ts": 1795802331.0
-      },
-      {
-        "title": "Franklin Templeton just updated its crypto ETF. Here's what you should know.",
-        "url": "https://finance.yahoo.com/video/franklin-templeton-just-updated-crypto-173000925.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-27 12:30 ET",
-        "pub_ts": 1795800600.0
       }
     ],
     "COIN": [
@@ -2559,6 +2559,13 @@
     ],
     "LLY": [
       {
+        "title": "Stocktwits Biotech Dealmaker: Sanofi’s $41B Insmed Buyout Anchors Holiday Week As Lilly Continues Buying Spree",
+        "url": "https://stocktwits.com/news-articles/markets/equity/stocktwits-biotech-dealmaker-sanofi-s-41-b-insmed-buyout-anchors-holiday-week-as-lilly-continues-buying-spree/cNRRKt6R9Vk?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-27 19:10 ET",
+        "pub_ts": 1795824623.0
+      },
+      {
         "title": "What Is The Biggest Threat To Eli Lilly Stock?",
         "url": "https://www.trefis.com/stock/lly/articles/629360/what-is-the-biggest-threat-to-eli-lilly-stock/2026-11-27?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2585,13 +2592,6 @@
         "source": "Yahoo Finance",
         "time": "11-27 08:00 ET",
         "pub_ts": 1795784405.0
-      },
-      {
-        "title": "How GLP 1 Coverage Could Send You Beyond XLV",
-        "url": "https://finance.yahoo.com/healthcare/articles/glp-1-coverage-could-send-120946100.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-27 07:09 ET",
-        "pub_ts": 1795781386.0
       }
     ],
     "ORCL": [
@@ -2670,7 +2670,7 @@
     ],
     "MCD": [
       {
-        "title": "McDonald's new deals take aim at Chili's and convenience stores",
+        "title": "McDonald's makes key menu pricing changes",
         "url": "https://www.thestreet.com/restaurants/mcdonalds-adds-a-new-value-deal-and-gives-customers-something-for-free?.tsrc=rss",
         "source": "Yahoo Finance",
         "time": "11-27 11:07 ET",
@@ -2744,11 +2744,25 @@
     ],
     "V": [
       {
+        "title": "Billionaire Andreas Halvorsen’s Viking Opened an $818 Million Mastercard Stake While Cutting Its Visa Shares 32.6%",
+        "url": "https://247wallst.com/investing/2026/11/27/billionaire-andreas-halvorsens-viking-opened-an-818-million-mastercard-stake-while-cutting-its-visa-shares-32-6/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-27 16:59 ET",
+        "pub_ts": 1795816770.0
+      },
+      {
         "title": "What Is The One Risk Facing Visa Stock Now?",
         "url": "https://www.trefis.com/stock/v/articles/629359/what-is-the-one-risk-facing-visa-stock-now/2026-11-27?.tsrc=rss",
         "source": "Yahoo Finance",
         "time": "11-27 14:41 ET",
         "pub_ts": 1795808506.0
+      },
+      {
+        "title": "Visa Stock: Is V Outperforming the Financial Sector?",
+        "url": "https://www.barchart.com/story/news/9035667/visa-stock-is-v-outperforming-the-financial-sector?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-27 12:51 ET",
+        "pub_ts": 1795801865.0
       },
       {
         "title": "Can Holiday Bargain Hunting Boost Visa's Cross-Border Business?",
@@ -2763,20 +2777,6 @@
         "source": "Yahoo Finance",
         "time": "11-27 07:09 ET",
         "pub_ts": 1795781379.0
-      },
-      {
-        "title": "Visa and NBX plan stablecoin-linked payment card",
-        "url": "https://www.electronicpaymentsinternational.com/news/visa-and-nbx-plan-stablecoin-linked-payment-card/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-27 01:45 ET",
-        "pub_ts": 1795761957.0
-      },
-      {
-        "title": "The Nasdaq Composite Is in a Correction, but These 3 Dividend Stocks Are Near 52-Week Highs. Here's Why They're Still Worth Buying Right Now.",
-        "url": "https://www.fool.com/investing/2026/11/26/the-nasdaq-composite-is-in-a-correction-but-these-3-dividend-stocks-are-near-52-week-highs-here-s-why-they-re-still-worth-buying-right-now/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-26 16:33 ET",
-        "pub_ts": 1795728782.0
       }
     ],
     "JPM": [
@@ -2825,6 +2825,13 @@
         "pub_ts": 1795794488.0
       },
       {
+        "title": "Walmart bets shoppers won't notice its holiday price increases",
+        "url": "https://www.thestreet.com/retail/walmart-quietly-cancels-thousands-of-discounts-as-the-holidays-approach?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-27 19:17 ET",
+        "pub_ts": 1795825020.0
+      },
+      {
         "title": "Amazon, Target and Walmart Chase Holiday Toy Spending",
         "url": "https://finance.yahoo.com/markets/stocks/articles/amazon-target-walmart-chase-holiday-195308961.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2832,28 +2839,28 @@
         "pub_ts": 1795809188.0
       },
       {
+        "title": "Is Walmart Stock Outperforming the Dow?",
+        "url": "https://www.barchart.com/story/news/9035581/is-walmart-stock-outperforming-the-dow?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-27 12:42 ET",
+        "pub_ts": 1795801364.0
+      },
+      {
         "title": "Stock Market Midday, Nov. 27: Tech Stocks Recover and Amazon Posts Black Friday Gains",
         "url": "https://www.fool.com/coverage/stock-market-today/2026/11/27/stock-market-midday-nov-27-tech-stocks-recover-and-amazon-posts-black-friday-gains/?.tsrc=rss",
         "source": "Yahoo Finance",
         "time": "11-27 12:31 ET",
         "pub_ts": 1795800677.0
-      },
-      {
-        "title": "7 Highest Paying Retail Jobs for 2027",
-        "url": "https://moneylion.com/trending/money/highest-paying-retail-jobs-2027?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-27 12:00 ET",
-        "pub_ts": 1795798841.0
-      },
-      {
-        "title": "Walmart technical outlook amid Black Friday",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/walmart-technical-outlook-amid-black-155256189.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-27 10:52 ET",
-        "pub_ts": 1795794776.0
       }
     ],
     "XOM": [
+      {
+        "title": "How Is ExxonMobil’s Stock Performance Compared to Other Oil & Gas Stocks",
+        "url": "https://www.barchart.com/story/news/9035874/how-is-exxonmobils-stock-performance-compared-to-other-oil-gas-stocks?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-27 13:09 ET",
+        "pub_ts": 1795802990.0
+      },
       {
         "title": "XOM Boosts Angola Prospects With Kizomba Redevelopment & New Discovery",
         "url": "https://finance.yahoo.com/energy/articles/xom-boosts-angola-prospects-kizomba-171600732.html?.tsrc=rss",
@@ -2881,13 +2888,6 @@
         "source": "Yahoo Finance",
         "time": "11-25 10:41 ET",
         "pub_ts": 1795621316.0
-      },
-      {
-        "title": "Turn $100,000 Into Lifetime Paychecks With These “Forever” Passive Income Dividend Stocks",
-        "url": "https://247wallst.com/investing/2026/11/25/turn-100000-into-lifetime-paychecks-with-these-forever-passive-income-dividend-stocks/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 10:02 ET",
-        "pub_ts": 1795618961.0
       }
     ],
     "PEP": [
@@ -2966,39 +2966,39 @@
     ],
     "ANT": [
       {
-        "title": "Anthropic: A Commodity Priced As A Monopoly",
-        "url": "https://finnhub.io/api/news?id=83b4c8cfbaa27e02abf55d545fbdbf4a828a8ea2d1a6c7b80e1448bee087438f",
-        "source": "SeekingAlpha",
-        "time": "11-27 12:37 ET",
-        "pub_ts": 1795801063.0
+        "title": "Anthropic Stocks Jump 8.49% Back Above IPO Price as ARK Keeps Buying",
+        "url": "https://finance.yahoo.com/technology/ai/articles/anthropic-stocks-jump-8-49-195111243.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-27 14:51 ET",
+        "pub_ts": 1795809071.0
       },
       {
-        "title": "TSMC: Starting To Look Like A Buy Again (Rating Upgrade)",
-        "url": "https://finnhub.io/api/news?id=b274ad1eb0b710d8b52b1536fa11c393bdb3afc90081fef72d408e88c611fddd",
-        "source": "SeekingAlpha",
-        "time": "11-27 09:20 ET",
-        "pub_ts": 1795789259.0
+        "title": "Anthropic Gets a Blockbuster IPO; Take-Two Gets a Blockbuster GTA VI Release",
+        "url": "https://www.fool.com/investing/2026/11/27/anthropic-gets-a-blockbuster-ipo-take-two-gets-a-blockbuster-gta-vi-release/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-27 14:19 ET",
+        "pub_ts": 1795807142.0
       },
       {
-        "title": "Nvidia: Valuing The Jensen-Sized Void",
-        "url": "https://finnhub.io/api/news?id=7ea157a9dea40754dc4186eeda7c857a1bfcf09b76274a400a1eebd54116717d",
-        "source": "SeekingAlpha",
-        "time": "11-27 05:40 ET",
-        "pub_ts": 1795776043.0
+        "title": "ANT Stock Ends First Full Week Of Trading Around 11% Above IPO Price: Lockup Expiry, Nasdaq 100 Entry Loom",
+        "url": "https://stocktwits.com/news-articles/markets/equity/ant-stock-ends-first-full-week-of-trading-around-11-above-ipo-price-lockup-expiry-nasdaq-100-entry-loom/cNb6Tp0R9VW?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-27 13:57 ET",
+        "pub_ts": 1795805872.0
       },
       {
-        "title": "SpaceX Could Make $50 Billion a Year From AI Data Centers. Nvidia’s Biggest Customers Should Pay Attention",
-        "url": "https://finnhub.io/api/news?id=08e5d5c65b6d1c3f2d256772bc65cb221112043700082d57de290ec3c4d3496c",
-        "source": "Benzinga",
-        "time": "11-27 05:28 ET",
-        "pub_ts": 1795775283.0
+        "title": "Should You Invest in Anthropic Stock Now or Wait? Here's What History Says.",
+        "url": "https://www.fool.com/investing/2026/11/27/should-you-invest-in-anthropic-stock-now-or-wait-heres-what-history-says/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-27 13:39 ET",
+        "pub_ts": 1795804742.0
       },
       {
-        "title": "TeraWulf Rebounds as AI Infrastructure Bulls Look Past Tech Sell-Off",
-        "url": "https://finnhub.io/api/news?id=beee5665a70b76a094ac8c015631726d7685f91a49e0aadcf1406f2a384d7865",
-        "source": "Benzinga",
-        "time": "11-27 05:24 ET",
-        "pub_ts": 1795775096.0
+        "title": "The technology that keeps the whole internet safe might secretly have been broken",
+        "url": "https://www.independent.co.uk/tech/encryption-ai-safety-security-privacy-artificial-intelligence-b3092983.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-27 13:01 ET",
+        "pub_ts": 1795802466.0
       }
     ],
     "XAUUSD": [
@@ -3012,87 +3012,87 @@
     ]
   },
   "ticker_news_ts": {
-    "DIA": 1795823791.8700845,
-    "IWM": 1795823791.8700845,
-    "SOXX": 1795823791.8700845,
-    "SPY": 1795823791.8700845,
-    "QQQ": 1795823791.8700845,
-    "KORU": 1795823791.8700845,
-    "SOXL": 1795823791.8700845,
-    "SMH": 1795823791.8700845,
-    "KSTR": 1795823791.8700845,
-    "TLT": 1795823791.8700845,
-    "SQQQ": 1795823791.8700845,
-    "GLD": 1795823791.8700845,
-    "IGV": 1795823791.8700845,
-    "SOXS": 1795823791.8700845,
-    "VIXY": 1795823791.8700845,
-    "NVDA": 1795823791.8700845,
-    "TSM": 1795823791.8700845,
-    "AMD": 1795823791.8700845,
-    "AVGO": 1795823791.8700845,
-    "AMAT": 1795823791.8700845,
-    "QCOM": 1795823791.8700845,
-    "MSFT": 1795823791.8700845,
-    "GOOGL": 1795823791.8700845,
-    "ASML": 1795823791.8700845,
-    "KOSPI": 1795823791.8700845,
-    "META": 1795823864.87499,
-    "AAPL": 1795823864.87499,
-    "AMZN": 1795823864.87499,
-    "PLTR": 1795823864.87499,
-    "CRWV": 1795823864.87499,
-    "NBIS": 1795823864.87499,
-    "NOW": 1795823864.87499,
-    "BE": 1795823864.87499,
-    "APLD": 1795823864.87499,
-    "VST": 1795823864.87499,
-    "COHR": 1795823864.87499,
-    "CRDO": 1795823864.87499,
-    "MRVL": 1795823864.87499,
-    "AXTI": 1795823864.87499,
-    "AAOI": 1795823864.87499,
-    "LITE": 1795823864.87499,
-    "GLW": 1795823864.87499,
-    "ASTS": 1795823864.87499,
-    "FN": 1795823864.87499,
-    "SPCX": 1795823864.87499,
-    "RKLB": 1795823864.87499,
-    "FLY": 1795823864.87499,
-    "LUNR": 1795823864.87499,
-    "NASA": 1795823864.87499,
-    "KO": 1795823864.87499,
-    "INTC": 1795823929.5647018,
-    "AXP": 1795823929.5647018,
-    "VRT": 1795823929.5647018,
-    "DELL": 1795823929.5647018,
-    "CEG": 1795823929.5647018,
-    "TSLA": 1795823929.5647018,
-    "HPE": 1795823929.5647018,
-    "OKLO": 1795823929.5647018,
-    "FPS": 1795823929.5647018,
-    "MU": 1795823929.5647018,
-    "SKHY": 1795823929.5647018,
-    "WDC": 1795823929.5647018,
-    "STX": 1795823929.5647018,
-    "MSTR": 1795823929.5647018,
-    "SNDK": 1795823929.5647018,
-    "CRWD": 1795823929.5647018,
-    "BTC-USD": 1795823929.5647018,
-    "COIN": 1795823929.5647018,
-    "LLY": 1795823929.5647018,
-    "ORCL": 1795823929.5647018,
-    "MRNA": 1795823929.5647018,
-    "MCD": 1795823929.5647018,
-    "NKE": 1795823929.5647018,
-    "V": 1795823929.5647018,
-    "JPM": 1795824006.6786957,
-    "WMT": 1795824006.6786957,
-    "XOM": 1795824006.6786957,
-    "PEP": 1795823929.5647018,
-    "CAT": 1795824006.6786957,
-    "ANT": 1795824006.6786957,
-    "XAUUSD": 1795824006.6786957
+    "DIA": 1795825351.394674,
+    "IWM": 1795825351.394674,
+    "SOXX": 1795825351.394674,
+    "SPY": 1795825351.394674,
+    "QQQ": 1795825351.394674,
+    "KORU": 1795825351.394674,
+    "SOXL": 1795825351.394674,
+    "SMH": 1795825351.394674,
+    "KSTR": 1795825351.394674,
+    "TLT": 1795825351.394674,
+    "SQQQ": 1795825351.394674,
+    "GLD": 1795825351.394674,
+    "IGV": 1795825351.394674,
+    "SOXS": 1795825351.394674,
+    "VIXY": 1795825351.394674,
+    "NVDA": 1795825351.394674,
+    "TSM": 1795825351.394674,
+    "AMD": 1795825351.394674,
+    "AVGO": 1795825351.394674,
+    "AMAT": 1795825351.394674,
+    "QCOM": 1795825351.394674,
+    "MSFT": 1795825351.394674,
+    "GOOGL": 1795825351.394674,
+    "ASML": 1795825351.394674,
+    "KOSPI": 1795825351.394674,
+    "META": 1795825427.4688127,
+    "AAPL": 1795825427.4688127,
+    "AMZN": 1795825427.4688127,
+    "PLTR": 1795825427.4688127,
+    "CRWV": 1795825427.4688127,
+    "NBIS": 1795825427.4688127,
+    "NOW": 1795825427.4688127,
+    "BE": 1795825427.4688127,
+    "APLD": 1795825427.4688127,
+    "VST": 1795825427.4688127,
+    "COHR": 1795825427.4688127,
+    "CRDO": 1795825427.4688127,
+    "MRVL": 1795825427.4688127,
+    "AXTI": 1795825427.4688127,
+    "AAOI": 1795825427.4688127,
+    "LITE": 1795825427.4688127,
+    "GLW": 1795825427.4688127,
+    "ASTS": 1795825427.4688127,
+    "FN": 1795825427.4688127,
+    "SPCX": 1795825427.4688127,
+    "RKLB": 1795825427.4688127,
+    "FLY": 1795825427.4688127,
+    "LUNR": 1795825427.4688127,
+    "NASA": 1795825427.4688127,
+    "KO": 1795825427.4688127,
+    "INTC": 1795825501.3970897,
+    "AXP": 1795825501.3970897,
+    "VRT": 1795825501.3970897,
+    "DELL": 1795825501.3970897,
+    "CEG": 1795825501.3970897,
+    "TSLA": 1795825501.3970897,
+    "HPE": 1795825501.3970897,
+    "OKLO": 1795825501.3970897,
+    "FPS": 1795825501.3970897,
+    "MU": 1795825501.3970897,
+    "SKHY": 1795825501.3970897,
+    "WDC": 1795825501.3970897,
+    "STX": 1795825501.3970897,
+    "MSTR": 1795825501.3970897,
+    "SNDK": 1795825501.3970897,
+    "CRWD": 1795825501.3970897,
+    "BTC-USD": 1795825501.3970897,
+    "COIN": 1795825501.3970897,
+    "LLY": 1795825501.3970897,
+    "ORCL": 1795825501.3970897,
+    "MRNA": 1795825501.3970897,
+    "MCD": 1795825501.3970897,
+    "NKE": 1795825501.3970897,
+    "V": 1795825501.3970897,
+    "JPM": 1795825576.9584916,
+    "WMT": 1795825576.9584916,
+    "XOM": 1795825576.9584916,
+    "PEP": 1795825501.3970897,
+    "CAT": 1795825576.9584916,
+    "ANT": 1795825576.9584916,
+    "XAUUSD": 1795825576.9584916
   },
   "opex_shield": {
     "date": "2026-11-27",
