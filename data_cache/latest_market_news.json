@@ -1,9 +1,24 @@
 {
-  "updated_at_ts": 1795876695.067,
-  "updated_at_et": "11-28 09:38 ET",
-  "updated_at_kst": "23:38 KST",
+  "updated_at_ts": 1795878538.49,
+  "updated_at_et": "11-28 10:08 ET",
+  "updated_at_kst": "00:08 KST",
   "macro_calendar": [],
   "macro_flashes": [
+    {
+      "id": "20261128224409971800",
+      "title": "一周展望：非农数据即将炸场！黄金能否“乘风破浪”？",
+      "summary": "美国11月非农数据即将来袭，美联储加息预期会否再被暴力修改？黄金波动性难言下滑！黄仁勋将出席听证会，美股三季度财报季进入尾声……点击查看...",
+      "keywords": [
+        "美联储",
+        "加息",
+        "非农"
+      ],
+      "pub_ts": 1795877049.0,
+      "time_et": "11-28 09:44 ET",
+      "time_bj": "22:44 BJ",
+      "time_kst": "23:44 KST",
+      "time_display": "09:44 ET / 22:44 BJ"
+    },
     {
       "id": "20261128195723999800",
       "title": "整理：特朗普过去24小时都忙了什么？（2026-11-28）",
@@ -655,6 +670,20 @@
     ],
     "NVDA": [
       {
+        "title": "Prediction: Palantir and Nvidia Will Be Worth This Much by Year-end 2027 (Hint: Only 1 Is a Buy)",
+        "url": "https://www.fool.com/investing/2026/11/28/prediction-palantir-and-nvidia-will-be-worth-this-much-by-year-end-2027-hint-only-1-is-a-buy/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-28 09:44 ET",
+        "pub_ts": 1795877042.0
+      },
+      {
+        "title": "Dell Stock Shrugged Off the Nvidia Shipment Pause Reports and Jumped 6.7%",
+        "url": "https://247wallst.com/investing/2026/11/28/dell-stock-shrugged-off-the-nvidia-shipment-pause-reports-and-jumped-6-7/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-28 09:32 ET",
+        "pub_ts": 1795876320.0
+      },
+      {
         "title": "Donald Trump urges Nvidia to rehire former CEO Jensen Huang",
         "url": "https://www.euronews.com/2026/11/23/donald-trump-urges-nvidia-to-rehire-former-ceo-jensen-huang?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -674,20 +703,6 @@
         "source": "Yahoo Finance",
         "time": "11-28 09:20 ET",
         "pub_ts": 1795875602.0
-      },
-      {
-        "title": "Dow Jones Futures: What To Do After Big Market Move; Nvidia's Jensen Huang Heads To Capitol Hill",
-        "url": "https://finance.yahoo.com/m/5b917298-e5b5-3d87-b1fa-f7cad345af64/dow-jones-futures%3A-what-to-do.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-28 09:13 ET",
-        "pub_ts": 1795875180.0
-      },
-      {
-        "title": "Dell Soars 14% in a Week, Nvidia Up 20%, as Jensen Huang Returns. Dell’s Record Quarter Wasn’t Why",
-        "url": "https://www.tikr.com/blog/dell-soars-14-in-a-week-nvidia-up-20-as-jensen-huang-returns-dells-record-quarter-wasnt-why?ref=yahoofinance&tlnk=yf-261128-r24mrcgc&.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-28 08:20 ET",
-        "pub_ts": 1795872027.0
       }
     ],
     "TSM": [
@@ -905,11 +920,11 @@
         "pub_ts": 1795803800.0
       },
       {
-        "title": "Did Billionaire Bill Ackman Lose Confidence in Microsoft? The Answer Might Surprise You",
-        "url": "https://www.fool.com/investing/2026/11/27/did-billionaire-bill-ackman-lose-confidence-in-microsoft-the-answer-might-surprise-you/?.tsrc=rss",
+        "title": "Morningstar vs. Toast: Which Financial Stock Is a Better Buy for 2027?",
+        "url": "https://www.fool.com/coverage/better-buy/2026/11/28/morningstar-vs-toast-which-financial-stock-is-a-better-buy-for-2027/?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-27 12:20 ET",
-        "pub_ts": 1795800002.0
+        "time": "11-28 09:32 ET",
+        "pub_ts": 1795876322.0
       }
     ],
     "GOOGL": [
@@ -1136,6 +1151,13 @@
     ],
     "PLTR": [
       {
+        "title": "Prediction: Palantir and Nvidia Will Be Worth This Much by Year-end 2027 (Hint: Only 1 Is a Buy)",
+        "url": "https://www.fool.com/investing/2026/11/28/prediction-palantir-and-nvidia-will-be-worth-this-much-by-year-end-2027-hint-only-1-is-a-buy/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-28 09:44 ET",
+        "pub_ts": 1795877042.0
+      },
+      {
         "title": "Palantir Technologies (PLTR) Signed A Poland Defense Software Agreement",
         "url": "https://finance.yahoo.com/technology/ai/articles/palantir-technologies-pltr-signed-poland-020938771.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1162,16 +1184,16 @@
         "source": "Yahoo Finance",
         "time": "11-27 13:41 ET",
         "pub_ts": 1795804896.0
-      },
-      {
-        "title": "Peter Thiel Takes $122M of Palantir Off the Market",
-        "url": "https://app.moby.co/home/news/news-peter-thiel-takes-122m-of-palantir-off-the-market?utm_source=yahoo_finance&utm_medium=rss&.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-27 13:29 ET",
-        "pub_ts": 1795804173.0
       }
     ],
     "CRWV": [
+      {
+        "title": "Jensen Huang is back, but his departure exposed something about the AI trade",
+        "url": "https://finance.yahoo.com/technology/ai/articles/jensen-huang-back-departure-exposed-120000990.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-28 07:00 ET",
+        "pub_ts": 1795867200.0
+      },
       {
         "title": "CoreWeave Can Borrow at About 7% Against Meta’s Contract. Its Unsecured Bonds Yield Nearly 18%",
         "url": "https://www.tikr.com/blog/coreweave-can-borrow-at-about-7-against-metas-contract-its-unsecured-bonds-yield-nearly-18?ref=yahoofinance&tlnk=yf-261128-87q8f2mq&.tsrc=rss",
@@ -1199,13 +1221,6 @@
         "source": "Yahoo Finance",
         "time": "11-27 12:10 ET",
         "pub_ts": 1795799455.0
-      },
-      {
-        "title": "He was right about AI and still lost $35 billion",
-        "url": "https://finance.yahoo.com/video/ai-still-lost-35-billion-120000023.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-27 07:00 ET",
-        "pub_ts": 1795780800.0
       }
     ],
     "NBIS": [
@@ -1544,38 +1559,38 @@
     "AAOI": [
       {
         "title": "Coherent Jumps 12% as Optical Stocks Rebound From Wednesday’s AI Selloff; Applied Optoelectronics and Lumentum Rise 7%",
-        "url": "https://finnhub.io/api/news?id=9532cb77ebe7bc819d9ded3fc36555a3ae63dc33a6cb1f108a7ebeaa615bb9a1",
-        "source": "Yahoo",
+        "url": "https://247wallst.com/investing/2026/11/27/coherent-jumps-12-as-optical-stocks-rebound-from-wednesdays-ai-selloff-applied-optoelectronics-and-lumentum-rise-7/?.tsrc=rss",
+        "source": "Yahoo Finance",
         "time": "11-27 12:06 ET",
         "pub_ts": 1795799198.0
       },
       {
-        "title": "Corning shares are trading lower after the company reported Q1 financial results and issued Q2 sales guidance below estimates.",
-        "url": "https://finnhub.io/api/news?id=c954b68e7a6d5cb8146fc4a50d3bc8b5fac59d105af5c70d152432b65a3f784e",
-        "source": "Benzinga",
-        "time": "11-27 07:20 ET",
-        "pub_ts": 1795782052.0
-      },
-      {
-        "title": "Morgan Stanley’s 8 Best Networking & Optical Communications Stocks to Buy for 2027",
-        "url": "https://finnhub.io/api/news?id=8186dd6faf8ec7242381980b972d38e0344e3c00bb785d44ec2a1be47cd3f5b6",
-        "source": "Yahoo",
-        "time": "11-26 23:02 ET",
-        "pub_ts": 1795752174.0
-      },
-      {
-        "title": "Lumentum Surges 55% in a Year: Should You Buy, Sell, or Hold the Stock?",
-        "url": "https://finnhub.io/api/news?id=0df6cbd623d96a018581f02d25745574aef4c6871827c7a50171c23a691d64c6",
-        "source": "Yahoo",
-        "time": "11-26 11:20 ET",
-        "pub_ts": 1795710000.0
-      },
-      {
         "title": "Applied Optoelectronics (AAOI) Has the Orders. Does It Have the Parts?",
-        "url": "https://finnhub.io/api/news?id=121a9d6c3da0530f8b72d6aece87b63143067db9bbe883e6c6e43deb5387526c",
-        "source": "Yahoo",
+        "url": "https://finance.yahoo.com/technology/ai/articles/applied-optoelectronics-aaoi-orders-does-144805709.html?.tsrc=rss",
+        "source": "Yahoo Finance",
         "time": "11-26 09:48 ET",
         "pub_ts": 1795704485.0
+      },
+      {
+        "title": "Applied Optoelectronics to Present at the Raymond James TMT & Consumer Conference",
+        "url": "https://finance.yahoo.com/technology/articles/applied-optoelectronics-present-raymond-james-211000385.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 16:10 ET",
+        "pub_ts": 1795641000.0
+      },
+      {
+        "title": "Supply Deal Might Change The Case For Investing In Applied Optoelectronics (AAOI)",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/supply-deal-might-change-case-110727461.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-25 06:07 ET",
+        "pub_ts": 1795604847.0
+      },
+      {
+        "title": "AAOI vs. Lumentum: Which Optical Networking Stock Has an Edge Now?",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/aaoi-vs-lumentum-optical-networking-163600829.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-24 11:36 ET",
+        "pub_ts": 1795538160.0
       }
     ],
     "LITE": [
@@ -1618,38 +1633,38 @@
     "GLW": [
       {
         "title": "Why Jim Cramer Favors Corning Over Amphenol for Fiber",
-        "url": "https://finnhub.io/api/news?id=526b49b5af8b624db24d1538ca2d8f89a4074e7558fa5f5d0f4ce42ebe14f185",
-        "source": "Yahoo",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/why-jim-cramer-favors-corning-185006111.html?.tsrc=rss",
+        "source": "Yahoo Finance",
         "time": "11-27 13:50 ET",
         "pub_ts": 1795805406.0
       },
       {
         "title": "Wall Street Analysts See Corning (GLW) as a Buy: Should You Invest?",
-        "url": "https://finnhub.io/api/news?id=2e111f2a12d23901366b7b9aed7c8ad7a3fbd70d9ccb6e149c8bfad04ad0a9c2",
-        "source": "Yahoo",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/wall-street-analysts-see-corning-133003621.html?.tsrc=rss",
+        "source": "Yahoo Finance",
         "time": "11-27 08:30 ET",
         "pub_ts": 1795786203.0
       },
       {
-        "title": "Here’s How Much You Would Have Made Owning Corning Stock In The Last 5 Years",
-        "url": "https://finnhub.io/api/news?id=75b6e2286dae9d9d2965d30269fcd33f657e737ba24c1ad112e1527493872740",
-        "source": "Benzinga",
-        "time": "11-27 05:15 ET",
-        "pub_ts": 1795774515.0
-      },
-      {
         "title": "Ken Fisher and 11 Other Big Funds Bought Corning Last Quarter, While 14 Sold. Who’s Right?",
-        "url": "https://finnhub.io/api/news?id=c7f0a5986803d23334ee1d7960b4594e84552f4ff1ffd5040f2760bb13b6744e",
-        "source": "Yahoo",
+        "url": "https://www.tikr.com/blog/ken-fisher-big-funds-bought-corning-stock-last-quarter-14-sold?ref=yahoofinance&tlnk=yf-261127-hg68m3vh&.tsrc=rss",
+        "source": "Yahoo Finance",
         "time": "11-27 03:15 ET",
         "pub_ts": 1795767316.0
       },
       {
         "title": "Corning’s 80-Million-Mile Fiber Deal Puts Its 2027 Expansion to the Test",
-        "url": "https://finnhub.io/api/news?id=b29a237be2a7146fde50d72bf6c6af80b6fe77667251efaa752902567465aad2",
-        "source": "Yahoo",
+        "url": "https://finance.yahoo.com/technology/articles/corning-80-million-mile-fiber-041319616.html?.tsrc=rss",
+        "source": "Yahoo Finance",
         "time": "11-26 23:13 ET",
         "pub_ts": 1795752799.0
+      },
+      {
+        "title": "Corning (GLW) Down 23.6% Since Last Earnings Report: Can It Rebound?",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/corning-glw-down-23-6-153011443.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-26 10:30 ET",
+        "pub_ts": 1795707011.0
       }
     ],
     "ASTS": [
@@ -2061,6 +2076,20 @@
     ],
     "DELL": [
       {
+        "title": "Dell Stock Shrugged Off the Nvidia Shipment Pause Reports and Jumped 6.7%",
+        "url": "https://247wallst.com/investing/2026/11/28/dell-stock-shrugged-off-the-nvidia-shipment-pause-reports-and-jumped-6-7/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-28 09:32 ET",
+        "pub_ts": 1795876320.0
+      },
+      {
+        "title": "Dell Soars 14% in a Week, Nvidia Up 20%, as Jensen Huang Returns. Dell’s Record Quarter Wasn’t Why",
+        "url": "https://www.tikr.com/blog/dell-soars-14-in-a-week-nvidia-up-20-as-jensen-huang-returns-dells-record-quarter-wasnt-why?ref=yahoofinance&tlnk=yf-261128-r24mrcgc&.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-28 08:20 ET",
+        "pub_ts": 1795872027.0
+      },
+      {
         "title": "Dell Stocks Jump 5.28% as $132.3 Billion AI Backlog Keeps Buyers Coming",
         "url": "https://finance.yahoo.com/markets/stocks/articles/dell-stocks-jump-5-28-190215807.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2080,20 +2109,6 @@
         "source": "Yahoo Finance",
         "time": "11-27 13:50 ET",
         "pub_ts": 1795805432.0
-      },
-      {
-        "title": "High Implied Volatility Sets Up Iron Condor For Dell Stock",
-        "url": "https://finance.yahoo.com/m/239a90e3-8d86-3090-9b13-08baad8636d1/high-implied-volatility-sets.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-27 13:08 ET",
-        "pub_ts": 1795802929.0
-      },
-      {
-        "title": "Stock Market Midday, Nov. 27: Tech Stocks Recover and Amazon Posts Black Friday Gains",
-        "url": "https://www.fool.com/coverage/stock-market-today/2026/11/27/stock-market-midday-nov-27-tech-stocks-recover-and-amazon-posts-black-friday-gains/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-27 12:31 ET",
-        "pub_ts": 1795800677.0
       }
     ],
     "CEG": [
@@ -2135,18 +2150,18 @@
     ],
     "TSLA": [
       {
+        "title": "Dow Jones Futures: What To Do After Big Market Move; Nvidia's Jensen Huang Heads To Capitol Hill",
+        "url": "https://finance.yahoo.com/m/5b917298-e5b5-3d87-b1fa-f7cad345af64/dow-jones-futures%3A-what-to-do.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-28 09:13 ET",
+        "pub_ts": 1795875180.0
+      },
+      {
         "title": "Tesla Files to Buy German Machine Maker EMAG’s Assets to Build Optimus Robots",
         "url": "https://247wallst.com/investing/2026/11/28/tesla-files-to-buy-german-machine-maker-emags-assets-to-build-optimus-robots/?.tsrc=rss",
         "source": "Yahoo Finance",
         "time": "11-28 08:53 ET",
         "pub_ts": 1795874025.0
-      },
-      {
-        "title": "Dow Jones Futures: Tesla Leads 7 Buys After Bullish Market Move; Nvidia's Jensen Huang On Capitol Hill",
-        "url": "https://finance.yahoo.com/m/5b917298-e5b5-3d87-b1fa-f7cad345af64/dow-jones-futures%3A-tesla.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-28 08:02 ET",
-        "pub_ts": 1795870951.0
       },
       {
         "title": "History Says What Tesla Stock Does After Its Annual Meeting. This Year's Is Dec. 3.",
@@ -2283,6 +2298,13 @@
     ],
     "MU": [
       {
+        "title": "Sandisk Is Still Up 188% in 2026, 71% Below Its June High. Is a Flash Bust Priced In?",
+        "url": "https://www.tikr.com/blog/sandisk-is-still-up-188-in-2026-71-below-its-june-high-is-a-flash-bust-priced-in?ref=yahoofinance&tlnk=yf-261128-fr7v7gmj&.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-28 09:29 ET",
+        "pub_ts": 1795876182.0
+      },
+      {
         "title": "Micron Trades at “Two and a Half Times EBITDA.” Its Buyback Window Opens December 9",
         "url": "https://www.tikr.com/blog/micron-trades-at-two-and-a-half-times-ebitda-its-buyback-window-opens-december-9?ref=yahoofinance&tlnk=yf-261128-pg4c6xj9&.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2309,13 +2331,6 @@
         "source": "Yahoo Finance",
         "time": "11-27 13:03 ET",
         "pub_ts": 1795802584.0
-      },
-      {
-        "title": "Micron Faces New AI Memory Threat as Huawei Develops HBM Chip",
-        "url": "https://finance.yahoo.com/technology/ai/articles/micron-faces-ai-memory-threat-171328560.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-27 12:13 ET",
-        "pub_ts": 1795799608.0
       }
     ],
     "SKHY": [
@@ -2579,42 +2594,49 @@
     ],
     "COIN": [
       {
-        "title": "Could Bitcoin Reach Brian Armstrong’s $400,000 Target by 2030?",
-        "url": "https://finnhub.io/api/news?id=56fda9b423189b493e89eb6eb590da1756c866398fc38c9577ffc8da6516751e",
-        "source": "Yahoo",
-        "time": "11-28 08:27 ET",
-        "pub_ts": 1795872441.0
-      },
-      {
-        "title": "DraftKings Sinks 14% in a Month on Predictions Spending, but Its CEO Sees “No Discernible Impact” on the Sportsbook",
-        "url": "https://finnhub.io/api/news?id=964ef529bb57ba54a8d044475c8949ae9e906813b001edb5037063911ae64919",
-        "source": "Yahoo",
-        "time": "11-28 05:36 ET",
-        "pub_ts": 1795862175.0
+        "title": "A New Catalyst for Coinbase?",
+        "url": "https://www.fool.com/investing/2026/11/28/a-new-catalyst-for-coinbase/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-28 09:20 ET",
+        "pub_ts": 1795875602.0
       },
       {
         "title": "Coinbase CEO Brian Armstrong Scales Back Bitcoin Prediction, Still Sees Nearly 7x Upside By 2030",
-        "url": "https://finnhub.io/api/news?id=ea75b7924c3ec5b940b26a27b8a7cd3695f1d69058379009c900d54c1d2ca9a4",
-        "source": "Yahoo",
+        "url": "https://stocktwits.com/news-articles/markets/cryptocurrency/coinbase-ceo-brian-armstrong-scales-back-bitcoin-prediction-still-sees-nearly-7x-upside-by-2030/cNRRYbqR9Vo?.tsrc=rss",
+        "source": "Yahoo Finance",
         "time": "11-28 00:18 ET",
         "pub_ts": 1795843127.0
       },
       {
-        "title": "US Fintech Weekly: Payment Networks Rally Into Black Friday As Wedbush Backs Brokerages",
-        "url": "https://finnhub.io/api/news?id=19ab1aa6a503e3ce1a5b23096b964b45d5eef551fb92ff998be68fe0ea64eb42",
-        "source": "Yahoo",
-        "time": "11-27 19:01 ET",
-        "pub_ts": 1795824086.0
+        "title": "Coinbase CEO issues bullish Bitcoin prediction as inflation fears grow",
+        "url": "https://www.thestreet.com/crypto/markets/coinbase-ceo-issues-bullish-bitcoin-warning-as-inflation-fears-grow?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-27 13:14 ET",
+        "pub_ts": 1795803286.0
       },
       {
-        "title": "Anthropic vs. Coinbase: One Stock Is Overhyped, One Is Oversold, Says Top Investor",
-        "url": "https://finnhub.io/api/news?id=bf5f78c12199f8db6d57543e9e4ce69603718db44e027e1af22026ed3014db44",
-        "source": "Yahoo",
-        "time": "11-27 17:12 ET",
-        "pub_ts": 1795817525.0
+        "title": "Coinbase Global vs. Upstart: Which Financial Stock Is a Better Buy for 2027?",
+        "url": "https://www.fool.com/coverage/better-buy/2026/11/27/coinbase-global-vs-upstart-which-financial-stock-is-a-better-buy-for-2027/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-27 12:18 ET",
+        "pub_ts": 1795799915.0
+      },
+      {
+        "title": "Blockaid CEO Ido Ben-Natan at Money2020 Cybercrime Becoming ‘Extremely Quick’",
+        "url": "https://finance.yahoo.com/video/blockaid-ceo-ido-ben-natan-162317516.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-27 11:23 ET",
+        "pub_ts": 1795796597.0
       }
     ],
     "LLY": [
+      {
+        "title": "Eli Lilly and Company Stock: Is LLY Outperforming the Healthcare Sector?",
+        "url": "https://www.barchart.com/story/news/9041294/eli-lilly-and-company-stock-is-lly-outperforming-the-healthcare-sector?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-28 03:18 ET",
+        "pub_ts": 1795853885.0
+      },
       {
         "title": "Biotech Dealmaker: Sanofi’s $41B Insmed Buyout Anchors Holiday Week As Lilly Continues Buying Spree",
         "url": "https://stocktwits.com/news-articles/markets/equity/stocktwits-biotech-dealmaker-sanofi-s-41-b-insmed-buyout-anchors-holiday-week-as-lilly-continues-buying-spree/cNRRKt6R9Vk?.tsrc=rss",
@@ -2642,13 +2664,6 @@
         "source": "Yahoo Finance",
         "time": "11-27 08:03 ET",
         "pub_ts": 1795784622.0
-      },
-      {
-        "title": "Is Most-Watched Stock Eli Lilly and Company (LLY) Worth Betting on Now?",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/most-watched-stock-eli-lilly-130005156.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-27 08:00 ET",
-        "pub_ts": 1795784405.0
       }
     ],
     "ORCL": [
@@ -3069,87 +3084,87 @@
     ]
   },
   "ticker_news_ts": {
-    "DIA": 1795876258.6553307,
-    "IWM": 1795876258.6553307,
-    "SOXX": 1795876258.6553307,
-    "SPY": 1795876258.6553307,
-    "QQQ": 1795876258.6553307,
-    "KORU": 1795876258.6553307,
-    "SOXL": 1795876258.6553307,
-    "SMH": 1795876258.6553307,
-    "KSTR": 1795876258.6553307,
-    "TLT": 1795876323.2730312,
-    "SQQQ": 1795876323.2730312,
-    "GLD": 1795876323.2730312,
-    "IGV": 1795876258.6553307,
-    "SOXS": 1795876323.2730312,
-    "VIXY": 1795876323.2730312,
-    "NVDA": 1795876695.0667498,
-    "TSM": 1795876323.2730312,
-    "AMD": 1795876323.2730312,
-    "AVGO": 1795876323.2730312,
-    "AMAT": 1795876323.2730312,
-    "QCOM": 1795876323.2730312,
-    "MSFT": 1795876695.0667498,
-    "GOOGL": 1795876323.2730312,
-    "ASML": 1795876323.2730312,
-    "KOSPI": 1795876258.6553307,
-    "META": 1795876323.2730312,
-    "AAPL": 1795876323.2730312,
-    "AMZN": 1795876323.2730312,
-    "PLTR": 1795876323.2730312,
-    "CRWV": 1795876695.0667498,
-    "NBIS": 1795876323.2730312,
-    "NOW": 1795876323.2730312,
-    "BE": 1795876323.2730312,
-    "APLD": 1795876323.2730312,
-    "VST": 1795876323.2730312,
-    "COHR": 1795876323.2730312,
-    "CRDO": 1795876323.2730312,
-    "MRVL": 1795876323.2730312,
-    "AXTI": 1795875005.1887023,
-    "AAOI": 1795876695.0667498,
-    "LITE": 1795876323.2730312,
-    "GLW": 1795876695.0667498,
-    "ASTS": 1795876695.0667498,
-    "FN": 1795876695.0667498,
-    "SPCX": 1795876695.0667498,
-    "RKLB": 1795876695.0667498,
-    "FLY": 1795876695.0667498,
-    "LUNR": 1795876695.0667498,
-    "NASA": 1795876695.0667498,
-    "KO": 1795876695.0667498,
-    "INTC": 1795875005.1887023,
-    "AXP": 1795875005.1887023,
-    "VRT": 1795875005.1887023,
-    "DELL": 1795875005.1887023,
-    "CEG": 1795875005.1887023,
-    "TSLA": 1795875005.1887023,
-    "HPE": 1795875005.1887023,
-    "OKLO": 1795875005.1887023,
-    "FPS": 1795875005.1887023,
-    "MU": 1795875005.1887023,
-    "SKHY": 1795875005.1887023,
-    "WDC": 1795875005.1887023,
-    "STX": 1795876258.6553307,
-    "MSTR": 1795876024.056407,
-    "SNDK": 1795876024.056407,
-    "CRWD": 1795876024.056407,
-    "BTC-USD": 1795876258.6553307,
-    "COIN": 1795876024.056407,
-    "LLY": 1795875526.1864476,
-    "ORCL": 1795876258.6553307,
-    "MRNA": 1795876258.6553307,
-    "MCD": 1795876258.6553307,
-    "NKE": 1795876258.6553307,
-    "V": 1795876258.6553307,
-    "JPM": 1795876258.6553307,
-    "WMT": 1795876258.6553307,
-    "XOM": 1795876258.6553307,
-    "PEP": 1795876258.6553307,
-    "CAT": 1795876258.6553307,
-    "ANT": 1795876258.6553307,
-    "XAUUSD": 1795876258.6553307
+    "DIA": 1795877862.296833,
+    "IWM": 1795877862.296833,
+    "SOXX": 1795877862.296833,
+    "SPY": 1795877862.296833,
+    "QQQ": 1795877862.296833,
+    "KORU": 1795877862.296833,
+    "SOXL": 1795877862.296833,
+    "SMH": 1795877862.296833,
+    "KSTR": 1795877862.296833,
+    "TLT": 1795877925.460178,
+    "SQQQ": 1795877925.460178,
+    "GLD": 1795877925.460178,
+    "IGV": 1795877862.296833,
+    "SOXS": 1795877925.460178,
+    "VIXY": 1795877925.460178,
+    "NVDA": 1795878474.2973428,
+    "TSM": 1795877925.460178,
+    "AMD": 1795877925.460178,
+    "AVGO": 1795877925.460178,
+    "AMAT": 1795877925.460178,
+    "QCOM": 1795877925.460178,
+    "MSFT": 1795878351.4935153,
+    "GOOGL": 1795877925.460178,
+    "ASML": 1795877925.460178,
+    "KOSPI": 1795877862.296833,
+    "META": 1795877925.460178,
+    "AAPL": 1795877925.460178,
+    "AMZN": 1795877925.460178,
+    "PLTR": 1795877925.460178,
+    "CRWV": 1795878474.2973428,
+    "NBIS": 1795877925.460178,
+    "NOW": 1795877925.460178,
+    "BE": 1795877925.460178,
+    "APLD": 1795877925.460178,
+    "VST": 1795877925.460178,
+    "COHR": 1795877925.460178,
+    "CRDO": 1795877925.460178,
+    "MRVL": 1795877925.460178,
+    "AXTI": 1795878474.2973428,
+    "AAOI": 1795878474.2973428,
+    "LITE": 1795877925.460178,
+    "GLW": 1795878474.2973428,
+    "ASTS": 1795878474.2973428,
+    "FN": 1795878474.2973428,
+    "SPCX": 1795878474.2973428,
+    "RKLB": 1795878474.2973428,
+    "FLY": 1795878474.2973428,
+    "LUNR": 1795878474.2973428,
+    "NASA": 1795878474.2973428,
+    "KO": 1795878474.2973428,
+    "INTC": 1795878474.2973428,
+    "AXP": 1795878474.2973428,
+    "VRT": 1795878474.2973428,
+    "DELL": 1795878474.2973428,
+    "CEG": 1795878474.2973428,
+    "TSLA": 1795878474.2973428,
+    "HPE": 1795878474.2973428,
+    "OKLO": 1795878474.2973428,
+    "FPS": 1795878474.2973428,
+    "MU": 1795878474.2973428,
+    "SKHY": 1795878474.2973428,
+    "WDC": 1795878474.2973428,
+    "STX": 1795877862.296833,
+    "MSTR": 1795877566.9558496,
+    "SNDK": 1795877566.9558496,
+    "CRWD": 1795877566.9558496,
+    "BTC-USD": 1795877862.296833,
+    "COIN": 1795877566.9558496,
+    "LLY": 1795877053.5955193,
+    "ORCL": 1795877862.296833,
+    "MRNA": 1795877862.296833,
+    "MCD": 1795877862.296833,
+    "NKE": 1795877862.296833,
+    "V": 1795877862.296833,
+    "JPM": 1795877862.296833,
+    "WMT": 1795877862.296833,
+    "XOM": 1795877862.296833,
+    "PEP": 1795877862.296833,
+    "CAT": 1795877862.296833,
+    "ANT": 1795877862.296833,
+    "XAUUSD": 1795877862.296833
   },
   "opex_shield": {
     "date": "2026-11-28",
@@ -3168,7 +3183,7 @@
   "calendar_banner": {
     "level": "idle_with_flash",
     "headline": "📡 宏观消息面监控中 · 今日暂无美股五星级经济数据大考",
-    "detail": "⚡ 最新核心快讯 (06:57 ET / 19:57 BJ) [关税] [特朗普]：1. 荷兰首相称将在G20峰会晤特朗普 ——荷兰首相耶滕计划下月在迈阿密举行的二十国集团（G20）峰会上与美国总统特朗普讨论《MATCH法案》。 2. 俄称正就柴油供应问题与美保持联系 ——",
+    "detail": "⚡ 最新核心快讯 (09:44 ET / 22:44 BJ) [美联储] [加息] [非农]：美国11月非农数据即将来袭，美联储加息预期会否再被暴力修改？黄金波动性难言下滑！黄仁勋将出席听证会，美股三季度财报季进入尾声……点击查看...",
     "event_name": "",
     "minutes_left": 0,
     "opex_shield": {
