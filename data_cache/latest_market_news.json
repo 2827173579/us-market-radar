@@ -1,9 +1,22 @@
 {
-  "updated_at_ts": 1795878538.49,
-  "updated_at_et": "11-28 10:08 ET",
-  "updated_at_kst": "00:08 KST",
+  "updated_at_ts": 1795880395.673,
+  "updated_at_et": "11-28 10:39 ET",
+  "updated_at_kst": "00:39 KST",
   "macro_calendar": [],
   "macro_flashes": [
+    {
+      "id": "20261128231128283800",
+      "title": "整理：周六重要消息汇总",
+      "summary": "国内新闻 1. 神舟二十三号和神舟二十四号航天员完成在轨交接。 2. 香港：将于明年首季正式启用“香港黄金中央清算系统”。 3. 今年前10个月物流业总收入12.3万亿元，同比增长4.2%。 4. 乘联分会崔东树：1-10月汽车产量同比降4%，收入增1.9%，利润降26%。 5. 澳门金管局：截至今年9月底，发行或挂牌上市债券累计近1.2万亿等值澳门元。 国际新闻 1. 英媒：乌克兰计划彻底摧毁克里米亚大桥。 2. 马斯克：谷歌已表示有意向SpaceX租用更多算力。 3. 韩国股票融资余额降至25万亿韩元，创13个月新低。 4. 美国黑五线上销售额超130亿美元，AI导流同比翻倍。 5. 挪威财富基金再次投票反对马斯克的特斯拉薪酬方案。 6. 泽连斯基改口：袭击利比亚俄军舰艇前未与欧洲伙伴协调。 7. 中东局势— ①伊朗伊斯兰革命卫队推出新型无人机。 ②据悉本月早些时候，美军在英国皇家空军基地击退6架无人机威胁，但机器未被回收。 ③伊拉克官员：伊拉克国家安全顾问访问德黑兰，将与伊朗方面讨论安全协议、边境安全及地区局势等问题。 ④伊朗副防长：美以发动战争以来，伊朗导弹实力进一步增强。 ⑤伊朗海军司令：伊军事行动最终目标是将美国逐出西亚。",
+      "keywords": [
+        "中东"
+      ],
+      "pub_ts": 1795878688.0,
+      "time_et": "11-28 10:11 ET",
+      "time_bj": "23:11 BJ",
+      "time_kst": "00:11 KST",
+      "time_display": "10:11 ET / 23:11 BJ"
+    },
     {
       "id": "20261128224409971800",
       "title": "一周展望：非农数据即将炸场！黄金能否“乘风破浪”？",
@@ -892,6 +905,13 @@
     ],
     "MSFT": [
       {
+        "title": "Is Microsoft Office's Moat In Trouble?",
+        "url": "https://www.fool.com/investing/2026/11/28/is-microsoft-office-s-moat-in-trouble/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-28 10:20 ET",
+        "pub_ts": 1795879202.0
+      },
+      {
         "title": "Intel (INTC) Expands Foundry Deal With A Major Cloud Customer",
         "url": "https://finance.yahoo.com/technology/articles/intel-intc-expands-foundry-deal-130853190.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -918,13 +938,6 @@
         "source": "Yahoo Finance",
         "time": "11-27 13:23 ET",
         "pub_ts": 1795803800.0
-      },
-      {
-        "title": "Morningstar vs. Toast: Which Financial Stock Is a Better Buy for 2027?",
-        "url": "https://www.fool.com/coverage/better-buy/2026/11/28/morningstar-vs-toast-which-financial-stock-is-a-better-buy-for-2027/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-28 09:32 ET",
-        "pub_ts": 1795876322.0
       }
     ],
     "GOOGL": [
@@ -1114,6 +1127,13 @@
     ],
     "AMZN": [
       {
+        "title": "Satya Nadella: “If Amazon Doesn’t, Shop Will.” Shopify Just Gained 15% in a Week. Time to Buy?",
+        "url": "https://www.tikr.com/blog/satya-nadella-if-amazon-doesnt-shop-will-shopify-just-gained-15-in-a-week-time-to-buy?ref=yahoofinance&tlnk=yf-261128-hfv5ff2x&.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-28 09:30 ET",
+        "pub_ts": 1795876245.0
+      },
+      {
         "title": "Amazon may owe you money. Some Arizonans need to act soon",
         "url": "https://www.azcentral.com/story/money/consumers/2026/11/28/amazon-settlement-claim-arizona/92973010007/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1140,13 +1160,6 @@
         "source": "Yahoo Finance",
         "time": "11-27 18:23 ET",
         "pub_ts": 1795821835.0
-      },
-      {
-        "title": "Amazon Hits Its Lowest P/E Ever. Jim Cramer Predicts It Will “Prove to Be the Winner”",
-        "url": "https://www.tikr.com/blog/amazon-hits-its-lowest-p-e-ever-jim-cramer-predicts-it-will-prove-to-be-the-winner?ref=yahoofinance&tlnk=yf-261127-6f785p32&.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-27 18:22 ET",
-        "pub_ts": 1795821761.0
       }
     ],
     "PLTR": [
@@ -1262,6 +1275,13 @@
     ],
     "NOW": [
       {
+        "title": "ServiceNow’s Market Cap Just Fell Below $100 Billion",
+        "url": "https://247wallst.com/investing/2026/11/28/servicenows-market-cap-just-fell-below-100-billion/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-28 10:08 ET",
+        "pub_ts": 1795878485.0
+      },
+      {
         "title": "Baron Fund Reestablishes Position in ServiceNow (NOW) Following Attractive Valuation Pullback",
         "url": "https://finance.yahoo.com/markets/stocks/articles/baron-fund-reestablishes-position-servicenow-164101736.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1288,13 +1308,6 @@
         "source": "Yahoo Finance",
         "time": "11-27 04:09 ET",
         "pub_ts": 1795770542.0
-      },
-      {
-        "title": "Global Risk Analysis Management Market Report 2026: Size, Share, Trends, and Forecast to 2030 | Capitalize on AI and Real-Time Risk with Microsoft, IBM, Oracle, SAP, and ServiceNow",
-        "url": "https://finance.yahoo.com/technology/ai/articles/global-risk-analysis-management-market-142700333.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 09:27 ET",
-        "pub_ts": 1795616820.0
       }
     ],
     "BE": [
@@ -1928,6 +1941,13 @@
     ],
     "KO": [
       {
+        "title": "This Dividend King Has Raised Its Payout 54 Straight Years. It's My Top Pick for December.",
+        "url": "https://www.fool.com/investing/2026/11/28/this-dividend-king-has-raised-its-payout-54-straight-years-its-my-top-pick-for-december/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-28 10:20 ET",
+        "pub_ts": 1795879202.0
+      },
+      {
         "title": "The Best 3 Dividend-Raising Stocks to Own Until 2030",
         "url": "https://www.fool.com/investing/2026/11/28/the-best-3-dividend-raising-stocks-to-own-until-2030/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1954,16 +1974,16 @@
         "source": "Yahoo Finance",
         "time": "11-27 09:27 ET",
         "pub_ts": 1795789649.0
-      },
-      {
-        "title": "S&P 500 Investors Make Surprising Shift as Tech Stocks Sink",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/p-500-investors-surprising-shift-142353935.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-27 09:23 ET",
-        "pub_ts": 1795789433.0
       }
     ],
     "INTC": [
+      {
+        "title": "Intel Is Up 56% in a Year but 59% Off Its June High: Sell, or Load Up?",
+        "url": "https://www.tikr.com/blog/intel-is-up-56-in-a-year-but-59-off-its-june-high-sell-or-load-up?ref=yahoofinance&tlnk=yf-261128-x974344g&.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-28 09:34 ET",
+        "pub_ts": 1795876488.0
+      },
       {
         "title": "Intel (INTC) Expands Foundry Deal With A Major Cloud Customer",
         "url": "https://finance.yahoo.com/technology/articles/intel-intc-expands-foundry-deal-130853190.html?.tsrc=rss",
@@ -1991,13 +2011,6 @@
         "source": "Yahoo Finance",
         "time": "11-27 10:30 ET",
         "pub_ts": 1795793417.0
-      },
-      {
-        "title": "How Much More Could You Lose In Intel Stock?",
-        "url": "https://www.trefis.com/stock/intc/articles/629327/how-much-more-could-you-lose-in-intel-stock/2026-11-27?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-27 06:59 ET",
-        "pub_ts": 1795780747.0
       }
     ],
     "AXP": [
@@ -2150,6 +2163,13 @@
     ],
     "TSLA": [
       {
+        "title": "Stellantis vs. Tesla: Which Automaker Giant Stock Is a Better Buy for 2027?",
+        "url": "https://www.fool.com/coverage/better-buy/2026/11/28/stellantis-vs-tesla-which-automaker-giant-stock-is-a-better-buy-for-2027/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-28 10:02 ET",
+        "pub_ts": 1795878122.0
+      },
+      {
         "title": "Dow Jones Futures: What To Do After Big Market Move; Nvidia's Jensen Huang Heads To Capitol Hill",
         "url": "https://finance.yahoo.com/m/5b917298-e5b5-3d87-b1fa-f7cad345af64/dow-jones-futures%3A-what-to-do.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2176,13 +2196,6 @@
         "source": "Yahoo Finance",
         "time": "11-28 00:15 ET",
         "pub_ts": 1795842904.0
-      },
-      {
-        "title": "Zero To Sixty: Tesla Cybercab Fleet Tops 1,000 In Texas, Lucid Starts Fully Driverless Tests And Chinese EV Maker Posts Stronger Margins",
-        "url": "https://stocktwits.com/news-articles/markets/equity/zero-to-sixty-tesla-cybercab-fleet-tops-1-000-in-texas-lucid-starts-fully-driverless-tests-and-chinese-ev-maker-posts-stronger-margins/cNRRKv9R9Vl?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-27 19:12 ET",
-        "pub_ts": 1795824747.0
       }
     ],
     "HPE": [
@@ -2446,6 +2459,13 @@
     ],
     "MSTR": [
       {
+        "title": "Strategy Just Dropped 42% in a Month. Saylor’s “Gentle, Continuous Auction” Comes at a Price",
+        "url": "https://www.tikr.com/blog/strategy-just-dropped-42-in-a-month-saylors-gentle-continuous-auction-comes-at-a-price?ref=yahoofinance&tlnk=yf-261128-w5hq2gm8&.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-28 09:32 ET",
+        "pub_ts": 1795876321.0
+      },
+      {
         "title": "Learn Why The Bull Case For Strategy (MSTR) Could Change Following Bitcoin Buying ادامه",
         "url": "https://finance.yahoo.com/markets/crypto/articles/learn-why-bull-case-strategy-090826309.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2472,16 +2492,16 @@
         "source": "Yahoo Finance",
         "time": "11-27 09:03 ET",
         "pub_ts": 1795788192.0
-      },
-      {
-        "title": "Why Strategy Can Rebound to $175 in 2027 Even If Bitcoin Stays Below Peak",
-        "url": "https://247wallst.com/investing/2026/11/26/why-strategy-can-rebound-to-175-in-2027-even-if-bitcoin-stays-below-peak/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-26 12:45 ET",
-        "pub_ts": 1795715154.0
       }
     ],
     "SNDK": [
+      {
+        "title": "Sandisk Is Still Up 188% in 2026, 71% Below Its June High. Is a Flash Bust Priced In?",
+        "url": "https://www.tikr.com/blog/sandisk-is-still-up-188-in-2026-71-below-its-june-high-is-a-flash-bust-priced-in?ref=yahoofinance&tlnk=yf-261128-fr7v7gmj&.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-28 09:29 ET",
+        "pub_ts": 1795876182.0
+      },
       {
         "title": "Is Sandisk Stock a Buy After Kioxia and Nvidia Tested Flash Drives as Extra AI Memory?",
         "url": "https://www.fool.com/investing/2026/11/28/is-sandisk-stock-a-buy-after-kioxia-and-nvidia-tested-flash-drives-as-extra-ai-memory/?.tsrc=rss",
@@ -2509,13 +2529,6 @@
         "source": "Yahoo Finance",
         "time": "11-27 13:13 ET",
         "pub_ts": 1795803196.0
-      },
-      {
-        "title": "SanDisk Surges 16% as Memory Stocks Extend Their Rebound: Can SNDK Stock Blast Through $100 Before 2026 Ends?",
-        "url": "https://247wallst.com/investing/2026/11/27/sandisk-surges-16-as-memory-stocks-extend-their-rebound-can-sndk-stock-blast-through-100-before-2026-ends/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-27 13:03 ET",
-        "pub_ts": 1795802585.0
       }
     ],
     "CRWD": [
@@ -2557,6 +2570,13 @@
     ],
     "BTC-USD": [
       {
+        "title": "Strategy Just Dropped 42% in a Month. Saylor’s “Gentle, Continuous Auction” Comes at a Price",
+        "url": "https://www.tikr.com/blog/strategy-just-dropped-42-in-a-month-saylors-gentle-continuous-auction-comes-at-a-price?ref=yahoofinance&tlnk=yf-261128-w5hq2gm8&.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-28 09:32 ET",
+        "pub_ts": 1795876321.0
+      },
+      {
         "title": "Could Bitcoin Reach Brian Armstrong’s $400,000 Target by 2030?",
         "url": "https://247wallst.com/investing/cryptocurrency/2026/11/28/could-bitcoin-reach-brian-armstrongs-400000-target-by-2030/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2583,16 +2603,16 @@
         "source": "Yahoo Finance",
         "time": "11-28 05:20 ET",
         "pub_ts": 1795861202.0
-      },
-      {
-        "title": "Learn Why The Bull Case For Strategy (MSTR) Could Change Following Bitcoin Buying ادامه",
-        "url": "https://finance.yahoo.com/markets/crypto/articles/learn-why-bull-case-strategy-090826309.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-28 04:08 ET",
-        "pub_ts": 1795856906.0
       }
     ],
     "COIN": [
+      {
+        "title": "The Tech Market Correction Is Over, According to Morgan Stanley. Here Are 2 Crypto Stocks to Watch in 2027.",
+        "url": "https://www.fool.com/investing/2026/11/28/the-tech-market-correction-is-over-according-to-mo/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-28 10:02 ET",
+        "pub_ts": 1795878120.0
+      },
       {
         "title": "A New Catalyst for Coinbase?",
         "url": "https://www.fool.com/investing/2026/11/28/a-new-catalyst-for-coinbase/?.tsrc=rss",
@@ -2620,13 +2640,6 @@
         "source": "Yahoo Finance",
         "time": "11-27 12:18 ET",
         "pub_ts": 1795799915.0
-      },
-      {
-        "title": "Blockaid CEO Ido Ben-Natan at Money2020 Cybercrime Becoming ‘Extremely Quick’",
-        "url": "https://finance.yahoo.com/video/blockaid-ceo-ido-ben-natan-162317516.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-27 11:23 ET",
-        "pub_ts": 1795796597.0
       }
     ],
     "LLY": [
@@ -3084,87 +3097,87 @@
     ]
   },
   "ticker_news_ts": {
-    "DIA": 1795877862.296833,
-    "IWM": 1795877862.296833,
-    "SOXX": 1795877862.296833,
-    "SPY": 1795877862.296833,
-    "QQQ": 1795877862.296833,
-    "KORU": 1795877862.296833,
-    "SOXL": 1795877862.296833,
-    "SMH": 1795877862.296833,
-    "KSTR": 1795877862.296833,
-    "TLT": 1795877925.460178,
-    "SQQQ": 1795877925.460178,
-    "GLD": 1795877925.460178,
-    "IGV": 1795877862.296833,
-    "SOXS": 1795877925.460178,
-    "VIXY": 1795877925.460178,
-    "NVDA": 1795878474.2973428,
-    "TSM": 1795877925.460178,
-    "AMD": 1795877925.460178,
-    "AVGO": 1795877925.460178,
-    "AMAT": 1795877925.460178,
-    "QCOM": 1795877925.460178,
-    "MSFT": 1795878351.4935153,
-    "GOOGL": 1795877925.460178,
-    "ASML": 1795877925.460178,
-    "KOSPI": 1795877862.296833,
-    "META": 1795877925.460178,
-    "AAPL": 1795877925.460178,
-    "AMZN": 1795877925.460178,
-    "PLTR": 1795877925.460178,
-    "CRWV": 1795878474.2973428,
-    "NBIS": 1795877925.460178,
-    "NOW": 1795877925.460178,
-    "BE": 1795877925.460178,
-    "APLD": 1795877925.460178,
-    "VST": 1795877925.460178,
-    "COHR": 1795877925.460178,
-    "CRDO": 1795877925.460178,
-    "MRVL": 1795877925.460178,
-    "AXTI": 1795878474.2973428,
-    "AAOI": 1795878474.2973428,
-    "LITE": 1795877925.460178,
-    "GLW": 1795878474.2973428,
-    "ASTS": 1795878474.2973428,
-    "FN": 1795878474.2973428,
-    "SPCX": 1795878474.2973428,
-    "RKLB": 1795878474.2973428,
-    "FLY": 1795878474.2973428,
-    "LUNR": 1795878474.2973428,
-    "NASA": 1795878474.2973428,
-    "KO": 1795878474.2973428,
-    "INTC": 1795878474.2973428,
-    "AXP": 1795878474.2973428,
-    "VRT": 1795878474.2973428,
-    "DELL": 1795878474.2973428,
-    "CEG": 1795878474.2973428,
-    "TSLA": 1795878474.2973428,
-    "HPE": 1795878474.2973428,
-    "OKLO": 1795878474.2973428,
-    "FPS": 1795878474.2973428,
-    "MU": 1795878474.2973428,
-    "SKHY": 1795878474.2973428,
-    "WDC": 1795878474.2973428,
-    "STX": 1795877862.296833,
-    "MSTR": 1795877566.9558496,
-    "SNDK": 1795877566.9558496,
-    "CRWD": 1795877566.9558496,
-    "BTC-USD": 1795877862.296833,
-    "COIN": 1795877566.9558496,
-    "LLY": 1795877053.5955193,
-    "ORCL": 1795877862.296833,
-    "MRNA": 1795877862.296833,
-    "MCD": 1795877862.296833,
-    "NKE": 1795877862.296833,
-    "V": 1795877862.296833,
-    "JPM": 1795877862.296833,
-    "WMT": 1795877862.296833,
-    "XOM": 1795877862.296833,
-    "PEP": 1795877862.296833,
-    "CAT": 1795877862.296833,
-    "ANT": 1795877862.296833,
-    "XAUUSD": 1795877862.296833
+    "DIA": 1795879419.6740289,
+    "IWM": 1795879419.6740289,
+    "SOXX": 1795879419.6740289,
+    "SPY": 1795879419.6740289,
+    "QQQ": 1795879419.6740289,
+    "KORU": 1795879419.6740289,
+    "SOXL": 1795879419.6740289,
+    "SMH": 1795879419.6740289,
+    "KSTR": 1795879419.6740289,
+    "TLT": 1795879484.8564916,
+    "SQQQ": 1795879484.8564916,
+    "GLD": 1795879484.8564916,
+    "IGV": 1795879419.6740289,
+    "SOXS": 1795879484.8564916,
+    "VIXY": 1795879484.8564916,
+    "NVDA": 1795880019.2678344,
+    "TSM": 1795879484.8564916,
+    "AMD": 1795879484.8564916,
+    "AVGO": 1795879484.8564916,
+    "AMAT": 1795879484.8564916,
+    "QCOM": 1795879484.8564916,
+    "MSFT": 1795879941.8727915,
+    "GOOGL": 1795879484.8564916,
+    "ASML": 1795879484.8564916,
+    "KOSPI": 1795879419.6740289,
+    "META": 1795879484.8564916,
+    "AAPL": 1795879484.8564916,
+    "AMZN": 1795879484.8564916,
+    "PLTR": 1795879484.8564916,
+    "CRWV": 1795880019.2678344,
+    "NBIS": 1795879484.8564916,
+    "NOW": 1795879484.8564916,
+    "BE": 1795879484.8564916,
+    "APLD": 1795879484.8564916,
+    "VST": 1795879484.8564916,
+    "COHR": 1795879484.8564916,
+    "CRDO": 1795879484.8564916,
+    "MRVL": 1795879484.8564916,
+    "AXTI": 1795880019.2678344,
+    "AAOI": 1795880019.2678344,
+    "LITE": 1795879484.8564916,
+    "GLW": 1795880019.2678344,
+    "ASTS": 1795880019.2678344,
+    "FN": 1795880019.2678344,
+    "SPCX": 1795880019.2678344,
+    "RKLB": 1795880019.2678344,
+    "FLY": 1795880019.2678344,
+    "LUNR": 1795880019.2678344,
+    "NASA": 1795880019.2678344,
+    "KO": 1795880019.2678344,
+    "INTC": 1795880019.2678344,
+    "AXP": 1795880019.2678344,
+    "VRT": 1795880019.2678344,
+    "DELL": 1795880019.2678344,
+    "CEG": 1795880019.2678344,
+    "TSLA": 1795880019.2678344,
+    "HPE": 1795880019.2678344,
+    "OKLO": 1795880019.2678344,
+    "FPS": 1795880019.2678344,
+    "MU": 1795880019.2678344,
+    "SKHY": 1795880019.2678344,
+    "WDC": 1795880019.2678344,
+    "STX": 1795879419.6740289,
+    "MSTR": 1795879099.1694965,
+    "SNDK": 1795879099.1694965,
+    "CRWD": 1795879099.1694965,
+    "BTC-USD": 1795879419.6740289,
+    "COIN": 1795879099.1694965,
+    "LLY": 1795880266.990888,
+    "ORCL": 1795879419.6740289,
+    "MRNA": 1795879419.6740289,
+    "MCD": 1795879419.6740289,
+    "NKE": 1795879419.6740289,
+    "V": 1795879419.6740289,
+    "JPM": 1795879419.6740289,
+    "WMT": 1795879419.6740289,
+    "XOM": 1795879419.6740289,
+    "PEP": 1795879419.6740289,
+    "CAT": 1795879419.6740289,
+    "ANT": 1795879419.6740289,
+    "XAUUSD": 1795879419.6740289
   },
   "opex_shield": {
     "date": "2026-11-28",
@@ -3183,7 +3196,7 @@
   "calendar_banner": {
     "level": "idle_with_flash",
     "headline": "📡 宏观消息面监控中 · 今日暂无美股五星级经济数据大考",
-    "detail": "⚡ 最新核心快讯 (09:44 ET / 22:44 BJ) [美联储] [加息] [非农]：美国11月非农数据即将来袭，美联储加息预期会否再被暴力修改？黄金波动性难言下滑！黄仁勋将出席听证会，美股三季度财报季进入尾声……点击查看...",
+    "detail": "⚡ 最新核心快讯 (10:11 ET / 23:11 BJ) [中东]：国内新闻 1. 神舟二十三号和神舟二十四号航天员完成在轨交接。 2. 香港：将于明年首季正式启用“香港黄金中央清算系统”。 3. 今年前10个月物流业总收入12.3万亿元，同比增长4.2%。",
     "event_name": "",
     "minutes_left": 0,
     "opex_shield": {
