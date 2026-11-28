@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795872735.39,
-  "updated_at_et": "11-28 08:32 ET",
-  "updated_at_kst": "22:32 KST",
+  "updated_at_ts": 1795874553.269,
+  "updated_at_et": "11-28 09:02 ET",
+  "updated_at_kst": "23:02 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -255,6 +255,13 @@
     ],
     "QQQ": [
       {
+        "title": "VGT vs. QQQ: Which Tech ETF Is the Better Buy for 2027?",
+        "url": "https://www.fool.com/investing/2026/11/28/vgt-vs-qqq-which-tech-etf-is-the-better-buy-for-2027/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-28 08:34 ET",
+        "pub_ts": 1795872842.0
+      },
+      {
         "title": "Exchange-Traded Funds Higher as US Equities Advance in Friday Trading",
         "url": "https://finance.yahoo.com/markets/stocks/articles/exchange-traded-funds-higher-us-172712881.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -281,13 +288,6 @@
         "source": "Yahoo Finance",
         "time": "11-27 06:03 ET",
         "pub_ts": 1795777409.0
-      },
-      {
-        "title": "ETFs Are Buying Palantir (PLTR) on Wednesday",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/etfs-buying-palantir-pltr-wednesday-110139493.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-27 06:01 ET",
-        "pub_ts": 1795777299.0
       }
     ],
     "KORU": [
@@ -655,11 +655,25 @@
     ],
     "NVDA": [
       {
+        "title": "Nvidia Stock Rally Puts AI Semiconductor Shares Back On Retail Investor Watchlists",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/nvidia-stock-rally-puts-ai-131048143.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-28 08:10 ET",
+        "pub_ts": 1795871448.0
+      },
+      {
         "title": "Dow Jones Futures: Tesla Leads 7 Buys After Bullish Market Move; Nvidia's Jensen Huang On Capitol Hill",
         "url": "https://finance.yahoo.com/m/5b917298-e5b5-3d87-b1fa-f7cad345af64/dow-jones-futures%3A-tesla.html?.tsrc=rss",
         "source": "Yahoo Finance",
         "time": "11-28 08:02 ET",
         "pub_ts": 1795870951.0
+      },
+      {
+        "title": "“Demand Is Higher Than Supply”: AMD Just Dropped 24% in a Month. Is It Time to Sell, or Load Up?",
+        "url": "https://www.tikr.com/blog/demand-is-higher-than-supply-amd-just-dropped-24-in-a-month-is-it-time-to-sell-or-load-up?ref=yahoofinance&tlnk=yf-261128-wg7m2ww6&.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-28 07:50 ET",
+        "pub_ts": 1795870220.0
       },
       {
         "title": "Nvidia Faces Yet Another Risk. Here's What It Means for Investors.",
@@ -674,20 +688,6 @@
         "source": "Yahoo Finance",
         "time": "11-28 06:46 ET",
         "pub_ts": 1795866368.0
-      },
-      {
-        "title": "Jensen Huang Returns To Nvidia, Musk Says 'The Mistake Has Been Corrected,' And Trump Weighs In: Mag 7 Voices This Week",
-        "url": "https://stocktwits.com/news-articles/markets/equity/jensen-huang-returns-to-nvidia-musk-says-the-mistake-has-been-corrected-and-trump-weighs-in-mag-7-voices-this-week/cNRRyycR9nP?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-28 06:30 ET",
-        "pub_ts": 1795865400.0
-      },
-      {
-        "title": "Caterpillar Soars 10% in a Week as Jensen Huang’s Return Revives the AI Trade. Is It Still a Buy?",
-        "url": "https://www.tikr.com/blog/caterpillar-soars-10-in-a-week-as-jensen-huangs-return-revives-the-ai-trade-is-it-still-a-buy?ref=yahoofinance&tlnk=yf-261128-7rhfwrcg&.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-28 05:39 ET",
-        "pub_ts": 1795862359.0
       }
     ],
     "TSM": [
@@ -729,6 +729,27 @@
     ],
     "AMD": [
       {
+        "title": "Marvell Stock Heads Into Tuesday’s Earnings on Pace for Its Worst November Since 2000",
+        "url": "https://247wallst.com/investing/2026/11/28/marvell-stock-heads-into-tuesdays-earnings-on-pace-for-its-worst-november-since-2000/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-28 08:17 ET",
+        "pub_ts": 1795871849.0
+      },
+      {
+        "title": "“Demand Is Higher Than Supply”: AMD Just Dropped 24% in a Month. Is It Time to Sell, or Load Up?",
+        "url": "https://www.tikr.com/blog/demand-is-higher-than-supply-amd-just-dropped-24-in-a-month-is-it-time-to-sell-or-load-up?ref=yahoofinance&tlnk=yf-261128-wg7m2ww6&.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-28 07:50 ET",
+        "pub_ts": 1795870220.0
+      },
+      {
+        "title": "AMD Is Still Up 98% in a Year. Erste Group Says That’s Enough",
+        "url": "https://www.tikr.com/blog/amd-is-still-up-98-in-a-year-erste-group-says-thats-enough?ref=yahoofinance&tlnk=yf-261128-4vhgppmx&.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-28 07:50 ET",
+        "pub_ts": 1795870217.0
+      },
+      {
         "title": "OpenAI’s 457 MW TensorWave Deal Could Be Worth Up To $9.1B, Say Analysts: What It Means For AMD Stock",
         "url": "https://stocktwits.com/news-articles/markets/equity/openai-tensorwave-deal-amd-9-1b-what-it-means-for-amd-stock/cNRRu5WR9Vw?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -741,27 +762,6 @@
         "source": "Yahoo Finance",
         "time": "11-27 14:18 ET",
         "pub_ts": 1795807088.0
-      },
-      {
-        "title": "Dual AI Growth Catalysts Position Advanced Micro Devices (AMD) for Revenue Acceleration",
-        "url": "https://finance.yahoo.com/technology/ai/articles/dual-ai-growth-catalysts-position-164930131.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-27 11:49 ET",
-        "pub_ts": 1795798170.0
-      },
-      {
-        "title": "AMD vs. ASML: As Wall Street Questions the AI Boom, Which Chip Stock Wins in 2027?",
-        "url": "https://www.fool.com/coverage/better-buy/2026/11/27/amd-vs-asml-as-wall-street-questions-the-ai-boom-which-chip-stock-wins-in-2027/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-27 11:46 ET",
-        "pub_ts": 1795798019.0
-      },
-      {
-        "title": "Here’s Why I’d Still Buy Nvidia Over AMD With or Without Jensen Huang at CEO.",
-        "url": "https://www.fool.com/investing/2026/11/27/here-s-why-i-d-still-buy-nvidia-over-amd-with-or-without-jensen-huang-at-ceo/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-27 11:05 ET",
-        "pub_ts": 1795795502.0
       }
     ],
     "AVGO": [
@@ -787,11 +787,11 @@
         "pub_ts": 1795781725.0
       },
       {
-        "title": "Broadcom Makes More AI Money Than AMD—So Why Is AMD’s Stock Crushing It?",
-        "url": "https://247wallst.com/investing/2026/11/27/broadcom-makes-more-ai-money-than-amd-so-why-is-amds-stock-crushing-it/?.tsrc=rss",
+        "title": "Marvell Stock Heads Into Tuesday’s Earnings on Pace for Its Worst November Since 2000",
+        "url": "https://247wallst.com/investing/2026/11/28/marvell-stock-heads-into-tuesdays-earnings-on-pace-for-its-worst-november-since-2000/?.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-27 07:15 ET",
-        "pub_ts": 1795781706.0
+        "time": "11-28 08:17 ET",
+        "pub_ts": 1795871849.0
       },
       {
         "title": "SemiAnalysis’s Dylan Patel Thinks Anthropic Could “Beat the $300 Billion” Run Rate by 2027’s End. Here’s What That’s Worth",
@@ -877,6 +877,13 @@
     ],
     "MSFT": [
       {
+        "title": "Intel (INTC) Expands Foundry Deal With A Major Cloud Customer",
+        "url": "https://finance.yahoo.com/technology/articles/intel-intc-expands-foundry-deal-130853190.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-28 08:08 ET",
+        "pub_ts": 1795871333.0
+      },
+      {
         "title": "The Best 3 Dividend-Raising Stocks to Own Until 2030",
         "url": "https://www.fool.com/investing/2026/11/28/the-best-3-dividend-raising-stocks-to-own-until-2030/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -903,16 +910,16 @@
         "source": "Yahoo Finance",
         "time": "11-27 12:20 ET",
         "pub_ts": 1795800002.0
-      },
-      {
-        "title": "Bad News for Anthropic: OpenAI Nearly Matches Claude Opus 5.5 at “Under a Fifth of the Cost,” per SemiAnalysis",
-        "url": "https://www.tikr.com/blog/bad-news-for-anthropic-openai-nearly-matches-claude-opus-5-5-at-under-a-fifth-of-the-cost-per-semianalysis?ref=yahoofinance&tlnk=yf-261128-f8c3h2j5&.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-28 07:05 ET",
-        "pub_ts": 1795867526.0
       }
     ],
     "GOOGL": [
+      {
+        "title": "Marvell Stock Heads Into Tuesday’s Earnings on Pace for Its Worst November Since 2000",
+        "url": "https://247wallst.com/investing/2026/11/28/marvell-stock-heads-into-tuesdays-earnings-on-pace-for-its-worst-november-since-2000/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-28 08:17 ET",
+        "pub_ts": 1795871849.0
+      },
       {
         "title": "3 Tech Stocks to Buy and Hold for 10 Years",
         "url": "https://www.fool.com/investing/2026/11/28/3-tech-stocks-to-buy-and-hold-for-10-years/?.tsrc=rss",
@@ -940,13 +947,6 @@
         "source": "Yahoo Finance",
         "time": "11-27 18:23 ET",
         "pub_ts": 1795821835.0
-      },
-      {
-        "title": "Amazon Hits Its Lowest P/E Ever. Jim Cramer Predicts It Will “Prove to Be the Winner”",
-        "url": "https://www.tikr.com/blog/amazon-hits-its-lowest-p-e-ever-jim-cramer-predicts-it-will-prove-to-be-the-winner?ref=yahoofinance&tlnk=yf-261127-6f785p32&.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-27 18:22 ET",
-        "pub_ts": 1795821761.0
       }
     ],
     "ASML": [
@@ -1025,6 +1025,13 @@
     ],
     "META": [
       {
+        "title": "CoreWeave Can Borrow at About 7% Against Meta’s Contract. Its Unsecured Bonds Yield Nearly 18%",
+        "url": "https://www.tikr.com/blog/coreweave-can-borrow-at-about-7-against-metas-contract-its-unsecured-bonds-yield-nearly-18?ref=yahoofinance&tlnk=yf-261128-87q8f2mq&.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-28 06:19 ET",
+        "pub_ts": 1795864751.0
+      },
+      {
         "title": "Top Stock Reports for Alphabet, Meta & Bank of America",
         "url": "https://finance.yahoo.com/markets/stocks/articles/top-stock-reports-alphabet-meta-184100991.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1051,13 +1058,6 @@
         "source": "Yahoo Finance",
         "time": "11-27 11:43 ET",
         "pub_ts": 1795797781.0
-      },
-      {
-        "title": "Amazon.com (AMZN) Is Negotiating Muse AI Access To Its Shopping Platform",
-        "url": "https://finance.yahoo.com/technology/ai/articles/amazon-com-amzn-negotiating-muse-161256193.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-27 11:12 ET",
-        "pub_ts": 1795795976.0
       }
     ],
     "AAPL": [
@@ -1469,6 +1469,13 @@
     ],
     "MRVL": [
       {
+        "title": "Marvell Stock Heads Into Tuesday’s Earnings on Pace for Its Worst November Since 2000",
+        "url": "https://247wallst.com/investing/2026/11/28/marvell-stock-heads-into-tuesdays-earnings-on-pace-for-its-worst-november-since-2000/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-28 08:17 ET",
+        "pub_ts": 1795871849.0
+      },
+      {
         "title": "Marvell Technology (MRVL) Could Be 58% Undervalued Following Its Penguin Solutions Tie Up",
         "url": "https://finance.yahoo.com/markets/stocks/articles/marvell-technology-mrvl-could-58-190952326.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1495,13 +1502,6 @@
         "source": "Yahoo Finance",
         "time": "11-27 09:27 ET",
         "pub_ts": 1795789620.0
-      },
-      {
-        "title": "AMD Rises 4% Despite Erste Group Downgrade on Valuation; Marvell Climbs 6%, Intel Gains 5%",
-        "url": "https://247wallst.com/investing/2026/11/27/amd-rises-4-despite-erste-group-downgrade-on-valuation-marvell-climbs-6-intel-gains-5/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-27 09:02 ET",
-        "pub_ts": 1795788175.0
       }
     ],
     "AXTI": [
@@ -1950,6 +1950,13 @@
     ],
     "INTC": [
       {
+        "title": "Intel (INTC) Expands Foundry Deal With A Major Cloud Customer",
+        "url": "https://finance.yahoo.com/technology/articles/intel-intc-expands-foundry-deal-130853190.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-28 08:08 ET",
+        "pub_ts": 1795871333.0
+      },
+      {
         "title": "Intel Stocks Climb 2.86% as Court Filings Detail Washington's 10% Stake Push",
         "url": "https://finance.yahoo.com/markets/stocks/articles/intel-stocks-climb-2-86-192124489.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1976,13 +1983,6 @@
         "source": "Yahoo Finance",
         "time": "11-27 06:59 ET",
         "pub_ts": 1795780747.0
-      },
-      {
-        "title": "Why Is Intel Stock Rallying Today?",
-        "url": "https://investorshub.advfn.com/market-news/article/40792/why-is-intel-stock-rallying-today?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-27 06:54 ET",
-        "pub_ts": 1795780448.0
       }
     ],
     "AXP": [
@@ -2209,6 +2209,13 @@
     ],
     "OKLO": [
       {
+        "title": "Could $5,000 in NuScale Power Stock Set You Up for Life? (Hint: Yes, But There's a Catch)",
+        "url": "https://www.fool.com/investing/2026/11/28/could-usd5-000-in-nuscale-power-stock-set-you-up-for-life-hint-yes-but-there-s-a-catch/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-28 08:25 ET",
+        "pub_ts": 1795872302.0
+      },
+      {
         "title": "Oklo vs. NuScale Power: Which Nuclear Stock Will Rise 100% First?",
         "url": "https://www.fool.com/investing/2026/11/28/oklo-vs-nuscale-power-which-nuclear-stock-will-rise-100-first/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2235,13 +2242,6 @@
         "source": "Yahoo Finance",
         "time": "11-25 11:57 ET",
         "pub_ts": 1795625822.0
-      },
-      {
-        "title": "OKLO Has More Cash, But Is NuScale the Better Nuclear Stock?",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/oklo-more-cash-nuscale-better-122800602.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 07:28 ET",
-        "pub_ts": 1795609680.0
       }
     ],
     "FPS": [
@@ -2394,39 +2394,39 @@
     ],
     "STX": [
       {
-        "title": "Seagate Is Still Up 86% in a Year. UBS Says That’s Enough",
-        "url": "https://www.tikr.com/blog/seagate-is-still-up-86-in-a-year-ubs-says-thats-enough?ref=yahoofinance&tlnk=yf-261127-m8496cqw&.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-27 06:54 ET",
-        "pub_ts": 1795780477.0
+        "title": "S&P 500 Top Movers: Gainers and Decliners in Today's US Session",
+        "url": "https://finnhub.io/api/news?id=e788036fed1f195b48e92257128877a7b601d4c64fb3df5ee55d94afb3b7e490",
+        "source": "ChartMill",
+        "time": "11-27 15:06 ET",
+        "pub_ts": 1795809975.0
       },
       {
-        "title": "Seagate Technology Got Hammered By Multiple Compression, Falling 40% in 3 Months: This Renowned Wall Street Desk Targets 185% Gains Following Earnings",
-        "url": "https://247wallst.com/investing/2026/11/26/seagate-technology-got-hammered-by-multiple-compression-falling-40-in-3-months-this-renowned-wall-street-desk-targets-185-gains-following-earnings/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-26 12:45 ET",
-        "pub_ts": 1795715150.0
+        "title": "SanDisk Stocks Jump 12.85% After Kioxia and Nvidia Stretch GPU Memory With SSDs",
+        "url": "https://finnhub.io/api/news?id=5ca0463ab071f1bcec909b69f2637bff9edbcc17b1483657f8bc23200824a39a",
+        "source": "Yahoo",
+        "time": "11-27 13:13 ET",
+        "pub_ts": 1795803196.0
       },
       {
-        "title": "Why Is Seagate (STX) Down 32.3% Since Last Earnings Report?",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/why-seagate-stx-down-32-153018072.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-26 10:30 ET",
-        "pub_ts": 1795707018.0
+        "title": "SanDisk Surges 16% as Memory Stocks Extend Their Rebound: Can SNDK Stock Blast Through $100 Before 2026 Ends?",
+        "url": "https://finnhub.io/api/news?id=a6f1302a0fcfde3b9e3751c77e7af693d50ecfa6b764ece161bc70f8253c76a6",
+        "source": "Yahoo",
+        "time": "11-27 13:03 ET",
+        "pub_ts": 1795802585.0
       },
       {
-        "title": "122% Upside for Seagate? Citi Thinks So, and Here’s How",
-        "url": "https://www.tikr.com/blog/122-upside-for-seagate-citi-thinks-so-and-heres-how?ref=yahoofinance&tlnk=yf-261126-gh5j3p5x&.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-26 01:19 ET",
-        "pub_ts": 1795673985.0
+        "title": "Anthropic Jumps Back Above Its IPO Price As AI Stocks Rebound",
+        "url": "https://finnhub.io/api/news?id=d7871a6cd69e66c009716e3229dfd0ad9c997627cf6e480ad1a9692a4c06fcbc",
+        "source": "Yahoo",
+        "time": "11-27 12:49 ET",
+        "pub_ts": 1795801778.0
       },
       {
-        "title": "Seagate (STX) Stock Fair Value Edges Lower As Analysts Rework AI Storage Assumptions",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/seagate-stx-stock-fair-value-043825316.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 23:38 ET",
-        "pub_ts": 1795667905.0
+        "title": "S&P 500 Gap Movers: Upside and Downside Stocks on November 27, 2026",
+        "url": "https://finnhub.io/api/news?id=13b6451702c8bca2930ed8d41af476cc7696e48c924ee4efe6fb5118f4439b82",
+        "source": "ChartMill",
+        "time": "11-27 10:36 ET",
+        "pub_ts": 1795793781.0
       }
     ],
     "MSTR": [
@@ -2542,6 +2542,13 @@
     ],
     "BTC-USD": [
       {
+        "title": "Could Bitcoin Reach Brian Armstrong’s $400,000 Target by 2030?",
+        "url": "https://247wallst.com/investing/cryptocurrency/2026/11/28/could-bitcoin-reach-brian-armstrongs-400000-target-by-2030/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-28 08:27 ET",
+        "pub_ts": 1795872441.0
+      },
+      {
         "title": "Global M2 Money Supply Contracts, Raising Liquidity Concerns for Bitcoin and Equities",
         "url": "https://www.ccn.com/news/crypto/global-m2-money-supply-bitcoin-equities-liquidity/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2568,13 +2575,6 @@
         "source": "Yahoo Finance",
         "time": "11-28 04:08 ET",
         "pub_ts": 1795856906.0
-      },
-      {
-        "title": "There’s ‘A Tourist Element’ To Bitcoin, But True Believers Are Dug In At $60,000, Says Eric Balchunas",
-        "url": "https://stocktwits.com/news-articles/markets/cryptocurrency/there-s-a-tourist-element-to-bitcoin-but-true-believers-are-dug-in-at-60-000-says-eric-balchunas/cNRRtBxR9Vv?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-28 02:58 ET",
-        "pub_ts": 1795852732.0
       }
     ],
     "COIN": [
@@ -2654,38 +2654,38 @@
     "ORCL": [
       {
         "title": "SpaceX Is “a CoreWeave With Some Rockets,” per Patrick Boyle. Its AI Unit Is Now Over Half of Sales",
-        "url": "https://www.tikr.com/blog/spacex-is-a-coreweave-with-some-rockets-per-patrick-boyle-its-ai-unit-is-now-over-half-of-sales?ref=yahoofinance&tlnk=yf-261128-jqm72h56&.tsrc=rss",
-        "source": "Yahoo Finance",
+        "url": "https://finnhub.io/api/news?id=bfac765cea5d89f6318eb531c774d4dd7a89f1fc9f9744b3ccde4ecfefe02cc8",
+        "source": "Yahoo",
         "time": "11-28 01:11 ET",
         "pub_ts": 1795846314.0
       },
       {
-        "title": "Oracle Has Frustrated Me, but Even With Zero AI Revenue the Stock Is Worth $133—So I’m Buying at $104",
-        "url": "https://247wallst.com/investing/2026/11/27/oracle-has-frustrated-me-but-even-with-zero-ai-revenue-the-stock-is-worth-133-so-im-buying-at-104/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-27 12:45 ET",
-        "pub_ts": 1795801551.0
+        "title": "Amazon Hits Its Lowest P/E Ever. Jim Cramer Predicts It Will “Prove to Be the Winner”",
+        "url": "https://finnhub.io/api/news?id=2c8719ae3e9df30828f37aa996a5510f5dcc46ef776688975e731fc800aae5a0",
+        "source": "Yahoo",
+        "time": "11-27 18:22 ET",
+        "pub_ts": 1795821761.0
       },
       {
-        "title": "Privacy-Enhancing Computation Market to Reach $16.49 Billion by 2030 as Data Protection Demand Accelerates - Microsoft, IBM, Cisco, and Oracle Accelerate AI, FHE, and Cloud Security",
-        "url": "https://finance.yahoo.com/technology/ai/articles/privacy-enhancing-computation-market-reach-143600579.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-27 09:36 ET",
-        "pub_ts": 1795790160.0
+        "title": "3 Undervalued Stocks Trading Up To 40% Below Cash Flow Value",
+        "url": "https://finnhub.io/api/news?id=98b7a4bfc068596c12763467df85fcb04574cadb15aae31d855d00a08047c044",
+        "source": "Yahoo",
+        "time": "11-27 17:13 ET",
+        "pub_ts": 1795817628.0
       },
       {
-        "title": "Blockchain in Retail Global Market Report 2026 | Capitalize on 26.1% CAGR to $2.39 Billion by 2030 as IBM, SAP, Oracle, AWS and Walmart Scale BaaS, Traceability and Web3 Loyalty",
-        "url": "https://finance.yahoo.com/markets/crypto/articles/blockchain-retail-global-market-report-143400087.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-27 09:34 ET",
-        "pub_ts": 1795790040.0
+        "title": "Billionaire Chase Coleman’s Tiger Global Raised Its Cerebras Stake 48% to $790 Million",
+        "url": "https://finnhub.io/api/news?id=157bab7006e16a9eaba041f568718eced7841420efee12833f6fe2254f526c93",
+        "source": "Yahoo",
+        "time": "11-27 16:37 ET",
+        "pub_ts": 1795815477.0
       },
       {
-        "title": "AI Powered Supply Chain Planning Software Market Report 2026 | Capitalize on 24.8% CAGR and $26.72B in Revenue by 2030 with Microsoft, Oracle, SAP and IBM",
-        "url": "https://finance.yahoo.com/technology/ai/articles/ai-powered-supply-chain-planning-143200996.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-27 09:32 ET",
-        "pub_ts": 1795789920.0
+        "title": "Oracle is Living on a Prayer and It’s Not Even Halfway There",
+        "url": "https://finnhub.io/api/news?id=a87056164f7827bd4b80de52abc3968777f6dfb755c11454ff542cd875e508f5",
+        "source": "Yahoo",
+        "time": "11-27 16:12 ET",
+        "pub_ts": 1795813937.0
       }
     ],
     "MRNA": [
@@ -3023,39 +3023,39 @@
     ],
     "ANT": [
       {
+        "title": "Dow Jones Futures: Tesla Leads 7 Buys After Bullish Market Move; Nvidia's Jensen Huang On Capitol Hill",
+        "url": "https://finnhub.io/api/news?id=110e0ddc90181dd918e65992d537e394a5fccf6b8538fa50f3c522edccc9b08b",
+        "source": "Yahoo",
+        "time": "11-28 07:26 ET",
+        "pub_ts": 1795868776.0
+      },
+      {
         "title": "Bad News for Anthropic: OpenAI Nearly Matches Claude Opus 5.5 at “Under a Fifth of the Cost,” per SemiAnalysis",
-        "url": "https://www.tikr.com/blog/bad-news-for-anthropic-openai-nearly-matches-claude-opus-5-5-at-under-a-fifth-of-the-cost-per-semianalysis?ref=yahoofinance&tlnk=yf-261128-f8c3h2j5&.tsrc=rss",
-        "source": "Yahoo Finance",
+        "url": "https://finnhub.io/api/news?id=8c08fe2915ddda9cfdf2334fe47c99301ebe1c5e863508f1298ccc5740556b8c",
+        "source": "Yahoo",
         "time": "11-28 07:05 ET",
         "pub_ts": 1795867526.0
       },
       {
         "title": "Here's What $1,000 Invested in Anthropic Could Be Worth by 2030",
-        "url": "https://www.fool.com/investing/2026/11/28/heres-what-1000-invested-in-anthropic-could-be-wor/?.tsrc=rss",
-        "source": "Yahoo Finance",
+        "url": "https://finnhub.io/api/news?id=0aeb4cab5435016b35f1d63cf1623bf696d0ba0b945d41ba66681b2d9ea9b76f",
+        "source": "Yahoo",
         "time": "11-28 06:33 ET",
         "pub_ts": 1795865580.0
       },
       {
         "title": "SemiAnalysis’s Dylan Patel Thinks Anthropic Could “Beat the $300 Billion” Run Rate by 2027’s End. Here’s What That’s Worth",
-        "url": "https://www.tikr.com/blog/semianalysiss-dylan-patel-thinks-anthropic-could-beat-the-300-billion-run-rate-by-2027s-end-heres-what-thats-worth?ref=yahoofinance&tlnk=yf-261128-qx4mhqqc&.tsrc=rss",
-        "source": "Yahoo Finance",
+        "url": "https://finnhub.io/api/news?id=2c27d8218e9bd49ce663fa9a69849db7a4d8428e979d7a5af06a25c09c6e558a",
+        "source": "Yahoo",
         "time": "11-28 06:21 ET",
         "pub_ts": 1795864869.0
       },
       {
         "title": "Gavin Baker Got “Much Better Versions” of His Claude Code Builds From Grok Bot. Warning for Anthropic",
-        "url": "https://www.tikr.com/blog/gavin-baker-got-much-better-versions-of-his-claude-code-builds-from-grok-bot-warning-for-anthropic?ref=yahoofinance&tlnk=yf-261128-fvq3f97r&.tsrc=rss",
-        "source": "Yahoo Finance",
+        "url": "https://finnhub.io/api/news?id=e6c5965a6cbe6cca1b6307ae1bb39a6e7885473eabced27cf44c71efb1f1d22f",
+        "source": "Yahoo",
         "time": "11-28 06:05 ET",
         "pub_ts": 1795863918.0
-      },
-      {
-        "title": "Here's Why Anthropic Stock Rallied on Friday -- and Why Wall Street Analysts Say It's Still a Buy Right Now",
-        "url": "https://www.fool.com/investing/2026/11/27/why-anthropic-stock-rallied-on-friday-wall-street-analysts-say-buy-right-now/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-27 21:15 ET",
-        "pub_ts": 1795832124.0
       }
     ],
     "XAUUSD": [
@@ -3069,87 +3069,87 @@
     ]
   },
   "ticker_news_ts": {
-    "DIA": 1795871311.076754,
-    "IWM": 1795871514.2962735,
-    "SOXX": 1795871311.076754,
-    "SPY": 1795871311.076754,
-    "QQQ": 1795871514.2962735,
-    "KORU": 1795871514.2962735,
-    "SOXL": 1795871311.076754,
-    "SMH": 1795871311.076754,
-    "KSTR": 1795871514.2962735,
-    "TLT": 1795871514.2962735,
-    "SQQQ": 1795871514.2962735,
-    "GLD": 1795871590.1854825,
-    "IGV": 1795871514.2962735,
-    "SOXS": 1795871514.2962735,
-    "VIXY": 1795871514.2962735,
-    "NVDA": 1795871982.9556956,
-    "TSM": 1795871514.2962735,
-    "AMD": 1795871514.2962735,
-    "AVGO": 1795871514.2962735,
-    "AMAT": 1795871514.2962735,
-    "QCOM": 1795871514.2962735,
-    "MSFT": 1795871982.9556956,
-    "GOOGL": 1795871514.2962735,
-    "ASML": 1795871514.2962735,
-    "KOSPI": 1795871514.2962735,
-    "META": 1795871590.1854825,
-    "AAPL": 1795871590.1854825,
-    "AMZN": 1795871590.1854825,
-    "PLTR": 1795871590.1854825,
-    "CRWV": 1795871982.9556956,
-    "NBIS": 1795871590.1854825,
-    "NOW": 1795871590.1854825,
-    "BE": 1795871590.1854825,
-    "APLD": 1795871590.1854825,
-    "VST": 1795871590.1854825,
-    "COHR": 1795871590.1854825,
-    "CRDO": 1795871590.1854825,
-    "MRVL": 1795871590.1854825,
-    "AXTI": 1795871982.9556956,
-    "AAOI": 1795871982.9556956,
-    "LITE": 1795871590.1854825,
-    "GLW": 1795871982.9556956,
-    "ASTS": 1795871982.9556956,
-    "FN": 1795871590.1854825,
-    "SPCX": 1795871982.9556956,
-    "RKLB": 1795871982.9556956,
-    "FLY": 1795871982.9556956,
-    "LUNR": 1795871982.9556956,
-    "NASA": 1795871982.9556956,
-    "KO": 1795871982.9556956,
-    "INTC": 1795871982.9556956,
-    "AXP": 1795871982.9556956,
-    "VRT": 1795871982.9556956,
-    "DELL": 1795871982.9556956,
-    "CEG": 1795871982.9556956,
-    "TSLA": 1795871982.9556956,
-    "HPE": 1795871982.9556956,
-    "OKLO": 1795871982.9556956,
-    "FPS": 1795871982.9556956,
-    "MU": 1795871982.9556956,
-    "SKHY": 1795871982.9556956,
-    "WDC": 1795871982.9556956,
-    "STX": 1795872130.0703094,
-    "MSTR": 1795872130.0703094,
-    "SNDK": 1795872130.0703094,
-    "CRWD": 1795872130.0703094,
-    "BTC-USD": 1795872130.0703094,
-    "COIN": 1795872130.0703094,
-    "LLY": 1795872130.0703094,
-    "ORCL": 1795872130.0703094,
-    "MRNA": 1795872130.0703094,
-    "MCD": 1795872130.0703094,
-    "NKE": 1795872130.0703094,
-    "V": 1795872130.0703094,
-    "JPM": 1795872130.0703094,
-    "WMT": 1795872130.0703094,
-    "XOM": 1795872130.0703094,
-    "PEP": 1795872130.0703094,
-    "CAT": 1795872130.0703094,
-    "ANT": 1795872130.0703094,
-    "XAUUSD": 1795872130.0703094
+    "DIA": 1795874423.882423,
+    "IWM": 1795874553.269072,
+    "SOXX": 1795874423.882423,
+    "SPY": 1795874423.882423,
+    "QQQ": 1795874553.269072,
+    "KORU": 1795874553.269072,
+    "SOXL": 1795874423.882423,
+    "SMH": 1795874423.882423,
+    "KSTR": 1795874553.269072,
+    "TLT": 1795874553.269072,
+    "SQQQ": 1795874553.269072,
+    "GLD": 1795873090.3018315,
+    "IGV": 1795874553.269072,
+    "SOXS": 1795874553.269072,
+    "VIXY": 1795874553.269072,
+    "NVDA": 1795873491.3578784,
+    "TSM": 1795874553.269072,
+    "AMD": 1795874553.269072,
+    "AVGO": 1795874553.269072,
+    "AMAT": 1795874553.269072,
+    "QCOM": 1795874553.269072,
+    "MSFT": 1795873491.3578784,
+    "GOOGL": 1795874553.269072,
+    "ASML": 1795874553.269072,
+    "KOSPI": 1795874553.269072,
+    "META": 1795873090.3018315,
+    "AAPL": 1795873090.3018315,
+    "AMZN": 1795873090.3018315,
+    "PLTR": 1795873090.3018315,
+    "CRWV": 1795873491.3578784,
+    "NBIS": 1795873090.3018315,
+    "NOW": 1795873090.3018315,
+    "BE": 1795873090.3018315,
+    "APLD": 1795873090.3018315,
+    "VST": 1795873090.3018315,
+    "COHR": 1795873090.3018315,
+    "CRDO": 1795873090.3018315,
+    "MRVL": 1795873090.3018315,
+    "AXTI": 1795873491.3578784,
+    "AAOI": 1795873491.3578784,
+    "LITE": 1795873090.3018315,
+    "GLW": 1795873491.3578784,
+    "ASTS": 1795873491.3578784,
+    "FN": 1795873090.3018315,
+    "SPCX": 1795873491.3578784,
+    "RKLB": 1795873491.3578784,
+    "FLY": 1795873491.3578784,
+    "LUNR": 1795873491.3578784,
+    "NASA": 1795873491.3578784,
+    "KO": 1795873491.3578784,
+    "INTC": 1795873491.3578784,
+    "AXP": 1795873491.3578784,
+    "VRT": 1795873491.3578784,
+    "DELL": 1795873491.3578784,
+    "CEG": 1795873491.3578784,
+    "TSLA": 1795873491.3578784,
+    "HPE": 1795873491.3578784,
+    "OKLO": 1795873491.3578784,
+    "FPS": 1795873491.3578784,
+    "MU": 1795873491.3578784,
+    "SKHY": 1795873491.3578784,
+    "WDC": 1795873491.3578784,
+    "STX": 1795873703.6578655,
+    "MSTR": 1795873703.6578655,
+    "SNDK": 1795873703.6578655,
+    "CRWD": 1795873703.6578655,
+    "BTC-USD": 1795873703.6578655,
+    "COIN": 1795873703.6578655,
+    "LLY": 1795873703.6578655,
+    "ORCL": 1795873703.6578655,
+    "MRNA": 1795873703.6578655,
+    "MCD": 1795873703.6578655,
+    "NKE": 1795873703.6578655,
+    "V": 1795873703.6578655,
+    "JPM": 1795873703.6578655,
+    "WMT": 1795873703.6578655,
+    "XOM": 1795873703.6578655,
+    "PEP": 1795873703.6578655,
+    "CAT": 1795873703.6578655,
+    "ANT": 1795873790.2854981,
+    "XAUUSD": 1795873790.2854981
   },
   "opex_shield": {
     "date": "2026-11-28",
