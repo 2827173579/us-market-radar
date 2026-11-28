@@ -111,17 +111,23 @@ class TestApacMlAndTerminalFixes(unittest.TestCase):
         self.assertTrue(need_cold)
         self.assertEqual(reason_cold, "COLD_START_MISSING")
 
+        from unittest.mock import patch
+
         full_fake = {
             "fetched_epoch": datetime(2026, 11, 26, 16, 20, tzinfo=CST).timestamp(),
             "computed_after_close_date": "2026-11-26",
             "by_ticker": {m["ticker"]: {"calibrated_win_rate_pct": 55.0} for m in aaf.ALL_APAC_ASHARE_TARGETS},
         }
-        need_sleep, reason_sleep = amp.should_recompute_apac_ml(full_fake, now_dt=datetime(2026, 11, 26, 22, 30, tzinfo=CST))
+        sleep_dt = datetime(2026, 11, 26, 22, 30, tzinfo=CST)
+        with patch.object(amp.time, "time", return_value=sleep_dt.timestamp()):
+            need_sleep, reason_sleep = amp.should_recompute_apac_ml(full_fake, now_dt=sleep_dt)
         self.assertFalse(need_sleep)
         self.assertEqual(reason_sleep, "SLEEP_CACHE")
 
         # 次日收盘后 16:20 CST -> 触发今日一次增量重算
-        need_next, reason_next = amp.should_recompute_apac_ml(full_fake, now_dt=datetime(2026, 11, 27, 16, 20, tzinfo=CST))
+        next_dt = datetime(2026, 11, 27, 16, 20, tzinfo=CST)
+        with patch.object(amp.time, "time", return_value=next_dt.timestamp()):
+            need_next, reason_next = amp.should_recompute_apac_ml(full_fake, now_dt=next_dt)
         self.assertTrue(need_next)
         self.assertEqual(reason_next, "DAILY_POST_CLOSE_REFRESH")
 

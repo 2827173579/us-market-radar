@@ -3043,6 +3043,20 @@ def send_discord_vxn_deleveraging_alert(vix_regime, def_flight=None, update_time
         return False
 
 
+def _is_test_runner_process():
+    """精确识别当前进程是否由 pytest / unittest 测试入口直接启动（避免误杀因 sklearn 传递导入 unittest 的生产进程）。"""
+    if os.environ.get("PYTEST_CURRENT_TEST", "").strip():
+        return True
+    main_mod = sys.modules.get("__main__")
+    main_pkg = str(getattr(main_mod, "__package__", "") or "").split(".")[0].lower()
+    if main_pkg in {"unittest", "pytest"}:
+        return True
+    argv0 = os.path.basename(str((sys.argv[0] if sys.argv else "") or "")).lower()
+    if argv0.startswith("test_") or ("pytest" in argv0):
+        return True
+    return False
+
+
 def _should_record_signal_ledger(webhook_url=None, explicit_ledger_path=None):
     """
     仅在真实推送生效或测试显式指定隔离账本路径时记账：
@@ -3053,7 +3067,7 @@ def _should_record_signal_ledger(webhook_url=None, explicit_ledger_path=None):
         return False
     if explicit_ledger_path or os.environ.get("SIGNAL_LEDGER_PATH", "").strip():
         return True
-    if "unittest" in sys.modules:
+    if _is_test_runner_process():
         return False
     eff_url = str(webhook_url or get_claw_webhook_url() or get_defensive_webhook_url() or "").strip().lower()
     if (not eff_url) or ("example.invalid" in eff_url) or ("localhost" in eff_url) or ("127.0.0.1" in eff_url):

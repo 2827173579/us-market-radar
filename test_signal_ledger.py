@@ -487,6 +487,51 @@ class TestSignalLedger(unittest.TestCase):
         self.assertIn("多头实盘胜率", h_full)
         self.assertIn("防守拦截有效率", h_full)
 
+    # 8. 回归防复发：sklearn/ml_predictor_5y 传递导入 unittest 时生产进程必须放行记账，测试运行器仍拦截默认生产账本
+    def test_08_should_record_signal_ledger_survives_sklearn_unittest_import(self):
+        import types
+
+        # 确认 ml_predictor_5y 导入后 unittest 确实在 sys.modules 中
+        self.assertIn("unittest", sys.modules)
+
+        real_webhook = "https://discord.com/api/webhooks/1234567890/real_token_prod"
+        fake_prod_main = types.SimpleNamespace(__package__="")
+
+        # (1) 模拟生产守护进程入口（无 PYTEST_CURRENT_TEST，argv0=integrated_market_radar.py，__main__.__package__=""）
+        env_clean = {k: v for k, v in os.environ.items() if k not in ("PYTEST_CURRENT_TEST", "SIGNAL_LEDGER_PATH", "RADAR_DISABLE_EXTERNAL_ALERTS")}
+        with patch.dict(os.environ, env_clean, clear=True), \
+             patch.object(sys, "argv", ["integrated_market_radar.py", "--loop-daemon"]), \
+             patch.dict(sys.modules, {"__main__": fake_prod_main}):
+            self.assertFalse(imr._is_test_runner_process())
+            self.assertTrue(imr._should_record_signal_ledger(webhook_url=real_webhook))
+            # example.invalid 测试 webhook 仍被拦截
+            self.assertFalse(imr._should_record_signal_ledger(webhook_url="https://example.invalid/webhook"))
+
+        # (2) 真实 pytest / unittest 进程且未传 explicit_ledger_path -> 必须返回 False，严禁污染生产账本
+        env_pytest = dict(env_clean)
+        env_pytest["PYTEST_CURRENT_TEST"] = "test_signal_ledger.py::test_08"
+        with patch.dict(os.environ, env_pytest, clear=True), \
+             patch.object(sys, "argv", ["integrated_market_radar.py"]), \
+             patch.dict(sys.modules, {"__main__": fake_prod_main}):
+            self.assertTrue(imr._is_test_runner_process())
+            self.assertFalse(imr._should_record_signal_ledger(webhook_url=real_webhook))
+            # 显式传入隔离路径时仍放行测试记账
+            self.assertTrue(imr._should_record_signal_ledger(webhook_url=real_webhook, explicit_ledger_path=self.ledger_path))
+
+        # (3) python -m unittest 或 test_*.py 直接启动同样被精确识别并拦截
+        fake_ut_main = types.SimpleNamespace(__package__="unittest")
+        with patch.dict(os.environ, env_clean, clear=True), \
+             patch.object(sys, "argv", ["integrated_market_radar.py"]), \
+             patch.dict(sys.modules, {"__main__": fake_ut_main}):
+            self.assertTrue(imr._is_test_runner_process())
+            self.assertFalse(imr._should_record_signal_ledger(webhook_url=real_webhook))
+
+        with patch.dict(os.environ, env_clean, clear=True), \
+             patch.object(sys, "argv", ["test_signal_ledger.py"]), \
+             patch.dict(sys.modules, {"__main__": fake_prod_main}):
+            self.assertTrue(imr._is_test_runner_process())
+            self.assertFalse(imr._should_record_signal_ledger(webhook_url=real_webhook))
+
 
 if __name__ == "__main__":
     unittest.main(verbosity=2)
