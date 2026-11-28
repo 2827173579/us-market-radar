@@ -10,20 +10,20 @@
       "last_notified_at": 0.0
     },
     "QCOM": {
-      "state": "WATCHLIST_ENTRY_READY",
-      "last_notified_at": 1795853980.865485
-    },
-    "AMZN": {
       "state": "NORMAL",
       "last_notified_at": 0.0
+    },
+    "AMZN": {
+      "state": "WATCHLIST_ENTRY_READY",
+      "last_notified_at": 1795856436.1845582
     },
     "DIA": {
       "state": "NORMAL",
       "last_notified_at": 0.0
     },
     "AXP": {
-      "state": "WATCHLIST_ENTRY_READY",
-      "last_notified_at": 1795856002.6585164
+      "state": "NORMAL",
+      "last_notified_at": 0.0
     },
     "FLY": {
       "state": "NORMAL",
@@ -34,8 +34,8 @@
       "last_notified_at": 0.0
     },
     "AVGO": {
-      "state": "NORMAL",
-      "last_notified_at": 0.0
+      "state": "WATCHLIST_ENTRY_READY",
+      "last_notified_at": 1795856436.1845582
     },
     "KSTR": {
       "state": "NORMAL",
