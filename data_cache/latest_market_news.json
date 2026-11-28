@@ -1,7 +1,7 @@
 {
-  "updated_at_ts": 1795829793.603,
-  "updated_at_et": "11-27 20:36 ET",
-  "updated_at_kst": "10:36 KST",
+  "updated_at_ts": 1795831614.075,
+  "updated_at_et": "11-27 21:06 ET",
+  "updated_at_kst": "11:06 KST",
   "macro_calendar": [],
   "macro_flashes": [
     {
@@ -641,6 +641,20 @@
     ],
     "NVDA": [
       {
+        "title": "Nvidia Stock Is Still Down 38% From Its Peak Despite Jensen Huang's Return. History Suggests a $10,000 Investment Today Will Be Worth This Much by Year-End 2027.",
+        "url": "https://www.fool.com/investing/2026/11/27/nvidia-stock-is-still-down-38-from-its-peak-despite-jensen-huang-s-return-history-suggests-a-usd10-000-investment-today-will-be-worth-this-much-by-year-end-2027/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-27 20:11 ET",
+        "pub_ts": 1795828280.0
+      },
+      {
+        "title": "Vanguard's Growth ETF Has 3 Stocks Making Up More Than a Third of It. Only 1 Has Held Up in the Tech Sell-Off.",
+        "url": "https://www.fool.com/investing/2026/11/27/vanguard-s-growth-etf-has-3-stocks-making-up-more-than-a-third-of-it-only-1-has-held-up-in-the-tech-sell-off/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-27 20:09 ET",
+        "pub_ts": 1795828142.0
+      },
+      {
         "title": "3 Reasons I Might Buy More Nvidia in December",
         "url": "https://www.fool.com/investing/2026/11/27/3-reasons-i-might-buy-more-nvidia-in-december/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -660,20 +674,6 @@
         "source": "Yahoo Finance",
         "time": "11-27 16:37 ET",
         "pub_ts": 1795815477.0
-      },
-      {
-        "title": "Nvidia chips on sale for $3M in China — as Jensen Huang scandal and US crackdown chokes supply",
-        "url": "https://nypost.com/2026/11/27/tech/chinese-ads-selling-banned-nvidia-servers-for-3m-as-jensen-huang-scandal-chokes-supply-market-is-crazy/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-27 16:18 ET",
-        "pub_ts": 1795814320.0
-      },
-      {
-        "title": "AI Chip Stocks Swung Wildly—While Warren Buffett’s Apple Climbed 26%",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/ai-chip-stocks-swung-wildly-204129003.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-27 15:41 ET",
-        "pub_ts": 1795812089.0
       }
     ],
     "TSM": [
@@ -863,6 +863,13 @@
     ],
     "MSFT": [
       {
+        "title": "Vanguard's Growth ETF Has 3 Stocks Making Up More Than a Third of It. Only 1 Has Held Up in the Tech Sell-Off.",
+        "url": "https://www.fool.com/investing/2026/11/27/vanguard-s-growth-etf-has-3-stocks-making-up-more-than-a-third-of-it-only-1-has-held-up-in-the-tech-sell-off/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-27 20:09 ET",
+        "pub_ts": 1795828142.0
+      },
+      {
         "title": "Microsoft Stocks Rise 0.26% as Code Red Targets One-Hour Outage Recovery",
         "url": "https://finance.yahoo.com/markets/stocks/articles/microsoft-stocks-rise-0-26-182320294.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -875,13 +882,6 @@
         "source": "Yahoo Finance",
         "time": "11-27 12:20 ET",
         "pub_ts": 1795800002.0
-      },
-      {
-        "title": "Why Is Microsoft (MSFT) Down 7.6% Since Last Earnings Report?",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/why-microsoft-msft-down-7-153027471.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-27 10:30 ET",
-        "pub_ts": 1795793427.0
       },
       {
         "title": "IREN (NasdaqGS:IREN) Stock Sees Modest Fair Value Cut After AI Cloud Sentiment Swings",
@@ -1055,6 +1055,20 @@
         "pub_ts": 1795786884.0
       },
       {
+        "title": "Apple Is Beating the Rest of the \"Magnificent Seven\" in 2026. Can It Do It Again in 2027?",
+        "url": "https://www.fool.com/investing/2026/11/27/apple-is-beating-the-rest-of-the-magnificent-seven-in-2026-can-it-do-it-again-in-2027/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-27 20:19 ET",
+        "pub_ts": 1795828750.0
+      },
+      {
+        "title": "Vanguard's Growth ETF Has 3 Stocks Making Up More Than a Third of It. Only 1 Has Held Up in the Tech Sell-Off.",
+        "url": "https://www.fool.com/investing/2026/11/27/vanguard-s-growth-etf-has-3-stocks-making-up-more-than-a-third-of-it-only-1-has-held-up-in-the-tech-sell-off/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-27 20:09 ET",
+        "pub_ts": 1795828142.0
+      },
+      {
         "title": "OpenAI says a spy handed Apple secret plans for AI devices that could 'outcompete' the iPhone maker on its 'own turf'",
         "url": "https://finance.yahoo.com/technology/ai/articles/openai-says-spy-handed-apple-010000370.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1067,20 +1081,6 @@
         "source": "Yahoo Finance",
         "time": "11-27 19:33 ET",
         "pub_ts": 1795826002.0
-      },
-      {
-        "title": "AI Chip Stocks Swung Wildly—While Warren Buffett’s Apple Climbed 26%",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/ai-chip-stocks-swung-wildly-204129003.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-27 15:41 ET",
-        "pub_ts": 1795812089.0
-      },
-      {
-        "title": "OpenAI Reportedly Fires Back At Apple Over Trade Secrets And Hardware Suppliers",
-        "url": "https://stocktwits.com/news-articles/markets/equity/open-ai-reportedly-fires-back-at-apple-over-trade-secrets-and-hardware-suppliers/cNb65s2R9Vi?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-27 15:13 ET",
-        "pub_ts": 1795810433.0
       }
     ],
     "AMZN": [
@@ -1122,6 +1122,13 @@
     ],
     "PLTR": [
       {
+        "title": "Palantir's new military AI deal has a surprising catch",
+        "url": "https://www.thestreet.com/investing/palantirs-new-military-ai-deal-has-a-surprising-catch?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-27 20:37 ET",
+        "pub_ts": 1795829820.0
+      },
+      {
         "title": "Palantir Stocks Climb 3.72% on $300 Million Poland Defense AI Deal",
         "url": "https://finance.yahoo.com/markets/stocks/articles/palantir-stocks-climb-3-72-192323429.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1148,13 +1155,6 @@
         "source": "Yahoo Finance",
         "time": "11-27 12:57 ET",
         "pub_ts": 1795802276.0
-      },
-      {
-        "title": "The Best 3 Stocks to Buy in December to Hold Into 2027",
-        "url": "https://www.fool.com/investing/2026/11/27/the-best-3-stocks-to-buy-in-december-to-hold-into-2027/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-27 12:57 ET",
-        "pub_ts": 1795802222.0
       }
     ],
     "CRWV": [
@@ -1714,13 +1714,6 @@
     ],
     "SPCX": [
       {
-        "title": "Stocks snap from a $6 trillion washout to a $3.5 trillion surge as Nvidia, Micron, and SpaceX bounce back",
-        "url": "https://finance.yahoo.com/markets/article/stocks-snap-from-a-6-trillion-washout-to-a-3-trillion-surge-as-nvidia-micron-and-spacex-bounce-back-151218930.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-27 10:12 ET",
-        "pub_ts": 1795792338.0
-      },
-      {
         "title": "Are billionaires gaining too much influence as they invest in Trump Accounts?",
         "url": "https://finance.yahoo.com/video/are-billionaires-gaining-too-much-influence-as-they-invest-in-trump-accounts-181419307.html?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1747,6 +1740,13 @@
         "source": "Yahoo Finance",
         "time": "11-27 12:52 ET",
         "pub_ts": 1795801976.0
+      },
+      {
+        "title": "Here's Why SpaceX’s Starship Could Lift Linde’s Space Revenue up to 700%",
+        "url": "https://www.benzinga.com/markets/prediction-markets/26/11/63684152/spacex-starship-linde-fueling-infrastructure?utm_source=yahooFinance&utm_campaign=partner_feed&utm_medium=referral&.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-27 12:46 ET",
+        "pub_ts": 1795801563.0
       }
     ],
     "RKLB": [
@@ -3055,87 +3055,87 @@
     ]
   },
   "ticker_news_ts": {
-    "DIA": 1795828405.6810465,
-    "IWM": 1795828405.6810465,
-    "SOXX": 1795828405.6810465,
-    "SPY": 1795828405.6810465,
-    "QQQ": 1795828405.6810465,
-    "KORU": 1795828405.6810465,
-    "SOXL": 1795828405.6810465,
-    "SMH": 1795828405.6810465,
-    "KSTR": 1795828405.6810465,
-    "TLT": 1795828405.6810465,
-    "SQQQ": 1795828405.6810465,
-    "GLD": 1795828405.6810465,
-    "IGV": 1795828405.6810465,
-    "SOXS": 1795828405.6810465,
-    "VIXY": 1795828405.6810465,
-    "NVDA": 1795828405.6810465,
-    "TSM": 1795828405.6810465,
-    "AMD": 1795828405.6810465,
-    "AVGO": 1795828405.6810465,
-    "AMAT": 1795828405.6810465,
-    "QCOM": 1795828405.6810465,
-    "MSFT": 1795828405.6810465,
-    "GOOGL": 1795828405.6810465,
-    "ASML": 1795828405.6810465,
-    "KOSPI": 1795828405.6810465,
-    "META": 1795828466.4731467,
-    "AAPL": 1795828466.4731467,
-    "AMZN": 1795828466.4731467,
-    "PLTR": 1795828466.4731467,
-    "CRWV": 1795828466.4731467,
-    "NBIS": 1795828466.4731467,
-    "NOW": 1795828466.4731467,
-    "BE": 1795828466.4731467,
-    "APLD": 1795828466.4731467,
-    "VST": 1795828466.4731467,
-    "COHR": 1795828466.4731467,
-    "CRDO": 1795828466.4731467,
-    "MRVL": 1795828466.4731467,
-    "AXTI": 1795828466.4731467,
-    "AAOI": 1795828466.4731467,
-    "LITE": 1795828466.4731467,
-    "GLW": 1795828466.4731467,
-    "ASTS": 1795828466.4731467,
-    "FN": 1795828466.4731467,
-    "SPCX": 1795828466.4731467,
-    "RKLB": 1795828466.4731467,
-    "FLY": 1795828466.4731467,
-    "LUNR": 1795828466.4731467,
-    "NASA": 1795828466.4731467,
-    "KO": 1795828466.4731467,
-    "INTC": 1795828546.0597937,
-    "AXP": 1795828546.0597937,
-    "VRT": 1795828546.0597937,
-    "DELL": 1795828546.0597937,
-    "CEG": 1795828546.0597937,
-    "TSLA": 1795828546.0597937,
-    "HPE": 1795828546.0597937,
-    "OKLO": 1795828546.0597937,
-    "FPS": 1795828546.0597937,
-    "MU": 1795828546.0597937,
-    "SKHY": 1795828546.0597937,
-    "WDC": 1795828546.0597937,
-    "STX": 1795828546.0597937,
-    "MSTR": 1795828546.0597937,
-    "SNDK": 1795828546.0597937,
-    "CRWD": 1795828546.0597937,
-    "BTC-USD": 1795828546.0597937,
-    "COIN": 1795828546.0597937,
-    "LLY": 1795828546.0597937,
-    "ORCL": 1795828546.0597937,
-    "MRNA": 1795828546.0597937,
-    "MCD": 1795828546.0597937,
-    "NKE": 1795828546.0597937,
-    "V": 1795828546.0597937,
-    "JPM": 1795828622.7902744,
-    "WMT": 1795828622.7902744,
-    "XOM": 1795828622.7902744,
-    "PEP": 1795828546.0597937,
-    "CAT": 1795828622.7902744,
-    "ANT": 1795828622.7902744,
-    "XAUUSD": 1795828622.7902744
+    "DIA": 1795831492.493589,
+    "IWM": 1795831492.493589,
+    "SOXX": 1795831492.493589,
+    "SPY": 1795831492.493589,
+    "QQQ": 1795831492.493589,
+    "KORU": 1795831492.493589,
+    "SOXL": 1795831492.493589,
+    "SMH": 1795831492.493589,
+    "KSTR": 1795831492.493589,
+    "TLT": 1795831492.493589,
+    "SQQQ": 1795831492.493589,
+    "GLD": 1795831492.493589,
+    "IGV": 1795831492.493589,
+    "SOXS": 1795831492.493589,
+    "VIXY": 1795831492.493589,
+    "NVDA": 1795831492.493589,
+    "TSM": 1795831492.493589,
+    "AMD": 1795831492.493589,
+    "AVGO": 1795831492.493589,
+    "AMAT": 1795831492.493589,
+    "QCOM": 1795831492.493589,
+    "MSFT": 1795831492.493589,
+    "GOOGL": 1795831492.493589,
+    "ASML": 1795831492.493589,
+    "KOSPI": 1795831492.493589,
+    "META": 1795831552.6938457,
+    "AAPL": 1795831552.6938457,
+    "AMZN": 1795831552.6938457,
+    "PLTR": 1795831552.6938457,
+    "CRWV": 1795831552.6938457,
+    "NBIS": 1795831552.6938457,
+    "NOW": 1795831552.6938457,
+    "BE": 1795831552.6938457,
+    "APLD": 1795831552.6938457,
+    "VST": 1795831552.6938457,
+    "COHR": 1795831552.6938457,
+    "CRDO": 1795831552.6938457,
+    "MRVL": 1795831552.6938457,
+    "AXTI": 1795831552.6938457,
+    "AAOI": 1795831552.6938457,
+    "LITE": 1795831552.6938457,
+    "GLW": 1795831552.6938457,
+    "ASTS": 1795831552.6938457,
+    "FN": 1795831552.6938457,
+    "SPCX": 1795831552.6938457,
+    "RKLB": 1795831552.6938457,
+    "FLY": 1795831552.6938457,
+    "LUNR": 1795831552.6938457,
+    "NASA": 1795831552.6938457,
+    "KO": 1795831552.6938457,
+    "INTC": 1795831614.0754662,
+    "AXP": 1795831614.0754662,
+    "VRT": 1795831614.0754662,
+    "DELL": 1795831614.0754662,
+    "CEG": 1795831614.0754662,
+    "TSLA": 1795831614.0754662,
+    "HPE": 1795831614.0754662,
+    "OKLO": 1795831614.0754662,
+    "FPS": 1795831614.0754662,
+    "MU": 1795831614.0754662,
+    "SKHY": 1795831614.0754662,
+    "WDC": 1795831614.0754662,
+    "STX": 1795831614.0754662,
+    "MSTR": 1795831614.0754662,
+    "SNDK": 1795831614.0754662,
+    "CRWD": 1795831614.0754662,
+    "BTC-USD": 1795831614.0754662,
+    "COIN": 1795831614.0754662,
+    "LLY": 1795831614.0754662,
+    "ORCL": 1795831614.0754662,
+    "MRNA": 1795831614.0754662,
+    "MCD": 1795831614.0754662,
+    "NKE": 1795831614.0754662,
+    "V": 1795831614.0754662,
+    "JPM": 1795830156.1948118,
+    "WMT": 1795830156.1948118,
+    "XOM": 1795830156.1948118,
+    "PEP": 1795831614.0754662,
+    "CAT": 1795830156.1948118,
+    "ANT": 1795830156.1948118,
+    "XAUUSD": 1795830156.1948118
   },
   "opex_shield": {
     "date": "2026-11-27",
