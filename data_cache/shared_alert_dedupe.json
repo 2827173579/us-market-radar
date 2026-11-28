@@ -155,9 +155,25 @@
     "2026-11-27:DEFENSIVE_FLIGHT:green:-5.0": {
       "device": "PC",
       "ts": 1795827694.1511703
+    },
+    "2026-11-28:DEFENSIVE_FLIGHT:blue:+0.8": {
+      "device": "PC",
+      "ts": 1795842002.8349502
+    },
+    "2026-11-28:VIX_REGIME:BACKWARDATION_BRAKE": {
+      "device": "PC",
+      "ts": 1795842004.060129
+    },
+    "2026-11-28:VXN_TECH_DELEVERAGING": {
+      "device": "PC",
+      "ts": 1795842007.8421643
+    },
+    "2026-11-28:QCOM:5M_ENTRY": {
+      "device": "PC",
+      "ts": 1795843093.7823386
     }
   },
   "device": "PC",
-  "last_heartbeat_ts": 1795841530.390567,
-  "updated_at": "2026-11-28T04:52:10.390613+00:00"
+  "last_heartbeat_ts": 1795843353.6816664,
+  "updated_at": "2026-11-28T05:22:33.681715+00:00"
 }
