@@ -19,11 +19,11 @@
     },
     "DIA": {
       "state": "WATCHLIST_ENTRY_READY",
-      "last_notified_at": 1795826065.9771426
+      "last_notified_at": 1795827688.49788
     },
     "AXP": {
       "state": "WATCHLIST_ENTRY_READY",
-      "last_notified_at": 1795823323.7778249
+      "last_notified_at": 1795826959.3036942
     },
     "FLY": {
       "state": "NORMAL",
@@ -40,6 +40,10 @@
     "KSTR": {
       "state": "NORMAL",
       "last_notified_at": 0.0
+    },
+    "DELL": {
+      "state": "STOP_LOSS",
+      "last_notified_at": 1795827688.49788
     }
   },
   "position_peaks": {}
