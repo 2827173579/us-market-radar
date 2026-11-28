@@ -1,9 +1,23 @@
 {
-  "updated_at_ts": 1795865383.257,
-  "updated_at_et": "11-28 06:29 ET",
-  "updated_at_kst": "20:29 KST",
+  "updated_at_ts": 1795867215.886,
+  "updated_at_et": "11-28 07:00 ET",
+  "updated_at_kst": "21:00 KST",
   "macro_calendar": [],
   "macro_flashes": [
+    {
+      "id": "20261128195723999800",
+      "title": "整理：特朗普过去24小时都忙了什么？（2026-11-28）",
+      "summary": "1. 荷兰首相称将在G20峰会晤特朗普 ——荷兰首相耶滕计划下月在迈阿密举行的二十国集团（G20）峰会上与美国总统特朗普讨论《MATCH法案》。 2. 俄称正就柴油供应问题与美保持联系 ——俄罗斯副总理诺瓦克周五表示，俄罗斯能源部正就柴油供应协议与美国保持联系。俄罗斯与白宫10月达成协议后，不过截至目前为止，尚无任何俄罗斯柴油船货在美国港口卸货。 3. 泰总理手写便条求免关税 —— 泰国总理阿努廷11月28日称，他在APEC峰会期间亲手递交便条，请特朗普考虑对泰国茉莉香米和玉米免征关税。据悉特朗普读完后将便条收进口袋。 4. 美高官入住军事基地人数创纪录 ——据CNN报道，目前约有六名特朗普行政当局成员住在华盛顿的军人住房中——这一数字在历史上处于高位。 5. 美在英基地被曝遭无人机逼近 ——据英媒报道，知情人士称本月早些时候，约六架无人机集群逼近一处英国军事基地，基地内的美方防御设备将其驱离，但无人机并未被回收。 6. 美规划委拟加急审特朗普项目 ——负责联邦建设项目审查的美国家首都规划委员会（NCPC）主席计划于12月31日召集特别会议并安排闭门会议，暂定议程后续公布。会议距民主党掌控国会仅数日，此举将为特朗普政府加快推进总统规划工程提供机会。",
+      "keywords": [
+        "关税",
+        "特朗普"
+      ],
+      "pub_ts": 1795867044.0,
+      "time_et": "11-28 06:57 ET",
+      "time_bj": "19:57 BJ",
+      "time_kst": "20:57 KST",
+      "time_display": "06:57 ET / 19:57 BJ"
+    },
     {
       "id": "20261128085241329800",
       "title": "整理：中东局势跟踪（11月28日）",
@@ -641,6 +655,13 @@
     ],
     "NVDA": [
       {
+        "title": "Jensen Huang Returns To Nvidia, Musk Says 'The Mistake Has Been Corrected,' And Trump Weighs In: Mag 7 Voices This Week",
+        "url": "https://stocktwits.com/news-articles/markets/equity/jensen-huang-returns-to-nvidia-musk-says-the-mistake-has-been-corrected-and-trump-weighs-in-mag-7-voices-this-week/cNRRyycR9nP?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-28 06:30 ET",
+        "pub_ts": 1795865400.0
+      },
+      {
         "title": "Is Sandisk Stock a Buy After Kioxia and Nvidia Tested Flash Drives as Extra AI Memory?",
         "url": "https://www.fool.com/investing/2026/11/28/is-sandisk-stock-a-buy-after-kioxia-and-nvidia-tested-flash-drives-as-extra-ai-memory/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -667,13 +688,6 @@
         "source": "Yahoo Finance",
         "time": "11-28 03:20 ET",
         "pub_ts": 1795854000.0
-      },
-      {
-        "title": "Dan Ives Sees ‘Rollercoaster Ride’ Ahead For AI Stocks, But Says Nvidia Bull Case Remains Intact — ‘Our Stress Test Stands’",
-        "url": "https://stocktwits.com/news-articles/markets/equity/dan-ives-ai-stocks-rollercoaster-ride-nvidia-bull-case-intact/cNRRs2jR9Vt?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-28 02:13 ET",
-        "pub_ts": 1795849982.0
       }
     ],
     "TSM": [
@@ -863,6 +877,13 @@
     ],
     "MSFT": [
       {
+        "title": "The Best 3 Dividend-Raising Stocks to Own Until 2030",
+        "url": "https://www.fool.com/investing/2026/11/28/the-best-3-dividend-raising-stocks-to-own-until-2030/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-28 06:12 ET",
+        "pub_ts": 1795864322.0
+      },
+      {
         "title": "Vanguard's Growth ETF Has 3 Stocks Making Up More Than a Third of It. Only 1 Has Held Up in the Tech Sell-Off.",
         "url": "https://www.fool.com/investing/2026/11/27/vanguard-s-growth-etf-has-3-stocks-making-up-more-than-a-third-of-it-only-1-has-held-up-in-the-tech-sell-off/?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -884,18 +905,11 @@
         "pub_ts": 1795800002.0
       },
       {
-        "title": "Are recent outages bad for software?",
-        "url": "https://finance.yahoo.com/technology/articles/recent-outages-bad-software-033947446.html?.tsrc=rss",
+        "title": "Gavin Baker Got “Much Better Versions” of His Claude Code Builds From Grok Bot. Warning for Anthropic",
+        "url": "https://www.tikr.com/blog/gavin-baker-got-much-better-versions-of-his-claude-code-builds-from-grok-bot-warning-for-anthropic?ref=yahoofinance&tlnk=yf-261128-fvq3f97r&.tsrc=rss",
         "source": "Yahoo Finance",
-        "time": "11-27 22:39 ET",
-        "pub_ts": 1795837187.0
-      },
-      {
-        "title": "IREN (NasdaqGS:IREN) Stock Sees Modest Fair Value Cut After AI Cloud Sentiment Swings",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/iren-nasdaqgs-iren-stock-sees-190922720.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-27 14:09 ET",
-        "pub_ts": 1795806562.0
+        "time": "11-28 06:05 ET",
+        "pub_ts": 1795863918.0
       }
     ],
     "GOOGL": [
@@ -1085,6 +1099,13 @@
     ],
     "AMZN": [
       {
+        "title": "Jeff Bezos predicted Amazon would go bankrupt one day. Only one Fortune 500 No. 1 ever has",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/jeff-bezos-predicted-amazon-bankrupt-092200454.html?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-28 04:22 ET",
+        "pub_ts": 1795857720.0
+      },
+      {
         "title": "Amazon takes its car store abroad for the first time in 2027",
         "url": "https://www.thestreet.com/automotive/amazon-takes-its-car-store-abroad-britain-uk-for-first-time-2027?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1111,13 +1132,6 @@
         "source": "Yahoo Finance",
         "time": "11-27 14:53 ET",
         "pub_ts": 1795809188.0
-      },
-      {
-        "title": "Amazon’s AWS Profit Rose 55%. Can It Absorb a $220 Billion Capex Bill?",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/amazon-aws-profit-rose-55-191859418.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-27 14:18 ET",
-        "pub_ts": 1795807139.0
       }
     ],
     "PLTR": [
@@ -1714,11 +1728,25 @@
     ],
     "SPCX": [
       {
+        "title": "Gavin Baker Got “Much Better Versions” of His Claude Code Builds From Grok Bot. Warning for Anthropic",
+        "url": "https://www.tikr.com/blog/gavin-baker-got-much-better-versions-of-his-claude-code-builds-from-grok-bot-warning-for-anthropic?ref=yahoofinance&tlnk=yf-261128-fvq3f97r&.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-28 06:05 ET",
+        "pub_ts": 1795863918.0
+      },
+      {
         "title": "Tech Stock Sell-Off: Down 36%, Is SpaceX a Buy Now?",
         "url": "https://www.fool.com/investing/2026/11/28/tech-stock-sell-off-down-36-is-spacex-a-buy-now/?.tsrc=rss",
         "source": "Yahoo Finance",
         "time": "11-28 03:30 ET",
         "pub_ts": 1795854602.0
+      },
+      {
+        "title": "Musk Will Give Every U.S. Child a SpaceX Share “Every Year.” That’s About $9 Billion a Year at Today’s Price",
+        "url": "https://www.tikr.com/blog/musk-will-give-every-u-s-child-a-spacex-share-every-year-thats-about-9-billion-a-year-at-todays-price?ref=yahoofinance&tlnk=yf-261128-rwrp49gh&.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-28 02:52 ET",
+        "pub_ts": 1795852338.0
       },
       {
         "title": "Elon Musk Says GOOGL Has ‘Expressed Interest’ In Renting More Compute From SPCX",
@@ -1733,20 +1761,6 @@
         "source": "Yahoo Finance",
         "time": "11-28 01:11 ET",
         "pub_ts": 1795846314.0
-      },
-      {
-        "title": "Cathie Wood-Led Ark Invest Loads Up On SPCX, CRSP And TEM — But Sells SHOP, ILMN, BYD",
-        "url": "https://stocktwits.com/news-articles/markets/equity/cathie-wood-ark-invest-buys-spcx-biotech-stocks-sells-shop-ilmn-byd/cNRRFtbR9V8?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-27 23:32 ET",
-        "pub_ts": 1795840367.0
-      },
-      {
-        "title": "SpaceX Stock Is Trading Below Its $135 IPO Price. History Says What Other Giant IPOs Did From There.",
-        "url": "https://www.fool.com/investing/2026/11/27/spacex-stock-is-trading-below-its-usd135-ipo-price-history-says-what-other-giant-ipos-did-from-there/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-27 23:27 ET",
-        "pub_ts": 1795840022.0
       }
     ],
     "RKLB": [
@@ -1899,6 +1913,13 @@
     ],
     "KO": [
       {
+        "title": "The Best 3 Dividend-Raising Stocks to Own Until 2030",
+        "url": "https://www.fool.com/investing/2026/11/28/the-best-3-dividend-raising-stocks-to-own-until-2030/?.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-28 06:12 ET",
+        "pub_ts": 1795864322.0
+      },
+      {
         "title": "3 Reasons I’d Be Nervous Buying Coca-Cola’s Stock Today",
         "url": "https://www.tikr.com/blog/reasons-to-be-nervous-buying-coca-cola-stock?ref=yahoofinancedividend&tlnk=yf-261127-w2r994wh&.tsrc=rss",
         "source": "Yahoo Finance",
@@ -1925,13 +1946,6 @@
         "source": "Yahoo Finance",
         "time": "11-27 09:23 ET",
         "pub_ts": 1795789433.0
-      },
-      {
-        "title": "If This Dividend King Doubles, Here’s What $10,000 Could Become",
-        "url": "https://247wallst.com/investing/2026/11/27/if-this-dividend-king-doubles-heres-what-10000-could-become/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-27 09:04 ET",
-        "pub_ts": 1795788245.0
       }
     ],
     "INTC": [
@@ -2010,6 +2024,13 @@
     ],
     "VRT": [
       {
+        "title": "GE Vernova Just Dropped 18% in a Month on Data Center Fears. Is It Time to Sell, or Load Up?",
+        "url": "https://www.tikr.com/blog/ge-vernova-just-dropped-18-in-a-month-on-data-center-fears-is-it-time-to-sell-or-load-up?ref=yahoofinance&tlnk=yf-261128-923r6rpx&.tsrc=rss",
+        "source": "Yahoo Finance",
+        "time": "11-28 05:34 ET",
+        "pub_ts": 1795862048.0
+      },
+      {
         "title": "Vertiv Stock Has Fallen Hard. Buy Now Or Wait?",
         "url": "https://www.trefis.com/stock/vrt/articles/629407/vertiv-stock-has-fallen-hard-buy-now-or-wait/2026-11-27?.tsrc=rss",
         "source": "Yahoo Finance",
@@ -2036,13 +2057,6 @@
         "source": "Yahoo Finance",
         "time": "11-25 18:55 ET",
         "pub_ts": 1795650946.0
-      },
-      {
-        "title": "Vertiv jumps 17 spots on the Roundtable 100",
-        "url": "https://www.thestreet.com/crypto/markets/vertiv-jumps-17-spots-on-the-roundtable-100?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-25 12:18 ET",
-        "pub_ts": 1795627133.0
       }
     ],
     "DELL": [
@@ -3010,38 +3024,38 @@
     "ANT": [
       {
         "title": "Here's Why Anthropic Stock Rallied on Friday -- and Why Wall Street Analysts Say It's Still a Buy Right Now",
-        "url": "https://www.fool.com/investing/2026/11/27/why-anthropic-stock-rallied-on-friday-wall-street-analysts-say-buy-right-now/?.tsrc=rss",
-        "source": "Yahoo Finance",
+        "url": "https://finnhub.io/api/news?id=c945706249628a613e103f9976532b2584d97741036e44de0e3c8d0add656436",
+        "source": "Yahoo",
         "time": "11-27 21:15 ET",
         "pub_ts": 1795832124.0
       },
       {
         "title": "Anthropic's Best Customers Spend 20 Times More Than the Rest. That's Why I'm Buying the Stock.",
-        "url": "https://www.fool.com/investing/2026/11/27/anthropic-s-best-customers-spend-20-times-more-than-the-rest-that-s-why-i-m-buying-the-stock/?.tsrc=rss",
-        "source": "Yahoo Finance",
+        "url": "https://finnhub.io/api/news?id=cc5b45be7d54bfa0718acea0b430ddd1492dd3808675d1ed0c08ac0b63bf0e4f",
+        "source": "Yahoo",
         "time": "11-27 19:29 ET",
         "pub_ts": 1795825742.0
       },
       {
-        "title": "Anthropic Stocks Jump 8.49% Back Above IPO Price as ARK Keeps Buying",
-        "url": "https://finance.yahoo.com/technology/ai/articles/anthropic-stocks-jump-8-49-195111243.html?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-27 14:51 ET",
-        "pub_ts": 1795809071.0
+        "title": "Anthropic vs. Coinbase: One Stock Is Overhyped, One Is Oversold, Says Top Investor",
+        "url": "https://finnhub.io/api/news?id=bf5f78c12199f8db6d57543e9e4ce69603718db44e027e1af22026ed3014db44",
+        "source": "Yahoo",
+        "time": "11-27 17:12 ET",
+        "pub_ts": 1795817525.0
       },
       {
-        "title": "This Anthropic Collar Options Strategy Wins Whether the Stock Goes Up or Down",
-        "url": "https://www.barchart.com/story/news/9036689/this-anthropic-collar-options-strategy-wins-whether-the-stock-goes-up-or-down?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-27 14:34 ET",
-        "pub_ts": 1795808050.0
+        "title": "Can Record Black Friday Spending Lift Amazon Stock?",
+        "url": "https://finnhub.io/api/news?id=7aa445f3c05f8dbd715315f2c351988e8a2e6eb98f4c2803720b3f3d8d50d033",
+        "source": "Yahoo",
+        "time": "11-27 15:35 ET",
+        "pub_ts": 1795811700.0
       },
       {
-        "title": "Anthropic Gets a Blockbuster IPO; Take-Two Gets a Blockbuster GTA VI Release",
-        "url": "https://www.fool.com/investing/2026/11/27/anthropic-gets-a-blockbuster-ipo-take-two-gets-a-blockbuster-gta-vi-release/?.tsrc=rss",
-        "source": "Yahoo Finance",
-        "time": "11-27 14:19 ET",
-        "pub_ts": 1795807142.0
+        "title": "How Cathie Wood's Ark Played Wednesday's Whipsaw Action",
+        "url": "https://finnhub.io/api/news?id=6100131ee0b285eafb385ad7fad93efa632a3a3269084e7b87e29b05dfd1f9aa",
+        "source": "Yahoo",
+        "time": "11-27 15:25 ET",
+        "pub_ts": 1795811151.0
       }
     ],
     "XAUUSD": [
@@ -3055,87 +3069,87 @@
     ]
   },
   "ticker_news_ts": {
-    "DIA": 1795865182.8601055,
-    "IWM": 1795865383.2572439,
-    "SOXX": 1795865182.8601055,
-    "SPY": 1795865182.8601055,
-    "QQQ": 1795865383.2572439,
-    "KORU": 1795865383.2572439,
-    "SOXL": 1795865182.8601055,
-    "SMH": 1795865182.8601055,
-    "KSTR": 1795865383.2572439,
-    "TLT": 1795865383.2572439,
-    "SQQQ": 1795865383.2572439,
-    "GLD": 1795863949.2957437,
-    "IGV": 1795865383.2572439,
-    "SOXS": 1795865383.2572439,
-    "VIXY": 1795865383.2572439,
-    "NVDA": 1795864274.5575514,
-    "TSM": 1795865383.2572439,
-    "AMD": 1795865383.2572439,
-    "AVGO": 1795865383.2572439,
-    "AMAT": 1795865383.2572439,
-    "QCOM": 1795865383.2572439,
-    "MSFT": 1795864274.5575514,
-    "GOOGL": 1795865383.2572439,
-    "ASML": 1795865383.2572439,
-    "KOSPI": 1795865383.2572439,
-    "META": 1795863949.2957437,
-    "AAPL": 1795863949.2957437,
-    "AMZN": 1795863949.2957437,
-    "PLTR": 1795863949.2957437,
-    "CRWV": 1795864274.5575514,
-    "NBIS": 1795863949.2957437,
-    "NOW": 1795863949.2957437,
-    "BE": 1795863949.2957437,
-    "APLD": 1795863949.2957437,
-    "VST": 1795863949.2957437,
-    "COHR": 1795863949.2957437,
-    "CRDO": 1795863949.2957437,
-    "MRVL": 1795863949.2957437,
-    "AXTI": 1795864274.5575514,
-    "AAOI": 1795864274.5575514,
-    "LITE": 1795863949.2957437,
-    "GLW": 1795864274.5575514,
-    "ASTS": 1795864274.5575514,
-    "FN": 1795863949.2957437,
-    "SPCX": 1795864274.5575514,
-    "RKLB": 1795864274.5575514,
-    "FLY": 1795864274.5575514,
-    "LUNR": 1795864274.5575514,
-    "NASA": 1795864274.5575514,
-    "KO": 1795864274.5575514,
-    "INTC": 1795864274.5575514,
-    "AXP": 1795864274.5575514,
-    "VRT": 1795864274.5575514,
-    "DELL": 1795864274.5575514,
-    "CEG": 1795864274.5575514,
-    "TSLA": 1795864274.5575514,
-    "HPE": 1795864274.5575514,
-    "OKLO": 1795864274.5575514,
-    "FPS": 1795864274.5575514,
-    "MU": 1795864274.5575514,
-    "SKHY": 1795864274.5575514,
-    "WDC": 1795864274.5575514,
-    "STX": 1795864413.5932958,
-    "MSTR": 1795864413.5932958,
-    "SNDK": 1795864413.5932958,
-    "CRWD": 1795864413.5932958,
-    "BTC-USD": 1795864413.5932958,
-    "COIN": 1795864413.5932958,
-    "LLY": 1795864413.5932958,
-    "ORCL": 1795864413.5932958,
-    "MRNA": 1795864413.5932958,
-    "MCD": 1795864413.5932958,
-    "NKE": 1795864413.5932958,
-    "V": 1795864413.5932958,
-    "JPM": 1795864413.5932958,
-    "WMT": 1795864413.5932958,
-    "XOM": 1795864413.5932958,
-    "PEP": 1795864413.5932958,
-    "CAT": 1795864413.5932958,
-    "ANT": 1795864413.5932958,
-    "XAUUSD": 1795864413.5932958
+    "DIA": 1795866733.6868885,
+    "IWM": 1795866943.3600574,
+    "SOXX": 1795866733.6868885,
+    "SPY": 1795866733.6868885,
+    "QQQ": 1795866943.3600574,
+    "KORU": 1795866943.3600574,
+    "SOXL": 1795866733.6868885,
+    "SMH": 1795866733.6868885,
+    "KSTR": 1795866943.3600574,
+    "TLT": 1795866943.3600574,
+    "SQQQ": 1795866943.3600574,
+    "GLD": 1795867017.9859781,
+    "IGV": 1795866943.3600574,
+    "SOXS": 1795866943.3600574,
+    "VIXY": 1795866943.3600574,
+    "NVDA": 1795865796.1583867,
+    "TSM": 1795866943.3600574,
+    "AMD": 1795866943.3600574,
+    "AVGO": 1795866943.3600574,
+    "AMAT": 1795866943.3600574,
+    "QCOM": 1795866943.3600574,
+    "MSFT": 1795865796.1583867,
+    "GOOGL": 1795866943.3600574,
+    "ASML": 1795866943.3600574,
+    "KOSPI": 1795866943.3600574,
+    "META": 1795867017.9859781,
+    "AAPL": 1795867017.9859781,
+    "AMZN": 1795867017.9859781,
+    "PLTR": 1795867017.9859781,
+    "CRWV": 1795865796.1583867,
+    "NBIS": 1795867017.9859781,
+    "NOW": 1795867017.9859781,
+    "BE": 1795867017.9859781,
+    "APLD": 1795867017.9859781,
+    "VST": 1795867017.9859781,
+    "COHR": 1795867017.9859781,
+    "CRDO": 1795867017.9859781,
+    "MRVL": 1795867017.9859781,
+    "AXTI": 1795865796.1583867,
+    "AAOI": 1795865796.1583867,
+    "LITE": 1795867017.9859781,
+    "GLW": 1795865796.1583867,
+    "ASTS": 1795865796.1583867,
+    "FN": 1795867017.9859781,
+    "SPCX": 1795865796.1583867,
+    "RKLB": 1795865796.1583867,
+    "FLY": 1795865796.1583867,
+    "LUNR": 1795865796.1583867,
+    "NASA": 1795865796.1583867,
+    "KO": 1795865796.1583867,
+    "INTC": 1795865796.1583867,
+    "AXP": 1795865796.1583867,
+    "VRT": 1795865796.1583867,
+    "DELL": 1795865796.1583867,
+    "CEG": 1795865796.1583867,
+    "TSLA": 1795865796.1583867,
+    "HPE": 1795865796.1583867,
+    "OKLO": 1795865796.1583867,
+    "FPS": 1795865796.1583867,
+    "MU": 1795865796.1583867,
+    "SKHY": 1795865796.1583867,
+    "WDC": 1795865796.1583867,
+    "STX": 1795865928.070833,
+    "MSTR": 1795865928.070833,
+    "SNDK": 1795865928.070833,
+    "CRWD": 1795865928.070833,
+    "BTC-USD": 1795865928.070833,
+    "COIN": 1795865928.070833,
+    "LLY": 1795865928.070833,
+    "ORCL": 1795865928.070833,
+    "MRNA": 1795865928.070833,
+    "MCD": 1795865928.070833,
+    "NKE": 1795865928.070833,
+    "V": 1795865928.070833,
+    "JPM": 1795865928.070833,
+    "WMT": 1795865928.070833,
+    "XOM": 1795865928.070833,
+    "PEP": 1795865928.070833,
+    "CAT": 1795865928.070833,
+    "ANT": 1795865928.070833,
+    "XAUUSD": 1795865928.070833
   },
   "opex_shield": {
     "date": "2026-11-28",
@@ -3154,7 +3168,7 @@
   "calendar_banner": {
     "level": "idle_with_flash",
     "headline": "📡 宏观消息面监控中 · 今日暂无美股五星级经济数据大考",
-    "detail": "⚡ 最新核心快讯 (19:52 ET / 08:52 BJ) [中东]：中东冲突： 1. 伊朗称一美国F-16战机遭伊方防空系统警告射击。 2. 伊朗革命卫队航空航天部队司令：打破封锁是伊朗的“坚定使命和不可动摇的决心”。 3. 伊朗陆军海军司令警告称，若敌方出",
+    "detail": "⚡ 最新核心快讯 (06:57 ET / 19:57 BJ) [关税] [特朗普]：1. 荷兰首相称将在G20峰会晤特朗普 ——荷兰首相耶滕计划下月在迈阿密举行的二十国集团（G20）峰会上与美国总统特朗普讨论《MATCH法案》。 2. 俄称正就柴油供应问题与美保持联系 ——",
     "event_name": "",
     "minutes_left": 0,
     "opex_shield": {
